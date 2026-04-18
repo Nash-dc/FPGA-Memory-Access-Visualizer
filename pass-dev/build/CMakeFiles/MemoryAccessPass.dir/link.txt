@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC  -fno-rtti -fno-exceptions -fPIC -fvisibility=hidden -Wl,--allow-shlib-undefined -shared  -o libMemoryAccessPass.so CMakeFiles/MemoryAccessPass.dir/MemoryAccessPass.cpp.o 
