@@ -1,0 +1,162 @@
+
+
+================================================================
+== Vitis HLS Report for 'matrix_mul_Pipeline_init_c_loop_init_c_col_loop'
+================================================================
+* Date:           Thu Jun  4 18:35:07 2026
+
+* Version:        2025.1 (Build 6135595 on May 21 2025)
+* Project:        component_matrix_mul
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: virtexuplus
+* Target device:  xcvu9p-flga2104-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  5.00 ns|  2.507 ns|     1.35 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval |                    Pipeline                    |
+    |   min   |   max   |    min   |    max   | min | max |                      Type                      |
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+    |      258|      258|  1.290 us|  1.290 us|  257|  257|  loop auto-rewind stp (delay=0 clock cycles(s))|
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                               |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |           Loop Name           |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- init_c_loop_init_c_col_loop  |      256|      256|         1|          1|          1|   256|       yes|
+        +-------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 1
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 1
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 1, States = { 1 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.50>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%col = alloca i32 1" [matrix_mul.cpp:29]   --->   Operation 4 'alloca' 'col' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%row = alloca i32 1" [matrix_mul.cpp:27]   --->   Operation 5 'alloca' 'row' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%indvar_flatten = alloca i32 1"   --->   Operation 6 'alloca' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.38ns)   --->   "%store_ln0 = store i9 0, i9 %indvar_flatten"   --->   Operation 7 'store' 'store_ln0' <Predicate = true> <Delay = 0.38>
+ST_1 : Operation 8 [1/1] (0.38ns)   --->   "%store_ln27 = store i5 0, i5 %row" [matrix_mul.cpp:27]   --->   Operation 8 'store' 'store_ln27' <Predicate = true> <Delay = 0.38>
+ST_1 : Operation 9 [1/1] (0.38ns)   --->   "%store_ln29 = store i5 0, i5 %col" [matrix_mul.cpp:29]   --->   Operation 9 'store' 'store_ln29' <Predicate = true> <Delay = 0.38>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc"   --->   Operation 10 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%indvar_flatten_load = load i9 %indvar_flatten" [matrix_mul.cpp:27]   --->   Operation 11 'load' 'indvar_flatten_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.71ns)   --->   "%icmp_ln27 = icmp_eq  i9 %indvar_flatten_load, i9 256" [matrix_mul.cpp:27]   --->   Operation 12 'icmp' 'icmp_ln27' <Predicate = true> <Delay = 0.71> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.71> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 13 [1/1] (0.71ns)   --->   "%add_ln27_1 = add i9 %indvar_flatten_load, i9 1" [matrix_mul.cpp:27]   --->   Operation 13 'add' 'add_ln27_1' <Predicate = true> <Delay = 0.71> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.71> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%br_ln27 = br i1 %icmp_ln27, void %for.inc7, void %k_tile_loop.exitStub" [matrix_mul.cpp:27]   --->   Operation 14 'br' 'br_ln27' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%col_load = load i5 %col" [matrix_mul.cpp:29]   --->   Operation 15 'load' 'col_load' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%row_load = load i5 %row" [matrix_mul.cpp:27]   --->   Operation 16 'load' 'row_load' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.70ns)   --->   "%add_ln27 = add i5 %row_load, i5 1" [matrix_mul.cpp:27]   --->   Operation 17 'add' 'add_ln27' <Predicate = (!icmp_ln27)> <Delay = 0.70> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @init_c_loop_init_c_col_loop_str"   --->   Operation 18 'specloopname' 'specloopname_ln0' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 256, i64 256, i64 256"   --->   Operation 19 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.70ns)   --->   "%icmp_ln29 = icmp_eq  i5 %col_load, i5 16" [matrix_mul.cpp:29]   --->   Operation 20 'icmp' 'icmp_ln29' <Predicate = (!icmp_ln27)> <Delay = 0.70> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 21 [1/1] (0.27ns)   --->   "%select_ln27 = select i1 %icmp_ln29, i5 0, i5 %col_load" [matrix_mul.cpp:27]   --->   Operation 21 'select' 'select_ln27' <Predicate = (!icmp_ln27)> <Delay = 0.27> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.27> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 22 [1/1] (0.27ns)   --->   "%select_ln27_1 = select i1 %icmp_ln29, i5 %add_ln27, i5 %row_load" [matrix_mul.cpp:27]   --->   Operation 22 'select' 'select_ln27_1' <Predicate = (!icmp_ln27)> <Delay = 0.27> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.27> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%trunc_ln29 = trunc i5 %select_ln27_1" [matrix_mul.cpp:29]   --->   Operation 23 'trunc' 'trunc_ln29' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%trunc_ln29_1 = trunc i5 %select_ln27" [matrix_mul.cpp:29]   --->   Operation 24 'trunc' 'trunc_ln29_1' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%specpipeline_ln30 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_3" [matrix_mul.cpp:30]   --->   Operation 25 'specpipeline' 'specpipeline_ln30' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%lshr_ln = partselect i2 @_ssdm_op_PartSelect.i2.i5.i32.i32, i5 %select_ln27, i32 2, i32 3" [matrix_mul.cpp:29]   --->   Operation 26 'partselect' 'lshr_ln' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%tmp_1 = bitconcatenate i6 @_ssdm_op_BitConcatenate.i6.i4.i2, i4 %trunc_ln29, i2 %lshr_ln" [matrix_mul.cpp:31]   --->   Operation 27 'bitconcatenate' 'tmp_1' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%zext_ln31 = zext i6 %tmp_1" [matrix_mul.cpp:31]   --->   Operation 28 'zext' 'zext_ln31' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%C_local_addr = getelementptr i32 %C_local, i64 0, i64 %zext_ln31" [matrix_mul.cpp:31]   --->   Operation 29 'getelementptr' 'C_local_addr' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%C_local_1_addr = getelementptr i32 %C_local_1, i64 0, i64 %zext_ln31" [matrix_mul.cpp:31]   --->   Operation 30 'getelementptr' 'C_local_1_addr' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%C_local_2_addr = getelementptr i32 %C_local_2, i64 0, i64 %zext_ln31" [matrix_mul.cpp:31]   --->   Operation 31 'getelementptr' 'C_local_2_addr' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%C_local_3_addr = getelementptr i32 %C_local_3, i64 0, i64 %zext_ln31" [matrix_mul.cpp:31]   --->   Operation 32 'getelementptr' 'C_local_3_addr' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.43ns)   --->   "%switch_ln31 = switch i2 %trunc_ln29_1, void %arrayidx68.case.3, i2 0, void %arrayidx68.case.0, i2 1, void %arrayidx68.case.1, i2 2, void %arrayidx68.case.2" [matrix_mul.cpp:31]   --->   Operation 33 'switch' 'switch_ln31' <Predicate = (!icmp_ln27)> <Delay = 0.43>
+ST_1 : Operation 34 [1/1] ( I:0.69ns O:0.69ns )   --->   "%store_ln31 = store i32 0, i6 %C_local_2_addr" [matrix_mul.cpp:31]   --->   Operation 34 'store' 'store_ln31' <Predicate = (!icmp_ln27 & trunc_ln29_1 == 2)> <Delay = 0.69> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 64> <RAM>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%br_ln31 = br void %arrayidx68.exit" [matrix_mul.cpp:31]   --->   Operation 35 'br' 'br_ln31' <Predicate = (!icmp_ln27 & trunc_ln29_1 == 2)> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] ( I:0.69ns O:0.69ns )   --->   "%store_ln31 = store i32 0, i6 %C_local_1_addr" [matrix_mul.cpp:31]   --->   Operation 36 'store' 'store_ln31' <Predicate = (!icmp_ln27 & trunc_ln29_1 == 1)> <Delay = 0.69> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 64> <RAM>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%br_ln31 = br void %arrayidx68.exit" [matrix_mul.cpp:31]   --->   Operation 37 'br' 'br_ln31' <Predicate = (!icmp_ln27 & trunc_ln29_1 == 1)> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] ( I:0.69ns O:0.69ns )   --->   "%store_ln31 = store i32 0, i6 %C_local_addr" [matrix_mul.cpp:31]   --->   Operation 38 'store' 'store_ln31' <Predicate = (!icmp_ln27 & trunc_ln29_1 == 0)> <Delay = 0.69> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 64> <RAM>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%br_ln31 = br void %arrayidx68.exit" [matrix_mul.cpp:31]   --->   Operation 39 'br' 'br_ln31' <Predicate = (!icmp_ln27 & trunc_ln29_1 == 0)> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] ( I:0.69ns O:0.69ns )   --->   "%store_ln31 = store i32 0, i6 %C_local_3_addr" [matrix_mul.cpp:31]   --->   Operation 40 'store' 'store_ln31' <Predicate = (!icmp_ln27 & trunc_ln29_1 == 3)> <Delay = 0.69> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 0.69> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 64> <RAM>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%br_ln31 = br void %arrayidx68.exit" [matrix_mul.cpp:31]   --->   Operation 41 'br' 'br_ln31' <Predicate = (!icmp_ln27 & trunc_ln29_1 == 3)> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (0.70ns)   --->   "%add_ln29 = add i5 %select_ln27, i5 1" [matrix_mul.cpp:29]   --->   Operation 42 'add' 'add_ln29' <Predicate = (!icmp_ln27)> <Delay = 0.70> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 43 [1/1] (0.38ns)   --->   "%store_ln27 = store i9 %add_ln27_1, i9 %indvar_flatten" [matrix_mul.cpp:27]   --->   Operation 43 'store' 'store_ln27' <Predicate = (!icmp_ln27)> <Delay = 0.38>
+ST_1 : Operation 44 [1/1] (0.38ns)   --->   "%store_ln27 = store i5 %select_ln27_1, i5 %row" [matrix_mul.cpp:27]   --->   Operation 44 'store' 'store_ln27' <Predicate = (!icmp_ln27)> <Delay = 0.38>
+ST_1 : Operation 45 [1/1] (0.38ns)   --->   "%store_ln29 = store i5 %add_ln29, i5 %col" [matrix_mul.cpp:29]   --->   Operation 45 'store' 'store_ln29' <Predicate = (!icmp_ln27)> <Delay = 0.38>
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%br_ln29 = br void %for.inc" [matrix_mul.cpp:29]   --->   Operation 46 'br' 'br_ln29' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_1 : Operation 47 [1/1] (0.38ns)   --->   "%ret_ln0 = ret"   --->   Operation 47 'ret' 'ret_ln0' <Predicate = (icmp_ln27)> <Delay = 0.38>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 5.000ns, clock uncertainty: 1.350ns.
+
+ <State 1>: 2.507ns
+The critical path consists of the following:
+	'store' operation 0 bit ('store_ln29', matrix_mul.cpp:29) of constant 0 on local variable 'col', matrix_mul.cpp:29 [10]  (0.387 ns)
+	'load' operation 5 bit ('col_load', matrix_mul.cpp:29) on local variable 'col', matrix_mul.cpp:29 [18]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln29', matrix_mul.cpp:29) [23]  (0.707 ns)
+	'select' operation 5 bit ('select_ln27', matrix_mul.cpp:27) [24]  (0.278 ns)
+	'store' operation 0 bit ('store_ln31', matrix_mul.cpp:31) of constant 0 on array 'C_local' [44]  (0.699 ns)
+	blocking operation 0.436 ns on control path)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

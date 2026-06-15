@@ -1,4 +1,0 @@
-/data/hls-dev/pass-dev/build/CMakeFiles/intrinsics_gen.dir
-/data/hls-dev/pass-dev/build/CMakeFiles/MemoryAccessPass.dir
-/data/hls-dev/pass-dev/build/CMakeFiles/edit_cache.dir
-/data/hls-dev/pass-dev/build/CMakeFiles/rebuild_cache.dir

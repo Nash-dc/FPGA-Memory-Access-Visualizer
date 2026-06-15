@@ -1,0 +1,291 @@
+
+
+================================================================
+== Synthesis Summary Report of 'matmul_full_contiguous'
+================================================================
++ General Information: 
+    * Date:           Thu Jun  4 20:03:34 2026
+    * Version:        2025.1 (Build 6135595 on May 21 2025)
+    * Project:        component_matmul_full_contiguous
+    * Solution:       hls (Vivado IP Flow Target)
+    * Product family: virtexuplus
+    * Target device:  xcvu9p-flga2104-2-i
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +----------------------------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+----------+-------------+------------+-----+
+    |                                Modules                               | Issue|      |       Latency       | Iteration|         | Trip |          |         |          |             |            |     |
+    |                                & Loops                               | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|  BRAM   |    DSP   |      FF     |     LUT    | URAM|
+    +----------------------------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+----------+-------------+------------+-----+
+    |+ matmul_full_contiguous                                              |     -|  0.00|      801|  4.005e+03|         -|      802|     -|        no|  1 (~0%)|  48 (~0%)|  11466 (~0%)|  13643 (1%)|    -|
+    | + matmul_full_contiguous_Pipeline_load_ab_full_loop                  |     -|  0.00|      259|  1.295e+03|         -|      257|     -|    rewind|        -|         -|   2057 (~0%)|   276 (~0%)|    -|
+    |  o load_ab_full_loop                                                 |     -|  3.65|      257|  1.285e+03|         3|        1|   256|       yes|        -|         -|            -|           -|    -|
+    | + matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop  |     -|  0.11|      262|  1.310e+03|         -|      257|     -|    rewind|        -|  48 (~0%)|   1837 (~0%)|  4280 (~0%)|    -|
+    |  o compute_row_loop_compute_col_loop                                 |     -|  3.65|      260|  1.300e+03|         6|        1|   256|       yes|        -|         -|            -|           -|    -|
+    | + matmul_full_contiguous_Pipeline_store_c_full_loop                  |     -|  0.00|      259|  1.295e+03|         -|      257|     -|    rewind|        -|         -|    528 (~0%)|   515 (~0%)|    -|
+    |  o store_c_full_loop                                                 |     -|  3.65|      257|  1.285e+03|         3|        1|   256|       yes|        -|         -|            -|           -|    -|
+    +----------------------------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+----------+-------------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++--------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+| Interface    | Read/Write | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   |
+|              |            | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |
++--------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+| m_axi_gmem_a | READ_ONLY  | 32 -> 512  | 64            | 0       | slave  | 0        | 512       | 1            | 16           | 16          | 16          |
+| m_axi_gmem_b | READ_ONLY  | 32 -> 512  | 64            | 0       | slave  | 0        | 512       | 1            | 16           | 16          | 16          |
+| m_axi_gmem_c | WRITE_ONLY | 32 -> 512  | 64            | 0       | slave  | 0        | 512       | 16           | 1            | 16          | 16          |
++--------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 6             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface     | Register | Offset | Width | Access | Description                      | Bit Fields                                                           |
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_control | CTRL     | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER     | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_control | IP_IER   | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_control | IP_ISR   | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_control | a_1      | 0x10   | 32    | W      | Data signal of a                 |                                                                      |
+| s_axi_control | a_2      | 0x14   | 32    | W      | Data signal of a                 |                                                                      |
+| s_axi_control | b_1      | 0x1c   | 32    | W      | Data signal of b                 |                                                                      |
+| s_axi_control | b_2      | 0x20   | 32    | W      | Data signal of b                 |                                                                      |
+| s_axi_control | c_1      | 0x28   | 32    | W      | Data signal of c                 |                                                                      |
+| s_axi_control | c_2      | 0x2c   | 32    | W      | Data signal of c                 |                                                                      |
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+-------------+
+| Argument | Direction | Datatype    |
++----------+-----------+-------------+
+| a        | in        | int const * |
+| b        | in        | int const * |
+| c        | out       | int*        |
++----------+-----------+-------------+
+
+* SW-to-HW Mapping
++----------+---------------+-----------+----------+-------------------------------+
+| Argument | HW Interface  | HW Type   | HW Usage | HW Info                       |
++----------+---------------+-----------+----------+-------------------------------+
+| a        | m_axi_gmem_a  | interface |          | channel=0                     |
+| a        | s_axi_control | register  | offset   | name=a_1 offset=0x10 range=32 |
+| a        | s_axi_control | register  | offset   | name=a_2 offset=0x14 range=32 |
+| b        | m_axi_gmem_b  | interface |          | channel=0                     |
+| b        | s_axi_control | register  | offset   | name=b_1 offset=0x1c range=32 |
+| b        | s_axi_control | register  | offset   | name=b_2 offset=0x20 range=32 |
+| c        | m_axi_gmem_c  | interface |          | channel=0                     |
+| c        | s_axi_control | register  | offset   | name=c_1 offset=0x28 range=32 |
+| c        | s_axi_control | register  | offset   | name=c_2 offset=0x2c range=32 |
++----------+---------------+-----------+----------+-------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Burst Summary
++--------------+-----------+--------+-------+
+| HW Interface | Direction | Length | Width |
++--------------+-----------+--------+-------+
+| m_axi_gmem_a | read      | 16     | 512   |
+| m_axi_gmem_b | read      | 16     | 512   |
+| m_axi_gmem_c | write     | 16     | 512   |
++--------------+-----------+--------+-------+
+
+* All M_AXI Variable Accesses
++--------------+----------+----------------------------------+-----------+--------------+--------+-------------------+---------------------------------+
+| HW Interface | Variable | Access Location                  | Direction | Burst Status | Length | Loop              | Loop Location                   |
++--------------+----------+----------------------------------+-----------+--------------+--------+-------------------+---------------------------------+
+| m_axi_gmem_a | a        | matmul_full_contiguous.cpp:22:19 | read      | Widened      | 16     | load_ab_full_loop | matmul_full_contiguous.cpp:20:3 |
+| m_axi_gmem_a | a        | matmul_full_contiguous.cpp:22:19 | read      | Inferred     | 256    | load_ab_full_loop | matmul_full_contiguous.cpp:20:3 |
+| m_axi_gmem_b | b        | matmul_full_contiguous.cpp:23:22 | read      | Widened      | 16     | load_ab_full_loop | matmul_full_contiguous.cpp:20:3 |
+| m_axi_gmem_b | b        | matmul_full_contiguous.cpp:23:22 | read      | Inferred     | 256    | load_ab_full_loop | matmul_full_contiguous.cpp:20:3 |
+| m_axi_gmem_c | c        | matmul_full_contiguous.cpp:45:11 | write     | Widened      | 16     | store_c_full_loop | matmul_full_contiguous.cpp:43:3 |
+| m_axi_gmem_c | c        | matmul_full_contiguous.cpp:45:11 | write     | Inferred     | 256    | store_c_full_loop | matmul_full_contiguous.cpp:43:3 |
++--------------+----------+----------------------------------+-----------+--------------+--------+-------------------+---------------------------------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++----------------------------------------------------------------------+-----+--------+---------------+-----------+--------------------------+---------+
+| Name                                                                 | DSP | Pragma | Variable      | Op        | Impl                     | Latency |
++----------------------------------------------------------------------+-----+--------+---------------+-----------+--------------------------+---------+
+| + matmul_full_contiguous                                             | 48  |        |               |           |                          |         |
+|  + matmul_full_contiguous_Pipeline_load_ab_full_loop                 | 0   |        |               |           |                          |         |
+|    icmp_ln20_fu_587_p2                                               |     |        | icmp_ln20     | seteq     | auto                     | 0       |
+|    add_ln20_fu_593_p2                                                |     |        | add_ln20      | add       | fabric                   | 0       |
+|    mul_8ns_10ns_17_1_1_U1                                            |     |        | mul_ln20      | mul       | auto                     | 0       |
+|    icmp_ln22_fu_611_p2                                               |     |        | icmp_ln22     | seteq     | auto                     | 0       |
+|    add_ln20_1_fu_671_p2                                              |     |        | add_ln20_1    | add       | fabric                   | 0       |
+|    icmp_ln20_1_fu_677_p2                                             |     |        | icmp_ln20_1   | seteq     | auto                     | 0       |
+|    select_ln20_fu_683_p3                                             |     |        | select_ln20   | select    | auto_sel                 | 0       |
+|  + matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop | 48  |        |               |           |                          |         |
+|    icmp_ln27_fu_2680_p2                                              |     |        | icmp_ln27     | seteq     | auto                     | 0       |
+|    add_ln27_fu_2686_p2                                               |     |        | add_ln27      | add       | fabric                   | 0       |
+|    icmp_ln29_fu_2695_p2                                              |     |        | icmp_ln29     | seteq     | auto                     | 0       |
+|    select_ln27_fu_2701_p3                                            |     |        | select_ln27   | select    | auto_sel                 | 0       |
+|    add_ln27_1_fu_2812_p2                                             |     |        | add_ln27_1    | add       | fabric                   | 0       |
+|    select_ln27_1_fu_2818_p3                                          |     |        | select_ln27_1 | select    | auto_sel                 | 0       |
+|    sparsemux_33_4_32_1_1_U48                                         |     |        | tmp           | sparsemux | compactencoding_dontcare | 0       |
+|    icmp_ln35_fu_3029_p2                                              |     |        | icmp_ln35     | setlt     | auto                     | 0       |
+|    select_ln35_fu_3034_p3                                            |     |        | select_ln35   | select    | auto_sel                 | 0       |
+|    sparsemux_33_4_32_1_1_U65                                         |     |        | tmp_1         | sparsemux | compactencoding_dontcare | 0       |
+|    mul_6ns_8ns_13_1_1_U49                                            |     |        | mul_ln35_16   | mul       | auto                     | 0       |
+|    sparsemux_33_4_32_1_1_U66                                         |     |        | tmp_2         | sparsemux | compactencoding_dontcare | 0       |
+|    xor_ln35_fu_2870_p2                                               |     |        | xor_ln35      | xor       | auto                     | 0       |
+|    mul_6ns_8ns_13_1_1_U53                                            |     |        | mul_ln35_17   | mul       | auto                     | 0       |
+|    sparsemux_33_4_32_1_1_U67                                         |     |        | tmp_3         | sparsemux | compactencoding_dontcare | 0       |
+|    mul_7ns_9ns_15_1_1_U54                                            |     |        | mul_ln35_18   | mul       | auto                     | 0       |
+|    sparsemux_33_4_32_1_1_U68                                         |     |        | tmp_4         | sparsemux | compactencoding_dontcare | 0       |
+|    add_ln35_fu_3171_p2                                               |     |        | add_ln35      | add       | fabric                   | 0       |
+|    mul_7ns_9ns_15_1_1_U55                                            |     |        | mul_ln35_19   | mul       | auto                     | 0       |
+|    sparsemux_33_4_32_1_1_U69                                         |     |        | tmp_5         | sparsemux | compactencoding_dontcare | 0       |
+|    mul_7ns_9ns_15_1_1_U50                                            |     |        | mul_ln35_20   | mul       | auto                     | 0       |
+|    sparsemux_33_4_32_1_1_U70                                         |     |        | tmp_6         | sparsemux | compactencoding_dontcare | 0       |
+|    mul_7ns_9ns_15_1_1_U56                                            |     |        | mul_ln35_21   | mul       | auto                     | 0       |
+|    sparsemux_33_4_32_1_1_U71                                         |     |        | tmp_7         | sparsemux | compactencoding_dontcare | 0       |
+|    mul_8ns_10ns_17_1_1_U57                                           |     |        | mul_ln35_22   | mul       | auto                     | 0       |
+|    sparsemux_33_4_32_1_1_U72                                         |     |        | tmp_8         | sparsemux | compactencoding_dontcare | 0       |
+|    add_ln35_1_fu_3327_p2                                             |     |        | add_ln35_1    | add       | fabric                   | 0       |
+|    mul_8ns_10ns_17_1_1_U58                                           |     |        | mul_ln35_23   | mul       | auto                     | 0       |
+|    sparsemux_33_4_32_1_1_U73                                         |     |        | tmp_9         | sparsemux | compactencoding_dontcare | 0       |
+|    mul_8ns_10ns_17_1_1_U59                                           |     |        | mul_ln35_24   | mul       | auto                     | 0       |
+|    sparsemux_33_4_32_1_1_U74                                         |     |        | tmp_s         | sparsemux | compactencoding_dontcare | 0       |
+|    add_ln35_2_fu_3420_p2                                             |     |        | add_ln35_2    | add       | fabric                   | 0       |
+|    mul_8ns_10ns_17_1_1_U60                                           |     |        | mul_ln35_25   | mul       | auto                     | 0       |
+|    sparsemux_33_4_32_1_1_U75                                         |     |        | tmp_10        | sparsemux | compactencoding_dontcare | 0       |
+|    mul_8ns_10ns_17_1_1_U61                                           |     |        | mul_ln35_26   | mul       | auto                     | 0       |
+|    sparsemux_33_4_32_1_1_U76                                         |     |        | tmp_11        | sparsemux | compactencoding_dontcare | 0       |
+|    mul_8ns_10ns_17_1_1_U62                                           |     |        | mul_ln35_27   | mul       | auto                     | 0       |
+|    sparsemux_33_4_32_1_1_U77                                         |     |        | tmp_12        | sparsemux | compactencoding_dontcare | 0       |
+|    mul_8ns_10ns_17_1_1_U51                                           |     |        | mul_ln35_28   | mul       | auto                     | 0       |
+|    sparsemux_33_4_32_1_1_U63                                         |     |        | tmp_13        | sparsemux | compactencoding_dontcare | 0       |
+|    mul_8ns_10ns_17_1_1_U52                                           |     |        | mul_ln35_29   | mul       | auto                     | 0       |
+|    sparsemux_33_4_32_1_1_U64                                         |     |        | tmp_14        | sparsemux | compactencoding_dontcare | 0       |
+|    mul_32s_32s_32_1_1_U32                                            | 3   |        | mul_ln35      | mul       | auto                     | 0       |
+|    mul_32s_32s_32_1_1_U33                                            | 3   |        | mul_ln35_1    | mul       | auto                     | 0       |
+|    mul_32s_32s_32_1_1_U34                                            | 3   |        | mul_ln35_2    | mul       | auto                     | 0       |
+|    mul_32s_32s_32_1_1_U35                                            | 3   |        | mul_ln35_3    | mul       | auto                     | 0       |
+|    mul_32s_32s_32_1_1_U36                                            | 3   |        | mul_ln35_4    | mul       | auto                     | 0       |
+|    mul_32s_32s_32_1_1_U37                                            | 3   |        | mul_ln35_5    | mul       | auto                     | 0       |
+|    mul_32s_32s_32_1_1_U38                                            | 3   |        | mul_ln35_6    | mul       | auto                     | 0       |
+|    mul_32s_32s_32_1_1_U39                                            | 3   |        | mul_ln35_7    | mul       | auto                     | 0       |
+|    mul_32s_32s_32_1_1_U40                                            | 3   |        | mul_ln35_8    | mul       | auto                     | 0       |
+|    mul_32s_32s_32_1_1_U41                                            | 3   |        | mul_ln35_9    | mul       | auto                     | 0       |
+|    mul_32s_32s_32_1_1_U42                                            | 3   |        | mul_ln35_10   | mul       | auto                     | 0       |
+|    mul_32s_32s_32_1_1_U43                                            | 3   |        | mul_ln35_11   | mul       | auto                     | 0       |
+|    mul_32s_32s_32_1_1_U44                                            | 3   |        | mul_ln35_12   | mul       | auto                     | 0       |
+|    mul_32s_32s_32_1_1_U45                                            | 3   |        | mul_ln35_13   | mul       | auto                     | 0       |
+|    mul_32s_32s_32_1_1_U46                                            | 3   |        | mul_ln35_14   | mul       | auto                     | 0       |
+|    mul_32s_32s_32_1_1_U47                                            | 3   |        | mul_ln35_15   | mul       | auto                     | 0       |
+|    add_ln35_4_fu_4633_p2                                             |     |        | add_ln35_4    | add       | fabric                   | 0       |
+|    add_ln35_7_fu_4647_p2                                             |     |        | add_ln35_7    | add       | fabric                   | 0       |
+|    add_ln35_10_fu_4663_p2                                            |     |        | add_ln35_10   | add       | fabric                   | 0       |
+|    add_ln35_11_fu_4667_p2                                            |     |        | add_ln35_11   | add       | fabric                   | 0       |
+|    add_ln35_14_fu_4625_p2                                            |     |        | add_ln35_14   | add       | fabric                   | 0       |
+|    add_ln38_fu_3696_p2                                               |     |        | add_ln38      | add       | fabric                   | 0       |
+|    add_ln29_fu_2793_p2                                               |     |        | add_ln29      | add       | fabric                   | 0       |
+|  + matmul_full_contiguous_Pipeline_store_c_full_loop                 | 0   |        |               |           |                          |         |
+|    icmp_ln43_fu_116_p2                                               |     |        | icmp_ln43     | seteq     | auto                     | 0       |
+|    add_ln43_fu_122_p2                                                |     |        | add_ln43      | add       | fabric                   | 0       |
+|    icmp_ln45_fu_137_p2                                               |     |        | icmp_ln45     | seteq     | auto                     | 0       |
+|    select_ln45_fu_185_p3                                             |     |        | select_ln45   | select    | auto_sel                 | 0       |
++----------------------------------------------------------------------+-----+--------+---------------+-----------+--------------------------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++--------------------------+--------------+-----------+------+------+--------+------------+------+---------+------------------+
+| Name                     | Usage        | Type      | BRAM | URAM | Pragma | Variable   | Impl | Latency | Bitwidth, Depth, |
+|                          |              |           |      |      |        |            |      |         | Banks            |
++--------------------------+--------------+-----------+------+------+--------+------------+------+---------+------------------+
+| + matmul_full_contiguous |              |           | 1    | 0    |        |            |      |         |                  |
+|   control_s_axi_U        | interface    | s_axilite |      |      |        |            |      |         |                  |
+|   gmem_a_m_axi_U         | interface    | m_axi     |      |      |        |            |      |         |                  |
+|   gmem_b_m_axi_U         | interface    | m_axi     |      |      |        |            |      |         |                  |
+|   gmem_c_m_axi_U         | interface    | m_axi     |      |      |        |            |      |         |                  |
+|   A_local_U              | ram_2p array |           |      |      |        | A_local    | auto | 1       | 32, 32, 1        |
+|   A_local_1_U            | ram_2p array |           |      |      |        | A_local_1  | auto | 1       | 32, 32, 1        |
+|   A_local_2_U            | ram_2p array |           |      |      |        | A_local_2  | auto | 1       | 32, 32, 1        |
+|   A_local_3_U            | ram_2p array |           |      |      |        | A_local_3  | auto | 1       | 32, 32, 1        |
+|   A_local_4_U            | ram_2p array |           |      |      |        | A_local_4  | auto | 1       | 32, 32, 1        |
+|   A_local_5_U            | ram_2p array |           |      |      |        | A_local_5  | auto | 1       | 32, 32, 1        |
+|   A_local_6_U            | ram_2p array |           |      |      |        | A_local_6  | auto | 1       | 32, 32, 1        |
+|   A_local_7_U            | ram_2p array |           |      |      |        | A_local_7  | auto | 1       | 32, 32, 1        |
+|   B_local_U              | ram_2p array |           |      |      |        | B_local    | auto | 1       | 32, 16, 1        |
+|   B_local_1_U            | ram_2p array |           |      |      |        | B_local_1  | auto | 1       | 32, 16, 1        |
+|   B_local_2_U            | ram_2p array |           |      |      |        | B_local_2  | auto | 1       | 32, 16, 1        |
+|   B_local_3_U            | ram_2p array |           |      |      |        | B_local_3  | auto | 1       | 32, 16, 1        |
+|   B_local_4_U            | ram_2p array |           |      |      |        | B_local_4  | auto | 1       | 32, 16, 1        |
+|   B_local_5_U            | ram_2p array |           |      |      |        | B_local_5  | auto | 1       | 32, 16, 1        |
+|   B_local_6_U            | ram_2p array |           |      |      |        | B_local_6  | auto | 1       | 32, 16, 1        |
+|   B_local_7_U            | ram_2p array |           |      |      |        | B_local_7  | auto | 1       | 32, 16, 1        |
+|   B_local_8_U            | ram_2p array |           |      |      |        | B_local_8  | auto | 1       | 32, 16, 1        |
+|   B_local_9_U            | ram_2p array |           |      |      |        | B_local_9  | auto | 1       | 32, 16, 1        |
+|   B_local_10_U           | ram_2p array |           |      |      |        | B_local_10 | auto | 1       | 32, 16, 1        |
+|   B_local_11_U           | ram_2p array |           |      |      |        | B_local_11 | auto | 1       | 32, 16, 1        |
+|   B_local_12_U           | ram_2p array |           |      |      |        | B_local_12 | auto | 1       | 32, 16, 1        |
+|   B_local_13_U           | ram_2p array |           |      |      |        | B_local_13 | auto | 1       | 32, 16, 1        |
+|   B_local_14_U           | ram_2p array |           |      |      |        | B_local_14 | auto | 1       | 32, 16, 1        |
+|   B_local_15_U           | ram_2p array |           |      |      |        | B_local_15 | auto | 1       | 32, 16, 1        |
+|   B_local_16_U           | ram_2p array |           |      |      |        | B_local_16 | auto | 1       | 32, 16, 1        |
+|   C_local_U              | ram_1p array |           | 1    |      |        | C_local    | auto | 1       | 32, 256, 1       |
++--------------------------+--------------+-----------+------+------+--------+------------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Inferred Pragmas
++-----------------+----------------------------------------------+--------------------------------------------------------------------------+----------------------------------------+
+| Type            | Options                                      | Location                                                                 | Inferred From                          |
++-----------------+----------------------------------------------+--------------------------------------------------------------------------+----------------------------------------+
+| ARRAY_PARTITION | dim=1 type=cyclic factor=8 variable=A_local  | variable A_local in matmul_full_contiguous matmul_full_contiguous.cpp:15 | pipeline matmul_full_contiguous.cpp:30 |
+| ARRAY_PARTITION | dim=1 type=cyclic factor=17 variable=B_local | variable B_local in matmul_full_contiguous matmul_full_contiguous.cpp:16 | pipeline matmul_full_contiguous.cpp:30 |
++-----------------+----------------------------------------------+--------------------------------------------------------------------------+----------------------------------------+
+
+* Valid Pragma Syntax
++-----------+-----------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| Type      | Options                                                                                                   | Location                                                        |
++-----------+-----------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| INTERFACE | m_axi port=a offset=slave bundle=gmem_a depth=MATRIX_SIZE max_read_burst_length=1 max_widen_bitwidth=512  | matmul_full_contiguous.cpp:6 in matmul_full_contiguous, a       |
+| INTERFACE | m_axi port=b offset=slave bundle=gmem_b depth=MATRIX_SIZE max_read_burst_length=1 max_widen_bitwidth=512  | matmul_full_contiguous.cpp:7 in matmul_full_contiguous, b       |
+| INTERFACE | m_axi port=c offset=slave bundle=gmem_c depth=MATRIX_SIZE max_write_burst_length=1 max_widen_bitwidth=512 | matmul_full_contiguous.cpp:8 in matmul_full_contiguous, c       |
+| INTERFACE | s_axilite port=a bundle=control                                                                           | matmul_full_contiguous.cpp:10 in matmul_full_contiguous, a      |
+| INTERFACE | s_axilite port=b bundle=control                                                                           | matmul_full_contiguous.cpp:11 in matmul_full_contiguous, b      |
+| INTERFACE | s_axilite port=c bundle=control                                                                           | matmul_full_contiguous.cpp:12 in matmul_full_contiguous, c      |
+| INTERFACE | s_axilite port=return bundle=control                                                                      | matmul_full_contiguous.cpp:13 in matmul_full_contiguous, return |
+| PIPELINE  | ii=1                                                                                                      | matmul_full_contiguous.cpp:21 in matmul_full_contiguous         |
+| PIPELINE  | ii=1                                                                                                      | matmul_full_contiguous.cpp:30 in matmul_full_contiguous         |
+| PIPELINE  | ii=1                                                                                                      | matmul_full_contiguous.cpp:44 in matmul_full_contiguous         |
++-----------+-----------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+
+

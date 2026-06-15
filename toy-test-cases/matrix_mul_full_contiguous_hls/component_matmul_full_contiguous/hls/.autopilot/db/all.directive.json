@@ -1,0 +1,23 @@
+[
+  {
+    "functionLabel": "",
+    "functionName": "matmul_full_contiguous",
+    "id": 0,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
+        {
+          "name": "name",
+          "value": "matmul_full_contiguous"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/run_hls.tcl",
+    "sourceLine": 11,
+    "success": true
+  }
+]

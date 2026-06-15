@@ -1,0 +1,17 @@
+txn_id	direction	argument	bundle	start_index	end_index	byte_addr	beats	axlen	elements_per_beat	issue_order	complete_order	depends_on	timeline_lane
+txn_a_0	read	a	gmem	0	255	0	256	255	1	0	256		a
+txn_a_2	read	a	gmem	256	511	1024	256	255	1	1	257		a
+txn_a_4	read	a	gmem	512	767	2048	256	255	1	2	258		a
+txn_a_6	read	a	gmem	768	1023	3072	256	255	1	3	259		a
+txn_a_8	read	a	gmem	1024	1279	4096	256	255	1	4	260		a
+txn_a_10	read	a	gmem	1280	1535	5120	256	255	1	5	261		a
+txn_a_12	read	a	gmem	1536	1791	6144	256	255	1	6	262		a
+txn_a_14	read	a	gmem	1792	2047	7168	256	255	1	7	263		a
+txn_a_1	write	a	gmem	0	255	0	256	255	1	515	771	txn_a_0	a
+txn_a_3	write	a	gmem	256	511	1024	256	255	1	771	1027	txn_a_2	a
+txn_a_5	write	a	gmem	512	767	2048	256	255	1	1027	1283	txn_a_4	a
+txn_a_7	write	a	gmem	768	1023	3072	256	255	1	1283	1539	txn_a_6	a
+txn_a_9	write	a	gmem	1024	1279	4096	256	255	1	1539	1795	txn_a_8	a
+txn_a_11	write	a	gmem	1280	1535	5120	256	255	1	1795	2051	txn_a_10	a
+txn_a_13	write	a	gmem	1536	1791	6144	256	255	1	2051	2307	txn_a_12	a
+txn_a_15	write	a	gmem	1792	2047	7168	256	255	1	2307	2563	txn_a_14	a

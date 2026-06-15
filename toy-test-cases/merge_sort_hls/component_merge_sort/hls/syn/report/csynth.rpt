@@ -1,0 +1,208 @@
+
+
+================================================================
+== Synthesis Summary Report of 'merge_sort_hls'
+================================================================
++ General Information: 
+    * Date:           Mon Jun  8 22:27:47 2026
+    * Version:        2025.1 (Build 6135595 on May 21 2025)
+    * Project:        component_merge_sort
+    * Solution:       hls (Vivado IP Flow Target)
+    * Product family: virtexuplus
+    * Target device:  xcvu9p-flga2104-2-i
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +------------------------------------------------+------+------+---------+---------+----------+---------+------+----------+---------+----+------------+------------+-----+
+    |                     Modules                    | Issue|      |      Latency      | Iteration|         | Trip |          |         |    |            |            |     |
+    |                     & Loops                    | Type | Slack| (cycles)|   (ns)  |  Latency | Interval| Count| Pipelined|  BRAM   | DSP|     FF     |     LUT    | URAM|
+    +------------------------------------------------+------+------+---------+---------+----------+---------+------+----------+---------+----+------------+------------+-----+
+    |+ merge_sort_hls                                |     -|  0.00|        -|        -|         -|        -|     -|        no|  8 (~0%)|   -|  7060 (~0%)|  6937 (~0%)|    -|
+    | + merge_sort_hls_Pipeline_load_input_loop      |     -|  0.00|       67|  335.000|         -|       65|     -|    rewind|        -|   -|  1022 (~0%)|   117 (~0%)|    -|
+    |  o load_input_loop                             |     -|  3.65|       65|  325.000|         3|        1|    64|       yes|        -|   -|           -|           -|    -|
+    | + merge_sort_hls_Pipeline_store_output_loop    |     -|  0.00|       67|  335.000|         -|       65|     -|    rewind|        -|   -|   526 (~0%)|   511 (~0%)|    -|
+    |  o store_output_loop                           |     -|  3.65|       65|  325.000|         3|        1|    64|       yes|        -|   -|           -|           -|    -|
+    | o merge_width_loop                             |     -|  3.65|        -|        -|         -|        -|     6|        no|        -|   -|           -|           -|    -|
+    |  o merge_block_loop                            |     -|  3.65|        -|        -|         -|        -|     -|        no|        -|   -|           -|           -|    -|
+    |   + merge_sort_hls_Pipeline_merge_b_to_a_loop  |     -|  1.68|        -|        -|         -|        0|     -|    rewind|        -|   -|   427 (~0%)|   447 (~0%)|    -|
+    |    o merge_b_to_a_loop                         |     -|  3.65|        -|        -|         3|        1|     -|       yes|        -|   -|           -|           -|    -|
+    |   + merge_sort_hls_Pipeline_merge_a_to_b_loop  |     -|  1.68|        -|        -|         -|        0|     -|    rewind|        -|   -|   427 (~0%)|   447 (~0%)|    -|
+    |    o merge_a_to_b_loop                         |     -|  3.65|        -|        -|         3|        1|     -|       yes|        -|   -|           -|           -|    -|
+    +------------------------------------------------+------+------+---------+---------+----------+---------+------+----------+---------+----+------------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++----------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| Interface      | Read/Write | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   | Resource Estimate |
+|                |            | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |                   |
++----------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| m_axi_gmem_in  | READ_ONLY  | 32 -> 512  | 64            | 0       | slave  | 0        | 512       | 16           | 16           | 16          | 16          | BRAM=8            |
+| m_axi_gmem_out | WRITE_ONLY | 32 -> 512  | 64            | 0       | slave  | 0        | 512       | 16           | 16           | 16          | 16          |                   |
++----------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 6             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface     | Register | Offset | Width | Access | Description                      | Bit Fields                                                           |
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_control | CTRL     | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER     | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_control | IP_IER   | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_control | IP_ISR   | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_control | in_r_1   | 0x10   | 32    | W      | Data signal of in_r              |                                                                      |
+| s_axi_control | in_r_2   | 0x14   | 32    | W      | Data signal of in_r              |                                                                      |
+| s_axi_control | out_r_1  | 0x1c   | 32    | W      | Data signal of out_r             |                                                                      |
+| s_axi_control | out_r_2  | 0x20   | 32    | W      | Data signal of out_r             |                                                                      |
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+-------------+
+| Argument | Direction | Datatype    |
++----------+-----------+-------------+
+| in       | in        | int const * |
+| out      | out       | int*        |
++----------+-----------+-------------+
+
+* SW-to-HW Mapping
++----------+----------------+-----------+----------+-----------------------------------+
+| Argument | HW Interface   | HW Type   | HW Usage | HW Info                           |
++----------+----------------+-----------+----------+-----------------------------------+
+| in       | m_axi_gmem_in  | interface |          | channel=0                         |
+| in       | s_axi_control  | register  | offset   | name=in_r_1 offset=0x10 range=32  |
+| in       | s_axi_control  | register  | offset   | name=in_r_2 offset=0x14 range=32  |
+| out      | m_axi_gmem_out | interface |          | channel=0                         |
+| out      | s_axi_control  | register  | offset   | name=out_r_1 offset=0x1c range=32 |
+| out      | s_axi_control  | register  | offset   | name=out_r_2 offset=0x20 range=32 |
++----------+----------------+-----------+----------+-----------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Burst Summary
++----------------+-----------+--------+-------+
+| HW Interface   | Direction | Length | Width |
++----------------+-----------+--------+-------+
+| m_axi_gmem_in  | read      | 4      | 512   |
+| m_axi_gmem_out | write     | 4      | 512   |
++----------------+-----------+--------+-------+
+
+* All M_AXI Variable Accesses
++----------------+----------+----------------------+-----------+--------------+--------+-------------------+---------------------+
+| HW Interface   | Variable | Access Location      | Direction | Burst Status | Length | Loop              | Loop Location       |
++----------------+----------+----------------------+-----------+--------------+--------+-------------------+---------------------+
+| m_axi_gmem_in  | in       | merge_sort.cpp:21:16 | read      | Widened      | 4      | load_input_loop   | merge_sort.cpp:19:3 |
+| m_axi_gmem_in  | in       | merge_sort.cpp:21:16 | read      | Inferred     | 64     | load_input_loop   | merge_sort.cpp:19:3 |
+| m_axi_gmem_out | out      | merge_sort.cpp:72:9  | write     | Widened      | 4      | store_output_loop | merge_sort.cpp:70:3 |
+| m_axi_gmem_out | out      | merge_sort.cpp:72:9  | write     | Inferred     | 64     | store_output_loop | merge_sort.cpp:70:3 |
++----------------+----------+----------------------+-----------+--------------+--------+-------------------+---------------------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++----------------------------------------------+-----+--------+---------------+--------+----------+---------+
+| Name                                         | DSP | Pragma | Variable      | Op     | Impl     | Latency |
++----------------------------------------------+-----+--------+---------------+--------+----------+---------+
+| + merge_sort_hls                             | 0   |        |               |        |          |         |
+|   icmp_ln27_fu_255_p2                        |     |        | icmp_ln27     | setlt  | auto     | 0       |
+|   icmp_ln29_fu_290_p2                        |     |        | icmp_ln29     | setlt  | auto     | 0       |
+|   add_ln30_fu_296_p2                         |     |        | add_ln30      | add    | fabric   | 0       |
+|   icmp_ln5_fu_311_p2                         |     |        | icmp_ln5      | setlt  | auto     | 0       |
+|   j_fu_317_p3                                |     |        | j             | select | auto_sel | 0       |
+|   left_1_fu_327_p2                           |     |        | left_1        | add    | fabric   | 0       |
+|   icmp_ln5_1_fu_342_p2                       |     |        | icmp_ln5_1    | setlt  | auto     | 0       |
+|   right_fu_348_p3                            |     |        | right         | select | auto_sel | 0       |
+|   add_ln29_fu_368_p2                         |     |        | add_ln29      | add    | fabric   | 0       |
+|   source_is_a_1_fu_358_p2                    |     |        | source_is_a_1 | xor    | auto     | 0       |
+|  + merge_sort_hls_Pipeline_load_input_loop   | 0   |        |               |        |          |         |
+|    icmp_ln19_fu_118_p2                       |     |        | icmp_ln19     | seteq  | auto     | 0       |
+|    add_ln19_fu_124_p2                        |     |        | add_ln19      | add    | fabric   | 0       |
+|    icmp_ln21_fu_134_p2                       |     |        | icmp_ln21     | seteq  | auto     | 0       |
+|  + merge_sort_hls_Pipeline_merge_b_to_a_loop | 0   |        |               |        |          |         |
+|    icmp_ln52_fu_155_p2                       |     |        | icmp_ln52     | setlt  | auto     | 0       |
+|    icmp_ln55_fu_160_p2                       |     |        | icmp_ln55     | setlt  | auto     | 0       |
+|    icmp_ln55_1_fu_165_p2                     |     |        | icmp_ln55_1   | setlt  | auto     | 0       |
+|    take_left_fu_191_p2                       |     |        | take_left     | setgt  | auto     | 0       |
+|    i_3_fu_197_p2                             |     |        | i_3           | add    | fabric   | 0       |
+|    j_2_fu_211_p2                             |     |        | j_2           | add    | fabric   | 0       |
+|    add_ln52_fu_180_p2                        |     |        | add_ln52      | add    | fabric   | 0       |
+|  + merge_sort_hls_Pipeline_merge_a_to_b_loop | 0   |        |               |        |          |         |
+|    icmp_ln36_fu_155_p2                       |     |        | icmp_ln36     | setlt  | auto     | 0       |
+|    icmp_ln39_fu_160_p2                       |     |        | icmp_ln39     | setlt  | auto     | 0       |
+|    icmp_ln39_1_fu_165_p2                     |     |        | icmp_ln39_1   | setlt  | auto     | 0       |
+|    take_left_fu_191_p2                       |     |        | take_left     | setgt  | auto     | 0       |
+|    i_5_fu_197_p2                             |     |        | i_5           | add    | fabric   | 0       |
+|    j_4_fu_211_p2                             |     |        | j_4           | add    | fabric   | 0       |
+|    add_ln36_fu_180_p2                        |     |        | add_ln36      | add    | fabric   | 0       |
+|  + merge_sort_hls_Pipeline_store_output_loop | 0   |        |               |        |          |         |
+|    icmp_ln70_fu_118_p2                       |     |        | icmp_ln70     | seteq  | auto     | 0       |
+|    add_ln70_fu_124_p2                        |     |        | add_ln70      | add    | fabric   | 0       |
+|    icmp_ln72_fu_139_p2                       |     |        | icmp_ln72     | seteq  | auto     | 0       |
+|    select_ln72_fu_187_p3                     |     |        | select_ln72   | select | auto_sel | 0       |
++----------------------------------------------+-----+--------+---------------+--------+----------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++--------------------+--------------+-----------+------+------+--------+----------+------+---------+------------------+
+| Name               | Usage        | Type      | BRAM | URAM | Pragma | Variable | Impl | Latency | Bitwidth, Depth, |
+|                    |              |           |      |      |        |          |      |         | Banks            |
++--------------------+--------------+-----------+------+------+--------+----------+------+---------+------------------+
+| + merge_sort_hls   |              |           | 8    | 0    |        |          |      |         |                  |
+|   control_s_axi_U  | interface    | s_axilite |      |      |        |          |      |         |                  |
+|   gmem_in_m_axi_U  | interface    | m_axi     | 8    |      |        |          |      |         |                  |
+|   gmem_out_m_axi_U | interface    | m_axi     |      |      |        |          |      |         |                  |
+|   buffer_a_U       | rom_np array |           |      |      |        | buffer_a | auto | 1       | 32, 64, 1        |
+|   buffer_b_U       | rom_np array |           |      |      |        | buffer_b | auto | 1       | 32, 64, 1        |
++--------------------+--------------+-----------+------+------+--------+----------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------+--------------------------------------------------------------------------------------------------------------+---------------------------------------------+
+| Type      | Options                                                                                                      | Location                                    |
++-----------+--------------------------------------------------------------------------------------------------------------+---------------------------------------------+
+| INLINE    |                                                                                                              | merge_sort.cpp:4 in min_int                 |
+| INTERFACE | m_axi port=in offset=slave bundle=gmem_in depth=SORT_SIZE max_read_burst_length=16 max_widen_bitwidth=512    | merge_sort.cpp:9 in merge_sort_hls, in      |
+| INTERFACE | m_axi port=out offset=slave bundle=gmem_out depth=SORT_SIZE max_write_burst_length=16 max_widen_bitwidth=512 | merge_sort.cpp:10 in merge_sort_hls, out    |
+| INTERFACE | s_axilite port=in bundle=control                                                                             | merge_sort.cpp:11 in merge_sort_hls, in     |
+| INTERFACE | s_axilite port=out bundle=control                                                                            | merge_sort.cpp:12 in merge_sort_hls, out    |
+| INTERFACE | s_axilite port=return bundle=control                                                                         | merge_sort.cpp:13 in merge_sort_hls, return |
+| PIPELINE  | ii=1                                                                                                         | merge_sort.cpp:20 in merge_sort_hls         |
+| PIPELINE  | ii=1                                                                                                         | merge_sort.cpp:37 in merge_sort_hls         |
+| PIPELINE  | ii=1                                                                                                         | merge_sort.cpp:53 in merge_sort_hls         |
+| PIPELINE  | ii=1                                                                                                         | merge_sort.cpp:71 in merge_sort_hls         |
++-----------+--------------------------------------------------------------------------------------------------------------+---------------------------------------------+
+
+

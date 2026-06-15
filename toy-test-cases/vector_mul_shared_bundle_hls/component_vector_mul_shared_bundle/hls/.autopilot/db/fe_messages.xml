@@ -1,0 +1,30 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/data/hls-dev/toy-test-cases/vector_mul_shared_bundle_hls/run_hls.tcl:10:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="vector_mul" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=vector_mul" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="vector_mul.cpp:5:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="vector_mul" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=in1 offset=slave bundle=gmem depth=VECTOR_SIZE max_read_burst_length=16" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="vector_mul.cpp:6:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="vector_mul" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=in2 offset=slave bundle=gmem depth=VECTOR_SIZE max_read_burst_length=16" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="vector_mul.cpp:7:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="vector_mul" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=out offset=slave bundle=gmem depth=VECTOR_SIZE max_write_burst_length=16" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="vector_mul.cpp:8:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="vector_mul" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=in1 bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="vector_mul.cpp:9:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="vector_mul" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=in2 bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="vector_mul.cpp:10:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="vector_mul" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=out bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="vector_mul.cpp:11:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="vector_mul" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="vector_mul.cpp:15:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="vector_mul" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

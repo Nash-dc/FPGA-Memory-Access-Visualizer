@@ -1,0 +1,873 @@
+  **** HLS Build v2025.1 6135595
+Sourcing Tcl script '/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/run_hls.tcl'
+INFO: [HLS 200-1510] Running: open_project -reset component_matmul_row_col 
+WARNING: [HLS 200-2182] The 'component_matmul_row_col' project will not automatically appear within Vitis IDE workspaces and is meant only for TCL batch use.  Please use open_component instead of open_project/open_solution to generate Vitis IDE compatible component files and directory structure.
+Resolution: For help on HLS 200-2182 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-2182.html
+INFO: [HLS 200-10] Opening and resetting solution '/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col'.
+INFO: [HLS 200-1510] Running: set_top matmul_row_col 
+INFO: [HLS 200-1510] Running: add_files matmul_row_col.cpp 
+INFO: [HLS 200-10] Adding design file 'matmul_row_col.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb matmul_row_col_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'matmul_row_col_test.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution -reset hls -flow_target vivado 
+INFO: [HLS 200-10] Creating and opening solution '/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xcvu9p-flga2104-2-i 
+INFO: [HLS 200-1611] Setting target device to 'xcvu9p-flga2104-2-i'
+INFO: [HLS 200-1510] Running: create_clock -period 5 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-1510] Running: config_interface -m_axi_alignment_byte_size 64 -m_axi_max_widen_bitwidth 512 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.07 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.15 seconds; current allocated memory: 445.730 MB.
+INFO: [HLS 200-10] Analyzing design file 'matmul_row_col.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.17 seconds. CPU system time: 0.37 seconds. Elapsed time: 0.66 seconds; current allocated memory: 447.543 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 85 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 63 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 57 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 52 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 52 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 55 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 55 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 55 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 55 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 69 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 67 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 65 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 65 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 65 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 74 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 88 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-115] Multiple burst writes of length 16 and bit width 512 in loop 'row_loop'(matmul_row_col.cpp:18:3) has been inferred on bundle 'gmem_c'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (matmul_row_col.cpp:18:3)
+INFO: [HLS 214-115] Multiple burst reads of length 16 and bit width 512 in loop 'load_ab_loop'(matmul_row_col.cpp:23:7) has been inferred on bundle 'gmem_b'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (matmul_row_col.cpp:23:7)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1.82 seconds. CPU system time: 0.51 seconds. Elapsed time: 7.12 seconds; current allocated memory: 457.977 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 457.977 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.03 seconds; current allocated memory: 458.098 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+WARNING: [SYNCHK 200-23] matmul_row_col.cpp:26: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 458.098 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.04 seconds; current allocated memory: 479.219 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 489.223 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'matmul_row_col' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'matmul_row_col_Pipeline_load_ab_loop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'load_ab_loop'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'load_ab_loop'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.06 seconds; current allocated memory: 490.168 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 490.168 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'matmul_row_col_Pipeline_compute_element_loop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'compute_element_loop'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'compute_element_loop'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 490.168 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.01 seconds; current allocated memory: 490.168 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'matmul_row_col' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 490.211 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 490.211 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'matmul_row_col_Pipeline_load_ab_loop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'matmul_row_col_Pipeline_load_ab_loop' pipeline 'load_ab_loop' pipeline type 'loop pipeline'
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_row_col_Pipeline_load_ab_loop/m_axi_gmem_b_0_ARVALID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_row_col_Pipeline_load_ab_loop/m_axi_gmem_b_0_ARADDR' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_row_col_Pipeline_load_ab_loop/m_axi_gmem_b_0_ARID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_row_col_Pipeline_load_ab_loop/m_axi_gmem_b_0_ARLEN' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_row_col_Pipeline_load_ab_loop/m_axi_gmem_b_0_ARSIZE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_row_col_Pipeline_load_ab_loop/m_axi_gmem_b_0_ARBURST' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_row_col_Pipeline_load_ab_loop/m_axi_gmem_b_0_ARLOCK' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_row_col_Pipeline_load_ab_loop/m_axi_gmem_b_0_ARCACHE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_row_col_Pipeline_load_ab_loop/m_axi_gmem_b_0_ARPROT' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_row_col_Pipeline_load_ab_loop/m_axi_gmem_b_0_ARQOS' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_row_col_Pipeline_load_ab_loop/m_axi_gmem_b_0_ARREGION' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_row_col_Pipeline_load_ab_loop/m_axi_gmem_b_0_ARUSER' to 0.
+INFO: [RTGEN 206-100] Generating core module 'partselect_32ns_512ns_9ns_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'matmul_row_col_Pipeline_load_ab_loop'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.03 seconds; current allocated memory: 490.211 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'matmul_row_col_Pipeline_compute_element_loop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'matmul_row_col_Pipeline_compute_element_loop' pipeline 'compute_element_loop' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'matmul_row_col_Pipeline_compute_element_loop'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 490.211 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'matmul_row_col' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'matmul_row_col/gmem_a' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'matmul_row_col/gmem_b' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'matmul_row_col/gmem_c' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'matmul_row_col/a' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'matmul_row_col/b' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'matmul_row_col/c' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'matmul_row_col' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'a', 'b', 'c' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'matmul_row_col'.
+INFO: [RTMG 210-278] Implementing memory 'matmul_row_col_A_row_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.06 seconds; current allocated memory: 492.141 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.29 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.32 seconds; current allocated memory: 495.719 MB.
+INFO: [HLS 200-1603] Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.4 seconds. CPU system time: 0.06 seconds. Elapsed time: 0.47 seconds; current allocated memory: 501.605 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for matmul_row_col.
+INFO: [VLOG 209-307] Generating Verilog RTL for matmul_row_col.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 273.97 MHz
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:09; Allocated memory: 55.875 MB.
+INFO: [HLS 200-1510] Running: cosim_design 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+   Build using "/data/2025.1/Vitis/lnx64/tools/vcxx/libexec//clang++"
+   Compiling apatb_matmul_row_col.cpp
+   Compiling matmul_row_col.cpp_pre.cpp.tb.cpp
+   Compiling matmul_row_col_test.cpp_pre.cpp.tb.cpp
+   Compiling apatb_matmul_row_col_ir.ll
+   Generating cosim.tv.exe
+INFO: [COSIM 212-302] Starting C TB testing ... 
+TEST PASSED
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /data/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab xil_defaultlib.apatb_matmul_row_col_top xil_defaultlib.glbl -Oenable_linking_all_libraries -prj matmul_row_col.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_1_20 -L floating_point_v7_0_25 --lib ieee_proposed=./ieee_proposed -L uvm -relax -i ./svr -i ./svtb -i ./file_agent -i ./matmul_row_col_subsystem -s matmul_row_col 
+Multi-threading is on. Using 10 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls/sim/verilog/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls/sim/verilog/matmul_row_col_matmul_row_col_Pipeline_compute_element_loop.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matmul_row_col_matmul_row_col_Pipeline_compute_element_loop
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls/sim/verilog/matmul_row_col.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_matmul_row_col_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls/sim/verilog/matmul_row_col.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matmul_row_col
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls/sim/verilog/matmul_row_col_matmul_row_col_Pipeline_load_ab_loop.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matmul_row_col_matmul_row_col_Pipeline_load_ab_loop
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls/sim/verilog/matmul_row_col_gmem_a_m_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matmul_row_col_gmem_a_m_axi
+INFO: [VRFC 10-311] analyzing module matmul_row_col_gmem_a_m_axi_load
+INFO: [VRFC 10-311] analyzing module matmul_row_col_gmem_a_m_axi_read
+INFO: [VRFC 10-311] analyzing module matmul_row_col_gmem_a_m_axi_burst_converter
+INFO: [VRFC 10-311] analyzing module matmul_row_col_gmem_a_m_axi_burst_interleave
+INFO: [VRFC 10-311] analyzing module matmul_row_col_gmem_a_m_axi_burst_sequential
+INFO: [VRFC 10-311] analyzing module matmul_row_col_gmem_a_m_axi_reg_slice
+INFO: [VRFC 10-311] analyzing module matmul_row_col_gmem_a_m_axi_fifo
+INFO: [VRFC 10-311] analyzing module matmul_row_col_gmem_a_m_axi_srl
+INFO: [VRFC 10-311] analyzing module matmul_row_col_gmem_a_m_axi_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls/sim/verilog/matmul_row_col_gmem_b_m_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matmul_row_col_gmem_b_m_axi
+INFO: [VRFC 10-311] analyzing module matmul_row_col_gmem_b_m_axi_load
+INFO: [VRFC 10-311] analyzing module matmul_row_col_gmem_b_m_axi_read
+INFO: [VRFC 10-311] analyzing module matmul_row_col_gmem_b_m_axi_burst_converter
+INFO: [VRFC 10-311] analyzing module matmul_row_col_gmem_b_m_axi_burst_interleave
+INFO: [VRFC 10-311] analyzing module matmul_row_col_gmem_b_m_axi_burst_sequential
+INFO: [VRFC 10-311] analyzing module matmul_row_col_gmem_b_m_axi_reg_slice
+INFO: [VRFC 10-311] analyzing module matmul_row_col_gmem_b_m_axi_fifo
+INFO: [VRFC 10-311] analyzing module matmul_row_col_gmem_b_m_axi_srl
+INFO: [VRFC 10-311] analyzing module matmul_row_col_gmem_b_m_axi_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls/sim/verilog/matmul_row_col_A_row_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matmul_row_col_A_row_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls/sim/verilog/matmul_row_col_mul_32s_32s_32_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matmul_row_col_mul_32s_32s_32_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls/sim/verilog/matmul_row_col_partselect_32ns_512ns_9ns_32_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matmul_row_col_partselect_32ns_512ns_9ns_32_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls/sim/verilog/matmul_row_col_gmem_c_m_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matmul_row_col_gmem_c_m_axi
+INFO: [VRFC 10-311] analyzing module matmul_row_col_gmem_c_m_axi_store
+INFO: [VRFC 10-311] analyzing module matmul_row_col_gmem_c_m_axi_write
+INFO: [VRFC 10-311] analyzing module matmul_row_col_gmem_c_m_axi_burst_converter
+INFO: [VRFC 10-311] analyzing module matmul_row_col_gmem_c_m_axi_burst_interleave
+INFO: [VRFC 10-311] analyzing module matmul_row_col_gmem_c_m_axi_burst_sequential
+INFO: [VRFC 10-311] analyzing module matmul_row_col_gmem_c_m_axi_throttle
+INFO: [VRFC 10-311] analyzing module matmul_row_col_gmem_c_m_axi_reg_slice
+INFO: [VRFC 10-311] analyzing module matmul_row_col_gmem_c_m_axi_fifo
+INFO: [VRFC 10-311] analyzing module matmul_row_col_gmem_c_m_axi_srl
+INFO: [VRFC 10-311] analyzing module matmul_row_col_gmem_c_m_axi_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls/sim/verilog/matmul_row_col_control_s_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matmul_row_col_control_s_axi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls/sim/verilog/matmul_row_col_flow_control_loop_pipe_sequential_init.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matmul_row_col_flow_control_loop_pipe_sequential_init
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls/sim/verilog/dataflow_monitor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dataflow_monitor
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls/sim/verilog/file_agent/file_agent_pkg.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls/sim/verilog/axivip/axi_pkg.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls/sim/verilog/axivip/axi_if.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls/sim/verilog/matmul_row_col_subsystem/matmul_row_col_subsystem_pkg.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls/sim/verilog/svtb/misc_interface.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls/sim/verilog/svtb/sv_module_top.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sv_module_top
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/proj/primebuilds/9999.0_PRIME_0428_0031/installs/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 4356. Module uvm_pkg doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/proj/primebuilds/9999.0_PRIME_0428_0031/installs/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 4356. Module uvm_pkg doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4468] File : /proj/primebuilds/9999.0_PRIME_0428_0031/installs/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv, Line : 25994, RANDC variable size more than 8 bits. This will be treated as a RAND variable instead.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.$unit_sv_module_top_sv
+Compiling package uvm.uvm_pkg
+Compiling package std.std
+Compiling package xil_defaultlib.axi_pkg
+Compiling package xil_defaultlib.matmul_row_col_subsystem_pkg
+Compiling package xil_defaultlib.file_agent_pkg
+Compiling package xil_defaultlib.$unit_dataflow_monitor_sv
+Compiling module xil_defaultlib.matmul_row_col_A_row_RAM_AUTO_1R...
+Compiling module xil_defaultlib.matmul_row_col_partselect_32ns_5...
+Compiling module xil_defaultlib.matmul_row_col_flow_control_loop...
+Compiling module xil_defaultlib.matmul_row_col_matmul_row_col_Pi...
+Compiling module xil_defaultlib.matmul_row_col_mul_32s_32s_32_1_...
+Compiling module xil_defaultlib.matmul_row_col_matmul_row_col_Pi...
+Compiling module xil_defaultlib.matmul_row_col_control_s_axi
+Compiling module xil_defaultlib.matmul_row_col_gmem_a_m_axi_srl(...
+Compiling module xil_defaultlib.matmul_row_col_gmem_a_m_axi_fifo...
+Compiling module xil_defaultlib.matmul_row_col_gmem_a_m_axi_srl(...
+Compiling module xil_defaultlib.matmul_row_col_gmem_a_m_axi_fifo...
+Compiling module xil_defaultlib.matmul_row_col_gmem_a_m_axi_load...
+Compiling module xil_defaultlib.matmul_row_col_gmem_a_m_axi_reg_...
+Compiling module xil_defaultlib.matmul_row_col_gmem_a_m_axi_burs...
+Compiling module xil_defaultlib.matmul_row_col_gmem_a_m_axi_reg_...
+Compiling module xil_defaultlib.matmul_row_col_gmem_a_m_axi_srl(...
+Compiling module xil_defaultlib.matmul_row_col_gmem_a_m_axi_fifo...
+Compiling module xil_defaultlib.matmul_row_col_gmem_a_m_axi_read...
+Compiling module xil_defaultlib.matmul_row_col_gmem_a_m_axi(C_M_...
+Compiling module xil_defaultlib.matmul_row_col_gmem_b_m_axi_srl(...
+Compiling module xil_defaultlib.matmul_row_col_gmem_b_m_axi_fifo...
+Compiling module xil_defaultlib.matmul_row_col_gmem_b_m_axi_srl(...
+Compiling module xil_defaultlib.matmul_row_col_gmem_b_m_axi_fifo...
+Compiling module xil_defaultlib.matmul_row_col_gmem_b_m_axi_load...
+Compiling module xil_defaultlib.matmul_row_col_gmem_b_m_axi_reg_...
+Compiling module xil_defaultlib.matmul_row_col_gmem_b_m_axi_burs...
+Compiling module xil_defaultlib.matmul_row_col_gmem_b_m_axi_reg_...
+Compiling module xil_defaultlib.matmul_row_col_gmem_b_m_axi_srl(...
+Compiling module xil_defaultlib.matmul_row_col_gmem_b_m_axi_fifo...
+Compiling module xil_defaultlib.matmul_row_col_gmem_b_m_axi_read...
+Compiling module xil_defaultlib.matmul_row_col_gmem_b_m_axi(C_M_...
+Compiling module xil_defaultlib.matmul_row_col_gmem_c_m_axi_srl(...
+Compiling module xil_defaultlib.matmul_row_col_gmem_c_m_axi_fifo...
+Compiling module xil_defaultlib.matmul_row_col_gmem_c_m_axi_srl(...
+Compiling module xil_defaultlib.matmul_row_col_gmem_c_m_axi_fifo...
+Compiling module xil_defaultlib.matmul_row_col_gmem_c_m_axi_srl(...
+Compiling module xil_defaultlib.matmul_row_col_gmem_c_m_axi_fifo...
+Compiling module xil_defaultlib.matmul_row_col_gmem_c_m_axi_srl(...
+Compiling module xil_defaultlib.matmul_row_col_gmem_c_m_axi_fifo...
+Compiling module xil_defaultlib.matmul_row_col_gmem_c_m_axi_srl(...
+Compiling module xil_defaultlib.matmul_row_col_gmem_c_m_axi_fifo...
+Compiling module xil_defaultlib.matmul_row_col_gmem_c_m_axi_stor...
+Compiling module xil_defaultlib.matmul_row_col_gmem_c_m_axi_reg_...
+Compiling module xil_defaultlib.matmul_row_col_gmem_c_m_axi_burs...
+Compiling module xil_defaultlib.matmul_row_col_gmem_c_m_axi_reg_...
+Compiling module xil_defaultlib.matmul_row_col_gmem_c_m_axi_srl(...
+Compiling module xil_defaultlib.matmul_row_col_gmem_c_m_axi_fifo...
+Compiling module xil_defaultlib.matmul_row_col_gmem_c_m_axi_reg_...
+Compiling module xil_defaultlib.matmul_row_col_gmem_c_m_axi_thro...
+Compiling module xil_defaultlib.matmul_row_col_gmem_c_m_axi_reg_...
+Compiling module xil_defaultlib.matmul_row_col_gmem_c_m_axi_writ...
+Compiling module xil_defaultlib.matmul_row_col_gmem_c_m_axi(C_M_...
+Compiling module xil_defaultlib.matmul_row_col
+Compiling module xil_defaultlib.misc_interface_default
+Compiling module xil_defaultlib.axi_if(ADDR_WIDTH=64,STRB_WIDTH=...
+Compiling module xil_defaultlib.axi_if(ADDR_WIDTH=6,STRB_WIDTH=4...
+Compiling module xil_defaultlib.sv_module_top
+Compiling module xil_defaultlib.nodf_module_intf_default
+Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=31)
+Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=1)
+Compiling module xil_defaultlib.dataflow_monitor_1
+Compiling module xil_defaultlib.apatb_matmul_row_col_top
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot matmul_row_col
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Thu Jun 11 22:43:14 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/matmul_row_col/xsim_script.tcl
+# xsim {matmul_row_col} -testplusarg UVM_VERBOSITY=UVM_NONE -testplusarg UVM_TESTNAME=matmul_row_col_test_lib -testplusarg UVM_TIMEOUT=20000000000000 -autoloadwcfg -tclbatch {matmul_row_col.tcl}
+Time resolution is 1 ps
+source matmul_row_col.tcl
+## run all
+UVM_INFO /data/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO /data/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18648) @ 0: reporter [NO_DPI_TSTNAME] UVM_NO_DPI defined--getting UVM_TESTNAME directly, without DPI
+UVM_INFO /data/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18752) @ 0: reporter [UVMTOP] UVM testbench topology:
+-----------------------------------------------------------------------------------------
+Name                            Type                              Size  Value            
+-----------------------------------------------------------------------------------------
+uvm_test_top                    matmul_row_col_test_lib           -     @370             
+  top_env                       matmul_row_col_env                -     @381             
+    axi_lite_control            uvm_env                           -     @498             
+      item_rtr_port             uvm_analysis_port                 -     @517             
+      item_wtr_port             uvm_analysis_port                 -     @507             
+      master                    uvm_agent                         -     @950             
+        ardrv                   uvm_driver #(REQ,RSP)             -     @1625            
+          item_read_imp         uvm_analysis_port                 -     @1654            
+          rsp_port              uvm_analysis_port                 -     @1644            
+          seq_item_port         uvm_seq_item_pull_port            -     @1634            
+          m_num_sent            integral                          32    'h0              
+        arsqr                   axi_sequencer                     -     @1664            
+          rsp_export            uvm_analysis_export               -     @1673            
+          seq_item_export       uvm_seq_item_pull_imp             -     @1791            
+          arbitration_queue     array                             0     -                
+          lock_queue            array                             0     -                
+          num_last_reqs         integral                          32    'd1              
+          num_last_rsps         integral                          32    'd1              
+        awdrv                   uvm_driver #(REQ,RSP)             -     @1097            
+          item_read_imp         uvm_analysis_port                 -     @1126            
+          rsp_port              uvm_analysis_port                 -     @1116            
+          seq_item_port         uvm_seq_item_pull_port            -     @1106            
+          m_num_sent            integral                          32    'h0              
+        awsqr                   axi_sequencer                     -     @1136            
+          rsp_export            uvm_analysis_export               -     @1145            
+          seq_item_export       uvm_seq_item_pull_imp             -     @1263            
+          arbitration_queue     array                             0     -                
+          lock_queue            array                             0     -                
+          num_last_reqs         integral                          32    'd1              
+          num_last_rsps         integral                          32    'd1              
+        bdrv                    uvm_driver #(REQ,RSP)             -     @1449            
+          item_read_imp         uvm_analysis_port                 -     @1478            
+          rsp_port              uvm_analysis_port                 -     @1468            
+          seq_item_port         uvm_seq_item_pull_port            -     @1458            
+          m_num_sent            integral                          32    'h0              
+        bsqr                    axi_sequencer                     -     @1488            
+          rsp_export            uvm_analysis_export               -     @1497            
+          seq_item_export       uvm_seq_item_pull_imp             -     @1615            
+          arbitration_queue     array                             0     -                
+          lock_queue            array                             0     -                
+          num_last_reqs         integral                          32    'd1              
+          num_last_rsps         integral                          32    'd1              
+        rdrv                    uvm_driver #(REQ,RSP)             -     @1801            
+          item_read_imp         uvm_analysis_port                 -     @1830            
+          rsp_port              uvm_analysis_port                 -     @1820            
+          seq_item_port         uvm_seq_item_pull_port            -     @1810            
+          m_num_sent            integral                          32    'h0              
+        rsqr                    axi_sequencer                     -     @1840            
+          rsp_export            uvm_analysis_export               -     @1849            
+          seq_item_export       uvm_seq_item_pull_imp             -     @1967            
+          arbitration_queue     array                             0     -                
+          lock_queue            array                             0     -                
+          num_last_reqs         integral                          32    'd1              
+          num_last_rsps         integral                          32    'd1              
+        wdrv                    uvm_driver #(REQ,RSP)             -     @1273            
+          item_read_imp         uvm_analysis_port                 -     @1302            
+          rsp_port              uvm_analysis_port                 -     @1292            
+          seq_item_port         uvm_seq_item_pull_port            -     @1282            
+          m_num_sent            integral                          32    'h0              
+        wsqr                    axi_sequencer                     -     @1312            
+          rsp_export            uvm_analysis_export               -     @1321            
+          seq_item_export       uvm_seq_item_pull_imp             -     @1439            
+          arbitration_queue     array                             0     -                
+          lock_queue            array                             0     -                
+          num_last_reqs         integral                          32    'd1              
+          num_last_rsps         integral                          32    'd1              
+      monitor                   uvm_monitor                       -     @772             
+        item_ar2r_port          uvm_analysis_port                 -     @841             
+        item_ar_port            uvm_analysis_port                 -     @811             
+        item_aw2b_port          uvm_analysis_port                 -     @831             
+        item_aw_port            uvm_analysis_port                 -     @781             
+        item_b_port             uvm_analysis_port                 -     @801             
+        item_r_port             uvm_analysis_port                 -     @821             
+        item_w_port             uvm_analysis_port                 -     @791             
+        checks_enable           integral                          1     'h1              
+        coverage_enable         integral                          1     'h1              
+      state                     axi_state                         -     @851             
+        ar2r_imp                uvm_analysis_imp_ar2r             -     @920             
+        ar_imp                  uvm_analysis_imp_ar               -     @890             
+        aw2b_imp                uvm_analysis_imp_aw2b             -     @910             
+        aw_imp                  uvm_analysis_imp_aw               -     @860             
+        b_imp                   uvm_analysis_imp_b                -     @880             
+        item_rtr_port           uvm_analysis_port                 -     @940             
+        item_wtr_port           uvm_analysis_port                 -     @930             
+        r_imp                   uvm_analysis_imp_r                -     @900             
+        w_imp                   uvm_analysis_imp_w                -     @870             
+        avg_rate                integral                          32    'h0              
+        exp_rate                integral                          32    'h0              
+        win_size                integral                          32    'h0              
+        bqnum_for_slaseq        integral                          32    'h0              
+        rq_from_model_num       integral                          32    'h0              
+      vsqr                      axi_virtual_sequencer             -     @959             
+        rsp_export              uvm_analysis_export               -     @968             
+        seq_item_export         uvm_seq_item_pull_imp             -     @1086            
+        arbitration_queue       array                             0     -                
+        lock_queue              array                             0     -                
+        num_last_reqs           integral                          32    'd1              
+        num_last_rsps           integral                          32    'd1              
+      cfg                       axi_cfg                           -     @399             
+        has_checker             integral                          1     'h1              
+        has_coverage            integral                          1     'h1              
+        id_num                  integral                          32    'h1              
+        reset_level             reset_level_enum                  32    RESET_LEVEL_LOW  
+        drv_type                drv_type_enum                     32    MASTER           
+        write_latency_mode      latency_mode_enum                 32    CHANNEL_FIRST    
+        read_latency_mode       latency_mode_enum                 32    CHANNEL_FIRST    
+        clatency                axi_latency                       -     @496             
+          wr_latency            integral                          32    'h0              
+          rd_latency            integral                          32    'h0              
+    axi_master_gmem_a           uvm_env                           -     @405             
+      item_rtr_port             uvm_analysis_port                 -     @424             
+      item_wtr_port             uvm_analysis_port                 -     @414             
+      monitor                   uvm_monitor                       -     @2050            
+        item_ar2r_port          uvm_analysis_port                 -     @2119            
+        item_ar_port            uvm_analysis_port                 -     @2089            
+        item_aw2b_port          uvm_analysis_port                 -     @2109            
+        item_aw_port            uvm_analysis_port                 -     @2059            
+        item_b_port             uvm_analysis_port                 -     @2079            
+        item_r_port             uvm_analysis_port                 -     @2099            
+        item_w_port             uvm_analysis_port                 -     @2069            
+        checks_enable           integral                          1     'h1              
+        coverage_enable         integral                          1     'h1              
+      slave                     uvm_agent                         -     @2228            
+        ardrv                   uvm_driver #(REQ,RSP)             -     @2905            
+          item_read_imp         uvm_analysis_port                 -     @2934            
+          rsp_port              uvm_analysis_port                 -     @2924            
+          seq_item_port         uvm_seq_item_pull_port            -     @2914            
+          m_num_sent            integral                          32    'h0              
+        arsqr                   axi_sequencer                     -     @2944            
+          rsp_export            uvm_analysis_export               -     @2953            
+          seq_item_export       uvm_seq_item_pull_imp             -     @3071            
+          arbitration_queue     array                             0     -                
+          lock_queue            array                             0     -                
+          num_last_reqs         integral                          32    'd1              
+          num_last_rsps         integral                          32    'd1              
+        awdrv                   uvm_driver #(REQ,RSP)             -     @2377            
+          item_read_imp         uvm_analysis_port                 -     @2406            
+          rsp_port              uvm_analysis_port                 -     @2396            
+          seq_item_port         uvm_seq_item_pull_port            -     @2386            
+          m_num_sent            integral                          32    'h0              
+        awsqr                   axi_sequencer                     -     @2416            
+          rsp_export            uvm_analysis_export               -     @2425            
+          seq_item_export       uvm_seq_item_pull_imp             -     @2543            
+          arbitration_queue     array                             0     -                
+          lock_queue            array                             0     -                
+          num_last_reqs         integral                          32    'd1              
+          num_last_rsps         integral                          32    'd1              
+        bdrv                    uvm_driver #(REQ,RSP)             -     @2729            
+          item_read_imp         uvm_analysis_port                 -     @2758            
+          rsp_port              uvm_analysis_port                 -     @2748            
+          seq_item_port         uvm_seq_item_pull_port            -     @2738            
+          m_num_sent            integral                          32    'h0              
+        bsqr                    axi_sequencer                     -     @2768            
+          rsp_export            uvm_analysis_export               -     @2777            
+          seq_item_export       uvm_seq_item_pull_imp             -     @2895            
+          arbitration_queue     array                             0     -                
+          lock_queue            array                             0     -                
+          num_last_reqs         integral                          32    'd1              
+          num_last_rsps         integral                          32    'd1              
+        rdrv                    uvm_driver #(REQ,RSP)             -     @3081            
+          item_read_imp         uvm_analysis_port                 -     @3110            
+          rsp_port              uvm_analysis_port                 -     @3100            
+          seq_item_port         uvm_seq_item_pull_port            -     @3090            
+          m_num_sent            integral                          32    'h0              
+        rsqr                    axi_sequencer                     -     @3120            
+          rsp_export            uvm_analysis_export               -     @3129            
+          seq_item_export       uvm_seq_item_pull_imp             -     @3247            
+          arbitration_queue     array                             0     -                
+          lock_queue            array                             0     -                
+          num_last_reqs         integral                          32    'd1              
+          num_last_rsps         integral                          32    'd1              
+        wdrv                    uvm_driver #(REQ,RSP)             -     @2553            
+          item_read_imp         uvm_analysis_port                 -     @2582            
+          rsp_port              uvm_analysis_port                 -     @2572            
+          seq_item_port         uvm_seq_item_pull_port            -     @2562            
+          m_num_sent            integral                          32    'h0              
+        wsqr                    axi_sequencer                     -     @2592            
+          rsp_export            uvm_analysis_export               -     @2601            
+          seq_item_export       uvm_seq_item_pull_imp             -     @2719            
+          arbitration_queue     array                             0     -                
+          lock_queue            array                             0     -                
+          num_last_reqs         integral                          32    'd1              
+          num_last_rsps         integral                          32    'd1              
+      state                     axi_state                         -     @2129            
+        ar2r_imp                uvm_analysis_imp_ar2r             -     @2198            
+        ar_imp                  uvm_analysis_imp_ar               -     @2168            
+        aw2b_imp                uvm_analysis_imp_aw2b             -     @2188            
+        aw_imp                  uvm_analysis_imp_aw               -     @2138            
+        b_imp                   uvm_analysis_imp_b                -     @2158            
+        item_rtr_port           uvm_analysis_port                 -     @2218            
+        item_wtr_port           uvm_analysis_port                 -     @2208            
+        r_imp                   uvm_analysis_imp_r                -     @2178            
+        w_imp                   uvm_analysis_imp_w                -     @2148            
+        avg_rate                integral                          32    'h0              
+        exp_rate                integral                          32    'h0              
+        win_size                integral                          32    'h0              
+        bqnum_for_slaseq        integral                          32    'h0              
+        rq_from_model_num       integral                          32    'h0              
+      vsqr                      axi_virtual_sequencer             -     @2237            
+        rsp_export              uvm_analysis_export               -     @2246            
+        seq_item_export         uvm_seq_item_pull_imp             -     @2364            
+        arbitration_queue       array                             0     -                
+        lock_queue              array                             0     -                
+        num_last_reqs           integral                          32    'd1              
+        num_last_rsps           integral                          32    'd1              
+      cfg                       axi_cfg                           -     @396             
+        has_checker             integral                          1     'h1              
+        has_coverage            integral                          1     'h1              
+        id_num                  integral                          32    'h1              
+        reset_level             reset_level_enum                  32    RESET_LEVEL_LOW  
+        drv_type                drv_type_enum                     32    SLAVE            
+        write_latency_mode      latency_mode_enum                 32    TRANSACTION_FIRST
+        read_latency_mode       latency_mode_enum                 32    TRANSACTION_FIRST
+        clatency                axi_latency                       -     @400             
+          wr_latency            integral                          32    'h0              
+          rd_latency            integral                          32    'h0              
+    axi_master_gmem_b           uvm_env                           -     @436             
+      item_rtr_port             uvm_analysis_port                 -     @455             
+      item_wtr_port             uvm_analysis_port                 -     @445             
+      monitor                   uvm_monitor                       -     @3328            
+        item_ar2r_port          uvm_analysis_port                 -     @3397            
+        item_ar_port            uvm_analysis_port                 -     @3367            
+        item_aw2b_port          uvm_analysis_port                 -     @3387            
+        item_aw_port            uvm_analysis_port                 -     @3337            
+        item_b_port             uvm_analysis_port                 -     @3357            
+        item_r_port             uvm_analysis_port                 -     @3377            
+        item_w_port             uvm_analysis_port                 -     @3347            
+        checks_enable           integral                          1     'h1              
+        coverage_enable         integral                          1     'h1              
+      slave                     uvm_agent                         -     @3506            
+        ardrv                   uvm_driver #(REQ,RSP)             -     @4183            
+          item_read_imp         uvm_analysis_port                 -     @4212            
+          rsp_port              uvm_analysis_port                 -     @4202            
+          seq_item_port         uvm_seq_item_pull_port            -     @4192            
+          m_num_sent            integral                          32    'h0              
+        arsqr                   axi_sequencer                     -     @4222            
+          rsp_export            uvm_analysis_export               -     @4231            
+          seq_item_export       uvm_seq_item_pull_imp             -     @4349            
+          arbitration_queue     array                             0     -                
+          lock_queue            array                             0     -                
+          num_last_reqs         integral                          32    'd1              
+          num_last_rsps         integral                          32    'd1              
+        awdrv                   uvm_driver #(REQ,RSP)             -     @3655            
+          item_read_imp         uvm_analysis_port                 -     @3684            
+          rsp_port              uvm_analysis_port                 -     @3674            
+          seq_item_port         uvm_seq_item_pull_port            -     @3664            
+          m_num_sent            integral                          32    'h0              
+        awsqr                   axi_sequencer                     -     @3694            
+          rsp_export            uvm_analysis_export               -     @3703            
+          seq_item_export       uvm_seq_item_pull_imp             -     @3821            
+          arbitration_queue     array                             0     -                
+          lock_queue            array                             0     -                
+          num_last_reqs         integral                          32    'd1              
+          num_last_rsps         integral                          32    'd1              
+        bdrv                    uvm_driver #(REQ,RSP)             -     @4007            
+          item_read_imp         uvm_analysis_port                 -     @4036            
+          rsp_port              uvm_analysis_port                 -     @4026            
+          seq_item_port         uvm_seq_item_pull_port            -     @4016            
+          m_num_sent            integral                          32    'h0              
+        bsqr                    axi_sequencer                     -     @4046            
+          rsp_export            uvm_analysis_export               -     @4055            
+          seq_item_export       uvm_seq_item_pull_imp             -     @4173            
+          arbitration_queue     array                             0     -                
+          lock_queue            array                             0     -                
+          num_last_reqs         integral                          32    'd1              
+          num_last_rsps         integral                          32    'd1              
+        rdrv                    uvm_driver #(REQ,RSP)             -     @4359            
+          item_read_imp         uvm_analysis_port                 -     @4388            
+          rsp_port              uvm_analysis_port                 -     @4378            
+          seq_item_port         uvm_seq_item_pull_port            -     @4368            
+          m_num_sent            integral                          32    'h0              
+        rsqr                    axi_sequencer                     -     @4398            
+          rsp_export            uvm_analysis_export               -     @4407            
+          seq_item_export       uvm_seq_item_pull_imp             -     @4525            
+          arbitration_queue     array                             0     -                
+          lock_queue            array                             0     -                
+          num_last_reqs         integral                          32    'd1              
+          num_last_rsps         integral                          32    'd1              
+        wdrv                    uvm_driver #(REQ,RSP)             -     @3831            
+          item_read_imp         uvm_analysis_port                 -     @3860            
+          rsp_port              uvm_analysis_port                 -     @3850            
+          seq_item_port         uvm_seq_item_pull_port            -     @3840            
+          m_num_sent            integral                          32    'h0              
+        wsqr                    axi_sequencer                     -     @3870            
+          rsp_export            uvm_analysis_export               -     @3879            
+          seq_item_export       uvm_seq_item_pull_imp             -     @3997            
+          arbitration_queue     array                             0     -                
+          lock_queue            array                             0     -                
+          num_last_reqs         integral                          32    'd1              
+          num_last_rsps         integral                          32    'd1              
+      state                     axi_state                         -     @3407            
+        ar2r_imp                uvm_analysis_imp_ar2r             -     @3476            
+        ar_imp                  uvm_analysis_imp_ar               -     @3446            
+        aw2b_imp                uvm_analysis_imp_aw2b             -     @3466            
+        aw_imp                  uvm_analysis_imp_aw               -     @3416            
+        b_imp                   uvm_analysis_imp_b                -     @3436            
+        item_rtr_port           uvm_analysis_port                 -     @3496            
+        item_wtr_port           uvm_analysis_port                 -     @3486            
+        r_imp                   uvm_analysis_imp_r                -     @3456            
+        w_imp                   uvm_analysis_imp_w                -     @3426            
+        avg_rate                integral                          32    'h0              
+        exp_rate                integral                          32    'h0              
+        win_size                integral                          32    'h0              
+        bqnum_for_slaseq        integral                          32    'h0              
+        rq_from_model_num       integral                          32    'h0              
+      vsqr                      axi_virtual_sequencer             -     @3515            
+        rsp_export              uvm_analysis_export               -     @3524            
+        seq_item_export         uvm_seq_item_pull_imp             -     @3642            
+        arbitration_queue       array                             0     -                
+        lock_queue              array                             0     -                
+        num_last_reqs           integral                          32    'd1              
+        num_last_rsps           integral                          32    'd1              
+      cfg                       axi_cfg                           -     @397             
+        has_checker             integral                          1     'h1              
+        has_coverage            integral                          1     'h1              
+        id_num                  integral                          32    'h1              
+        reset_level             reset_level_enum                  32    RESET_LEVEL_LOW  
+        drv_type                drv_type_enum                     32    SLAVE            
+        write_latency_mode      latency_mode_enum                 32    TRANSACTION_FIRST
+        read_latency_mode       latency_mode_enum                 32    TRANSACTION_FIRST
+        clatency                axi_latency                       -     @434             
+          wr_latency            integral                          32    'h0              
+          rd_latency            integral                          32    'h0              
+    axi_master_gmem_c           uvm_env                           -     @467             
+      item_rtr_port             uvm_analysis_port                 -     @486             
+      item_wtr_port             uvm_analysis_port                 -     @476             
+      monitor                   uvm_monitor                       -     @4606            
+        item_ar2r_port          uvm_analysis_port                 -     @4675            
+        item_ar_port            uvm_analysis_port                 -     @4645            
+        item_aw2b_port          uvm_analysis_port                 -     @4665            
+        item_aw_port            uvm_analysis_port                 -     @4615            
+        item_b_port             uvm_analysis_port                 -     @4635            
+        item_r_port             uvm_analysis_port                 -     @4655            
+        item_w_port             uvm_analysis_port                 -     @4625            
+        checks_enable           integral                          1     'h1              
+        coverage_enable         integral                          1     'h1              
+      slave                     uvm_agent                         -     @4784            
+        ardrv                   uvm_driver #(REQ,RSP)             -     @5461            
+          item_read_imp         uvm_analysis_port                 -     @5490            
+          rsp_port              uvm_analysis_port                 -     @5480            
+          seq_item_port         uvm_seq_item_pull_port            -     @5470            
+          m_num_sent            integral                          32    'h0              
+        arsqr                   axi_sequencer                     -     @5500            
+          rsp_export            uvm_analysis_export               -     @5509            
+          seq_item_export       uvm_seq_item_pull_imp             -     @5627            
+          arbitration_queue     array                             0     -                
+          lock_queue            array                             0     -                
+          num_last_reqs         integral                          32    'd1              
+          num_last_rsps         integral                          32    'd1              
+        awdrv                   uvm_driver #(REQ,RSP)             -     @4933            
+          item_read_imp         uvm_analysis_port                 -     @4962            
+          rsp_port              uvm_analysis_port                 -     @4952            
+          seq_item_port         uvm_seq_item_pull_port            -     @4942            
+          m_num_sent            integral                          32    'h0              
+        awsqr                   axi_sequencer                     -     @4972            
+          rsp_export            uvm_analysis_export               -     @4981            
+          seq_item_export       uvm_seq_item_pull_imp             -     @5099            
+          arbitration_queue     array                             0     -                
+          lock_queue            array                             0     -                
+          num_last_reqs         integral                          32    'd1              
+          num_last_rsps         integral                          32    'd1              
+        bdrv                    uvm_driver #(REQ,RSP)             -     @5285            
+          item_read_imp         uvm_analysis_port                 -     @5314            
+          rsp_port              uvm_analysis_port                 -     @5304            
+          seq_item_port         uvm_seq_item_pull_port            -     @5294            
+          m_num_sent            integral                          32    'h0              
+        bsqr                    axi_sequencer                     -     @5324            
+          rsp_export            uvm_analysis_export               -     @5333            
+          seq_item_export       uvm_seq_item_pull_imp             -     @5451            
+          arbitration_queue     array                             0     -                
+          lock_queue            array                             0     -                
+          num_last_reqs         integral                          32    'd1              
+          num_last_rsps         integral                          32    'd1              
+        rdrv                    uvm_driver #(REQ,RSP)             -     @5637            
+          item_read_imp         uvm_analysis_port                 -     @5666            
+          rsp_port              uvm_analysis_port                 -     @5656            
+          seq_item_port         uvm_seq_item_pull_port            -     @5646            
+          m_num_sent            integral                          32    'h0              
+        rsqr                    axi_sequencer                     -     @5676            
+          rsp_export            uvm_analysis_export               -     @5685            
+          seq_item_export       uvm_seq_item_pull_imp             -     @5803            
+          arbitration_queue     array                             0     -                
+          lock_queue            array                             0     -                
+          num_last_reqs         integral                          32    'd1              
+          num_last_rsps         integral                          32    'd1              
+        wdrv                    uvm_driver #(REQ,RSP)             -     @5109            
+          item_read_imp         uvm_analysis_port                 -     @5138            
+          rsp_port              uvm_analysis_port                 -     @5128            
+          seq_item_port         uvm_seq_item_pull_port            -     @5118            
+          m_num_sent            integral                          32    'h0              
+        wsqr                    axi_sequencer                     -     @5148            
+          rsp_export            uvm_analysis_export               -     @5157            
+          seq_item_export       uvm_seq_item_pull_imp             -     @5275            
+          arbitration_queue     array                             0     -                
+          lock_queue            array                             0     -                
+          num_last_reqs         integral                          32    'd1              
+          num_last_rsps         integral                          32    'd1              
+      state                     axi_state                         -     @4685            
+        ar2r_imp                uvm_analysis_imp_ar2r             -     @4754            
+        ar_imp                  uvm_analysis_imp_ar               -     @4724            
+        aw2b_imp                uvm_analysis_imp_aw2b             -     @4744            
+        aw_imp                  uvm_analysis_imp_aw               -     @4694            
+        b_imp                   uvm_analysis_imp_b                -     @4714            
+        item_rtr_port           uvm_analysis_port                 -     @4774            
+        item_wtr_port           uvm_analysis_port                 -     @4764            
+        r_imp                   uvm_analysis_imp_r                -     @4734            
+        w_imp                   uvm_analysis_imp_w                -     @4704            
+        avg_rate                integral                          32    'h0              
+        exp_rate                integral                          32    'h0              
+        win_size                integral                          32    'h0              
+        bqnum_for_slaseq        integral                          32    'h0              
+        rq_from_model_num       integral                          32    'h0              
+      vsqr                      axi_virtual_sequencer             -     @4793            
+        rsp_export              uvm_analysis_export               -     @4802            
+        seq_item_export         uvm_seq_item_pull_imp             -     @4920            
+        arbitration_queue       array                             0     -                
+        lock_queue              array                             0     -                
+        num_last_reqs           integral                          32    'd1              
+        num_last_rsps           integral                          32    'd1              
+      cfg                       axi_cfg                           -     @398             
+        has_checker             integral                          1     'h1              
+        has_coverage            integral                          1     'h1              
+        id_num                  integral                          32    'h1              
+        reset_level             reset_level_enum                  32    RESET_LEVEL_LOW  
+        drv_type                drv_type_enum                     32    SLAVE            
+        write_latency_mode      latency_mode_enum                 32    TRANSACTION_FIRST
+        read_latency_mode       latency_mode_enum                 32    TRANSACTION_FIRST
+        clatency                axi_latency                       -     @465             
+          wr_latency            integral                          32    'h0              
+          rd_latency            integral                          32    'h0              
+    matmul_row_col_virtual_sqr  matmul_row_col_virtual_sequencer  -     @629             
+      rsp_export                uvm_analysis_export               -     @638             
+      seq_item_export           uvm_seq_item_pull_imp             -     @756             
+      arbitration_queue         array                             0     -                
+      lock_queue                array                             0     -                
+      num_last_reqs             integral                          32    'd1              
+      num_last_rsps             integral                          32    'd1              
+    refm                        matmul_row_col_reference_model    -     @527             
+      trans_num_idx             integral                          32    'h0              
+    subsys_mon                  matmul_row_col_subsystem_monitor  -     @540             
+      control_rtr_imp           uvm_analysis_imp_axi_rtr_control  -     @619             
+      control_wtr_imp           uvm_analysis_imp_axi_wtr_control  -     @609             
+      gmem_a_rtr_imp            uvm_analysis_imp_axi_rtr_gmem_a   -     @559             
+      gmem_a_wtr_imp            uvm_analysis_imp_axi_wtr_gmem_a   -     @549             
+      gmem_b_rtr_imp            uvm_analysis_imp_axi_rtr_gmem_b   -     @579             
+      gmem_b_wtr_imp            uvm_analysis_imp_axi_wtr_gmem_b   -     @569             
+      gmem_c_rtr_imp            uvm_analysis_imp_axi_rtr_gmem_c   -     @599             
+      gmem_c_wtr_imp            uvm_analysis_imp_axi_wtr_gmem_c   -     @589             
+      scbd                      matmul_row_col_scoreboard         -     @5891            
+        refm                    matmul_row_col_reference_model    -     @527             
+          trans_num_idx         integral                          32    'h0              
+    refm                        matmul_row_col_reference_model    -     @527             
+    matmul_row_col_virtual_sqr  matmul_row_col_virtual_sequencer  -     @629             
+    matmul_row_col_cfg          matmul_row_col_config             -     @395             
+      gmem_a_cfg                axi_cfg                           -     @396             
+        has_checker             integral                          1     'h1              
+        has_coverage            integral                          1     'h1              
+        id_num                  integral                          32    'h1              
+        reset_level             reset_level_enum                  32    RESET_LEVEL_LOW  
+        drv_type                drv_type_enum                     32    SLAVE            
+        write_latency_mode      latency_mode_enum                 32    TRANSACTION_FIRST
+        read_latency_mode       latency_mode_enum                 32    TRANSACTION_FIRST
+        clatency                axi_latency                       -     @400             
+          wr_latency            integral                          32    'h0              
+          rd_latency            integral                          32    'h0              
+      gmem_b_cfg                axi_cfg                           -     @397             
+        has_checker             integral                          1     'h1              
+        has_coverage            integral                          1     'h1              
+        id_num                  integral                          32    'h1              
+        reset_level             reset_level_enum                  32    RESET_LEVEL_LOW  
+        drv_type                drv_type_enum                     32    SLAVE            
+        write_latency_mode      latency_mode_enum                 32    TRANSACTION_FIRST
+        read_latency_mode       latency_mode_enum                 32    TRANSACTION_FIRST
+        clatency                axi_latency                       -     @434             
+          wr_latency            integral                          32    'h0              
+          rd_latency            integral                          32    'h0              
+      gmem_c_cfg                axi_cfg                           -     @398             
+        has_checker             integral                          1     'h1              
+        has_coverage            integral                          1     'h1              
+        id_num                  integral                          32    'h1              
+        reset_level             reset_level_enum                  32    RESET_LEVEL_LOW  
+        drv_type                drv_type_enum                     32    SLAVE            
+        write_latency_mode      latency_mode_enum                 32    TRANSACTION_FIRST
+        read_latency_mode       latency_mode_enum                 32    TRANSACTION_FIRST
+        clatency                axi_latency                       -     @465             
+          wr_latency            integral                          32    'h0              
+          rd_latency            integral                          32    'h0              
+      control_cfg               axi_cfg                           -     @399             
+        has_checker             integral                          1     'h1              
+        has_coverage            integral                          1     'h1              
+        id_num                  integral                          32    'h1              
+        reset_level             reset_level_enum                  32    RESET_LEVEL_LOW  
+        drv_type                drv_type_enum                     32    MASTER           
+        write_latency_mode      latency_mode_enum                 32    CHANNEL_FIRST    
+        read_latency_mode       latency_mode_enum                 32    CHANNEL_FIRST    
+        clatency                axi_latency                       -     @496             
+          wr_latency            integral                          32    'h0              
+          rd_latency            integral                          32    'h0              
+      check_ena                 integral                          32    'h0              
+      cover_ena                 integral                          32    'h0              
+-----------------------------------------------------------------------------------------
+
+UVM_INFO /data/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 1 [0.00%] @ "113000"
+// RTL Simulation : 1 / 1 [100.00%] @ "65498000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 65532500 ps : File "/data/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+## quit
+INFO: [Common 17-206] Exiting xsim at Thu Jun 11 22:43:19 2026...
+INFO: [COSIM 212-316] Starting C post checking ...
+TEST PASSED
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+INFO: [HLS 200-2161] Finished Command cosim_design Elapsed time: 00:00:37; Allocated memory: 6.648 MB.
+INFO: [HLS 200-112] Total CPU user time: 131.94 seconds. Total CPU system time: 5.78 seconds. Total elapsed time: 48.51 seconds; peak allocated memory: 508.254 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 49s
+INFO: [vitis-run 60-1662] Stopping dispatch session having empty uuid.

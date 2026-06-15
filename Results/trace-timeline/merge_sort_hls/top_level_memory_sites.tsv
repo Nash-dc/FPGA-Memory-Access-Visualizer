@@ -1,0 +1,3 @@
+site_id	function	basic_block	event	argument	argument_index	bytes	pointer	instruction
+0	_Z14merge_sort_hlsPKiPi	for.body	arg_read	in	0	4	  %arrayidx = getelementptr inbounds i32, i32* %1, i64 %idxprom	  %6 = load i32, i32* %arrayidx, align 4
+1	_Z14merge_sort_hlsPKiPi	cond.end	arg_write	out	1	4	  %arrayidx94 = getelementptr inbounds i32, i32* %76, i64 %idxprom93	  store i32 %cond, i32* %arrayidx94, align 4

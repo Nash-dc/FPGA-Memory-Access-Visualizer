@@ -1,0 +1,4 @@
+site_id	function	basic_block	event	argument	argument_index	bytes	pointer	instruction
+0	_Z16matmul_partitionPiS_S_ii	if.end	arg_read	in1	0	4	  %arrayidx = getelementptr inbounds i32, i32* %6, i64 %idxprom	  %11 = load i32, i32* %arrayidx, align 4
+1	_Z16matmul_partitionPiS_S_ii	if.end18	arg_read	in2	1	4	  %arrayidx20 = getelementptr inbounds i32, i32* %22, i64 %idxprom19	  %27 = load i32, i32* %arrayidx20, align 4
+2	_Z16matmul_partitionPiS_S_ii	if.end86	arg_write	out_r	2	4	  %arrayidx92 = getelementptr inbounds i32, i32* %69, i64 %idxprom91	  store i32 %68, i32* %arrayidx92, align 4

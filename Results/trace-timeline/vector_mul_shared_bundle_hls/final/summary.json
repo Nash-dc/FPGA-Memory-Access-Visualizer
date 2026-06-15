@@ -1,0 +1,64 @@
+{
+  "function_name": "vector_mul",
+  "loop_name": [
+    "vector_mul_loop"
+  ],
+  "loop_ii": {
+    "vector_mul_loop": 2
+  },
+  "pipeline_analysis": {
+    "is_pipelined": true,
+    "has_ii_one_loop": false,
+    "continuous_read_issue_candidate": false,
+    "minimum_achieved_ii": 2,
+    "maximum_pipeline_depth": 18,
+    "basis": "no csynth loop with achieved PipelineII=1",
+    "loops": [
+      {
+        "name": "vector_mul_loop",
+        "pipeline_ii": 2,
+        "pipeline_type": "yes",
+        "pipeline_depth": 18,
+        "trip_count": 64
+      }
+    ],
+    "interpretation": "II=1 permits consecutive read-request issue when addresses are sequential and the AXI master supports outstanding requests. It does not imply consecutive write transactions because write data production and burst formation can delay AW/W activity. Write spacing is estimated as max(AXI beats, useful elements times achieved II), with pipeline depth included before the first dependent write."
+  },
+  "data_width_bits": 32,
+  "element_width_bits": 32,
+  "elements_per_beat": 1,
+  "max_read_burst_length": 16,
+  "max_write_burst_length": 16,
+  "total_read_elements": 128,
+  "total_write_elements": 64,
+  "total_read_transactions": 8,
+  "total_write_transactions": 4,
+  "transaction_dependency_edges": 8,
+  "notes_about_assumptions": [
+    "LLVM IR trace is the source of executed logical accesses and dynamic order.",
+    "HLS interface/csynth metadata supplies AXI width, burst limits, outstanding settings, and loop II when available.",
+    "Physical transactions are inferred from aligned addresses, continuity, width, and burst limits; no RTL waveform is used.",
+    "Issue/completion values are logical estimates, not RTL cycle-accurate timestamps.",
+    "Timeline lane order is not a data dependency. Only explicit graph edges are dependencies."
+  ],
+  "inputs": {
+    "csynth_xml": [
+      "/data/hls-dev/toy-test-cases/vector_mul_shared_bundle_hls/component_vector_mul_shared_bundle/hls/syn/report/csynth.xml"
+    ],
+    "trace": "/data/hls-dev/Results/trace-timeline/vector_mul_shared_bundle_hls/top_level_memory_trace.tsv",
+    "manifest": "/data/hls-dev/Results/trace-timeline/vector_mul_shared_bundle_hls/top_level_memory_sites.tsv",
+    "memory_access_report": "/data/hls-dev/Results/pass-reports/vector_mul_shared_bundle_hls/memory_access_report.json",
+    "interface_xml": "/data/hls-dev/toy-test-cases/vector_mul_shared_bundle_hls/component_vector_mul_shared_bundle/hls/.autopilot/db/top-io-fe.xml",
+    "schedule_xml": [
+      "/data/hls-dev/toy-test-cases/vector_mul_shared_bundle_hls/component_vector_mul_shared_bundle/hls/.autopilot/db/vector_mul.sched.adb.xml"
+    ]
+  },
+  "counts": {
+    "trace_events": 192,
+    "element_events": 192,
+    "axi_transactions": 12,
+    "access_sites_from_pass_report": 3,
+    "logical_dependency_edges": 128,
+    "ports_with_hls_schedule": 6
+  }
+}

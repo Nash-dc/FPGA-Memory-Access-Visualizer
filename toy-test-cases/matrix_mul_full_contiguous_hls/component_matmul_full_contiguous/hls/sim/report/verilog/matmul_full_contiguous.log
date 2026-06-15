@@ -1,0 +1,17 @@
+INFO: [COSIM-47] Using XSIM for RTL simulation.
+INFO: [COSIM-14] Instrumenting C test bench ...
+   Build using "/data/2025.1/Vitis/lnx64/tools/vcxx/libexec//clang++"
+   Compiling apatb_matmul_full_contiguous.cpp
+   Compiling matmul_full_contiguous.cpp_pre.cpp.tb.cpp
+   Compiling matmul_full_contiguous_test.cpp_pre.cpp.tb.cpp
+   Compiling apatb_matmul_full_contiguous_ir.ll
+   Generating cosim.tv.exe
+INFO: [COSIM-302] Starting C TB testing ... 
+INFO: [COSIM-333] Generating C post check test bench ...
+INFO: [COSIM-12] Generating RTL test bench ...
+INFO: [COSIM-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM-323] Starting verilog simulation. 
+INFO: [COSIM-15] Starting XSIM ...
+TEST PASSED
+ERROR: [COSIM-4] *** C/RTL co-simulation finished: FAIL ***
+INFO: [COSIM-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.

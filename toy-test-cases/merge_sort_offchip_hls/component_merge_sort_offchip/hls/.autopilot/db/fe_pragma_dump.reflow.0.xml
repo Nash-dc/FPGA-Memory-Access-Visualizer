@@ -1,0 +1,15 @@
+<pragmas>
+<pragma file="merge_sort_offchip.cpp" line="73" pragmaType="pipeline" parentfunction="merge_sort_offchip_hls" off="0" ii="1" rewind="0" style=""/>
+<pragma file="merge_sort_offchip.cpp" line="40" pragmaType="pipeline" parentfunction="merge_sort_offchip_hls" off="0" ii="1" rewind="0" style=""/>
+<pragma file="merge_sort_offchip.cpp" line="22" pragmaType="pipeline" parentfunction="merge_sort_offchip_hls" off="0" ii="1" rewind="0" style=""/>
+<pragma file="merge_sort_offchip.cpp" line="10" pragmaType="interface" parentfunction="merge_sort_offchip_hls" mode="m_axi" port="in" bundle="gmem_in" offset="slave" name="" depth="64" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="16" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="64" channel=""/>
+<pragma file="merge_sort_offchip.cpp" line="11" pragmaType="interface" parentfunction="merge_sort_offchip_hls" mode="m_axi" port="scratch_a" bundle="gmem_scratch_a" offset="slave" name="" depth="64" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="16" max_burst_write_length="16" latency="-1" max_widen_bitwidth="32" channel=""/>
+<pragma file="merge_sort_offchip.cpp" line="12" pragmaType="interface" parentfunction="merge_sort_offchip_hls" mode="m_axi" port="scratch_b" bundle="gmem_scratch_b" offset="slave" name="" depth="64" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="16" max_burst_write_length="16" latency="-1" max_widen_bitwidth="32" channel=""/>
+<pragma file="merge_sort_offchip.cpp" line="13" pragmaType="interface" parentfunction="merge_sort_offchip_hls" mode="m_axi" port="out" bundle="gmem_out" offset="slave" name="" depth="64" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="16" latency="-1" max_widen_bitwidth="512" channel=""/>
+<pragma file="merge_sort_offchip.cpp" line="14" pragmaType="interface" parentfunction="merge_sort_offchip_hls" mode="s_axilite" port="in" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="merge_sort_offchip.cpp" line="15" pragmaType="interface" parentfunction="merge_sort_offchip_hls" mode="s_axilite" port="scratch_a" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="merge_sort_offchip.cpp" line="16" pragmaType="interface" parentfunction="merge_sort_offchip_hls" mode="s_axilite" port="scratch_b" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="merge_sort_offchip.cpp" line="17" pragmaType="interface" parentfunction="merge_sort_offchip_hls" mode="s_axilite" port="out" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="merge_sort_offchip.cpp" line="18" pragmaType="interface" parentfunction="merge_sort_offchip_hls" mode="s_axilite" port="" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="merge_sort_offchip.cpp" line="4" pragmaType="inline" parentfunction="min_int" off="0" region="0" recursive="0"/>
+</pragmas>

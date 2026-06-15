@@ -1,0 +1,128 @@
+{
+    "0": {
+        "name": "matrix_mul",
+        "file": "matrix_mul.cpp",
+        "fileloc": "3",
+        "instructions": "61",
+        "total_instructions": "345",
+        "calls": "4 5 2 3 1",
+        "basicblocks": "4",
+        "memory_accesses": "0",
+        "control_depth": "0",
+        "def_use_depth": "2",
+        "loads": {
+            "L": "2"
+        },
+        "stores": {
+            "L": "4"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "1": {
+        "name": "matrix_mul_Pipeline_store_c_loop",
+        "file": "matrix_mul.cpp",
+        "fileloc": "77",
+        "instructions": "44",
+        "total_instructions": "44",
+        "calls": "",
+        "basicblocks": "6",
+        "memory_accesses": "10",
+        "control_depth": "2",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "7"
+        },
+        "stores": {
+            "L": "4"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "2": {
+        "name": "matrix_mul_Pipeline_load_b_tile_lane_loop_load_b_tile_col_loop",
+        "file": "matrix_mul.cpp",
+        "fileloc": "36",
+        "instructions": "57",
+        "total_instructions": "57",
+        "calls": "",
+        "basicblocks": "11",
+        "memory_accesses": "13",
+        "control_depth": "2",
+        "def_use_depth": "2",
+        "loads": {
+            "L": "4"
+        },
+        "stores": {
+            "L": "11"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "3": {
+        "name": "matrix_mul_Pipeline_compute_row_loop_compute_col_loop",
+        "file": "matrix_mul.cpp",
+        "fileloc": "57",
+        "instructions": "75",
+        "total_instructions": "75",
+        "calls": "",
+        "basicblocks": "9",
+        "memory_accesses": "22",
+        "control_depth": "2",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "15"
+        },
+        "stores": {
+            "L": "10"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "4": {
+        "name": "matrix_mul_Pipeline_init_c_loop_init_c_col_loop",
+        "file": "matrix_mul.cpp",
+        "fileloc": "27",
+        "instructions": "44",
+        "total_instructions": "44",
+        "calls": "",
+        "basicblocks": "9",
+        "memory_accesses": "10",
+        "control_depth": "2",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "3"
+        },
+        "stores": {
+            "L": "10"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "5": {
+        "name": "matrix_mul_Pipeline_load_a_tile_row_loop_load_a_tile_lane_loop",
+        "file": "matrix_mul.cpp",
+        "fileloc": "39",
+        "instructions": "64",
+        "total_instructions": "64",
+        "calls": "",
+        "basicblocks": "11",
+        "memory_accesses": "14",
+        "control_depth": "2",
+        "def_use_depth": "2",
+        "loads": {
+            "L": "4"
+        },
+        "stores": {
+            "L": "11"
+        },
+        "loops": {
+            "L": "1"
+        }
+    }
+}

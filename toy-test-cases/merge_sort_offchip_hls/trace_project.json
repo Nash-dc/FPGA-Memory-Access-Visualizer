@@ -1,0 +1,12 @@
+{
+  "projects": [
+    {
+      "name": "merge_sort_offchip_hls",
+      "source": "toy-test-cases/merge_sort_offchip_hls/merge_sort_offchip.cpp",
+      "testbench": "toy-test-cases/merge_sort_offchip_hls/merge_sort_offchip_test.cpp",
+      "report_bc": "toy-test-cases/merge_sort_offchip_hls/component_merge_sort_offchip/hls/.autopilot/db/merge_sort_offchip.bc",
+      "interface_xml": "toy-test-cases/merge_sort_offchip_hls/component_merge_sort_offchip/hls/.autopilot/db/top-io-fe.xml",
+      "include_dirs": ["toy-test-cases/merge_sort_offchip_hls"]
+    }
+  ]
+}

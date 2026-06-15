@@ -1,0 +1,163 @@
+
+
+================================================================
+== Vitis HLS Report for 'matrix_mul_Pipeline_init_c_loop_init_c_col_loop'
+================================================================
+* Date:           Thu Jun  4 18:35:07 2026
+
+* Version:        2025.1 (Build 6135595 on May 21 2025)
+* Project:        component_matrix_mul
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: virtexuplus
+* Target device:  xcvu9p-flga2104-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  5.00 ns|  2.507 ns|     1.35 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval |                    Pipeline                    |
+    |   min   |   max   |    min   |    max   | min | max |                      Type                      |
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+    |      258|      258|  1.290 us|  1.290 us|  257|  257|  loop auto-rewind stp (delay=0 clock cycles(s))|
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                               |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |           Loop Name           |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- init_c_loop_init_c_col_loop  |      256|      256|         1|          1|          1|   256|       yes|
+        +-------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+------+---------+---------+-----+
+|         Name        | BRAM_18K|  DSP |    FF   |   LUT   | URAM|
++---------------------+---------+------+---------+---------+-----+
+|DSP                  |        -|     -|        -|        -|    -|
+|Expression           |        -|     -|        0|       80|    -|
+|FIFO                 |        -|     -|        -|        -|    -|
+|Instance             |        -|     -|        -|        -|    -|
+|Memory               |        -|     -|        -|        -|    -|
+|Multiplexer          |        -|     -|        0|       63|    -|
+|Register             |        -|     -|       21|        -|    -|
++---------------------+---------+------+---------+---------+-----+
+|Total                |        0|     0|       21|      143|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available SLR        |     1440|  2280|   788160|   394080|  320|
++---------------------+---------+------+---------+---------+-----+
+|Utilization SLR (%)  |        0|     0|       ~0|       ~0|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available            |     4320|  6840|  2364480|  1182240|  960|
++---------------------+---------+------+---------+---------+-----+
+|Utilization (%)      |        0|     0|       ~0|       ~0|    0|
++---------------------+---------+------+---------+---------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-------------------------+----------+----+---+----+------------+------------+
+    |      Variable Name      | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-------------------------+----------+----+---+----+------------+------------+
+    |add_ln27_1_fu_144_p2     |         +|   0|  0|  16|           9|           1|
+    |add_ln27_fu_156_p2       |         +|   0|  0|  12|           5|           1|
+    |add_ln29_fu_228_p2       |         +|   0|  0|  12|           5|           1|
+    |icmp_ln27_fu_138_p2      |      icmp|   0|  0|  17|           9|          10|
+    |icmp_ln29_fu_162_p2      |      icmp|   0|  0|  13|           5|           6|
+    |select_ln27_1_fu_176_p3  |    select|   0|  0|   5|           1|           5|
+    |select_ln27_fu_168_p3    |    select|   0|  0|   5|           1|           1|
+    +-------------------------+----------+----+---+----+------------+------------+
+    |Total                    |          |   0|  0|  80|          35|          25|
+    +-------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +--------------------------------------+----+-----------+-----+-----------+
+    |                 Name                 | LUT| Input Size| Bits| Total Bits|
+    +--------------------------------------+----+-----------+-----+-----------+
+    |ap_done_int                           |   9|          2|    1|          2|
+    |ap_sig_allocacmp_col_load             |   9|          2|    5|         10|
+    |ap_sig_allocacmp_indvar_flatten_load  |   9|          2|    9|         18|
+    |ap_sig_allocacmp_row_load             |   9|          2|    5|         10|
+    |col_fu_52                             |   9|          2|    5|         10|
+    |indvar_flatten_fu_60                  |   9|          2|    9|         18|
+    |row_fu_56                             |   9|          2|    5|         10|
+    +--------------------------------------+----+-----------+-----+-----------+
+    |Total                                 |  63|         14|   39|         78|
+    +--------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------+---+----+-----+-----------+
+    |         Name         | FF| LUT| Bits| Const Bits|
+    +----------------------+---+----+-----+-----------+
+    |ap_CS_fsm             |  1|   0|    1|          0|
+    |ap_done_reg           |  1|   0|    1|          0|
+    |col_fu_52             |  5|   0|    5|          0|
+    |indvar_flatten_fu_60  |  9|   0|    9|          0|
+    |row_fu_56             |  5|   0|    5|          0|
+    +----------------------+---+----+-----+-----------+
+    |Total                 | 21|   0|   21|          0|
+    +----------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------+-----+-----+------------+-------------------------------------------------+--------------+
+|      RTL Ports     | Dir | Bits|  Protocol  |                  Source Object                  |    C Type    |
++--------------------+-----+-----+------------+-------------------------------------------------+--------------+
+|ap_clk              |   in|    1|  ap_ctrl_hs|  matrix_mul_Pipeline_init_c_loop_init_c_col_loop|  return value|
+|ap_rst              |   in|    1|  ap_ctrl_hs|  matrix_mul_Pipeline_init_c_loop_init_c_col_loop|  return value|
+|ap_start            |   in|    1|  ap_ctrl_hs|  matrix_mul_Pipeline_init_c_loop_init_c_col_loop|  return value|
+|ap_done             |  out|    1|  ap_ctrl_hs|  matrix_mul_Pipeline_init_c_loop_init_c_col_loop|  return value|
+|ap_idle             |  out|    1|  ap_ctrl_hs|  matrix_mul_Pipeline_init_c_loop_init_c_col_loop|  return value|
+|ap_ready            |  out|    1|  ap_ctrl_hs|  matrix_mul_Pipeline_init_c_loop_init_c_col_loop|  return value|
+|C_local_address0    |  out|    6|   ap_memory|                                          C_local|         array|
+|C_local_ce0         |  out|    1|   ap_memory|                                          C_local|         array|
+|C_local_we0         |  out|    1|   ap_memory|                                          C_local|         array|
+|C_local_d0          |  out|   32|   ap_memory|                                          C_local|         array|
+|C_local_1_address0  |  out|    6|   ap_memory|                                        C_local_1|         array|
+|C_local_1_ce0       |  out|    1|   ap_memory|                                        C_local_1|         array|
+|C_local_1_we0       |  out|    1|   ap_memory|                                        C_local_1|         array|
+|C_local_1_d0        |  out|   32|   ap_memory|                                        C_local_1|         array|
+|C_local_2_address0  |  out|    6|   ap_memory|                                        C_local_2|         array|
+|C_local_2_ce0       |  out|    1|   ap_memory|                                        C_local_2|         array|
+|C_local_2_we0       |  out|    1|   ap_memory|                                        C_local_2|         array|
+|C_local_2_d0        |  out|   32|   ap_memory|                                        C_local_2|         array|
+|C_local_3_address0  |  out|    6|   ap_memory|                                        C_local_3|         array|
+|C_local_3_ce0       |  out|    1|   ap_memory|                                        C_local_3|         array|
+|C_local_3_we0       |  out|    1|   ap_memory|                                        C_local_3|         array|
+|C_local_3_d0        |  out|   32|   ap_memory|                                        C_local_3|         array|
++--------------------+-----+-----+------------+-------------------------------------------------+--------------+
+

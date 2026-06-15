@@ -1,0 +1,253 @@
+
+
+================================================================
+== Synthesis Summary Report of 'matrix_mul'
+================================================================
++ General Information: 
+    * Date:           Thu Jun  4 18:35:08 2026
+    * Version:        2025.1 (Build 6135595 on May 21 2025)
+    * Project:        component_matrix_mul
+    * Solution:       hls (Vivado IP Flow Target)
+    * Product family: virtexuplus
+    * Target device:  xcvu9p-flga2104-2-i
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +--------------------------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----------+------------+------------+-----+
+    |                               Modules                              | Issue|      |       Latency       | Iteration|         | Trip |          |      |          |            |            |     |
+    |                               & Loops                              | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM |    DSP   |     FF     |     LUT    | URAM|
+    +--------------------------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----------+------------+------------+-----+
+    |+ matrix_mul                                                        |     -|  0.00|     1895|  9.475e+03|         -|     1896|     -|        no|     -|  12 (~0%)|  8078 (~0%)|  8255 (~0%)|    -|
+    | + matrix_mul_Pipeline_init_c_loop_init_c_col_loop                  |     -|  1.14|      258|  1.290e+03|         -|      257|     -|    rewind|     -|         -|    21 (~0%)|   143 (~0%)|    -|
+    |  o init_c_loop_init_c_col_loop                                     |     -|  3.65|      256|  1.280e+03|         1|        1|   256|       yes|     -|         -|           -|           -|    -|
+    | + matrix_mul_Pipeline_store_c_loop                                 |     -|  0.00|      259|  1.295e+03|         -|      257|     -|    rewind|     -|         -|   530 (~0%)|   535 (~0%)|    -|
+    |  o store_c_loop                                                    |     -|  3.65|      257|  1.285e+03|         3|        1|   256|       yes|     -|         -|           -|           -|    -|
+    | o k_tile_loop                                                      |     -|  3.65|     1360|  6.800e+03|       340|        -|     4|        no|     -|         -|           -|           -|    -|
+    |  + matrix_mul_Pipeline_load_a_tile_row_loop_load_a_tile_lane_loop  |     -|  0.00|       76|    380.000|         -|       65|     -|    rewind|     -|         -|   586 (~0%)|   396 (~0%)|    -|
+    |   o load_a_tile_row_loop_load_a_tile_lane_loop                     |     -|  3.65|       74|    370.000|        11|        1|    64|       yes|     -|         -|           -|           -|    -|
+    |  + matrix_mul_Pipeline_load_b_tile_lane_loop_load_b_tile_col_loop  |     -|  0.00|       68|    340.000|         -|       65|     -|    rewind|     -|         -|  1031 (~0%)|   187 (~0%)|    -|
+    |   o load_b_tile_lane_loop_load_b_tile_col_loop                     |     -|  3.65|       66|    330.000|         3|        1|    64|       yes|     -|         -|           -|           -|    -|
+    |  + matrix_mul_Pipeline_compute_row_loop_compute_col_loop           |     -|  0.34|      260|  1.300e+03|         -|      257|     -|    rewind|     -|  12 (~0%)|   512 (~0%)|   414 (~0%)|    -|
+    |   o compute_row_loop_compute_col_loop                              |     -|  3.65|      258|  1.290e+03|         4|        1|   256|       yes|     -|         -|           -|           -|    -|
+    +--------------------------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----------+------------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++--------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+| Interface    | Read/Write | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   |
+|              |            | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |
++--------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+| m_axi_gmem_a | READ_ONLY  | 32 -> 128  | 64            | 0       | slave  | 0        | 512       | 1            | 16           | 16          | 16          |
+| m_axi_gmem_b | READ_ONLY  | 32 -> 512  | 64            | 0       | slave  | 0        | 512       | 1            | 16           | 16          | 16          |
+| m_axi_gmem_c | WRITE_ONLY | 32 -> 512  | 64            | 0       | slave  | 0        | 512       | 16           | 1            | 16          | 16          |
++--------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 6             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface     | Register | Offset | Width | Access | Description                      | Bit Fields                                                           |
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_control | CTRL     | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER     | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_control | IP_IER   | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_control | IP_ISR   | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_control | a_1      | 0x10   | 32    | W      | Data signal of a                 |                                                                      |
+| s_axi_control | a_2      | 0x14   | 32    | W      | Data signal of a                 |                                                                      |
+| s_axi_control | b_1      | 0x1c   | 32    | W      | Data signal of b                 |                                                                      |
+| s_axi_control | b_2      | 0x20   | 32    | W      | Data signal of b                 |                                                                      |
+| s_axi_control | c_1      | 0x28   | 32    | W      | Data signal of c                 |                                                                      |
+| s_axi_control | c_2      | 0x2c   | 32    | W      | Data signal of c                 |                                                                      |
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+-------------+
+| Argument | Direction | Datatype    |
++----------+-----------+-------------+
+| a        | in        | int const * |
+| b        | in        | int const * |
+| c        | out       | int*        |
++----------+-----------+-------------+
+
+* SW-to-HW Mapping
++----------+---------------+-----------+----------+-------------------------------+
+| Argument | HW Interface  | HW Type   | HW Usage | HW Info                       |
++----------+---------------+-----------+----------+-------------------------------+
+| a        | m_axi_gmem_a  | interface |          | channel=0                     |
+| a        | s_axi_control | register  | offset   | name=a_1 offset=0x10 range=32 |
+| a        | s_axi_control | register  | offset   | name=a_2 offset=0x14 range=32 |
+| b        | m_axi_gmem_b  | interface |          | channel=0                     |
+| b        | s_axi_control | register  | offset   | name=b_1 offset=0x1c range=32 |
+| b        | s_axi_control | register  | offset   | name=b_2 offset=0x20 range=32 |
+| c        | m_axi_gmem_c  | interface |          | channel=0                     |
+| c        | s_axi_control | register  | offset   | name=c_1 offset=0x28 range=32 |
+| c        | s_axi_control | register  | offset   | name=c_2 offset=0x2c range=32 |
++----------+---------------+-----------+----------+-------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Burst Summary
++--------------+-----------+--------+-------+-------------+---------------------+
+| HW Interface | Direction | Length | Width | Loop        | Loop Location       |
++--------------+-----------+--------+-------+-------------+---------------------+
+| m_axi_gmem_b | read      | 16     | 512   | k_tile_loop | matrix_mul.cpp:36:3 |
+| m_axi_gmem_c | write     | 16     | 512   |             |                     |
++--------------+-----------+--------+-------+-------------+---------------------+
+
+* All M_AXI Variable Accesses
++--------------+----------+----------------------+-----------+--------------+--------+-----------------------+---------------------+------------+----------------------------------------------------------------------------------------------------------+
+| HW Interface | Variable | Access Location      | Direction | Burst Status | Length | Loop                  | Loop Location       | Resolution | Problem                                                                                                  |
++--------------+----------+----------------------+-----------+--------------+--------+-----------------------+---------------------+------------+----------------------------------------------------------------------------------------------------------+
+| m_axi_gmem_a | a        | matrix_mul.cpp:43:22 | read      | Widened      | 1      | load_a_tile_lane_loop | matrix_mul.cpp:41:7 |            |                                                                                                          |
+| m_axi_gmem_a | a        | matrix_mul.cpp:43:22 | read      | Fail         |        | load_a_tile_row_loop  | matrix_mul.cpp:39:5 | 214-230    | Stride is incompatible                                                                                   |
+| m_axi_gmem_a | a        | matrix_mul.cpp:43:22 | read      | Inferred     | 4      | load_a_tile_lane_loop | matrix_mul.cpp:41:7 |            |                                                                                                          |
+| m_axi_gmem_b | b        | matrix_mul.cpp:36:3  | read      | Widen Fail   |        | load_b_tile_lane_loop | matrix_mul.cpp:48:5 | 214-353    | Could not widen since type i512 size is greater than or equal to the max_widen_bitwidth threshold of 512 |
+| m_axi_gmem_b | b        | matrix_mul.cpp:52:22 | read      | Widened      | 16     | load_b_tile_col_loop  | matrix_mul.cpp:50:7 |            |                                                                                                          |
+| m_axi_gmem_b | b        | matrix_mul.cpp:52:22 | read      | Inferred     | 256    | k_tile_loop           | matrix_mul.cpp:36:3 |            |                                                                                                          |
+| m_axi_gmem_c | c        | matrix_mul.cpp:79:11 | write     | Widened      | 16     | store_c_loop          | matrix_mul.cpp:77:3 |            |                                                                                                          |
+| m_axi_gmem_c | c        | matrix_mul.cpp:79:11 | write     | Inferred     | 256    | store_c_loop          | matrix_mul.cpp:77:3 |            |                                                                                                          |
++--------------+----------+----------------------+-----------+--------------+--------+-----------------------+---------------------+------------+----------------------------------------------------------------------------------------------------------+
+
+    * Resolution URL: docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=XXX-YYY.html (replace XXX-YYY with column value)
+
+================================================================
+== Bind Op Report
+================================================================
++-------------------------------------------------------------------+-----+--------+---------------+-----------+--------------------------+---------+
+| Name                                                              | DSP | Pragma | Variable      | Op        | Impl                     | Latency |
++-------------------------------------------------------------------+-----+--------+---------------+-----------+--------------------------+---------+
+| + matrix_mul                                                      | 12  |        |               |           |                          |         |
+|   icmp_ln36_fu_292_p2                                             |     |        | icmp_ln36     | seteq     | auto                     | 0       |
+|   add_ln36_1_fu_298_p2                                            |     |        | add_ln36_1    | add       | fabric                   | 0       |
+|   add_ln36_fu_312_p2                                              |     |        | add_ln36      | add       | fabric                   | 0       |
+|  + matrix_mul_Pipeline_init_c_loop_init_c_col_loop                | 0   |        |               |           |                          |         |
+|    icmp_ln27_fu_138_p2                                            |     |        | icmp_ln27     | seteq     | auto                     | 0       |
+|    add_ln27_1_fu_144_p2                                           |     |        | add_ln27_1    | add       | fabric                   | 0       |
+|    add_ln27_fu_156_p2                                             |     |        | add_ln27      | add       | fabric                   | 0       |
+|    icmp_ln29_fu_162_p2                                            |     |        | icmp_ln29     | seteq     | auto                     | 0       |
+|    select_ln27_fu_168_p3                                          |     |        | select_ln27   | select    | auto_sel                 | 0       |
+|    select_ln27_1_fu_176_p3                                        |     |        | select_ln27_1 | select    | auto_sel                 | 0       |
+|    add_ln29_fu_228_p2                                             |     |        | add_ln29      | add       | fabric                   | 0       |
+|  + matrix_mul_Pipeline_load_a_tile_row_loop_load_a_tile_lane_loop | 0   |        |               |           |                          |         |
+|    icmp_ln39_fu_213_p2                                            |     |        | icmp_ln39     | seteq     | auto                     | 0       |
+|    add_ln39_2_fu_219_p2                                           |     |        | add_ln39_2    | add       | fabric                   | 0       |
+|    add_ln39_1_fu_231_p2                                           |     |        | add_ln39_1    | add       | fabric                   | 0       |
+|    icmp_ln41_fu_237_p2                                            |     |        | icmp_ln41     | seteq     | auto                     | 0       |
+|    select_ln39_fu_243_p3                                          |     |        | select_ln39   | select    | auto_sel                 | 0       |
+|    select_ln39_1_fu_251_p3                                        |     |        | select_ln39_1 | select    | auto_sel                 | 0       |
+|    first_iter_1_fu_259_p2                                         |     |        | first_iter_1  | seteq     | auto                     | 0       |
+|    add_ln39_fu_283_p2                                             |     |        | add_ln39      | add       | fabric                   | 0       |
+|    add_ln41_fu_313_p2                                             |     |        | add_ln41      | add       | fabric                   | 0       |
+|  + matrix_mul_Pipeline_load_b_tile_lane_loop_load_b_tile_col_loop | 0   |        |               |           |                          |         |
+|    icmp_ln48_fu_186_p2                                            |     |        | icmp_ln48     | seteq     | auto                     | 0       |
+|    add_ln48_1_fu_192_p2                                           |     |        | add_ln48_1    | add       | fabric                   | 0       |
+|    add_ln48_fu_204_p2                                             |     |        | add_ln48      | add       | fabric                   | 0       |
+|    icmp_ln50_fu_210_p2                                            |     |        | icmp_ln50     | seteq     | auto                     | 0       |
+|    select_ln48_fu_216_p3                                          |     |        | select_ln48   | select    | auto_sel                 | 0       |
+|    select_ln48_1_fu_224_p3                                        |     |        | select_ln48_1 | select    | auto_sel                 | 0       |
+|    first_iter_2_fu_232_p2                                         |     |        | first_iter_2  | seteq     | auto                     | 0       |
+|    add_ln50_fu_252_p2                                             |     |        | add_ln50      | add       | fabric                   | 0       |
+|  + matrix_mul_Pipeline_compute_row_loop_compute_col_loop          | 12  |        |               |           |                          |         |
+|    icmp_ln57_fu_292_p2                                            |     |        | icmp_ln57     | seteq     | auto                     | 0       |
+|    add_ln57_1_fu_298_p2                                           |     |        | add_ln57_1    | add       | fabric                   | 0       |
+|    add_ln57_fu_310_p2                                             |     |        | add_ln57      | add       | fabric                   | 0       |
+|    icmp_ln59_fu_316_p2                                            |     |        | icmp_ln59     | seteq     | auto                     | 0       |
+|    select_ln57_fu_322_p3                                          |     |        | select_ln57   | select    | auto_sel                 | 0       |
+|    select_ln57_1_fu_330_p3                                        |     |        | select_ln57_1 | select    | auto_sel                 | 0       |
+|    sparsemux_9_2_32_1_1_U22                                       |     |        | sum           | sparsemux | compactencoding_dontcare | 0       |
+|    mul_32s_32s_32_1_1_U18                                         | 3   |        | mul_ln68      | mul       | auto                     | 0       |
+|    mul_32s_32s_32_1_1_U19                                         | 3   |        | mul_ln68_1    | mul       | auto                     | 0       |
+|    mul_32s_32s_32_1_1_U20                                         | 3   |        | mul_ln68_2    | mul       | auto                     | 0       |
+|    mul_32s_32s_32_1_1_U21                                         | 3   |        | mul_ln68_3    | mul       | auto                     | 0       |
+|    add_ln59_fu_382_p2                                             |     |        | add_ln59      | add       | fabric                   | 0       |
+|  + matrix_mul_Pipeline_store_c_loop                               | 0   |        |               |           |                          |         |
+|    icmp_ln77_fu_179_p2                                            |     |        | icmp_ln77     | seteq     | auto                     | 0       |
+|    add_ln77_fu_185_p2                                             |     |        | add_ln77      | add       | fabric                   | 0       |
+|    sparsemux_9_2_32_1_1_U37                                       |     |        | tmp           | sparsemux | compactencoding_dontcare | 0       |
+|    icmp_ln79_fu_217_p2                                            |     |        | icmp_ln79     | seteq     | auto                     | 0       |
+|    select_ln79_fu_288_p3                                          |     |        | select_ln79   | select    | auto_sel                 | 0       |
++-------------------------------------------------------------------+-----+--------+---------------+-----------+--------------------------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++-------------------+--------------+-----------+------+------+--------+-----------+------+---------+------------------+
+| Name              | Usage        | Type      | BRAM | URAM | Pragma | Variable  | Impl | Latency | Bitwidth, Depth, |
+|                   |              |           |      |      |        |           |      |         | Banks            |
++-------------------+--------------+-----------+------+------+--------+-----------+------+---------+------------------+
+| + matrix_mul      |              |           | 0    | 0    |        |           |      |         |                  |
+|   control_s_axi_U | interface    | s_axilite |      |      |        |           |      |         |                  |
+|   gmem_a_m_axi_U  | interface    | m_axi     |      |      |        |           |      |         |                  |
+|   gmem_b_m_axi_U  | interface    | m_axi     |      |      |        |           |      |         |                  |
+|   gmem_c_m_axi_U  | interface    | m_axi     |      |      |        |           |      |         |                  |
+|   A_tile_U        | ram_1p array |           |      |      |        | A_tile    | auto | 1       | 32, 16, 1        |
+|   A_tile_1_U      | ram_1p array |           |      |      |        | A_tile_1  | auto | 1       | 32, 16, 1        |
+|   A_tile_2_U      | ram_1p array |           |      |      |        | A_tile_2  | auto | 1       | 32, 16, 1        |
+|   A_tile_3_U      | ram_1p array |           |      |      |        | A_tile_3  | auto | 1       | 32, 16, 1        |
+|   B_tile_U        | ram_1p array |           |      |      |        | B_tile    | auto | 1       | 32, 16, 1        |
+|   B_tile_1_U      | ram_1p array |           |      |      |        | B_tile_1  | auto | 1       | 32, 16, 1        |
+|   B_tile_2_U      | ram_1p array |           |      |      |        | B_tile_2  | auto | 1       | 32, 16, 1        |
+|   B_tile_3_U      | ram_1p array |           |      |      |        | B_tile_3  | auto | 1       | 32, 16, 1        |
+|   C_local_U       | ram_2p array |           |      |      |        | C_local   | auto | 1       | 32, 64, 1        |
+|   C_local_1_U     | ram_2p array |           |      |      |        | C_local_1 | auto | 1       | 32, 64, 1        |
+|   C_local_2_U     | ram_2p array |           |      |      |        | C_local_2 | auto | 1       | 32, 64, 1        |
+|   C_local_3_U     | ram_2p array |           |      |      |        | C_local_3 | auto | 1       | 32, 64, 1        |
++-------------------+--------------+-----------+------+------+--------+-----------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------------+-----------------------------------------------------------------------------------------------------------+------------------------------------------+
+| Type            | Options                                                                                                   | Location                                 |
++-----------------+-----------------------------------------------------------------------------------------------------------+------------------------------------------+
+| INTERFACE       | m_axi port=a offset=slave bundle=gmem_a depth=MATRIX_SIZE max_read_burst_length=1 max_widen_bitwidth=512  | matrix_mul.cpp:9 in matrix_mul, a        |
+| INTERFACE       | m_axi port=b offset=slave bundle=gmem_b depth=MATRIX_SIZE max_read_burst_length=1 max_widen_bitwidth=512  | matrix_mul.cpp:10 in matrix_mul, b       |
+| INTERFACE       | m_axi port=c offset=slave bundle=gmem_c depth=MATRIX_SIZE max_write_burst_length=1 max_widen_bitwidth=512 | matrix_mul.cpp:11 in matrix_mul, c       |
+| INTERFACE       | s_axilite port=a bundle=control                                                                           | matrix_mul.cpp:13 in matrix_mul, a       |
+| INTERFACE       | s_axilite port=b bundle=control                                                                           | matrix_mul.cpp:14 in matrix_mul, b       |
+| INTERFACE       | s_axilite port=c bundle=control                                                                           | matrix_mul.cpp:15 in matrix_mul, c       |
+| INTERFACE       | s_axilite port=return bundle=control                                                                      | matrix_mul.cpp:16 in matrix_mul, return  |
+| ARRAY_PARTITION | variable=A_tile complete dim=2                                                                            | matrix_mul.cpp:22 in matrix_mul, A_tile  |
+| ARRAY_PARTITION | variable=B_tile complete dim=1                                                                            | matrix_mul.cpp:23 in matrix_mul, B_tile  |
+| ARRAY_PARTITION | variable=C_local cyclic factor=UNROLL_FACTOR dim=2                                                        | matrix_mul.cpp:24 in matrix_mul, C_local |
+| PIPELINE        | ii=1                                                                                                      | matrix_mul.cpp:30 in matrix_mul          |
+| PIPELINE        | ii=1                                                                                                      | matrix_mul.cpp:42 in matrix_mul          |
+| PIPELINE        | ii=1                                                                                                      | matrix_mul.cpp:51 in matrix_mul          |
+| PIPELINE        | ii=1                                                                                                      | matrix_mul.cpp:60 in matrix_mul          |
+| DEPENDENCE      | variable=C_local inter false                                                                              | matrix_mul.cpp:61 in matrix_mul, C_local |
+| UNROLL          |                                                                                                           | matrix_mul.cpp:67 in matrix_mul          |
+| PIPELINE        | ii=1                                                                                                      | matrix_mul.cpp:78 in matrix_mul          |
++-----------------+-----------------------------------------------------------------------------------------------------------+------------------------------------------+
+
+

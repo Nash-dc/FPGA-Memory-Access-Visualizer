@@ -1,0 +1,951 @@
+{
+  "schema": "hls.transaction_dependency_graph.v8",
+  "dependency_source": "Physical transaction dependencies aggregated from the dynamic logical access graph. Logical graph edges combine LLVM static value/control metadata with actual IR trace execution and dynamic same port[element] RAW tracking.",
+  "detail_files": {
+    "physical_transactions": "inferred_physical_axi_transactions.json",
+    "logical_access_graph": "logical_access_graph.json"
+  },
+  "counts": {
+    "blocks": 48,
+    "static_dependency_edges": 8,
+    "logical_dependency_edges": 512,
+    "dynamic_memory_raw_edges": 0,
+    "value_flow_edges": 512,
+    "control_dependency_edges": 0
+  },
+  "blocks": [
+    {
+      "transaction_id": "txn_a_0",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_b_0",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_a_1",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_b_1",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_a_2",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_b_2",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_a_3",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_b_3",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_a_4",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_b_4",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_a_5",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_b_5",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_a_6",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_b_6",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_a_7",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_b_7",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_a_8",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_b_8",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_a_9",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_b_9",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_a_10",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_b_10",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_a_11",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_b_11",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_a_12",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_b_12",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_a_13",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_b_13",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_a_14",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_b_14",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_a_15",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_b_15",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_c_0",
+      "dependencies": [
+        {
+          "source_transaction_id": "txn_a_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[0..15]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[0..15]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
+      ]
+    },
+    {
+      "transaction_id": "txn_c_1",
+      "dependencies": [
+        {
+          "source_transaction_id": "txn_a_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[16..31]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[16..31]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
+      ]
+    },
+    {
+      "transaction_id": "txn_c_2",
+      "dependencies": [
+        {
+          "source_transaction_id": "txn_a_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[32..47]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[32..47]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
+      ]
+    },
+    {
+      "transaction_id": "txn_c_3",
+      "dependencies": [
+        {
+          "source_transaction_id": "txn_a_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[48..63]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[48..63]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
+      ]
+    },
+    {
+      "transaction_id": "txn_c_4",
+      "dependencies": [
+        {
+          "source_transaction_id": "txn_a_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[64..79]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[64..79]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
+      ]
+    },
+    {
+      "transaction_id": "txn_c_5",
+      "dependencies": [
+        {
+          "source_transaction_id": "txn_a_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[80..95]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[80..95]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
+      ]
+    },
+    {
+      "transaction_id": "txn_c_6",
+      "dependencies": [
+        {
+          "source_transaction_id": "txn_a_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[96..111]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[96..111]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
+      ]
+    },
+    {
+      "transaction_id": "txn_c_7",
+      "dependencies": [
+        {
+          "source_transaction_id": "txn_a_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[112..127]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[112..127]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
+      ]
+    },
+    {
+      "transaction_id": "txn_c_8",
+      "dependencies": [
+        {
+          "source_transaction_id": "txn_a_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[128..143]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[128..143]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
+      ]
+    },
+    {
+      "transaction_id": "txn_c_9",
+      "dependencies": [
+        {
+          "source_transaction_id": "txn_a_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[144..159]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[144..159]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
+      ]
+    },
+    {
+      "transaction_id": "txn_c_10",
+      "dependencies": [
+        {
+          "source_transaction_id": "txn_a_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[160..175]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[160..175]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
+      ]
+    },
+    {
+      "transaction_id": "txn_c_11",
+      "dependencies": [
+        {
+          "source_transaction_id": "txn_a_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[176..191]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[176..191]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
+      ]
+    },
+    {
+      "transaction_id": "txn_c_12",
+      "dependencies": [
+        {
+          "source_transaction_id": "txn_a_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[192..207]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[192..207]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
+      ]
+    },
+    {
+      "transaction_id": "txn_c_13",
+      "dependencies": [
+        {
+          "source_transaction_id": "txn_a_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[208..223]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[208..223]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
+      ]
+    },
+    {
+      "transaction_id": "txn_c_14",
+      "dependencies": [
+        {
+          "source_transaction_id": "txn_a_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[224..239]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[224..239]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
+      ]
+    },
+    {
+      "transaction_id": "txn_c_15",
+      "dependencies": [
+        {
+          "source_transaction_id": "txn_a_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[240..255]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[240..255]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
+      ]
+    }
+  ],
+  "static_nodes": {
+    "access:0": {
+      "id": "access:0",
+      "kind": "transaction",
+      "direction": "read",
+      "port": "a",
+      "bundle": "gmem_a",
+      "index": "index",
+      "loop": "load_ab_full_loop"
+    },
+    "access:1": {
+      "id": "access:1",
+      "kind": "transaction",
+      "direction": "read",
+      "port": "b",
+      "bundle": "gmem_b",
+      "index": "index",
+      "loop": "load_ab_full_loop"
+    },
+    "access:2": {
+      "id": "access:2",
+      "kind": "transaction",
+      "direction": "write",
+      "port": "c",
+      "bundle": "gmem_c",
+      "index": "index40",
+      "loop": "store_c_full_loop"
+    },
+    "local_access:0": {
+      "id": "local_access:0",
+      "kind": "local_buffer_access",
+      "direction": "write",
+      "buffer": "A_local",
+      "index": "index",
+      "operation": "store",
+      "loop": "load_ab_full_loop"
+    },
+    "local_access:1": {
+      "id": "local_access:1",
+      "kind": "local_buffer_access",
+      "direction": "write",
+      "buffer": "B_local",
+      "index": "index",
+      "operation": "store",
+      "loop": "load_ab_full_loop"
+    },
+    "local_access:2": {
+      "id": "local_access:2",
+      "kind": "local_buffer_access",
+      "direction": "read",
+      "buffer": "A_local",
+      "index": "((row * 16) + k)",
+      "operation": "load",
+      "loop": "compute_k_loop"
+    },
+    "local_access:3": {
+      "id": "local_access:3",
+      "kind": "local_buffer_access",
+      "direction": "read",
+      "buffer": "B_local",
+      "index": "((k * 16) + col)",
+      "operation": "load",
+      "loop": "compute_k_loop"
+    },
+    "local_access:4": {
+      "id": "local_access:4",
+      "kind": "local_buffer_access",
+      "direction": "write",
+      "buffer": "C_local",
+      "index": "((row * 16) + col)",
+      "operation": "store",
+      "loop": "compute_col_loop"
+    },
+    "local_access:5": {
+      "id": "local_access:5",
+      "kind": "local_buffer_access",
+      "direction": "read",
+      "buffer": "C_local",
+      "index": "index40",
+      "operation": "load",
+      "loop": "store_c_full_loop"
+    }
+  },
+  "static_dependency_edges": [
+    {
+      "id": "dep:0",
+      "source_id": "access:0",
+      "target_id": "local_access:0",
+      "kind": "llvm_def_use",
+      "via": "ssa_value",
+      "source_role": "transaction",
+      "target_role": "local_buffer_access",
+      "source_index": "",
+      "target_index": "",
+      "reason": "stored value operand is defined by, or computed from, the source access"
+    },
+    {
+      "id": "dep:1",
+      "source_id": "access:1",
+      "target_id": "local_access:1",
+      "kind": "llvm_def_use",
+      "via": "ssa_value",
+      "source_role": "transaction",
+      "target_role": "local_buffer_access",
+      "source_index": "",
+      "target_index": "",
+      "reason": "stored value operand is defined by, or computed from, the source access"
+    },
+    {
+      "id": "dep:2",
+      "source_id": "local_access:2",
+      "target_id": "local_access:4",
+      "kind": "llvm_def_use",
+      "via": "ssa_value",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "",
+      "target_index": "",
+      "reason": "stored value operand is defined by, or computed from, the source access"
+    },
+    {
+      "id": "dep:3",
+      "source_id": "local_access:3",
+      "target_id": "local_access:4",
+      "kind": "llvm_def_use",
+      "via": "ssa_value",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "",
+      "target_index": "",
+      "reason": "stored value operand is defined by, or computed from, the source access"
+    },
+    {
+      "id": "dep:4",
+      "source_id": "local_access:5",
+      "target_id": "access:2",
+      "kind": "llvm_def_use",
+      "via": "ssa_value",
+      "source_role": "local_buffer_access",
+      "target_role": "transaction",
+      "source_index": "",
+      "target_index": "",
+      "reason": "stored value operand is defined by, or computed from, the source access"
+    },
+    {
+      "id": "dep:5",
+      "source_id": "local_access:0",
+      "target_id": "local_access:2",
+      "kind": "local_buffer_raw",
+      "via": "A_local",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "index",
+      "target_index": "((row * 16) + k)",
+      "reason": "local buffer read may consume the earlier write to the same buffer"
+    },
+    {
+      "id": "dep:6",
+      "source_id": "local_access:1",
+      "target_id": "local_access:3",
+      "kind": "local_buffer_raw",
+      "via": "B_local",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "index",
+      "target_index": "((k * 16) + col)",
+      "reason": "local buffer read may consume the earlier write to the same buffer"
+    },
+    {
+      "id": "dep:7",
+      "source_id": "local_access:4",
+      "target_id": "local_access:5",
+      "kind": "local_buffer_raw",
+      "via": "C_local",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "((row * 16) + col)",
+      "target_index": "index40",
+      "reason": "local buffer read may consume the earlier write to the same buffer"
+    }
+  ]
+}

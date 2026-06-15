@@ -1,0 +1,356 @@
+{
+  "schema": "hls.transaction_dependency_graph.v8",
+  "dependency_source": "Physical transaction dependencies aggregated from the dynamic logical access graph. Logical graph edges combine LLVM static value/control metadata with actual IR trace execution and dynamic same port[element] RAW tracking.",
+  "detail_files": {
+    "physical_transactions": "inferred_physical_axi_transactions.json",
+    "logical_access_graph": "logical_access_graph.json"
+  },
+  "counts": {
+    "blocks": 16,
+    "static_dependency_edges": 6,
+    "logical_dependency_edges": 2048,
+    "dynamic_memory_raw_edges": 0,
+    "value_flow_edges": 2048,
+    "control_dependency_edges": 0
+  },
+  "blocks": [
+    {
+      "transaction_id": "txn_a_0",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_a_1",
+      "dependencies": [
+        {
+          "source_transaction_id": "txn_a_0",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:1",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "a[0..255]"
+          ],
+          "logical_edge_count": 256,
+          "logical_source_count": 1,
+          "logical_target_count": 256,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
+      ]
+    },
+    {
+      "transaction_id": "txn_a_2",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_a_3",
+      "dependencies": [
+        {
+          "source_transaction_id": "txn_a_2",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:1",
+          "source_element_ranges": [
+            "a[511]"
+          ],
+          "target_element_ranges": [
+            "a[256..511]"
+          ],
+          "logical_edge_count": 256,
+          "logical_source_count": 1,
+          "logical_target_count": 256,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
+      ]
+    },
+    {
+      "transaction_id": "txn_a_4",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_a_5",
+      "dependencies": [
+        {
+          "source_transaction_id": "txn_a_4",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:1",
+          "source_element_ranges": [
+            "a[767]"
+          ],
+          "target_element_ranges": [
+            "a[512..767]"
+          ],
+          "logical_edge_count": 256,
+          "logical_source_count": 1,
+          "logical_target_count": 256,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
+      ]
+    },
+    {
+      "transaction_id": "txn_a_6",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_a_7",
+      "dependencies": [
+        {
+          "source_transaction_id": "txn_a_6",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:1",
+          "source_element_ranges": [
+            "a[1023]"
+          ],
+          "target_element_ranges": [
+            "a[768..1023]"
+          ],
+          "logical_edge_count": 256,
+          "logical_source_count": 1,
+          "logical_target_count": 256,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
+      ]
+    },
+    {
+      "transaction_id": "txn_a_8",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_a_9",
+      "dependencies": [
+        {
+          "source_transaction_id": "txn_a_8",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:1",
+          "source_element_ranges": [
+            "a[1279]"
+          ],
+          "target_element_ranges": [
+            "a[1024..1279]"
+          ],
+          "logical_edge_count": 256,
+          "logical_source_count": 1,
+          "logical_target_count": 256,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
+      ]
+    },
+    {
+      "transaction_id": "txn_a_10",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_a_11",
+      "dependencies": [
+        {
+          "source_transaction_id": "txn_a_10",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:1",
+          "source_element_ranges": [
+            "a[1535]"
+          ],
+          "target_element_ranges": [
+            "a[1280..1535]"
+          ],
+          "logical_edge_count": 256,
+          "logical_source_count": 1,
+          "logical_target_count": 256,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
+      ]
+    },
+    {
+      "transaction_id": "txn_a_12",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_a_13",
+      "dependencies": [
+        {
+          "source_transaction_id": "txn_a_12",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:1",
+          "source_element_ranges": [
+            "a[1791]"
+          ],
+          "target_element_ranges": [
+            "a[1536..1791]"
+          ],
+          "logical_edge_count": 256,
+          "logical_source_count": 1,
+          "logical_target_count": 256,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
+      ]
+    },
+    {
+      "transaction_id": "txn_a_14",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_a_15",
+      "dependencies": [
+        {
+          "source_transaction_id": "txn_a_14",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:1",
+          "source_element_ranges": [
+            "a[2047]"
+          ],
+          "target_element_ranges": [
+            "a[1792..2047]"
+          ],
+          "logical_edge_count": 256,
+          "logical_source_count": 1,
+          "logical_target_count": 256,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
+      ]
+    }
+  ],
+  "static_nodes": {
+    "access:0": {
+      "id": "access:0",
+      "kind": "transaction",
+      "direction": "read",
+      "port": "a",
+      "bundle": "gmem",
+      "index": "(i + j)",
+      "loop": "VITIS_LOOP_52_1"
+    },
+    "access:1": {
+      "id": "access:1",
+      "kind": "transaction",
+      "direction": "write",
+      "port": "a",
+      "bundle": "gmem",
+      "index": "(i + j9)",
+      "loop": "calc_write"
+    },
+    "local_access:0": {
+      "id": "local_access:0",
+      "kind": "local_buffer_access",
+      "direction": "write",
+      "buffer": "burstbuffer",
+      "index": "j",
+      "operation": "store",
+      "loop": "VITIS_LOOP_52_1"
+    },
+    "local_access:1": {
+      "id": "local_access:1",
+      "kind": "local_buffer_access",
+      "direction": "read",
+      "buffer": "burstbuffer",
+      "index": "j9",
+      "operation": "load",
+      "loop": "calc_write"
+    },
+    "local_access:2": {
+      "id": "local_access:2",
+      "kind": "local_buffer_access",
+      "direction": "write",
+      "buffer": "burstbuffer",
+      "index": "j9",
+      "operation": "store",
+      "loop": "calc_write"
+    },
+    "local_access:3": {
+      "id": "local_access:3",
+      "kind": "local_buffer_access",
+      "direction": "read",
+      "buffer": "burstbuffer",
+      "index": "j9",
+      "operation": "load",
+      "loop": "calc_write"
+    }
+  },
+  "static_dependency_edges": [
+    {
+      "id": "dep:0",
+      "source_id": "access:0",
+      "target_id": "local_access:0",
+      "kind": "llvm_def_use",
+      "via": "ssa_value",
+      "source_role": "transaction",
+      "target_role": "local_buffer_access",
+      "source_index": "",
+      "target_index": "",
+      "reason": "stored value operand is defined by, or computed from, the source access"
+    },
+    {
+      "id": "dep:1",
+      "source_id": "local_access:1",
+      "target_id": "local_access:2",
+      "kind": "llvm_def_use",
+      "via": "ssa_value",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "",
+      "target_index": "",
+      "reason": "stored value operand is defined by, or computed from, the source access"
+    },
+    {
+      "id": "dep:2",
+      "source_id": "local_access:3",
+      "target_id": "access:1",
+      "kind": "llvm_def_use",
+      "via": "ssa_value",
+      "source_role": "local_buffer_access",
+      "target_role": "transaction",
+      "source_index": "",
+      "target_index": "",
+      "reason": "stored value operand is defined by, or computed from, the source access"
+    },
+    {
+      "id": "dep:3",
+      "source_id": "local_access:0",
+      "target_id": "local_access:1",
+      "kind": "local_buffer_raw",
+      "via": "burstbuffer",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "j",
+      "target_index": "j9",
+      "reason": "local buffer read may consume the earlier write to the same buffer"
+    },
+    {
+      "id": "dep:4",
+      "source_id": "local_access:0",
+      "target_id": "local_access:3",
+      "kind": "local_buffer_raw",
+      "via": "burstbuffer",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "j",
+      "target_index": "j9",
+      "reason": "local buffer read may consume the earlier write to the same buffer"
+    },
+    {
+      "id": "dep:5",
+      "source_id": "local_access:2",
+      "target_id": "local_access:3",
+      "kind": "local_buffer_raw",
+      "via": "burstbuffer",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "j9",
+      "target_index": "j9",
+      "reason": "local buffer read may consume the earlier write to the same buffer"
+    }
+  ]
+}

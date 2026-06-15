@@ -1,0 +1,13 @@
+txn_id	direction	argument	bundle	start_index	end_index	byte_addr	beats	axlen	elements_per_beat	issue_order	complete_order	depends_on	timeline_lane
+txn_in1_0	read	in1	gmem	0	15	0	16	15	1	0	16		in1
+txn_in2_0	read	in2	gmem	0	15	0	16	15	1	16	32		in2
+txn_in1_1	read	in1	gmem	16	31	64	16	15	1	32	48		in1
+txn_in2_1	read	in2	gmem	16	31	64	16	15	1	48	64		in2
+txn_in1_2	read	in1	gmem	32	47	128	16	15	1	64	80		in1
+txn_in2_2	read	in2	gmem	32	47	128	16	15	1	80	96		in2
+txn_out_0	write	out	gmem	0	15	0	16	15	1	82	98	txn_in1_0,txn_in2_0	out
+txn_in1_3	read	in1	gmem	48	63	192	16	15	1	96	112		in1
+txn_in2_3	read	in2	gmem	48	63	192	16	15	1	112	128		in2
+txn_out_1	write	out	gmem	16	31	64	16	15	1	114	130	txn_in1_1,txn_in2_1	out
+txn_out_2	write	out	gmem	32	47	128	16	15	1	146	162	txn_in1_2,txn_in2_2	out
+txn_out_3	write	out	gmem	48	63	192	16	15	1	178	194	txn_in1_3,txn_in2_3	out

@@ -1,0 +1,19 @@
+<pragmas>
+<pragma file="matrix_mul.cpp" line="78" pragmaType="pipeline" parentfunction="matrix_mul" off="0" ii="1" rewind="0" style=""/>
+<pragma file="matrix_mul.cpp" line="42" pragmaType="pipeline" parentfunction="matrix_mul" off="0" ii="1" rewind="0" style=""/>
+<pragma file="matrix_mul.cpp" line="51" pragmaType="pipeline" parentfunction="matrix_mul" off="0" ii="1" rewind="0" style=""/>
+<pragma file="matrix_mul.cpp" line="60" pragmaType="pipeline" parentfunction="matrix_mul" off="0" ii="1" rewind="0" style=""/>
+<pragma file="matrix_mul.cpp" line="67" pragmaType="unroll" parentfunction="matrix_mul" factor="-1" skip_exit_check="0"/>
+<pragma file="matrix_mul.cpp" line="30" pragmaType="pipeline" parentfunction="matrix_mul" off="0" ii="1" rewind="0" style=""/>
+<pragma file="matrix_mul.cpp" line="9" pragmaType="interface" parentfunction="matrix_mul" mode="m_axi" port="a" bundle="gmem_a" offset="slave" name="" depth="256" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="512" channel=""/>
+<pragma file="matrix_mul.cpp" line="10" pragmaType="interface" parentfunction="matrix_mul" mode="m_axi" port="b" bundle="gmem_b" offset="slave" name="" depth="256" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="512" channel=""/>
+<pragma file="matrix_mul.cpp" line="11" pragmaType="interface" parentfunction="matrix_mul" mode="m_axi" port="c" bundle="gmem_c" offset="slave" name="" depth="256" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="1" latency="-1" max_widen_bitwidth="512" channel=""/>
+<pragma file="matrix_mul.cpp" line="13" pragmaType="interface" parentfunction="matrix_mul" mode="s_axilite" port="a" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="matrix_mul.cpp" line="14" pragmaType="interface" parentfunction="matrix_mul" mode="s_axilite" port="b" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="matrix_mul.cpp" line="15" pragmaType="interface" parentfunction="matrix_mul" mode="s_axilite" port="c" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="matrix_mul.cpp" line="16" pragmaType="interface" parentfunction="matrix_mul" mode="s_axilite" port="" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="matrix_mul.cpp" line="22" pragmaType="array_partition" parentfunction="matrix_mul" dim="2" factor="0" mode="complete" dynamic="0" variable="A_tile"/>
+<pragma file="matrix_mul.cpp" line="23" pragmaType="array_partition" parentfunction="matrix_mul" dim="1" factor="0" mode="complete" dynamic="0" variable="B_tile"/>
+<pragma file="matrix_mul.cpp" line="24" pragmaType="array_partition" parentfunction="matrix_mul" dim="2" factor="4" mode="cyclic" dynamic="0" variable="C_local"/>
+<pragma file="matrix_mul.cpp" line="61" pragmaType="dependence" parentfunction="matrix_mul" class="" direction="NODIR" type="inter" distance="0" variable="C_local"/>
+</pragmas>

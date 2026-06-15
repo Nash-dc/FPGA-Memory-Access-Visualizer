@@ -1,0 +1,1332 @@
+element_id	order	op_type	argument	bundle	index	byte_addr	source_loc	txn_id	depends_on
+la:0	0	read	in	gmem_in	0	0	  %6 = load i32, i32* %arrayidx, align 4	txn_in_0	
+la:1	1	write	scratch_a	gmem_scratch_a	0	0	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_0	la:0
+la:2	2	read	in	gmem_in	1	4	  %6 = load i32, i32* %arrayidx, align 4	txn_in_0	
+la:3	3	write	scratch_a	gmem_scratch_a	1	4	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_0	la:2
+la:4	4	read	in	gmem_in	2	8	  %6 = load i32, i32* %arrayidx, align 4	txn_in_0	
+la:5	5	write	scratch_a	gmem_scratch_a	2	8	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_0	la:4
+la:6	6	read	in	gmem_in	3	12	  %6 = load i32, i32* %arrayidx, align 4	txn_in_0	
+la:7	7	write	scratch_a	gmem_scratch_a	3	12	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_0	la:6
+la:8	8	read	in	gmem_in	4	16	  %6 = load i32, i32* %arrayidx, align 4	txn_in_0	
+la:9	9	write	scratch_a	gmem_scratch_a	4	16	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_0	la:8
+la:10	10	read	in	gmem_in	5	20	  %6 = load i32, i32* %arrayidx, align 4	txn_in_0	
+la:11	11	write	scratch_a	gmem_scratch_a	5	20	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_0	la:10
+la:12	12	read	in	gmem_in	6	24	  %6 = load i32, i32* %arrayidx, align 4	txn_in_0	
+la:13	13	write	scratch_a	gmem_scratch_a	6	24	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_0	la:12
+la:14	14	read	in	gmem_in	7	28	  %6 = load i32, i32* %arrayidx, align 4	txn_in_0	
+la:15	15	write	scratch_a	gmem_scratch_a	7	28	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_0	la:14
+la:16	16	read	in	gmem_in	8	32	  %6 = load i32, i32* %arrayidx, align 4	txn_in_0	
+la:17	17	write	scratch_a	gmem_scratch_a	8	32	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_0	la:16
+la:18	18	read	in	gmem_in	9	36	  %6 = load i32, i32* %arrayidx, align 4	txn_in_0	
+la:19	19	write	scratch_a	gmem_scratch_a	9	36	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_0	la:18
+la:20	20	read	in	gmem_in	10	40	  %6 = load i32, i32* %arrayidx, align 4	txn_in_0	
+la:21	21	write	scratch_a	gmem_scratch_a	10	40	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_0	la:20
+la:22	22	read	in	gmem_in	11	44	  %6 = load i32, i32* %arrayidx, align 4	txn_in_0	
+la:23	23	write	scratch_a	gmem_scratch_a	11	44	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_0	la:22
+la:24	24	read	in	gmem_in	12	48	  %6 = load i32, i32* %arrayidx, align 4	txn_in_0	
+la:25	25	write	scratch_a	gmem_scratch_a	12	48	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_0	la:24
+la:26	26	read	in	gmem_in	13	52	  %6 = load i32, i32* %arrayidx, align 4	txn_in_0	
+la:27	27	write	scratch_a	gmem_scratch_a	13	52	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_0	la:26
+la:28	28	read	in	gmem_in	14	56	  %6 = load i32, i32* %arrayidx, align 4	txn_in_0	
+la:29	29	write	scratch_a	gmem_scratch_a	14	56	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_0	la:28
+la:30	30	read	in	gmem_in	15	60	  %6 = load i32, i32* %arrayidx, align 4	txn_in_0	
+la:31	31	write	scratch_a	gmem_scratch_a	15	60	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_0	la:30
+la:32	32	read	in	gmem_in	16	64	  %6 = load i32, i32* %arrayidx, align 4	txn_in_0	
+la:33	33	write	scratch_a	gmem_scratch_a	16	64	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_1	la:32
+la:34	34	read	in	gmem_in	17	68	  %6 = load i32, i32* %arrayidx, align 4	txn_in_0	
+la:35	35	write	scratch_a	gmem_scratch_a	17	68	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_1	la:34
+la:36	36	read	in	gmem_in	18	72	  %6 = load i32, i32* %arrayidx, align 4	txn_in_0	
+la:37	37	write	scratch_a	gmem_scratch_a	18	72	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_1	la:36
+la:38	38	read	in	gmem_in	19	76	  %6 = load i32, i32* %arrayidx, align 4	txn_in_0	
+la:39	39	write	scratch_a	gmem_scratch_a	19	76	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_1	la:38
+la:40	40	read	in	gmem_in	20	80	  %6 = load i32, i32* %arrayidx, align 4	txn_in_0	
+la:41	41	write	scratch_a	gmem_scratch_a	20	80	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_1	la:40
+la:42	42	read	in	gmem_in	21	84	  %6 = load i32, i32* %arrayidx, align 4	txn_in_0	
+la:43	43	write	scratch_a	gmem_scratch_a	21	84	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_1	la:42
+la:44	44	read	in	gmem_in	22	88	  %6 = load i32, i32* %arrayidx, align 4	txn_in_0	
+la:45	45	write	scratch_a	gmem_scratch_a	22	88	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_1	la:44
+la:46	46	read	in	gmem_in	23	92	  %6 = load i32, i32* %arrayidx, align 4	txn_in_0	
+la:47	47	write	scratch_a	gmem_scratch_a	23	92	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_1	la:46
+la:48	48	read	in	gmem_in	24	96	  %6 = load i32, i32* %arrayidx, align 4	txn_in_0	
+la:49	49	write	scratch_a	gmem_scratch_a	24	96	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_1	la:48
+la:50	50	read	in	gmem_in	25	100	  %6 = load i32, i32* %arrayidx, align 4	txn_in_0	
+la:51	51	write	scratch_a	gmem_scratch_a	25	100	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_1	la:50
+la:52	52	read	in	gmem_in	26	104	  %6 = load i32, i32* %arrayidx, align 4	txn_in_0	
+la:53	53	write	scratch_a	gmem_scratch_a	26	104	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_1	la:52
+la:54	54	read	in	gmem_in	27	108	  %6 = load i32, i32* %arrayidx, align 4	txn_in_0	
+la:55	55	write	scratch_a	gmem_scratch_a	27	108	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_1	la:54
+la:56	56	read	in	gmem_in	28	112	  %6 = load i32, i32* %arrayidx, align 4	txn_in_0	
+la:57	57	write	scratch_a	gmem_scratch_a	28	112	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_1	la:56
+la:58	58	read	in	gmem_in	29	116	  %6 = load i32, i32* %arrayidx, align 4	txn_in_0	
+la:59	59	write	scratch_a	gmem_scratch_a	29	116	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_1	la:58
+la:60	60	read	in	gmem_in	30	120	  %6 = load i32, i32* %arrayidx, align 4	txn_in_0	
+la:61	61	write	scratch_a	gmem_scratch_a	30	120	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_1	la:60
+la:62	62	read	in	gmem_in	31	124	  %6 = load i32, i32* %arrayidx, align 4	txn_in_0	
+la:63	63	write	scratch_a	gmem_scratch_a	31	124	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_1	la:62
+la:64	64	read	in	gmem_in	32	128	  %6 = load i32, i32* %arrayidx, align 4	txn_in_1	
+la:65	65	write	scratch_a	gmem_scratch_a	32	128	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_2	la:64
+la:66	66	read	in	gmem_in	33	132	  %6 = load i32, i32* %arrayidx, align 4	txn_in_1	
+la:67	67	write	scratch_a	gmem_scratch_a	33	132	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_2	la:66
+la:68	68	read	in	gmem_in	34	136	  %6 = load i32, i32* %arrayidx, align 4	txn_in_1	
+la:69	69	write	scratch_a	gmem_scratch_a	34	136	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_2	la:68
+la:70	70	read	in	gmem_in	35	140	  %6 = load i32, i32* %arrayidx, align 4	txn_in_1	
+la:71	71	write	scratch_a	gmem_scratch_a	35	140	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_2	la:70
+la:72	72	read	in	gmem_in	36	144	  %6 = load i32, i32* %arrayidx, align 4	txn_in_1	
+la:73	73	write	scratch_a	gmem_scratch_a	36	144	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_2	la:72
+la:74	74	read	in	gmem_in	37	148	  %6 = load i32, i32* %arrayidx, align 4	txn_in_1	
+la:75	75	write	scratch_a	gmem_scratch_a	37	148	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_2	la:74
+la:76	76	read	in	gmem_in	38	152	  %6 = load i32, i32* %arrayidx, align 4	txn_in_1	
+la:77	77	write	scratch_a	gmem_scratch_a	38	152	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_2	la:76
+la:78	78	read	in	gmem_in	39	156	  %6 = load i32, i32* %arrayidx, align 4	txn_in_1	
+la:79	79	write	scratch_a	gmem_scratch_a	39	156	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_2	la:78
+la:80	80	read	in	gmem_in	40	160	  %6 = load i32, i32* %arrayidx, align 4	txn_in_1	
+la:81	81	write	scratch_a	gmem_scratch_a	40	160	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_2	la:80
+la:82	82	read	in	gmem_in	41	164	  %6 = load i32, i32* %arrayidx, align 4	txn_in_1	
+la:83	83	write	scratch_a	gmem_scratch_a	41	164	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_2	la:82
+la:84	84	read	in	gmem_in	42	168	  %6 = load i32, i32* %arrayidx, align 4	txn_in_1	
+la:85	85	write	scratch_a	gmem_scratch_a	42	168	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_2	la:84
+la:86	86	read	in	gmem_in	43	172	  %6 = load i32, i32* %arrayidx, align 4	txn_in_1	
+la:87	87	write	scratch_a	gmem_scratch_a	43	172	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_2	la:86
+la:88	88	read	in	gmem_in	44	176	  %6 = load i32, i32* %arrayidx, align 4	txn_in_1	
+la:89	89	write	scratch_a	gmem_scratch_a	44	176	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_2	la:88
+la:90	90	read	in	gmem_in	45	180	  %6 = load i32, i32* %arrayidx, align 4	txn_in_1	
+la:91	91	write	scratch_a	gmem_scratch_a	45	180	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_2	la:90
+la:92	92	read	in	gmem_in	46	184	  %6 = load i32, i32* %arrayidx, align 4	txn_in_1	
+la:93	93	write	scratch_a	gmem_scratch_a	46	184	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_2	la:92
+la:94	94	read	in	gmem_in	47	188	  %6 = load i32, i32* %arrayidx, align 4	txn_in_1	
+la:95	95	write	scratch_a	gmem_scratch_a	47	188	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_2	la:94
+la:96	96	read	in	gmem_in	48	192	  %6 = load i32, i32* %arrayidx, align 4	txn_in_1	
+la:97	97	write	scratch_a	gmem_scratch_a	48	192	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_3	la:96
+la:98	98	read	in	gmem_in	49	196	  %6 = load i32, i32* %arrayidx, align 4	txn_in_1	
+la:99	99	write	scratch_a	gmem_scratch_a	49	196	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_3	la:98
+la:100	100	read	in	gmem_in	50	200	  %6 = load i32, i32* %arrayidx, align 4	txn_in_1	
+la:101	101	write	scratch_a	gmem_scratch_a	50	200	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_3	la:100
+la:102	102	read	in	gmem_in	51	204	  %6 = load i32, i32* %arrayidx, align 4	txn_in_1	
+la:103	103	write	scratch_a	gmem_scratch_a	51	204	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_3	la:102
+la:104	104	read	in	gmem_in	52	208	  %6 = load i32, i32* %arrayidx, align 4	txn_in_1	
+la:105	105	write	scratch_a	gmem_scratch_a	52	208	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_3	la:104
+la:106	106	read	in	gmem_in	53	212	  %6 = load i32, i32* %arrayidx, align 4	txn_in_1	
+la:107	107	write	scratch_a	gmem_scratch_a	53	212	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_3	la:106
+la:108	108	read	in	gmem_in	54	216	  %6 = load i32, i32* %arrayidx, align 4	txn_in_1	
+la:109	109	write	scratch_a	gmem_scratch_a	54	216	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_3	la:108
+la:110	110	read	in	gmem_in	55	220	  %6 = load i32, i32* %arrayidx, align 4	txn_in_1	
+la:111	111	write	scratch_a	gmem_scratch_a	55	220	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_3	la:110
+la:112	112	read	in	gmem_in	56	224	  %6 = load i32, i32* %arrayidx, align 4	txn_in_1	
+la:113	113	write	scratch_a	gmem_scratch_a	56	224	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_3	la:112
+la:114	114	read	in	gmem_in	57	228	  %6 = load i32, i32* %arrayidx, align 4	txn_in_1	
+la:115	115	write	scratch_a	gmem_scratch_a	57	228	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_3	la:114
+la:116	116	read	in	gmem_in	58	232	  %6 = load i32, i32* %arrayidx, align 4	txn_in_1	
+la:117	117	write	scratch_a	gmem_scratch_a	58	232	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_3	la:116
+la:118	118	read	in	gmem_in	59	236	  %6 = load i32, i32* %arrayidx, align 4	txn_in_1	
+la:119	119	write	scratch_a	gmem_scratch_a	59	236	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_3	la:118
+la:120	120	read	in	gmem_in	60	240	  %6 = load i32, i32* %arrayidx, align 4	txn_in_1	
+la:121	121	write	scratch_a	gmem_scratch_a	60	240	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_3	la:120
+la:122	122	read	in	gmem_in	61	244	  %6 = load i32, i32* %arrayidx, align 4	txn_in_1	
+la:123	123	write	scratch_a	gmem_scratch_a	61	244	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_3	la:122
+la:124	124	read	in	gmem_in	62	248	  %6 = load i32, i32* %arrayidx, align 4	txn_in_1	
+la:125	125	write	scratch_a	gmem_scratch_a	62	248	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_3	la:124
+la:126	126	read	in	gmem_in	63	252	  %6 = load i32, i32* %arrayidx, align 4	txn_in_1	
+la:127	127	write	scratch_a	gmem_scratch_a	63	252	  store i32 %6, i32* %arrayidx2, align 4	txn_scratch_a_3	la:126
+la:128	128	read	scratch_a	gmem_scratch_a	0	0	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_4	la:1
+la:129	129	read	scratch_a	gmem_scratch_a	1	4	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_4	la:3
+la:130	130	write	scratch_b	gmem_scratch_b	0	0	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_0	la:129,la:128
+la:131	131	read	scratch_a	gmem_scratch_a	0	0	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_5	la:1
+la:132	132	write	scratch_b	gmem_scratch_b	1	4	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_0	la:131,la:129
+la:133	133	read	scratch_a	gmem_scratch_a	2	8	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_6	la:5
+la:134	134	read	scratch_a	gmem_scratch_a	3	12	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_6	la:7
+la:135	135	write	scratch_b	gmem_scratch_b	2	8	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_0	la:134,la:133
+la:136	136	read	scratch_a	gmem_scratch_a	2	8	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_7	la:5
+la:137	137	write	scratch_b	gmem_scratch_b	3	12	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_0	la:136,la:134
+la:138	138	read	scratch_a	gmem_scratch_a	4	16	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_8	la:9
+la:139	139	read	scratch_a	gmem_scratch_a	5	20	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_8	la:11
+la:140	140	write	scratch_b	gmem_scratch_b	4	16	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_0	la:138,la:139
+la:141	141	read	scratch_a	gmem_scratch_a	5	20	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_9	la:11
+la:142	142	write	scratch_b	gmem_scratch_b	5	20	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_0	la:141,la:138
+la:143	143	read	scratch_a	gmem_scratch_a	6	24	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_9	la:13
+la:144	144	read	scratch_a	gmem_scratch_a	7	28	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_9	la:15
+la:145	145	write	scratch_b	gmem_scratch_b	6	24	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_0	la:143,la:144
+la:146	146	read	scratch_a	gmem_scratch_a	7	28	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_10	la:15
+la:147	147	write	scratch_b	gmem_scratch_b	7	28	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_0	la:146,la:143
+la:148	148	read	scratch_a	gmem_scratch_a	8	32	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_10	la:17
+la:149	149	read	scratch_a	gmem_scratch_a	9	36	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_10	la:19
+la:150	150	write	scratch_b	gmem_scratch_b	8	32	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_0	la:148,la:149
+la:151	151	read	scratch_a	gmem_scratch_a	9	36	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_11	la:19
+la:152	152	write	scratch_b	gmem_scratch_b	9	36	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_0	la:151,la:148
+la:153	153	read	scratch_a	gmem_scratch_a	10	40	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_11	la:21
+la:154	154	read	scratch_a	gmem_scratch_a	11	44	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_11	la:23
+la:155	155	write	scratch_b	gmem_scratch_b	10	40	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_0	la:154,la:153
+la:156	156	read	scratch_a	gmem_scratch_a	10	40	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_12	la:21
+la:157	157	write	scratch_b	gmem_scratch_b	11	44	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_0	la:156,la:154
+la:158	158	read	scratch_a	gmem_scratch_a	12	48	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_13	la:25
+la:159	159	read	scratch_a	gmem_scratch_a	13	52	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_13	la:27
+la:160	160	write	scratch_b	gmem_scratch_b	12	48	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_0	la:159,la:158
+la:161	161	read	scratch_a	gmem_scratch_a	12	48	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_14	la:25
+la:162	162	write	scratch_b	gmem_scratch_b	13	52	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_0	la:161,la:159
+la:163	163	read	scratch_a	gmem_scratch_a	14	56	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_15	la:29
+la:164	164	read	scratch_a	gmem_scratch_a	15	60	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_15	la:31
+la:165	165	write	scratch_b	gmem_scratch_b	14	56	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_0	la:164,la:163
+la:166	166	read	scratch_a	gmem_scratch_a	14	56	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_16	la:29
+la:167	167	write	scratch_b	gmem_scratch_b	15	60	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_0	la:166,la:164
+la:168	168	read	scratch_a	gmem_scratch_a	16	64	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_17	la:33
+la:169	169	read	scratch_a	gmem_scratch_a	17	68	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_17	la:35
+la:170	170	write	scratch_b	gmem_scratch_b	16	64	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_1	la:169,la:168
+la:171	171	read	scratch_a	gmem_scratch_a	16	64	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_18	la:33
+la:172	172	write	scratch_b	gmem_scratch_b	17	68	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_1	la:171,la:169
+la:173	173	read	scratch_a	gmem_scratch_a	18	72	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_19	la:37
+la:174	174	read	scratch_a	gmem_scratch_a	19	76	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_19	la:39
+la:175	175	write	scratch_b	gmem_scratch_b	18	72	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_1	la:173,la:174
+la:176	176	read	scratch_a	gmem_scratch_a	19	76	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_20	la:39
+la:177	177	write	scratch_b	gmem_scratch_b	19	76	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_1	la:176,la:173
+la:178	178	read	scratch_a	gmem_scratch_a	20	80	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_20	la:41
+la:179	179	read	scratch_a	gmem_scratch_a	21	84	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_20	la:43
+la:180	180	write	scratch_b	gmem_scratch_b	20	80	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_1	la:178,la:179
+la:181	181	read	scratch_a	gmem_scratch_a	21	84	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_21	la:43
+la:182	182	write	scratch_b	gmem_scratch_b	21	84	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_1	la:181,la:178
+la:183	183	read	scratch_a	gmem_scratch_a	22	88	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_21	la:45
+la:184	184	read	scratch_a	gmem_scratch_a	23	92	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_21	la:47
+la:185	185	write	scratch_b	gmem_scratch_b	22	88	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_1	la:184,la:183
+la:186	186	read	scratch_a	gmem_scratch_a	22	88	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_22	la:45
+la:187	187	write	scratch_b	gmem_scratch_b	23	92	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_1	la:186,la:184
+la:188	188	read	scratch_a	gmem_scratch_a	24	96	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_23	la:49
+la:189	189	read	scratch_a	gmem_scratch_a	25	100	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_23	la:51
+la:190	190	write	scratch_b	gmem_scratch_b	24	96	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_1	la:188,la:189
+la:191	191	read	scratch_a	gmem_scratch_a	25	100	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_24	la:51
+la:192	192	write	scratch_b	gmem_scratch_b	25	100	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_1	la:191,la:188
+la:193	193	read	scratch_a	gmem_scratch_a	26	104	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_24	la:53
+la:194	194	read	scratch_a	gmem_scratch_a	27	108	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_24	la:55
+la:195	195	write	scratch_b	gmem_scratch_b	26	104	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_1	la:194,la:193
+la:196	196	read	scratch_a	gmem_scratch_a	26	104	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_25	la:53
+la:197	197	write	scratch_b	gmem_scratch_b	27	108	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_1	la:196,la:194
+la:198	198	read	scratch_a	gmem_scratch_a	28	112	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_26	la:57
+la:199	199	read	scratch_a	gmem_scratch_a	29	116	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_26	la:59
+la:200	200	write	scratch_b	gmem_scratch_b	28	112	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_1	la:199,la:198
+la:201	201	read	scratch_a	gmem_scratch_a	28	112	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_27	la:57
+la:202	202	write	scratch_b	gmem_scratch_b	29	116	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_1	la:201,la:199
+la:203	203	read	scratch_a	gmem_scratch_a	30	120	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_28	la:61
+la:204	204	read	scratch_a	gmem_scratch_a	31	124	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_28	la:63
+la:205	205	write	scratch_b	gmem_scratch_b	30	120	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_1	la:203,la:204
+la:206	206	read	scratch_a	gmem_scratch_a	31	124	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_29	la:63
+la:207	207	write	scratch_b	gmem_scratch_b	31	124	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_1	la:206,la:203
+la:208	208	read	scratch_a	gmem_scratch_a	32	128	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_29	la:65
+la:209	209	read	scratch_a	gmem_scratch_a	33	132	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_29	la:67
+la:210	210	write	scratch_b	gmem_scratch_b	32	128	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_2	la:209,la:208
+la:211	211	read	scratch_a	gmem_scratch_a	32	128	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_30	la:65
+la:212	212	write	scratch_b	gmem_scratch_b	33	132	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_2	la:211,la:209
+la:213	213	read	scratch_a	gmem_scratch_a	34	136	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_31	la:69
+la:214	214	read	scratch_a	gmem_scratch_a	35	140	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_31	la:71
+la:215	215	write	scratch_b	gmem_scratch_b	34	136	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_2	la:214,la:213
+la:216	216	read	scratch_a	gmem_scratch_a	34	136	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_32	la:69
+la:217	217	write	scratch_b	gmem_scratch_b	35	140	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_2	la:216,la:214
+la:218	218	read	scratch_a	gmem_scratch_a	36	144	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_33	la:73
+la:219	219	read	scratch_a	gmem_scratch_a	37	148	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_33	la:75
+la:220	220	write	scratch_b	gmem_scratch_b	36	144	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_2	la:218,la:219
+la:221	221	read	scratch_a	gmem_scratch_a	37	148	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_34	la:75
+la:222	222	write	scratch_b	gmem_scratch_b	37	148	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_2	la:221,la:218
+la:223	223	read	scratch_a	gmem_scratch_a	38	152	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_34	la:77
+la:224	224	read	scratch_a	gmem_scratch_a	39	156	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_34	la:79
+la:225	225	write	scratch_b	gmem_scratch_b	38	152	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_2	la:224,la:223
+la:226	226	read	scratch_a	gmem_scratch_a	38	152	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_35	la:77
+la:227	227	write	scratch_b	gmem_scratch_b	39	156	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_2	la:226,la:224
+la:228	228	read	scratch_a	gmem_scratch_a	40	160	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_36	la:81
+la:229	229	read	scratch_a	gmem_scratch_a	41	164	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_36	la:83
+la:230	230	write	scratch_b	gmem_scratch_b	40	160	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_2	la:228,la:229
+la:231	231	read	scratch_a	gmem_scratch_a	41	164	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_37	la:83
+la:232	232	write	scratch_b	gmem_scratch_b	41	164	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_2	la:231,la:228
+la:233	233	read	scratch_a	gmem_scratch_a	42	168	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_37	la:85
+la:234	234	read	scratch_a	gmem_scratch_a	43	172	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_37	la:87
+la:235	235	write	scratch_b	gmem_scratch_b	42	168	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_2	la:234,la:233
+la:236	236	read	scratch_a	gmem_scratch_a	42	168	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_38	la:85
+la:237	237	write	scratch_b	gmem_scratch_b	43	172	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_2	la:236,la:234
+la:238	238	read	scratch_a	gmem_scratch_a	44	176	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_39	la:89
+la:239	239	read	scratch_a	gmem_scratch_a	45	180	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_39	la:91
+la:240	240	write	scratch_b	gmem_scratch_b	44	176	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_2	la:239,la:238
+la:241	241	read	scratch_a	gmem_scratch_a	44	176	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_40	la:89
+la:242	242	write	scratch_b	gmem_scratch_b	45	180	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_2	la:241,la:239
+la:243	243	read	scratch_a	gmem_scratch_a	46	184	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_41	la:93
+la:244	244	read	scratch_a	gmem_scratch_a	47	188	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_41	la:95
+la:245	245	write	scratch_b	gmem_scratch_b	46	184	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_2	la:243,la:244
+la:246	246	read	scratch_a	gmem_scratch_a	47	188	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_42	la:95
+la:247	247	write	scratch_b	gmem_scratch_b	47	188	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_2	la:246,la:243
+la:248	248	read	scratch_a	gmem_scratch_a	48	192	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_42	la:97
+la:249	249	read	scratch_a	gmem_scratch_a	49	196	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_42	la:99
+la:250	250	write	scratch_b	gmem_scratch_b	48	192	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_3	la:248,la:249
+la:251	251	read	scratch_a	gmem_scratch_a	49	196	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_43	la:99
+la:252	252	write	scratch_b	gmem_scratch_b	49	196	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_3	la:251,la:248
+la:253	253	read	scratch_a	gmem_scratch_a	50	200	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_43	la:101
+la:254	254	read	scratch_a	gmem_scratch_a	51	204	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_43	la:103
+la:255	255	write	scratch_b	gmem_scratch_b	50	200	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_3	la:254,la:253
+la:256	256	read	scratch_a	gmem_scratch_a	50	200	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_44	la:101
+la:257	257	write	scratch_b	gmem_scratch_b	51	204	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_3	la:256,la:254
+la:258	258	read	scratch_a	gmem_scratch_a	52	208	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_45	la:105
+la:259	259	read	scratch_a	gmem_scratch_a	53	212	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_45	la:107
+la:260	260	write	scratch_b	gmem_scratch_b	52	208	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_3	la:258,la:259
+la:261	261	read	scratch_a	gmem_scratch_a	53	212	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_46	la:107
+la:262	262	write	scratch_b	gmem_scratch_b	53	212	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_3	la:261,la:258
+la:263	263	read	scratch_a	gmem_scratch_a	54	216	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_46	la:109
+la:264	264	read	scratch_a	gmem_scratch_a	55	220	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_46	la:111
+la:265	265	write	scratch_b	gmem_scratch_b	54	216	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_3	la:263,la:264
+la:266	266	read	scratch_a	gmem_scratch_a	55	220	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_47	la:111
+la:267	267	write	scratch_b	gmem_scratch_b	55	220	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_3	la:266,la:263
+la:268	268	read	scratch_a	gmem_scratch_a	56	224	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_47	la:113
+la:269	269	read	scratch_a	gmem_scratch_a	57	228	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_47	la:115
+la:270	270	write	scratch_b	gmem_scratch_b	56	224	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_3	la:268,la:269
+la:271	271	read	scratch_a	gmem_scratch_a	57	228	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_48	la:115
+la:272	272	write	scratch_b	gmem_scratch_b	57	228	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_3	la:271,la:268
+la:273	273	read	scratch_a	gmem_scratch_a	58	232	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_48	la:117
+la:274	274	read	scratch_a	gmem_scratch_a	59	236	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_48	la:119
+la:275	275	write	scratch_b	gmem_scratch_b	58	232	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_3	la:274,la:273
+la:276	276	read	scratch_a	gmem_scratch_a	58	232	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_49	la:117
+la:277	277	write	scratch_b	gmem_scratch_b	59	236	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_3	la:276,la:274
+la:278	278	read	scratch_a	gmem_scratch_a	60	240	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_50	la:121
+la:279	279	read	scratch_a	gmem_scratch_a	61	244	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_50	la:123
+la:280	280	write	scratch_b	gmem_scratch_b	60	240	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_3	la:278,la:279
+la:281	281	read	scratch_a	gmem_scratch_a	61	244	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_51	la:123
+la:282	282	write	scratch_b	gmem_scratch_b	61	244	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_3	la:281,la:278
+la:283	283	read	scratch_a	gmem_scratch_a	62	248	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_51	la:125
+la:284	284	read	scratch_a	gmem_scratch_a	63	252	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_51	la:127
+la:285	285	write	scratch_b	gmem_scratch_b	62	248	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_3	la:283,la:284
+la:286	286	read	scratch_a	gmem_scratch_a	63	252	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_52	la:127
+la:287	287	write	scratch_b	gmem_scratch_b	63	252	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_3	la:286,la:283
+la:288	288	read	scratch_b	gmem_scratch_b	0	0	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_4	la:130
+la:289	289	read	scratch_b	gmem_scratch_b	2	8	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_5	la:135
+la:290	290	write	scratch_a	gmem_scratch_a	0	0	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_53	la:289,la:288
+la:291	291	read	scratch_b	gmem_scratch_b	0	0	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_6	la:130
+la:292	292	read	scratch_b	gmem_scratch_b	3	12	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_7	la:137
+la:293	293	write	scratch_a	gmem_scratch_a	1	4	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_53	la:291,la:292
+la:294	294	read	scratch_b	gmem_scratch_b	1	4	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_8	la:132
+la:295	295	read	scratch_b	gmem_scratch_b	3	12	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_9	la:137
+la:296	296	write	scratch_a	gmem_scratch_a	2	8	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_53	la:294,la:295
+la:297	297	read	scratch_b	gmem_scratch_b	3	12	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_10	la:137
+la:298	298	write	scratch_a	gmem_scratch_a	3	12	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_53	la:297,la:294
+la:299	299	read	scratch_b	gmem_scratch_b	4	16	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_10	la:140
+la:300	300	read	scratch_b	gmem_scratch_b	6	24	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_11	la:145
+la:301	301	write	scratch_a	gmem_scratch_a	4	16	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_53	la:300,la:299
+la:302	302	read	scratch_b	gmem_scratch_b	4	16	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_12	la:140
+la:303	303	read	scratch_b	gmem_scratch_b	7	28	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_13	la:147
+la:304	304	write	scratch_a	gmem_scratch_a	5	20	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_53	la:302,la:303
+la:305	305	read	scratch_b	gmem_scratch_b	5	20	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_14	la:142
+la:306	306	read	scratch_b	gmem_scratch_b	7	28	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_15	la:147
+la:307	307	write	scratch_a	gmem_scratch_a	6	24	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_53	la:305,la:306
+la:308	308	read	scratch_b	gmem_scratch_b	7	28	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_16	la:147
+la:309	309	write	scratch_a	gmem_scratch_a	7	28	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_53	la:308,la:305
+la:310	310	read	scratch_b	gmem_scratch_b	8	32	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_16	la:150
+la:311	311	read	scratch_b	gmem_scratch_b	10	40	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_17	la:155
+la:312	312	write	scratch_a	gmem_scratch_a	8	32	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_53	la:310,la:311
+la:313	313	read	scratch_b	gmem_scratch_b	9	36	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_18	la:152
+la:314	314	read	scratch_b	gmem_scratch_b	10	40	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_18	la:155
+la:315	315	write	scratch_a	gmem_scratch_a	9	36	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_53	la:313,la:314
+la:316	316	read	scratch_b	gmem_scratch_b	10	40	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_19	la:155
+la:317	317	write	scratch_a	gmem_scratch_a	10	40	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_53	la:316,la:313
+la:318	318	read	scratch_b	gmem_scratch_b	11	44	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_19	la:157
+la:319	319	write	scratch_a	gmem_scratch_a	11	44	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_53	la:318,la:313
+la:320	320	read	scratch_b	gmem_scratch_b	12	48	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_19	la:160
+la:321	321	read	scratch_b	gmem_scratch_b	14	56	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_20	la:165
+la:322	322	write	scratch_a	gmem_scratch_a	12	48	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_53	la:320,la:321
+la:323	323	read	scratch_b	gmem_scratch_b	13	52	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_21	la:162
+la:324	324	read	scratch_b	gmem_scratch_b	14	56	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_21	la:165
+la:325	325	write	scratch_a	gmem_scratch_a	13	52	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_53	la:324,la:323
+la:326	326	read	scratch_b	gmem_scratch_b	13	52	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_22	la:162
+la:327	327	read	scratch_b	gmem_scratch_b	15	60	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_23	la:167
+la:328	328	write	scratch_a	gmem_scratch_a	14	56	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_53	la:327,la:326
+la:329	329	read	scratch_b	gmem_scratch_b	13	52	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_24	la:162
+la:330	330	write	scratch_a	gmem_scratch_a	15	60	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_53	la:329,la:327
+la:331	331	read	scratch_b	gmem_scratch_b	16	64	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_25	la:170
+la:332	332	read	scratch_b	gmem_scratch_b	18	72	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_26	la:175
+la:333	333	write	scratch_a	gmem_scratch_a	16	64	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_54	la:331,la:332
+la:334	334	read	scratch_b	gmem_scratch_b	17	68	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_27	la:172
+la:335	335	read	scratch_b	gmem_scratch_b	18	72	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_27	la:175
+la:336	336	write	scratch_a	gmem_scratch_a	17	68	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_54	la:334,la:335
+la:337	337	read	scratch_b	gmem_scratch_b	18	72	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_28	la:175
+la:338	338	write	scratch_a	gmem_scratch_a	18	72	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_54	la:337,la:334
+la:339	339	read	scratch_b	gmem_scratch_b	19	76	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_28	la:177
+la:340	340	write	scratch_a	gmem_scratch_a	19	76	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_54	la:339,la:334
+la:341	341	read	scratch_b	gmem_scratch_b	20	80	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_28	la:180
+la:342	342	read	scratch_b	gmem_scratch_b	22	88	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_29	la:185
+la:343	343	write	scratch_a	gmem_scratch_a	20	80	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_54	la:342,la:341
+la:344	344	read	scratch_b	gmem_scratch_b	20	80	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_30	la:180
+la:345	345	read	scratch_b	gmem_scratch_b	23	92	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_31	la:187
+la:346	346	write	scratch_a	gmem_scratch_a	21	84	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_54	la:345,la:344
+la:347	347	read	scratch_b	gmem_scratch_b	20	80	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_32	la:180
+la:348	348	write	scratch_a	gmem_scratch_a	22	88	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_54	la:347,la:345
+la:349	349	read	scratch_b	gmem_scratch_b	21	84	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_32	la:182
+la:350	350	write	scratch_a	gmem_scratch_a	23	92	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_54	la:349,la:345
+la:351	351	read	scratch_b	gmem_scratch_b	24	96	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_33	la:190
+la:352	352	read	scratch_b	gmem_scratch_b	26	104	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_34	la:195
+la:353	353	write	scratch_a	gmem_scratch_a	24	96	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_54	la:352,la:351
+la:354	354	read	scratch_b	gmem_scratch_b	24	96	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_35	la:190
+la:355	355	read	scratch_b	gmem_scratch_b	27	108	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_36	la:197
+la:356	356	write	scratch_a	gmem_scratch_a	25	100	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_54	la:354,la:355
+la:357	357	read	scratch_b	gmem_scratch_b	25	100	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_37	la:192
+la:358	358	read	scratch_b	gmem_scratch_b	27	108	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_38	la:197
+la:359	359	write	scratch_a	gmem_scratch_a	26	104	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_54	la:358,la:357
+la:360	360	read	scratch_b	gmem_scratch_b	25	100	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_39	la:192
+la:361	361	write	scratch_a	gmem_scratch_a	27	108	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_54	la:360,la:358
+la:362	362	read	scratch_b	gmem_scratch_b	28	112	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_40	la:200
+la:363	363	read	scratch_b	gmem_scratch_b	30	120	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_41	la:205
+la:364	364	write	scratch_a	gmem_scratch_a	28	112	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_54	la:363,la:362
+la:365	365	read	scratch_b	gmem_scratch_b	28	112	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_42	la:200
+la:366	366	read	scratch_b	gmem_scratch_b	31	124	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_43	la:207
+la:367	367	write	scratch_a	gmem_scratch_a	29	116	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_54	la:366,la:365
+la:368	368	read	scratch_b	gmem_scratch_b	28	112	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_44	la:200
+la:369	369	write	scratch_a	gmem_scratch_a	30	120	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_54	la:368,la:366
+la:370	370	read	scratch_b	gmem_scratch_b	29	116	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_44	la:202
+la:371	371	write	scratch_a	gmem_scratch_a	31	124	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_54	la:370,la:366
+la:372	372	read	scratch_b	gmem_scratch_b	32	128	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_45	la:210
+la:373	373	read	scratch_b	gmem_scratch_b	34	136	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_46	la:215
+la:374	374	write	scratch_a	gmem_scratch_a	32	128	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_55	la:372,la:373
+la:375	375	read	scratch_b	gmem_scratch_b	33	132	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_47	la:212
+la:376	376	read	scratch_b	gmem_scratch_b	34	136	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_47	la:215
+la:377	377	write	scratch_a	gmem_scratch_a	33	132	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_55	la:376,la:375
+la:378	378	read	scratch_b	gmem_scratch_b	33	132	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_48	la:212
+la:379	379	read	scratch_b	gmem_scratch_b	35	140	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_49	la:217
+la:380	380	write	scratch_a	gmem_scratch_a	34	136	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_55	la:378,la:379
+la:381	381	read	scratch_b	gmem_scratch_b	35	140	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_50	la:217
+la:382	382	write	scratch_a	gmem_scratch_a	35	140	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_55	la:381,la:378
+la:383	383	read	scratch_b	gmem_scratch_b	36	144	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_50	la:220
+la:384	384	read	scratch_b	gmem_scratch_b	38	152	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_51	la:225
+la:385	385	write	scratch_a	gmem_scratch_a	36	144	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_55	la:384,la:383
+la:386	386	read	scratch_b	gmem_scratch_b	36	144	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_52	la:220
+la:387	387	read	scratch_b	gmem_scratch_b	39	156	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_53	la:227
+la:388	388	write	scratch_a	gmem_scratch_a	37	148	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_55	la:387,la:386
+la:389	389	read	scratch_b	gmem_scratch_b	36	144	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_54	la:220
+la:390	390	write	scratch_a	gmem_scratch_a	38	152	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_55	la:389,la:387
+la:391	391	read	scratch_b	gmem_scratch_b	37	148	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_54	la:222
+la:392	392	write	scratch_a	gmem_scratch_a	39	156	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_55	la:391,la:387
+la:393	393	read	scratch_b	gmem_scratch_b	40	160	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_55	la:230
+la:394	394	read	scratch_b	gmem_scratch_b	42	168	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_56	la:235
+la:395	395	write	scratch_a	gmem_scratch_a	40	160	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_55	la:393,la:394
+la:396	396	read	scratch_b	gmem_scratch_b	41	164	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_57	la:232
+la:397	397	read	scratch_b	gmem_scratch_b	42	168	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_57	la:235
+la:398	398	write	scratch_a	gmem_scratch_a	41	164	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_55	la:397,la:396
+la:399	399	read	scratch_b	gmem_scratch_b	41	164	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_58	la:232
+la:400	400	read	scratch_b	gmem_scratch_b	43	172	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_59	la:237
+la:401	401	write	scratch_a	gmem_scratch_a	42	168	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_55	la:400,la:399
+la:402	402	read	scratch_b	gmem_scratch_b	41	164	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_60	la:232
+la:403	403	write	scratch_a	gmem_scratch_a	43	172	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_55	la:402,la:400
+la:404	404	read	scratch_b	gmem_scratch_b	44	176	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_61	la:240
+la:405	405	read	scratch_b	gmem_scratch_b	46	184	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_62	la:245
+la:406	406	write	scratch_a	gmem_scratch_a	44	176	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_55	la:405,la:404
+la:407	407	read	scratch_b	gmem_scratch_b	44	176	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_63	la:240
+la:408	408	read	scratch_b	gmem_scratch_b	47	188	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_64	la:247
+la:409	409	write	scratch_a	gmem_scratch_a	45	180	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_55	la:407,la:408
+la:410	410	read	scratch_b	gmem_scratch_b	45	180	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_65	la:242
+la:411	411	read	scratch_b	gmem_scratch_b	47	188	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_66	la:247
+la:412	412	write	scratch_a	gmem_scratch_a	46	184	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_55	la:411,la:410
+la:413	413	read	scratch_b	gmem_scratch_b	45	180	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_67	la:242
+la:414	414	write	scratch_a	gmem_scratch_a	47	188	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_55	la:413,la:411
+la:415	415	read	scratch_b	gmem_scratch_b	48	192	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_68	la:250
+la:416	416	read	scratch_b	gmem_scratch_b	50	200	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_69	la:255
+la:417	417	write	scratch_a	gmem_scratch_a	48	192	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_56	la:415,la:416
+la:418	418	read	scratch_b	gmem_scratch_b	49	196	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_70	la:252
+la:419	419	read	scratch_b	gmem_scratch_b	50	200	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_70	la:255
+la:420	420	write	scratch_a	gmem_scratch_a	49	196	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_56	la:419,la:418
+la:421	421	read	scratch_b	gmem_scratch_b	49	196	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_71	la:252
+la:422	422	read	scratch_b	gmem_scratch_b	51	204	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_72	la:257
+la:423	423	write	scratch_a	gmem_scratch_a	50	200	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_56	la:422,la:421
+la:424	424	read	scratch_b	gmem_scratch_b	49	196	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_73	la:252
+la:425	425	write	scratch_a	gmem_scratch_a	51	204	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_56	la:424,la:422
+la:426	426	read	scratch_b	gmem_scratch_b	52	208	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_74	la:260
+la:427	427	read	scratch_b	gmem_scratch_b	54	216	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_75	la:265
+la:428	428	write	scratch_a	gmem_scratch_a	52	208	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_56	la:427,la:426
+la:429	429	read	scratch_b	gmem_scratch_b	52	208	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_76	la:260
+la:430	430	read	scratch_b	gmem_scratch_b	55	220	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_77	la:267
+la:431	431	write	scratch_a	gmem_scratch_a	53	212	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_56	la:429,la:430
+la:432	432	read	scratch_b	gmem_scratch_b	53	212	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_78	la:262
+la:433	433	read	scratch_b	gmem_scratch_b	55	220	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_79	la:267
+la:434	434	write	scratch_a	gmem_scratch_a	54	216	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_56	la:432,la:433
+la:435	435	read	scratch_b	gmem_scratch_b	55	220	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_80	la:267
+la:436	436	write	scratch_a	gmem_scratch_a	55	220	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_56	la:435,la:432
+la:437	437	read	scratch_b	gmem_scratch_b	56	224	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_80	la:270
+la:438	438	read	scratch_b	gmem_scratch_b	58	232	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_81	la:275
+la:439	439	write	scratch_a	gmem_scratch_a	56	224	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_56	la:438,la:437
+la:440	440	read	scratch_b	gmem_scratch_b	56	224	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_82	la:270
+la:441	441	read	scratch_b	gmem_scratch_b	59	236	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_83	la:277
+la:442	442	write	scratch_a	gmem_scratch_a	57	228	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_56	la:440,la:441
+la:443	443	read	scratch_b	gmem_scratch_b	57	228	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_84	la:272
+la:444	444	read	scratch_b	gmem_scratch_b	59	236	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_85	la:277
+la:445	445	write	scratch_a	gmem_scratch_a	58	232	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_56	la:444,la:443
+la:446	446	read	scratch_b	gmem_scratch_b	57	228	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_86	la:272
+la:447	447	write	scratch_a	gmem_scratch_a	59	236	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_56	la:446,la:444
+la:448	448	read	scratch_b	gmem_scratch_b	60	240	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_87	la:280
+la:449	449	read	scratch_b	gmem_scratch_b	62	248	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_88	la:285
+la:450	450	write	scratch_a	gmem_scratch_a	60	240	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_56	la:449,la:448
+la:451	451	read	scratch_b	gmem_scratch_b	60	240	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_89	la:280
+la:452	452	read	scratch_b	gmem_scratch_b	63	252	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_90	la:287
+la:453	453	write	scratch_a	gmem_scratch_a	61	244	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_56	la:452,la:451
+la:454	454	read	scratch_b	gmem_scratch_b	60	240	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_91	la:280
+la:455	455	write	scratch_a	gmem_scratch_a	62	248	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_56	la:454,la:452
+la:456	456	read	scratch_b	gmem_scratch_b	61	244	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_91	la:282
+la:457	457	write	scratch_a	gmem_scratch_a	63	252	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_56	la:456,la:452
+la:458	458	read	scratch_a	gmem_scratch_a	0	0	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_57	la:290
+la:459	459	read	scratch_a	gmem_scratch_a	4	16	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_58	la:301
+la:460	460	write	scratch_b	gmem_scratch_b	0	0	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_92	la:459,la:458
+la:461	461	read	scratch_a	gmem_scratch_a	0	0	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_59	la:290
+la:462	462	read	scratch_a	gmem_scratch_a	5	20	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_60	la:304
+la:463	463	write	scratch_b	gmem_scratch_b	1	4	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_92	la:461,la:462
+la:464	464	read	scratch_a	gmem_scratch_a	1	4	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_61	la:293
+la:465	465	read	scratch_a	gmem_scratch_a	5	20	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_62	la:304
+la:466	466	write	scratch_b	gmem_scratch_b	2	8	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_92	la:465,la:464
+la:467	467	read	scratch_a	gmem_scratch_a	1	4	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_63	la:293
+la:468	468	read	scratch_a	gmem_scratch_a	6	24	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_64	la:307
+la:469	469	write	scratch_b	gmem_scratch_b	3	12	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_92	la:468,la:467
+la:470	470	read	scratch_a	gmem_scratch_a	1	4	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_65	la:293
+la:471	471	read	scratch_a	gmem_scratch_a	7	28	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_66	la:309
+la:472	472	write	scratch_b	gmem_scratch_b	4	16	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_92	la:470,la:471
+la:473	473	read	scratch_a	gmem_scratch_a	2	8	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_67	la:296
+la:474	474	read	scratch_a	gmem_scratch_a	7	28	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_68	la:309
+la:475	475	write	scratch_b	gmem_scratch_b	5	20	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_92	la:473,la:474
+la:476	476	read	scratch_a	gmem_scratch_a	3	12	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_69	la:298
+la:477	477	read	scratch_a	gmem_scratch_a	7	28	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_70	la:309
+la:478	478	write	scratch_b	gmem_scratch_b	6	24	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_92	la:477,la:476
+la:479	479	read	scratch_a	gmem_scratch_a	3	12	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_71	la:298
+la:480	480	write	scratch_b	gmem_scratch_b	7	28	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_92	la:479,la:477
+la:481	481	read	scratch_a	gmem_scratch_a	8	32	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_72	la:312
+la:482	482	read	scratch_a	gmem_scratch_a	12	48	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_73	la:322
+la:483	483	write	scratch_b	gmem_scratch_b	8	32	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_92	la:482,la:481
+la:484	484	read	scratch_a	gmem_scratch_a	8	32	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_74	la:312
+la:485	485	read	scratch_a	gmem_scratch_a	13	52	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_75	la:325
+la:486	486	write	scratch_b	gmem_scratch_b	9	36	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_92	la:484,la:485
+la:487	487	read	scratch_a	gmem_scratch_a	9	36	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_76	la:315
+la:488	488	read	scratch_a	gmem_scratch_a	13	52	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_77	la:325
+la:489	489	write	scratch_b	gmem_scratch_b	10	40	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_92	la:487,la:488
+la:490	490	read	scratch_a	gmem_scratch_a	10	40	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_78	la:317
+la:491	491	read	scratch_a	gmem_scratch_a	13	52	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_79	la:325
+la:492	492	write	scratch_b	gmem_scratch_b	11	44	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_92	la:491,la:490
+la:493	493	read	scratch_a	gmem_scratch_a	10	40	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_80	la:317
+la:494	494	read	scratch_a	gmem_scratch_a	14	56	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_81	la:328
+la:495	495	write	scratch_b	gmem_scratch_b	12	48	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_92	la:493,la:494
+la:496	496	read	scratch_a	gmem_scratch_a	11	44	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_82	la:319
+la:497	497	read	scratch_a	gmem_scratch_a	14	56	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_83	la:328
+la:498	498	write	scratch_b	gmem_scratch_b	13	52	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_92	la:496,la:497
+la:499	499	read	scratch_a	gmem_scratch_a	14	56	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_84	la:328
+la:500	500	write	scratch_b	gmem_scratch_b	14	56	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_92	la:499,la:496
+la:501	501	read	scratch_a	gmem_scratch_a	15	60	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_84	la:330
+la:502	502	write	scratch_b	gmem_scratch_b	15	60	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_92	la:501,la:496
+la:503	503	read	scratch_a	gmem_scratch_a	16	64	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_84	la:333
+la:504	504	read	scratch_a	gmem_scratch_a	20	80	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_85	la:343
+la:505	505	write	scratch_b	gmem_scratch_b	16	64	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_93	la:503,la:504
+la:506	506	read	scratch_a	gmem_scratch_a	17	68	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_86	la:336
+la:507	507	read	scratch_a	gmem_scratch_a	20	80	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_87	la:343
+la:508	508	write	scratch_b	gmem_scratch_b	17	68	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_93	la:506,la:507
+la:509	509	read	scratch_a	gmem_scratch_a	18	72	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_88	la:338
+la:510	510	read	scratch_a	gmem_scratch_a	20	80	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_89	la:343
+la:511	511	write	scratch_b	gmem_scratch_b	18	72	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_93	la:510,la:509
+la:512	512	read	scratch_a	gmem_scratch_a	18	72	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_90	la:338
+la:513	513	read	scratch_a	gmem_scratch_a	21	84	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_91	la:346
+la:514	514	write	scratch_b	gmem_scratch_b	19	76	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_93	la:512,la:513
+la:515	515	read	scratch_a	gmem_scratch_a	19	76	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_92	la:340
+la:516	516	read	scratch_a	gmem_scratch_a	21	84	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_93	la:346
+la:517	517	write	scratch_b	gmem_scratch_b	20	80	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_93	la:516,la:515
+la:518	518	read	scratch_a	gmem_scratch_a	19	76	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_94	la:340
+la:519	519	read	scratch_a	gmem_scratch_a	22	88	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_95	la:348
+la:520	520	write	scratch_b	gmem_scratch_b	21	84	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_93	la:518,la:519
+la:521	521	read	scratch_a	gmem_scratch_a	22	88	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_96	la:348
+la:522	522	write	scratch_b	gmem_scratch_b	22	88	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_93	la:521,la:518
+la:523	523	read	scratch_a	gmem_scratch_a	23	92	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_96	la:350
+la:524	524	write	scratch_b	gmem_scratch_b	23	92	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_93	la:523,la:518
+la:525	525	read	scratch_a	gmem_scratch_a	24	96	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_96	la:353
+la:526	526	read	scratch_a	gmem_scratch_a	28	112	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_97	la:364
+la:527	527	write	scratch_b	gmem_scratch_b	24	96	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_93	la:526,la:525
+la:528	528	read	scratch_a	gmem_scratch_a	24	96	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_98	la:353
+la:529	529	read	scratch_a	gmem_scratch_a	29	116	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_99	la:367
+la:530	530	write	scratch_b	gmem_scratch_b	25	100	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_93	la:528,la:529
+la:531	531	read	scratch_a	gmem_scratch_a	25	100	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_100	la:356
+la:532	532	read	scratch_a	gmem_scratch_a	29	116	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_101	la:367
+la:533	533	write	scratch_b	gmem_scratch_b	26	104	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_93	la:531,la:532
+la:534	534	read	scratch_a	gmem_scratch_a	26	104	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_102	la:359
+la:535	535	read	scratch_a	gmem_scratch_a	29	116	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_103	la:367
+la:536	536	write	scratch_b	gmem_scratch_b	27	108	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_93	la:535,la:534
+la:537	537	read	scratch_a	gmem_scratch_a	26	104	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_104	la:359
+la:538	538	read	scratch_a	gmem_scratch_a	30	120	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_105	la:369
+la:539	539	write	scratch_b	gmem_scratch_b	28	112	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_93	la:538,la:537
+la:540	540	read	scratch_a	gmem_scratch_a	26	104	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_106	la:359
+la:541	541	read	scratch_a	gmem_scratch_a	31	124	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_107	la:371
+la:542	542	write	scratch_b	gmem_scratch_b	29	116	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_93	la:540,la:541
+la:543	543	read	scratch_a	gmem_scratch_a	27	108	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_108	la:361
+la:544	544	read	scratch_a	gmem_scratch_a	31	124	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_109	la:371
+la:545	545	write	scratch_b	gmem_scratch_b	30	120	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_93	la:543,la:544
+la:546	546	read	scratch_a	gmem_scratch_a	31	124	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_110	la:371
+la:547	547	write	scratch_b	gmem_scratch_b	31	124	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_93	la:546,la:543
+la:548	548	read	scratch_a	gmem_scratch_a	32	128	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_110	la:374
+la:549	549	read	scratch_a	gmem_scratch_a	36	144	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_111	la:385
+la:550	550	write	scratch_b	gmem_scratch_b	32	128	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_94	la:548,la:549
+la:551	551	read	scratch_a	gmem_scratch_a	33	132	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_112	la:377
+la:552	552	read	scratch_a	gmem_scratch_a	36	144	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_113	la:385
+la:553	553	write	scratch_b	gmem_scratch_b	33	132	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_94	la:552,la:551
+la:554	554	read	scratch_a	gmem_scratch_a	33	132	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_114	la:377
+la:555	555	read	scratch_a	gmem_scratch_a	37	148	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_115	la:388
+la:556	556	write	scratch_b	gmem_scratch_b	34	136	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_94	la:555,la:554
+la:557	557	read	scratch_a	gmem_scratch_a	33	132	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_116	la:377
+la:558	558	read	scratch_a	gmem_scratch_a	38	152	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_117	la:390
+la:559	559	write	scratch_b	gmem_scratch_b	35	140	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_94	la:557,la:558
+la:560	560	read	scratch_a	gmem_scratch_a	34	136	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_118	la:380
+la:561	561	read	scratch_a	gmem_scratch_a	38	152	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_119	la:390
+la:562	562	write	scratch_b	gmem_scratch_b	36	144	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_94	la:561,la:560
+la:563	563	read	scratch_a	gmem_scratch_a	34	136	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_120	la:380
+la:564	564	read	scratch_a	gmem_scratch_a	39	156	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_121	la:392
+la:565	565	write	scratch_b	gmem_scratch_b	37	148	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_94	la:564,la:563
+la:566	566	read	scratch_a	gmem_scratch_a	34	136	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_122	la:380
+la:567	567	write	scratch_b	gmem_scratch_b	38	152	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_94	la:566,la:564
+la:568	568	read	scratch_a	gmem_scratch_a	35	140	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_122	la:382
+la:569	569	write	scratch_b	gmem_scratch_b	39	156	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_94	la:568,la:564
+la:570	570	read	scratch_a	gmem_scratch_a	40	160	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_123	la:395
+la:571	571	read	scratch_a	gmem_scratch_a	44	176	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_124	la:406
+la:572	572	write	scratch_b	gmem_scratch_b	40	160	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_94	la:571,la:570
+la:573	573	read	scratch_a	gmem_scratch_a	40	160	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_125	la:395
+la:574	574	read	scratch_a	gmem_scratch_a	45	180	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_126	la:409
+la:575	575	write	scratch_b	gmem_scratch_b	41	164	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_94	la:574,la:573
+la:576	576	read	scratch_a	gmem_scratch_a	40	160	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_127	la:395
+la:577	577	read	scratch_a	gmem_scratch_a	46	184	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_128	la:412
+la:578	578	write	scratch_b	gmem_scratch_b	42	168	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_94	la:577,la:576
+la:579	579	read	scratch_a	gmem_scratch_a	40	160	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_129	la:395
+la:580	580	read	scratch_a	gmem_scratch_a	47	188	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_130	la:414
+la:581	581	write	scratch_b	gmem_scratch_b	43	172	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_94	la:579,la:580
+la:582	582	read	scratch_a	gmem_scratch_a	41	164	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_131	la:398
+la:583	583	read	scratch_a	gmem_scratch_a	47	188	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_132	la:414
+la:584	584	write	scratch_b	gmem_scratch_b	44	176	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_94	la:582,la:583
+la:585	585	read	scratch_a	gmem_scratch_a	42	168	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_133	la:401
+la:586	586	read	scratch_a	gmem_scratch_a	47	188	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_134	la:414
+la:587	587	write	scratch_b	gmem_scratch_b	45	180	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_94	la:585,la:586
+la:588	588	read	scratch_a	gmem_scratch_a	43	172	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_135	la:403
+la:589	589	read	scratch_a	gmem_scratch_a	47	188	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_136	la:414
+la:590	590	write	scratch_b	gmem_scratch_b	46	184	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_94	la:588,la:589
+la:591	591	read	scratch_a	gmem_scratch_a	47	188	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_137	la:414
+la:592	592	write	scratch_b	gmem_scratch_b	47	188	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_94	la:591,la:588
+la:593	593	read	scratch_a	gmem_scratch_a	48	192	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_137	la:417
+la:594	594	read	scratch_a	gmem_scratch_a	52	208	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_138	la:428
+la:595	595	write	scratch_b	gmem_scratch_b	48	192	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_95	la:594,la:593
+la:596	596	read	scratch_a	gmem_scratch_a	48	192	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_139	la:417
+la:597	597	read	scratch_a	gmem_scratch_a	53	212	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_140	la:431
+la:598	598	write	scratch_b	gmem_scratch_b	49	196	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_95	la:596,la:597
+la:599	599	read	scratch_a	gmem_scratch_a	49	196	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_141	la:420
+la:600	600	read	scratch_a	gmem_scratch_a	53	212	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_142	la:431
+la:601	601	write	scratch_b	gmem_scratch_b	50	200	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_95	la:599,la:600
+la:602	602	read	scratch_a	gmem_scratch_a	50	200	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_143	la:423
+la:603	603	read	scratch_a	gmem_scratch_a	53	212	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_144	la:431
+la:604	604	write	scratch_b	gmem_scratch_b	51	204	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_95	la:602,la:603
+la:605	605	read	scratch_a	gmem_scratch_a	51	204	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_145	la:425
+la:606	606	read	scratch_a	gmem_scratch_a	53	212	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_146	la:431
+la:607	607	write	scratch_b	gmem_scratch_b	52	208	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_95	la:606,la:605
+la:608	608	read	scratch_a	gmem_scratch_a	51	204	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_147	la:425
+la:609	609	read	scratch_a	gmem_scratch_a	54	216	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_148	la:434
+la:610	610	write	scratch_b	gmem_scratch_b	53	212	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_95	la:609,la:608
+la:611	611	read	scratch_a	gmem_scratch_a	51	204	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_149	la:425
+la:612	612	read	scratch_a	gmem_scratch_a	55	220	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_150	la:436
+la:613	613	write	scratch_b	gmem_scratch_b	54	216	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_95	la:612,la:611
+la:614	614	read	scratch_a	gmem_scratch_a	51	204	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_151	la:425
+la:615	615	write	scratch_b	gmem_scratch_b	55	220	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_95	la:614,la:612
+la:616	616	read	scratch_a	gmem_scratch_a	56	224	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_152	la:439
+la:617	617	read	scratch_a	gmem_scratch_a	60	240	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_153	la:450
+la:618	618	write	scratch_b	gmem_scratch_b	56	224	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_95	la:617,la:616
+la:619	619	read	scratch_a	gmem_scratch_a	56	224	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_154	la:439
+la:620	620	read	scratch_a	gmem_scratch_a	61	244	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_155	la:453
+la:621	621	write	scratch_b	gmem_scratch_b	57	228	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_95	la:619,la:620
+la:622	622	read	scratch_a	gmem_scratch_a	57	228	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_156	la:442
+la:623	623	read	scratch_a	gmem_scratch_a	61	244	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_157	la:453
+la:624	624	write	scratch_b	gmem_scratch_b	58	232	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_95	la:623,la:622
+la:625	625	read	scratch_a	gmem_scratch_a	57	228	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_158	la:442
+la:626	626	read	scratch_a	gmem_scratch_a	62	248	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_159	la:455
+la:627	627	write	scratch_b	gmem_scratch_b	59	236	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_95	la:626,la:625
+la:628	628	read	scratch_a	gmem_scratch_a	57	228	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_160	la:442
+la:629	629	read	scratch_a	gmem_scratch_a	63	252	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_161	la:457
+la:630	630	write	scratch_b	gmem_scratch_b	60	240	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_95	la:628,la:629
+la:631	631	read	scratch_a	gmem_scratch_a	58	232	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_162	la:445
+la:632	632	read	scratch_a	gmem_scratch_a	63	252	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_163	la:457
+la:633	633	write	scratch_b	gmem_scratch_b	61	244	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_95	la:631,la:632
+la:634	634	read	scratch_a	gmem_scratch_a	59	236	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_164	la:447
+la:635	635	read	scratch_a	gmem_scratch_a	63	252	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_165	la:457
+la:636	636	write	scratch_b	gmem_scratch_b	62	248	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_95	la:634,la:635
+la:637	637	read	scratch_a	gmem_scratch_a	63	252	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_166	la:457
+la:638	638	write	scratch_b	gmem_scratch_b	63	252	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_95	la:637,la:634
+la:639	639	read	scratch_b	gmem_scratch_b	0	0	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_96	la:460
+la:640	640	read	scratch_b	gmem_scratch_b	8	32	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_97	la:483
+la:641	641	write	scratch_a	gmem_scratch_a	0	0	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_167	la:639,la:640
+la:642	642	read	scratch_b	gmem_scratch_b	1	4	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_98	la:463
+la:643	643	read	scratch_b	gmem_scratch_b	8	32	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_99	la:483
+la:644	644	write	scratch_a	gmem_scratch_a	1	4	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_167	la:643,la:642
+la:645	645	read	scratch_b	gmem_scratch_b	1	4	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_100	la:463
+la:646	646	read	scratch_b	gmem_scratch_b	9	36	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_101	la:486
+la:647	647	write	scratch_a	gmem_scratch_a	2	8	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_167	la:646,la:645
+la:648	648	read	scratch_b	gmem_scratch_b	1	4	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_102	la:463
+la:649	649	read	scratch_b	gmem_scratch_b	10	40	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_103	la:489
+la:650	650	write	scratch_a	gmem_scratch_a	3	12	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_167	la:648,la:649
+la:651	651	read	scratch_b	gmem_scratch_b	2	8	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_104	la:466
+la:652	652	read	scratch_b	gmem_scratch_b	10	40	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_105	la:489
+la:653	653	write	scratch_a	gmem_scratch_a	4	16	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_167	la:651,la:652
+la:654	654	read	scratch_b	gmem_scratch_b	3	12	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_106	la:469
+la:655	655	read	scratch_b	gmem_scratch_b	10	40	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_107	la:489
+la:656	656	write	scratch_a	gmem_scratch_a	5	20	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_167	la:654,la:655
+la:657	657	read	scratch_b	gmem_scratch_b	4	16	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_108	la:472
+la:658	658	read	scratch_b	gmem_scratch_b	10	40	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_109	la:489
+la:659	659	write	scratch_a	gmem_scratch_a	6	24	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_167	la:658,la:657
+la:660	660	read	scratch_b	gmem_scratch_b	4	16	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_110	la:472
+la:661	661	read	scratch_b	gmem_scratch_b	11	44	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_111	la:492
+la:662	662	write	scratch_a	gmem_scratch_a	7	28	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_167	la:661,la:660
+la:663	663	read	scratch_b	gmem_scratch_b	4	16	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_112	la:472
+la:664	664	read	scratch_b	gmem_scratch_b	12	48	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_113	la:495
+la:665	665	write	scratch_a	gmem_scratch_a	8	32	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_167	la:663,la:664
+la:666	666	read	scratch_b	gmem_scratch_b	5	20	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_114	la:475
+la:667	667	read	scratch_b	gmem_scratch_b	12	48	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_115	la:495
+la:668	668	write	scratch_a	gmem_scratch_a	9	36	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_167	la:667,la:666
+la:669	669	read	scratch_b	gmem_scratch_b	5	20	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_116	la:475
+la:670	670	read	scratch_b	gmem_scratch_b	13	52	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_117	la:498
+la:671	671	write	scratch_a	gmem_scratch_a	10	40	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_167	la:670,la:669
+la:672	672	read	scratch_b	gmem_scratch_b	5	20	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_118	la:475
+la:673	673	read	scratch_b	gmem_scratch_b	14	56	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_119	la:500
+la:674	674	write	scratch_a	gmem_scratch_a	11	44	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_167	la:672,la:673
+la:675	675	read	scratch_b	gmem_scratch_b	6	24	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_120	la:478
+la:676	676	read	scratch_b	gmem_scratch_b	14	56	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_121	la:500
+la:677	677	write	scratch_a	gmem_scratch_a	12	48	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_167	la:676,la:675
+la:678	678	read	scratch_b	gmem_scratch_b	6	24	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_122	la:478
+la:679	679	read	scratch_b	gmem_scratch_b	15	60	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_123	la:502
+la:680	680	write	scratch_a	gmem_scratch_a	13	52	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_167	la:678,la:679
+la:681	681	read	scratch_b	gmem_scratch_b	7	28	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_124	la:480
+la:682	682	read	scratch_b	gmem_scratch_b	15	60	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_125	la:502
+la:683	683	write	scratch_a	gmem_scratch_a	14	56	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_167	la:681,la:682
+la:684	684	read	scratch_b	gmem_scratch_b	15	60	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_126	la:502
+la:685	685	write	scratch_a	gmem_scratch_a	15	60	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_167	la:684,la:681
+la:686	686	read	scratch_b	gmem_scratch_b	16	64	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_126	la:505
+la:687	687	read	scratch_b	gmem_scratch_b	24	96	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_127	la:527
+la:688	688	write	scratch_a	gmem_scratch_a	16	64	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_168	la:687,la:686
+la:689	689	read	scratch_b	gmem_scratch_b	16	64	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_128	la:505
+la:690	690	read	scratch_b	gmem_scratch_b	25	100	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_129	la:530
+la:691	691	write	scratch_a	gmem_scratch_a	17	68	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_168	la:689,la:690
+la:692	692	read	scratch_b	gmem_scratch_b	17	68	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_130	la:508
+la:693	693	read	scratch_b	gmem_scratch_b	25	100	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_131	la:530
+la:694	694	write	scratch_a	gmem_scratch_a	18	72	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_168	la:693,la:692
+la:695	695	read	scratch_b	gmem_scratch_b	17	68	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_132	la:508
+la:696	696	read	scratch_b	gmem_scratch_b	26	104	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_133	la:533
+la:697	697	write	scratch_a	gmem_scratch_a	19	76	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_168	la:696,la:695
+la:698	698	read	scratch_b	gmem_scratch_b	17	68	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_134	la:508
+la:699	699	read	scratch_b	gmem_scratch_b	27	108	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_135	la:536
+la:700	700	write	scratch_a	gmem_scratch_a	20	80	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_168	la:698,la:699
+la:701	701	read	scratch_b	gmem_scratch_b	18	72	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_136	la:511
+la:702	702	read	scratch_b	gmem_scratch_b	27	108	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_137	la:536
+la:703	703	write	scratch_a	gmem_scratch_a	21	84	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_168	la:702,la:701
+la:704	704	read	scratch_b	gmem_scratch_b	18	72	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_138	la:511
+la:705	705	read	scratch_b	gmem_scratch_b	28	112	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_139	la:539
+la:706	706	write	scratch_a	gmem_scratch_a	22	88	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_168	la:704,la:705
+la:707	707	read	scratch_b	gmem_scratch_b	19	76	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_140	la:514
+la:708	708	read	scratch_b	gmem_scratch_b	28	112	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_141	la:539
+la:709	709	write	scratch_a	gmem_scratch_a	23	92	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_168	la:708,la:707
+la:710	710	read	scratch_b	gmem_scratch_b	19	76	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_142	la:514
+la:711	711	read	scratch_b	gmem_scratch_b	29	116	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_143	la:542
+la:712	712	write	scratch_a	gmem_scratch_a	24	96	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_168	la:710,la:711
+la:713	713	read	scratch_b	gmem_scratch_b	20	80	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_144	la:517
+la:714	714	read	scratch_b	gmem_scratch_b	29	116	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_145	la:542
+la:715	715	write	scratch_a	gmem_scratch_a	25	100	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_168	la:713,la:714
+la:716	716	read	scratch_b	gmem_scratch_b	21	84	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_146	la:520
+la:717	717	read	scratch_b	gmem_scratch_b	29	116	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_147	la:542
+la:718	718	write	scratch_a	gmem_scratch_a	26	104	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_168	la:717,la:716
+la:719	719	read	scratch_b	gmem_scratch_b	21	84	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_148	la:520
+la:720	720	read	scratch_b	gmem_scratch_b	30	120	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_149	la:545
+la:721	721	write	scratch_a	gmem_scratch_a	27	108	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_168	la:720,la:719
+la:722	722	read	scratch_b	gmem_scratch_b	21	84	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_150	la:520
+la:723	723	read	scratch_b	gmem_scratch_b	31	124	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_151	la:547
+la:724	724	write	scratch_a	gmem_scratch_a	28	112	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_168	la:723,la:722
+la:725	725	read	scratch_b	gmem_scratch_b	21	84	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_152	la:520
+la:726	726	write	scratch_a	gmem_scratch_a	29	116	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_168	la:725,la:723
+la:727	727	read	scratch_b	gmem_scratch_b	22	88	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_152	la:522
+la:728	728	write	scratch_a	gmem_scratch_a	30	120	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_168	la:727,la:723
+la:729	729	read	scratch_b	gmem_scratch_b	23	92	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_152	la:524
+la:730	730	write	scratch_a	gmem_scratch_a	31	124	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_168	la:729,la:723
+la:731	731	read	scratch_b	gmem_scratch_b	32	128	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_153	la:550
+la:732	732	read	scratch_b	gmem_scratch_b	40	160	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_154	la:572
+la:733	733	write	scratch_a	gmem_scratch_a	32	128	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_169	la:731,la:732
+la:734	734	read	scratch_b	gmem_scratch_b	33	132	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_155	la:553
+la:735	735	read	scratch_b	gmem_scratch_b	40	160	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_156	la:572
+la:736	736	write	scratch_a	gmem_scratch_a	33	132	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_169	la:735,la:734
+la:737	737	read	scratch_b	gmem_scratch_b	33	132	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_157	la:553
+la:738	738	read	scratch_b	gmem_scratch_b	41	164	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_158	la:575
+la:739	739	write	scratch_a	gmem_scratch_a	34	136	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_169	la:737,la:738
+la:740	740	read	scratch_b	gmem_scratch_b	34	136	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_159	la:556
+la:741	741	read	scratch_b	gmem_scratch_b	41	164	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_160	la:575
+la:742	742	write	scratch_a	gmem_scratch_a	35	140	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_169	la:741,la:740
+la:743	743	read	scratch_b	gmem_scratch_b	34	136	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_161	la:556
+la:744	744	read	scratch_b	gmem_scratch_b	42	168	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_162	la:578
+la:745	745	write	scratch_a	gmem_scratch_a	36	144	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_169	la:743,la:744
+la:746	746	read	scratch_b	gmem_scratch_b	35	140	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_163	la:559
+la:747	747	read	scratch_b	gmem_scratch_b	42	168	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_164	la:578
+la:748	748	write	scratch_a	gmem_scratch_a	37	148	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_169	la:746,la:747
+la:749	749	read	scratch_b	gmem_scratch_b	36	144	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_165	la:562
+la:750	750	read	scratch_b	gmem_scratch_b	42	168	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_166	la:578
+la:751	751	write	scratch_a	gmem_scratch_a	38	152	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_169	la:749,la:750
+la:752	752	read	scratch_b	gmem_scratch_b	37	148	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_167	la:565
+la:753	753	read	scratch_b	gmem_scratch_b	42	168	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_168	la:578
+la:754	754	write	scratch_a	gmem_scratch_a	39	156	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_169	la:752,la:753
+la:755	755	read	scratch_b	gmem_scratch_b	38	152	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_169	la:567
+la:756	756	read	scratch_b	gmem_scratch_b	42	168	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_170	la:578
+la:757	757	write	scratch_a	gmem_scratch_a	40	160	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_169	la:756,la:755
+la:758	758	read	scratch_b	gmem_scratch_b	38	152	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_171	la:567
+la:759	759	read	scratch_b	gmem_scratch_b	43	172	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_172	la:581
+la:760	760	write	scratch_a	gmem_scratch_a	41	164	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_169	la:759,la:758
+la:761	761	read	scratch_b	gmem_scratch_b	38	152	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_173	la:567
+la:762	762	read	scratch_b	gmem_scratch_b	44	176	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_174	la:584
+la:763	763	write	scratch_a	gmem_scratch_a	42	168	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_169	la:761,la:762
+la:764	764	read	scratch_b	gmem_scratch_b	39	156	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_175	la:569
+la:765	765	read	scratch_b	gmem_scratch_b	44	176	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_176	la:584
+la:766	766	write	scratch_a	gmem_scratch_a	43	172	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_169	la:765,la:764
+la:767	767	read	scratch_b	gmem_scratch_b	39	156	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_177	la:569
+la:768	768	read	scratch_b	gmem_scratch_b	45	180	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_178	la:587
+la:769	769	write	scratch_a	gmem_scratch_a	44	176	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_169	la:768,la:767
+la:770	770	read	scratch_b	gmem_scratch_b	39	156	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_179	la:569
+la:771	771	read	scratch_b	gmem_scratch_b	46	184	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_180	la:590
+la:772	772	write	scratch_a	gmem_scratch_a	45	180	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_169	la:771,la:770
+la:773	773	read	scratch_b	gmem_scratch_b	39	156	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_181	la:569
+la:774	774	read	scratch_b	gmem_scratch_b	47	188	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_182	la:592
+la:775	775	write	scratch_a	gmem_scratch_a	46	184	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_169	la:774,la:773
+la:776	776	read	scratch_b	gmem_scratch_b	39	156	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_183	la:569
+la:777	777	write	scratch_a	gmem_scratch_a	47	188	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_169	la:776,la:774
+la:778	778	read	scratch_b	gmem_scratch_b	48	192	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_184	la:595
+la:779	779	read	scratch_b	gmem_scratch_b	56	224	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_185	la:618
+la:780	780	write	scratch_a	gmem_scratch_a	48	192	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_170	la:779,la:778
+la:781	781	read	scratch_b	gmem_scratch_b	48	192	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_186	la:595
+la:782	782	read	scratch_b	gmem_scratch_b	57	228	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_187	la:621
+la:783	783	write	scratch_a	gmem_scratch_a	49	196	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_170	la:781,la:782
+la:784	784	read	scratch_b	gmem_scratch_b	49	196	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_188	la:598
+la:785	785	read	scratch_b	gmem_scratch_b	57	228	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_189	la:621
+la:786	786	write	scratch_a	gmem_scratch_a	50	200	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_170	la:784,la:785
+la:787	787	read	scratch_b	gmem_scratch_b	50	200	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_190	la:601
+la:788	788	read	scratch_b	gmem_scratch_b	57	228	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_191	la:621
+la:789	789	write	scratch_a	gmem_scratch_a	51	204	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_170	la:788,la:787
+la:790	790	read	scratch_b	gmem_scratch_b	50	200	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_192	la:601
+la:791	791	read	scratch_b	gmem_scratch_b	58	232	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_193	la:624
+la:792	792	write	scratch_a	gmem_scratch_a	52	208	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_170	la:790,la:791
+la:793	793	read	scratch_b	gmem_scratch_b	51	204	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_194	la:604
+la:794	794	read	scratch_b	gmem_scratch_b	58	232	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_195	la:624
+la:795	795	write	scratch_a	gmem_scratch_a	53	212	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_170	la:794,la:793
+la:796	796	read	scratch_b	gmem_scratch_b	51	204	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_196	la:604
+la:797	797	read	scratch_b	gmem_scratch_b	59	236	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_197	la:627
+la:798	798	write	scratch_a	gmem_scratch_a	54	216	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_170	la:797,la:796
+la:799	799	read	scratch_b	gmem_scratch_b	51	204	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_198	la:604
+la:800	800	read	scratch_b	gmem_scratch_b	60	240	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_199	la:630
+la:801	801	write	scratch_a	gmem_scratch_a	55	220	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_170	la:799,la:800
+la:802	802	read	scratch_b	gmem_scratch_b	52	208	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_200	la:607
+la:803	803	read	scratch_b	gmem_scratch_b	60	240	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_201	la:630
+la:804	804	write	scratch_a	gmem_scratch_a	56	224	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_170	la:803,la:802
+la:805	805	read	scratch_b	gmem_scratch_b	52	208	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_202	la:607
+la:806	806	read	scratch_b	gmem_scratch_b	61	244	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_203	la:633
+la:807	807	write	scratch_a	gmem_scratch_a	57	228	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_170	la:806,la:805
+la:808	808	read	scratch_b	gmem_scratch_b	52	208	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_204	la:607
+la:809	809	read	scratch_b	gmem_scratch_b	62	248	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_205	la:636
+la:810	810	write	scratch_a	gmem_scratch_a	58	232	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_170	la:808,la:809
+la:811	811	read	scratch_b	gmem_scratch_b	53	212	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_206	la:610
+la:812	812	read	scratch_b	gmem_scratch_b	62	248	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_207	la:636
+la:813	813	write	scratch_a	gmem_scratch_a	59	236	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_170	la:812,la:811
+la:814	814	read	scratch_b	gmem_scratch_b	53	212	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_208	la:610
+la:815	815	read	scratch_b	gmem_scratch_b	63	252	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_209	la:638
+la:816	816	write	scratch_a	gmem_scratch_a	60	240	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_170	la:814,la:815
+la:817	817	read	scratch_b	gmem_scratch_b	54	216	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_210	la:613
+la:818	818	read	scratch_b	gmem_scratch_b	63	252	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_211	la:638
+la:819	819	write	scratch_a	gmem_scratch_a	61	244	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_170	la:817,la:818
+la:820	820	read	scratch_b	gmem_scratch_b	55	220	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_212	la:615
+la:821	821	read	scratch_b	gmem_scratch_b	63	252	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_213	la:638
+la:822	822	write	scratch_a	gmem_scratch_a	62	248	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_170	la:821,la:820
+la:823	823	read	scratch_b	gmem_scratch_b	55	220	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_214	la:615
+la:824	824	write	scratch_a	gmem_scratch_a	63	252	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_170	la:823,la:821
+la:825	825	read	scratch_a	gmem_scratch_a	0	0	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_171	la:641
+la:826	826	read	scratch_a	gmem_scratch_a	16	64	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_172	la:688
+la:827	827	write	scratch_b	gmem_scratch_b	0	0	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_215	la:826,la:825
+la:828	828	read	scratch_a	gmem_scratch_a	0	0	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_173	la:641
+la:829	829	read	scratch_a	gmem_scratch_a	17	68	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_174	la:691
+la:830	830	write	scratch_b	gmem_scratch_b	1	4	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_215	la:828,la:829
+la:831	831	read	scratch_a	gmem_scratch_a	1	4	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_175	la:644
+la:832	832	read	scratch_a	gmem_scratch_a	17	68	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_176	la:691
+la:833	833	write	scratch_b	gmem_scratch_b	2	8	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_215	la:831,la:832
+la:834	834	read	scratch_a	gmem_scratch_a	2	8	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_177	la:647
+la:835	835	read	scratch_a	gmem_scratch_a	17	68	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_178	la:691
+la:836	836	write	scratch_b	gmem_scratch_b	3	12	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_215	la:835,la:834
+la:837	837	read	scratch_a	gmem_scratch_a	2	8	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_179	la:647
+la:838	838	read	scratch_a	gmem_scratch_a	18	72	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_180	la:694
+la:839	839	write	scratch_b	gmem_scratch_b	4	16	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_215	la:838,la:837
+la:840	840	read	scratch_a	gmem_scratch_a	2	8	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_181	la:647
+la:841	841	read	scratch_a	gmem_scratch_a	19	76	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_182	la:697
+la:842	842	write	scratch_b	gmem_scratch_b	5	20	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_215	la:840,la:841
+la:843	843	read	scratch_a	gmem_scratch_a	3	12	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_183	la:650
+la:844	844	read	scratch_a	gmem_scratch_a	19	76	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_184	la:697
+la:845	845	write	scratch_b	gmem_scratch_b	6	24	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_215	la:844,la:843
+la:846	846	read	scratch_a	gmem_scratch_a	3	12	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_185	la:650
+la:847	847	read	scratch_a	gmem_scratch_a	20	80	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_186	la:700
+la:848	848	write	scratch_b	gmem_scratch_b	7	28	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_215	la:846,la:847
+la:849	849	read	scratch_a	gmem_scratch_a	4	16	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_187	la:653
+la:850	850	read	scratch_a	gmem_scratch_a	20	80	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_188	la:700
+la:851	851	write	scratch_b	gmem_scratch_b	8	32	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_215	la:850,la:849
+la:852	852	read	scratch_a	gmem_scratch_a	4	16	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_189	la:653
+la:853	853	read	scratch_a	gmem_scratch_a	21	84	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_190	la:703
+la:854	854	write	scratch_b	gmem_scratch_b	9	36	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_215	la:852,la:853
+la:855	855	read	scratch_a	gmem_scratch_a	5	20	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_191	la:656
+la:856	856	read	scratch_a	gmem_scratch_a	21	84	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_192	la:703
+la:857	857	write	scratch_b	gmem_scratch_b	10	40	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_215	la:855,la:856
+la:858	858	read	scratch_a	gmem_scratch_a	6	24	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_193	la:659
+la:859	859	read	scratch_a	gmem_scratch_a	21	84	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_194	la:703
+la:860	860	write	scratch_b	gmem_scratch_b	11	44	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_215	la:858,la:859
+la:861	861	read	scratch_a	gmem_scratch_a	7	28	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_195	la:662
+la:862	862	read	scratch_a	gmem_scratch_a	21	84	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_196	la:703
+la:863	863	write	scratch_b	gmem_scratch_b	12	48	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_215	la:862,la:861
+la:864	864	read	scratch_a	gmem_scratch_a	7	28	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_197	la:662
+la:865	865	read	scratch_a	gmem_scratch_a	22	88	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_198	la:706
+la:866	866	write	scratch_b	gmem_scratch_b	13	52	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_215	la:865,la:864
+la:867	867	read	scratch_a	gmem_scratch_a	7	28	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_199	la:662
+la:868	868	read	scratch_a	gmem_scratch_a	23	92	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_200	la:709
+la:869	869	write	scratch_b	gmem_scratch_b	14	56	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_215	la:867,la:868
+la:870	870	read	scratch_a	gmem_scratch_a	8	32	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_201	la:665
+la:871	871	read	scratch_a	gmem_scratch_a	23	92	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_202	la:709
+la:872	872	write	scratch_b	gmem_scratch_b	15	60	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_215	la:871,la:870
+la:873	873	read	scratch_a	gmem_scratch_a	8	32	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_203	la:665
+la:874	874	read	scratch_a	gmem_scratch_a	24	96	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_204	la:712
+la:875	875	write	scratch_b	gmem_scratch_b	16	64	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_216	la:873,la:874
+la:876	876	read	scratch_a	gmem_scratch_a	9	36	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_205	la:668
+la:877	877	read	scratch_a	gmem_scratch_a	24	96	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_206	la:712
+la:878	878	write	scratch_b	gmem_scratch_b	17	68	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_216	la:877,la:876
+la:879	879	read	scratch_a	gmem_scratch_a	9	36	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_207	la:668
+la:880	880	read	scratch_a	gmem_scratch_a	25	100	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_208	la:715
+la:881	881	write	scratch_b	gmem_scratch_b	18	72	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_216	la:880,la:879
+la:882	882	read	scratch_a	gmem_scratch_a	9	36	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_209	la:668
+la:883	883	read	scratch_a	gmem_scratch_a	26	104	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_210	la:718
+la:884	884	write	scratch_b	gmem_scratch_b	19	76	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_216	la:882,la:883
+la:885	885	read	scratch_a	gmem_scratch_a	10	40	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_211	la:671
+la:886	886	read	scratch_a	gmem_scratch_a	26	104	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_212	la:718
+la:887	887	write	scratch_b	gmem_scratch_b	20	80	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_216	la:885,la:886
+la:888	888	read	scratch_a	gmem_scratch_a	11	44	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_213	la:674
+la:889	889	read	scratch_a	gmem_scratch_a	26	104	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_214	la:718
+la:890	890	write	scratch_b	gmem_scratch_b	21	84	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_216	la:889,la:888
+la:891	891	read	scratch_a	gmem_scratch_a	11	44	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_215	la:674
+la:892	892	read	scratch_a	gmem_scratch_a	27	108	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_216	la:721
+la:893	893	write	scratch_b	gmem_scratch_b	22	88	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_216	la:892,la:891
+la:894	894	read	scratch_a	gmem_scratch_a	11	44	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_217	la:674
+la:895	895	read	scratch_a	gmem_scratch_a	28	112	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_218	la:724
+la:896	896	write	scratch_b	gmem_scratch_b	23	92	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_216	la:895,la:894
+la:897	897	read	scratch_a	gmem_scratch_a	11	44	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_219	la:674
+la:898	898	read	scratch_a	gmem_scratch_a	29	116	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_220	la:726
+la:899	899	write	scratch_b	gmem_scratch_b	24	96	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_216	la:897,la:898
+la:900	900	read	scratch_a	gmem_scratch_a	12	48	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_221	la:677
+la:901	901	read	scratch_a	gmem_scratch_a	29	116	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_222	la:726
+la:902	902	write	scratch_b	gmem_scratch_b	25	100	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_216	la:900,la:901
+la:903	903	read	scratch_a	gmem_scratch_a	13	52	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_223	la:680
+la:904	904	read	scratch_a	gmem_scratch_a	29	116	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_224	la:726
+la:905	905	write	scratch_b	gmem_scratch_b	26	104	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_216	la:904,la:903
+la:906	906	read	scratch_a	gmem_scratch_a	13	52	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_225	la:680
+la:907	907	read	scratch_a	gmem_scratch_a	30	120	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_226	la:728
+la:908	908	write	scratch_b	gmem_scratch_b	27	108	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_216	la:907,la:906
+la:909	909	read	scratch_a	gmem_scratch_a	13	52	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_227	la:680
+la:910	910	read	scratch_a	gmem_scratch_a	31	124	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_228	la:730
+la:911	911	write	scratch_b	gmem_scratch_b	28	112	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_216	la:910,la:909
+la:912	912	read	scratch_a	gmem_scratch_a	13	52	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_229	la:680
+la:913	913	write	scratch_b	gmem_scratch_b	29	116	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_216	la:912,la:910
+la:914	914	read	scratch_a	gmem_scratch_a	14	56	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_229	la:683
+la:915	915	write	scratch_b	gmem_scratch_b	30	120	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_216	la:914,la:910
+la:916	916	read	scratch_a	gmem_scratch_a	15	60	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_229	la:685
+la:917	917	write	scratch_b	gmem_scratch_b	31	124	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_216	la:916,la:910
+la:918	918	read	scratch_a	gmem_scratch_a	32	128	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_230	la:733
+la:919	919	read	scratch_a	gmem_scratch_a	48	192	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_231	la:780
+la:920	920	write	scratch_b	gmem_scratch_b	32	128	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_217	la:918,la:919
+la:921	921	read	scratch_a	gmem_scratch_a	33	132	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_232	la:736
+la:922	922	read	scratch_a	gmem_scratch_a	48	192	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_233	la:780
+la:923	923	write	scratch_b	gmem_scratch_b	33	132	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_217	la:921,la:922
+la:924	924	read	scratch_a	gmem_scratch_a	34	136	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_234	la:739
+la:925	925	read	scratch_a	gmem_scratch_a	48	192	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_235	la:780
+la:926	926	write	scratch_b	gmem_scratch_b	34	136	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_217	la:924,la:925
+la:927	927	read	scratch_a	gmem_scratch_a	35	140	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_236	la:742
+la:928	928	read	scratch_a	gmem_scratch_a	48	192	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_237	la:780
+la:929	929	write	scratch_b	gmem_scratch_b	35	140	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_217	la:927,la:928
+la:930	930	read	scratch_a	gmem_scratch_a	36	144	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_238	la:745
+la:931	931	read	scratch_a	gmem_scratch_a	48	192	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_239	la:780
+la:932	932	write	scratch_b	gmem_scratch_b	36	144	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_217	la:931,la:930
+la:933	933	read	scratch_a	gmem_scratch_a	36	144	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_240	la:745
+la:934	934	read	scratch_a	gmem_scratch_a	49	196	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_241	la:783
+la:935	935	write	scratch_b	gmem_scratch_b	37	148	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_217	la:934,la:933
+la:936	936	read	scratch_a	gmem_scratch_a	36	144	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_242	la:745
+la:937	937	read	scratch_a	gmem_scratch_a	50	200	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_243	la:786
+la:938	938	write	scratch_b	gmem_scratch_b	38	152	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_217	la:937,la:936
+la:939	939	read	scratch_a	gmem_scratch_a	36	144	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_244	la:745
+la:940	940	read	scratch_a	gmem_scratch_a	51	204	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_245	la:789
+la:941	941	write	scratch_b	gmem_scratch_b	39	156	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_217	la:940,la:939
+la:942	942	read	scratch_a	gmem_scratch_a	36	144	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_246	la:745
+la:943	943	read	scratch_a	gmem_scratch_a	52	208	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_247	la:792
+la:944	944	write	scratch_b	gmem_scratch_b	40	160	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_217	la:942,la:943
+la:945	945	read	scratch_a	gmem_scratch_a	37	148	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_248	la:748
+la:946	946	read	scratch_a	gmem_scratch_a	52	208	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_249	la:792
+la:947	947	write	scratch_b	gmem_scratch_b	41	164	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_217	la:946,la:945
+la:948	948	read	scratch_a	gmem_scratch_a	37	148	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_250	la:748
+la:949	949	read	scratch_a	gmem_scratch_a	53	212	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_251	la:795
+la:950	950	write	scratch_b	gmem_scratch_b	42	168	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_217	la:948,la:949
+la:951	951	read	scratch_a	gmem_scratch_a	38	152	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_252	la:751
+la:952	952	read	scratch_a	gmem_scratch_a	53	212	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_253	la:795
+la:953	953	write	scratch_b	gmem_scratch_b	43	172	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_217	la:951,la:952
+la:954	954	read	scratch_a	gmem_scratch_a	39	156	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_254	la:754
+la:955	955	read	scratch_a	gmem_scratch_a	53	212	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_255	la:795
+la:956	956	write	scratch_b	gmem_scratch_b	44	176	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_217	la:954,la:955
+la:957	957	read	scratch_a	gmem_scratch_a	40	160	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_256	la:757
+la:958	958	read	scratch_a	gmem_scratch_a	53	212	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_257	la:795
+la:959	959	write	scratch_b	gmem_scratch_b	45	180	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_217	la:958,la:957
+la:960	960	read	scratch_a	gmem_scratch_a	40	160	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_258	la:757
+la:961	961	read	scratch_a	gmem_scratch_a	54	216	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_259	la:798
+la:962	962	write	scratch_b	gmem_scratch_b	46	184	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_217	la:960,la:961
+la:963	963	read	scratch_a	gmem_scratch_a	41	164	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_260	la:760
+la:964	964	read	scratch_a	gmem_scratch_a	54	216	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_261	la:798
+la:965	965	write	scratch_b	gmem_scratch_b	47	188	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_217	la:964,la:963
+la:966	966	read	scratch_a	gmem_scratch_a	41	164	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_262	la:760
+la:967	967	read	scratch_a	gmem_scratch_a	55	220	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_263	la:801
+la:968	968	write	scratch_b	gmem_scratch_b	48	192	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_218	la:967,la:966
+la:969	969	read	scratch_a	gmem_scratch_a	41	164	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_264	la:760
+la:970	970	read	scratch_a	gmem_scratch_a	56	224	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_265	la:804
+la:971	971	write	scratch_b	gmem_scratch_b	49	196	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_218	la:970,la:969
+la:972	972	read	scratch_a	gmem_scratch_a	41	164	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_266	la:760
+la:973	973	read	scratch_a	gmem_scratch_a	57	228	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_267	la:807
+la:974	974	write	scratch_b	gmem_scratch_b	50	200	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_218	la:972,la:973
+la:975	975	read	scratch_a	gmem_scratch_a	42	168	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_268	la:763
+la:976	976	read	scratch_a	gmem_scratch_a	57	228	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_269	la:807
+la:977	977	write	scratch_b	gmem_scratch_b	51	204	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_218	la:975,la:976
+la:978	978	read	scratch_a	gmem_scratch_a	43	172	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_270	la:766
+la:979	979	read	scratch_a	gmem_scratch_a	57	228	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_271	la:807
+la:980	980	write	scratch_b	gmem_scratch_b	52	208	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_218	la:978,la:979
+la:981	981	read	scratch_a	gmem_scratch_a	44	176	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_272	la:769
+la:982	982	read	scratch_a	gmem_scratch_a	57	228	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_273	la:807
+la:983	983	write	scratch_b	gmem_scratch_b	53	212	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_218	la:982,la:981
+la:984	984	read	scratch_a	gmem_scratch_a	44	176	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_274	la:769
+la:985	985	read	scratch_a	gmem_scratch_a	58	232	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_275	la:810
+la:986	986	write	scratch_b	gmem_scratch_b	54	216	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_218	la:984,la:985
+la:987	987	read	scratch_a	gmem_scratch_a	45	180	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_276	la:772
+la:988	988	read	scratch_a	gmem_scratch_a	58	232	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_277	la:810
+la:989	989	write	scratch_b	gmem_scratch_b	55	220	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_218	la:988,la:987
+la:990	990	read	scratch_a	gmem_scratch_a	45	180	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_278	la:772
+la:991	991	read	scratch_a	gmem_scratch_a	59	236	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_279	la:813
+la:992	992	write	scratch_b	gmem_scratch_b	56	224	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_218	la:991,la:990
+la:993	993	read	scratch_a	gmem_scratch_a	45	180	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_280	la:772
+la:994	994	read	scratch_a	gmem_scratch_a	60	240	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_281	la:816
+la:995	995	write	scratch_b	gmem_scratch_b	57	228	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_218	la:993,la:994
+la:996	996	read	scratch_a	gmem_scratch_a	46	184	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_282	la:775
+la:997	997	read	scratch_a	gmem_scratch_a	60	240	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_283	la:816
+la:998	998	write	scratch_b	gmem_scratch_b	58	232	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_218	la:997,la:996
+la:999	999	read	scratch_a	gmem_scratch_a	46	184	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_284	la:775
+la:1000	1000	read	scratch_a	gmem_scratch_a	61	244	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_285	la:819
+la:1001	1001	write	scratch_b	gmem_scratch_b	59	236	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_218	la:1000,la:999
+la:1002	1002	read	scratch_a	gmem_scratch_a	46	184	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_286	la:775
+la:1003	1003	read	scratch_a	gmem_scratch_a	62	248	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_287	la:822
+la:1004	1004	write	scratch_b	gmem_scratch_b	60	240	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_218	la:1002,la:1003
+la:1005	1005	read	scratch_a	gmem_scratch_a	47	188	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_288	la:777
+la:1006	1006	read	scratch_a	gmem_scratch_a	62	248	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_289	la:822
+la:1007	1007	write	scratch_b	gmem_scratch_b	61	244	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_218	la:1006,la:1005
+la:1008	1008	read	scratch_a	gmem_scratch_a	47	188	  %32 = load i32, i32* %arrayidx17, align 4	txn_scratch_a_290	la:777
+la:1009	1009	read	scratch_a	gmem_scratch_a	63	252	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_291	la:824
+la:1010	1010	write	scratch_b	gmem_scratch_b	62	248	  store i32 %50, i32* %arrayidx31, align 4	txn_scratch_b_218	la:1008,la:1009
+la:1011	1011	read	scratch_a	gmem_scratch_a	63	252	  %40 = load i32, i32* %arrayidx21, align 4	txn_scratch_a_292	la:824
+la:1012	1012	write	scratch_b	gmem_scratch_b	63	252	  store i32 %57, i32* %arrayidx34, align 4	txn_scratch_b_218	la:1011,la:1008
+la:1013	1013	read	scratch_b	gmem_scratch_b	0	0	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_219	la:827
+la:1014	1014	read	scratch_b	gmem_scratch_b	32	128	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_220	la:920
+la:1015	1015	write	scratch_a	gmem_scratch_a	0	0	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_293	la:1014,la:1013
+la:1016	1016	read	scratch_b	gmem_scratch_b	0	0	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_221	la:827
+la:1017	1017	read	scratch_b	gmem_scratch_b	33	132	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_222	la:923
+la:1018	1018	write	scratch_a	gmem_scratch_a	1	4	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_293	la:1017,la:1016
+la:1019	1019	read	scratch_b	gmem_scratch_b	0	0	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_223	la:827
+la:1020	1020	read	scratch_b	gmem_scratch_b	34	136	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_224	la:926
+la:1021	1021	write	scratch_a	gmem_scratch_a	2	8	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_293	la:1019,la:1020
+la:1022	1022	read	scratch_b	gmem_scratch_b	1	4	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_225	la:830
+la:1023	1023	read	scratch_b	gmem_scratch_b	34	136	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_226	la:926
+la:1024	1024	write	scratch_a	gmem_scratch_a	3	12	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_293	la:1022,la:1023
+la:1025	1025	read	scratch_b	gmem_scratch_b	2	8	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_227	la:833
+la:1026	1026	read	scratch_b	gmem_scratch_b	34	136	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_228	la:926
+la:1027	1027	write	scratch_a	gmem_scratch_a	4	16	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_293	la:1025,la:1026
+la:1028	1028	read	scratch_b	gmem_scratch_b	3	12	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_229	la:836
+la:1029	1029	read	scratch_b	gmem_scratch_b	34	136	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_230	la:926
+la:1030	1030	write	scratch_a	gmem_scratch_a	5	20	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_293	la:1028,la:1029
+la:1031	1031	read	scratch_b	gmem_scratch_b	4	16	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_231	la:839
+la:1032	1032	read	scratch_b	gmem_scratch_b	34	136	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_232	la:926
+la:1033	1033	write	scratch_a	gmem_scratch_a	6	24	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_293	la:1031,la:1032
+la:1034	1034	read	scratch_b	gmem_scratch_b	5	20	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_233	la:842
+la:1035	1035	read	scratch_b	gmem_scratch_b	34	136	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_234	la:926
+la:1036	1036	write	scratch_a	gmem_scratch_a	7	28	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_293	la:1034,la:1035
+la:1037	1037	read	scratch_b	gmem_scratch_b	6	24	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_235	la:845
+la:1038	1038	read	scratch_b	gmem_scratch_b	34	136	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_236	la:926
+la:1039	1039	write	scratch_a	gmem_scratch_a	8	32	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_293	la:1037,la:1038
+la:1040	1040	read	scratch_b	gmem_scratch_b	7	28	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_237	la:848
+la:1041	1041	read	scratch_b	gmem_scratch_b	34	136	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_238	la:926
+la:1042	1042	write	scratch_a	gmem_scratch_a	9	36	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_293	la:1040,la:1041
+la:1043	1043	read	scratch_b	gmem_scratch_b	8	32	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_239	la:851
+la:1044	1044	read	scratch_b	gmem_scratch_b	34	136	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_240	la:926
+la:1045	1045	write	scratch_a	gmem_scratch_a	10	40	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_293	la:1043,la:1044
+la:1046	1046	read	scratch_b	gmem_scratch_b	9	36	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_241	la:854
+la:1047	1047	read	scratch_b	gmem_scratch_b	34	136	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_242	la:926
+la:1048	1048	write	scratch_a	gmem_scratch_a	11	44	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_293	la:1046,la:1047
+la:1049	1049	read	scratch_b	gmem_scratch_b	10	40	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_243	la:857
+la:1050	1050	read	scratch_b	gmem_scratch_b	34	136	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_244	la:926
+la:1051	1051	write	scratch_a	gmem_scratch_a	12	48	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_293	la:1049,la:1050
+la:1052	1052	read	scratch_b	gmem_scratch_b	11	44	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_245	la:860
+la:1053	1053	read	scratch_b	gmem_scratch_b	34	136	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_246	la:926
+la:1054	1054	write	scratch_a	gmem_scratch_a	13	52	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_293	la:1052,la:1053
+la:1055	1055	read	scratch_b	gmem_scratch_b	12	48	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_247	la:863
+la:1056	1056	read	scratch_b	gmem_scratch_b	34	136	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_248	la:926
+la:1057	1057	write	scratch_a	gmem_scratch_a	14	56	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_293	la:1055,la:1056
+la:1058	1058	read	scratch_b	gmem_scratch_b	13	52	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_249	la:866
+la:1059	1059	read	scratch_b	gmem_scratch_b	34	136	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_250	la:926
+la:1060	1060	write	scratch_a	gmem_scratch_a	15	60	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_293	la:1059,la:1058
+la:1061	1061	read	scratch_b	gmem_scratch_b	13	52	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_251	la:866
+la:1062	1062	read	scratch_b	gmem_scratch_b	35	140	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_252	la:929
+la:1063	1063	write	scratch_a	gmem_scratch_a	16	64	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_294	la:1061,la:1062
+la:1064	1064	read	scratch_b	gmem_scratch_b	14	56	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_253	la:869
+la:1065	1065	read	scratch_b	gmem_scratch_b	35	140	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_254	la:929
+la:1066	1066	write	scratch_a	gmem_scratch_a	17	68	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_294	la:1065,la:1064
+la:1067	1067	read	scratch_b	gmem_scratch_b	14	56	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_255	la:869
+la:1068	1068	read	scratch_b	gmem_scratch_b	36	144	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_256	la:932
+la:1069	1069	write	scratch_a	gmem_scratch_a	18	72	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_294	la:1067,la:1068
+la:1070	1070	read	scratch_b	gmem_scratch_b	15	60	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_257	la:872
+la:1071	1071	read	scratch_b	gmem_scratch_b	36	144	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_258	la:932
+la:1072	1072	write	scratch_a	gmem_scratch_a	19	76	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_294	la:1071,la:1070
+la:1073	1073	read	scratch_b	gmem_scratch_b	15	60	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_259	la:872
+la:1074	1074	read	scratch_b	gmem_scratch_b	37	148	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_260	la:935
+la:1075	1075	write	scratch_a	gmem_scratch_a	20	80	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_294	la:1073,la:1074
+la:1076	1076	read	scratch_b	gmem_scratch_b	16	64	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_261	la:875
+la:1077	1077	read	scratch_b	gmem_scratch_b	37	148	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_262	la:935
+la:1078	1078	write	scratch_a	gmem_scratch_a	21	84	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_294	la:1077,la:1076
+la:1079	1079	read	scratch_b	gmem_scratch_b	16	64	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_263	la:875
+la:1080	1080	read	scratch_b	gmem_scratch_b	38	152	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_264	la:938
+la:1081	1081	write	scratch_a	gmem_scratch_a	22	88	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_294	la:1080,la:1079
+la:1082	1082	read	scratch_b	gmem_scratch_b	16	64	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_265	la:875
+la:1083	1083	read	scratch_b	gmem_scratch_b	39	156	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_266	la:941
+la:1084	1084	write	scratch_a	gmem_scratch_a	23	92	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_294	la:1082,la:1083
+la:1085	1085	read	scratch_b	gmem_scratch_b	17	68	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_267	la:878
+la:1086	1086	read	scratch_b	gmem_scratch_b	39	156	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_268	la:941
+la:1087	1087	write	scratch_a	gmem_scratch_a	24	96	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_294	la:1085,la:1086
+la:1088	1088	read	scratch_b	gmem_scratch_b	18	72	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_269	la:881
+la:1089	1089	read	scratch_b	gmem_scratch_b	39	156	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_270	la:941
+la:1090	1090	write	scratch_a	gmem_scratch_a	25	100	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_294	la:1089,la:1088
+la:1091	1091	read	scratch_b	gmem_scratch_b	18	72	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_271	la:881
+la:1092	1092	read	scratch_b	gmem_scratch_b	40	160	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_272	la:944
+la:1093	1093	write	scratch_a	gmem_scratch_a	26	104	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_294	la:1092,la:1091
+la:1094	1094	read	scratch_b	gmem_scratch_b	18	72	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_273	la:881
+la:1095	1095	read	scratch_b	gmem_scratch_b	41	164	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_274	la:947
+la:1096	1096	write	scratch_a	gmem_scratch_a	27	108	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_294	la:1095,la:1094
+la:1097	1097	read	scratch_b	gmem_scratch_b	18	72	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_275	la:881
+la:1098	1098	read	scratch_b	gmem_scratch_b	42	168	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_276	la:950
+la:1099	1099	write	scratch_a	gmem_scratch_a	28	112	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_294	la:1098,la:1097
+la:1100	1100	read	scratch_b	gmem_scratch_b	18	72	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_277	la:881
+la:1101	1101	read	scratch_b	gmem_scratch_b	43	172	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_278	la:953
+la:1102	1102	write	scratch_a	gmem_scratch_a	29	116	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_294	la:1100,la:1101
+la:1103	1103	read	scratch_b	gmem_scratch_b	19	76	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_279	la:884
+la:1104	1104	read	scratch_b	gmem_scratch_b	43	172	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_280	la:953
+la:1105	1105	write	scratch_a	gmem_scratch_a	30	120	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_294	la:1103,la:1104
+la:1106	1106	read	scratch_b	gmem_scratch_b	20	80	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_281	la:887
+la:1107	1107	read	scratch_b	gmem_scratch_b	43	172	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_282	la:953
+la:1108	1108	write	scratch_a	gmem_scratch_a	31	124	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_294	la:1107,la:1106
+la:1109	1109	read	scratch_b	gmem_scratch_b	20	80	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_283	la:887
+la:1110	1110	read	scratch_b	gmem_scratch_b	44	176	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_284	la:956
+la:1111	1111	write	scratch_a	gmem_scratch_a	32	128	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_295	la:1109,la:1110
+la:1112	1112	read	scratch_b	gmem_scratch_b	21	84	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_285	la:890
+la:1113	1113	read	scratch_b	gmem_scratch_b	44	176	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_286	la:956
+la:1114	1114	write	scratch_a	gmem_scratch_a	33	132	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_295	la:1112,la:1113
+la:1115	1115	read	scratch_b	gmem_scratch_b	22	88	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_287	la:893
+la:1116	1116	read	scratch_b	gmem_scratch_b	44	176	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_288	la:956
+la:1117	1117	write	scratch_a	gmem_scratch_a	34	136	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_295	la:1116,la:1115
+la:1118	1118	read	scratch_b	gmem_scratch_b	22	88	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_289	la:893
+la:1119	1119	read	scratch_b	gmem_scratch_b	45	180	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_290	la:959
+la:1120	1120	write	scratch_a	gmem_scratch_a	35	140	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_295	la:1119,la:1118
+la:1121	1121	read	scratch_b	gmem_scratch_b	22	88	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_291	la:893
+la:1122	1122	read	scratch_b	gmem_scratch_b	46	184	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_292	la:962
+la:1123	1123	write	scratch_a	gmem_scratch_a	36	144	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_295	la:1121,la:1122
+la:1124	1124	read	scratch_b	gmem_scratch_b	23	92	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_293	la:896
+la:1125	1125	read	scratch_b	gmem_scratch_b	46	184	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_294	la:962
+la:1126	1126	write	scratch_a	gmem_scratch_a	37	148	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_295	la:1125,la:1124
+la:1127	1127	read	scratch_b	gmem_scratch_b	23	92	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_295	la:896
+la:1128	1128	read	scratch_b	gmem_scratch_b	47	188	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_296	la:965
+la:1129	1129	write	scratch_a	gmem_scratch_a	38	152	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_295	la:1128,la:1127
+la:1130	1130	read	scratch_b	gmem_scratch_b	23	92	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_297	la:896
+la:1131	1131	read	scratch_b	gmem_scratch_b	48	192	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_298	la:968
+la:1132	1132	write	scratch_a	gmem_scratch_a	39	156	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_295	la:1131,la:1130
+la:1133	1133	read	scratch_b	gmem_scratch_b	23	92	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_299	la:896
+la:1134	1134	read	scratch_b	gmem_scratch_b	49	196	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_300	la:971
+la:1135	1135	write	scratch_a	gmem_scratch_a	40	160	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_295	la:1133,la:1134
+la:1136	1136	read	scratch_b	gmem_scratch_b	24	96	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_301	la:899
+la:1137	1137	read	scratch_b	gmem_scratch_b	49	196	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_302	la:971
+la:1138	1138	write	scratch_a	gmem_scratch_a	41	164	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_295	la:1137,la:1136
+la:1139	1139	read	scratch_b	gmem_scratch_b	24	96	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_303	la:899
+la:1140	1140	read	scratch_b	gmem_scratch_b	50	200	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_304	la:974
+la:1141	1141	write	scratch_a	gmem_scratch_a	42	168	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_295	la:1140,la:1139
+la:1142	1142	read	scratch_b	gmem_scratch_b	24	96	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_305	la:899
+la:1143	1143	read	scratch_b	gmem_scratch_b	51	204	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_306	la:977
+la:1144	1144	write	scratch_a	gmem_scratch_a	43	172	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_295	la:1143,la:1142
+la:1145	1145	read	scratch_b	gmem_scratch_b	24	96	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_307	la:899
+la:1146	1146	read	scratch_b	gmem_scratch_b	52	208	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_308	la:980
+la:1147	1147	write	scratch_a	gmem_scratch_a	44	176	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_295	la:1146,la:1145
+la:1148	1148	read	scratch_b	gmem_scratch_b	24	96	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_309	la:899
+la:1149	1149	read	scratch_b	gmem_scratch_b	53	212	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_310	la:983
+la:1150	1150	write	scratch_a	gmem_scratch_a	45	180	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_295	la:1148,la:1149
+la:1151	1151	read	scratch_b	gmem_scratch_b	25	100	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_311	la:902
+la:1152	1152	read	scratch_b	gmem_scratch_b	53	212	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_312	la:983
+la:1153	1153	write	scratch_a	gmem_scratch_a	46	184	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_295	la:1152,la:1151
+la:1154	1154	read	scratch_b	gmem_scratch_b	25	100	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_313	la:902
+la:1155	1155	read	scratch_b	gmem_scratch_b	54	216	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_314	la:986
+la:1156	1156	write	scratch_a	gmem_scratch_a	47	188	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_295	la:1155,la:1154
+la:1157	1157	read	scratch_b	gmem_scratch_b	25	100	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_315	la:902
+la:1158	1158	read	scratch_b	gmem_scratch_b	55	220	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_316	la:989
+la:1159	1159	write	scratch_a	gmem_scratch_a	48	192	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_296	la:1158,la:1157
+la:1160	1160	read	scratch_b	gmem_scratch_b	25	100	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_317	la:902
+la:1161	1161	read	scratch_b	gmem_scratch_b	56	224	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_318	la:992
+la:1162	1162	write	scratch_a	gmem_scratch_a	49	196	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_296	la:1160,la:1161
+la:1163	1163	read	scratch_b	gmem_scratch_b	26	104	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_319	la:905
+la:1164	1164	read	scratch_b	gmem_scratch_b	56	224	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_320	la:992
+la:1165	1165	write	scratch_a	gmem_scratch_a	50	200	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_296	la:1164,la:1163
+la:1166	1166	read	scratch_b	gmem_scratch_b	26	104	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_321	la:905
+la:1167	1167	read	scratch_b	gmem_scratch_b	57	228	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_322	la:995
+la:1168	1168	write	scratch_a	gmem_scratch_a	51	204	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_296	la:1167,la:1166
+la:1169	1169	read	scratch_b	gmem_scratch_b	26	104	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_323	la:905
+la:1170	1170	read	scratch_b	gmem_scratch_b	58	232	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_324	la:998
+la:1171	1171	write	scratch_a	gmem_scratch_a	52	208	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_296	la:1170,la:1169
+la:1172	1172	read	scratch_b	gmem_scratch_b	26	104	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_325	la:905
+la:1173	1173	read	scratch_b	gmem_scratch_b	59	236	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_326	la:1001
+la:1174	1174	write	scratch_a	gmem_scratch_a	53	212	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_296	la:1172,la:1173
+la:1175	1175	read	scratch_b	gmem_scratch_b	27	108	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_327	la:908
+la:1176	1176	read	scratch_b	gmem_scratch_b	59	236	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_328	la:1001
+la:1177	1177	write	scratch_a	gmem_scratch_a	54	216	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_296	la:1175,la:1176
+la:1178	1178	read	scratch_b	gmem_scratch_b	28	112	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_329	la:911
+la:1179	1179	read	scratch_b	gmem_scratch_b	59	236	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_330	la:1001
+la:1180	1180	write	scratch_a	gmem_scratch_a	55	220	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_296	la:1179,la:1178
+la:1181	1181	read	scratch_b	gmem_scratch_b	28	112	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_331	la:911
+la:1182	1182	read	scratch_b	gmem_scratch_b	60	240	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_332	la:1004
+la:1183	1183	write	scratch_a	gmem_scratch_a	56	224	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_296	la:1181,la:1182
+la:1184	1184	read	scratch_b	gmem_scratch_b	29	116	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_333	la:913
+la:1185	1185	read	scratch_b	gmem_scratch_b	60	240	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_334	la:1004
+la:1186	1186	write	scratch_a	gmem_scratch_a	57	228	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_296	la:1185,la:1184
+la:1187	1187	read	scratch_b	gmem_scratch_b	29	116	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_335	la:913
+la:1188	1188	read	scratch_b	gmem_scratch_b	61	244	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_336	la:1007
+la:1189	1189	write	scratch_a	gmem_scratch_a	58	232	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_296	la:1188,la:1187
+la:1190	1190	read	scratch_b	gmem_scratch_b	29	116	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_337	la:913
+la:1191	1191	read	scratch_b	gmem_scratch_b	62	248	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_338	la:1010
+la:1192	1192	write	scratch_a	gmem_scratch_a	59	236	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_296	la:1190,la:1191
+la:1193	1193	read	scratch_b	gmem_scratch_b	30	120	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_339	la:915
+la:1194	1194	read	scratch_b	gmem_scratch_b	62	248	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_340	la:1010
+la:1195	1195	write	scratch_a	gmem_scratch_a	60	240	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_296	la:1194,la:1193
+la:1196	1196	read	scratch_b	gmem_scratch_b	30	120	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_341	la:915
+la:1197	1197	read	scratch_b	gmem_scratch_b	63	252	  %79 = load i32, i32* %arrayidx49, align 4	txn_scratch_b_342	la:1012
+la:1198	1198	write	scratch_a	gmem_scratch_a	61	244	  store i32 %96, i32* %arrayidx69, align 4	txn_scratch_a_296	la:1197,la:1196
+la:1199	1199	read	scratch_b	gmem_scratch_b	30	120	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_343	la:915
+la:1200	1200	write	scratch_a	gmem_scratch_a	62	248	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_296	la:1199,la:1197
+la:1201	1201	read	scratch_b	gmem_scratch_b	31	124	  %71 = load i32, i32* %arrayidx41, align 4	txn_scratch_b_343	la:917
+la:1202	1202	write	scratch_a	gmem_scratch_a	63	252	  store i32 %89, i32* %arrayidx65, align 4	txn_scratch_a_296	la:1201,la:1197
+la:1203	1203	read	scratch_a	gmem_scratch_a	0	0	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_297	la:1015
+la:1204	1204	write	out	gmem_out	0	0	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1203
+la:1205	1205	read	scratch_a	gmem_scratch_a	1	4	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_297	la:1018
+la:1206	1206	write	out	gmem_out	1	4	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1205
+la:1207	1207	read	scratch_a	gmem_scratch_a	2	8	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_297	la:1021
+la:1208	1208	write	out	gmem_out	2	8	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1207
+la:1209	1209	read	scratch_a	gmem_scratch_a	3	12	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_297	la:1024
+la:1210	1210	write	out	gmem_out	3	12	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1209
+la:1211	1211	read	scratch_a	gmem_scratch_a	4	16	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_297	la:1027
+la:1212	1212	write	out	gmem_out	4	16	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1211
+la:1213	1213	read	scratch_a	gmem_scratch_a	5	20	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_297	la:1030
+la:1214	1214	write	out	gmem_out	5	20	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1213
+la:1215	1215	read	scratch_a	gmem_scratch_a	6	24	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_297	la:1033
+la:1216	1216	write	out	gmem_out	6	24	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1215
+la:1217	1217	read	scratch_a	gmem_scratch_a	7	28	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_297	la:1036
+la:1218	1218	write	out	gmem_out	7	28	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1217
+la:1219	1219	read	scratch_a	gmem_scratch_a	8	32	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_297	la:1039
+la:1220	1220	write	out	gmem_out	8	32	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1219
+la:1221	1221	read	scratch_a	gmem_scratch_a	9	36	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_297	la:1042
+la:1222	1222	write	out	gmem_out	9	36	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1221
+la:1223	1223	read	scratch_a	gmem_scratch_a	10	40	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_297	la:1045
+la:1224	1224	write	out	gmem_out	10	40	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1223
+la:1225	1225	read	scratch_a	gmem_scratch_a	11	44	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_297	la:1048
+la:1226	1226	write	out	gmem_out	11	44	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1225
+la:1227	1227	read	scratch_a	gmem_scratch_a	12	48	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_297	la:1051
+la:1228	1228	write	out	gmem_out	12	48	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1227
+la:1229	1229	read	scratch_a	gmem_scratch_a	13	52	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_297	la:1054
+la:1230	1230	write	out	gmem_out	13	52	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1229
+la:1231	1231	read	scratch_a	gmem_scratch_a	14	56	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_297	la:1057
+la:1232	1232	write	out	gmem_out	14	56	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1231
+la:1233	1233	read	scratch_a	gmem_scratch_a	15	60	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_297	la:1060
+la:1234	1234	write	out	gmem_out	15	60	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1233
+la:1235	1235	read	scratch_a	gmem_scratch_a	16	64	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_298	la:1063
+la:1236	1236	write	out	gmem_out	16	64	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1235
+la:1237	1237	read	scratch_a	gmem_scratch_a	17	68	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_298	la:1066
+la:1238	1238	write	out	gmem_out	17	68	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1237
+la:1239	1239	read	scratch_a	gmem_scratch_a	18	72	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_298	la:1069
+la:1240	1240	write	out	gmem_out	18	72	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1239
+la:1241	1241	read	scratch_a	gmem_scratch_a	19	76	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_298	la:1072
+la:1242	1242	write	out	gmem_out	19	76	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1241
+la:1243	1243	read	scratch_a	gmem_scratch_a	20	80	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_298	la:1075
+la:1244	1244	write	out	gmem_out	20	80	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1243
+la:1245	1245	read	scratch_a	gmem_scratch_a	21	84	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_298	la:1078
+la:1246	1246	write	out	gmem_out	21	84	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1245
+la:1247	1247	read	scratch_a	gmem_scratch_a	22	88	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_298	la:1081
+la:1248	1248	write	out	gmem_out	22	88	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1247
+la:1249	1249	read	scratch_a	gmem_scratch_a	23	92	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_298	la:1084
+la:1250	1250	write	out	gmem_out	23	92	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1249
+la:1251	1251	read	scratch_a	gmem_scratch_a	24	96	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_298	la:1087
+la:1252	1252	write	out	gmem_out	24	96	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1251
+la:1253	1253	read	scratch_a	gmem_scratch_a	25	100	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_298	la:1090
+la:1254	1254	write	out	gmem_out	25	100	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1253
+la:1255	1255	read	scratch_a	gmem_scratch_a	26	104	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_298	la:1093
+la:1256	1256	write	out	gmem_out	26	104	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1255
+la:1257	1257	read	scratch_a	gmem_scratch_a	27	108	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_298	la:1096
+la:1258	1258	write	out	gmem_out	27	108	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1257
+la:1259	1259	read	scratch_a	gmem_scratch_a	28	112	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_298	la:1099
+la:1260	1260	write	out	gmem_out	28	112	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1259
+la:1261	1261	read	scratch_a	gmem_scratch_a	29	116	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_298	la:1102
+la:1262	1262	write	out	gmem_out	29	116	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1261
+la:1263	1263	read	scratch_a	gmem_scratch_a	30	120	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_298	la:1105
+la:1264	1264	write	out	gmem_out	30	120	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1263
+la:1265	1265	read	scratch_a	gmem_scratch_a	31	124	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_298	la:1108
+la:1266	1266	write	out	gmem_out	31	124	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1265
+la:1267	1267	read	scratch_a	gmem_scratch_a	32	128	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_299	la:1111
+la:1268	1268	write	out	gmem_out	32	128	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1267
+la:1269	1269	read	scratch_a	gmem_scratch_a	33	132	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_299	la:1114
+la:1270	1270	write	out	gmem_out	33	132	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1269
+la:1271	1271	read	scratch_a	gmem_scratch_a	34	136	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_299	la:1117
+la:1272	1272	write	out	gmem_out	34	136	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1271
+la:1273	1273	read	scratch_a	gmem_scratch_a	35	140	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_299	la:1120
+la:1274	1274	write	out	gmem_out	35	140	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1273
+la:1275	1275	read	scratch_a	gmem_scratch_a	36	144	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_299	la:1123
+la:1276	1276	write	out	gmem_out	36	144	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1275
+la:1277	1277	read	scratch_a	gmem_scratch_a	37	148	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_299	la:1126
+la:1278	1278	write	out	gmem_out	37	148	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1277
+la:1279	1279	read	scratch_a	gmem_scratch_a	38	152	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_299	la:1129
+la:1280	1280	write	out	gmem_out	38	152	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1279
+la:1281	1281	read	scratch_a	gmem_scratch_a	39	156	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_299	la:1132
+la:1282	1282	write	out	gmem_out	39	156	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1281
+la:1283	1283	read	scratch_a	gmem_scratch_a	40	160	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_299	la:1135
+la:1284	1284	write	out	gmem_out	40	160	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1283
+la:1285	1285	read	scratch_a	gmem_scratch_a	41	164	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_299	la:1138
+la:1286	1286	write	out	gmem_out	41	164	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1285
+la:1287	1287	read	scratch_a	gmem_scratch_a	42	168	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_299	la:1141
+la:1288	1288	write	out	gmem_out	42	168	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1287
+la:1289	1289	read	scratch_a	gmem_scratch_a	43	172	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_299	la:1144
+la:1290	1290	write	out	gmem_out	43	172	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1289
+la:1291	1291	read	scratch_a	gmem_scratch_a	44	176	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_299	la:1147
+la:1292	1292	write	out	gmem_out	44	176	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1291
+la:1293	1293	read	scratch_a	gmem_scratch_a	45	180	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_299	la:1150
+la:1294	1294	write	out	gmem_out	45	180	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1293
+la:1295	1295	read	scratch_a	gmem_scratch_a	46	184	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_299	la:1153
+la:1296	1296	write	out	gmem_out	46	184	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1295
+la:1297	1297	read	scratch_a	gmem_scratch_a	47	188	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_299	la:1156
+la:1298	1298	write	out	gmem_out	47	188	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1297
+la:1299	1299	read	scratch_a	gmem_scratch_a	48	192	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_300	la:1159
+la:1300	1300	write	out	gmem_out	48	192	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1299
+la:1301	1301	read	scratch_a	gmem_scratch_a	49	196	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_300	la:1162
+la:1302	1302	write	out	gmem_out	49	196	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1301
+la:1303	1303	read	scratch_a	gmem_scratch_a	50	200	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_300	la:1165
+la:1304	1304	write	out	gmem_out	50	200	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1303
+la:1305	1305	read	scratch_a	gmem_scratch_a	51	204	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_300	la:1168
+la:1306	1306	write	out	gmem_out	51	204	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1305
+la:1307	1307	read	scratch_a	gmem_scratch_a	52	208	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_300	la:1171
+la:1308	1308	write	out	gmem_out	52	208	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1307
+la:1309	1309	read	scratch_a	gmem_scratch_a	53	212	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_300	la:1174
+la:1310	1310	write	out	gmem_out	53	212	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1309
+la:1311	1311	read	scratch_a	gmem_scratch_a	54	216	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_300	la:1177
+la:1312	1312	write	out	gmem_out	54	216	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1311
+la:1313	1313	read	scratch_a	gmem_scratch_a	55	220	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_300	la:1180
+la:1314	1314	write	out	gmem_out	55	220	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1313
+la:1315	1315	read	scratch_a	gmem_scratch_a	56	224	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_300	la:1183
+la:1316	1316	write	out	gmem_out	56	224	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1315
+la:1317	1317	read	scratch_a	gmem_scratch_a	57	228	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_300	la:1186
+la:1318	1318	write	out	gmem_out	57	228	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1317
+la:1319	1319	read	scratch_a	gmem_scratch_a	58	232	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_300	la:1189
+la:1320	1320	write	out	gmem_out	58	232	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1319
+la:1321	1321	read	scratch_a	gmem_scratch_a	59	236	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_300	la:1192
+la:1322	1322	write	out	gmem_out	59	236	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1321
+la:1323	1323	read	scratch_a	gmem_scratch_a	60	240	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_300	la:1195
+la:1324	1324	write	out	gmem_out	60	240	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1323
+la:1325	1325	read	scratch_a	gmem_scratch_a	61	244	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_300	la:1198
+la:1326	1326	write	out	gmem_out	61	244	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1325
+la:1327	1327	read	scratch_a	gmem_scratch_a	62	248	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_300	la:1200
+la:1328	1328	write	out	gmem_out	62	248	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1327
+la:1329	1329	read	scratch_a	gmem_scratch_a	63	252	  %115 = load i32, i32* %arrayidx92, align 4	txn_scratch_a_300	la:1202
+la:1330	1330	write	out	gmem_out	63	252	  store i32 %cond97, i32* %arrayidx99, align 4	txn_out_0	la:1329

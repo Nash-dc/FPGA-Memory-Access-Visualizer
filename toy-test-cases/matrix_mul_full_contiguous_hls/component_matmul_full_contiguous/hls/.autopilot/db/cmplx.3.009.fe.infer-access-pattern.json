@@ -1,0 +1,20 @@
+{
+  "0": {
+    "basicblocks": 9,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 19,
+    "file": "matmul_full_contiguous.cpp",
+    "fileloc": 3,
+    "instructions": 204,
+    "loads": {
+      "L": 33
+    },
+    "memory_accesses": 23,
+    "name": "matmul_full_contiguous",
+    "stores": {
+      "L": 3
+    },
+    "total_instructions": 204
+  }
+}

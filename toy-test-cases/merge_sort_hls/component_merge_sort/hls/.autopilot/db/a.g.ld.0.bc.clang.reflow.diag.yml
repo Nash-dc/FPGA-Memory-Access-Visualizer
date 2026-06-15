@@ -1,0 +1,255 @@
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: merge_sort.cpp, Line: 30, Column: 23 }
+Function:        _Z14merge_sort_hlsPKiPi
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'min_int(int, int)'
+    DebugLoc:        { File: merge_sort.cpp, Line: 3, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'merge_sort_hls(int const*, int*)'
+    DebugLoc:        { File: merge_sort.cpp, Line: 8, Column: 0 }
+  - String:          ''''
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+Function:        apatb_merge_sort_hls_ir
+Args:            
+  - Callee:          'merge_sort_hls(int const*, int*)'
+    DebugLoc:        { File: merge_sort.cpp, Line: 8, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          apatb_merge_sort_hls_ir
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: merge_sort.cpp, Line: 19, Column: 3 }
+Function:        _Z14merge_sort_hlsPKiPi
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '64'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        in3seq
+  - ArrayName:       in
+  - String:          ' '
+  - BundleName:      gmem_in
+  - String:          ' '
+  - LoopName:        load_input_loop
+  - String:          ' '
+  - LoopLoc:         'merge_sort.cpp:19:3'
+  - String:          ' '
+  - Function:        'merge_sort_hls(int const*, int*)'
+    DebugLoc:        { File: merge_sort.cpp, Line: 8, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: merge_sort.cpp, Line: 21, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          for.inc.load.4
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: merge_sort.cpp, Line: 70, Column: 3 }
+Function:        _Z14merge_sort_hlsPKiPi
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of length '
+  - Length:          '64'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        out4seq
+  - ArrayName:       out
+  - String:          ' '
+  - BundleName:      gmem_out
+  - String:          ' '
+  - LoopName:        store_output_loop
+  - String:          ' '
+  - LoopLoc:         'merge_sort.cpp:70:3'
+  - String:          ' '
+  - Function:        'merge_sort_hls(int const*, int*)'
+    DebugLoc:        { File: merge_sort.cpp, Line: 8, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: merge_sort.cpp, Line: 72, Column: 9 }
+  - OrigDirection:   write
+  - OrigID:          for.body87.store.6
+...
+--- !Passed
+Pass:            reflow-burst-widen
+Name:            BurstWidened
+DebugLoc:        { File: merge_sort.cpp, Line: 70, Column: 3 }
+Function:        _Z14merge_sort_hlsPKiPi
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of '
+  - OrigLength:      '64'
+  - String:          ' x '
+  - OrigWords:       '32'
+  - String:          'bit words has been widened by '
+  - Factor:          '16'
+  - String:          ': '
+  - Length:          '4'
+  - String:          ' x '
+  - Words:           '512'
+  - String:          bit words
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: merge_sort.cpp, Line: 70, Column: 3 }
+  - OrigDirection:   write
+  - OrigID:          out4seq
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        wseq
+  - ArrayName:       out
+  - String:          ' '
+  - BundleName:      gmem_out
+  - String:          ' '
+  - LoopName:        store_output_loop
+  - String:          ' '
+  - LoopLoc:         'merge_sort.cpp:70:3'
+  - String:          ' '
+  - Function:        'merge_sort_hls(int const*, int*)'
+    DebugLoc:        { File: merge_sort.cpp, Line: 8, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-widen
+Name:            BurstWidened
+DebugLoc:        { File: merge_sort.cpp, Line: 19, Column: 3 }
+Function:        _Z14merge_sort_hlsPKiPi
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of '
+  - OrigLength:      '64'
+  - String:          ' x '
+  - OrigWords:       '32'
+  - String:          'bit words has been widened by '
+  - Factor:          '16'
+  - String:          ': '
+  - Length:          '4'
+  - String:          ' x '
+  - Words:           '512'
+  - String:          bit words
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: merge_sort.cpp, Line: 19, Column: 3 }
+  - OrigDirection:   read
+  - OrigID:          in3seq
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        wseq5
+  - ArrayName:       in
+  - String:          ' '
+  - BundleName:      gmem_in
+  - String:          ' '
+  - LoopName:        load_input_loop
+  - String:          ' '
+  - LoopLoc:         'merge_sort.cpp:19:3'
+  - String:          ' '
+  - Function:        'merge_sort_hls(int const*, int*)'
+    DebugLoc:        { File: merge_sort.cpp, Line: 8, Column: 0 }
+  - String:          ' '
+...
+--- !Failure
+Pass:            reflow-occurrence-inference
+Name:            NonComputableLoopForm
+DebugLoc:        { File: merge_sort.cpp, Line: 27, Column: 3 }
+Function:        _Z14merge_sort_hlsPKiPi
+Args:            
+  - String:          'Could not analyze occurrence information within '''
+  - LoopName:        merge_width_loop
+  - String:          '''('
+  - LoopLoc:         'merge_sort.cpp:27:3'
+  - String:          ') . Requires loop in simplify form and with single exit.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: merge_sort.cpp, Line: 19, Column: 3 }
+Function:        _Z14merge_sort_hlsPKiPi
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '4'
+  - String:          ' and bit width '
+  - Width:           '512'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem_in
+  - String:          ' '
+  - Function:        'merge_sort_hls(int const*, int*)'
+    DebugLoc:        { File: merge_sort.cpp, Line: 8, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: merge_sort.cpp, Line: 19, Column: 3 }
+Function:        _Z14merge_sort_hlsPKiPi
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '4'
+  - String:          ' and bit width '
+  - Width:           '512'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem_in
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: merge_sort.cpp, Line: 70, Column: 3 }
+Function:        _Z14merge_sort_hlsPKiPi
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '4'
+  - String:          ' and bit width '
+  - Width:           '512'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq1
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem_out
+  - String:          ' '
+  - Function:        'merge_sort_hls(int const*, int*)'
+    DebugLoc:        { File: merge_sort.cpp, Line: 8, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: merge_sort.cpp, Line: 70, Column: 3 }
+Function:        _Z14merge_sort_hlsPKiPi
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '4'
+  - String:          ' and bit width '
+  - Width:           '512'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem_out
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...

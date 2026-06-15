@@ -1,0 +1,95 @@
+{
+  "function_name": "matmul_partition",
+  "loop_name": [
+    "read_A",
+    "read_B",
+    "loop_count_arraypart1_arraypart2",
+    "writeC"
+  ],
+  "loop_ii": {
+    "read_A": 1,
+    "read_B": 1,
+    "loop_count_arraypart1_arraypart2": 1,
+    "writeC": 1
+  },
+  "pipeline_analysis": {
+    "is_pipelined": true,
+    "has_ii_one_loop": true,
+    "continuous_read_issue_candidate": true,
+    "minimum_achieved_ii": 1,
+    "maximum_pipeline_depth": 3,
+    "basis": "csynth achieved PipelineII=1",
+    "loops": [
+      {
+        "name": "read_A",
+        "pipeline_ii": 1,
+        "pipeline_type": "yes",
+        "pipeline_depth": 3,
+        "trip_count": 256
+      },
+      {
+        "name": "read_B",
+        "pipeline_ii": 1,
+        "pipeline_type": "yes",
+        "pipeline_depth": 3,
+        "trip_count": 256
+      },
+      {
+        "name": "loop_count_arraypart1_arraypart2",
+        "pipeline_ii": 1,
+        "pipeline_type": "yes",
+        "pipeline_depth": 2,
+        "trip_count": null
+      },
+      {
+        "name": "writeC",
+        "pipeline_ii": 1,
+        "pipeline_type": "yes",
+        "pipeline_depth": 3,
+        "trip_count": 256
+      }
+    ],
+    "interpretation": "II=1 permits consecutive read-request issue when addresses are sequential and the AXI master supports outstanding requests. It does not imply consecutive write transactions because write data production and burst formation can delay AW/W activity. Write spacing is estimated as max(AXI beats, useful elements times achieved II), with pipeline depth included before the first dependent write."
+  },
+  "data_width_bits": 32,
+  "element_width_bits": 32,
+  "elements_per_beat": 1,
+  "max_read_burst_length": 16,
+  "max_write_burst_length": 16,
+  "total_read_elements": 512,
+  "total_write_elements": 256,
+  "total_read_transactions": 32,
+  "total_write_transactions": 16,
+  "transaction_dependency_edges": 32,
+  "notes_about_assumptions": [
+    "LLVM IR trace is the source of executed logical accesses and dynamic order.",
+    "HLS interface/csynth metadata supplies AXI width, burst limits, outstanding settings, and loop II when available.",
+    "Physical transactions are inferred from aligned addresses, continuity, width, and burst limits; no RTL waveform is used.",
+    "Issue/completion values are logical estimates, not RTL cycle-accurate timestamps.",
+    "Timeline lane order is not a data dependency. Only explicit graph edges are dependencies."
+  ],
+  "inputs": {
+    "csynth_xml": [
+      "/data/hls-dev/Vitis-HLS-Introductory-Examples/Array/array_partition_complete/component_array_partition_complete/hls/syn/report/csynth.xml"
+    ],
+    "trace": "/data/hls-dev/Results/trace-timeline/array_partition_complete/top_level_memory_trace.tsv",
+    "manifest": "/data/hls-dev/Results/trace-timeline/array_partition_complete/top_level_memory_sites.tsv",
+    "memory_access_report": "/data/hls-dev/Results/pass-reports/array_partition_complete/memory_access_report.json",
+    "interface_xml": "/data/hls-dev/Vitis-HLS-Introductory-Examples/Array/array_partition_complete/component_array_partition_complete/hls/.autopilot/db/top-io-fe.xml",
+    "schedule_xml": [
+      "/data/hls-dev/Vitis-HLS-Introductory-Examples/Array/array_partition_complete/component_array_partition_complete/hls/.autopilot/db/matmul_partition.sched.adb.xml",
+      "/data/hls-dev/Vitis-HLS-Introductory-Examples/Array/array_partition_complete/component_array_partition_complete/hls/.autopilot/db/matmul_partition_Pipeline_loop_count_arraypart1_arraypart2.sched.adb.xml",
+      "/data/hls-dev/Vitis-HLS-Introductory-Examples/Array/array_partition_complete/component_array_partition_complete/hls/.autopilot/db/matmul_partition_Pipeline_read_A.sched.adb.xml",
+      "/data/hls-dev/Vitis-HLS-Introductory-Examples/Array/array_partition_complete/component_array_partition_complete/hls/.autopilot/db/matmul_partition_Pipeline_read_B.sched.adb.xml",
+      "/data/hls-dev/Vitis-HLS-Introductory-Examples/Array/array_partition_complete/component_array_partition_complete/hls/.autopilot/db/matmul_partition_Pipeline_writeC.sched.adb.xml"
+    ]
+  },
+  "counts": {
+    "trace_events": 768,
+    "element_events": 768,
+    "axi_transactions": 48,
+    "access_sites_from_pass_report": 3,
+    "logical_dependency_edges": 512,
+    "ports_with_hls_schedule": 0
+  }
+}

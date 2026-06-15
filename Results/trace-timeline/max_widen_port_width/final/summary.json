@@ -1,0 +1,64 @@
+{
+  "function_name": "example",
+  "loop_name": [
+    "VITIS_LOOP_26_1"
+  ],
+  "loop_ii": {
+    "VITIS_LOOP_26_1": 1
+  },
+  "pipeline_analysis": {
+    "is_pipelined": true,
+    "has_ii_one_loop": true,
+    "continuous_read_issue_candidate": true,
+    "minimum_achieved_ii": 1,
+    "maximum_pipeline_depth": 17,
+    "basis": "csynth achieved PipelineII=1",
+    "loops": [
+      {
+        "name": "VITIS_LOOP_26_1",
+        "pipeline_ii": 1,
+        "pipeline_type": "yes",
+        "pipeline_depth": 17,
+        "trip_count": 64
+      }
+    ],
+    "interpretation": "II=1 permits consecutive read-request issue when addresses are sequential and the AXI master supports outstanding requests. It does not imply consecutive write transactions because write data production and burst formation can delay AW/W activity. Write spacing is estimated as max(AXI beats, useful elements times achieved II), with pipeline depth included before the first dependent write."
+  },
+  "data_width_bits": 128,
+  "element_width_bits": 32,
+  "elements_per_beat": 4,
+  "max_read_burst_length": 4,
+  "max_write_burst_length": 4,
+  "total_read_elements": 64,
+  "total_write_elements": 64,
+  "total_read_transactions": 4,
+  "total_write_transactions": 4,
+  "transaction_dependency_edges": 4,
+  "notes_about_assumptions": [
+    "LLVM IR trace is the source of executed logical accesses and dynamic order.",
+    "HLS interface/csynth metadata supplies AXI width, burst limits, outstanding settings, and loop II when available.",
+    "Physical transactions are inferred from aligned addresses, continuity, width, and burst limits; no RTL waveform is used.",
+    "Issue/completion values are logical estimates, not RTL cycle-accurate timestamps.",
+    "Timeline lane order is not a data dependency. Only explicit graph edges are dependencies."
+  ],
+  "inputs": {
+    "csynth_xml": [
+      "/data/hls-dev/Vitis-HLS-Introductory-Examples/Interface/Memory/max_widen_port_width/component_max_widen_port_width/hls/syn/report/csynth.xml"
+    ],
+    "trace": "/data/hls-dev/Results/trace-timeline/max_widen_port_width/top_level_memory_trace.tsv",
+    "manifest": "/data/hls-dev/Results/trace-timeline/max_widen_port_width/top_level_memory_sites.tsv",
+    "memory_access_report": "/data/hls-dev/Results/pass-reports/max_widen_port_width/memory_access_report.json",
+    "interface_xml": "/data/hls-dev/Vitis-HLS-Introductory-Examples/Interface/Memory/max_widen_port_width/component_max_widen_port_width/hls/.autopilot/db/top-io-fe.xml",
+    "schedule_xml": [
+      "/data/hls-dev/Vitis-HLS-Introductory-Examples/Interface/Memory/max_widen_port_width/component_max_widen_port_width/hls/.autopilot/db/example.sched.adb.xml"
+    ]
+  },
+  "counts": {
+    "trace_events": 128,
+    "element_events": 128,
+    "axi_transactions": 8,
+    "access_sites_from_pass_report": 2,
+    "logical_dependency_edges": 64,
+    "ports_with_hls_schedule": 4
+  }
+}

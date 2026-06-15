@@ -1,0 +1,36 @@
+{
+  "schema": "hls.bandwidth_utilization_summary.v1",
+  "source": "inferred_physical_axi_transactions",
+  "total": {
+    "transaction_count": 2,
+    "logical_element_count": 128,
+    "useful_bytes": 512,
+    "transferred_bytes": 512,
+    "unused_bytes": 0,
+    "read_transactions": 1,
+    "write_transactions": 1,
+    "bandwidth_utilization": 1.0
+  },
+  "ports": {
+    "in": {
+      "transaction_count": 1,
+      "logical_element_count": 64,
+      "useful_bytes": 256,
+      "transferred_bytes": 256,
+      "unused_bytes": 0,
+      "read_transactions": 1,
+      "write_transactions": 0,
+      "bandwidth_utilization": 1.0
+    },
+    "out": {
+      "transaction_count": 1,
+      "logical_element_count": 64,
+      "useful_bytes": 256,
+      "transferred_bytes": 256,
+      "unused_bytes": 0,
+      "read_transactions": 0,
+      "write_transactions": 1,
+      "bandwidth_utilization": 1.0
+    }
+  }
+}

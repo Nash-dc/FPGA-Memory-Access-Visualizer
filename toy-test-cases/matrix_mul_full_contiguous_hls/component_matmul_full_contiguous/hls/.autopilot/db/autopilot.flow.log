@@ -1,0 +1,946 @@
+Execute       source -notrace -encoding utf-8 /data/2025.1/Vitis/tps/tcl/tcl8.6/clock.tcl 
+Execute         source -encoding utf-8 /data/2025.1/tps/tcl/tcl8/8.5/msgcat-1.6.1.tm 
+INFO-FLOW: Workspace /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls opened at Thu Jun 04 20:03:22 CEST 2026
+Execute       send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Execute     set_part xcvu9p-flga2104-2-i 
+INFO: [HLS 200-1510] Running: set_part xcvu9p-flga2104-2-i 
+Execute       create_platform xcvu9p-flga2104-2-i -board  
+DBG:HLSDevice: Trying to load device library: /data/2025.1/Vitis/lib/lnx64.o/libxv_hlsvwrap.so
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: /data/2025.1/Vivado/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xcvu9p-flga2104-2-i'
+Command       create_platform done; 1.1 sec.
+Execute       source /data/2025.1/Vitis/common/technology/xilinx/common/xilinx.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/interface/plb46.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/interface/axi4.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /data/2025.1/Vitis/common/technology/xilinx/interface/saxilite.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/ip/xfir.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/ip/util.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/ip/xfft.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/DSP48/dsp48.gen 
+Execute       ap_part_info -name xcvu9p-flga2104-2-i -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 1.19 sec.
+Execute     create_clock -period 5 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 5 -name default 
+Execute       ap_set_clock -name default -period 5 -unit ns -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+Execute     config_interface -m_axi_alignment_byte_size 64 -m_axi_max_widen_bitwidth 512 
+INFO: [HLS 200-1510] Running: config_interface -m_axi_alignment_byte_size 64 -m_axi_max_widen_bitwidth 512 
+Execute     csynth_design 
+INFO: [HLS 200-1510] Running: csynth_design 
+Execute       ::AP::init_summary_file csynth 
+Execute       ap_part_info -name xcvu9p-flga2104-2-i -data info 
+INFO-FLOW: run_clang exec: /data/2025.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/xilinx-performance-pragma-detector matmul_full_contiguous.cpp -- -fhls -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /data/2025.1/Vitis/common/technology/autopilot -I /data/2025.1/Vitis/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -I /usr/include/x86_64-linux-gnu > /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.cpp.xilinx-performance-pragma-detector.out.log 2> /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.cpp.xilinx-performance-pragma-detector.err.log
+INFO-FLOW: Running SLX 'csynth' proc: ::SLX::run_csynth
+Execute       elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -from_csynth_design=1 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.08 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.13 seconds; current allocated memory: 445.734 MB.
+Execute         set_directive_top matmul_full_contiguous -name=matmul_full_contiguous 
+Execute         source /data/2025.1/Vitis/tps/tcl/tcllib2.0/yaml/huddle.tcl 
+Execute           source /data/2025.1/tps/tcl/tcllib2.0/yaml/huddle_types.tcl 
+Execute         source /data/2025.1/Vitis/tps/tcl/tcllib2.0/yaml/json2huddle.tcl 
+Execute           source /data/2025.1/Vitis/tps/tcl/tcllib2.0/try/try.tcl 
+INFO: [HLS 200-10] Analyzing design file 'matmul_full_contiguous.cpp' ... 
+INFO-FLOW: Compiling one TU...
+INFO-FLOW: Handling matmul_full_contiguous.cpp as C++
+Execute         ap_part_info -name xcvu9p-flga2104-2-i -data info 
+INFO-FLOW: Running: GCC PP 39
+INFO-FLOW: Source preprocessing
+INFO-FLOW: run_clang exec: /data/2025.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/clang matmul_full_contiguous.cpp -foptimization-record-file=/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll|inline -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info --gcc-toolchain=/data/2025.1/Vitis/tps/lnx64/gcc-8.3.0 -fhls -fno-exceptions -insert-hls-directive=/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/all.directive.json -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -hls-clock-period=5 -fno-threadsafe-statics -fno-use-cxa-atexit -target fpga64-xilinx-linux-gnu -fno-threadsafe-statics -fno-use-cxa-atexit -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /data/2025.1/Vitis/common/technology/autopilot -I /data/2025.1/Vitis/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -I /usr/include/x86_64-linux-gnu -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.pp.0.cpp -hls-platform-db-name=/data/2025.1/Vitis/common/technology/xilinx/common/platform.db -hls-platform-name=virtexuplus_medium -device-resource-info=BRAM_4320.000000_DSP_6840.000000_FF_2364480.000000_LUT_1182240.000000_SLICE_147780.000000_SLR_3.000000_URAM_960.000000 -device-name-info=xcvu9p-flga2104-2-i > /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.cpp.clang.out.log 2> /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.cpp.clang.err.log
+INFO-FLOW: Done: GCC PP 39 time: 0.1 seconds per iteration
+INFO-FLOW: Source syntax check for synthesis
+INFO-FLOW: run_clang exec: /data/2025.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll|inline -mllvm -pass-remarks=reflow|pasta|unroll|inline -fsyntax-only -fhls -target fpga64-xilinx-linux-gnu /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.pp.0.cpp -hls-platform-db-name=/data/2025.1/Vitis/common/technology/xilinx/common/platform.db -hls-platform-name=virtexuplus_medium -device-resource-info=BRAM_4320.000000_DSP_6840.000000_FF_2364480.000000_LUT_1182240.000000_SLICE_147780.000000_SLR_3.000000_URAM_960.000000 -device-name-info=xcvu9p-flga2104-2-i > /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/clang.out.log 2> /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/clang.err.log
+Execute         clang_tidy xilinx-systemc-detector -desc systemc-detector /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.pp.0.cpp  -target fpga  -directive=/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec /data/2025.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/.systemc_flag -fix-errors /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.pp.0.cpp -- - -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Running: clang-tidy CDT preprocess 39
+Execute         clang_tidy xilinx-directive2pragma -desc directive2pragma /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.pp.0.cpp  -target fpga  -directive=/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/all.directive.json 
+INFO-FLOW: exec /data/2025.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/all.directive.json -fix-errors /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.pp.0.cpp -- - -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0 seconds per iteration
+INFO-FLOW: Calling xilinx-label-all-loops ... 
+INFO-FLOW: Calling xilinx-aggregate-on-hls-vector ... 
+Execute         clang_tidy -errorcheck -desc loop-label xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.pp.0.cpp  -target fpga  
+INFO-FLOW: run_clang exec: /data/2025.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.pp.0.cpp.clang-tidy.loop-label.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute -fix-errors /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.pp.0.cpp -- - -target fpga -fhls -ferror-limit=0 > /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.pp.0.cpp.clang-tidy.loop-label.out.log 2> /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.pp.0.cpp.clang-tidy.loop-label.err.log
+INFO-FLOW: run_clang exec: /data/2025.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.pp.0.cpp.xilinx-dataflow-lawyer.diag.yml /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.pp.0.cpp -- - -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.pp.0.cpp.xilinx-dataflow-lawyer.out.log 2> /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.pp.0.cpp.xilinx-dataflow-lawyer.err.log
+Execute         ap_part_info -name xcvu9p-flga2104-2-i -data info 
+INFO-FLOW: compiling source code to llvm bc
+INFO-FLOW: run_clang exec: /data/2025.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.pp.0.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll|inline -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing -hls-emit-hint-scope /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.pp.0.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -hls-clock-period=5 -fno-threadsafe-statics -fno-use-cxa-atexit -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /data/2025.1/Vitis/common/technology/autopilot -I /data/2025.1/Vitis/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -g -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.bc -hls-platform-db-name=/data/2025.1/Vitis/common/technology/xilinx/common/platform.db -hls-platform-name=virtexuplus_medium -device-resource-info=BRAM_4320.000000_DSP_6840.000000_FF_2364480.000000_LUT_1182240.000000_SLICE_147780.000000_SLR_3.000000_URAM_960.000000 -device-name-info=xcvu9p-flga2104-2-i > /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.pp.0.cpp.clang.out.log 2> /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.pp.0.cpp.clang.err.log
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.16 seconds. CPU system time: 0.37 seconds. Elapsed time: 0.52 seconds; current allocated memory: 447.594 MB.
+INFO-FLOW: Linking Debug ...
+INFO-FLOW: Linking dut bc code.
+Execute         run_link_or_opt -out /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.0.bc -args  "/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.g.bc"  
+INFO-FLOW: run_clang exec: /data/2025.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/llvm-link /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.g.bc -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.0.bc > /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.0.bc.llvm-link.out.log 2> /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.0.bc.llvm-link.err.log
+Execute         run_link_or_opt -opt -out /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.1.lower.bc -args /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics 
+INFO-FLOW: run_clang exec: /data/2025.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll|inline -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.1.lower.bc.opt.diag.yml /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.1.lower.bc > /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.1.lower.bc.opt.out.log 2> /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.1.lower.bc.opt.err.log
+INFO-FLOW: Running: gen_design_size_report post-opt
+INFO-FLOW: Done: gen_design_size_report post-opt time: 0 seconds per iteration
+INFO-FLOW: Linking math bc lib
+Execute         run_link_or_opt -out /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.2.m1.bc -args /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.1.lower.bc -only-needed /data/2025.1/Vitis/lnx64/lib/libhlsm_39.bc /data/2025.1/Vitis/lnx64/lib/libhlsmc++_39.bc 
+INFO-FLOW: run_clang exec: /data/2025.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/llvm-link /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.1.lower.bc -only-needed /data/2025.1/Vitis/lnx64/lib/libhlsm_39.bc /data/2025.1/Vitis/lnx64/lib/libhlsmc++_39.bc -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.2.m1.bc > /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.out.log 2> /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.err.log
+Command         run_link_or_opt done; 1.26 sec.
+Execute         run_link_or_opt -opt -out /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.3.fpc.bc -args /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=matmul_full_contiguous -reflow-float-conversion 
+INFO-FLOW: run_clang exec: /data/2025.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll|inline -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.3.fpc.bc.opt.diag.yml /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=matmul_full_contiguous -reflow-float-conversion -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.3.fpc.bc > /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.3.fpc.bc.opt.out.log 2> /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.3.fpc.bc.opt.err.log
+INFO-FLOW: Running: gen_design_size_report post-opt
+INFO-FLOW: Done: gen_design_size_report post-opt time: 0 seconds per iteration
+Command         run_link_or_opt done; 0.49 sec.
+Execute         run_link_or_opt -out /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.4.m2.bc -args /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /data/2025.1/Vitis/lnx64/lib/libfloatconversion_39.bc 
+INFO-FLOW: run_clang exec: /data/2025.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/llvm-link /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /data/2025.1/Vitis/lnx64/lib/libfloatconversion_39.bc -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.4.m2.bc > /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.out.log 2> /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.err.log
+Execute         run_link_or_opt -opt -out /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.5.gdce.bc -args /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=matmul_full_contiguous 
+INFO-FLOW: run_clang exec: /data/2025.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll|inline -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.5.gdce.bc.opt.diag.yml /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=matmul_full_contiguous -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.5.gdce.bc > /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.5.gdce.bc.opt.out.log 2> /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.5.gdce.bc.opt.err.log
+INFO-FLOW: Running: gen_design_size_report post-opt
+INFO-FLOW: Done: gen_design_size_report post-opt time: 0 seconds per iteration
+Execute         send_msg_by_id INFO @200-777@%s Vivado 
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+Execute         is_m_axi_addr64 
+INFO-FLOW: Doing LTO.
+INFO-FLOW: run_clang (background poll_ms 5000) exec: /data/2025.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.0.bc.clang.reflow.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll|inline -mllvm -pass-remarks=reflow|pasta|unroll|inline -fhls -mllvm -hls-top-function-name=matmul_full_contiguous -mllvm -hls-db-dir -mllvm /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db -emit-llvm -c -target fpga64-xilinx-none -mllvm -xcl-xmlinfo=/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/kernel.internal.xml -mllvm -top-io-mapping-info=/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/top-io-fe.xml -mllvm -hls-bitcode-version=3.1 -mllvm -reflow-enable-slave-interface-default-setting=true -mllvm -gen-kernel-xml=false -mllvm -default-maxi-offset=slave -mllvm -reflow-unroll-size-threshold=10000 -mllvm -reflow-unroll-cost-threshold=1000000 -mllvm -maxi-latency=0 -mllvm -hls-maxi-data-size-in-bits=8 -mllvm -hls-maxi-max-data-size-in-bits=1024 -mllvm -hls-max-widen-size-in-bits=512 -mllvm -xcl-kernel-max-mem-ports=0 -mllvm -maxi-read-trans=16 -mllvm -maxi-write-trans=16 -mllvm -maxi-read-burst-len=16 -mllvm -maxi-write-burst-len=16 -mllvm -reflow-enable-saxi-64bits=0 -mllvm -reflow-basic-block-instr-threshold=200000 -mllvm -reflow-auto-pipeline-threshold=64 -mllvm -reflow-enable-maxi-auto-id-channel=0 -mllvm -reflow-bdd-simplify-threshold=1048576 -mllvm -reflow-fanout-threshold=16 -mllvm -reflow-force-aggressive-unroll=0 -mllvm -reflow-aggressive-unroll-adjust-factor=1.000000 -mllvm -reflow-complete-threshold=4 -mllvm -reflow-array-promotion-threshold=64 -mllvm -reflow-enable-critical-path-for-performance=1 -mllvm -assume-maxi-align=64 -mllvm -reflow-enable-dataflow-strict-mode-checking=1 -ftime-report -mllvm -time-passes -mllvm -reflow-auto-array-partition-mode=default -mllvm -reflow-enable-auto-small-array-partition=true -mllvm -reflow-enable-auto-array-promotion=true -mllvm -reflow-enable-auto-array-partition-for-flatten=true -mllvm -reflow-enable-auto-parallel-performance-driven=true -mllvm -reflow-enable-partition-for-automation=true -mllvm -reflow-aggregate-bitwidth-threshold=4096 -mllvm -reflow-reserved-saxilite-registers=0 -mllvm -enable-reflow-auto-loop-pipeline -mllvm -reflow-max-unroll-threshold=409600 -mllvm -auto-unroll-tripcount-threshold=0 -mllvm -reflow-assume-no-address-wrap=true -mllvm -reflow-enable-occurrence-inference=true -mllvm -reflow-emit-hint-scope=true -mllvm -reflow-enable-codegen-with-if=true -mllvm -reflow-enable-dataflow-canon=true -mllvm -reflow-enable-dataflow-canon2=true -mllvm -reflow-dump-extra-complexity-metric=true -mllvm -hls -mllvm -disable-inlined-alloca-merging=true -mllvm -default-clock-period=5 -mllvm -use_read_first_ram_in_loop=1 -mllvm -default-clock-uncertainty=1.35 -x ir /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.5.gdce.bc -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.lto.bc -hls-platform-db-name=/data/2025.1/Vitis/common/technology/xilinx/common/platform.db -hls-platform-name=virtexuplus_medium -device-resource-info=BRAM_4320.000000_DSP_6840.000000_FF_2364480.000000_LUT_1182240.000000_SLICE_147780.000000_SLR_3.000000_URAM_960.000000 -device-name-info=xcvu9p-flga2104-2-i 2> /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.ld.0.bc.clang.reflow.err.log bg_poll_cmd: ::AP::poll_clang_39_closed_source
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 104 Compile/Link (/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/csynth_design_size.rpt:2) 
+INFO: [HLS 200-1995] There were 104 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/csynth_design_size.rpt:2)
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 219 Unroll/Inline (step 1) (/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/csynth_design_size.rpt:2) 
+INFO: [HLS 200-1995] There were 219 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/csynth_design_size.rpt:2)
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 207 Unroll/Inline (step 2) (/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/csynth_design_size.rpt:2) 
+INFO: [HLS 200-1995] There were 207 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/csynth_design_size.rpt:2)
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 172 Unroll/Inline (step 3) (/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/csynth_design_size.rpt:2) 
+INFO: [HLS 200-1995] There were 172 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/csynth_design_size.rpt:2)
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 172 Unroll/Inline (step 4) (/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/csynth_design_size.rpt:2) 
+INFO: [HLS 200-1995] There were 172 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/csynth_design_size.rpt:2)
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 175 Array/Struct (step 1) (/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/csynth_design_size.rpt:2) 
+INFO: [HLS 200-1995] There were 175 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/csynth_design_size.rpt:2)
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 175 Array/Struct (step 2) (/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/csynth_design_size.rpt:2) 
+INFO: [HLS 200-1995] There were 175 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/csynth_design_size.rpt:2)
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 175 Array/Struct (step 3) (/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/csynth_design_size.rpt:2) 
+INFO: [HLS 200-1995] There were 175 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/csynth_design_size.rpt:2)
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 175 Array/Struct (step 4) (/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/csynth_design_size.rpt:2) 
+INFO: [HLS 200-1995] There were 175 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/csynth_design_size.rpt:2)
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 204 Array/Struct (step 5) (/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/csynth_design_size.rpt:2) 
+INFO: [HLS 200-1995] There were 204 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/csynth_design_size.rpt:2)
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 207 Performance (step 1) (/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/csynth_design_size.rpt:2) 
+INFO: [HLS 200-1995] There were 207 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/csynth_design_size.rpt:2)
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 207 Performance (step 2) (/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/csynth_design_size.rpt:2) 
+INFO: [HLS 200-1995] There were 207 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/csynth_design_size.rpt:2)
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 1,225 Performance (step 3) (/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/csynth_design_size.rpt:2) 
+INFO: [HLS 200-1995] There were 1,225 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/csynth_design_size.rpt:2)
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 911 Performance (step 4) (/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/csynth_design_size.rpt:2) 
+INFO: [HLS 200-1995] There were 911 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/csynth_design_size.rpt:2)
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 899 HW Transforms (step 1) (/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/csynth_design_size.rpt:2) 
+INFO: [HLS 200-1995] There were 899 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/csynth_design_size.rpt:2)
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 911 HW Transforms (step 2) (/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/csynth_design_size.rpt:2) 
+INFO: [HLS 200-1995] There were 911 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/csynth_design_size.rpt:2)
+Execute         source /data/2025.1/Vitis/tps/tcl/tcllib2.0/yaml/yaml.tcl 
+INFO: [HLS 214-291] Loop 'compute_k_loop' is marked as complete unroll implied by the pipeline pragma (matmul_full_contiguous.cpp:34:7)
+INFO: [HLS 214-186] Unrolling loop 'compute_k_loop' (matmul_full_contiguous.cpp:34:7) in function 'matmul_full_contiguous' completely with a factor of 16 (matmul_full_contiguous.cpp:5:0)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=8 dim=1' for array 'A_local' due to pipeline pragma (matmul_full_contiguous.cpp:30:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=17 dim=1' for array 'B_local' due to pipeline pragma (matmul_full_contiguous.cpp:30:9)
+INFO: [HLS 214-248] Applying array_partition to 'A_local': Cyclic partitioning with factor 8 on dimension 1. (matmul_full_contiguous.cpp:15:6)
+INFO: [HLS 214-248] Applying array_partition to 'B_local': Cyclic partitioning with factor 17 on dimension 1. (matmul_full_contiguous.cpp:16:7)
+INFO: [HLS 214-115] Multiple burst reads of length 16 and bit width 512 has been inferred on bundle 'gmem_a'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (matmul_full_contiguous.cpp:20:3)
+INFO: [HLS 214-115] Multiple burst reads of length 16 and bit width 512 has been inferred on bundle 'gmem_b'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (matmul_full_contiguous.cpp:20:3)
+INFO: [HLS 214-115] Multiple burst writes of length 16 and bit width 512 has been inferred on bundle 'gmem_c'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (matmul_full_contiguous.cpp:43:3)
+INFO-FLOW: DBG:PUTS: copy_raw_kernel_xml ap_link_39: kernel.xml not generated: /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/kernel.internal.xml
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 2.1 seconds. CPU system time: 0.5 seconds. Elapsed time: 7.05 seconds; current allocated memory: 458.008 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 458.008 MB.
+Execute         opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute           cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+INFO-FLOW: Running Standard Transforms...
+Execute           transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top matmul_full_contiguous -deadargelim -mem2reg -instcombine -dce -presyn-prepare -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -promote-dbg-pointer -norm-name /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.0.bc -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.1.bc -f -phase std-opt 
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 459.070 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute           transform -hls -syn-check -check-rec-only -scalarrepl -norm-name -dce -mem2reg -instcombine -directive-preproc -mem2reg -dse -dce -dce -pag -array-normalize -instcombine -dce -array-seg-normalize -instcombine -dce -data-pack -instcombine -dce -inst-simplify -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -directive-preproc -mem2reg -dse -dce -globaldce /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.1.bc -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.2.prechk.bc -f 
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute           transform -syn-check /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.2.prechk.bc -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.2.bc -f -phase syn-check 
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 459.254 MB.
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.g.1.bc to /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute           transform -hls -tmp /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db -interface-port-rename -directive-preproc -mem2reg -dse -dce -scalarrepl -norm-name -deadargelim -dce -hls-dead-arg-elim -deadargelim -mem2reg -instcombine -dce -simplifycfg -dce -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -directive-preproc -mem2reg -dse -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -loop-simplify -loop-bound -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -prepare-dynamic-array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -lcssa -loop-simplify -phi-select-elim -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -accesses-merge -function-inline -complex-op-raise -inst-simplify -globaldce -func-legal -dce -loop-bound -arraycheck -bitwidthmin2 -bitwidthmin2 -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -duplicate-dataflow-processes -check-dataflow-syntax -legalize-stream-variable -globaldce -extract-subproc -global-constprop -deadargelim -globaldce -legalize-global -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -hls-dead-arg-elim -deadargelim -canonicalize-dataflow -directive-preproc -dce -globaldce -scalar-preprocessing -scalar-propagation2 -scalar-stream -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -clean-array-spec -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -hls-display -norm-name /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.o.1.bc -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.o.1.tmp.bc -f 
+Command           transform done; 0.15 sec.
+INFO-FLOW: Presyn 2...
+Execute           transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin2 -bitwidthmin2 -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -barrier -norm-name /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.o.1.tmp.bc -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [XFORM 203-11] Balancing expressions in function 'matmul_full_contiguous' (matmul_full_contiguous.cpp:3:3)...15 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.19 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.2 seconds; current allocated memory: 483.680 MB.
+Execute           transform -hls -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -aggr-aa -licm -loop-dep -loop-bound -licm -loop-simplify -loop-sink-hoist -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg-lite -loop-simplify -array-burst -promote-global-argument -dce -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -inst-simplify -cfgopt -simplifycfg-lite -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -deadargelim -dce -canonicalize-dataflow -dce -deadargelim -globaldce -mem2reg -bram-byte-enable -inst-simplify -inst-rectify -instcombine -adce -deadargelim -load-elim -read-loop-dep -loop-simplify -loop-rewind-sink-hoist -loop-outline -hls-dead-arg-elim -directive-preproc -bitwidthmin2 -bitwidthmin2 -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable-spec-prop -mul2addshift -deadargelim -inst-simplify -dce -mem2reg -instcombine -gvn -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg-lite -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -gvn -adce -deadargelim -float-op-raise -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg-lite -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg-lite -loop-simplify -mergereturn -inst-simplify -inst-rectify -globaldce -dce -load-elim -bitop-lower -float-op-raise -fma-raise -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -dyn-mem-reuse -dce -recurrence-min -dce -share-scalar-alloca -deadargelim -dce -check-stream -norm-name -legalize -inst-clarity -bitwidth -dce -validate-dataflow -dump-loop-dep-to-ir -check-all-ssdm -drop-inferred-ii -dump-complexity-metric /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.o.2.bc -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+INFO: [HLS 200-2061] Successfully converted nested loops 'compute_row_loop'(matmul_full_contiguous.cpp:27:3) and 'compute_col_loop'(matmul_full_contiguous.cpp:29:5) in function 'matmul_full_contiguous' into perfectly nested loops.
+INFO: [XFORM 203-541] Flattening a loop nest 'compute_row_loop' (matmul_full_contiguous.cpp:27:3) in function 'matmul_full_contiguous'.
+Execute             auto_get_db
+Command           transform done; 0.15 sec.
+INFO-FLOW: Building ssdm...
+Execute           transform -hls -cdfg-build /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.o.3.bc -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.18 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.19 seconds; current allocated memory: 503.270 MB.
+INFO-FLOW: Finish building internal data model.
+Command         opt_and_import_c done; 0.47 sec.
+Command       elaborate done; 8.05 sec.
+Execute       ap_eval exec zip -j /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/dut.hcp $dbDir/a.o.3.bc $dbDir/${topname}.rtl_wrap.cfg.tcl $dbDir/apatb_${topname}.cpp $dbDir/apatb_${topname}_util.cpp $dbDir/apatb_${topname}_ir.ll $dbDir/mapper_${topname}.cpp $dbDir/top-io-fe.xml $dbDir/kernel.internal.xml $workdir/../hls.app 
+Execute       autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'matmul_full_contiguous' ...
+Execute         ap_set_top_model matmul_full_contiguous 
+Execute         get_model_list matmul_full_contiguous -filter all-wo-channel -topdown 
+Execute         preproc_iomode -model matmul_full_contiguous 
+Execute         preproc_iomode -model matmul_full_contiguous_Pipeline_store_c_full_loop 
+Execute         preproc_iomode -model matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop 
+Execute         preproc_iomode -model matmul_full_contiguous_Pipeline_load_ab_full_loop 
+Execute         get_model_list matmul_full_contiguous -filter all-wo-channel 
+INFO-FLOW: Model list for configure: matmul_full_contiguous_Pipeline_load_ab_full_loop matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop matmul_full_contiguous_Pipeline_store_c_full_loop matmul_full_contiguous
+INFO-FLOW: Configuring Module : matmul_full_contiguous_Pipeline_load_ab_full_loop ...
+Execute         set_default_model matmul_full_contiguous_Pipeline_load_ab_full_loop 
+Execute         apply_spec_resource_limit matmul_full_contiguous_Pipeline_load_ab_full_loop 
+INFO-FLOW: Configuring Module : matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop ...
+Execute         set_default_model matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop 
+Execute         apply_spec_resource_limit matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop 
+INFO-FLOW: Configuring Module : matmul_full_contiguous_Pipeline_store_c_full_loop ...
+Execute         set_default_model matmul_full_contiguous_Pipeline_store_c_full_loop 
+Execute         apply_spec_resource_limit matmul_full_contiguous_Pipeline_store_c_full_loop 
+INFO-FLOW: Configuring Module : matmul_full_contiguous ...
+Execute         set_default_model matmul_full_contiguous 
+Execute         apply_spec_resource_limit matmul_full_contiguous 
+INFO-FLOW: Model list for preprocess: matmul_full_contiguous_Pipeline_load_ab_full_loop matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop matmul_full_contiguous_Pipeline_store_c_full_loop matmul_full_contiguous
+INFO-FLOW: Preprocessing Module: matmul_full_contiguous_Pipeline_load_ab_full_loop ...
+Execute         set_default_model matmul_full_contiguous_Pipeline_load_ab_full_loop 
+Execute         cdfg_preprocess -model matmul_full_contiguous_Pipeline_load_ab_full_loop 
+Execute         rtl_gen_preprocess matmul_full_contiguous_Pipeline_load_ab_full_loop 
+INFO-FLOW: Preprocessing Module: matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop ...
+Execute         set_default_model matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop 
+Execute         cdfg_preprocess -model matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop 
+Execute         rtl_gen_preprocess matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop 
+INFO-FLOW: Preprocessing Module: matmul_full_contiguous_Pipeline_store_c_full_loop ...
+Execute         set_default_model matmul_full_contiguous_Pipeline_store_c_full_loop 
+Execute         cdfg_preprocess -model matmul_full_contiguous_Pipeline_store_c_full_loop 
+Execute         rtl_gen_preprocess matmul_full_contiguous_Pipeline_store_c_full_loop 
+INFO-FLOW: Preprocessing Module: matmul_full_contiguous ...
+Execute         set_default_model matmul_full_contiguous 
+Execute         cdfg_preprocess -model matmul_full_contiguous 
+Execute         rtl_gen_preprocess matmul_full_contiguous 
+INFO-FLOW: Model list for synthesis: matmul_full_contiguous_Pipeline_load_ab_full_loop matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop matmul_full_contiguous_Pipeline_store_c_full_loop matmul_full_contiguous
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'matmul_full_contiguous_Pipeline_load_ab_full_loop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model matmul_full_contiguous_Pipeline_load_ab_full_loop 
+Execute         schedule -model matmul_full_contiguous_Pipeline_load_ab_full_loop 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'load_ab_full_loop'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'load_ab_full_loop'
+INFO: [SCHED 204-11] Finished scheduling.
+Command         schedule done; 0.16 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.19 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.21 seconds; current allocated memory: 504.871 MB.
+Execute         syn_report -verbosereport -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous_Pipeline_load_ab_full_loop.verbose.sched.rpt 
+Execute           list_part -family xcvu9p-flga2104-2-i 
+Execute             ap_family_info -name xcvu9p-flga2104-2-i -data names 
+Execute             ap_part_info -quiet -name xcvu9p-flga2104-2-i -data family 
+Execute         db_write -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous_Pipeline_load_ab_full_loop.sched.adb -f 
+INFO-FLOW: Finish scheduling matmul_full_contiguous_Pipeline_load_ab_full_loop.
+Execute         set_default_model matmul_full_contiguous_Pipeline_load_ab_full_loop 
+Execute         bind -model matmul_full_contiguous_Pipeline_load_ab_full_loop 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 504.871 MB.
+Execute         syn_report -verbosereport -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous_Pipeline_load_ab_full_loop.verbose.bind.rpt 
+Execute           list_part -family xcvu9p-flga2104-2-i 
+Execute             ap_family_info -name xcvu9p-flga2104-2-i -data names 
+Execute             ap_part_info -quiet -name xcvu9p-flga2104-2-i -data family 
+Execute         db_write -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous_Pipeline_load_ab_full_loop.bind.adb -f 
+INFO-FLOW: Finish binding matmul_full_contiguous_Pipeline_load_ab_full_loop.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop 
+Execute         schedule -model matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'compute_row_loop_compute_col_loop'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 6, loop 'compute_row_loop_compute_col_loop'
+INFO: [SCHED 204-11] Finished scheduling.
+Command         schedule done; 0.56 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.57 seconds. CPU system time: 0 seconds. Elapsed time: 0.58 seconds; current allocated memory: 510.172 MB.
+Execute         syn_report -verbosereport -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop.verbose.sched.rpt 
+Execute           list_part -family xcvu9p-flga2104-2-i 
+Execute             ap_family_info -name xcvu9p-flga2104-2-i -data names 
+Execute             ap_part_info -quiet -name xcvu9p-flga2104-2-i -data family 
+Execute         db_write -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop.sched.adb -f 
+INFO-FLOW: Finish scheduling matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop.
+Execute         set_default_model matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop 
+Execute         bind -model matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.11 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 510.172 MB.
+Execute         syn_report -verbosereport -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop.verbose.bind.rpt 
+Execute           list_part -family xcvu9p-flga2104-2-i 
+Execute             ap_family_info -name xcvu9p-flga2104-2-i -data names 
+Execute             ap_part_info -quiet -name xcvu9p-flga2104-2-i -data family 
+Execute         db_write -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop.bind.adb -f 
+INFO-FLOW: Finish binding matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'matmul_full_contiguous_Pipeline_store_c_full_loop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model matmul_full_contiguous_Pipeline_store_c_full_loop 
+Execute         schedule -model matmul_full_contiguous_Pipeline_store_c_full_loop 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'store_c_full_loop'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'store_c_full_loop'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.08 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.09 seconds; current allocated memory: 510.172 MB.
+Execute         syn_report -verbosereport -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous_Pipeline_store_c_full_loop.verbose.sched.rpt 
+Execute           list_part -family xcvu9p-flga2104-2-i 
+Execute             ap_family_info -name xcvu9p-flga2104-2-i -data names 
+Execute             ap_part_info -quiet -name xcvu9p-flga2104-2-i -data family 
+Execute         db_write -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous_Pipeline_store_c_full_loop.sched.adb -f 
+INFO-FLOW: Finish scheduling matmul_full_contiguous_Pipeline_store_c_full_loop.
+Execute         set_default_model matmul_full_contiguous_Pipeline_store_c_full_loop 
+Execute         bind -model matmul_full_contiguous_Pipeline_store_c_full_loop 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 510.172 MB.
+Execute         syn_report -verbosereport -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous_Pipeline_store_c_full_loop.verbose.bind.rpt 
+Execute           list_part -family xcvu9p-flga2104-2-i 
+Execute             ap_family_info -name xcvu9p-flga2104-2-i -data names 
+Execute             ap_part_info -quiet -name xcvu9p-flga2104-2-i -data family 
+Execute         db_write -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous_Pipeline_store_c_full_loop.bind.adb -f 
+INFO-FLOW: Finish binding matmul_full_contiguous_Pipeline_store_c_full_loop.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'matmul_full_contiguous' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model matmul_full_contiguous 
+Execute         schedule -model matmul_full_contiguous 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.1 seconds. CPU system time: 0 seconds. Elapsed time: 0.11 seconds; current allocated memory: 510.641 MB.
+Execute         syn_report -verbosereport -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.verbose.sched.rpt 
+Execute           list_part -family xcvu9p-flga2104-2-i 
+Execute             ap_family_info -name xcvu9p-flga2104-2-i -data names 
+Execute             ap_part_info -quiet -name xcvu9p-flga2104-2-i -data family 
+Execute         db_write -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.sched.adb -f 
+INFO-FLOW: Finish scheduling matmul_full_contiguous.
+Execute         set_default_model matmul_full_contiguous 
+Execute         bind -model matmul_full_contiguous 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 510.641 MB.
+Execute         syn_report -verbosereport -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.verbose.bind.rpt 
+Execute           list_part -family xcvu9p-flga2104-2-i 
+Execute             ap_family_info -name xcvu9p-flga2104-2-i -data names 
+Execute             ap_part_info -quiet -name xcvu9p-flga2104-2-i -data family 
+Execute         db_write -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.bind.adb -f 
+INFO-FLOW: Finish binding matmul_full_contiguous.
+Execute         get_model_list matmul_full_contiguous -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute         rtl_gen_preprocess matmul_full_contiguous_Pipeline_load_ab_full_loop 
+Execute         rtl_gen_preprocess matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop 
+Execute         rtl_gen_preprocess matmul_full_contiguous_Pipeline_store_c_full_loop 
+Execute         rtl_gen_preprocess matmul_full_contiguous 
+INFO-FLOW: Model list for RTL generation: matmul_full_contiguous_Pipeline_load_ab_full_loop matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop matmul_full_contiguous_Pipeline_store_c_full_loop matmul_full_contiguous
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'matmul_full_contiguous_Pipeline_load_ab_full_loop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         create_rtl_model matmul_full_contiguous_Pipeline_load_ab_full_loop -top_prefix matmul_full_contiguous_ -sub_prefix matmul_full_contiguous_ -mg_file /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous_Pipeline_load_ab_full_loop.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'matmul_full_contiguous_Pipeline_load_ab_full_loop' pipeline 'load_ab_full_loop' pipeline type 'loop pipeline'
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_load_ab_full_loop/m_axi_gmem_a_0_ARVALID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_load_ab_full_loop/m_axi_gmem_a_0_ARADDR' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_load_ab_full_loop/m_axi_gmem_a_0_ARID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_load_ab_full_loop/m_axi_gmem_a_0_ARLEN' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_load_ab_full_loop/m_axi_gmem_a_0_ARSIZE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_load_ab_full_loop/m_axi_gmem_a_0_ARBURST' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_load_ab_full_loop/m_axi_gmem_a_0_ARLOCK' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_load_ab_full_loop/m_axi_gmem_a_0_ARCACHE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_load_ab_full_loop/m_axi_gmem_a_0_ARPROT' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_load_ab_full_loop/m_axi_gmem_a_0_ARQOS' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_load_ab_full_loop/m_axi_gmem_a_0_ARREGION' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_load_ab_full_loop/m_axi_gmem_a_0_ARUSER' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_load_ab_full_loop/m_axi_gmem_b_0_ARVALID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_load_ab_full_loop/m_axi_gmem_b_0_ARADDR' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_load_ab_full_loop/m_axi_gmem_b_0_ARID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_load_ab_full_loop/m_axi_gmem_b_0_ARLEN' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_load_ab_full_loop/m_axi_gmem_b_0_ARSIZE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_load_ab_full_loop/m_axi_gmem_b_0_ARBURST' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_load_ab_full_loop/m_axi_gmem_b_0_ARLOCK' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_load_ab_full_loop/m_axi_gmem_b_0_ARCACHE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_load_ab_full_loop/m_axi_gmem_b_0_ARPROT' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_load_ab_full_loop/m_axi_gmem_b_0_ARQOS' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_load_ab_full_loop/m_axi_gmem_b_0_ARREGION' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_load_ab_full_loop/m_axi_gmem_b_0_ARUSER' to 0.
+INFO: [RTGEN 206-100] Generating core module 'mul_8ns_10ns_17_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'matmul_full_contiguous_Pipeline_load_ab_full_loop'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.05 seconds; current allocated memory: 511.527 MB.
+Execute         source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.rtl_wrap.cfg.tcl 
+Execute         gen_rtl matmul_full_contiguous_Pipeline_load_ab_full_loop -style xilinx -f -lang vhdl -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/vhdl/matmul_full_contiguous_matmul_full_contiguous_Pipeline_load_ab_full_loop 
+Execute         gen_rtl matmul_full_contiguous_Pipeline_load_ab_full_loop -style xilinx -f -lang vlog -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/verilog/matmul_full_contiguous_matmul_full_contiguous_Pipeline_load_ab_full_loop 
+Execute         syn_report -csynth -model matmul_full_contiguous_Pipeline_load_ab_full_loop -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/matmul_full_contiguous_Pipeline_load_ab_full_loop_csynth.rpt 
+Execute           list_part -family xcvu9p-flga2104-2-i 
+Execute             ap_family_info -name xcvu9p-flga2104-2-i -data names 
+Execute             ap_part_info -quiet -name xcvu9p-flga2104-2-i -data family 
+Execute         syn_report -rtlxml -model matmul_full_contiguous_Pipeline_load_ab_full_loop -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/matmul_full_contiguous_Pipeline_load_ab_full_loop_csynth.xml 
+Execute           list_part -family xcvu9p-flga2104-2-i 
+Execute             ap_family_info -name xcvu9p-flga2104-2-i -data names 
+Execute             ap_part_info -quiet -name xcvu9p-flga2104-2-i -data family 
+Execute         syn_report -verbosereport -model matmul_full_contiguous_Pipeline_load_ab_full_loop -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous_Pipeline_load_ab_full_loop.verbose.rpt 
+Execute           list_part -family xcvu9p-flga2104-2-i 
+Execute             ap_family_info -name xcvu9p-flga2104-2-i -data names 
+Execute             ap_part_info -quiet -name xcvu9p-flga2104-2-i -data family 
+Execute         db_write -model matmul_full_contiguous_Pipeline_load_ab_full_loop -f -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous_Pipeline_load_ab_full_loop.adb 
+Execute         db_write -model matmul_full_contiguous_Pipeline_load_ab_full_loop -bindview -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info matmul_full_contiguous_Pipeline_load_ab_full_loop -p /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous_Pipeline_load_ab_full_loop 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         create_rtl_model matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop -top_prefix matmul_full_contiguous_ -sub_prefix matmul_full_contiguous_ -mg_file /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop' pipeline 'compute_row_loop_compute_col_loop' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_6ns_8ns_13_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_7ns_9ns_15_1_1': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8ns_10ns_17_1_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_33_4_32_1_1': 16 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop'.
+Command         create_rtl_model done; 0.15 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.2 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.23 seconds; current allocated memory: 520.121 MB.
+Execute         source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.rtl_wrap.cfg.tcl 
+Execute         gen_rtl matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop -style xilinx -f -lang vhdl -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/vhdl/matmul_full_contiguous_matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop 
+Execute         gen_rtl matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop -style xilinx -f -lang vlog -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/verilog/matmul_full_contiguous_matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop 
+Execute         syn_report -csynth -model matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop_csynth.rpt 
+Execute           list_part -family xcvu9p-flga2104-2-i 
+Execute             ap_family_info -name xcvu9p-flga2104-2-i -data names 
+Execute             ap_part_info -quiet -name xcvu9p-flga2104-2-i -data family 
+Execute         syn_report -rtlxml -model matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop_csynth.xml 
+Execute           list_part -family xcvu9p-flga2104-2-i 
+Execute             ap_family_info -name xcvu9p-flga2104-2-i -data names 
+Execute             ap_part_info -quiet -name xcvu9p-flga2104-2-i -data family 
+Execute         syn_report -verbosereport -model matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop.verbose.rpt 
+Execute           list_part -family xcvu9p-flga2104-2-i 
+Execute             ap_family_info -name xcvu9p-flga2104-2-i -data names 
+Execute             ap_part_info -quiet -name xcvu9p-flga2104-2-i -data family 
+Execute         db_write -model matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop -f -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop.adb 
+Execute         db_write -model matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop -bindview -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop -p /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'matmul_full_contiguous_Pipeline_store_c_full_loop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         create_rtl_model matmul_full_contiguous_Pipeline_store_c_full_loop -top_prefix matmul_full_contiguous_ -sub_prefix matmul_full_contiguous_ -mg_file /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous_Pipeline_store_c_full_loop.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'matmul_full_contiguous_Pipeline_store_c_full_loop' pipeline 'store_c_full_loop' pipeline type 'loop pipeline'
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_store_c_full_loop/m_axi_gmem_c_0_AWVALID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_store_c_full_loop/m_axi_gmem_c_0_AWADDR' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_store_c_full_loop/m_axi_gmem_c_0_AWID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_store_c_full_loop/m_axi_gmem_c_0_AWLEN' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_store_c_full_loop/m_axi_gmem_c_0_AWSIZE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_store_c_full_loop/m_axi_gmem_c_0_AWBURST' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_store_c_full_loop/m_axi_gmem_c_0_AWLOCK' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_store_c_full_loop/m_axi_gmem_c_0_AWCACHE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_store_c_full_loop/m_axi_gmem_c_0_AWPROT' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_store_c_full_loop/m_axi_gmem_c_0_AWQOS' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_store_c_full_loop/m_axi_gmem_c_0_AWREGION' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_store_c_full_loop/m_axi_gmem_c_0_AWUSER' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_full_contiguous_Pipeline_store_c_full_loop/m_axi_gmem_c_0_BREADY' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'matmul_full_contiguous_Pipeline_store_c_full_loop'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.2 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.22 seconds; current allocated memory: 537.879 MB.
+Execute         source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.rtl_wrap.cfg.tcl 
+Execute         gen_rtl matmul_full_contiguous_Pipeline_store_c_full_loop -style xilinx -f -lang vhdl -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/vhdl/matmul_full_contiguous_matmul_full_contiguous_Pipeline_store_c_full_loop 
+Execute         gen_rtl matmul_full_contiguous_Pipeline_store_c_full_loop -style xilinx -f -lang vlog -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/verilog/matmul_full_contiguous_matmul_full_contiguous_Pipeline_store_c_full_loop 
+Execute         syn_report -csynth -model matmul_full_contiguous_Pipeline_store_c_full_loop -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/matmul_full_contiguous_Pipeline_store_c_full_loop_csynth.rpt 
+Execute           list_part -family xcvu9p-flga2104-2-i 
+Execute             ap_family_info -name xcvu9p-flga2104-2-i -data names 
+Execute             ap_part_info -quiet -name xcvu9p-flga2104-2-i -data family 
+Execute         syn_report -rtlxml -model matmul_full_contiguous_Pipeline_store_c_full_loop -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/matmul_full_contiguous_Pipeline_store_c_full_loop_csynth.xml 
+Execute           list_part -family xcvu9p-flga2104-2-i 
+Execute             ap_family_info -name xcvu9p-flga2104-2-i -data names 
+Execute             ap_part_info -quiet -name xcvu9p-flga2104-2-i -data family 
+Execute         syn_report -verbosereport -model matmul_full_contiguous_Pipeline_store_c_full_loop -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous_Pipeline_store_c_full_loop.verbose.rpt 
+Execute           list_part -family xcvu9p-flga2104-2-i 
+Execute             ap_family_info -name xcvu9p-flga2104-2-i -data names 
+Execute             ap_part_info -quiet -name xcvu9p-flga2104-2-i -data family 
+Execute         db_write -model matmul_full_contiguous_Pipeline_store_c_full_loop -f -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous_Pipeline_store_c_full_loop.adb 
+Execute         db_write -model matmul_full_contiguous_Pipeline_store_c_full_loop -bindview -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info matmul_full_contiguous_Pipeline_store_c_full_loop -p /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous_Pipeline_store_c_full_loop 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'matmul_full_contiguous' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         create_rtl_model matmul_full_contiguous -top_prefix  -sub_prefix matmul_full_contiguous_ -mg_file /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.compgen.tcl 
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'matmul_full_contiguous/gmem_a' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'matmul_full_contiguous/gmem_b' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'matmul_full_contiguous/gmem_c' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'matmul_full_contiguous/a' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'matmul_full_contiguous/b' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'matmul_full_contiguous/c' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'matmul_full_contiguous' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'a', 'b', 'c' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'matmul_full_contiguous'.
+INFO: [RTMG 210-278] Implementing memory 'matmul_full_contiguous_A_local_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'matmul_full_contiguous_B_local_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'matmul_full_contiguous_C_local_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.09 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.1 seconds; current allocated memory: 537.879 MB.
+Execute         source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.rtl_wrap.cfg.tcl 
+Execute         gen_rtl matmul_full_contiguous -istop -style xilinx -f -lang vhdl -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/vhdl/matmul_full_contiguous 
+Command         gen_rtl done; 0.11 sec.
+Execute         gen_rtl matmul_full_contiguous -istop -style xilinx -f -lang vlog -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/verilog/matmul_full_contiguous 
+Execute         syn_report -csynth -model matmul_full_contiguous -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/matmul_full_contiguous_csynth.rpt 
+Execute           list_part -family xcvu9p-flga2104-2-i 
+Execute             ap_family_info -name xcvu9p-flga2104-2-i -data names 
+Execute             ap_part_info -quiet -name xcvu9p-flga2104-2-i -data family 
+Execute         syn_report -rtlxml -model matmul_full_contiguous -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/matmul_full_contiguous_csynth.xml 
+Execute           list_part -family xcvu9p-flga2104-2-i 
+Execute             ap_family_info -name xcvu9p-flga2104-2-i -data names 
+Execute             ap_part_info -quiet -name xcvu9p-flga2104-2-i -data family 
+Execute         syn_report -verbosereport -model matmul_full_contiguous -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.verbose.rpt 
+Execute           list_part -family xcvu9p-flga2104-2-i 
+Execute             ap_family_info -name xcvu9p-flga2104-2-i -data names 
+Execute             ap_part_info -quiet -name xcvu9p-flga2104-2-i -data family 
+Execute         db_write -model matmul_full_contiguous -f -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.adb 
+Execute         db_write -model matmul_full_contiguous -bindview -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info matmul_full_contiguous -p /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous 
+Execute         export_constraint_db -f -tool general -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.constraint.tcl 
+Execute         syn_report -designview -model matmul_full_contiguous -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.design.xml 
+Execute         syn_report -csynthDesign -model matmul_full_contiguous -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/csynth.rpt -MHOut /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/kernel_module_hierarchy.tcl 
+Execute           list_part -family xcvu9p-flga2104-2-i 
+Execute             ap_family_info -name xcvu9p-flga2104-2-i -data names 
+Execute             ap_part_info -quiet -name xcvu9p-flga2104-2-i -data family 
+Execute         syn_report -wcfg -model matmul_full_contiguous -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous_dataflow_ana.wcfg 
+Execute         syn_report -protoinst -model matmul_full_contiguous -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.protoinst 
+Execute         sc_get_clocks matmul_full_contiguous 
+Execute         sc_get_portdomain matmul_full_contiguous 
+INFO-FLOW: Model list for RTL component generation: matmul_full_contiguous_Pipeline_load_ab_full_loop matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop matmul_full_contiguous_Pipeline_store_c_full_loop matmul_full_contiguous
+INFO-FLOW: Handling components in module [matmul_full_contiguous_Pipeline_load_ab_full_loop] ... 
+Execute         source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous_Pipeline_load_ab_full_loop.compgen.tcl 
+INFO-FLOW: Found component matmul_full_contiguous_mul_8ns_10ns_17_1_1.
+INFO-FLOW: Append model matmul_full_contiguous_mul_8ns_10ns_17_1_1
+INFO-FLOW: Found component matmul_full_contiguous_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model matmul_full_contiguous_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop] ... 
+Execute         source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop.compgen.tcl 
+INFO-FLOW: Found component matmul_full_contiguous_mul_32s_32s_32_1_1.
+INFO-FLOW: Append model matmul_full_contiguous_mul_32s_32s_32_1_1
+INFO-FLOW: Found component matmul_full_contiguous_sparsemux_33_4_32_1_1.
+INFO-FLOW: Append model matmul_full_contiguous_sparsemux_33_4_32_1_1
+INFO-FLOW: Found component matmul_full_contiguous_mul_6ns_8ns_13_1_1.
+INFO-FLOW: Append model matmul_full_contiguous_mul_6ns_8ns_13_1_1
+INFO-FLOW: Found component matmul_full_contiguous_mul_7ns_9ns_15_1_1.
+INFO-FLOW: Append model matmul_full_contiguous_mul_7ns_9ns_15_1_1
+INFO-FLOW: Found component matmul_full_contiguous_sparsemux_33_4_32_1_1.
+INFO-FLOW: Append model matmul_full_contiguous_sparsemux_33_4_32_1_1
+INFO-FLOW: Found component matmul_full_contiguous_sparsemux_33_4_32_1_1.
+INFO-FLOW: Append model matmul_full_contiguous_sparsemux_33_4_32_1_1
+INFO-FLOW: Found component matmul_full_contiguous_sparsemux_33_4_32_1_1.
+INFO-FLOW: Append model matmul_full_contiguous_sparsemux_33_4_32_1_1
+INFO-FLOW: Found component matmul_full_contiguous_sparsemux_33_4_32_1_1.
+INFO-FLOW: Append model matmul_full_contiguous_sparsemux_33_4_32_1_1
+INFO-FLOW: Found component matmul_full_contiguous_sparsemux_33_4_32_1_1.
+INFO-FLOW: Append model matmul_full_contiguous_sparsemux_33_4_32_1_1
+INFO-FLOW: Found component matmul_full_contiguous_sparsemux_33_4_32_1_1.
+INFO-FLOW: Append model matmul_full_contiguous_sparsemux_33_4_32_1_1
+INFO-FLOW: Found component matmul_full_contiguous_sparsemux_33_4_32_1_1.
+INFO-FLOW: Append model matmul_full_contiguous_sparsemux_33_4_32_1_1
+INFO-FLOW: Found component matmul_full_contiguous_sparsemux_33_4_32_1_1.
+INFO-FLOW: Append model matmul_full_contiguous_sparsemux_33_4_32_1_1
+INFO-FLOW: Found component matmul_full_contiguous_sparsemux_33_4_32_1_1.
+INFO-FLOW: Append model matmul_full_contiguous_sparsemux_33_4_32_1_1
+INFO-FLOW: Found component matmul_full_contiguous_sparsemux_33_4_32_1_1.
+INFO-FLOW: Append model matmul_full_contiguous_sparsemux_33_4_32_1_1
+INFO-FLOW: Found component matmul_full_contiguous_sparsemux_33_4_32_1_1.
+INFO-FLOW: Append model matmul_full_contiguous_sparsemux_33_4_32_1_1
+INFO-FLOW: Found component matmul_full_contiguous_sparsemux_33_4_32_1_1.
+INFO-FLOW: Append model matmul_full_contiguous_sparsemux_33_4_32_1_1
+INFO-FLOW: Found component matmul_full_contiguous_sparsemux_33_4_32_1_1.
+INFO-FLOW: Append model matmul_full_contiguous_sparsemux_33_4_32_1_1
+INFO-FLOW: Found component matmul_full_contiguous_sparsemux_33_4_32_1_1.
+INFO-FLOW: Append model matmul_full_contiguous_sparsemux_33_4_32_1_1
+INFO-FLOW: Found component matmul_full_contiguous_sparsemux_33_4_32_1_1.
+INFO-FLOW: Append model matmul_full_contiguous_sparsemux_33_4_32_1_1
+INFO-FLOW: Found component matmul_full_contiguous_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model matmul_full_contiguous_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [matmul_full_contiguous_Pipeline_store_c_full_loop] ... 
+Execute         source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous_Pipeline_store_c_full_loop.compgen.tcl 
+INFO-FLOW: Found component matmul_full_contiguous_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model matmul_full_contiguous_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [matmul_full_contiguous] ... 
+Execute         source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.compgen.tcl 
+INFO-FLOW: Found component matmul_full_contiguous_A_local_RAM_AUTO_1R1W.
+INFO-FLOW: Append model matmul_full_contiguous_A_local_RAM_AUTO_1R1W
+INFO-FLOW: Found component matmul_full_contiguous_B_local_RAM_AUTO_1R1W.
+INFO-FLOW: Append model matmul_full_contiguous_B_local_RAM_AUTO_1R1W
+INFO-FLOW: Found component matmul_full_contiguous_C_local_RAM_AUTO_1R1W.
+INFO-FLOW: Append model matmul_full_contiguous_C_local_RAM_AUTO_1R1W
+INFO-FLOW: Found component matmul_full_contiguous_gmem_a_m_axi.
+INFO-FLOW: Append model matmul_full_contiguous_gmem_a_m_axi
+INFO-FLOW: Found component matmul_full_contiguous_gmem_b_m_axi.
+INFO-FLOW: Append model matmul_full_contiguous_gmem_b_m_axi
+INFO-FLOW: Found component matmul_full_contiguous_gmem_c_m_axi.
+INFO-FLOW: Append model matmul_full_contiguous_gmem_c_m_axi
+INFO-FLOW: Found component matmul_full_contiguous_control_s_axi.
+INFO-FLOW: Append model matmul_full_contiguous_control_s_axi
+INFO-FLOW: Append model matmul_full_contiguous_Pipeline_load_ab_full_loop
+INFO-FLOW: Append model matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop
+INFO-FLOW: Append model matmul_full_contiguous_Pipeline_store_c_full_loop
+INFO-FLOW: Append model matmul_full_contiguous
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: matmul_full_contiguous_mul_8ns_10ns_17_1_1 matmul_full_contiguous_flow_control_loop_pipe_sequential_init matmul_full_contiguous_mul_32s_32s_32_1_1 matmul_full_contiguous_sparsemux_33_4_32_1_1 matmul_full_contiguous_mul_6ns_8ns_13_1_1 matmul_full_contiguous_mul_7ns_9ns_15_1_1 matmul_full_contiguous_sparsemux_33_4_32_1_1 matmul_full_contiguous_sparsemux_33_4_32_1_1 matmul_full_contiguous_sparsemux_33_4_32_1_1 matmul_full_contiguous_sparsemux_33_4_32_1_1 matmul_full_contiguous_sparsemux_33_4_32_1_1 matmul_full_contiguous_sparsemux_33_4_32_1_1 matmul_full_contiguous_sparsemux_33_4_32_1_1 matmul_full_contiguous_sparsemux_33_4_32_1_1 matmul_full_contiguous_sparsemux_33_4_32_1_1 matmul_full_contiguous_sparsemux_33_4_32_1_1 matmul_full_contiguous_sparsemux_33_4_32_1_1 matmul_full_contiguous_sparsemux_33_4_32_1_1 matmul_full_contiguous_sparsemux_33_4_32_1_1 matmul_full_contiguous_sparsemux_33_4_32_1_1 matmul_full_contiguous_sparsemux_33_4_32_1_1 matmul_full_contiguous_flow_control_loop_pipe_sequential_init matmul_full_contiguous_flow_control_loop_pipe_sequential_init matmul_full_contiguous_A_local_RAM_AUTO_1R1W matmul_full_contiguous_B_local_RAM_AUTO_1R1W matmul_full_contiguous_C_local_RAM_AUTO_1R1W matmul_full_contiguous_gmem_a_m_axi matmul_full_contiguous_gmem_b_m_axi matmul_full_contiguous_gmem_c_m_axi matmul_full_contiguous_control_s_axi matmul_full_contiguous_Pipeline_load_ab_full_loop matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop matmul_full_contiguous_Pipeline_store_c_full_loop matmul_full_contiguous
+INFO-FLOW: Generating /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/autopilot.rtl.models.txt file...
+INFO-FLOW: To file: write model matmul_full_contiguous_mul_8ns_10ns_17_1_1
+INFO-FLOW: To file: write model matmul_full_contiguous_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model matmul_full_contiguous_mul_32s_32s_32_1_1
+INFO-FLOW: To file: write model matmul_full_contiguous_sparsemux_33_4_32_1_1
+INFO-FLOW: To file: write model matmul_full_contiguous_mul_6ns_8ns_13_1_1
+INFO-FLOW: To file: write model matmul_full_contiguous_mul_7ns_9ns_15_1_1
+INFO-FLOW: To file: write model matmul_full_contiguous_sparsemux_33_4_32_1_1
+INFO-FLOW: To file: write model matmul_full_contiguous_sparsemux_33_4_32_1_1
+INFO-FLOW: To file: write model matmul_full_contiguous_sparsemux_33_4_32_1_1
+INFO-FLOW: To file: write model matmul_full_contiguous_sparsemux_33_4_32_1_1
+INFO-FLOW: To file: write model matmul_full_contiguous_sparsemux_33_4_32_1_1
+INFO-FLOW: To file: write model matmul_full_contiguous_sparsemux_33_4_32_1_1
+INFO-FLOW: To file: write model matmul_full_contiguous_sparsemux_33_4_32_1_1
+INFO-FLOW: To file: write model matmul_full_contiguous_sparsemux_33_4_32_1_1
+INFO-FLOW: To file: write model matmul_full_contiguous_sparsemux_33_4_32_1_1
+INFO-FLOW: To file: write model matmul_full_contiguous_sparsemux_33_4_32_1_1
+INFO-FLOW: To file: write model matmul_full_contiguous_sparsemux_33_4_32_1_1
+INFO-FLOW: To file: write model matmul_full_contiguous_sparsemux_33_4_32_1_1
+INFO-FLOW: To file: write model matmul_full_contiguous_sparsemux_33_4_32_1_1
+INFO-FLOW: To file: write model matmul_full_contiguous_sparsemux_33_4_32_1_1
+INFO-FLOW: To file: write model matmul_full_contiguous_sparsemux_33_4_32_1_1
+INFO-FLOW: To file: write model matmul_full_contiguous_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model matmul_full_contiguous_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model matmul_full_contiguous_A_local_RAM_AUTO_1R1W
+INFO-FLOW: To file: write model matmul_full_contiguous_B_local_RAM_AUTO_1R1W
+INFO-FLOW: To file: write model matmul_full_contiguous_C_local_RAM_AUTO_1R1W
+INFO-FLOW: To file: write model matmul_full_contiguous_gmem_a_m_axi
+INFO-FLOW: To file: write model matmul_full_contiguous_gmem_b_m_axi
+INFO-FLOW: To file: write model matmul_full_contiguous_gmem_c_m_axi
+INFO-FLOW: To file: write model matmul_full_contiguous_control_s_axi
+INFO-FLOW: To file: write model matmul_full_contiguous_Pipeline_load_ab_full_loop
+INFO-FLOW: To file: write model matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop
+INFO-FLOW: To file: write model matmul_full_contiguous_Pipeline_store_c_full_loop
+INFO-FLOW: To file: write model matmul_full_contiguous
+INFO-FLOW: Generating /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/autopilot.rtl.models.tcl file...
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::auto_generate_csynth_design
+INFO-FLOW: DBG:PUTS: read_platform_lib /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/global.setting.tcl
+Execute         source /data/2025.1/Vitis/common/technology/generic/autopilot/common.gen 
+Execute           source /data/2025.1/Vitis/common/technology/generic/autopilot/APCoreGen.gen 
+Execute         source /data/2025.1/Vitis/common/technology/generic/autopilot/op.gen 
+Execute         source /data/2025.1/Vitis/common/technology/generic/autopilot/op_simcore.gen 
+Execute         source /data/2025.1/Vitis/common/technology/generic/autopilot/interface.gen 
+Execute         source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/global.setting.tcl 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/common/xilinx.gen 
+Execute           source /data/2025.1/Vitis/common/technology/xilinx/interface/plb46.gen 
+Execute           source /data/2025.1/Vitis/common/technology/xilinx/interface/axi4.gen 
+Execute           source /data/2025.1/Vitis/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /data/2025.1/Vitis/common/technology/xilinx/interface/saxilite.gen 
+Execute           source /data/2025.1/Vitis/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /data/2025.1/Vitis/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /data/2025.1/Vitis/common/technology/xilinx/ip/xfir.gen 
+Execute           source /data/2025.1/Vitis/common/technology/xilinx/ip/util.gen 
+Execute           source /data/2025.1/Vitis/common/technology/xilinx/ip/xfft.gen 
+Execute           source /data/2025.1/Vitis/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /data/2025.1/Vitis/common/technology/xilinx/DSP48/dsp48.gen 
+INFO-FLOW: DBG:PUTS:   using AESL_AUTOCG::g_clock_period=5.000 (was NA)
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::generate_ip_cores gen_sim_model='1' gen_fp_models='0' gen_for_export='0' dstSCDir='' dstVhdlDir='/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/vhdl' dstVlogDir='/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/vlog' tclDir='/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db' modelList='matmul_full_contiguous_mul_8ns_10ns_17_1_1
+matmul_full_contiguous_flow_control_loop_pipe_sequential_init
+matmul_full_contiguous_mul_32s_32s_32_1_1
+matmul_full_contiguous_sparsemux_33_4_32_1_1
+matmul_full_contiguous_mul_6ns_8ns_13_1_1
+matmul_full_contiguous_mul_7ns_9ns_15_1_1
+matmul_full_contiguous_sparsemux_33_4_32_1_1
+matmul_full_contiguous_sparsemux_33_4_32_1_1
+matmul_full_contiguous_sparsemux_33_4_32_1_1
+matmul_full_contiguous_sparsemux_33_4_32_1_1
+matmul_full_contiguous_sparsemux_33_4_32_1_1
+matmul_full_contiguous_sparsemux_33_4_32_1_1
+matmul_full_contiguous_sparsemux_33_4_32_1_1
+matmul_full_contiguous_sparsemux_33_4_32_1_1
+matmul_full_contiguous_sparsemux_33_4_32_1_1
+matmul_full_contiguous_sparsemux_33_4_32_1_1
+matmul_full_contiguous_sparsemux_33_4_32_1_1
+matmul_full_contiguous_sparsemux_33_4_32_1_1
+matmul_full_contiguous_sparsemux_33_4_32_1_1
+matmul_full_contiguous_sparsemux_33_4_32_1_1
+matmul_full_contiguous_sparsemux_33_4_32_1_1
+matmul_full_contiguous_flow_control_loop_pipe_sequential_init
+matmul_full_contiguous_flow_control_loop_pipe_sequential_init
+matmul_full_contiguous_A_local_RAM_AUTO_1R1W
+matmul_full_contiguous_B_local_RAM_AUTO_1R1W
+matmul_full_contiguous_C_local_RAM_AUTO_1R1W
+matmul_full_contiguous_gmem_a_m_axi
+matmul_full_contiguous_gmem_b_m_axi
+matmul_full_contiguous_gmem_c_m_axi
+matmul_full_contiguous_control_s_axi
+matmul_full_contiguous_Pipeline_load_ab_full_loop
+matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop
+matmul_full_contiguous_Pipeline_store_c_full_loop
+matmul_full_contiguous
+' expOnly='0'
+Execute         source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/global.setting.tcl 
+Execute         ap_part_info -name xcvu9p-flga2104-2-i -data names -quiet 
+Execute         ap_part_info -name xcvu9p-flga2104-2-i -data info -quiet 
+Execute         source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/global.setting.tcl 
+Execute         source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/global.setting.tcl 
+Execute         source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous_Pipeline_load_ab_full_loop.compgen.tcl 
+Execute         source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop.compgen.tcl 
+Execute         source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous_Pipeline_store_c_full_loop.compgen.tcl 
+Execute         source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.compgen.tcl 
+Execute           source ./control.slave.tcl 
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.43 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.47 seconds; current allocated memory: 540.676 MB.
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::create_csynth_xml bind_info_var='bind_info' RtlSubPrefix='matmul_full_contiguous_' outfile=''
+INFO-FLOW: Running: create_csynth_xml read xml data
+INFO-FLOW: Done: create_csynth_xml read xml data time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml bind info
+INFO-FLOW: Done: create_csynth_xml bind info time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml config info
+INFO-FLOW: Done: create_csynth_xml config info time: 0.2 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml write xml
+INFO-FLOW: Done: create_csynth_xml write xml time: 0 seconds per iteration
+INFO-FLOW: DBG:PUTS:      create_csynth_xml wrote csynth_xml=/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/syn/report/csynth.xml
+INFO-FLOW: DBG:PROC: ::AP::DESIGN_DATA::generate_json generate_bd_files='0' generate_xo_files='0' modelList='matmul_full_contiguous_mul_8ns_10ns_17_1_1
+matmul_full_contiguous_flow_control_loop_pipe_sequential_init
+matmul_full_contiguous_mul_32s_32s_32_1_1
+matmul_full_contiguous_sparsemux_33_4_32_1_1
+matmul_full_contiguous_mul_6ns_8ns_13_1_1
+matmul_full_contiguous_mul_7ns_9ns_15_1_1
+matmul_full_contiguous_sparsemux_33_4_32_1_1
+matmul_full_contiguous_sparsemux_33_4_32_1_1
+matmul_full_contiguous_sparsemux_33_4_32_1_1
+matmul_full_contiguous_sparsemux_33_4_32_1_1
+matmul_full_contiguous_sparsemux_33_4_32_1_1
+matmul_full_contiguous_sparsemux_33_4_32_1_1
+matmul_full_contiguous_sparsemux_33_4_32_1_1
+matmul_full_contiguous_sparsemux_33_4_32_1_1
+matmul_full_contiguous_sparsemux_33_4_32_1_1
+matmul_full_contiguous_sparsemux_33_4_32_1_1
+matmul_full_contiguous_sparsemux_33_4_32_1_1
+matmul_full_contiguous_sparsemux_33_4_32_1_1
+matmul_full_contiguous_sparsemux_33_4_32_1_1
+matmul_full_contiguous_sparsemux_33_4_32_1_1
+matmul_full_contiguous_sparsemux_33_4_32_1_1
+matmul_full_contiguous_flow_control_loop_pipe_sequential_init
+matmul_full_contiguous_flow_control_loop_pipe_sequential_init
+matmul_full_contiguous_A_local_RAM_AUTO_1R1W
+matmul_full_contiguous_B_local_RAM_AUTO_1R1W
+matmul_full_contiguous_C_local_RAM_AUTO_1R1W
+matmul_full_contiguous_gmem_a_m_axi
+matmul_full_contiguous_gmem_b_m_axi
+matmul_full_contiguous_gmem_c_m_axi
+matmul_full_contiguous_control_s_axi
+matmul_full_contiguous_Pipeline_load_ab_full_loop
+matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop
+matmul_full_contiguous_Pipeline_store_c_full_loop
+matmul_full_contiguous
+' rtl_lang='both' bootstrap_tcl='false' outdir='' outfilename=''
+Execute         source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/global.setting.tcl 
+Execute         source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/global.setting.tcl 
+Execute         source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/top-io-be.tcl 
+Execute         source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute         source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.compgen.dataonly.tcl 
+Execute         source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.compgen.dataonly.tcl 
+Execute         source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.rtl_wrap.cfg.tcl 
+Execute         source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.compgen.dataonly.tcl 
+Execute         source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous_Pipeline_load_ab_full_loop.tbgen.tcl 
+Execute         source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop.tbgen.tcl 
+Execute         source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous_Pipeline_store_c_full_loop.tbgen.tcl 
+Execute         source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute         source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/global.setting.tcl 
+Execute         ap_part_info -name xcvu9p-flga2104-2-i -data names -quiet 
+Execute         ap_part_info -name xcvu9p-flga2104-2-i -data info -quiet 
+Execute         source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.constraint.tcl 
+Execute         sc_get_clocks matmul_full_contiguous 
+Execute         source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::add_csynth_report_sections bind_info_dict='adapter_nodes {{BINDTYPE adapter ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA {} RTLNAME control_s_axi_U SOURCE {} VARIABLE {} LOOP {} BUNDLEDNAME control DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE s_axilite STORAGESIZE {} STORAGEUSAGE interface DISPNAME {bind_adapter }} {BINDTYPE adapter ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA {} RTLNAME gmem_a_m_axi_U SOURCE {} VARIABLE {} LOOP {} BUNDLEDNAME gmem_a DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE m_axi STORAGESIZE {} STORAGEUSAGE interface DISPNAME {bind_adapter }} {BINDTYPE adapter ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA {} RTLNAME gmem_b_m_axi_U SOURCE {} VARIABLE {} LOOP {} BUNDLEDNAME gmem_b DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE m_axi STORAGESIZE {} STORAGEUSAGE interface DISPNAME {bind_adapter }} {BINDTYPE adapter ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA {} RTLNAME gmem_c_m_axi_U SOURCE {} VARIABLE {} LOOP {} BUNDLEDNAME gmem_c DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE m_axi STORAGESIZE {} STORAGEUSAGE interface DISPNAME {bind_adapter }}} cache_nodes {} report_dict {TOPINST matmul_full_contiguous MODULE2INSTS {matmul_full_contiguous matmul_full_contiguous matmul_full_contiguous_Pipeline_load_ab_full_loop grp_matmul_full_contiguous_Pipeline_load_ab_full_loop_fu_438 matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop grp_matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop_fu_473 matmul_full_contiguous_Pipeline_store_c_full_loop grp_matmul_full_contiguous_Pipeline_store_c_full_loop_fu_519} INST2MODULE {matmul_full_contiguous matmul_full_contiguous grp_matmul_full_contiguous_Pipeline_load_ab_full_loop_fu_438 matmul_full_contiguous_Pipeline_load_ab_full_loop grp_matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop_fu_473 matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop grp_matmul_full_contiguous_Pipeline_store_c_full_loop_fu_519 matmul_full_contiguous_Pipeline_store_c_full_loop} INSTDATA {matmul_full_contiguous {DEPTH 1 CHILDREN {grp_matmul_full_contiguous_Pipeline_load_ab_full_loop_fu_438 grp_matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop_fu_473 grp_matmul_full_contiguous_Pipeline_store_c_full_loop_fu_519}} grp_matmul_full_contiguous_Pipeline_load_ab_full_loop_fu_438 {DEPTH 2 CHILDREN {}} grp_matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop_fu_473 {DEPTH 2 CHILDREN {}} grp_matmul_full_contiguous_Pipeline_store_c_full_loop_fu_519 {DEPTH 2 CHILDREN {}}} MODULEDATA {matmul_full_contiguous_Pipeline_load_ab_full_loop {BINDINFO {{BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln20_fu_587_p2 SOURCE matmul_full_contiguous.cpp:20 VARIABLE icmp_ln20 LOOP load_ab_full_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln20_fu_593_p2 SOURCE matmul_full_contiguous.cpp:20 VARIABLE add_ln20 LOOP load_ab_full_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_8ns_10ns_17_1_1_U1 SOURCE matmul_full_contiguous.cpp:20 VARIABLE mul_ln20 LOOP load_ab_full_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln22_fu_611_p2 SOURCE matmul_full_contiguous.cpp:22 VARIABLE icmp_ln22 LOOP load_ab_full_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln20_1_fu_671_p2 SOURCE matmul_full_contiguous.cpp:20 VARIABLE add_ln20_1 LOOP load_ab_full_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln20_1_fu_677_p2 SOURCE matmul_full_contiguous.cpp:20 VARIABLE icmp_ln20_1 LOOP load_ab_full_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln20_fu_683_p3 SOURCE matmul_full_contiguous.cpp:20 VARIABLE select_ln20 LOOP load_ab_full_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false}} AREA {DSP 0 BRAM 0 URAM 0}} matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop {BINDINFO {{BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln27_fu_2680_p2 SOURCE matmul_full_contiguous.cpp:27 VARIABLE icmp_ln27 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln27_fu_2686_p2 SOURCE matmul_full_contiguous.cpp:27 VARIABLE add_ln27 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln29_fu_2695_p2 SOURCE matmul_full_contiguous.cpp:29 VARIABLE icmp_ln29 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln27_fu_2701_p3 SOURCE matmul_full_contiguous.cpp:27 VARIABLE select_ln27 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln27_1_fu_2812_p2 SOURCE matmul_full_contiguous.cpp:27 VARIABLE add_ln27_1 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln27_1_fu_2818_p3 SOURCE matmul_full_contiguous.cpp:27 VARIABLE select_ln27_1 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL compactencoding_dontcare LATENCY 0 OPTYPE sparsemux PRAGMA {} RTLNAME sparsemux_33_4_32_1_1_U48 SOURCE matmul_full_contiguous.cpp:35 VARIABLE tmp LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sparsemux} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setlt PRAGMA {} RTLNAME icmp_ln35_fu_3029_p2 SOURCE matmul_full_contiguous.cpp:35 VARIABLE icmp_ln35 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setlt} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln35_fu_3034_p3 SOURCE matmul_full_contiguous.cpp:35 VARIABLE select_ln35 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL compactencoding_dontcare LATENCY 0 OPTYPE sparsemux PRAGMA {} RTLNAME sparsemux_33_4_32_1_1_U65 SOURCE matmul_full_contiguous.cpp:35 VARIABLE tmp_1 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sparsemux} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_6ns_8ns_13_1_1_U49 SOURCE matmul_full_contiguous.cpp:35 VARIABLE mul_ln35_16 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL compactencoding_dontcare LATENCY 0 OPTYPE sparsemux PRAGMA {} RTLNAME sparsemux_33_4_32_1_1_U66 SOURCE matmul_full_contiguous.cpp:35 VARIABLE tmp_2 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sparsemux} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE xor PRAGMA {} RTLNAME xor_ln35_fu_2870_p2 SOURCE matmul_full_contiguous.cpp:35 VARIABLE xor_ln35 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op xor} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_6ns_8ns_13_1_1_U53 SOURCE matmul_full_contiguous.cpp:35 VARIABLE mul_ln35_17 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL compactencoding_dontcare LATENCY 0 OPTYPE sparsemux PRAGMA {} RTLNAME sparsemux_33_4_32_1_1_U67 SOURCE matmul_full_contiguous.cpp:35 VARIABLE tmp_3 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sparsemux} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_7ns_9ns_15_1_1_U54 SOURCE matmul_full_contiguous.cpp:35 VARIABLE mul_ln35_18 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL compactencoding_dontcare LATENCY 0 OPTYPE sparsemux PRAGMA {} RTLNAME sparsemux_33_4_32_1_1_U68 SOURCE matmul_full_contiguous.cpp:35 VARIABLE tmp_4 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sparsemux} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_fu_3171_p2 SOURCE matmul_full_contiguous.cpp:35 VARIABLE add_ln35 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_7ns_9ns_15_1_1_U55 SOURCE matmul_full_contiguous.cpp:35 VARIABLE mul_ln35_19 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL compactencoding_dontcare LATENCY 0 OPTYPE sparsemux PRAGMA {} RTLNAME sparsemux_33_4_32_1_1_U69 SOURCE matmul_full_contiguous.cpp:35 VARIABLE tmp_5 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sparsemux} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_7ns_9ns_15_1_1_U50 SOURCE matmul_full_contiguous.cpp:35 VARIABLE mul_ln35_20 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL compactencoding_dontcare LATENCY 0 OPTYPE sparsemux PRAGMA {} RTLNAME sparsemux_33_4_32_1_1_U70 SOURCE matmul_full_contiguous.cpp:35 VARIABLE tmp_6 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sparsemux} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_7ns_9ns_15_1_1_U56 SOURCE matmul_full_contiguous.cpp:35 VARIABLE mul_ln35_21 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL compactencoding_dontcare LATENCY 0 OPTYPE sparsemux PRAGMA {} RTLNAME sparsemux_33_4_32_1_1_U71 SOURCE matmul_full_contiguous.cpp:35 VARIABLE tmp_7 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sparsemux} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_8ns_10ns_17_1_1_U57 SOURCE matmul_full_contiguous.cpp:35 VARIABLE mul_ln35_22 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL compactencoding_dontcare LATENCY 0 OPTYPE sparsemux PRAGMA {} RTLNAME sparsemux_33_4_32_1_1_U72 SOURCE matmul_full_contiguous.cpp:35 VARIABLE tmp_8 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sparsemux} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_1_fu_3327_p2 SOURCE matmul_full_contiguous.cpp:35 VARIABLE add_ln35_1 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_8ns_10ns_17_1_1_U58 SOURCE matmul_full_contiguous.cpp:35 VARIABLE mul_ln35_23 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL compactencoding_dontcare LATENCY 0 OPTYPE sparsemux PRAGMA {} RTLNAME sparsemux_33_4_32_1_1_U73 SOURCE matmul_full_contiguous.cpp:35 VARIABLE tmp_9 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sparsemux} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_8ns_10ns_17_1_1_U59 SOURCE matmul_full_contiguous.cpp:35 VARIABLE mul_ln35_24 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL compactencoding_dontcare LATENCY 0 OPTYPE sparsemux PRAGMA {} RTLNAME sparsemux_33_4_32_1_1_U74 SOURCE matmul_full_contiguous.cpp:35 VARIABLE tmp_s LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sparsemux} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_2_fu_3420_p2 SOURCE matmul_full_contiguous.cpp:35 VARIABLE add_ln35_2 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_8ns_10ns_17_1_1_U60 SOURCE matmul_full_contiguous.cpp:35 VARIABLE mul_ln35_25 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL compactencoding_dontcare LATENCY 0 OPTYPE sparsemux PRAGMA {} RTLNAME sparsemux_33_4_32_1_1_U75 SOURCE matmul_full_contiguous.cpp:35 VARIABLE tmp_10 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sparsemux} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_8ns_10ns_17_1_1_U61 SOURCE matmul_full_contiguous.cpp:35 VARIABLE mul_ln35_26 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL compactencoding_dontcare LATENCY 0 OPTYPE sparsemux PRAGMA {} RTLNAME sparsemux_33_4_32_1_1_U76 SOURCE matmul_full_contiguous.cpp:35 VARIABLE tmp_11 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sparsemux} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_8ns_10ns_17_1_1_U62 SOURCE matmul_full_contiguous.cpp:35 VARIABLE mul_ln35_27 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL compactencoding_dontcare LATENCY 0 OPTYPE sparsemux PRAGMA {} RTLNAME sparsemux_33_4_32_1_1_U77 SOURCE matmul_full_contiguous.cpp:35 VARIABLE tmp_12 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sparsemux} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_8ns_10ns_17_1_1_U51 SOURCE matmul_full_contiguous.cpp:35 VARIABLE mul_ln35_28 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL compactencoding_dontcare LATENCY 0 OPTYPE sparsemux PRAGMA {} RTLNAME sparsemux_33_4_32_1_1_U63 SOURCE matmul_full_contiguous.cpp:35 VARIABLE tmp_13 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sparsemux} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_8ns_10ns_17_1_1_U52 SOURCE matmul_full_contiguous.cpp:35 VARIABLE mul_ln35_29 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL compactencoding_dontcare LATENCY 0 OPTYPE sparsemux PRAGMA {} RTLNAME sparsemux_33_4_32_1_1_U64 SOURCE matmul_full_contiguous.cpp:35 VARIABLE tmp_14 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sparsemux} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32s_32_1_1_U32 SOURCE matmul_full_contiguous.cpp:35 VARIABLE mul_ln35 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32s_32_1_1_U33 SOURCE matmul_full_contiguous.cpp:35 VARIABLE mul_ln35_1 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32s_32_1_1_U34 SOURCE matmul_full_contiguous.cpp:35 VARIABLE mul_ln35_2 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32s_32_1_1_U35 SOURCE matmul_full_contiguous.cpp:35 VARIABLE mul_ln35_3 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32s_32_1_1_U36 SOURCE matmul_full_contiguous.cpp:35 VARIABLE mul_ln35_4 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32s_32_1_1_U37 SOURCE matmul_full_contiguous.cpp:35 VARIABLE mul_ln35_5 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32s_32_1_1_U38 SOURCE matmul_full_contiguous.cpp:35 VARIABLE mul_ln35_6 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32s_32_1_1_U39 SOURCE matmul_full_contiguous.cpp:35 VARIABLE mul_ln35_7 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32s_32_1_1_U40 SOURCE matmul_full_contiguous.cpp:35 VARIABLE mul_ln35_8 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32s_32_1_1_U41 SOURCE matmul_full_contiguous.cpp:35 VARIABLE mul_ln35_9 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32s_32_1_1_U42 SOURCE matmul_full_contiguous.cpp:35 VARIABLE mul_ln35_10 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32s_32_1_1_U43 SOURCE matmul_full_contiguous.cpp:35 VARIABLE mul_ln35_11 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32s_32_1_1_U44 SOURCE matmul_full_contiguous.cpp:35 VARIABLE mul_ln35_12 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32s_32_1_1_U45 SOURCE matmul_full_contiguous.cpp:35 VARIABLE mul_ln35_13 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32s_32_1_1_U46 SOURCE matmul_full_contiguous.cpp:35 VARIABLE mul_ln35_14 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32s_32_1_1_U47 SOURCE matmul_full_contiguous.cpp:35 VARIABLE mul_ln35_15 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_4_fu_4633_p2 SOURCE matmul_full_contiguous.cpp:35 VARIABLE add_ln35_4 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_7_fu_4647_p2 SOURCE matmul_full_contiguous.cpp:35 VARIABLE add_ln35_7 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_10_fu_4663_p2 SOURCE matmul_full_contiguous.cpp:35 VARIABLE add_ln35_10 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_11_fu_4667_p2 SOURCE matmul_full_contiguous.cpp:35 VARIABLE add_ln35_11 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_14_fu_4625_p2 SOURCE matmul_full_contiguous.cpp:35 VARIABLE add_ln35_14 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln38_fu_3696_p2 SOURCE matmul_full_contiguous.cpp:38 VARIABLE add_ln38 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln29_fu_2793_p2 SOURCE matmul_full_contiguous.cpp:29 VARIABLE add_ln29 LOOP compute_row_loop_compute_col_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true}} AREA {DSP 48 BRAM 0 URAM 0}} matmul_full_contiguous_Pipeline_store_c_full_loop {BINDINFO {{BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln43_fu_116_p2 SOURCE matmul_full_contiguous.cpp:43 VARIABLE icmp_ln43 LOOP store_c_full_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln43_fu_122_p2 SOURCE matmul_full_contiguous.cpp:43 VARIABLE add_ln43 LOOP store_c_full_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln45_fu_137_p2 SOURCE matmul_full_contiguous.cpp:45 VARIABLE icmp_ln45 LOOP store_c_full_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln45_fu_185_p3 SOURCE matmul_full_contiguous.cpp:45 VARIABLE select_ln45 LOOP store_c_full_loop BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false}} AREA {DSP 0 BRAM 0 URAM 0}} matmul_full_contiguous {BINDINFO {{BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_2p PRAGMA {} RTLNAME A_local_U SOURCE matmul_full_contiguous.cpp:15 VARIABLE A_local LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 32 1} STORAGEUSAGE {ram_2p array} DISPNAME {bind_storage ram_2p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_2p PRAGMA {} RTLNAME A_local_1_U SOURCE matmul_full_contiguous.cpp:15 VARIABLE A_local_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 32 1} STORAGEUSAGE {ram_2p array} DISPNAME {bind_storage ram_2p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_2p PRAGMA {} RTLNAME A_local_2_U SOURCE matmul_full_contiguous.cpp:15 VARIABLE A_local_2 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 32 1} STORAGEUSAGE {ram_2p array} DISPNAME {bind_storage ram_2p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_2p PRAGMA {} RTLNAME A_local_3_U SOURCE matmul_full_contiguous.cpp:15 VARIABLE A_local_3 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 32 1} STORAGEUSAGE {ram_2p array} DISPNAME {bind_storage ram_2p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_2p PRAGMA {} RTLNAME A_local_4_U SOURCE matmul_full_contiguous.cpp:15 VARIABLE A_local_4 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 32 1} STORAGEUSAGE {ram_2p array} DISPNAME {bind_storage ram_2p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_2p PRAGMA {} RTLNAME A_local_5_U SOURCE matmul_full_contiguous.cpp:15 VARIABLE A_local_5 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 32 1} STORAGEUSAGE {ram_2p array} DISPNAME {bind_storage ram_2p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_2p PRAGMA {} RTLNAME A_local_6_U SOURCE matmul_full_contiguous.cpp:15 VARIABLE A_local_6 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 32 1} STORAGEUSAGE {ram_2p array} DISPNAME {bind_storage ram_2p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_2p PRAGMA {} RTLNAME A_local_7_U SOURCE matmul_full_contiguous.cpp:15 VARIABLE A_local_7 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 32 1} STORAGEUSAGE {ram_2p array} DISPNAME {bind_storage ram_2p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_2p PRAGMA {} RTLNAME B_local_U SOURCE matmul_full_contiguous.cpp:16 VARIABLE B_local LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 16 1} STORAGEUSAGE {ram_2p array} DISPNAME {bind_storage ram_2p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_2p PRAGMA {} RTLNAME B_local_1_U SOURCE matmul_full_contiguous.cpp:16 VARIABLE B_local_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 16 1} STORAGEUSAGE {ram_2p array} DISPNAME {bind_storage ram_2p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_2p PRAGMA {} RTLNAME B_local_2_U SOURCE matmul_full_contiguous.cpp:16 VARIABLE B_local_2 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 16 1} STORAGEUSAGE {ram_2p array} DISPNAME {bind_storage ram_2p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_2p PRAGMA {} RTLNAME B_local_3_U SOURCE matmul_full_contiguous.cpp:16 VARIABLE B_local_3 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 16 1} STORAGEUSAGE {ram_2p array} DISPNAME {bind_storage ram_2p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_2p PRAGMA {} RTLNAME B_local_4_U SOURCE matmul_full_contiguous.cpp:16 VARIABLE B_local_4 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 16 1} STORAGEUSAGE {ram_2p array} DISPNAME {bind_storage ram_2p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_2p PRAGMA {} RTLNAME B_local_5_U SOURCE matmul_full_contiguous.cpp:16 VARIABLE B_local_5 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 16 1} STORAGEUSAGE {ram_2p array} DISPNAME {bind_storage ram_2p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_2p PRAGMA {} RTLNAME B_local_6_U SOURCE matmul_full_contiguous.cpp:16 VARIABLE B_local_6 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 16 1} STORAGEUSAGE {ram_2p array} DISPNAME {bind_storage ram_2p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_2p PRAGMA {} RTLNAME B_local_7_U SOURCE matmul_full_contiguous.cpp:16 VARIABLE B_local_7 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 16 1} STORAGEUSAGE {ram_2p array} DISPNAME {bind_storage ram_2p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_2p PRAGMA {} RTLNAME B_local_8_U SOURCE matmul_full_contiguous.cpp:16 VARIABLE B_local_8 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 16 1} STORAGEUSAGE {ram_2p array} DISPNAME {bind_storage ram_2p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_2p PRAGMA {} RTLNAME B_local_9_U SOURCE matmul_full_contiguous.cpp:16 VARIABLE B_local_9 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 16 1} STORAGEUSAGE {ram_2p array} DISPNAME {bind_storage ram_2p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_2p PRAGMA {} RTLNAME B_local_10_U SOURCE matmul_full_contiguous.cpp:16 VARIABLE B_local_10 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 16 1} STORAGEUSAGE {ram_2p array} DISPNAME {bind_storage ram_2p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_2p PRAGMA {} RTLNAME B_local_11_U SOURCE matmul_full_contiguous.cpp:16 VARIABLE B_local_11 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 16 1} STORAGEUSAGE {ram_2p array} DISPNAME {bind_storage ram_2p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_2p PRAGMA {} RTLNAME B_local_12_U SOURCE matmul_full_contiguous.cpp:16 VARIABLE B_local_12 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 16 1} STORAGEUSAGE {ram_2p array} DISPNAME {bind_storage ram_2p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_2p PRAGMA {} RTLNAME B_local_13_U SOURCE matmul_full_contiguous.cpp:16 VARIABLE B_local_13 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 16 1} STORAGEUSAGE {ram_2p array} DISPNAME {bind_storage ram_2p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_2p PRAGMA {} RTLNAME B_local_14_U SOURCE matmul_full_contiguous.cpp:16 VARIABLE B_local_14 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 16 1} STORAGEUSAGE {ram_2p array} DISPNAME {bind_storage ram_2p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_2p PRAGMA {} RTLNAME B_local_15_U SOURCE matmul_full_contiguous.cpp:16 VARIABLE B_local_15 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 16 1} STORAGEUSAGE {ram_2p array} DISPNAME {bind_storage ram_2p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_2p PRAGMA {} RTLNAME B_local_16_U SOURCE matmul_full_contiguous.cpp:16 VARIABLE B_local_16 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 16 1} STORAGEUSAGE {ram_2p array} DISPNAME {bind_storage ram_2p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_1p PRAGMA {} RTLNAME C_local_U SOURCE matmul_full_contiguous.cpp:17 VARIABLE C_local LOOP {} BUNDLEDNAME {} DSP 0 BRAM 1 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 256 1} STORAGEUSAGE {ram_1p array} DISPNAME {bind_storage ram_1p} VISIBLE true}} AREA {DSP 48 BRAM 1 URAM 0}}}}'
+INFO-FLOW: DBG:PUTS:      update_csynth_reports json2rpt_hw_sw_interfaces
+Execute         send_msg_by_id INFO @200-1603@%s  
+INFO: [HLS 200-1603] Design has inferred MAXI bursts, see Vitis HLS GUI synthesis summary report for detailed information.
+INFO-FLOW: Running: gen_csynth_sec_pragma
+INFO-FLOW: Done: gen_csynth_sec_pragma time: 0 seconds per iteration
+INFO-FLOW: DBG:PUTS:      update_csynth_reports wrote xml
+INFO-FLOW: DBG:PUTS:      update_csynth_reports appended to csynth rpt file
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.41 seconds. CPU system time: 0.07 seconds. Elapsed time: 0.48 seconds; current allocated memory: 548.922 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for matmul_full_contiguous.
+INFO: [VLOG 209-307] Generating Verilog RTL for matmul_full_contiguous.
+Execute         syn_report -model matmul_full_contiguous -printsummary 
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 273.97 MHz
+Command       autosyn done; 2.72 sec.
+Command     csynth_design done; 10.91 sec.
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:10; Allocated memory: 103.188 MB.
+Execute     cleanup_all 
+Execute       source -notrace -encoding utf-8 /data/2025.1/Vitis/tps/tcl/tcl8.6/clock.tcl 
+Execute         source -encoding utf-8 /data/2025.1/tps/tcl/tcl8/8.5/msgcat-1.6.1.tm 
+INFO-FLOW: Workspace /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls opened at Thu Jun 04 20:06:29 CEST 2026
+Execute       ap_set_clock -name default -period 5 -unit ns -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+Execute       set_part xcvu9p-flga2104-2-i 
+Execute         create_platform xcvu9p-flga2104-2-i -board  
+DBG:HLSDevice: Trying to load device library: /data/2025.1/Vitis/lib/lnx64.o/libxv_hlsvwrap.so
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: /data/2025.1/Vivado/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xcvu9p-flga2104-2-i'
+Command         create_platform done; 1 sec.
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/common/xilinx.gen 
+Execute           source /data/2025.1/Vitis/common/technology/xilinx/interface/plb46.gen 
+Execute           source /data/2025.1/Vitis/common/technology/xilinx/interface/axi4.gen 
+Execute           source /data/2025.1/Vitis/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /data/2025.1/Vitis/common/technology/xilinx/interface/saxilite.gen 
+Execute           source /data/2025.1/Vitis/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /data/2025.1/Vitis/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /data/2025.1/Vitis/common/technology/xilinx/ip/xfir.gen 
+Execute           source /data/2025.1/Vitis/common/technology/xilinx/ip/util.gen 
+Execute           source /data/2025.1/Vitis/common/technology/xilinx/ip/xfft.gen 
+Execute           source /data/2025.1/Vitis/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /data/2025.1/Vitis/common/technology/xilinx/DSP48/dsp48.gen 
+Execute         ap_part_info -name xcvu9p-flga2104-2-i -data info 
+Execute         config_compile -quiet -complex-mul-dsp=0 
+Command       set_part done; 1.08 sec.
+Execute       send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Execute       send_msg_by_id INFO @200-435@%s%s 'open_solution -flow_target vivado' config_interface -m_axi_alignment_byte_size=1 
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_alignment_byte_size=1
+Execute       config_interface -m_axi_alignment_byte_size=1 
+Execute       send_msg_by_id INFO @200-435@%s%s 'open_solution -flow_target vivado' config_interface -m_axi_max_widen_bitwidth=0 
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_max_widen_bitwidth=0
+Execute       config_interface -m_axi_max_widen_bitwidth=0 
+Execute       send_msg_by_id INFO @200-1464@%s config_interface -m_axi_alignment_byte_size=64 
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_alignment_byte_size=64
+Execute       config_interface -m_axi_alignment_byte_size=64 
+Execute       send_msg_by_id INFO @200-1464@%s config_interface -m_axi_max_widen_bitwidth=512 
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_max_widen_bitwidth=512
+Execute       config_interface -m_axi_max_widen_bitwidth=512 
+Command     open_solution done; 1.12 sec.
+Execute     cosim_design -rtl verilog -trace_level all 
+INFO: [HLS 200-1510] Running: cosim_design -rtl verilog -trace_level all 
+Execute       ::AP::init_summary_file cosim 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/global.setting.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/global.setting.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:PUTS: read_platform_lib /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/global.setting.tcl
+Execute       source /data/2025.1/Vitis/common/technology/generic/autopilot/common.gen 
+Execute         source /data/2025.1/Vitis/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source /data/2025.1/Vitis/common/technology/generic/autopilot/op.gen 
+Execute       source /data/2025.1/Vitis/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source /data/2025.1/Vitis/common/technology/generic/autopilot/interface.gen 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/global.setting.tcl 
+Execute       source /data/2025.1/Vitis/common/technology/xilinx/common/xilinx.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/interface/plb46.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/interface/axi4.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /data/2025.1/Vitis/common/technology/xilinx/interface/saxilite.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/ip/xfir.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/ip/util.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/ip/xfft.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/DSP48/dsp48.gen 
+INFO-FLOW: DBG:PUTS:   using AESL_AUTOCG::g_clock_period=5.000 (was NA)
+Execute       ap_part_info -name xcvu9p-flga2104-2-i -data names -quiet 
+Execute       ap_part_info -name xcvu9p-flga2104-2-i -data info -quiet 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/global.setting.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.rtl_wrap.cfg.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/cosimDB.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+Execute       ap_part_info -name xcvu9p-flga2104-2-i -data info 
+INFO-FLOW: run_clang exec: /data/2025.1/Vitis/lnx64/tools/vcxx/libexec/clang -fno-builtin-isinf -fno-builtin-isnan -E -Wno-unknown-pragmas -Wno-unknown-pragmas -DGCC_COMPATIBLE_APINT -DAESL_TB -D__HLS_COSIM__ -D__VITIS_HLS__ -I /usr/include/x86_64-linux-gnu -I /data/2025.1/Vitis/include -I include /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/matmul_full_contiguous_test.cpp -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/./sim/autowrap/testbench/matmul_full_contiguous_test.cpp_pre.cpp -std=gnu++14 -D__DSP48E2__ --gcc-toolchain=/data/2025.1/Vitis/tps/lnx64/gcc-8.3.0 > /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous_test.cpp.clang.autosim-tb.out.log 2> /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous_test.cpp.clang.autosim-tb.err.log
+INFO-FLOW: TB processing: /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/matmul_full_contiguous_test.cpp /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/./sim/autowrap/testbench/matmul_full_contiguous_test.cpp_pre.cpp
+Execute       clang_tidy xilinx-tb-process -desc tb-process /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/./sim/autowrap/testbench/matmul_full_contiguous_test.cpp_pre.cpp.tb.cpp std=gnu++14 
+INFO-FLOW: exec /data/2025.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-tb-process -fix-errors /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/./sim/autowrap/testbench/matmul_full_contiguous_test.cpp_pre.cpp.tb.cpp -- -std=gnu++14 -fhls -ferror-limit=0
+Execute       ap_part_info -name xcvu9p-flga2104-2-i -data info 
+INFO-FLOW: run_clang exec: /data/2025.1/Vitis/lnx64/tools/vcxx/libexec/clang -fno-builtin-isinf -fno-builtin-isnan -E -DGCC_COMPATIBLE_APINT -DAESL_TB -D__HLS_COSIM__ -D__VITIS_HLS__ -I /usr/include/x86_64-linux-gnu -I /data/2025.1/Vitis/include -I include /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/matmul_full_contiguous.cpp -o /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/./sim/autowrap/testbench/matmul_full_contiguous.cpp_pre.cpp -std=gnu++14 -D__DSP48E2__ --gcc-toolchain=/data/2025.1/Vitis/tps/lnx64/gcc-8.3.0 > /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.cpp.clang.autosim-tb.out.log 2> /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.cpp.clang.autosim-tb.err.log
+INFO-FLOW: TB processing: /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/matmul_full_contiguous.cpp /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/./sim/autowrap/testbench/matmul_full_contiguous.cpp_pre.cpp
+Execute       clang_tidy xilinx-tb-process -desc tb-process /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/./sim/autowrap/testbench/matmul_full_contiguous.cpp_pre.cpp.tb.cpp std=gnu++14 
+INFO-FLOW: exec /data/2025.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-tb-process -fix-errors /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/./sim/autowrap/testbench/matmul_full_contiguous.cpp_pre.cpp.tb.cpp -- -std=gnu++14 -fhls -ferror-limit=0
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/./sim/autowrap/testbench/tb.status.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/global.setting.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.rtl_wrap.cfg.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.rtl_wrap.cfg.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.rtl_wrap.cfg.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       ap_part_info -name xcvu9p-flga2104-2-i -data info 
+Execute       source .run_sim.tcl 
+INFO: [COSIM 212-302] Starting C TB testing ... 
+INFO: [COSIM 212-333] Generating C post check test bench ...
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+INFO: [COSIM 212-12] Generating RTL test bench ...
+Execute       source ../tv/cdatafile/ref.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source ../tv/cdatafile/ref.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.DependenceCheck.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/matmul_full_contiguous.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/.autopilot/db/cosimDB.tcl 
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+Execute       source .run_sim.tcl 
+Execute         source check_sim.tcl 
+Execute         source dataflow_monitor_API.tcl 
+Execute         source .sim.status.tcl 
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+Command       ap_source done; error code: 1; 33.1 sec.
+ERROR: [COSIM 212-4] *** C/RTL co-simulation finished: FAIL ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+INFO-FLOW: Caught error in cosim_design: 
+    while executing
+"ap_internal_cosim_design "
+Command     cosim_design done; error code: 2; 39.7 sec.
+INFO: [HLS 200-2161] Finished Command cosim_design Elapsed time: 00:00:39; Allocated memory: 9.996 MB.
+Command   ap_source done; error code: 1; 40.83 sec.
+Execute   cleanup_all 

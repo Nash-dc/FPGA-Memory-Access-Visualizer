@@ -1,0 +1,4 @@
+site_id	function	basic_block	event	argument	argument_index	bytes	pointer	instruction
+0	_Z10matrix_mulPKiS0_Pi	for.body18	arg_read	a	0	4	  %arrayidx21 = getelementptr inbounds i32, i32* %9, i64 %idxprom20	  %16 = load i32, i32* %arrayidx21, align 4
+1	_Z10matrix_mulPKiS0_Pi	for.body39	arg_read	b	1	4	  %arrayidx44 = getelementptr inbounds i32, i32* %23, i64 %idxprom43	  %30 = load i32, i32* %arrayidx44, align 4
+2	_Z10matrix_mulPKiS0_Pi	for.body99	arg_write	c	2	4	  %arrayidx105 = getelementptr inbounds i32, i32* %59, i64 %idxprom104	  store i32 %58, i32* %arrayidx105, align 4

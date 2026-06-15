@@ -1,0 +1,6 @@
+   Build using "/data/2025.1/Vitis/lnx64/tools/vcxx/libexec//clang++"
+   Compiling apatb_matmul_full_contiguous.cpp
+   Compiling matmul_full_contiguous.cpp_pre.cpp.tb.cpp
+   Compiling matmul_full_contiguous_test.cpp_pre.cpp.tb.cpp
+   Compiling apatb_matmul_full_contiguous_ir.ll
+   Generating cosim.tv.exe

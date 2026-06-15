@@ -1,0 +1,14 @@
+{
+  "0": {
+    "basicblocks": 3,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "vector_mul.cpp",
+    "fileloc": 3,
+    "instructions": 29,
+    "memory_accesses": 3,
+    "name": "vector_mul",
+    "total_instructions": 29
+  }
+}

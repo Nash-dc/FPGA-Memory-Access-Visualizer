@@ -1,0 +1,1 @@
+set ::AESL_AUTOSIM::gTopFileName /data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/./sim/autowrap/testbench/matmul_full_contiguous.cpp_pre.cpp.tb.cpp

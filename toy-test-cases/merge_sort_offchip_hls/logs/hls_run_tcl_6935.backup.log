@@ -1,0 +1,236 @@
+  **** HLS Build v2025.1 6135595
+Sourcing Tcl script '/data/hls-dev/toy-test-cases/merge_sort_offchip_hls/run_hls.tcl'
+INFO: [HLS 200-1510] Running: open_project -reset component_merge_sort_offchip 
+WARNING: [HLS 200-2182] The 'component_merge_sort_offchip' project will not automatically appear within Vitis IDE workspaces and is meant only for TCL batch use.  Please use open_component instead of open_project/open_solution to generate Vitis IDE compatible component files and directory structure.
+Resolution: For help on HLS 200-2182 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-2182.html
+INFO: [HLS 200-10] Creating and opening solution '/data/hls-dev/toy-test-cases/merge_sort_offchip_hls/component_merge_sort_offchip'.
+INFO: [HLS 200-1510] Running: set_top merge_sort_offchip_hls 
+INFO: [HLS 200-1510] Running: add_files merge_sort_offchip.cpp 
+INFO: [HLS 200-10] Adding design file 'merge_sort_offchip.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb merge_sort_offchip_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'merge_sort_offchip_test.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution -reset hls -flow_target vivado 
+INFO: [HLS 200-10] Creating and opening solution '/data/hls-dev/toy-test-cases/merge_sort_offchip_hls/component_merge_sort_offchip/hls'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xcvu9p-flga2104-2-i 
+INFO: [HLS 200-1611] Setting target device to 'xcvu9p-flga2104-2-i'
+INFO: [HLS 200-1510] Running: create_clock -period 5 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-1510] Running: config_interface -m_axi_alignment_byte_size 64 -m_axi_max_widen_bitwidth 512 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.08 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.12 seconds; current allocated memory: 445.746 MB.
+INFO: [HLS 200-10] Analyzing design file 'merge_sort_offchip.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.18 seconds. CPU system time: 0.36 seconds. Elapsed time: 0.53 seconds; current allocated memory: 447.602 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 177 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/merge_sort_offchip_hls/component_merge_sort_offchip/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 167 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/merge_sort_offchip_hls/component_merge_sort_offchip/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 127 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/merge_sort_offchip_hls/component_merge_sort_offchip/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 118 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/merge_sort_offchip_hls/component_merge_sort_offchip/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 117 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/merge_sort_offchip_hls/component_merge_sort_offchip/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 120 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/merge_sort_offchip_hls/component_merge_sort_offchip/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 120 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/merge_sort_offchip_hls/component_merge_sort_offchip/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 120 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/merge_sort_offchip_hls/component_merge_sort_offchip/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 120 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/merge_sort_offchip_hls/component_merge_sort_offchip/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 159 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/merge_sort_offchip_hls/component_merge_sort_offchip/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 164 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/merge_sort_offchip_hls/component_merge_sort_offchip/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 164 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/merge_sort_offchip_hls/component_merge_sort_offchip/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 163 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/merge_sort_offchip_hls/component_merge_sort_offchip/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 163 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/merge_sort_offchip_hls/component_merge_sort_offchip/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 218 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/merge_sort_offchip_hls/component_merge_sort_offchip/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 231 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/merge_sort_offchip_hls/component_merge_sort_offchip/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-131] Inlining function 'min_int(int, int)' into 'merge_sort_offchip_hls(int const*, int*, int*, int*)' (merge_sort_offchip.cpp:32:23)
+INFO: [HLS 214-115] Multiple burst reads of length 4 and bit width 512 has been inferred on bundle 'gmem_in'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (merge_sort_offchip.cpp:21:3)
+INFO: [HLS 214-115] Multiple burst writes of length 4 and bit width 512 has been inferred on bundle 'gmem_scratch_a'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (merge_sort_offchip.cpp:21:3)
+INFO: [HLS 214-115] Multiple burst reads of length 4 and bit width 512 has been inferred on bundle 'gmem_scratch_a'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (merge_sort_offchip.cpp:72:3)
+INFO: [HLS 214-115] Multiple burst writes of length 4 and bit width 512 has been inferred on bundle 'gmem_out'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (merge_sort_offchip.cpp:72:3)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 2.07 seconds. CPU system time: 0.51 seconds. Elapsed time: 7.19 seconds; current allocated memory: 458.352 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 458.352 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 458.574 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 458.613 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.07 seconds; current allocated memory: 480.828 MB.
+WARNING: [HLS 200-960] Cannot flatten loop 'merge_block_loop' (merge_sort_offchip.cpp:31:5) in function 'merge_sort_offchip_hls' the outer loop is not a perfect loop.
+Resolution: For help on HLS 200-960 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-960.html
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.08 seconds; current allocated memory: 500.234 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'merge_sort_offchip_hls' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'merge_sort_offchip_hls_Pipeline_copy_input_to_scratch_a' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'copy_input_to_scratch_a'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'copy_input_to_scratch_a'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.05 seconds; current allocated memory: 501.305 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 501.305 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'merge_sort_offchip_hls_Pipeline_merge_element_loop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'merge_element_loop'.
+WARNING: [HLS 200-880] The II Violation in module 'merge_sort_offchip_hls_Pipeline_merge_element_loop' (loop 'merge_element_loop'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation 0 bit ('i_write_ln35', merge_sort_offchip.cpp:35) of variable 'i', merge_sort_offchip.cpp:60 on local variable 'i', merge_sort_offchip.cpp:35 and 'load' operation 32 bit ('i', merge_sort_offchip.cpp:48) on local variable 'i', merge_sort_offchip.cpp:35.
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'merge_sort_offchip_hls_Pipeline_merge_element_loop' (loop 'merge_element_loop'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 0) between 'store' operation 0 bit ('i_write_ln35', merge_sort_offchip.cpp:35) of variable 'i', merge_sort_offchip.cpp:60 on local variable 'i', merge_sort_offchip.cpp:35 and 'load' operation 32 bit ('i', merge_sort_offchip.cpp:48) on local variable 'i', merge_sort_offchip.cpp:35.
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'merge_sort_offchip_hls_Pipeline_merge_element_loop' (loop 'merge_element_loop'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 0) between 'store' operation 0 bit ('i_write_ln35', merge_sort_offchip.cpp:35) of variable 'i', merge_sort_offchip.cpp:60 on local variable 'i', merge_sort_offchip.cpp:35 and 'load' operation 32 bit ('i', merge_sort_offchip.cpp:48) on local variable 'i', merge_sort_offchip.cpp:35.
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'merge_sort_offchip_hls_Pipeline_merge_element_loop' (loop 'merge_element_loop'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 0) between 'store' operation 0 bit ('i_write_ln35', merge_sort_offchip.cpp:35) of variable 'i', merge_sort_offchip.cpp:60 on local variable 'i', merge_sort_offchip.cpp:35 and 'load' operation 32 bit ('i', merge_sort_offchip.cpp:48) on local variable 'i', merge_sort_offchip.cpp:35.
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'merge_sort_offchip_hls_Pipeline_merge_element_loop' (loop 'merge_element_loop'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus response operation ('gmem_scratch_b_addr_2_resp', merge_sort_offchip.cpp:50) on port 'gmem_scratch_b' (merge_sort_offchip.cpp:50) and bus request operation ('gmem_scratch_b_load_req', merge_sort_offchip.cpp:54) on port 'gmem_scratch_b' (merge_sort_offchip.cpp:54).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-887] Cannot meet target clock period from 'lshr' operation 512 bit ('lshr_ln43', merge_sort_offchip.cpp:43) to bus request operation ('gmem_scratch_b_addr_3_req', merge_sort_offchip.cpp:47) on port 'gmem_scratch_b' (merge_sort_offchip.cpp:47) (combination delay: 6.482 ns) to honor II or Latency constraint in region 'merge_element_loop'.
+Resolution: For help on HLS 200-887 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-887.html
+WARNING: [HLS 200-887] Cannot meet target clock period from bus read operation ('gmem_scratch_a_addr_1_read', merge_sort_offchip.cpp:43) on port 'gmem_scratch_a' (merge_sort_offchip.cpp:43) to bus request operation ('gmem_scratch_b_addr_2_req', merge_sort_offchip.cpp:50) on port 'gmem_scratch_b' (merge_sort_offchip.cpp:50) (combination delay: 10.132 ns) to honor II or Latency constraint in region 'merge_element_loop'.
+Resolution: For help on HLS 200-887 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-887.html
+WARNING: [HLS 200-880] The II Violation in module 'merge_sort_offchip_hls_Pipeline_merge_element_loop' (loop 'merge_element_loop'): Unable to enforce a carried dependence constraint (II = 12, distance = 1, offset = 1) between bus response operation ('gmem_scratch_b_addr_2_resp', merge_sort_offchip.cpp:50) on port 'gmem_scratch_b' (merge_sort_offchip.cpp:50) and bus request operation ('gmem_scratch_b_load_req', merge_sort_offchip.cpp:54) on port 'gmem_scratch_b' (merge_sort_offchip.cpp:54).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 13, Depth = 22, loop 'merge_element_loop'
+WARNING: [HLS 200-871] Estimated clock period (9.745 ns) exceeds the target (target clock period: 5.000 ns, clock uncertainty: 1.350 ns, effective delay budget: 3.650 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'merge_sort_offchip_hls_Pipeline_merge_element_loop' consists of the following:
+	bus read operation ('gmem_scratch_a_addr_1_read', merge_sort_offchip.cpp:43) on port 'gmem_scratch_a' (merge_sort_offchip.cpp:43) [143]  (3.650 ns)
+	'lshr' operation 512 bit ('lshr_ln43', merge_sort_offchip.cpp:43) [147]  (1.443 ns)
+	'phi' operation 32 bit ('right_value', merge_sort_offchip.cpp:43) with incoming values : ('trunc_ln43_1', merge_sort_offchip.cpp:43) [151]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln45_1', merge_sort_offchip.cpp:45) [156]  (0.880 ns)
+	'xor' operation 1 bit ('xor_ln45_1', merge_sort_offchip.cpp:45) [157]  (0.000 ns)
+	'or' operation 1 bit ('take_left', merge_sort_offchip.cpp:45) [158]  (0.122 ns)
+	bus request operation ('gmem_scratch_b_addr_3_req', merge_sort_offchip.cpp:47) on port 'gmem_scratch_b' (merge_sort_offchip.cpp:47) [178]  (3.650 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.15 seconds. CPU system time: 0 seconds. Elapsed time: 0.15 seconds; current allocated memory: 501.918 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 501.918 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'merge_sort_offchip_hls_Pipeline_copy_result_to_out' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'copy_result_to_out'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'copy_result_to_out'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 501.918 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 501.918 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'merge_sort_offchip_hls' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 501.953 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 501.953 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'merge_sort_offchip_hls_Pipeline_copy_input_to_scratch_a' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'merge_sort_offchip_hls_Pipeline_copy_input_to_scratch_a' pipeline 'copy_input_to_scratch_a' pipeline type 'loop pipeline'
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_input_to_scratch_a/m_axi_gmem_in_0_ARVALID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_input_to_scratch_a/m_axi_gmem_in_0_ARADDR' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_input_to_scratch_a/m_axi_gmem_in_0_ARID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_input_to_scratch_a/m_axi_gmem_in_0_ARLEN' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_input_to_scratch_a/m_axi_gmem_in_0_ARSIZE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_input_to_scratch_a/m_axi_gmem_in_0_ARBURST' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_input_to_scratch_a/m_axi_gmem_in_0_ARLOCK' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_input_to_scratch_a/m_axi_gmem_in_0_ARCACHE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_input_to_scratch_a/m_axi_gmem_in_0_ARPROT' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_input_to_scratch_a/m_axi_gmem_in_0_ARQOS' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_input_to_scratch_a/m_axi_gmem_in_0_ARREGION' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_input_to_scratch_a/m_axi_gmem_in_0_ARUSER' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_input_to_scratch_a/m_axi_gmem_scratch_a_0_AWVALID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_input_to_scratch_a/m_axi_gmem_scratch_a_0_AWADDR' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_input_to_scratch_a/m_axi_gmem_scratch_a_0_AWID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_input_to_scratch_a/m_axi_gmem_scratch_a_0_AWLEN' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_input_to_scratch_a/m_axi_gmem_scratch_a_0_AWSIZE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_input_to_scratch_a/m_axi_gmem_scratch_a_0_AWBURST' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_input_to_scratch_a/m_axi_gmem_scratch_a_0_AWLOCK' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_input_to_scratch_a/m_axi_gmem_scratch_a_0_AWCACHE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_input_to_scratch_a/m_axi_gmem_scratch_a_0_AWPROT' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_input_to_scratch_a/m_axi_gmem_scratch_a_0_AWQOS' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_input_to_scratch_a/m_axi_gmem_scratch_a_0_AWREGION' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_input_to_scratch_a/m_axi_gmem_scratch_a_0_AWUSER' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_input_to_scratch_a/m_axi_gmem_scratch_a_0_BREADY' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'merge_sort_offchip_hls_Pipeline_copy_input_to_scratch_a'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 501.953 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'merge_sort_offchip_hls_Pipeline_merge_element_loop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'merge_sort_offchip_hls_Pipeline_merge_element_loop' pipeline 'merge_element_loop' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'merge_sort_offchip_hls_Pipeline_merge_element_loop'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.08 seconds; current allocated memory: 504.668 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'merge_sort_offchip_hls_Pipeline_copy_result_to_out' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'merge_sort_offchip_hls_Pipeline_copy_result_to_out' pipeline 'copy_result_to_out' pipeline type 'loop pipeline'
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_result_to_out/m_axi_gmem_scratch_a_0_ARVALID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_result_to_out/m_axi_gmem_scratch_a_0_ARADDR' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_result_to_out/m_axi_gmem_scratch_a_0_ARID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_result_to_out/m_axi_gmem_scratch_a_0_ARLEN' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_result_to_out/m_axi_gmem_scratch_a_0_ARSIZE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_result_to_out/m_axi_gmem_scratch_a_0_ARBURST' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_result_to_out/m_axi_gmem_scratch_a_0_ARLOCK' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_result_to_out/m_axi_gmem_scratch_a_0_ARCACHE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_result_to_out/m_axi_gmem_scratch_a_0_ARPROT' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_result_to_out/m_axi_gmem_scratch_a_0_ARQOS' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_result_to_out/m_axi_gmem_scratch_a_0_ARREGION' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_result_to_out/m_axi_gmem_scratch_a_0_ARUSER' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_result_to_out/m_axi_gmem_out_0_AWVALID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_result_to_out/m_axi_gmem_out_0_AWADDR' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_result_to_out/m_axi_gmem_out_0_AWID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_result_to_out/m_axi_gmem_out_0_AWLEN' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_result_to_out/m_axi_gmem_out_0_AWSIZE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_result_to_out/m_axi_gmem_out_0_AWBURST' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_result_to_out/m_axi_gmem_out_0_AWLOCK' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_result_to_out/m_axi_gmem_out_0_AWCACHE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_result_to_out/m_axi_gmem_out_0_AWPROT' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_result_to_out/m_axi_gmem_out_0_AWQOS' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_result_to_out/m_axi_gmem_out_0_AWREGION' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_result_to_out/m_axi_gmem_out_0_AWUSER' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'merge_sort_offchip_hls_Pipeline_copy_result_to_out/m_axi_gmem_out_0_BREADY' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'merge_sort_offchip_hls_Pipeline_copy_result_to_out'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.09 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.09 seconds; current allocated memory: 509.180 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'merge_sort_offchip_hls' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'merge_sort_offchip_hls/gmem_in' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'merge_sort_offchip_hls/gmem_scratch_a' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'merge_sort_offchip_hls/gmem_scratch_b' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'merge_sort_offchip_hls/gmem_out' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'merge_sort_offchip_hls/in_r' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'merge_sort_offchip_hls/scratch_a' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'merge_sort_offchip_hls/scratch_b' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'merge_sort_offchip_hls/out_r' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'merge_sort_offchip_hls' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'in_r', 'scratch_a', 'scratch_b', 'out_r' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'merge_sort_offchip_hls'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.08 seconds; current allocated memory: 512.859 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.41 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.46 seconds; current allocated memory: 516.113 MB.
+INFO: [HLS 200-1603] Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.49 seconds. CPU system time: 0.06 seconds. Elapsed time: 0.54 seconds; current allocated memory: 524.234 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for merge_sort_offchip_hls.
+INFO: [VLOG 209-307] Generating Verilog RTL for merge_sort_offchip_hls.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 102.62 MHz
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:09; Allocated memory: 78.488 MB.
+INFO: [HLS 200-112] Total CPU user time: 5.43 seconds. Total CPU system time: 1.61 seconds. Total elapsed time: 11.52 seconds; peak allocated memory: 524.234 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 12s
+INFO: [vitis-run 60-1662] Stopping dispatch session having empty uuid.

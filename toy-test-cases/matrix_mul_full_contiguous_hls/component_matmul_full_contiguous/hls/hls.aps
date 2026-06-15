@@ -1,0 +1,28 @@
+<AutoPilot:solution xmlns:AutoPilot="com.autoesl.autopilot.solution">
+    <clockList>
+        <clock name="default" period="5" default="false"/>
+    </clockList>
+    <config>
+        <config_interface m_axi_alignment_byte_size="64" m_axi_max_widen_bitwidth="512"/>
+    </config>
+    <name>
+        <value string="hls"/>
+    </name>
+    <project>
+        <value string="component_matmul_full_contiguous"/>
+    </project>
+    <targetInfo>
+        <TargetInfo value="xcvu9p:-flga2104:-2-i"/>
+    </targetInfo>
+    <libraryList>
+        <library value="xilinx/virtexuplus/virtexuplus" name="DefaultPlatform"/>
+    </libraryList>
+    <flowTarget value="vivado"/>
+    <Simulation argv="">
+        <SimFlow name="cosim" setup="false" dumpTrace="all" optimizeCompile="false" ldflags="" mflags="" compiledLibrary="" toolName="xsim">
+            <Rtl name="verilog" active="true"/>
+            <Rtl name="vhdl" active="false"/>
+        </SimFlow>
+    </Simulation>
+</AutoPilot:solution>
+

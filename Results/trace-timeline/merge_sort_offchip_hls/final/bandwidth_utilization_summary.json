@@ -1,0 +1,56 @@
+{
+  "schema": "hls.bandwidth_utilization_summary.v1",
+  "source": "inferred_physical_axi_transactions",
+  "total": {
+    "transaction_count": 648,
+    "logical_element_count": 1331,
+    "useful_bytes": 5324,
+    "transferred_bytes": 5324,
+    "unused_bytes": 0,
+    "read_transactions": 619,
+    "write_transactions": 29,
+    "bandwidth_utilization": 1.0
+  },
+  "ports": {
+    "in": {
+      "transaction_count": 2,
+      "logical_element_count": 64,
+      "useful_bytes": 256,
+      "transferred_bytes": 256,
+      "unused_bytes": 0,
+      "read_transactions": 2,
+      "write_transactions": 0,
+      "bandwidth_utilization": 1.0
+    },
+    "out": {
+      "transaction_count": 1,
+      "logical_element_count": 64,
+      "useful_bytes": 256,
+      "transferred_bytes": 256,
+      "unused_bytes": 0,
+      "read_transactions": 0,
+      "write_transactions": 1,
+      "bandwidth_utilization": 1.0
+    },
+    "scratch_a": {
+      "transaction_count": 301,
+      "logical_element_count": 657,
+      "useful_bytes": 2628,
+      "transferred_bytes": 2628,
+      "unused_bytes": 0,
+      "read_transactions": 285,
+      "write_transactions": 16,
+      "bandwidth_utilization": 1.0
+    },
+    "scratch_b": {
+      "transaction_count": 344,
+      "logical_element_count": 546,
+      "useful_bytes": 2184,
+      "transferred_bytes": 2184,
+      "unused_bytes": 0,
+      "read_transactions": 332,
+      "write_transactions": 12,
+      "bandwidth_utilization": 1.0
+    }
+  }
+}

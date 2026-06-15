@@ -1,0 +1,585 @@
+{
+  "schema": "hls.transaction_dependency_graph.v8",
+  "dependency_source": "Physical transaction dependencies aggregated from the dynamic logical access graph. Logical graph edges combine LLVM static value/control metadata with actual IR trace execution and dynamic same port[element] RAW tracking.",
+  "detail_files": {
+    "physical_transactions": "inferred_physical_axi_transactions.json",
+    "logical_access_graph": "logical_access_graph.json"
+  },
+  "counts": {
+    "blocks": 2,
+    "static_dependency_edges": 32,
+    "logical_dependency_edges": 128,
+    "dynamic_memory_raw_edges": 0,
+    "value_flow_edges": 128,
+    "control_dependency_edges": 0
+  },
+  "blocks": [
+    {
+      "transaction_id": "txn_in_0",
+      "dependencies": []
+    },
+    {
+      "transaction_id": "txn_out_0",
+      "dependencies": [
+        {
+          "source_transaction_id": "txn_in_0",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:1",
+          "source_element_ranges": [
+            "in[63]"
+          ],
+          "target_element_ranges": [
+            "out[0..63]"
+          ],
+          "logical_edge_count": 64,
+          "logical_source_count": 1,
+          "logical_target_count": 64,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
+      ]
+    }
+  ],
+  "static_nodes": {
+    "access:0": {
+      "id": "access:0",
+      "kind": "transaction",
+      "direction": "read",
+      "port": "in",
+      "bundle": "gmem_in",
+      "index": "i",
+      "loop": "load_input_loop"
+    },
+    "access:1": {
+      "id": "access:1",
+      "kind": "transaction",
+      "direction": "write",
+      "port": "out",
+      "bundle": "gmem_out",
+      "index": "i83",
+      "loop": "store_output_loop"
+    },
+    "local_access:0": {
+      "id": "local_access:0",
+      "kind": "local_buffer_access",
+      "direction": "write",
+      "buffer": "buffer_a",
+      "index": "i",
+      "operation": "store",
+      "loop": "load_input_loop"
+    },
+    "local_access:1": {
+      "id": "local_access:1",
+      "kind": "local_buffer_access",
+      "direction": "read",
+      "buffer": "buffer_a",
+      "index": "i13",
+      "operation": "load",
+      "loop": "merge_a_to_b_loop"
+    },
+    "local_access:2": {
+      "id": "local_access:2",
+      "kind": "local_buffer_access",
+      "direction": "read",
+      "buffer": "buffer_a",
+      "index": "j",
+      "operation": "load",
+      "loop": "merge_a_to_b_loop"
+    },
+    "local_access:3": {
+      "id": "local_access:3",
+      "kind": "local_buffer_access",
+      "direction": "read",
+      "buffer": "buffer_a",
+      "index": "i13",
+      "operation": "load",
+      "loop": "merge_a_to_b_loop"
+    },
+    "local_access:4": {
+      "id": "local_access:4",
+      "kind": "local_buffer_access",
+      "direction": "write",
+      "buffer": "buffer_b",
+      "index": "k",
+      "operation": "store",
+      "loop": "merge_a_to_b_loop"
+    },
+    "local_access:5": {
+      "id": "local_access:5",
+      "kind": "local_buffer_access",
+      "direction": "read",
+      "buffer": "buffer_a",
+      "index": "j",
+      "operation": "load",
+      "loop": "merge_a_to_b_loop"
+    },
+    "local_access:6": {
+      "id": "local_access:6",
+      "kind": "local_buffer_access",
+      "direction": "write",
+      "buffer": "buffer_b",
+      "index": "k",
+      "operation": "store",
+      "loop": "merge_a_to_b_loop"
+    },
+    "local_access:7": {
+      "id": "local_access:7",
+      "kind": "local_buffer_access",
+      "direction": "read",
+      "buffer": "buffer_b",
+      "index": "i40",
+      "operation": "load",
+      "loop": "merge_b_to_a_loop"
+    },
+    "local_access:8": {
+      "id": "local_access:8",
+      "kind": "local_buffer_access",
+      "direction": "read",
+      "buffer": "buffer_b",
+      "index": "j41",
+      "operation": "load",
+      "loop": "merge_b_to_a_loop"
+    },
+    "local_access:9": {
+      "id": "local_access:9",
+      "kind": "local_buffer_access",
+      "direction": "read",
+      "buffer": "buffer_b",
+      "index": "i40",
+      "operation": "load",
+      "loop": "merge_b_to_a_loop"
+    },
+    "local_access:10": {
+      "id": "local_access:10",
+      "kind": "local_buffer_access",
+      "direction": "write",
+      "buffer": "buffer_a",
+      "index": "k42",
+      "operation": "store",
+      "loop": "merge_b_to_a_loop"
+    },
+    "local_access:11": {
+      "id": "local_access:11",
+      "kind": "local_buffer_access",
+      "direction": "read",
+      "buffer": "buffer_b",
+      "index": "j41",
+      "operation": "load",
+      "loop": "merge_b_to_a_loop"
+    },
+    "local_access:12": {
+      "id": "local_access:12",
+      "kind": "local_buffer_access",
+      "direction": "write",
+      "buffer": "buffer_a",
+      "index": "k42",
+      "operation": "store",
+      "loop": "merge_b_to_a_loop"
+    },
+    "local_access:13": {
+      "id": "local_access:13",
+      "kind": "local_buffer_access",
+      "direction": "read",
+      "buffer": "buffer_a",
+      "index": "i83",
+      "operation": "load",
+      "loop": "store_output_loop"
+    },
+    "local_access:14": {
+      "id": "local_access:14",
+      "kind": "local_buffer_access",
+      "direction": "read",
+      "buffer": "buffer_b",
+      "index": "i83",
+      "operation": "load",
+      "loop": "store_output_loop"
+    }
+  },
+  "static_dependency_edges": [
+    {
+      "id": "dep:0",
+      "source_id": "access:0",
+      "target_id": "local_access:0",
+      "kind": "llvm_def_use",
+      "via": "ssa_value",
+      "source_role": "transaction",
+      "target_role": "local_buffer_access",
+      "source_index": "",
+      "target_index": "",
+      "reason": "stored value operand is defined by, or computed from, the source access"
+    },
+    {
+      "id": "dep:1",
+      "source_id": "local_access:3",
+      "target_id": "local_access:4",
+      "kind": "llvm_def_use",
+      "via": "ssa_value",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "",
+      "target_index": "",
+      "reason": "stored value operand is defined by, or computed from, the source access"
+    },
+    {
+      "id": "dep:2",
+      "source_id": "local_access:5",
+      "target_id": "local_access:6",
+      "kind": "llvm_def_use",
+      "via": "ssa_value",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "",
+      "target_index": "",
+      "reason": "stored value operand is defined by, or computed from, the source access"
+    },
+    {
+      "id": "dep:3",
+      "source_id": "local_access:9",
+      "target_id": "local_access:10",
+      "kind": "llvm_def_use",
+      "via": "ssa_value",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "",
+      "target_index": "",
+      "reason": "stored value operand is defined by, or computed from, the source access"
+    },
+    {
+      "id": "dep:4",
+      "source_id": "local_access:11",
+      "target_id": "local_access:12",
+      "kind": "llvm_def_use",
+      "via": "ssa_value",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "",
+      "target_index": "",
+      "reason": "stored value operand is defined by, or computed from, the source access"
+    },
+    {
+      "id": "dep:5",
+      "source_id": "local_access:13",
+      "target_id": "access:1",
+      "kind": "llvm_def_use",
+      "via": "ssa_value",
+      "source_role": "local_buffer_access",
+      "target_role": "transaction",
+      "source_index": "",
+      "target_index": "",
+      "reason": "stored value operand is defined by, or computed from, the source access"
+    },
+    {
+      "id": "dep:6",
+      "source_id": "local_access:14",
+      "target_id": "access:1",
+      "kind": "llvm_def_use",
+      "via": "ssa_value",
+      "source_role": "local_buffer_access",
+      "target_role": "transaction",
+      "source_index": "",
+      "target_index": "",
+      "reason": "stored value operand is defined by, or computed from, the source access"
+    },
+    {
+      "id": "dep:7",
+      "source_id": "local_access:1",
+      "target_id": "local_access:4",
+      "kind": "control_dependency",
+      "via": "branch_condition",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "",
+      "target_index": "",
+      "reason": "memory write is control-dependent on a branch condition computed from the source access"
+    },
+    {
+      "id": "dep:8",
+      "source_id": "local_access:2",
+      "target_id": "local_access:4",
+      "kind": "control_dependency",
+      "via": "branch_condition",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "",
+      "target_index": "",
+      "reason": "memory write is control-dependent on a branch condition computed from the source access"
+    },
+    {
+      "id": "dep:9",
+      "source_id": "local_access:1",
+      "target_id": "local_access:6",
+      "kind": "control_dependency",
+      "via": "branch_condition",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "",
+      "target_index": "",
+      "reason": "memory write is control-dependent on a branch condition computed from the source access"
+    },
+    {
+      "id": "dep:10",
+      "source_id": "local_access:2",
+      "target_id": "local_access:6",
+      "kind": "control_dependency",
+      "via": "branch_condition",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "",
+      "target_index": "",
+      "reason": "memory write is control-dependent on a branch condition computed from the source access"
+    },
+    {
+      "id": "dep:11",
+      "source_id": "local_access:7",
+      "target_id": "local_access:10",
+      "kind": "control_dependency",
+      "via": "branch_condition",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "",
+      "target_index": "",
+      "reason": "memory write is control-dependent on a branch condition computed from the source access"
+    },
+    {
+      "id": "dep:12",
+      "source_id": "local_access:8",
+      "target_id": "local_access:10",
+      "kind": "control_dependency",
+      "via": "branch_condition",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "",
+      "target_index": "",
+      "reason": "memory write is control-dependent on a branch condition computed from the source access"
+    },
+    {
+      "id": "dep:13",
+      "source_id": "local_access:7",
+      "target_id": "local_access:12",
+      "kind": "control_dependency",
+      "via": "branch_condition",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "",
+      "target_index": "",
+      "reason": "memory write is control-dependent on a branch condition computed from the source access"
+    },
+    {
+      "id": "dep:14",
+      "source_id": "local_access:8",
+      "target_id": "local_access:12",
+      "kind": "control_dependency",
+      "via": "branch_condition",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "",
+      "target_index": "",
+      "reason": "memory write is control-dependent on a branch condition computed from the source access"
+    },
+    {
+      "id": "dep:15",
+      "source_id": "local_access:0",
+      "target_id": "local_access:1",
+      "kind": "local_buffer_raw",
+      "via": "buffer_a",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "i",
+      "target_index": "i13",
+      "reason": "local buffer read may consume the earlier write to the same buffer"
+    },
+    {
+      "id": "dep:16",
+      "source_id": "local_access:0",
+      "target_id": "local_access:2",
+      "kind": "local_buffer_raw",
+      "via": "buffer_a",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "i",
+      "target_index": "j",
+      "reason": "local buffer read may consume the earlier write to the same buffer"
+    },
+    {
+      "id": "dep:17",
+      "source_id": "local_access:0",
+      "target_id": "local_access:3",
+      "kind": "local_buffer_raw",
+      "via": "buffer_a",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "i",
+      "target_index": "i13",
+      "reason": "local buffer read may consume the earlier write to the same buffer"
+    },
+    {
+      "id": "dep:18",
+      "source_id": "local_access:0",
+      "target_id": "local_access:5",
+      "kind": "local_buffer_raw",
+      "via": "buffer_a",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "i",
+      "target_index": "j",
+      "reason": "local buffer read may consume the earlier write to the same buffer"
+    },
+    {
+      "id": "dep:19",
+      "source_id": "local_access:4",
+      "target_id": "local_access:7",
+      "kind": "local_buffer_raw",
+      "via": "buffer_b",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "k",
+      "target_index": "i40",
+      "reason": "local buffer read may consume the earlier write to the same buffer"
+    },
+    {
+      "id": "dep:20",
+      "source_id": "local_access:6",
+      "target_id": "local_access:7",
+      "kind": "local_buffer_raw",
+      "via": "buffer_b",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "k",
+      "target_index": "i40",
+      "reason": "local buffer read may consume the earlier write to the same buffer"
+    },
+    {
+      "id": "dep:21",
+      "source_id": "local_access:4",
+      "target_id": "local_access:8",
+      "kind": "local_buffer_raw",
+      "via": "buffer_b",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "k",
+      "target_index": "j41",
+      "reason": "local buffer read may consume the earlier write to the same buffer"
+    },
+    {
+      "id": "dep:22",
+      "source_id": "local_access:6",
+      "target_id": "local_access:8",
+      "kind": "local_buffer_raw",
+      "via": "buffer_b",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "k",
+      "target_index": "j41",
+      "reason": "local buffer read may consume the earlier write to the same buffer"
+    },
+    {
+      "id": "dep:23",
+      "source_id": "local_access:4",
+      "target_id": "local_access:9",
+      "kind": "local_buffer_raw",
+      "via": "buffer_b",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "k",
+      "target_index": "i40",
+      "reason": "local buffer read may consume the earlier write to the same buffer"
+    },
+    {
+      "id": "dep:24",
+      "source_id": "local_access:6",
+      "target_id": "local_access:9",
+      "kind": "local_buffer_raw",
+      "via": "buffer_b",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "k",
+      "target_index": "i40",
+      "reason": "local buffer read may consume the earlier write to the same buffer"
+    },
+    {
+      "id": "dep:25",
+      "source_id": "local_access:4",
+      "target_id": "local_access:11",
+      "kind": "local_buffer_raw",
+      "via": "buffer_b",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "k",
+      "target_index": "j41",
+      "reason": "local buffer read may consume the earlier write to the same buffer"
+    },
+    {
+      "id": "dep:26",
+      "source_id": "local_access:6",
+      "target_id": "local_access:11",
+      "kind": "local_buffer_raw",
+      "via": "buffer_b",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "k",
+      "target_index": "j41",
+      "reason": "local buffer read may consume the earlier write to the same buffer"
+    },
+    {
+      "id": "dep:27",
+      "source_id": "local_access:0",
+      "target_id": "local_access:13",
+      "kind": "local_buffer_raw",
+      "via": "buffer_a",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "i",
+      "target_index": "i83",
+      "reason": "local buffer read may consume the earlier write to the same buffer"
+    },
+    {
+      "id": "dep:28",
+      "source_id": "local_access:10",
+      "target_id": "local_access:13",
+      "kind": "local_buffer_raw",
+      "via": "buffer_a",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "k42",
+      "target_index": "i83",
+      "reason": "local buffer read may consume the earlier write to the same buffer"
+    },
+    {
+      "id": "dep:29",
+      "source_id": "local_access:12",
+      "target_id": "local_access:13",
+      "kind": "local_buffer_raw",
+      "via": "buffer_a",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "k42",
+      "target_index": "i83",
+      "reason": "local buffer read may consume the earlier write to the same buffer"
+    },
+    {
+      "id": "dep:30",
+      "source_id": "local_access:4",
+      "target_id": "local_access:14",
+      "kind": "local_buffer_raw",
+      "via": "buffer_b",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "k",
+      "target_index": "i83",
+      "reason": "local buffer read may consume the earlier write to the same buffer"
+    },
+    {
+      "id": "dep:31",
+      "source_id": "local_access:6",
+      "target_id": "local_access:14",
+      "kind": "local_buffer_raw",
+      "via": "buffer_b",
+      "source_role": "local_buffer_access",
+      "target_role": "local_buffer_access",
+      "source_index": "k",
+      "target_index": "i83",
+      "reason": "local buffer read may consume the earlier write to the same buffer"
+    }
+  ]
+}

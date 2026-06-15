@@ -1,0 +1,12 @@
+{
+  "projects": [
+    {
+      "name": "merge_sort_hls",
+      "source": "toy-test-cases/merge_sort_hls/merge_sort.cpp",
+      "testbench": "toy-test-cases/merge_sort_hls/merge_sort_test.cpp",
+      "report_bc": "toy-test-cases/merge_sort_hls/component_merge_sort/hls/.autopilot/db/merge_sort.bc",
+      "interface_xml": "toy-test-cases/merge_sort_hls/component_merge_sort/hls/.autopilot/db/top-io-fe.xml",
+      "include_dirs": ["toy-test-cases/merge_sort_hls"]
+    }
+  ]
+}

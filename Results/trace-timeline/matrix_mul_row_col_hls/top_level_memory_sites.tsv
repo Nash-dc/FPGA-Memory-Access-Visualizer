@@ -1,0 +1,4 @@
+site_id	function	basic_block	event	argument	argument_index	bytes	pointer	instruction
+0	_Z14matmul_row_colPKiS0_Pi	for.body6	arg_read	a	0	4	  %arrayidx = getelementptr inbounds i32, i32* %3, i64 %idxprom	  %9 = load i32, i32* %arrayidx, align 4
+1	_Z14matmul_row_colPKiS0_Pi	for.body6	arg_read	b	1	4	  %arrayidx12 = getelementptr inbounds i32, i32* %11, i64 %idxprom11	  %17 = load i32, i32* %arrayidx12, align 4
+2	_Z14matmul_row_colPKiS0_Pi	store_c_element	arg_write	c	2	4	  %arrayidx31 = getelementptr inbounds i32, i32* %28, i64 %idxprom30	  store i32 %27, i32* %arrayidx31, align 4

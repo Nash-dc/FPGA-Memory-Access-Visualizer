@@ -1,0 +1,49 @@
+txn_id	direction	argument	bundle	start_index	end_index	byte_addr	beats	axlen	elements_per_beat	issue_order	complete_order	depends_on	timeline_lane
+txn_a_0	read	a	gmem_a	0	15	0	1	0	16	0	1		a
+txn_b_0	read	b	gmem_b	0	15	0	1	0	16	0	1		b
+txn_a_1	read	a	gmem_a	16	31	64	1	0	16	1	2		a
+txn_b_1	read	b	gmem_b	16	31	64	1	0	16	1	2		b
+txn_a_2	read	a	gmem_a	32	47	128	1	0	16	2	3		a
+txn_b_2	read	b	gmem_b	32	47	128	1	0	16	2	3		b
+txn_a_3	read	a	gmem_a	48	63	192	1	0	16	3	4		a
+txn_b_3	read	b	gmem_b	48	63	192	1	0	16	3	4		b
+txn_a_4	read	a	gmem_a	64	79	256	1	0	16	4	5		a
+txn_b_4	read	b	gmem_b	64	79	256	1	0	16	4	5		b
+txn_a_5	read	a	gmem_a	80	95	320	1	0	16	5	6		a
+txn_b_5	read	b	gmem_b	80	95	320	1	0	16	5	6		b
+txn_a_6	read	a	gmem_a	96	111	384	1	0	16	6	7		a
+txn_b_6	read	b	gmem_b	96	111	384	1	0	16	6	7		b
+txn_a_7	read	a	gmem_a	112	127	448	1	0	16	7	8		a
+txn_b_7	read	b	gmem_b	112	127	448	1	0	16	7	8		b
+txn_a_8	read	a	gmem_a	128	143	512	1	0	16	8	9		a
+txn_b_8	read	b	gmem_b	128	143	512	1	0	16	8	9		b
+txn_a_9	read	a	gmem_a	144	159	576	1	0	16	9	10		a
+txn_b_9	read	b	gmem_b	144	159	576	1	0	16	9	10		b
+txn_a_10	read	a	gmem_a	160	175	640	1	0	16	10	11		a
+txn_b_10	read	b	gmem_b	160	175	640	1	0	16	10	11		b
+txn_a_11	read	a	gmem_a	176	191	704	1	0	16	11	12		a
+txn_b_11	read	b	gmem_b	176	191	704	1	0	16	11	12		b
+txn_a_12	read	a	gmem_a	192	207	768	1	0	16	12	13		a
+txn_b_12	read	b	gmem_b	192	207	768	1	0	16	12	13		b
+txn_a_13	read	a	gmem_a	208	223	832	1	0	16	13	14		a
+txn_b_13	read	b	gmem_b	208	223	832	1	0	16	13	14		b
+txn_a_14	read	a	gmem_a	224	239	896	1	0	16	14	15		a
+txn_b_14	read	b	gmem_b	224	239	896	1	0	16	14	15		b
+txn_a_15	read	a	gmem_a	240	255	960	1	0	16	15	16		a
+txn_b_15	read	b	gmem_b	240	255	960	1	0	16	15	16		b
+txn_c_0	write	c	gmem_c	0	15	0	1	0	16	35	36	txn_a_15,txn_b_15	c
+txn_c_1	write	c	gmem_c	16	31	64	1	0	16	51	52	txn_a_15,txn_b_15	c
+txn_c_2	write	c	gmem_c	32	47	128	1	0	16	67	68	txn_a_15,txn_b_15	c
+txn_c_3	write	c	gmem_c	48	63	192	1	0	16	83	84	txn_a_15,txn_b_15	c
+txn_c_4	write	c	gmem_c	64	79	256	1	0	16	99	100	txn_a_15,txn_b_15	c
+txn_c_5	write	c	gmem_c	80	95	320	1	0	16	115	116	txn_a_15,txn_b_15	c
+txn_c_6	write	c	gmem_c	96	111	384	1	0	16	131	132	txn_a_15,txn_b_15	c
+txn_c_7	write	c	gmem_c	112	127	448	1	0	16	147	148	txn_a_15,txn_b_15	c
+txn_c_8	write	c	gmem_c	128	143	512	1	0	16	163	164	txn_a_15,txn_b_15	c
+txn_c_9	write	c	gmem_c	144	159	576	1	0	16	179	180	txn_a_15,txn_b_15	c
+txn_c_10	write	c	gmem_c	160	175	640	1	0	16	195	196	txn_a_15,txn_b_15	c
+txn_c_11	write	c	gmem_c	176	191	704	1	0	16	211	212	txn_a_15,txn_b_15	c
+txn_c_12	write	c	gmem_c	192	207	768	1	0	16	227	228	txn_a_15,txn_b_15	c
+txn_c_13	write	c	gmem_c	208	223	832	1	0	16	243	244	txn_a_15,txn_b_15	c
+txn_c_14	write	c	gmem_c	224	239	896	1	0	16	259	260	txn_a_15,txn_b_15	c
+txn_c_15	write	c	gmem_c	240	255	960	1	0	16	275	276	txn_a_15,txn_b_15	c

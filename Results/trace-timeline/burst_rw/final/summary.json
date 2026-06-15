@@ -1,0 +1,82 @@
+{
+  "function_name": "vadd",
+  "loop_name": [
+    "VITIS_LOOP_52_1",
+    "calc_write"
+  ],
+  "loop_ii": {
+    "VITIS_LOOP_52_1": 1,
+    "calc_write": 1
+  },
+  "pipeline_analysis": {
+    "is_pipelined": true,
+    "has_ii_one_loop": true,
+    "continuous_read_issue_candidate": true,
+    "minimum_achieved_ii": 1,
+    "maximum_pipeline_depth": 3,
+    "basis": "csynth achieved PipelineII=1",
+    "loops": [
+      {
+        "name": "read_buf",
+        "pipeline_ii": null,
+        "pipeline_type": "no",
+        "pipeline_depth": null,
+        "trip_count": null
+      },
+      {
+        "name": "VITIS_LOOP_52_1",
+        "pipeline_ii": 1,
+        "pipeline_type": "yes",
+        "pipeline_depth": 3,
+        "trip_count": null
+      },
+      {
+        "name": "calc_write",
+        "pipeline_ii": 1,
+        "pipeline_type": "yes",
+        "pipeline_depth": 3,
+        "trip_count": null
+      }
+    ],
+    "interpretation": "II=1 permits consecutive read-request issue when addresses are sequential and the AXI master supports outstanding requests. It does not imply consecutive write transactions because write data production and burst formation can delay AW/W activity. Write spacing is estimated as max(AXI beats, useful elements times achieved II), with pipeline depth included before the first dependent write."
+  },
+  "data_width_bits": 32,
+  "element_width_bits": 32,
+  "elements_per_beat": 1,
+  "max_read_burst_length": 256,
+  "max_write_burst_length": 256,
+  "total_read_elements": 2048,
+  "total_write_elements": 2048,
+  "total_read_transactions": 8,
+  "total_write_transactions": 8,
+  "transaction_dependency_edges": 8,
+  "notes_about_assumptions": [
+    "LLVM IR trace is the source of executed logical accesses and dynamic order.",
+    "HLS interface/csynth metadata supplies AXI width, burst limits, outstanding settings, and loop II when available.",
+    "Physical transactions are inferred from aligned addresses, continuity, width, and burst limits; no RTL waveform is used.",
+    "Issue/completion values are logical estimates, not RTL cycle-accurate timestamps.",
+    "Timeline lane order is not a data dependency. Only explicit graph edges are dependencies."
+  ],
+  "inputs": {
+    "csynth_xml": [
+      "/data/hls-dev/Vitis-HLS-Introductory-Examples/Interface/Memory/burst_rw/component_burst_rw/hls/syn/report/csynth.xml"
+    ],
+    "trace": "/data/hls-dev/Results/trace-timeline/burst_rw/top_level_memory_trace.tsv",
+    "manifest": "/data/hls-dev/Results/trace-timeline/burst_rw/top_level_memory_sites.tsv",
+    "memory_access_report": "/data/hls-dev/Results/pass-reports/burst_rw/memory_access_report.json",
+    "interface_xml": "/data/hls-dev/Vitis-HLS-Introductory-Examples/Interface/Memory/burst_rw/component_burst_rw/hls/.autopilot/db/top-io-fe.xml",
+    "schedule_xml": [
+      "/data/hls-dev/Vitis-HLS-Introductory-Examples/Interface/Memory/burst_rw/component_burst_rw/hls/.autopilot/db/vadd.sched.adb.xml",
+      "/data/hls-dev/Vitis-HLS-Introductory-Examples/Interface/Memory/burst_rw/component_burst_rw/hls/.autopilot/db/vadd_Pipeline_VITIS_LOOP_52_1.sched.adb.xml",
+      "/data/hls-dev/Vitis-HLS-Introductory-Examples/Interface/Memory/burst_rw/component_burst_rw/hls/.autopilot/db/vadd_Pipeline_calc_write.sched.adb.xml"
+    ]
+  },
+  "counts": {
+    "trace_events": 4096,
+    "element_events": 4096,
+    "axi_transactions": 16,
+    "access_sites_from_pass_report": 2,
+    "logical_dependency_edges": 2048,
+    "ports_with_hls_schedule": 2
+  }
+}

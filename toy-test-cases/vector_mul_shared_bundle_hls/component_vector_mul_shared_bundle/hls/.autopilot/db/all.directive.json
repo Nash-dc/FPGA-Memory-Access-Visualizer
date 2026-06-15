@@ -1,0 +1,23 @@
+[
+  {
+    "functionLabel": "",
+    "functionName": "vector_mul",
+    "id": 0,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
+        {
+          "name": "name",
+          "value": "vector_mul"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/data/hls-dev/toy-test-cases/vector_mul_shared_bundle_hls/run_hls.tcl",
+    "sourceLine": 10,
+    "success": true
+  }
+]

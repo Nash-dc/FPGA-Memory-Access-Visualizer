@@ -1,0 +1,3 @@
+site_id	function	basic_block	event	argument	argument_index	bytes	pointer	instruction
+0	_Z4vaddPiii	for.body4	arg_read	a	0	4	  %arrayidx = getelementptr inbounds i32, i32* %8, i64 %idxprom	  %14 = load i32, i32* %arrayidx, align 4
+1	_Z4vaddPiii	for.body11	arg_write	a	0	4	  %arrayidx21 = getelementptr inbounds i32, i32* %25, i64 %idxprom20	  store i32 %24, i32* %arrayidx21, align 4

@@ -1,0 +1,60 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/run_hls.tcl:11:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="matmul_full_contiguous" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=matmul_full_contiguous" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="matmul_full_contiguous.cpp:6:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="matmul_full_contiguous" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=a offset=slave bundle=gmem_a depth=MATRIX_SIZE max_read_burst_length=1 max_widen_bitwidth=512" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="matmul_full_contiguous.cpp:7:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="matmul_full_contiguous" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=b offset=slave bundle=gmem_b depth=MATRIX_SIZE max_read_burst_length=1 max_widen_bitwidth=512" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="matmul_full_contiguous.cpp:8:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="matmul_full_contiguous" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=c offset=slave bundle=gmem_c depth=MATRIX_SIZE max_write_burst_length=1 max_widen_bitwidth=512" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="matmul_full_contiguous.cpp:10:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="matmul_full_contiguous" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=a bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="matmul_full_contiguous.cpp:11:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="matmul_full_contiguous" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=b bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="matmul_full_contiguous.cpp:12:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="matmul_full_contiguous" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=c bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="matmul_full_contiguous.cpp:13:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="matmul_full_contiguous" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="matmul_full_contiguous.cpp:21:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="matmul_full_contiguous" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="matmul_full_contiguous.cpp:30:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="matmul_full_contiguous" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="matmul_full_contiguous.cpp:44:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="matmul_full_contiguous" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="matmul_full_contiguous.cpp:34:7" msg_body="Loop 'compute_k_loop' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="compute_k_loop"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="matmul_full_contiguous.cpp:5:0" msg_body="Unrolling loop 'compute_k_loop' (matmul_full_contiguous.cpp:34:7) in function 'matmul_full_contiguous' completely with a factor of 16">
+        <args Factor="16" LoopLoc="matmul_full_contiguous.cpp:34:7" LoopName="compute_k_loop"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="matmul_full_contiguous.cpp:15:6" msg_body="array_partition dim=1 type=cyclic factor=8 variable=A_local 1 matmul_full_contiguous matmul_full_contiguous.cpp:15:6 matmul_full_contiguous.cpp:30:9A_local">
+        <args PragmaFunction="matmul_full_contiguous" PragmaIsAuto="1" PragmaOptions="dim=1 type=cyclic factor=8 variable=A_local" PragmaSrcLoc="matmul_full_contiguous.cpp:30:9" PragmaSrcLoc-DebugLoc="File matmul_full_contiguous.cpp Line 30 Column 9" PragmaType="array_partition" VarName="A_local" varLoc="matmul_full_contiguous.cpp:15:6"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="matmul_full_contiguous.cpp:30:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=8 dim=1' for array 'A_local' due to pipeline pragma">
+        <args Dim="1" Factor="8" Mode="cyclic" Name="A_local" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="matmul_full_contiguous.cpp:16:7" msg_body="array_partition dim=1 type=cyclic factor=17 variable=B_local 1 matmul_full_contiguous matmul_full_contiguous.cpp:16:7 matmul_full_contiguous.cpp:30:9B_local">
+        <args PragmaFunction="matmul_full_contiguous" PragmaIsAuto="1" PragmaOptions="dim=1 type=cyclic factor=17 variable=B_local" PragmaSrcLoc="matmul_full_contiguous.cpp:30:9" PragmaSrcLoc-DebugLoc="File matmul_full_contiguous.cpp Line 30 Column 9" PragmaType="array_partition" VarName="B_local" varLoc="matmul_full_contiguous.cpp:16:7"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="matmul_full_contiguous.cpp:30:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=17 dim=1' for array 'B_local' due to pipeline pragma">
+        <args Dim="1" Factor="17" Mode="cyclic" Name="B_local" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="matmul_full_contiguous.cpp:15:6" msg_body="Applying array_partition to 'A_local': Cyclic partitioning with factor 8 on dimension 1.">
+        <args Dim="1" Factor="8" Mode="Cyclic" UOName="A_local"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="matmul_full_contiguous.cpp:16:7" msg_body="Applying array_partition to 'B_local': Cyclic partitioning with factor 17 on dimension 1.">
+        <args Dim="1" Factor="17" Mode="Cyclic" UOName="B_local"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

@@ -1,0 +1,131 @@
+{
+  "function": "vadd",
+  "m_axi_ports": [
+    {"name": "a", "bundle": "gmem", "channel": "unknown", "offset": "slave", "signal_name": "unknown", "depth": 2048}
+  ],
+  "local_buffers": [
+    {"name": "burstbuffer", "element_type": "i32", "elements": 256, "array_partition": "none", "partition_factor": "unknown", "partition_dim": "unknown"}
+  ],
+  "off_chip_accesses": [
+    {
+      "id": "access:0",
+      "sequence": 0,
+      "type": "READ",
+      "port": "a",
+      "bundle": "gmem",
+      "channel": "unknown",
+      "base": "a",
+      "index": "(i + j)",
+      "operation": "load",
+      "pattern": "sequential",
+      "source_function": "_Z4vaddPiii",
+      "loop": "VITIS_LOOP_52_1",
+      "tripcount": 128, "avg_tripcount": 128, "min_tripcount": 1, "max_tripcount": 256, "tripcount_kind": "runtime_dependent",
+      "loop_nest": [{"name": "read_buf", "tripcount": 32, "avg_tripcount": 32, "min_tripcount": 1, "max_tripcount": 64, "tripcount_kind": "runtime_dependent"}, {"name": "VITIS_LOOP_52_1", "tripcount": 128, "avg_tripcount": 128, "min_tripcount": 1, "max_tripcount": 256, "tripcount_kind": "runtime_dependent"}],
+      "total_tripcount": 4096,
+      "element_type": "i32",
+      "stride_elements": 1,
+      "stride_bytes": 4,
+      "burst_candidate": true,
+      "burst_confirmed_by_report": "unknown",
+      "burst_length": "unknown"
+    },
+    {
+      "id": "access:1",
+      "sequence": 1,
+      "type": "WRITE",
+      "port": "a",
+      "bundle": "gmem",
+      "channel": "unknown",
+      "base": "a",
+      "index": "(i + j9)",
+      "operation": "store",
+      "pattern": "sequential",
+      "source_function": "_Z4vaddPiii",
+      "loop": "calc_write",
+      "tripcount": 1152, "avg_tripcount": 1152, "min_tripcount": 256, "max_tripcount": 2048, "tripcount_kind": "runtime_dependent",
+      "loop_nest": [{"name": "read_buf", "tripcount": 32, "avg_tripcount": 32, "min_tripcount": 1, "max_tripcount": 64, "tripcount_kind": "runtime_dependent"}, {"name": "calc_write", "tripcount": 1152, "avg_tripcount": 1152, "min_tripcount": 256, "max_tripcount": 2048, "tripcount_kind": "runtime_dependent"}],
+      "total_tripcount": 36864,
+      "element_type": "i32",
+      "stride_elements": 1,
+      "stride_bytes": 4,
+      "burst_candidate": true,
+      "burst_confirmed_by_report": "unknown",
+      "burst_length": "unknown"
+    }
+  ],
+  "local_accesses": [
+    {
+      "id": "local_access:0",
+      "sequence": 0,
+      "type": "WRITE",
+      "buffer": "burstbuffer",
+      "index": "j",
+      "operation": "store",
+      "pattern": "sequential",
+      "access_detail": "row_contiguous",
+      "stride_elements": 1,
+      "source_function": "_Z4vaddPiii",
+      "loop": "VITIS_LOOP_52_1",
+      "tripcount": 128, "avg_tripcount": 128, "min_tripcount": 1, "max_tripcount": 256, "tripcount_kind": "runtime_dependent",
+      "loop_nest": [{"name": "read_buf", "tripcount": 32, "avg_tripcount": 32, "min_tripcount": 1, "max_tripcount": 64, "tripcount_kind": "runtime_dependent"}, {"name": "VITIS_LOOP_52_1", "tripcount": 128, "avg_tripcount": 128, "min_tripcount": 1, "max_tripcount": 256, "tripcount_kind": "runtime_dependent"}],
+      "total_tripcount": 4096
+    },
+    {
+      "id": "local_access:1",
+      "sequence": 1,
+      "type": "READ",
+      "buffer": "burstbuffer",
+      "index": "j9",
+      "operation": "load",
+      "pattern": "sequential",
+      "access_detail": "row_contiguous",
+      "stride_elements": 1,
+      "source_function": "_Z4vaddPiii",
+      "loop": "calc_write",
+      "tripcount": 1152, "avg_tripcount": 1152, "min_tripcount": 256, "max_tripcount": 2048, "tripcount_kind": "runtime_dependent",
+      "loop_nest": [{"name": "read_buf", "tripcount": 32, "avg_tripcount": 32, "min_tripcount": 1, "max_tripcount": 64, "tripcount_kind": "runtime_dependent"}, {"name": "calc_write", "tripcount": 1152, "avg_tripcount": 1152, "min_tripcount": 256, "max_tripcount": 2048, "tripcount_kind": "runtime_dependent"}],
+      "total_tripcount": 36864
+    },
+    {
+      "id": "local_access:2",
+      "sequence": 2,
+      "type": "WRITE",
+      "buffer": "burstbuffer",
+      "index": "j9",
+      "operation": "store",
+      "pattern": "sequential",
+      "access_detail": "row_contiguous",
+      "stride_elements": 1,
+      "source_function": "_Z4vaddPiii",
+      "loop": "calc_write",
+      "tripcount": 1152, "avg_tripcount": 1152, "min_tripcount": 256, "max_tripcount": 2048, "tripcount_kind": "runtime_dependent",
+      "loop_nest": [{"name": "read_buf", "tripcount": 32, "avg_tripcount": 32, "min_tripcount": 1, "max_tripcount": 64, "tripcount_kind": "runtime_dependent"}, {"name": "calc_write", "tripcount": 1152, "avg_tripcount": 1152, "min_tripcount": 256, "max_tripcount": 2048, "tripcount_kind": "runtime_dependent"}],
+      "total_tripcount": 36864
+    },
+    {
+      "id": "local_access:3",
+      "sequence": 3,
+      "type": "READ",
+      "buffer": "burstbuffer",
+      "index": "j9",
+      "operation": "load",
+      "pattern": "sequential",
+      "access_detail": "row_contiguous",
+      "stride_elements": 1,
+      "source_function": "_Z4vaddPiii",
+      "loop": "calc_write",
+      "tripcount": 1152, "avg_tripcount": 1152, "min_tripcount": 256, "max_tripcount": 2048, "tripcount_kind": "runtime_dependent",
+      "loop_nest": [{"name": "read_buf", "tripcount": 32, "avg_tripcount": 32, "min_tripcount": 1, "max_tripcount": 64, "tripcount_kind": "runtime_dependent"}, {"name": "calc_write", "tripcount": 1152, "avg_tripcount": 1152, "min_tripcount": 256, "max_tripcount": 2048, "tripcount_kind": "runtime_dependent"}],
+      "total_tripcount": 36864
+    }
+  ],
+  "dependency_edges": [
+    {"id": "dep:0", "source_id": "access:0", "target_id": "local_access:0", "kind": "llvm_def_use", "via": "ssa_value", "source_role": "transaction", "target_role": "local_buffer_access", "source_index": "", "target_index": "", "reason": "stored value operand is defined by, or computed from, the source access"},
+    {"id": "dep:1", "source_id": "local_access:1", "target_id": "local_access:2", "kind": "llvm_def_use", "via": "ssa_value", "source_role": "local_buffer_access", "target_role": "local_buffer_access", "source_index": "", "target_index": "", "reason": "stored value operand is defined by, or computed from, the source access"},
+    {"id": "dep:2", "source_id": "local_access:3", "target_id": "access:1", "kind": "llvm_def_use", "via": "ssa_value", "source_role": "local_buffer_access", "target_role": "transaction", "source_index": "", "target_index": "", "reason": "stored value operand is defined by, or computed from, the source access"},
+    {"id": "dep:3", "source_id": "local_access:0", "target_id": "local_access:1", "kind": "local_buffer_raw", "via": "burstbuffer", "source_role": "local_buffer_access", "target_role": "local_buffer_access", "source_index": "j", "target_index": "j9", "reason": "local buffer read may consume the earlier write to the same buffer"},
+    {"id": "dep:4", "source_id": "local_access:0", "target_id": "local_access:3", "kind": "local_buffer_raw", "via": "burstbuffer", "source_role": "local_buffer_access", "target_role": "local_buffer_access", "source_index": "j", "target_index": "j9", "reason": "local buffer read may consume the earlier write to the same buffer"},
+    {"id": "dep:5", "source_id": "local_access:2", "target_id": "local_access:3", "kind": "local_buffer_raw", "via": "burstbuffer", "source_role": "local_buffer_access", "target_role": "local_buffer_access", "source_index": "j9", "target_index": "j9", "reason": "local buffer read may consume the earlier write to the same buffer"}
+  ]
+}

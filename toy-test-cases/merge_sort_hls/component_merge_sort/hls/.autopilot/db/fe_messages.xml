@@ -1,0 +1,39 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="merge_sort.cpp:4:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="min_int" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/data/hls-dev/toy-test-cases/merge_sort_hls/run_hls.tcl:11:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="merge_sort_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=merge_sort_hls" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="merge_sort.cpp:9:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="merge_sort_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=in offset=slave bundle=gmem_in depth=SORT_SIZE max_read_burst_length=16 max_widen_bitwidth=512" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="merge_sort.cpp:10:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="merge_sort_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=out offset=slave bundle=gmem_out depth=SORT_SIZE max_write_burst_length=16 max_widen_bitwidth=512" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="merge_sort.cpp:11:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="merge_sort_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=in bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="merge_sort.cpp:12:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="merge_sort_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=out bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="merge_sort.cpp:13:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="merge_sort_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="merge_sort.cpp:20:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="merge_sort_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="merge_sort.cpp:37:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="merge_sort_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="merge_sort.cpp:53:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="merge_sort_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="merge_sort.cpp:71:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="merge_sort_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="merge_sort.cpp:30:23" msg_body="Inlining function 'min_int(int, int)' into 'merge_sort_hls(int const*, int*)'">
+        <args Callee="min_int(int, int)" Callee-DebugLoc="File merge_sort.cpp Line 3 Column 0" Caller="merge_sort_hls(int const*, int*)" Caller-DebugLoc="File merge_sort.cpp Line 8 Column 0"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

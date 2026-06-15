@@ -1,0 +1,23 @@
+[
+  {
+    "functionLabel": "",
+    "functionName": "matmul_row_col",
+    "id": 0,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
+        {
+          "name": "name",
+          "value": "matmul_row_col"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/run_hls.tcl",
+    "sourceLine": 11,
+    "success": true
+  }
+]

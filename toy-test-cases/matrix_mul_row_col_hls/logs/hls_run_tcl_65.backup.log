@@ -1,0 +1,36 @@
+  **** HLS Build v2025.1 6135595
+Sourcing Tcl script '/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/run_hls.tcl'
+INFO: [HLS 200-1510] Running: open_project -reset component_matmul_row_col 
+WARNING: [HLS 200-2182] The 'component_matmul_row_col' project will not automatically appear within Vitis IDE workspaces and is meant only for TCL batch use.  Please use open_component instead of open_project/open_solution to generate Vitis IDE compatible component files and directory structure.
+Resolution: For help on HLS 200-2182 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-2182.html
+INFO: [HLS 200-10] Opening and resetting solution '/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col'.
+INFO: [HLS 200-1510] Running: set_top matmul_row_col 
+INFO: [HLS 200-1510] Running: add_files matmul_row_col.cpp 
+INFO: [HLS 200-10] Adding design file 'matmul_row_col.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb matmul_row_col_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'matmul_row_col_test.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution -reset hls -flow_target vivado 
+INFO: [HLS 200-10] Creating and opening solution '/data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/component_matmul_row_col/hls'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xcvu9p-flga2104-2-i 
+INFO: [HLS 200-1611] Setting target device to 'xcvu9p-flga2104-2-i'
+INFO: [HLS 200-1510] Running: create_clock -period 5 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-1510] Running: config_interface -m_axi_alignment_byte_size 64 -m_axi_max_widen_bitwidth 512 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.07 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.11 seconds; current allocated memory: 445.781 MB.
+INFO: [HLS 200-10] Analyzing design file 'matmul_row_col.cpp' ... 
+ERROR: [HLS 207-3776] use of undeclared identifier 'A_local' (matmul_row_col.cpp:24:2)
+ERROR: [HLS 207-3776] use of undeclared identifier 'B_local' (matmul_row_col.cpp:25:3)
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:00; Allocated memory: 1.754 MB.
+ 
+    while executing
+"source /data/hls-dev/toy-test-cases/matrix_mul_row_col_hls/run_hls.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel \#0 [list source $tclfile] "
+
+INFO: [HLS 200-112] Total CPU user time: 1.58 seconds. Total CPU system time: 0.74 seconds. Total elapsed time: 2.2 seconds; peak allocated memory: 447.535 MB.
+INFO: [vitis-run 60-1662] Stopping dispatch session having empty uuid.

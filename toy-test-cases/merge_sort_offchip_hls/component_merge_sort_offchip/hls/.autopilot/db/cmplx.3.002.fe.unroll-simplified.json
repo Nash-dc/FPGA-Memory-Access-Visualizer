@@ -1,0 +1,20 @@
+{
+  "0": {
+    "basicblocks": 34,
+    "calls": "",
+    "control_depth": 4,
+    "def_use_depth": 5,
+    "file": "merge_sort_offchip.cpp",
+    "fileloc": 8,
+    "instructions": 127,
+    "loads": {
+      "T": 7
+    },
+    "memory_accesses": 13,
+    "name": "merge_sort_offchip_hls",
+    "stores": {
+      "T": 6
+    },
+    "total_instructions": 127
+  }
+}

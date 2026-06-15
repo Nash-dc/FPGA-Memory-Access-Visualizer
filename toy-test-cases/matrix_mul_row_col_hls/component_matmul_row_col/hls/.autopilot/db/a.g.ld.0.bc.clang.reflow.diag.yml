@@ -1,0 +1,449 @@
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+Function:        apatb_matmul_row_col_ir
+Args:            
+  - Callee:          'matmul_row_col(int const*, int const*, int*)'
+    DebugLoc:        { File: matmul_row_col.cpp, Line: 4, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          apatb_matmul_row_col_ir
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: matmul_row_col.cpp, Line: 23, Column: 7 }
+Function:        _Z14matmul_row_colPKiS0_Pi
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '16'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgepseq
+  - ArrayName:       a
+  - String:          ' '
+  - BundleName:      gmem_a
+  - String:          ' '
+  - LoopName:        load_ab_loop
+  - String:          ' '
+  - LoopLoc:         'matmul_row_col.cpp:23:7'
+  - String:          ' '
+  - Function:        'matmul_row_col(int const*, int const*, int*)'
+    DebugLoc:        { File: matmul_row_col.cpp, Line: 4, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: matmul_row_col.cpp, Line: 25, Column: 13 }
+  - OrigDirection:   read
+  - OrigID:          for.inc.load.5
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: matmul_row_col.cpp, Line: 23, Column: 7 }
+Function:        _Z14matmul_row_colPKiS0_Pi
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '16'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        b4seq
+  - ArrayName:       b
+  - String:          ' '
+  - BundleName:      gmem_b
+  - String:          ' '
+  - LoopName:        load_ab_loop
+  - String:          ' '
+  - LoopLoc:         'matmul_row_col.cpp:23:7'
+  - String:          ' '
+  - Function:        'matmul_row_col(int const*, int const*, int*)'
+    DebugLoc:        { File: matmul_row_col.cpp, Line: 4, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: matmul_row_col.cpp, Line: 26, Column: 20 }
+  - OrigDirection:   read
+  - OrigID:          for.inc.load.13
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: matmul_row_col.cpp, Line: 18, Column: 3 }
+Function:        _Z14matmul_row_colPKiS0_Pi
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of length '
+  - Length:          '256'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        c5seq
+  - ArrayName:       c
+  - String:          ' '
+  - BundleName:      gmem_c
+  - String:          ' '
+  - LoopName:        row_loop
+  - String:          ' '
+  - LoopLoc:         'matmul_row_col.cpp:18:3'
+  - String:          ' '
+  - Function:        'matmul_row_col(int const*, int const*, int*)'
+    DebugLoc:        { File: matmul_row_col.cpp, Line: 4, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: matmul_row_col.cpp, Line: 38, Column: 33 }
+  - OrigDirection:   write
+  - OrigID:          for.inc35.store.4
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+DebugLoc:        { File: matmul_row_col.cpp, Line: 23, Column: 7 }
+Function:        _Z14matmul_row_colPKiS0_Pi
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: matmul_row_col.cpp, Line: 23, Column: 7 }
+  - OrigDirection:   read
+  - OrigID:          scevgepseq
+  - ArrayName:       a
+  - String:          ' '
+  - BundleName:      gmem_a
+  - String:          ' '
+  - LoopName:        col_loop
+  - String:          ' '
+  - LoopLoc:         'matmul_row_col.cpp:20:5'
+  - String:          ' '
+  - Function:        'matmul_row_col(int const*, int const*, int*)'
+    DebugLoc:        { File: matmul_row_col.cpp, Line: 4, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            CouldNotAnalyzePattern
+DebugLoc:        { File: matmul_row_col.cpp, Line: 23, Column: 7 }
+Function:        _Z14matmul_row_colPKiS0_Pi
+Args:            
+  - String:          Could not analyze pattern
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: matmul_row_col.cpp, Line: 23, Column: 7 }
+  - OrigDirection:   read
+  - OrigID:          b4seq
+  - ArrayName:       b
+  - String:          ' '
+  - BundleName:      gmem_b
+  - String:          ' '
+  - LoopName:        col_loop
+  - String:          ' '
+  - LoopLoc:         'matmul_row_col.cpp:20:5'
+  - String:          ' '
+  - Function:        'matmul_row_col(int const*, int const*, int*)'
+    DebugLoc:        { File: matmul_row_col.cpp, Line: 4, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: matmul_row_col.cpp, Line: 18, Column: 3 }
+Function:        _Z14matmul_row_colPKiS0_Pi
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i32
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '32'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: matmul_row_col.cpp, Line: 18, Column: 3 }
+  - OrigDirection:   write
+  - OrigID:          c5seq
+  - ArrayName:       c
+  - String:          ' '
+  - BundleName:      gmem_c
+  - String:          ' '
+  - LoopName:        col_loop
+  - String:          ' '
+  - LoopLoc:         'matmul_row_col.cpp:20:5'
+  - String:          ' '
+  - Function:        'matmul_row_col(int const*, int const*, int*)'
+    DebugLoc:        { File: matmul_row_col.cpp, Line: 4, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-widen
+Name:            BurstWidened
+DebugLoc:        { File: matmul_row_col.cpp, Line: 23, Column: 7 }
+Function:        _Z14matmul_row_colPKiS0_Pi
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of '
+  - OrigLength:      '16'
+  - String:          ' x '
+  - OrigWords:       '32'
+  - String:          'bit words has been widened by '
+  - Factor:          '16'
+  - String:          ': '
+  - Length:          '1'
+  - String:          ' x '
+  - Words:           '512'
+  - String:          bit words
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: matmul_row_col.cpp, Line: 23, Column: 7 }
+  - OrigDirection:   read
+  - OrigID:          scevgepseq
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        wseq
+  - ArrayName:       a
+  - String:          ' '
+  - BundleName:      gmem_a
+  - String:          ' '
+  - LoopName:        load_ab_loop
+  - String:          ' '
+  - LoopLoc:         'matmul_row_col.cpp:23:7'
+  - String:          ' '
+  - Function:        'matmul_row_col(int const*, int const*, int*)'
+    DebugLoc:        { File: matmul_row_col.cpp, Line: 4, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: matmul_row_col.cpp, Line: 23, Column: 7 }
+Function:        _Z14matmul_row_colPKiS0_Pi
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            '<16 x i32>'
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '512'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: matmul_row_col.cpp, Line: 23, Column: 7 }
+  - OrigDirection:   read
+  - OrigID:          b4seq
+  - ArrayName:       b
+  - String:          ' '
+  - BundleName:      gmem_b
+  - String:          ' '
+  - LoopName:        load_ab_loop
+  - String:          ' '
+  - LoopLoc:         'matmul_row_col.cpp:23:7'
+  - String:          ' '
+  - Function:        'matmul_row_col(int const*, int const*, int*)'
+    DebugLoc:        { File: matmul_row_col.cpp, Line: 4, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: matmul_row_col.cpp, Line: 18, Column: 3 }
+Function:        _Z14matmul_row_colPKiS0_Pi
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i32
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '32'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: matmul_row_col.cpp, Line: 18, Column: 3 }
+  - OrigDirection:   write
+  - OrigID:          c5seq
+  - ArrayName:       c
+  - String:          ' '
+  - BundleName:      gmem_c
+  - String:          ' '
+  - LoopName:        col_loop
+  - String:          ' '
+  - LoopLoc:         'matmul_row_col.cpp:20:5'
+  - String:          ' '
+  - Function:        'matmul_row_col(int const*, int const*, int*)'
+    DebugLoc:        { File: matmul_row_col.cpp, Line: 4, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: matmul_row_col.cpp, Line: 23, Column: 7 }
+Function:        _Z14matmul_row_colPKiS0_Pi
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            '<16 x i32>'
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '512'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: matmul_row_col.cpp, Line: 23, Column: 7 }
+  - OrigDirection:   read
+  - OrigID:          b4seq
+  - ArrayName:       b
+  - String:          ' '
+  - BundleName:      gmem_b
+  - String:          ' '
+  - LoopName:        load_ab_loop
+  - String:          ' '
+  - LoopLoc:         'matmul_row_col.cpp:23:7'
+  - String:          ' '
+  - Function:        'matmul_row_col(int const*, int const*, int*)'
+    DebugLoc:        { File: matmul_row_col.cpp, Line: 4, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: matmul_row_col.cpp, Line: 18, Column: 3 }
+Function:        _Z14matmul_row_colPKiS0_Pi
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i32
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '32'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: matmul_row_col.cpp, Line: 18, Column: 3 }
+  - OrigDirection:   write
+  - OrigID:          c5seq
+  - ArrayName:       c
+  - String:          ' '
+  - BundleName:      gmem_c
+  - String:          ' '
+  - LoopName:        col_loop
+  - String:          ' '
+  - LoopLoc:         'matmul_row_col.cpp:20:5'
+  - String:          ' '
+  - Function:        'matmul_row_col(int const*, int const*, int*)'
+    DebugLoc:        { File: matmul_row_col.cpp, Line: 4, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: matmul_row_col.cpp, Line: 23, Column: 7 }
+Function:        _Z14matmul_row_colPKiS0_Pi
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            '<16 x i32>'
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '512'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: matmul_row_col.cpp, Line: 23, Column: 7 }
+  - OrigDirection:   read
+  - OrigID:          b4seq
+  - ArrayName:       b
+  - String:          ' '
+  - BundleName:      gmem_b
+  - String:          ' '
+  - LoopName:        load_ab_loop
+  - String:          ' '
+  - LoopLoc:         'matmul_row_col.cpp:23:7'
+  - String:          ' '
+  - Function:        'matmul_row_col(int const*, int const*, int*)'
+    DebugLoc:        { File: matmul_row_col.cpp, Line: 4, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: matmul_row_col.cpp, Line: 18, Column: 3 }
+Function:        _Z14matmul_row_colPKiS0_Pi
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '256'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem_c
+  - String:          ' '
+  - LoopName:        row_loop
+  - String:          ' '
+  - LoopLoc:         'matmul_row_col.cpp:18:3'
+  - String:          ' '
+  - Function:        'matmul_row_col(int const*, int const*, int*)'
+    DebugLoc:        { File: matmul_row_col.cpp, Line: 4, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: matmul_row_col.cpp, Line: 18, Column: 3 }
+Function:        _Z14matmul_row_colPKiS0_Pi
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '256'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' in loop '''
+  - LoopName:        row_loop
+  - String:          '''('
+  - LoopLoc:         'matmul_row_col.cpp:18:3'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem_c
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: matmul_row_col.cpp, Line: 23, Column: 7 }
+Function:        _Z14matmul_row_colPKiS0_Pi
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '16'
+  - String:          ' and bit width '
+  - Width:           '512'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq1
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem_b
+  - String:          ' '
+  - LoopName:        load_ab_loop
+  - String:          ' '
+  - LoopLoc:         'matmul_row_col.cpp:23:7'
+  - String:          ' '
+  - Function:        'matmul_row_col(int const*, int const*, int*)'
+    DebugLoc:        { File: matmul_row_col.cpp, Line: 4, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: matmul_row_col.cpp, Line: 23, Column: 7 }
+Function:        _Z14matmul_row_colPKiS0_Pi
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '16'
+  - String:          ' and bit width '
+  - Width:           '512'
+  - String:          ' in loop '''
+  - LoopName:        load_ab_loop
+  - String:          '''('
+  - LoopLoc:         'matmul_row_col.cpp:23:7'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem_b
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...

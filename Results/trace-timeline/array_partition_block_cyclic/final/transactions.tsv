@@ -1,0 +1,49 @@
+txn_id	direction	argument	bundle	start_index	end_index	byte_addr	beats	axlen	elements_per_beat	issue_order	complete_order	depends_on	timeline_lane
+txn_in1_0	read	in1	unknown	0	15	0	16	15	1	0	16		in1
+txn_in1_1	read	in1	unknown	16	31	64	16	15	1	1	17		in1
+txn_in1_2	read	in1	unknown	32	47	128	16	15	1	2	18		in1
+txn_in1_3	read	in1	unknown	48	63	192	16	15	1	3	19		in1
+txn_in1_4	read	in1	unknown	64	79	256	16	15	1	4	20		in1
+txn_in1_5	read	in1	unknown	80	95	320	16	15	1	5	21		in1
+txn_in1_6	read	in1	unknown	96	111	384	16	15	1	6	22		in1
+txn_in1_7	read	in1	unknown	112	127	448	16	15	1	7	23		in1
+txn_in1_8	read	in1	unknown	128	143	512	16	15	1	8	24		in1
+txn_in1_9	read	in1	unknown	144	159	576	16	15	1	9	25		in1
+txn_in1_10	read	in1	unknown	160	175	640	16	15	1	10	26		in1
+txn_in1_11	read	in1	unknown	176	191	704	16	15	1	11	27		in1
+txn_in1_12	read	in1	unknown	192	207	768	16	15	1	12	28		in1
+txn_in1_13	read	in1	unknown	208	223	832	16	15	1	13	29		in1
+txn_in1_14	read	in1	unknown	224	239	896	16	15	1	14	30		in1
+txn_in1_15	read	in1	unknown	240	255	960	16	15	1	15	31		in1
+txn_in2_0	read	in2	unknown	0	15	0	16	15	1	16	32		in2
+txn_in2_1	read	in2	unknown	16	31	64	16	15	1	17	33		in2
+txn_in2_2	read	in2	unknown	32	47	128	16	15	1	18	34		in2
+txn_in2_3	read	in2	unknown	48	63	192	16	15	1	19	35		in2
+txn_in2_4	read	in2	unknown	64	79	256	16	15	1	20	36		in2
+txn_in2_5	read	in2	unknown	80	95	320	16	15	1	21	37		in2
+txn_in2_6	read	in2	unknown	96	111	384	16	15	1	22	38		in2
+txn_in2_7	read	in2	unknown	112	127	448	16	15	1	23	39		in2
+txn_in2_8	read	in2	unknown	128	143	512	16	15	1	24	40		in2
+txn_in2_9	read	in2	unknown	144	159	576	16	15	1	25	41		in2
+txn_in2_10	read	in2	unknown	160	175	640	16	15	1	26	42		in2
+txn_in2_11	read	in2	unknown	176	191	704	16	15	1	27	43		in2
+txn_in2_12	read	in2	unknown	192	207	768	16	15	1	28	44		in2
+txn_in2_13	read	in2	unknown	208	223	832	16	15	1	29	45		in2
+txn_in2_14	read	in2	unknown	224	239	896	16	15	1	30	46		in2
+txn_in2_15	read	in2	unknown	240	255	960	16	15	1	31	47		in2
+txn_out_r_0	write	out_r	unknown	0	15	0	16	15	1	66	82	txn_in1_15,txn_in2_15	out_r
+txn_out_r_1	write	out_r	unknown	16	31	64	16	15	1	82	98	txn_in1_15,txn_in2_15	out_r
+txn_out_r_2	write	out_r	unknown	32	47	128	16	15	1	98	114	txn_in1_15,txn_in2_15	out_r
+txn_out_r_3	write	out_r	unknown	48	63	192	16	15	1	114	130	txn_in1_15,txn_in2_15	out_r
+txn_out_r_4	write	out_r	unknown	64	79	256	16	15	1	130	146	txn_in1_15,txn_in2_15	out_r
+txn_out_r_5	write	out_r	unknown	80	95	320	16	15	1	146	162	txn_in1_15,txn_in2_15	out_r
+txn_out_r_6	write	out_r	unknown	96	111	384	16	15	1	162	178	txn_in1_15,txn_in2_15	out_r
+txn_out_r_7	write	out_r	unknown	112	127	448	16	15	1	178	194	txn_in1_15,txn_in2_15	out_r
+txn_out_r_8	write	out_r	unknown	128	143	512	16	15	1	194	210	txn_in1_15,txn_in2_15	out_r
+txn_out_r_9	write	out_r	unknown	144	159	576	16	15	1	210	226	txn_in1_15,txn_in2_15	out_r
+txn_out_r_10	write	out_r	unknown	160	175	640	16	15	1	226	242	txn_in1_15,txn_in2_15	out_r
+txn_out_r_11	write	out_r	unknown	176	191	704	16	15	1	242	258	txn_in1_15,txn_in2_15	out_r
+txn_out_r_12	write	out_r	unknown	192	207	768	16	15	1	258	274	txn_in1_15,txn_in2_15	out_r
+txn_out_r_13	write	out_r	unknown	208	223	832	16	15	1	274	290	txn_in1_15,txn_in2_15	out_r
+txn_out_r_14	write	out_r	unknown	224	239	896	16	15	1	290	306	txn_in1_15,txn_in2_15	out_r
+txn_out_r_15	write	out_r	unknown	240	255	960	16	15	1	306	322	txn_in1_15,txn_in2_15	out_r

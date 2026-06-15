@@ -1,0 +1,249 @@
+
+
+================================================================
+== Synthesis Summary Report of 'merge_sort_offchip_hls'
+================================================================
++ General Information: 
+    * Date:           Tue Jun  9 21:34:31 2026
+    * Version:        2025.1 (Build 6135595 on May 21 2025)
+    * Project:        component_merge_sort_offchip
+    * Solution:       hls (Vivado IP Flow Target)
+    * Product family: virtexuplus
+    * Target device:  xcvu9p-flga2104-2-i
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +------------------------------------------------------------+---------+-------+---------+---------+----------+---------+------+----------+---------+----+------------+------------+-----+
+    |                           Modules                          |  Issue  |       |      Latency      | Iteration|         | Trip |          |         |    |            |            |     |
+    |                           & Loops                          |   Type  | Slack | (cycles)|   (ns)  |  Latency | Interval| Count| Pipelined|  BRAM   | DSP|     FF     |     LUT    | URAM|
+    +------------------------------------------------------------+---------+-------+---------+---------+----------+---------+------+----------+---------+----+------------+------------+-----+
+    |+ merge_sort_offchip_hls                                    |   Timing|  -4.65|        -|        -|         -|        -|     -|        no|  4 (~0%)|   -|  6366 (~0%)|  8157 (~0%)|    -|
+    | + merge_sort_offchip_hls_Pipeline_copy_input_to_scratch_a  |        -|   0.00|       68|  340.000|         -|       65|     -|    rewind|        -|   -|   432 (~0%)|   184 (~0%)|    -|
+    |  o copy_input_to_scratch_a                                 |        -|   3.65|       66|  330.000|         4|        1|    64|       yes|        -|   -|           -|           -|    -|
+    | + merge_sort_offchip_hls_Pipeline_copy_result_to_out       |        -|   0.00|       67|  335.000|         -|       65|     -|    rewind|        -|   -|   526 (~0%)|   522 (~0%)|    -|
+    |  o copy_result_to_out                                      |        -|   3.65|       65|  325.000|         3|        1|    64|       yes|        -|   -|           -|           -|    -|
+    | o merge_width_loop                                         |        -|   3.65|        -|        -|         -|        -|     6|        no|        -|   -|           -|           -|    -|
+    |  o merge_block_loop                                        |        -|   3.65|        -|        -|         -|        -|     -|        no|        -|   -|           -|           -|    -|
+    |   + merge_sort_offchip_hls_Pipeline_merge_element_loop     |   Timing|  -4.65|        -|        -|         -|        0|     -|    rewind|        -|   -|   864 (~0%)|  1561 (~0%)|    -|
+    |    o merge_element_loop                                    |       II|   3.65|        -|        -|        21|       13|     -|       yes|        -|   -|           -|           -|    -|
+    +------------------------------------------------------------+---------+-------+---------+---------+----------+---------+------+----------+---------+----+------------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++----------------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| Interface            | Read/Write | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   | Resource Estimate |
+|                      |            | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |                   |
++----------------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| m_axi_gmem_in        | READ_ONLY  | 32 -> 64   | 64            | 0       | slave  | 0        | 64        | 16           | 16           | 16          | 16          | BRAM=2            |
+| m_axi_gmem_out       | WRITE_ONLY | 32 -> 512  | 64            | 0       | slave  | 0        | 512       | 16           | 16           | 16          | 16          |                   |
+| m_axi_gmem_scratch_a | READ_WRITE | 32 -> 32   | 64            | 0       | slave  | 0        | 32        | 16           | 16           | 16          | 16          | BRAM=1            |
+| m_axi_gmem_scratch_b | READ_WRITE | 32 -> 32   | 64            | 0       | slave  | 0        | 32        | 16           | 16           | 16          | 16          | BRAM=1            |
++----------------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 6             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+-------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface     | Register    | Offset | Width | Access | Description                      | Bit Fields                                                           |
++---------------+-------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_control | CTRL        | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER        | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_control | IP_IER      | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_control | IP_ISR      | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_control | in_r_1      | 0x10   | 32    | W      | Data signal of in_r              |                                                                      |
+| s_axi_control | in_r_2      | 0x14   | 32    | W      | Data signal of in_r              |                                                                      |
+| s_axi_control | scratch_a_1 | 0x1c   | 32    | W      | Data signal of scratch_a         |                                                                      |
+| s_axi_control | scratch_a_2 | 0x20   | 32    | W      | Data signal of scratch_a         |                                                                      |
+| s_axi_control | scratch_b_1 | 0x28   | 32    | W      | Data signal of scratch_b         |                                                                      |
+| s_axi_control | scratch_b_2 | 0x2c   | 32    | W      | Data signal of scratch_b         |                                                                      |
+| s_axi_control | out_r_1     | 0x34   | 32    | W      | Data signal of out_r             |                                                                      |
+| s_axi_control | out_r_2     | 0x38   | 32    | W      | Data signal of out_r             |                                                                      |
++---------------+-------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++-----------+-----------+-------------+
+| Argument  | Direction | Datatype    |
++-----------+-----------+-------------+
+| in        | in        | int const * |
+| scratch_a | inout     | int*        |
+| scratch_b | inout     | int*        |
+| out       | out       | int*        |
++-----------+-----------+-------------+
+
+* SW-to-HW Mapping
++-----------+----------------------+-----------+----------+---------------------------------------+
+| Argument  | HW Interface         | HW Type   | HW Usage | HW Info                               |
++-----------+----------------------+-----------+----------+---------------------------------------+
+| in        | m_axi_gmem_in        | interface |          | channel=0                             |
+| in        | s_axi_control        | register  | offset   | name=in_r_1 offset=0x10 range=32      |
+| in        | s_axi_control        | register  | offset   | name=in_r_2 offset=0x14 range=32      |
+| scratch_a | m_axi_gmem_scratch_a | interface |          | channel=0                             |
+| scratch_a | s_axi_control        | register  | offset   | name=scratch_a_1 offset=0x1c range=32 |
+| scratch_a | s_axi_control        | register  | offset   | name=scratch_a_2 offset=0x20 range=32 |
+| scratch_b | m_axi_gmem_scratch_b | interface |          | channel=0                             |
+| scratch_b | s_axi_control        | register  | offset   | name=scratch_b_1 offset=0x28 range=32 |
+| scratch_b | s_axi_control        | register  | offset   | name=scratch_b_2 offset=0x2c range=32 |
+| out       | m_axi_gmem_out       | interface |          | channel=0                             |
+| out       | s_axi_control        | register  | offset   | name=out_r_1 offset=0x34 range=32     |
+| out       | s_axi_control        | register  | offset   | name=out_r_2 offset=0x38 range=32     |
++-----------+----------------------+-----------+----------+---------------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Burst Summary
++----------------------+-----------+--------+-------+-------------------------+-----------------------------+
+| HW Interface         | Direction | Length | Width | Loop                    | Loop Location               |
++----------------------+-----------+--------+-------+-------------------------+-----------------------------+
+| m_axi_gmem_in        | read      | 32     | 64    |                         |                             |
+| m_axi_gmem_out       | write     | 4      | 512   |                         |                             |
+| m_axi_gmem_scratch_a | write     | 64     | 32    | copy_input_to_scratch_a | merge_sort_offchip.cpp:21:3 |
+| m_axi_gmem_scratch_a | read      | 64     | 32    | copy_result_to_out      | merge_sort_offchip.cpp:72:3 |
++----------------------+-----------+--------+-------+-------------------------+-----------------------------+
+
+* All M_AXI Variable Accesses
++----------------------+-----------+------------------------------+-----------+--------------+--------+-------------------------+-----------------------------+------------+--------------------------------------------------------------------------------------------------------+
+| HW Interface         | Variable  | Access Location              | Direction | Burst Status | Length | Loop                    | Loop Location               | Resolution | Problem                                                                                                |
++----------------------+-----------+------------------------------+-----------+--------------+--------+-------------------------+-----------------------------+------------+--------------------------------------------------------------------------------------------------------+
+| m_axi_gmem_in        | in        | merge_sort_offchip.cpp:23:17 | read      | Widened      | 32     | copy_input_to_scratch_a | merge_sort_offchip.cpp:21:3 |            |                                                                                                        |
+| m_axi_gmem_in        | in        | merge_sort_offchip.cpp:23:17 | read      | Inferred     | 64     | copy_input_to_scratch_a | merge_sort_offchip.cpp:21:3 |            |                                                                                                        |
+| m_axi_gmem_out       | out       | merge_sort_offchip.cpp:74:9  | write     | Widened      | 4      | copy_result_to_out      | merge_sort_offchip.cpp:72:3 |            |                                                                                                        |
+| m_axi_gmem_out       | out       | merge_sort_offchip.cpp:74:9  | write     | Inferred     | 64     | copy_result_to_out      | merge_sort_offchip.cpp:72:3 |            |                                                                                                        |
+| m_axi_gmem_scratch_a | scratch_a | merge_sort_offchip.cpp:23:15 | write     | Widen Fail   |        | copy_input_to_scratch_a | merge_sort_offchip.cpp:21:3 | 214-353    | Could not widen since type i32 size is greater than or equal to the max_widen_bitwidth threshold of 32 |
+| m_axi_gmem_scratch_a | scratch_a | merge_sort_offchip.cpp:23:15 | write     | Inferred     | 64     | copy_input_to_scratch_a | merge_sort_offchip.cpp:21:3 |            |                                                                                                        |
+| m_axi_gmem_scratch_a | scratch_a | merge_sort_offchip.cpp:42:46 | read      | Fail         |        | merge_element_loop      | merge_sort_offchip.cpp:39:7 | 214-232    | Access load is in the conditional branch                                                               |
+| m_axi_gmem_scratch_a | scratch_a | merge_sort_offchip.cpp:43:49 | read      | Fail         |        | merge_element_loop      | merge_sort_offchip.cpp:39:7 | 214-232    | Access load is in the conditional branch                                                               |
+| m_axi_gmem_scratch_a | scratch_a | merge_sort_offchip.cpp:59:26 | write     | Fail         |        | merge_element_loop      | merge_sort_offchip.cpp:39:7 | 214-232    | Access store is in the conditional branch                                                              |
+| m_axi_gmem_scratch_a | scratch_a | merge_sort_offchip.cpp:62:26 | write     | Fail         |        | merge_element_loop      | merge_sort_offchip.cpp:39:7 | 214-232    | Access store is in the conditional branch                                                              |
+| m_axi_gmem_scratch_a | scratch_a | merge_sort_offchip.cpp:74:25 | read      | Widen Fail   |        | copy_result_to_out      | merge_sort_offchip.cpp:72:3 | 214-353    | Could not widen since type i32 size is greater than or equal to the max_widen_bitwidth threshold of 32 |
+| m_axi_gmem_scratch_a | scratch_a | merge_sort_offchip.cpp:74:25 | read      | Inferred     | 64     | copy_result_to_out      | merge_sort_offchip.cpp:72:3 |            |                                                                                                        |
+| m_axi_gmem_scratch_b | scratch_b | merge_sort_offchip.cpp:47:26 | write     | Fail         |        | merge_element_loop      | merge_sort_offchip.cpp:39:7 | 214-232    | Access store is in the conditional branch                                                              |
+| m_axi_gmem_scratch_b | scratch_b | merge_sort_offchip.cpp:50:26 | write     | Fail         |        | merge_element_loop      | merge_sort_offchip.cpp:39:7 | 214-232    | Access store is in the conditional branch                                                              |
+| m_axi_gmem_scratch_b | scratch_b | merge_sort_offchip.cpp:54:46 | read      | Fail         |        | merge_element_loop      | merge_sort_offchip.cpp:39:7 | 214-232    | Access load is in the conditional branch                                                               |
+| m_axi_gmem_scratch_b | scratch_b | merge_sort_offchip.cpp:55:49 | read      | Fail         |        | merge_element_loop      | merge_sort_offchip.cpp:39:7 | 214-232    | Access load is in the conditional branch                                                               |
++----------------------+-----------+------------------------------+-----------+--------------+--------+-------------------------+-----------------------------+------------+--------------------------------------------------------------------------------------------------------+
+
+    * Resolution URL: docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=XXX-YYY.html (replace XXX-YYY with column value)
+
+================================================================
+== Bind Op Report
+================================================================
++------------------------------------------------------------+-----+--------+---------------+--------+----------+---------+
+| Name                                                       | DSP | Pragma | Variable      | Op     | Impl     | Latency |
++------------------------------------------------------------+-----+--------+---------------+--------+----------+---------+
+| + merge_sort_offchip_hls                                   | 0   |        |               |        |          |         |
+|   icmp_ln29_fu_328_p2                                      |     |        | icmp_ln29     | setlt  | auto     | 0       |
+|   icmp_ln31_fu_363_p2                                      |     |        | icmp_ln31     | setlt  | auto     | 0       |
+|   add_ln32_fu_369_p2                                       |     |        | add_ln32      | add    | fabric   | 0       |
+|   icmp_ln5_fu_384_p2                                       |     |        | icmp_ln5      | setlt  | auto     | 0       |
+|   mid_fu_390_p3                                            |     |        | mid           | select | auto_sel | 0       |
+|   left_fu_399_p2                                           |     |        | left          | add    | fabric   | 0       |
+|   icmp_ln5_1_fu_414_p2                                     |     |        | icmp_ln5_1    | setlt  | auto     | 0       |
+|   right_fu_420_p3                                          |     |        | right         | select | auto_sel | 0       |
+|   add_ln31_fu_429_p2                                       |     |        | add_ln31      | add    | fabric   | 0       |
+|   source_is_a_1_fu_434_p2                                  |     |        | source_is_a_1 | xor    | auto     | 0       |
+|  + merge_sort_offchip_hls_Pipeline_copy_input_to_scratch_a | 0   |        |               |        |          |         |
+|    icmp_ln21_fu_127_p2                                     |     |        | icmp_ln21     | seteq  | auto     | 0       |
+|    add_ln21_fu_133_p2                                      |     |        | add_ln21      | add    | fabric   | 0       |
+|  + merge_sort_offchip_hls_Pipeline_merge_element_loop      | 0   |        |               |        |          |         |
+|    icmp_ln39_fu_284_p2                                     |     |        | icmp_ln39     | setlt  | auto     | 0       |
+|    icmp_ln54_fu_308_p2                                     |     |        | icmp_ln54     | setlt  | auto     | 0       |
+|    add_ln54_fu_399_p2                                      |     |        | add_ln54      | add    | fabric   | 0       |
+|    grp_fu_254_p2                                           |     |        | icmp_ln55     | setlt  | auto     | 0       |
+|    add_ln55_fu_435_p2                                      |     |        | add_ln55      | add    | fabric   | 0       |
+|    grp_fu_258_p2                                           |     |        | icmp_ln57     | setlt  | auto     | 0       |
+|    xor_ln57_fu_565_p2                                      |     |        | xor_ln57      | xor    | auto     | 0       |
+|    icmp_ln57_1_fu_570_p2                                   |     |        | icmp_ln57_1   | setlt  | auto     | 0       |
+|    xor_ln57_1_fu_576_p2                                    |     |        | xor_ln57_1    | xor    | auto     | 0       |
+|    take_left_1_fu_582_p2                                   |     |        | take_left_1   | or     | auto     | 0       |
+|    add_ln62_fu_593_p2                                      |     |        | add_ln62      | add    | fabric   | 0       |
+|    j_3_fu_618_p2                                           |     |        | j_3           | add    | fabric   | 0       |
+|    add_ln59_fu_633_p2                                      |     |        | add_ln59      | add    | fabric   | 0       |
+|    i_3_fu_658_p2                                           |     |        | i_3           | add    | fabric   | 0       |
+|    add_ln42_fu_325_p2                                      |     |        | add_ln42      | add    | fabric   | 0       |
+|    grp_fu_254_p2                                           |     |        | icmp_ln43     | setlt  | auto     | 0       |
+|    add_ln43_fu_363_p2                                      |     |        | add_ln43      | add    | fabric   | 0       |
+|    grp_fu_258_p2                                           |     |        | icmp_ln45     | setlt  | auto     | 0       |
+|    xor_ln45_fu_460_p2                                      |     |        | xor_ln45      | xor    | auto     | 0       |
+|    icmp_ln45_1_fu_465_p2                                   |     |        | icmp_ln45_1   | setlt  | auto     | 0       |
+|    xor_ln45_1_fu_471_p2                                    |     |        | xor_ln45_1    | xor    | auto     | 0       |
+|    take_left_fu_477_p2                                     |     |        | take_left     | or     | auto     | 0       |
+|    add_ln50_fu_488_p2                                      |     |        | add_ln50      | add    | fabric   | 0       |
+|    j_2_fu_514_p2                                           |     |        | j_2           | add    | fabric   | 0       |
+|    add_ln47_fu_529_p2                                      |     |        | add_ln47      | add    | fabric   | 0       |
+|    i_2_fu_555_p2                                           |     |        | i_2           | add    | fabric   | 0       |
+|    add_ln39_fu_289_p2                                      |     |        | add_ln39      | add    | fabric   | 0       |
+|  + merge_sort_offchip_hls_Pipeline_copy_result_to_out      | 0   |        |               |        |          |         |
+|    icmp_ln72_fu_128_p2                                     |     |        | icmp_ln72     | seteq  | auto     | 0       |
+|    add_ln72_fu_134_p2                                      |     |        | add_ln72      | add    | fabric   | 0       |
+|    icmp_ln74_fu_144_p2                                     |     |        | icmp_ln74     | seteq  | auto     | 0       |
+|    select_ln74_fu_198_p3                                   |     |        | select_ln74   | select | auto_sel | 0       |
++------------------------------------------------------------+-----+--------+---------------+--------+----------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++--------------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+| Name                     | Usage     | Type      | BRAM | URAM | Pragma | Variable | Impl | Latency | Bitwidth, Depth, |
+|                          |           |           |      |      |        |          |      |         | Banks            |
++--------------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+| + merge_sort_offchip_hls |           |           | 4    | 0    |        |          |      |         |                  |
+|   control_s_axi_U        | interface | s_axilite |      |      |        |          |      |         |                  |
+|   gmem_in_m_axi_U        | interface | m_axi     | 2    |      |        |          |      |         |                  |
+|   gmem_out_m_axi_U       | interface | m_axi     |      |      |        |          |      |         |                  |
+|   gmem_scratch_a_m_axi_U | interface | m_axi     | 1    |      |        |          |      |         |                  |
+|   gmem_scratch_b_m_axi_U | interface | m_axi     | 1    |      |        |          |      |         |                  |
++--------------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------+--------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
+| Type      | Options                                                                                                                                          | Location                                                       |
++-----------+--------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
+| INLINE    |                                                                                                                                                  | merge_sort_offchip.cpp:4 in min_int                            |
+| INTERFACE | m_axi port=in offset=slave bundle=gmem_in depth=SORT_SIZE max_read_burst_length=16 max_widen_bitwidth=64                                         | merge_sort_offchip.cpp:10 in merge_sort_offchip_hls, in        |
+| INTERFACE | m_axi port=scratch_a offset=slave bundle=gmem_scratch_a depth=SORT_SIZE max_read_burst_length=16 max_write_burst_length=16 max_widen_bitwidth=32 | merge_sort_offchip.cpp:11 in merge_sort_offchip_hls, scratch_a |
+| INTERFACE | m_axi port=scratch_b offset=slave bundle=gmem_scratch_b depth=SORT_SIZE max_read_burst_length=16 max_write_burst_length=16 max_widen_bitwidth=32 | merge_sort_offchip.cpp:12 in merge_sort_offchip_hls, scratch_b |
+| INTERFACE | m_axi port=out offset=slave bundle=gmem_out depth=SORT_SIZE max_write_burst_length=16 max_widen_bitwidth=512                                     | merge_sort_offchip.cpp:13 in merge_sort_offchip_hls, out       |
+| INTERFACE | s_axilite port=in bundle=control                                                                                                                 | merge_sort_offchip.cpp:14 in merge_sort_offchip_hls, in        |
+| INTERFACE | s_axilite port=scratch_a bundle=control                                                                                                          | merge_sort_offchip.cpp:15 in merge_sort_offchip_hls, scratch_a |
+| INTERFACE | s_axilite port=scratch_b bundle=control                                                                                                          | merge_sort_offchip.cpp:16 in merge_sort_offchip_hls, scratch_b |
+| INTERFACE | s_axilite port=out bundle=control                                                                                                                | merge_sort_offchip.cpp:17 in merge_sort_offchip_hls, out       |
+| INTERFACE | s_axilite port=return bundle=control                                                                                                             | merge_sort_offchip.cpp:18 in merge_sort_offchip_hls, return    |
+| PIPELINE  | ii=1                                                                                                                                             | merge_sort_offchip.cpp:22 in merge_sort_offchip_hls            |
+| PIPELINE  | ii=1                                                                                                                                             | merge_sort_offchip.cpp:40 in merge_sort_offchip_hls            |
+| PIPELINE  | ii=1                                                                                                                                             | merge_sort_offchip.cpp:73 in merge_sort_offchip_hls            |
++-----------+--------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
+
+

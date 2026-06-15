@@ -1,0 +1,488 @@
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 34, Column: 7 }
+Function:        _Z22matmul_full_contiguousPKiS0_Pi
+Args:            
+  - String:          'Loop '''
+  - LoopName:        compute_k_loop
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 5, Column: 0 }
+Function:        _Z22matmul_full_contiguousPKiS0_Pi
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        compute_k_loop
+  - String:          ''' ('
+  - LoopLoc:         'matmul_full_contiguous.cpp:34:7'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          matmul_full_contiguous
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+Function:        apatb_matmul_full_contiguous_ir
+Args:            
+  - Callee:          'matmul_full_contiguous(int const*, int const*, int*)'
+    DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 5, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          apatb_matmul_full_contiguous_ir
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 20, Column: 3 }
+Function:        _Z22matmul_full_contiguousPKiS0_Pi
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '256'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        a4seq
+  - ArrayName:       a
+  - String:          ' '
+  - BundleName:      gmem_a
+  - String:          ' '
+  - LoopName:        load_ab_full_loop
+  - String:          ' '
+  - LoopLoc:         'matmul_full_contiguous.cpp:20:3'
+  - String:          ' '
+  - Function:        'matmul_full_contiguous(int const*, int const*, int*)'
+    DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 5, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 22, Column: 19 }
+  - OrigDirection:   read
+  - OrigID:          for.inc.load.4
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 20, Column: 3 }
+Function:        _Z22matmul_full_contiguousPKiS0_Pi
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '256'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        b5seq
+  - ArrayName:       b
+  - String:          ' '
+  - BundleName:      gmem_b
+  - String:          ' '
+  - LoopName:        load_ab_full_loop
+  - String:          ' '
+  - LoopLoc:         'matmul_full_contiguous.cpp:20:3'
+  - String:          ' '
+  - Function:        'matmul_full_contiguous(int const*, int const*, int*)'
+    DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 5, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 23, Column: 22 }
+  - OrigDirection:   read
+  - OrigID:          for.inc.load.9
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 43, Column: 3 }
+Function:        _Z22matmul_full_contiguousPKiS0_Pi
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of length '
+  - Length:          '256'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        c6seq
+  - ArrayName:       c
+  - String:          ' '
+  - BundleName:      gmem_c
+  - String:          ' '
+  - LoopName:        store_c_full_loop
+  - String:          ' '
+  - LoopLoc:         'matmul_full_contiguous.cpp:43:3'
+  - String:          ' '
+  - Function:        'matmul_full_contiguous(int const*, int const*, int*)'
+    DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 5, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 45, Column: 11 }
+  - OrigDirection:   write
+  - OrigID:          for.inc49.store.6
+...
+--- !Passed
+Pass:            reflow-burst-widen
+Name:            BurstWidened
+DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 43, Column: 3 }
+Function:        _Z22matmul_full_contiguousPKiS0_Pi
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of '
+  - OrigLength:      '256'
+  - String:          ' x '
+  - OrigWords:       '32'
+  - String:          'bit words has been widened by '
+  - Factor:          '16'
+  - String:          ': '
+  - Length:          '16'
+  - String:          ' x '
+  - Words:           '512'
+  - String:          bit words
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 43, Column: 3 }
+  - OrigDirection:   write
+  - OrigID:          c6seq
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        wseq
+  - ArrayName:       c
+  - String:          ' '
+  - BundleName:      gmem_c
+  - String:          ' '
+  - LoopName:        store_c_full_loop
+  - String:          ' '
+  - LoopLoc:         'matmul_full_contiguous.cpp:43:3'
+  - String:          ' '
+  - Function:        'matmul_full_contiguous(int const*, int const*, int*)'
+    DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 5, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-widen
+Name:            BurstWidened
+DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 20, Column: 3 }
+Function:        _Z22matmul_full_contiguousPKiS0_Pi
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of '
+  - OrigLength:      '256'
+  - String:          ' x '
+  - OrigWords:       '32'
+  - String:          'bit words has been widened by '
+  - Factor:          '16'
+  - String:          ': '
+  - Length:          '16'
+  - String:          ' x '
+  - Words:           '512'
+  - String:          bit words
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 20, Column: 3 }
+  - OrigDirection:   read
+  - OrigID:          a4seq
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        wseq7
+  - ArrayName:       a
+  - String:          ' '
+  - BundleName:      gmem_a
+  - String:          ' '
+  - LoopName:        load_ab_full_loop
+  - String:          ' '
+  - LoopLoc:         'matmul_full_contiguous.cpp:20:3'
+  - String:          ' '
+  - Function:        'matmul_full_contiguous(int const*, int const*, int*)'
+    DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 5, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-widen
+Name:            BurstWidened
+DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 20, Column: 3 }
+Function:        _Z22matmul_full_contiguousPKiS0_Pi
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of '
+  - OrigLength:      '256'
+  - String:          ' x '
+  - OrigWords:       '32'
+  - String:          'bit words has been widened by '
+  - Factor:          '16'
+  - String:          ': '
+  - Length:          '16'
+  - String:          ' x '
+  - Words:           '512'
+  - String:          bit words
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 20, Column: 3 }
+  - OrigDirection:   read
+  - OrigID:          b5seq
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        wseq9
+  - ArrayName:       b
+  - String:          ' '
+  - BundleName:      gmem_b
+  - String:          ' '
+  - LoopName:        load_ab_full_loop
+  - String:          ' '
+  - LoopLoc:         'matmul_full_contiguous.cpp:20:3'
+  - String:          ' '
+  - Function:        'matmul_full_contiguous(int const*, int const*, int*)'
+    DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 5, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 15, Column: 6 }
+Function:        _Z22matmul_full_contiguousPKiS0_Pi
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=cyclic factor=8 variable=A_local'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  matmul_full_contiguous
+  - String:          ' '
+  - varLoc:          'matmul_full_contiguous.cpp:15:6'
+  - String:          ' '
+  - PragmaSrcLoc:    'matmul_full_contiguous.cpp:30:9'
+    DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 30, Column: 9 }
+  - VarName:         A_local
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 30, Column: 9 }
+Function:        _Z22matmul_full_contiguousPKiS0_Pi
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '8'
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            A_local
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 16, Column: 7 }
+Function:        _Z22matmul_full_contiguousPKiS0_Pi
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=cyclic factor=17 variable=B_local'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  matmul_full_contiguous
+  - String:          ' '
+  - varLoc:          'matmul_full_contiguous.cpp:16:7'
+  - String:          ' '
+  - PragmaSrcLoc:    'matmul_full_contiguous.cpp:30:9'
+    DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 30, Column: 9 }
+  - VarName:         B_local
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 30, Column: 9 }
+Function:        _Z22matmul_full_contiguousPKiS0_Pi
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '17'
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            B_local
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 15, Column: 6 }
+Function:        _Z22matmul_full_contiguousPKiS0_Pi
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          A_local
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '8'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 16, Column: 7 }
+Function:        _Z22matmul_full_contiguousPKiS0_Pi
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          B_local
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '17'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 20, Column: 3 }
+Function:        _Z22matmul_full_contiguousPKiS0_Pi
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '16'
+  - String:          ' and bit width '
+  - Width:           '512'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem_a
+  - String:          ' '
+  - Function:        'matmul_full_contiguous(int const*, int const*, int*)'
+    DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 5, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 20, Column: 3 }
+Function:        _Z22matmul_full_contiguousPKiS0_Pi
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '16'
+  - String:          ' and bit width '
+  - Width:           '512'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem_a
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 20, Column: 3 }
+Function:        _Z22matmul_full_contiguousPKiS0_Pi
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '16'
+  - String:          ' and bit width '
+  - Width:           '512'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq1
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem_b
+  - String:          ' '
+  - Function:        'matmul_full_contiguous(int const*, int const*, int*)'
+    DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 5, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 20, Column: 3 }
+Function:        _Z22matmul_full_contiguousPKiS0_Pi
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '16'
+  - String:          ' and bit width '
+  - Width:           '512'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem_b
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 43, Column: 3 }
+Function:        _Z22matmul_full_contiguousPKiS0_Pi
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '16'
+  - String:          ' and bit width '
+  - Width:           '512'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq2
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem_c
+  - String:          ' '
+  - Function:        'matmul_full_contiguous(int const*, int const*, int*)'
+    DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 5, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: matmul_full_contiguous.cpp, Line: 43, Column: 3 }
+Function:        _Z22matmul_full_contiguousPKiS0_Pi
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '16'
+  - String:          ' and bit width '
+  - Width:           '512'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem_c
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...

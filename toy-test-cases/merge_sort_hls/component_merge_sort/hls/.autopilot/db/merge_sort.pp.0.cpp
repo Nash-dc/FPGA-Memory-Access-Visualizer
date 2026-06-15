@@ -1,0 +1,240 @@
+# 1 "merge_sort.cpp"
+# 1 "<built-in>" 1
+# 1 "<built-in>" 3
+# 376 "<built-in>" 3
+# 1 "<command line>" 1
+# 1 "<built-in>" 2
+# 1 "/data/2025.1/Vitis/common/technology/autopilot/etc/autopilot_ssdm_op.h" 1
+# 105 "/data/2025.1/Vitis/common/technology/autopilot/etc/autopilot_ssdm_op.h"
+extern "C" {
+
+
+
+
+
+
+    void _ssdm_op_IfRead(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_op_IfWrite(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    unsigned int __attribute__ ((bitwidth(1))) _ssdm_op_IfNbRead(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    unsigned int __attribute__ ((bitwidth(1))) _ssdm_op_IfNbWrite(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    unsigned int __attribute__ ((bitwidth(1))) _ssdm_op_IfCanRead(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    unsigned int __attribute__ ((bitwidth(1))) _ssdm_op_IfCanWrite(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+
+
+    void _ssdm_StreamRead(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_StreamWrite(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    unsigned int __attribute__ ((bitwidth(1))) _ssdm_StreamNbRead(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    unsigned int __attribute__ ((bitwidth(1))) _ssdm_StreamNbWrite(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    unsigned int __attribute__ ((bitwidth(1))) _ssdm_StreamCanRead(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    unsigned int __attribute__ ((bitwidth(1))) _ssdm_StreamCanWrite(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    unsigned _ssdm_StreamSize(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_op_ReadReq(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_op_Read(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_op_WriteReq(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_op_Write(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    unsigned int __attribute__ ((bitwidth(1))) _ssdm_op_NbReadReq(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    unsigned int __attribute__ ((bitwidth(1))) _ssdm_op_CanReadReq(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    unsigned int __attribute__ ((bitwidth(1))) _ssdm_op_NbWriteReq(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    unsigned int __attribute__ ((bitwidth(1))) _ssdm_op_CanWriteReq(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+
+
+
+
+    void _ssdm_op_MemShiftRead(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+
+    void _ssdm_op_PrintNone(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_op_PrintInt(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_op_PrintDouble(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+
+    void _ssdm_op_Wait(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_op_Poll(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+
+    void _ssdm_op_Return(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+
+
+    void _ssdm_op_SpecSynModule(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_op_SpecTopModule(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_op_SpecProcessDecl(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_op_SpecProcessDef(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_op_SpecPort(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_op_SpecConnection(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_op_SpecChannel(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_op_SpecSensitive(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_op_SpecModuleInst(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_op_SpecPortMap(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+
+    void _ssdm_op_SpecReset(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+
+    void _ssdm_op_SpecPlatform(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_op_SpecClockDomain(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_op_SpecPowerDomain(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+
+    int _ssdm_op_SpecRegionBegin(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    int _ssdm_op_SpecRegionEnd(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+
+    void _ssdm_op_SpecLoopName(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+
+    void _ssdm_op_SpecLoopTripCount(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+
+    int _ssdm_op_SpecStateBegin(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    int _ssdm_op_SpecStateEnd(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+
+    void _ssdm_op_SpecInterface(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+
+    void _ssdm_op_SpecPipeline(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_op_SpecDataflowPipeline(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+
+
+    void _ssdm_op_SpecLatency(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_op_SpecParallel(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_op_SpecProtocol(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_op_SpecOccurrence(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+
+    void _ssdm_op_SpecResource(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_op_SpecResourceLimit(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_op_SpecCHCore(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_op_SpecFUCore(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_op_SpecIFCore(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_op_SpecIPCore(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_op_SpecMemCore(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+
+    void _ssdm_op_SpecExt(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+
+
+
+
+    void _ssdm_SpecArrayDimSize(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+
+    void _ssdm_RegionBegin(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_RegionEnd(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+
+    void _ssdm_InlineAll(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_InlineLoop(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_Inline(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_InlineSelf(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_InlineRegion(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+
+    void _ssdm_SpecArrayMap(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_SpecArrayPartition(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_SpecArrayReshape(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+
+    void _ssdm_SpecStream(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+
+    void _ssdm_op_SpecStable(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_op_SpecStableContent(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+
+    void _ssdm_op_SpecBindPort(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+
+    void _ssdm_op_SpecPipoDepth(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+
+    void _ssdm_SpecExpr(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_SpecExprBalance(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+
+    void _ssdm_SpecDependence(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+
+    void _ssdm_SpecLoopMerge(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_SpecLoopFlatten(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_SpecLoopRewind(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+
+    void _ssdm_SpecFuncInstantiation(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_SpecFuncBuffer(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_SpecFuncExtract(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_SpecConstant(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+
+    void _ssdm_DataPack(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_SpecDataPack(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+
+    void _ssdm_op_SpecBitsMap(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+    void _ssdm_op_SpecLicense(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+
+    void __xilinx_ip_top(...) __attribute__ ((nothrow)) __attribute__((overloadable));
+
+
+}
+# 2 "<built-in>" 2
+# 1 "merge_sort.cpp" 2
+# 1 "./merge_sort.h" 1
+
+
+
+static const int SORT_SIZE = 64;
+
+__attribute__((sdx_kernel("merge_sort_hls", 0))) void merge_sort_hls(const int in[SORT_SIZE], int out[SORT_SIZE]);
+# 2 "merge_sort.cpp" 2
+
+static int min_int(int left, int right) {
+#pragma HLS INLINE
+ return left < right ? left : right;
+}
+
+__attribute__((sdx_kernel("merge_sort_hls", 0))) void merge_sort_hls(const int in[SORT_SIZE], int out[SORT_SIZE]) {
+#line 11 "/data/hls-dev/toy-test-cases/merge_sort_hls/run_hls.tcl"
+#pragma HLSDIRECTIVE TOP name=merge_sort_hls
+# 8 "merge_sort.cpp"
+
+#pragma HLS INTERFACE m_axi port=in offset=slave bundle=gmem_in depth=SORT_SIZE max_read_burst_length=16 max_widen_bitwidth=512
+#pragma HLS INTERFACE m_axi port=out offset=slave bundle=gmem_out depth=SORT_SIZE max_write_burst_length=16 max_widen_bitwidth=512
+#pragma HLS INTERFACE s_axilite port=in bundle=control
+#pragma HLS INTERFACE s_axilite port=out bundle=control
+#pragma HLS INTERFACE s_axilite port=return bundle=control
+
+ int buffer_a[SORT_SIZE];
+  int buffer_b[SORT_SIZE];
+
+load_input_loop:
+  for (int i = 0; i < SORT_SIZE; ++i) {
+#pragma HLS PIPELINE II=1
+ buffer_a[i] = in[i];
+  }
+
+  bool source_is_a = true;
+
+merge_width_loop:
+  for (int width = 1; width < SORT_SIZE; width <<= 1) {
+  merge_block_loop:
+    for (int left = 0; left < SORT_SIZE; left += (width << 1)) {
+      const int mid = min_int(left + width, SORT_SIZE);
+      const int right = min_int(left + (width << 1), SORT_SIZE);
+      if (source_is_a) {
+        int i = left;
+        int j = mid;
+      merge_a_to_b_loop:
+        for (int k = left; k < right; ++k) {
+#pragma HLS PIPELINE II=1
+ const bool take_left =
+              (i < mid) && ((j >= right) || (buffer_a[i] <= buffer_a[j]));
+          if (take_left) {
+            buffer_b[k] = buffer_a[i];
+            ++i;
+          } else {
+            buffer_b[k] = buffer_a[j];
+            ++j;
+          }
+        }
+      } else {
+        int i = left;
+        int j = mid;
+      merge_b_to_a_loop:
+        for (int k = left; k < right; ++k) {
+#pragma HLS PIPELINE II=1
+ const bool take_left =
+              (i < mid) && ((j >= right) || (buffer_b[i] <= buffer_b[j]));
+          if (take_left) {
+            buffer_a[k] = buffer_b[i];
+            ++i;
+          } else {
+            buffer_a[k] = buffer_b[j];
+            ++j;
+          }
+        }
+      }
+    }
+    source_is_a = !source_is_a;
+  }
+
+store_output_loop:
+  for (int i = 0; i < SORT_SIZE; ++i) {
+#pragma HLS PIPELINE II=1
+ out[i] = source_is_a ? buffer_a[i] : buffer_b[i];
+  }
+}
