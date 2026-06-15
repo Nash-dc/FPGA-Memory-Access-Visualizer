@@ -3,6 +3,7 @@
 
 # Keep the whitelist and this file visible to Git.
 !/.gitignore
+!/.gitmodules
 !/Results/
 !/toy-test-cases/
 !/Vitis-HLS-Introductory-Examples/

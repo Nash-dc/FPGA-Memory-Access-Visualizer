@@ -1,0 +1,3 @@
+[submodule "Vitis-HLS-Introductory-Examples"]
+	path = Vitis-HLS-Introductory-Examples
+	url = https://github.com/Xilinx/Vitis-HLS-Introductory-Examples.git
