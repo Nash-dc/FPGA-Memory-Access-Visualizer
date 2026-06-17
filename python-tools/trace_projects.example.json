@@ -1,0 +1,18 @@
+{
+  "projects": [
+    {
+      "name": "my_hls_project",
+      "source": "path/to/top.cpp",
+      "testbench": "path/to/top_test.cpp",
+      "report_bc": "path/to/component/hls/.autopilot/db/top.bc",
+      "interface_xml": "path/to/component/hls/.autopilot/db/top-io-fe.xml",
+      "include_dirs": [
+        "path/to/include"
+      ],
+      "cxx_standard": "c++14",
+      "host_cxx_standard": "-std=c++14",
+      "defines": [],
+      "link_flags": []
+    }
+  ]
+}
