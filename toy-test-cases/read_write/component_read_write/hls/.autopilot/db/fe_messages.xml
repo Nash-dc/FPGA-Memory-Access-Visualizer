@@ -1,0 +1,46 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-114" msg_severity="WARNING" msg_loc="read_write.cpp:70:9" msg_body="Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="read_write.cpp:12:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="read" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="read_write.cpp:27:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="write" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="read_write.cpp:39:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="sum" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/data/hls-dev/toy-test-cases/read_write/run_hls.tcl:15:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="read_write" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=read_write" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="read_write.cpp:49:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="read_write" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=mem_0 bundle=mem_0 depth=4096" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="read_write.cpp:50:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="read_write" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=mem_1 bundle=mem_1 depth=4096" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="read_write.cpp:52:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="read_write" ARG_PragmaIsValid="1" ARG_PragmaType="dataflow" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="read_write.cpp:66:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="read_only" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=mem_0 bundle=mem_0 depth=4096" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="read_write.cpp:67:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="read_only" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=mem_1 bundle=mem_1 depth=4096" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="read_write.cpp:68:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="read_only" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=res" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="read_write.cpp:70:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="read_only" ARG_PragmaIsValid="1" ARG_PragmaType="dataflow" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="read_write.cpp:73:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="read_only" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="read_write.cpp:77:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="read_only" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="read_write.cpp:53:27" msg_body="Applying array_partition to 'stream': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="stream"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

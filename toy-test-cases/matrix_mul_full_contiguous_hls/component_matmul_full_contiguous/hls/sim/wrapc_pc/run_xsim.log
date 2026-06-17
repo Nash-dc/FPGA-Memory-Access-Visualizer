@@ -1,0 +1,1096 @@
+TEST PASSED
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /data/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab xil_defaultlib.apatb_matmul_full_contiguous_top xil_defaultlib.glbl -Oenable_linking_all_libraries -prj matmul_full_contiguous.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_1_20 -L floating_point_v7_0_25 --lib ieee_proposed=./ieee_proposed -L uvm -relax -i ./svr -i ./svtb -i ./file_agent -i ./matmul_full_contiguous_subsystem -s matmul_full_contiguous -debug all 
+Multi-threading is on. Using 10 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/sim/verilog/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/sim/verilog/matmul_full_contiguous_mul_8ns_10ns_17_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_mul_8ns_10ns_17_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/sim/verilog/matmul_full_contiguous_sparsemux_33_4_32_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_sparsemux_33_4_32_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/sim/verilog/matmul_full_contiguous_A_local_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_A_local_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/sim/verilog/matmul_full_contiguous_mul_6ns_8ns_13_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_mul_6ns_8ns_13_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/sim/verilog/matmul_full_contiguous_mul_7ns_9ns_15_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_mul_7ns_9ns_15_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/sim/verilog/matmul_full_contiguous_control_s_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_control_s_axi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/sim/verilog/matmul_full_contiguous_matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/sim/verilog/matmul_full_contiguous_B_local_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_B_local_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/sim/verilog/matmul_full_contiguous_C_local_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_C_local_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/sim/verilog/matmul_full_contiguous_matmul_full_contiguous_Pipeline_load_ab_full_loop.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_matmul_full_contiguous_Pipeline_load_ab_full_loop
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/sim/verilog/matmul_full_contiguous_gmem_b_m_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_gmem_b_m_axi
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_gmem_b_m_axi_load
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_gmem_b_m_axi_read
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_gmem_b_m_axi_burst_converter
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_gmem_b_m_axi_burst_interleave
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_gmem_b_m_axi_burst_sequential
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_gmem_b_m_axi_reg_slice
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_gmem_b_m_axi_fifo
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_gmem_b_m_axi_srl
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_gmem_b_m_axi_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/sim/verilog/matmul_full_contiguous_flow_control_loop_pipe_sequential_init.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_flow_control_loop_pipe_sequential_init
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/sim/verilog/matmul_full_contiguous_matmul_full_contiguous_Pipeline_store_c_full_loop.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_matmul_full_contiguous_Pipeline_store_c_full_loop
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/sim/verilog/matmul_full_contiguous_gmem_c_m_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_gmem_c_m_axi
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_gmem_c_m_axi_store
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_gmem_c_m_axi_write
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_gmem_c_m_axi_burst_converter
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_gmem_c_m_axi_burst_interleave
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_gmem_c_m_axi_burst_sequential
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_gmem_c_m_axi_throttle
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_gmem_c_m_axi_reg_slice
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_gmem_c_m_axi_fifo
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_gmem_c_m_axi_srl
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_gmem_c_m_axi_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/sim/verilog/matmul_full_contiguous.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/sim/verilog/matmul_full_contiguous.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_matmul_full_contiguous_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/sim/verilog/matmul_full_contiguous_gmem_a_m_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_gmem_a_m_axi
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_gmem_a_m_axi_load
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_gmem_a_m_axi_read
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_gmem_a_m_axi_burst_converter
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_gmem_a_m_axi_burst_interleave
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_gmem_a_m_axi_burst_sequential
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_gmem_a_m_axi_reg_slice
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_gmem_a_m_axi_fifo
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_gmem_a_m_axi_srl
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_gmem_a_m_axi_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/sim/verilog/matmul_full_contiguous_mul_32s_32s_32_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matmul_full_contiguous_mul_32s_32s_32_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/sim/verilog/dataflow_monitor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dataflow_monitor
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/sim/verilog/file_agent/file_agent_pkg.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/sim/verilog/axivip/axi_pkg.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/sim/verilog/axivip/axi_if.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/sim/verilog/matmul_full_contiguous_subsystem/matmul_full_contiguous_subsystem_pkg.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/sim/verilog/svtb/misc_interface.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/data/hls-dev/toy-test-cases/matrix_mul_full_contiguous_hls/component_matmul_full_contiguous/hls/sim/verilog/svtb/sv_module_top.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sv_module_top
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/proj/primebuilds/9999.0_PRIME_0428_0031/installs/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 4356. Module uvm_pkg doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/proj/primebuilds/9999.0_PRIME_0428_0031/installs/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 4356. Module uvm_pkg doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4468] File : /proj/primebuilds/9999.0_PRIME_0428_0031/installs/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv, Line : 25994, RANDC variable size more than 8 bits. This will be treated as a RAND variable instead.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.$unit_sv_module_top_sv
+Compiling package uvm.uvm_pkg
+Compiling package std.std
+Compiling package xil_defaultlib.axi_pkg
+Compiling package xil_defaultlib.matmul_full_contiguous_subsystem...
+Compiling package xil_defaultlib.file_agent_pkg
+Compiling package xil_defaultlib.$unit_dataflow_monitor_sv
+Compiling module xil_defaultlib.matmul_full_contiguous_A_local_R...
+Compiling module xil_defaultlib.matmul_full_contiguous_B_local_R...
+Compiling module xil_defaultlib.matmul_full_contiguous_C_local_R...
+Compiling module xil_defaultlib.matmul_full_contiguous_mul_8ns_1...
+Compiling module xil_defaultlib.matmul_full_contiguous_flow_cont...
+Compiling module xil_defaultlib.matmul_full_contiguous_matmul_fu...
+Compiling module xil_defaultlib.matmul_full_contiguous_mul_32s_3...
+Compiling module xil_defaultlib.matmul_full_contiguous_sparsemux...
+Compiling module xil_defaultlib.matmul_full_contiguous_mul_6ns_8...
+Compiling module xil_defaultlib.matmul_full_contiguous_mul_7ns_9...
+Compiling module xil_defaultlib.matmul_full_contiguous_matmul_fu...
+Compiling module xil_defaultlib.matmul_full_contiguous_matmul_fu...
+Compiling module xil_defaultlib.matmul_full_contiguous_control_s...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_a_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_a_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_a_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_a_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_a_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_a_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_a_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_a_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_a_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_a_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_a_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_a_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_a_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_b_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_b_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_b_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_b_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_b_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_b_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_b_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_b_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_b_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_b_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_b_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_b_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_b_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_c_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_c_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_c_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_c_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_c_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_c_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_c_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_c_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_c_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_c_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_c_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_c_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_c_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_c_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_c_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_c_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_c_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_c_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_c_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_c_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_c_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous_gmem_c_m_...
+Compiling module xil_defaultlib.matmul_full_contiguous
+Compiling module xil_defaultlib.misc_interface_default
+Compiling module xil_defaultlib.axi_if(ADDR_WIDTH=64,STRB_WIDTH=...
+Compiling module xil_defaultlib.axi_if(ADDR_WIDTH=6,STRB_WIDTH=4...
+Compiling module xil_defaultlib.sv_module_top
+Compiling module xil_defaultlib.nodf_module_intf_default
+Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=1)
+Compiling module xil_defaultlib.dataflow_monitor_1
+Compiling module xil_defaultlib.apatb_matmul_full_contiguous_top
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot matmul_full_contiguous
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Wed Jun 17 10:04:27 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/matmul_full_contiguous/xsim_script.tcl
+# xsim {matmul_full_contiguous} -testplusarg UVM_VERBOSITY=UVM_NONE -testplusarg UVM_TESTNAME=matmul_full_contiguous_test_lib -testplusarg UVM_TIMEOUT=20000000000000 -view {{matmul_full_contiguous_dataflow_ana.wcfg}} -tclbatch {matmul_full_contiguous.tcl} -protoinst {matmul_full_contiguous.protoinst}
+INFO: [Wavedata 42-565] Reading protoinst file matmul_full_contiguous.protoinst
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous//AESL_inst_matmul_full_contiguous_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/grp_matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop_fu_473/grp_matmul_full_contiguous_Pipeline_compute_row_loop_compute_col_loop_fu_473_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/grp_matmul_full_contiguous_Pipeline_load_ab_full_loop_fu_438/grp_matmul_full_contiguous_Pipeline_load_ab_full_loop_fu_438_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/grp_matmul_full_contiguous_Pipeline_store_c_full_loop_fu_519/grp_matmul_full_contiguous_Pipeline_store_c_full_loop_fu_519_activity
+Time resolution is 1 ps
+open_wave_config matmul_full_contiguous_dataflow_ana.wcfg
+source matmul_full_contiguous.tcl
+## log_wave -r /
+WARNING: [Simtcl 6-197] One or more HDL objects could not be logged because of object type or size limitations.  To see details please rerun the command with -verbose (-v).
+## set designtopgroup [add_wave_group "Design Top Signals"]
+## set cinoutgroup [add_wave_group "C InOuts" -into $designtopgroup]
+## set a__b__c__return_group [add_wave_group a__b__c__return(axi_slave) -into $cinoutgroup]
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/interrupt -into $a__b__c__return_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/s_axi_control_BRESP -into $a__b__c__return_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/s_axi_control_BREADY -into $a__b__c__return_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/s_axi_control_BVALID -into $a__b__c__return_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/s_axi_control_RRESP -into $a__b__c__return_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/s_axi_control_RDATA -into $a__b__c__return_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/s_axi_control_RREADY -into $a__b__c__return_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/s_axi_control_RVALID -into $a__b__c__return_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/s_axi_control_ARREADY -into $a__b__c__return_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/s_axi_control_ARVALID -into $a__b__c__return_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/s_axi_control_ARADDR -into $a__b__c__return_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/s_axi_control_WSTRB -into $a__b__c__return_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/s_axi_control_WDATA -into $a__b__c__return_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/s_axi_control_WREADY -into $a__b__c__return_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/s_axi_control_WVALID -into $a__b__c__return_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/s_axi_control_AWREADY -into $a__b__c__return_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/s_axi_control_AWVALID -into $a__b__c__return_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/s_axi_control_AWADDR -into $a__b__c__return_group -radix hex
+## set coutputgroup [add_wave_group "C Outputs" -into $designtopgroup]
+## set c_group [add_wave_group c(axi_master) -into $coutputgroup]
+## set rdata_group [add_wave_group "Read Channel" -into $c_group]
+## set wdata_group [add_wave_group "Write Channel" -into $c_group]
+## set ctrl_group [add_wave_group "Handshakes" -into $c_group]
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_BUSER -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_BID -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_BRESP -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_BREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_BVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_RRESP -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_RUSER -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_RID -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_RLAST -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_RDATA -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_RREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_RVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_ARUSER -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_ARREGION -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_ARQOS -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_ARPROT -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_ARCACHE -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_ARLOCK -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_ARBURST -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_ARSIZE -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_ARLEN -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_ARID -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_ARADDR -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_ARREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_ARVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_WUSER -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_WID -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_WLAST -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_WSTRB -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_WDATA -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_WREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_WVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_AWUSER -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_AWREGION -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_AWQOS -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_AWPROT -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_AWCACHE -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_AWLOCK -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_AWBURST -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_AWSIZE -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_AWLEN -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_AWID -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_AWADDR -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_AWREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_c_AWVALID -into $ctrl_group -color #ffff00 -radix hex
+## set cinputgroup [add_wave_group "C Inputs" -into $designtopgroup]
+## set b_group [add_wave_group b(axi_master) -into $cinputgroup]
+## set rdata_group [add_wave_group "Read Channel" -into $b_group]
+## set wdata_group [add_wave_group "Write Channel" -into $b_group]
+## set ctrl_group [add_wave_group "Handshakes" -into $b_group]
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_BUSER -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_BID -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_BRESP -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_BREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_BVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_RRESP -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_RUSER -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_RID -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_RLAST -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_RDATA -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_RREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_RVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_ARUSER -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_ARREGION -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_ARQOS -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_ARPROT -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_ARCACHE -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_ARLOCK -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_ARBURST -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_ARSIZE -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_ARLEN -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_ARID -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_ARADDR -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_ARREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_ARVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_WUSER -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_WID -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_WLAST -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_WSTRB -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_WDATA -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_WREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_WVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_AWUSER -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_AWREGION -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_AWQOS -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_AWPROT -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_AWCACHE -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_AWLOCK -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_AWBURST -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_AWSIZE -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_AWLEN -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_AWID -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_AWADDR -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_AWREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_b_AWVALID -into $ctrl_group -color #ffff00 -radix hex
+## set a_group [add_wave_group a(axi_master) -into $cinputgroup]
+## set rdata_group [add_wave_group "Read Channel" -into $a_group]
+## set wdata_group [add_wave_group "Write Channel" -into $a_group]
+## set ctrl_group [add_wave_group "Handshakes" -into $a_group]
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_BUSER -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_BID -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_BRESP -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_BREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_BVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_RRESP -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_RUSER -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_RID -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_RLAST -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_RDATA -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_RREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_RVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_ARUSER -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_ARREGION -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_ARQOS -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_ARPROT -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_ARCACHE -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_ARLOCK -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_ARBURST -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_ARSIZE -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_ARLEN -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_ARID -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_ARADDR -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_ARREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_ARVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_WUSER -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_WID -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_WLAST -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_WSTRB -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_WDATA -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_WREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_WVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_AWUSER -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_AWREGION -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_AWQOS -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_AWPROT -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_AWCACHE -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_AWLOCK -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_AWBURST -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_AWSIZE -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_AWLEN -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_AWID -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_AWADDR -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_AWREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/m_axi_gmem_a_AWVALID -into $ctrl_group -color #ffff00 -radix hex
+## set blocksiggroup [add_wave_group "Block-level IO Handshake(internal)" -into $designtopgroup]
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/ap_done -into $blocksiggroup
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/ap_idle -into $blocksiggroup
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/ap_ready -into $blocksiggroup
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/ap_start -into $blocksiggroup
+## set resetgroup [add_wave_group "Reset" -into $designtopgroup]
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/ap_rst_n -into $resetgroup
+## set clockgroup [add_wave_group "Clock" -into $designtopgroup]
+## add_wave /apatb_matmul_full_contiguous_top/AESL_inst_matmul_full_contiguous/ap_clk -into $clockgroup
+## set testbenchgroup [add_wave_group "Test Bench Signals"]
+## set tbinternalsiggroup [add_wave_group "Internal Signals" -into $testbenchgroup]
+## set tb_simstatus_group [add_wave_group "Simulation Status" -into $tbinternalsiggroup]
+## set tb_portdepth_group [add_wave_group "Port Depth" -into $tbinternalsiggroup]
+## add_wave /apatb_matmul_full_contiguous_top/AUTOTB_TRANSACTION_NUM -into $tb_simstatus_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/ready_cnt -into $tb_simstatus_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/done_cnt -into $tb_simstatus_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/LENGTH_a -into $tb_portdepth_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/LENGTH_b -into $tb_portdepth_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/LENGTH_c -into $tb_portdepth_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/LENGTH_gmem_a -into $tb_portdepth_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/LENGTH_gmem_b -into $tb_portdepth_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/LENGTH_gmem_c -into $tb_portdepth_group -radix hex
+## set tbcinoutgroup [add_wave_group "C InOuts" -into $testbenchgroup]
+## set tb_a__b__c__return_group [add_wave_group a__b__c__return(axi_slave) -into $tbcinoutgroup]
+## add_wave /apatb_matmul_full_contiguous_top/control_INTERRUPT -into $tb_a__b__c__return_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/control_BRESP -into $tb_a__b__c__return_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/control_BREADY -into $tb_a__b__c__return_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/control_BVALID -into $tb_a__b__c__return_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/control_RRESP -into $tb_a__b__c__return_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/control_RDATA -into $tb_a__b__c__return_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/control_RREADY -into $tb_a__b__c__return_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/control_RVALID -into $tb_a__b__c__return_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/control_ARREADY -into $tb_a__b__c__return_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/control_ARVALID -into $tb_a__b__c__return_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/control_ARADDR -into $tb_a__b__c__return_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/control_WSTRB -into $tb_a__b__c__return_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/control_WDATA -into $tb_a__b__c__return_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/control_WREADY -into $tb_a__b__c__return_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/control_WVALID -into $tb_a__b__c__return_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/control_AWREADY -into $tb_a__b__c__return_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/control_AWVALID -into $tb_a__b__c__return_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/control_AWADDR -into $tb_a__b__c__return_group -radix hex
+## set tbcoutputgroup [add_wave_group "C Outputs" -into $testbenchgroup]
+## set tb_c_group [add_wave_group c(axi_master) -into $tbcoutputgroup]
+## set rdata_group [add_wave_group "Read Channel" -into $tb_c_group]
+## set wdata_group [add_wave_group "Write Channel" -into $tb_c_group]
+## set ctrl_group [add_wave_group "Handshakes" -into $tb_c_group]
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_BUSER -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_BID -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_BRESP -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_BREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_BVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_RRESP -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_RUSER -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_RID -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_RLAST -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_RDATA -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_RREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_RVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_ARUSER -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_ARREGION -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_ARQOS -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_ARPROT -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_ARCACHE -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_ARLOCK -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_ARBURST -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_ARSIZE -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_ARLEN -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_ARID -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_ARADDR -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_ARREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_ARVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_WUSER -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_WID -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_WLAST -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_WSTRB -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_WDATA -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_WREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_WVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_AWUSER -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_AWREGION -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_AWQOS -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_AWPROT -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_AWCACHE -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_AWLOCK -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_AWBURST -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_AWSIZE -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_AWLEN -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_AWID -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_AWADDR -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_AWREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_c_AWVALID -into $ctrl_group -color #ffff00 -radix hex
+## set tbcinputgroup [add_wave_group "C Inputs" -into $testbenchgroup]
+## set tb_b_group [add_wave_group b(axi_master) -into $tbcinputgroup]
+## set rdata_group [add_wave_group "Read Channel" -into $tb_b_group]
+## set wdata_group [add_wave_group "Write Channel" -into $tb_b_group]
+## set ctrl_group [add_wave_group "Handshakes" -into $tb_b_group]
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_BUSER -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_BID -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_BRESP -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_BREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_BVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_RRESP -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_RUSER -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_RID -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_RLAST -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_RDATA -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_RREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_RVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_ARUSER -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_ARREGION -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_ARQOS -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_ARPROT -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_ARCACHE -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_ARLOCK -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_ARBURST -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_ARSIZE -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_ARLEN -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_ARID -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_ARADDR -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_ARREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_ARVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_WUSER -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_WID -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_WLAST -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_WSTRB -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_WDATA -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_WREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_WVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_AWUSER -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_AWREGION -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_AWQOS -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_AWPROT -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_AWCACHE -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_AWLOCK -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_AWBURST -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_AWSIZE -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_AWLEN -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_AWID -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_AWADDR -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_AWREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_b_AWVALID -into $ctrl_group -color #ffff00 -radix hex
+## set tb_a_group [add_wave_group a(axi_master) -into $tbcinputgroup]
+## set rdata_group [add_wave_group "Read Channel" -into $tb_a_group]
+## set wdata_group [add_wave_group "Write Channel" -into $tb_a_group]
+## set ctrl_group [add_wave_group "Handshakes" -into $tb_a_group]
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_BUSER -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_BID -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_BRESP -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_BREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_BVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_RRESP -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_RUSER -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_RID -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_RLAST -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_RDATA -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_RREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_RVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_ARUSER -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_ARREGION -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_ARQOS -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_ARPROT -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_ARCACHE -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_ARLOCK -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_ARBURST -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_ARSIZE -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_ARLEN -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_ARID -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_ARADDR -into $rdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_ARREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_ARVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_WUSER -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_WID -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_WLAST -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_WSTRB -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_WDATA -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_WREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_WVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_AWUSER -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_AWREGION -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_AWQOS -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_AWPROT -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_AWCACHE -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_AWLOCK -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_AWBURST -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_AWSIZE -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_AWLEN -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_AWID -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_AWADDR -into $wdata_group -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_AWREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_matmul_full_contiguous_top/gmem_a_AWVALID -into $ctrl_group -color #ffff00 -radix hex
+## save_wave_config matmul_full_contiguous.wcfg
+## run all
+UVM_INFO /data/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO /data/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18648) @ 0: reporter [NO_DPI_TSTNAME] UVM_NO_DPI defined--getting UVM_TESTNAME directly, without DPI
+UVM_INFO /data/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18752) @ 0: reporter [UVMTOP] UVM testbench topology:
+---------------------------------------------------------------------------------------------------------
+Name                                    Type                                      Size  Value            
+---------------------------------------------------------------------------------------------------------
+uvm_test_top                            matmul_full_contiguous_test_lib           -     @370             
+  top_env                               matmul_full_contiguous_env                -     @381             
+    axi_lite_control                    uvm_env                                   -     @498             
+      item_rtr_port                     uvm_analysis_port                         -     @517             
+      item_wtr_port                     uvm_analysis_port                         -     @507             
+      master                            uvm_agent                                 -     @950             
+        ardrv                           uvm_driver #(REQ,RSP)                     -     @1625            
+          item_read_imp                 uvm_analysis_port                         -     @1654            
+          rsp_port                      uvm_analysis_port                         -     @1644            
+          seq_item_port                 uvm_seq_item_pull_port                    -     @1634            
+          m_num_sent                    integral                                  32    'h0              
+        arsqr                           axi_sequencer                             -     @1664            
+          rsp_export                    uvm_analysis_export                       -     @1673            
+          seq_item_export               uvm_seq_item_pull_imp                     -     @1791            
+          arbitration_queue             array                                     0     -                
+          lock_queue                    array                                     0     -                
+          num_last_reqs                 integral                                  32    'd1              
+          num_last_rsps                 integral                                  32    'd1              
+        awdrv                           uvm_driver #(REQ,RSP)                     -     @1097            
+          item_read_imp                 uvm_analysis_port                         -     @1126            
+          rsp_port                      uvm_analysis_port                         -     @1116            
+          seq_item_port                 uvm_seq_item_pull_port                    -     @1106            
+          m_num_sent                    integral                                  32    'h0              
+        awsqr                           axi_sequencer                             -     @1136            
+          rsp_export                    uvm_analysis_export                       -     @1145            
+          seq_item_export               uvm_seq_item_pull_imp                     -     @1263            
+          arbitration_queue             array                                     0     -                
+          lock_queue                    array                                     0     -                
+          num_last_reqs                 integral                                  32    'd1              
+          num_last_rsps                 integral                                  32    'd1              
+        bdrv                            uvm_driver #(REQ,RSP)                     -     @1449            
+          item_read_imp                 uvm_analysis_port                         -     @1478            
+          rsp_port                      uvm_analysis_port                         -     @1468            
+          seq_item_port                 uvm_seq_item_pull_port                    -     @1458            
+          m_num_sent                    integral                                  32    'h0              
+        bsqr                            axi_sequencer                             -     @1488            
+          rsp_export                    uvm_analysis_export                       -     @1497            
+          seq_item_export               uvm_seq_item_pull_imp                     -     @1615            
+          arbitration_queue             array                                     0     -                
+          lock_queue                    array                                     0     -                
+          num_last_reqs                 integral                                  32    'd1              
+          num_last_rsps                 integral                                  32    'd1              
+        rdrv                            uvm_driver #(REQ,RSP)                     -     @1801            
+          item_read_imp                 uvm_analysis_port                         -     @1830            
+          rsp_port                      uvm_analysis_port                         -     @1820            
+          seq_item_port                 uvm_seq_item_pull_port                    -     @1810            
+          m_num_sent                    integral                                  32    'h0              
+        rsqr                            axi_sequencer                             -     @1840            
+          rsp_export                    uvm_analysis_export                       -     @1849            
+          seq_item_export               uvm_seq_item_pull_imp                     -     @1967            
+          arbitration_queue             array                                     0     -                
+          lock_queue                    array                                     0     -                
+          num_last_reqs                 integral                                  32    'd1              
+          num_last_rsps                 integral                                  32    'd1              
+        wdrv                            uvm_driver #(REQ,RSP)                     -     @1273            
+          item_read_imp                 uvm_analysis_port                         -     @1302            
+          rsp_port                      uvm_analysis_port                         -     @1292            
+          seq_item_port                 uvm_seq_item_pull_port                    -     @1282            
+          m_num_sent                    integral                                  32    'h0              
+        wsqr                            axi_sequencer                             -     @1312            
+          rsp_export                    uvm_analysis_export                       -     @1321            
+          seq_item_export               uvm_seq_item_pull_imp                     -     @1439            
+          arbitration_queue             array                                     0     -                
+          lock_queue                    array                                     0     -                
+          num_last_reqs                 integral                                  32    'd1              
+          num_last_rsps                 integral                                  32    'd1              
+      monitor                           uvm_monitor                               -     @772             
+        item_ar2r_port                  uvm_analysis_port                         -     @841             
+        item_ar_port                    uvm_analysis_port                         -     @811             
+        item_aw2b_port                  uvm_analysis_port                         -     @831             
+        item_aw_port                    uvm_analysis_port                         -     @781             
+        item_b_port                     uvm_analysis_port                         -     @801             
+        item_r_port                     uvm_analysis_port                         -     @821             
+        item_w_port                     uvm_analysis_port                         -     @791             
+        checks_enable                   integral                                  1     'h1              
+        coverage_enable                 integral                                  1     'h1              
+      state                             axi_state                                 -     @851             
+        ar2r_imp                        uvm_analysis_imp_ar2r                     -     @920             
+        ar_imp                          uvm_analysis_imp_ar                       -     @890             
+        aw2b_imp                        uvm_analysis_imp_aw2b                     -     @910             
+        aw_imp                          uvm_analysis_imp_aw                       -     @860             
+        b_imp                           uvm_analysis_imp_b                        -     @880             
+        item_rtr_port                   uvm_analysis_port                         -     @940             
+        item_wtr_port                   uvm_analysis_port                         -     @930             
+        r_imp                           uvm_analysis_imp_r                        -     @900             
+        w_imp                           uvm_analysis_imp_w                        -     @870             
+        avg_rate                        integral                                  32    'h0              
+        exp_rate                        integral                                  32    'h0              
+        win_size                        integral                                  32    'h0              
+        bqnum_for_slaseq                integral                                  32    'h0              
+        rq_from_model_num               integral                                  32    'h0              
+      vsqr                              axi_virtual_sequencer                     -     @959             
+        rsp_export                      uvm_analysis_export                       -     @968             
+        seq_item_export                 uvm_seq_item_pull_imp                     -     @1086            
+        arbitration_queue               array                                     0     -                
+        lock_queue                      array                                     0     -                
+        num_last_reqs                   integral                                  32    'd1              
+        num_last_rsps                   integral                                  32    'd1              
+      cfg                               axi_cfg                                   -     @399             
+        has_checker                     integral                                  1     'h1              
+        has_coverage                    integral                                  1     'h1              
+        id_num                          integral                                  32    'h1              
+        reset_level                     reset_level_enum                          32    RESET_LEVEL_LOW  
+        drv_type                        drv_type_enum                             32    MASTER           
+        write_latency_mode              latency_mode_enum                         32    CHANNEL_FIRST    
+        read_latency_mode               latency_mode_enum                         32    CHANNEL_FIRST    
+        clatency                        axi_latency                               -     @496             
+          wr_latency                    integral                                  32    'h0              
+          rd_latency                    integral                                  32    'h0              
+    axi_master_gmem_a                   uvm_env                                   -     @405             
+      item_rtr_port                     uvm_analysis_port                         -     @424             
+      item_wtr_port                     uvm_analysis_port                         -     @414             
+      monitor                           uvm_monitor                               -     @2050            
+        item_ar2r_port                  uvm_analysis_port                         -     @2119            
+        item_ar_port                    uvm_analysis_port                         -     @2089            
+        item_aw2b_port                  uvm_analysis_port                         -     @2109            
+        item_aw_port                    uvm_analysis_port                         -     @2059            
+        item_b_port                     uvm_analysis_port                         -     @2079            
+        item_r_port                     uvm_analysis_port                         -     @2099            
+        item_w_port                     uvm_analysis_port                         -     @2069            
+        checks_enable                   integral                                  1     'h1              
+        coverage_enable                 integral                                  1     'h1              
+      slave                             uvm_agent                                 -     @2228            
+        ardrv                           uvm_driver #(REQ,RSP)                     -     @2905            
+          item_read_imp                 uvm_analysis_port                         -     @2934            
+          rsp_port                      uvm_analysis_port                         -     @2924            
+          seq_item_port                 uvm_seq_item_pull_port                    -     @2914            
+          m_num_sent                    integral                                  32    'h0              
+        arsqr                           axi_sequencer                             -     @2944            
+          rsp_export                    uvm_analysis_export                       -     @2953            
+          seq_item_export               uvm_seq_item_pull_imp                     -     @3071            
+          arbitration_queue             array                                     0     -                
+          lock_queue                    array                                     0     -                
+          num_last_reqs                 integral                                  32    'd1              
+          num_last_rsps                 integral                                  32    'd1              
+        awdrv                           uvm_driver #(REQ,RSP)                     -     @2377            
+          item_read_imp                 uvm_analysis_port                         -     @2406            
+          rsp_port                      uvm_analysis_port                         -     @2396            
+          seq_item_port                 uvm_seq_item_pull_port                    -     @2386            
+          m_num_sent                    integral                                  32    'h0              
+        awsqr                           axi_sequencer                             -     @2416            
+          rsp_export                    uvm_analysis_export                       -     @2425            
+          seq_item_export               uvm_seq_item_pull_imp                     -     @2543            
+          arbitration_queue             array                                     0     -                
+          lock_queue                    array                                     0     -                
+          num_last_reqs                 integral                                  32    'd1              
+          num_last_rsps                 integral                                  32    'd1              
+        bdrv                            uvm_driver #(REQ,RSP)                     -     @2729            
+          item_read_imp                 uvm_analysis_port                         -     @2758            
+          rsp_port                      uvm_analysis_port                         -     @2748            
+          seq_item_port                 uvm_seq_item_pull_port                    -     @2738            
+          m_num_sent                    integral                                  32    'h0              
+        bsqr                            axi_sequencer                             -     @2768            
+          rsp_export                    uvm_analysis_export                       -     @2777            
+          seq_item_export               uvm_seq_item_pull_imp                     -     @2895            
+          arbitration_queue             array                                     0     -                
+          lock_queue                    array                                     0     -                
+          num_last_reqs                 integral                                  32    'd1              
+          num_last_rsps                 integral                                  32    'd1              
+        rdrv                            uvm_driver #(REQ,RSP)                     -     @3081            
+          item_read_imp                 uvm_analysis_port                         -     @3110            
+          rsp_port                      uvm_analysis_port                         -     @3100            
+          seq_item_port                 uvm_seq_item_pull_port                    -     @3090            
+          m_num_sent                    integral                                  32    'h0              
+        rsqr                            axi_sequencer                             -     @3120            
+          rsp_export                    uvm_analysis_export                       -     @3129            
+          seq_item_export               uvm_seq_item_pull_imp                     -     @3247            
+          arbitration_queue             array                                     0     -                
+          lock_queue                    array                                     0     -                
+          num_last_reqs                 integral                                  32    'd1              
+          num_last_rsps                 integral                                  32    'd1              
+        wdrv                            uvm_driver #(REQ,RSP)                     -     @2553            
+          item_read_imp                 uvm_analysis_port                         -     @2582            
+          rsp_port                      uvm_analysis_port                         -     @2572            
+          seq_item_port                 uvm_seq_item_pull_port                    -     @2562            
+          m_num_sent                    integral                                  32    'h0              
+        wsqr                            axi_sequencer                             -     @2592            
+          rsp_export                    uvm_analysis_export                       -     @2601            
+          seq_item_export               uvm_seq_item_pull_imp                     -     @2719            
+          arbitration_queue             array                                     0     -                
+          lock_queue                    array                                     0     -                
+          num_last_reqs                 integral                                  32    'd1              
+          num_last_rsps                 integral                                  32    'd1              
+      state                             axi_state                                 -     @2129            
+        ar2r_imp                        uvm_analysis_imp_ar2r                     -     @2198            
+        ar_imp                          uvm_analysis_imp_ar                       -     @2168            
+        aw2b_imp                        uvm_analysis_imp_aw2b                     -     @2188            
+        aw_imp                          uvm_analysis_imp_aw                       -     @2138            
+        b_imp                           uvm_analysis_imp_b                        -     @2158            
+        item_rtr_port                   uvm_analysis_port                         -     @2218            
+        item_wtr_port                   uvm_analysis_port                         -     @2208            
+        r_imp                           uvm_analysis_imp_r                        -     @2178            
+        w_imp                           uvm_analysis_imp_w                        -     @2148            
+        avg_rate                        integral                                  32    'h0              
+        exp_rate                        integral                                  32    'h0              
+        win_size                        integral                                  32    'h0              
+        bqnum_for_slaseq                integral                                  32    'h0              
+        rq_from_model_num               integral                                  32    'h0              
+      vsqr                              axi_virtual_sequencer                     -     @2237            
+        rsp_export                      uvm_analysis_export                       -     @2246            
+        seq_item_export                 uvm_seq_item_pull_imp                     -     @2364            
+        arbitration_queue               array                                     0     -                
+        lock_queue                      array                                     0     -                
+        num_last_reqs                   integral                                  32    'd1              
+        num_last_rsps                   integral                                  32    'd1              
+      cfg                               axi_cfg                                   -     @396             
+        has_checker                     integral                                  1     'h1              
+        has_coverage                    integral                                  1     'h1              
+        id_num                          integral                                  32    'h1              
+        reset_level                     reset_level_enum                          32    RESET_LEVEL_LOW  
+        drv_type                        drv_type_enum                             32    SLAVE            
+        write_latency_mode              latency_mode_enum                         32    TRANSACTION_FIRST
+        read_latency_mode               latency_mode_enum                         32    TRANSACTION_FIRST
+        clatency                        axi_latency                               -     @400             
+          wr_latency                    integral                                  32    'h0              
+          rd_latency                    integral                                  32    'h0              
+    axi_master_gmem_b                   uvm_env                                   -     @436             
+      item_rtr_port                     uvm_analysis_port                         -     @455             
+      item_wtr_port                     uvm_analysis_port                         -     @445             
+      monitor                           uvm_monitor                               -     @3328            
+        item_ar2r_port                  uvm_analysis_port                         -     @3397            
+        item_ar_port                    uvm_analysis_port                         -     @3367            
+        item_aw2b_port                  uvm_analysis_port                         -     @3387            
+        item_aw_port                    uvm_analysis_port                         -     @3337            
+        item_b_port                     uvm_analysis_port                         -     @3357            
+        item_r_port                     uvm_analysis_port                         -     @3377            
+        item_w_port                     uvm_analysis_port                         -     @3347            
+        checks_enable                   integral                                  1     'h1              
+        coverage_enable                 integral                                  1     'h1              
+      slave                             uvm_agent                                 -     @3506            
+        ardrv                           uvm_driver #(REQ,RSP)                     -     @4183            
+          item_read_imp                 uvm_analysis_port                         -     @4212            
+          rsp_port                      uvm_analysis_port                         -     @4202            
+          seq_item_port                 uvm_seq_item_pull_port                    -     @4192            
+          m_num_sent                    integral                                  32    'h0              
+        arsqr                           axi_sequencer                             -     @4222            
+          rsp_export                    uvm_analysis_export                       -     @4231            
+          seq_item_export               uvm_seq_item_pull_imp                     -     @4349            
+          arbitration_queue             array                                     0     -                
+          lock_queue                    array                                     0     -                
+          num_last_reqs                 integral                                  32    'd1              
+          num_last_rsps                 integral                                  32    'd1              
+        awdrv                           uvm_driver #(REQ,RSP)                     -     @3655            
+          item_read_imp                 uvm_analysis_port                         -     @3684            
+          rsp_port                      uvm_analysis_port                         -     @3674            
+          seq_item_port                 uvm_seq_item_pull_port                    -     @3664            
+          m_num_sent                    integral                                  32    'h0              
+        awsqr                           axi_sequencer                             -     @3694            
+          rsp_export                    uvm_analysis_export                       -     @3703            
+          seq_item_export               uvm_seq_item_pull_imp                     -     @3821            
+          arbitration_queue             array                                     0     -                
+          lock_queue                    array                                     0     -                
+          num_last_reqs                 integral                                  32    'd1              
+          num_last_rsps                 integral                                  32    'd1              
+        bdrv                            uvm_driver #(REQ,RSP)                     -     @4007            
+          item_read_imp                 uvm_analysis_port                         -     @4036            
+          rsp_port                      uvm_analysis_port                         -     @4026            
+          seq_item_port                 uvm_seq_item_pull_port                    -     @4016            
+          m_num_sent                    integral                                  32    'h0              
+        bsqr                            axi_sequencer                             -     @4046            
+          rsp_export                    uvm_analysis_export                       -     @4055            
+          seq_item_export               uvm_seq_item_pull_imp                     -     @4173            
+          arbitration_queue             array                                     0     -                
+          lock_queue                    array                                     0     -                
+          num_last_reqs                 integral                                  32    'd1              
+          num_last_rsps                 integral                                  32    'd1              
+        rdrv                            uvm_driver #(REQ,RSP)                     -     @4359            
+          item_read_imp                 uvm_analysis_port                         -     @4388            
+          rsp_port                      uvm_analysis_port                         -     @4378            
+          seq_item_port                 uvm_seq_item_pull_port                    -     @4368            
+          m_num_sent                    integral                                  32    'h0              
+        rsqr                            axi_sequencer                             -     @4398            
+          rsp_export                    uvm_analysis_export                       -     @4407            
+          seq_item_export               uvm_seq_item_pull_imp                     -     @4525            
+          arbitration_queue             array                                     0     -                
+          lock_queue                    array                                     0     -                
+          num_last_reqs                 integral                                  32    'd1              
+          num_last_rsps                 integral                                  32    'd1              
+        wdrv                            uvm_driver #(REQ,RSP)                     -     @3831            
+          item_read_imp                 uvm_analysis_port                         -     @3860            
+          rsp_port                      uvm_analysis_port                         -     @3850            
+          seq_item_port                 uvm_seq_item_pull_port                    -     @3840            
+          m_num_sent                    integral                                  32    'h0              
+        wsqr                            axi_sequencer                             -     @3870            
+          rsp_export                    uvm_analysis_export                       -     @3879            
+          seq_item_export               uvm_seq_item_pull_imp                     -     @3997            
+          arbitration_queue             array                                     0     -                
+          lock_queue                    array                                     0     -                
+          num_last_reqs                 integral                                  32    'd1              
+          num_last_rsps                 integral                                  32    'd1              
+      state                             axi_state                                 -     @3407            
+        ar2r_imp                        uvm_analysis_imp_ar2r                     -     @3476            
+        ar_imp                          uvm_analysis_imp_ar                       -     @3446            
+        aw2b_imp                        uvm_analysis_imp_aw2b                     -     @3466            
+        aw_imp                          uvm_analysis_imp_aw                       -     @3416            
+        b_imp                           uvm_analysis_imp_b                        -     @3436            
+        item_rtr_port                   uvm_analysis_port                         -     @3496            
+        item_wtr_port                   uvm_analysis_port                         -     @3486            
+        r_imp                           uvm_analysis_imp_r                        -     @3456            
+        w_imp                           uvm_analysis_imp_w                        -     @3426            
+        avg_rate                        integral                                  32    'h0              
+        exp_rate                        integral                                  32    'h0              
+        win_size                        integral                                  32    'h0              
+        bqnum_for_slaseq                integral                                  32    'h0              
+        rq_from_model_num               integral                                  32    'h0              
+      vsqr                              axi_virtual_sequencer                     -     @3515            
+        rsp_export                      uvm_analysis_export                       -     @3524            
+        seq_item_export                 uvm_seq_item_pull_imp                     -     @3642            
+        arbitration_queue               array                                     0     -                
+        lock_queue                      array                                     0     -                
+        num_last_reqs                   integral                                  32    'd1              
+        num_last_rsps                   integral                                  32    'd1              
+      cfg                               axi_cfg                                   -     @397             
+        has_checker                     integral                                  1     'h1              
+        has_coverage                    integral                                  1     'h1              
+        id_num                          integral                                  32    'h1              
+        reset_level                     reset_level_enum                          32    RESET_LEVEL_LOW  
+        drv_type                        drv_type_enum                             32    SLAVE            
+        write_latency_mode              latency_mode_enum                         32    TRANSACTION_FIRST
+        read_latency_mode               latency_mode_enum                         32    TRANSACTION_FIRST
+        clatency                        axi_latency                               -     @434             
+          wr_latency                    integral                                  32    'h0              
+          rd_latency                    integral                                  32    'h0              
+    axi_master_gmem_c                   uvm_env                                   -     @467             
+      item_rtr_port                     uvm_analysis_port                         -     @486             
+      item_wtr_port                     uvm_analysis_port                         -     @476             
+      monitor                           uvm_monitor                               -     @4606            
+        item_ar2r_port                  uvm_analysis_port                         -     @4675            
+        item_ar_port                    uvm_analysis_port                         -     @4645            
+        item_aw2b_port                  uvm_analysis_port                         -     @4665            
+        item_aw_port                    uvm_analysis_port                         -     @4615            
+        item_b_port                     uvm_analysis_port                         -     @4635            
+        item_r_port                     uvm_analysis_port                         -     @4655            
+        item_w_port                     uvm_analysis_port                         -     @4625            
+        checks_enable                   integral                                  1     'h1              
+        coverage_enable                 integral                                  1     'h1              
+      slave                             uvm_agent                                 -     @4784            
+        ardrv                           uvm_driver #(REQ,RSP)                     -     @5461            
+          item_read_imp                 uvm_analysis_port                         -     @5490            
+          rsp_port                      uvm_analysis_port                         -     @5480            
+          seq_item_port                 uvm_seq_item_pull_port                    -     @5470            
+          m_num_sent                    integral                                  32    'h0              
+        arsqr                           axi_sequencer                             -     @5500            
+          rsp_export                    uvm_analysis_export                       -     @5509            
+          seq_item_export               uvm_seq_item_pull_imp                     -     @5627            
+          arbitration_queue             array                                     0     -                
+          lock_queue                    array                                     0     -                
+          num_last_reqs                 integral                                  32    'd1              
+          num_last_rsps                 integral                                  32    'd1              
+        awdrv                           uvm_driver #(REQ,RSP)                     -     @4933            
+          item_read_imp                 uvm_analysis_port                         -     @4962            
+          rsp_port                      uvm_analysis_port                         -     @4952            
+          seq_item_port                 uvm_seq_item_pull_port                    -     @4942            
+          m_num_sent                    integral                                  32    'h0              
+        awsqr                           axi_sequencer                             -     @4972            
+          rsp_export                    uvm_analysis_export                       -     @4981            
+          seq_item_export               uvm_seq_item_pull_imp                     -     @5099            
+          arbitration_queue             array                                     0     -                
+          lock_queue                    array                                     0     -                
+          num_last_reqs                 integral                                  32    'd1              
+          num_last_rsps                 integral                                  32    'd1              
+        bdrv                            uvm_driver #(REQ,RSP)                     -     @5285            
+          item_read_imp                 uvm_analysis_port                         -     @5314            
+          rsp_port                      uvm_analysis_port                         -     @5304            
+          seq_item_port                 uvm_seq_item_pull_port                    -     @5294            
+          m_num_sent                    integral                                  32    'h0              
+        bsqr                            axi_sequencer                             -     @5324            
+          rsp_export                    uvm_analysis_export                       -     @5333            
+          seq_item_export               uvm_seq_item_pull_imp                     -     @5451            
+          arbitration_queue             array                                     0     -                
+          lock_queue                    array                                     0     -                
+          num_last_reqs                 integral                                  32    'd1              
+          num_last_rsps                 integral                                  32    'd1              
+        rdrv                            uvm_driver #(REQ,RSP)                     -     @5637            
+          item_read_imp                 uvm_analysis_port                         -     @5666            
+          rsp_port                      uvm_analysis_port                         -     @5656            
+          seq_item_port                 uvm_seq_item_pull_port                    -     @5646            
+          m_num_sent                    integral                                  32    'h0              
+        rsqr                            axi_sequencer                             -     @5676            
+          rsp_export                    uvm_analysis_export                       -     @5685            
+          seq_item_export               uvm_seq_item_pull_imp                     -     @5803            
+          arbitration_queue             array                                     0     -                
+          lock_queue                    array                                     0     -                
+          num_last_reqs                 integral                                  32    'd1              
+          num_last_rsps                 integral                                  32    'd1              
+        wdrv                            uvm_driver #(REQ,RSP)                     -     @5109            
+          item_read_imp                 uvm_analysis_port                         -     @5138            
+          rsp_port                      uvm_analysis_port                         -     @5128            
+          seq_item_port                 uvm_seq_item_pull_port                    -     @5118            
+          m_num_sent                    integral                                  32    'h0              
+        wsqr                            axi_sequencer                             -     @5148            
+          rsp_export                    uvm_analysis_export                       -     @5157            
+          seq_item_export               uvm_seq_item_pull_imp                     -     @5275            
+          arbitration_queue             array                                     0     -                
+          lock_queue                    array                                     0     -                
+          num_last_reqs                 integral                                  32    'd1              
+          num_last_rsps                 integral                                  32    'd1              
+      state                             axi_state                                 -     @4685            
+        ar2r_imp                        uvm_analysis_imp_ar2r                     -     @4754            
+        ar_imp                          uvm_analysis_imp_ar                       -     @4724            
+        aw2b_imp                        uvm_analysis_imp_aw2b                     -     @4744            
+        aw_imp                          uvm_analysis_imp_aw                       -     @4694            
+        b_imp                           uvm_analysis_imp_b                        -     @4714            
+        item_rtr_port                   uvm_analysis_port                         -     @4774            
+        item_wtr_port                   uvm_analysis_port                         -     @4764            
+        r_imp                           uvm_analysis_imp_r                        -     @4734            
+        w_imp                           uvm_analysis_imp_w                        -     @4704            
+        avg_rate                        integral                                  32    'h0              
+        exp_rate                        integral                                  32    'h0              
+        win_size                        integral                                  32    'h0              
+        bqnum_for_slaseq                integral                                  32    'h0              
+        rq_from_model_num               integral                                  32    'h0              
+      vsqr                              axi_virtual_sequencer                     -     @4793            
+        rsp_export                      uvm_analysis_export                       -     @4802            
+        seq_item_export                 uvm_seq_item_pull_imp                     -     @4920            
+        arbitration_queue               array                                     0     -                
+        lock_queue                      array                                     0     -                
+        num_last_reqs                   integral                                  32    'd1              
+        num_last_rsps                   integral                                  32    'd1              
+      cfg                               axi_cfg                                   -     @398             
+        has_checker                     integral                                  1     'h1              
+        has_coverage                    integral                                  1     'h1              
+        id_num                          integral                                  32    'h1              
+        reset_level                     reset_level_enum                          32    RESET_LEVEL_LOW  
+        drv_type                        drv_type_enum                             32    SLAVE            
+        write_latency_mode              latency_mode_enum                         32    TRANSACTION_FIRST
+        read_latency_mode               latency_mode_enum                         32    TRANSACTION_FIRST
+        clatency                        axi_latency                               -     @465             
+          wr_latency                    integral                                  32    'h0              
+          rd_latency                    integral                                  32    'h0              
+    matmul_full_contiguous_virtual_sqr  matmul_full_contiguous_virtual_sequencer  -     @629             
+      rsp_export                        uvm_analysis_export                       -     @638             
+      seq_item_export                   uvm_seq_item_pull_imp                     -     @756             
+      arbitration_queue                 array                                     0     -                
+      lock_queue                        array                                     0     -                
+      num_last_reqs                     integral                                  32    'd1              
+      num_last_rsps                     integral                                  32    'd1              
+    refm                                matmul_full_contiguous_reference_model    -     @527             
+      trans_num_idx                     integral                                  32    'h0              
+    subsys_mon                          matmul_full_contiguous_subsystem_monitor  -     @540             
+      control_rtr_imp                   uvm_analysis_imp_axi_rtr_control          -     @619             
+      control_wtr_imp                   uvm_analysis_imp_axi_wtr_control          -     @609             
+      gmem_a_rtr_imp                    uvm_analysis_imp_axi_rtr_gmem_a           -     @559             
+      gmem_a_wtr_imp                    uvm_analysis_imp_axi_wtr_gmem_a           -     @549             
+      gmem_b_rtr_imp                    uvm_analysis_imp_axi_rtr_gmem_b           -     @579             
+      gmem_b_wtr_imp                    uvm_analysis_imp_axi_wtr_gmem_b           -     @569             
+      gmem_c_rtr_imp                    uvm_analysis_imp_axi_rtr_gmem_c           -     @599             
+      gmem_c_wtr_imp                    uvm_analysis_imp_axi_wtr_gmem_c           -     @589             
+      scbd                              matmul_full_contiguous_scoreboard         -     @5891            
+        refm                            matmul_full_contiguous_reference_model    -     @527             
+          trans_num_idx                 integral                                  32    'h0              
+    refm                                matmul_full_contiguous_reference_model    -     @527             
+    matmul_full_contiguous_virtual_sqr  matmul_full_contiguous_virtual_sequencer  -     @629             
+    matmul_full_contiguous_cfg          matmul_full_contiguous_config             -     @395             
+      gmem_a_cfg                        axi_cfg                                   -     @396             
+        has_checker                     integral                                  1     'h1              
+        has_coverage                    integral                                  1     'h1              
+        id_num                          integral                                  32    'h1              
+        reset_level                     reset_level_enum                          32    RESET_LEVEL_LOW  
+        drv_type                        drv_type_enum                             32    SLAVE            
+        write_latency_mode              latency_mode_enum                         32    TRANSACTION_FIRST
+        read_latency_mode               latency_mode_enum                         32    TRANSACTION_FIRST
+        clatency                        axi_latency                               -     @400             
+          wr_latency                    integral                                  32    'h0              
+          rd_latency                    integral                                  32    'h0              
+      gmem_b_cfg                        axi_cfg                                   -     @397             
+        has_checker                     integral                                  1     'h1              
+        has_coverage                    integral                                  1     'h1              
+        id_num                          integral                                  32    'h1              
+        reset_level                     reset_level_enum                          32    RESET_LEVEL_LOW  
+        drv_type                        drv_type_enum                             32    SLAVE            
+        write_latency_mode              latency_mode_enum                         32    TRANSACTION_FIRST
+        read_latency_mode               latency_mode_enum                         32    TRANSACTION_FIRST
+        clatency                        axi_latency                               -     @434             
+          wr_latency                    integral                                  32    'h0              
+          rd_latency                    integral                                  32    'h0              
+      gmem_c_cfg                        axi_cfg                                   -     @398             
+        has_checker                     integral                                  1     'h1              
+        has_coverage                    integral                                  1     'h1              
+        id_num                          integral                                  32    'h1              
+        reset_level                     reset_level_enum                          32    RESET_LEVEL_LOW  
+        drv_type                        drv_type_enum                             32    SLAVE            
+        write_latency_mode              latency_mode_enum                         32    TRANSACTION_FIRST
+        read_latency_mode               latency_mode_enum                         32    TRANSACTION_FIRST
+        clatency                        axi_latency                               -     @465             
+          wr_latency                    integral                                  32    'h0              
+          rd_latency                    integral                                  32    'h0              
+      control_cfg                       axi_cfg                                   -     @399             
+        has_checker                     integral                                  1     'h1              
+        has_coverage                    integral                                  1     'h1              
+        id_num                          integral                                  32    'h1              
+        reset_level                     reset_level_enum                          32    RESET_LEVEL_LOW  
+        drv_type                        drv_type_enum                             32    MASTER           
+        write_latency_mode              latency_mode_enum                         32    CHANNEL_FIRST    
+        read_latency_mode               latency_mode_enum                         32    CHANNEL_FIRST    
+        clatency                        axi_latency                               -     @496             
+          wr_latency                    integral                                  32    'h0              
+          rd_latency                    integral                                  32    'h0              
+      check_ena                         integral                                  32    'h0              
+      cover_ena                         integral                                  32    'h0              
+---------------------------------------------------------------------------------------------------------
+
+UVM_INFO /data/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 1 [0.00%] @ "113000"
+// RTL Simulation : 1 / 1 [100.00%] @ "4248000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 4282500 ps : File "/data/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+## quit
+INFO: [Common 17-206] Exiting xsim at Wed Jun 17 10:04:30 2026...
+TEST PASSED

@@ -1,6 +1,6 @@
 {
-  "schema": "hls.transaction_dependency_graph.v8",
-  "dependency_source": "Physical transaction dependencies aggregated from the dynamic logical access graph. Logical graph edges combine LLVM static value/control metadata with actual IR trace execution and dynamic same port[element] RAW tracking.",
+  "schema": "hls.transaction_dependency_graph.v10",
+  "dependency_source": "Physical transaction dependencies aggregated from the dynamic logical access graph. Logical graph edges combine LLVM static value/control metadata with actual IR trace execution and dynamic same port[element] RAW tracking. DATAFLOW stream-channel edges model local producer-consumer token availability without a full-process barrier. Non-DATAFLOW local-buffer barrier edges model widened producer-read groups that must complete before consumer write bursts are issued through the same local buffer.",
   "detail_files": {
     "physical_transactions": "inferred_physical_axi_transactions.json",
     "logical_access_graph": "logical_access_graph.json"
@@ -10,23 +10,25 @@
     "static_dependency_edges": 2,
     "logical_dependency_edges": 128,
     "dynamic_memory_raw_edges": 0,
+    "stream_channel_edges": 0,
+    "local_buffer_barrier_edges": 0,
     "value_flow_edges": 128,
     "control_dependency_edges": 0
   },
   "blocks": [
     {
-      "transaction_id": "txn_in1_0",
+      "transaction_id": "txn_in1_read_0",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_in2_0",
+      "transaction_id": "txn_in2_read_0",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_out_0",
+      "transaction_id": "txn_out_write_0",
       "dependencies": [
         {
-          "source_transaction_id": "txn_in1_0",
+          "source_transaction_id": "txn_in1_read_0",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:0",
@@ -43,7 +45,7 @@
           "reason": "stored value operand is defined by, or computed from, the source access"
         },
         {
-          "source_transaction_id": "txn_in2_0",
+          "source_transaction_id": "txn_in2_read_0",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:1",
@@ -62,18 +64,18 @@
       ]
     },
     {
-      "transaction_id": "txn_in1_1",
+      "transaction_id": "txn_in1_read_1",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_in2_1",
+      "transaction_id": "txn_in2_read_1",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_out_1",
+      "transaction_id": "txn_out_write_1",
       "dependencies": [
         {
-          "source_transaction_id": "txn_in1_1",
+          "source_transaction_id": "txn_in1_read_1",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:0",
@@ -90,7 +92,7 @@
           "reason": "stored value operand is defined by, or computed from, the source access"
         },
         {
-          "source_transaction_id": "txn_in2_1",
+          "source_transaction_id": "txn_in2_read_1",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:1",
@@ -109,18 +111,18 @@
       ]
     },
     {
-      "transaction_id": "txn_in1_2",
+      "transaction_id": "txn_in1_read_2",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_in2_2",
+      "transaction_id": "txn_in2_read_2",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_out_2",
+      "transaction_id": "txn_out_write_2",
       "dependencies": [
         {
-          "source_transaction_id": "txn_in1_2",
+          "source_transaction_id": "txn_in1_read_2",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:0",
@@ -137,7 +139,7 @@
           "reason": "stored value operand is defined by, or computed from, the source access"
         },
         {
-          "source_transaction_id": "txn_in2_2",
+          "source_transaction_id": "txn_in2_read_2",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:1",
@@ -156,18 +158,18 @@
       ]
     },
     {
-      "transaction_id": "txn_in1_3",
+      "transaction_id": "txn_in1_read_3",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_in2_3",
+      "transaction_id": "txn_in2_read_3",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_out_3",
+      "transaction_id": "txn_out_write_3",
       "dependencies": [
         {
-          "source_transaction_id": "txn_in1_3",
+          "source_transaction_id": "txn_in1_read_3",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:0",
@@ -184,7 +186,7 @@
           "reason": "stored value operand is defined by, or computed from, the source access"
         },
         {
-          "source_transaction_id": "txn_in2_3",
+          "source_transaction_id": "txn_in2_read_3",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:1",

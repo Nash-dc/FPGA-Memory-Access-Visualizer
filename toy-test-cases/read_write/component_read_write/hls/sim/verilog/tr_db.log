@@ -1,0 +1,4 @@
+  CREATE_STREAM @0 {NAME:read_write_subsys_test_sequence_lib T:Transactions SCOPE:uvm_test_top.top_env.read_write_virtual_sqr STREAM:4613}
+  CREATE_STREAM @128000 {NAME:read_write_subsys_test_sequence_lib T:Transactions SCOPE:uvm_test_top.top_env.axi_master_mem_0.vsqr STREAM:4874}
+  CREATE_STREAM @128000 {NAME:read_write_subsys_test_sequence_lib T:Transactions SCOPE:uvm_test_top.top_env.axi_master_mem_1.vsqr STREAM:4883}
+  CREATE_STREAM @128000 {NAME:read_write_subsys_test_sequence_lib T:Transactions SCOPE:uvm_test_top.top_env.axi_lite_control.vsqr STREAM:4892}

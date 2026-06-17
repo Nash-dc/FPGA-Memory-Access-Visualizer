@@ -22,7 +22,13 @@
         "trip_count": 64
       }
     ],
-    "interpretation": "II=1 permits consecutive read-request issue when addresses are sequential and the AXI master supports outstanding requests. It does not imply consecutive write transactions because write data production and burst formation can delay AW/W activity. Write spacing is estimated as max(AXI beats, useful elements times achieved II), with pipeline depth included before the first dependent write."
+    "dataflow": {
+      "enabled": false,
+      "pipeline_type": "",
+      "processes": [],
+      "fifos": []
+    },
+    "interpretation": "II=1 permits consecutive read-request issue when addresses are sequential and the AXI master supports outstanding requests. For DATAFLOW regions, independent process lanes may overlap. Stream-channel dependencies delay each consumer transaction only until the matching producer token block is available; they do not create a full read-process to write-process barrier."
   },
   "data_width_bits": 128,
   "element_width_bits": 32,
@@ -33,7 +39,7 @@
   "total_write_elements": 64,
   "total_read_transactions": 4,
   "total_write_transactions": 4,
-  "transaction_dependency_edges": 4,
+  "transaction_dependency_edges": 8,
   "notes_about_assumptions": [
     "LLVM IR trace is the source of executed logical accesses and dynamic order.",
     "HLS interface/csynth metadata supplies AXI width, burst limits, outstanding settings, and loop II when available.",

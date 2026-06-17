@@ -1,0 +1,191 @@
+<ENTRY>
+{
+ "thisFile": "/data/hls-dev/toy-test-cases/read_write/component_read_write/component_read_write.hlsrun_cosim_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Tue Jun 16 16:38:26 2026",
+ "timestampMillis": "1781620706506",
+ "buildStep": {
+  "cmdId": "0b458937-cba0-4da2-9870-acb2b9757670",
+  "name": "vitis-run",
+  "logFile": "/data/hls-dev/toy-test-cases/read_write/logs/hls_compile.log",
+  "commandLine": "vitis-run --mode hls --tcl /data/hls-dev/toy-test-cases/read_write/run_hls.tcl",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/data/hls-dev/toy-test-cases/read_write"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Jun 16 16:38:26 2026",
+ "timestampMillis": "1781620706506",
+ "status": {
+  "cmdId": "0b458937-cba0-4da2-9870-acb2b9757670",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Tue Jun 16 16:38:26 2026",
+ "timestampMillis": "1781620706506",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_RTL_COSIM",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "read_write",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/data/hls-dev/toy-test-cases/read_write/read_write.cpp",
+     "/data/hls-dev/toy-test-cases/read_write/read_write.h"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2025.1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue Jun 16 16:38:26 2026",
+ "timestampMillis": "1781620706506",
+ "buildStep": {
+  "cmdId": "a5370192-717a-4b78-a864-bec09af8620b",
+  "name": "cosim_design",
+  "logFile": "/data/hls-dev/toy-test-cases/read_write/component_read_write/hls/hls.log",
+  "commandLine": "cosim_design",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/data/hls-dev/toy-test-cases/read_write"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Jun 16 16:38:26 2026",
+ "timestampMillis": "1781620706507",
+ "status": {
+  "cmdId": "a5370192-717a-4b78-a864-bec09af8620b",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Jun 16 16:38:26 2026",
+ "timestampMillis": "1781620706507",
+ "report": {
+  "path": "/data/hls-dev/toy-test-cases/read_write/component_read_write/hls/sim/report/read_write_cosim.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "HLS_COSIMULATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Jun 16 16:38:26 2026",
+ "timestampMillis": "1781620706507",
+ "report": {
+  "path": "/data/hls-dev/toy-test-cases/read_write/component_read_write/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_DATAFLOW",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Jun 16 16:38:26 2026",
+ "timestampMillis": "1781620706507",
+ "report": {
+  "path": "/data/hls-dev/toy-test-cases/read_write/component_read_write/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_FUNCTION_CALL_GRAPH_COSIM",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Jun 16 16:38:26 2026",
+ "timestampMillis": "1781620706507",
+ "report": {
+  "path": "/data/hls-dev/toy-test-cases/read_write/component_read_write/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_TIMELINE_TRACE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Jun 16 16:38:26 2026",
+ "timestampMillis": "1781620706507",
+ "report": {
+  "path": "/data/hls-dev/toy-test-cases/read_write/component_read_write/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_WAVE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Jun 16 16:39:10 2026",
+ "timestampMillis": "1781620750399",
+ "status": {
+  "cmdId": "a5370192-717a-4b78-a864-bec09af8620b",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Jun 16 16:39:10 2026",
+ "timestampMillis": "1781620750415",
+ "status": {
+  "cmdId": "0b458937-cba0-4da2-9870-acb2b9757670",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>

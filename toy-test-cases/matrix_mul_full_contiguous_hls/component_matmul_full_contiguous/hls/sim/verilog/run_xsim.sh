@@ -1,3 +1,4 @@
 
 /data/2025.1/Vivado/bin/xelab xil_defaultlib.apatb_matmul_full_contiguous_top xil_defaultlib.glbl -Oenable_linking_all_libraries  -prj matmul_full_contiguous.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm  -L floating_point_v7_1_20 -L floating_point_v7_0_25 --lib "ieee_proposed=./ieee_proposed"  -L uvm -relax -i ./svr -i ./svtb -i ./file_agent -i ./matmul_full_contiguous_subsystem -s matmul_full_contiguous -debug all
 /data/2025.1/Vivado/bin/xsim -testplusarg "UVM_VERBOSITY=UVM_NONE" -testplusarg "UVM_TESTNAME=matmul_full_contiguous_test_lib" -testplusarg "UVM_TIMEOUT=20000000000000" --noieeewarnings matmul_full_contiguous -tclbatch matmul_full_contiguous.tcl -view matmul_full_contiguous_dataflow_ana.wcfg -protoinst matmul_full_contiguous.protoinst
+

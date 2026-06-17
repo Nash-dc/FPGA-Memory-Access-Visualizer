@@ -7,7 +7,7 @@
   },
   "axi_transactions": [
     {
-      "transaction_id": "txn_a_0",
+      "transaction_id": "txn_a_read_0",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -103,6 +103,7 @@
       "complete_order": 1,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -113,7 +114,7 @@
       }
     },
     {
-      "transaction_id": "txn_b_0",
+      "transaction_id": "txn_b_read_0",
       "access_site": "access:1",
       "access_sites": [
         "access:1"
@@ -209,6 +210,7 @@
       "complete_order": 1,
       "timeline_lane": "b",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -219,7 +221,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_1",
+      "transaction_id": "txn_a_read_1",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -315,6 +317,7 @@
       "complete_order": 2,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -325,7 +328,7 @@
       }
     },
     {
-      "transaction_id": "txn_b_1",
+      "transaction_id": "txn_b_read_1",
       "access_site": "access:1",
       "access_sites": [
         "access:1"
@@ -421,6 +424,7 @@
       "complete_order": 2,
       "timeline_lane": "b",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -431,7 +435,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_2",
+      "transaction_id": "txn_a_read_2",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -527,6 +531,7 @@
       "complete_order": 3,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -537,7 +542,7 @@
       }
     },
     {
-      "transaction_id": "txn_b_2",
+      "transaction_id": "txn_b_read_2",
       "access_site": "access:1",
       "access_sites": [
         "access:1"
@@ -633,6 +638,7 @@
       "complete_order": 3,
       "timeline_lane": "b",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -643,7 +649,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_3",
+      "transaction_id": "txn_a_read_3",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -739,6 +745,7 @@
       "complete_order": 4,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -749,7 +756,7 @@
       }
     },
     {
-      "transaction_id": "txn_b_3",
+      "transaction_id": "txn_b_read_3",
       "access_site": "access:1",
       "access_sites": [
         "access:1"
@@ -845,6 +852,7 @@
       "complete_order": 4,
       "timeline_lane": "b",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -855,7 +863,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_4",
+      "transaction_id": "txn_a_read_4",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -951,6 +959,7 @@
       "complete_order": 5,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -961,7 +970,7 @@
       }
     },
     {
-      "transaction_id": "txn_b_4",
+      "transaction_id": "txn_b_read_4",
       "access_site": "access:1",
       "access_sites": [
         "access:1"
@@ -1057,6 +1066,7 @@
       "complete_order": 5,
       "timeline_lane": "b",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -1067,7 +1077,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_5",
+      "transaction_id": "txn_a_read_5",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -1163,6 +1173,7 @@
       "complete_order": 6,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -1173,7 +1184,7 @@
       }
     },
     {
-      "transaction_id": "txn_b_5",
+      "transaction_id": "txn_b_read_5",
       "access_site": "access:1",
       "access_sites": [
         "access:1"
@@ -1269,6 +1280,7 @@
       "complete_order": 6,
       "timeline_lane": "b",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -1279,7 +1291,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_6",
+      "transaction_id": "txn_a_read_6",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -1375,6 +1387,7 @@
       "complete_order": 7,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -1385,7 +1398,7 @@
       }
     },
     {
-      "transaction_id": "txn_b_6",
+      "transaction_id": "txn_b_read_6",
       "access_site": "access:1",
       "access_sites": [
         "access:1"
@@ -1481,6 +1494,7 @@
       "complete_order": 7,
       "timeline_lane": "b",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -1491,7 +1505,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_7",
+      "transaction_id": "txn_a_read_7",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -1587,6 +1601,7 @@
       "complete_order": 8,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -1597,7 +1612,7 @@
       }
     },
     {
-      "transaction_id": "txn_b_7",
+      "transaction_id": "txn_b_read_7",
       "access_site": "access:1",
       "access_sites": [
         "access:1"
@@ -1693,6 +1708,7 @@
       "complete_order": 8,
       "timeline_lane": "b",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -1703,7 +1719,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_8",
+      "transaction_id": "txn_a_read_8",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -1799,6 +1815,7 @@
       "complete_order": 9,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -1809,7 +1826,7 @@
       }
     },
     {
-      "transaction_id": "txn_b_8",
+      "transaction_id": "txn_b_read_8",
       "access_site": "access:1",
       "access_sites": [
         "access:1"
@@ -1905,6 +1922,7 @@
       "complete_order": 9,
       "timeline_lane": "b",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -1915,7 +1933,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_9",
+      "transaction_id": "txn_a_read_9",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -2011,6 +2029,7 @@
       "complete_order": 10,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -2021,7 +2040,7 @@
       }
     },
     {
-      "transaction_id": "txn_b_9",
+      "transaction_id": "txn_b_read_9",
       "access_site": "access:1",
       "access_sites": [
         "access:1"
@@ -2117,6 +2136,7 @@
       "complete_order": 10,
       "timeline_lane": "b",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -2127,7 +2147,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_10",
+      "transaction_id": "txn_a_read_10",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -2223,6 +2243,7 @@
       "complete_order": 11,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -2233,7 +2254,7 @@
       }
     },
     {
-      "transaction_id": "txn_b_10",
+      "transaction_id": "txn_b_read_10",
       "access_site": "access:1",
       "access_sites": [
         "access:1"
@@ -2329,6 +2350,7 @@
       "complete_order": 11,
       "timeline_lane": "b",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -2339,7 +2361,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_11",
+      "transaction_id": "txn_a_read_11",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -2435,6 +2457,7 @@
       "complete_order": 12,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -2445,7 +2468,7 @@
       }
     },
     {
-      "transaction_id": "txn_b_11",
+      "transaction_id": "txn_b_read_11",
       "access_site": "access:1",
       "access_sites": [
         "access:1"
@@ -2541,6 +2564,7 @@
       "complete_order": 12,
       "timeline_lane": "b",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -2551,7 +2575,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_12",
+      "transaction_id": "txn_a_read_12",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -2647,6 +2671,7 @@
       "complete_order": 13,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -2657,7 +2682,7 @@
       }
     },
     {
-      "transaction_id": "txn_b_12",
+      "transaction_id": "txn_b_read_12",
       "access_site": "access:1",
       "access_sites": [
         "access:1"
@@ -2753,6 +2778,7 @@
       "complete_order": 13,
       "timeline_lane": "b",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -2763,7 +2789,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_13",
+      "transaction_id": "txn_a_read_13",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -2859,6 +2885,7 @@
       "complete_order": 14,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -2869,7 +2896,7 @@
       }
     },
     {
-      "transaction_id": "txn_b_13",
+      "transaction_id": "txn_b_read_13",
       "access_site": "access:1",
       "access_sites": [
         "access:1"
@@ -2965,6 +2992,7 @@
       "complete_order": 14,
       "timeline_lane": "b",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -2975,7 +3003,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_14",
+      "transaction_id": "txn_a_read_14",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -3071,6 +3099,7 @@
       "complete_order": 15,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -3081,7 +3110,7 @@
       }
     },
     {
-      "transaction_id": "txn_b_14",
+      "transaction_id": "txn_b_read_14",
       "access_site": "access:1",
       "access_sites": [
         "access:1"
@@ -3177,6 +3206,7 @@
       "complete_order": 15,
       "timeline_lane": "b",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -3187,7 +3217,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_15",
+      "transaction_id": "txn_a_read_15",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -3283,6 +3313,7 @@
       "complete_order": 16,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -3293,7 +3324,7 @@
       }
     },
     {
-      "transaction_id": "txn_b_15",
+      "transaction_id": "txn_b_read_15",
       "access_site": "access:1",
       "access_sites": [
         "access:1"
@@ -3389,6 +3420,7 @@
       "complete_order": 16,
       "timeline_lane": "b",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -3399,7 +3431,7 @@
       }
     },
     {
-      "transaction_id": "txn_c_0",
+      "transaction_id": "txn_c_write_0",
       "access_site": "access:2",
       "access_sites": [
         "access:2"
@@ -3495,8 +3527,44 @@
       "complete_order": 36,
       "timeline_lane": "c",
       "depends_on_transaction_ids": [
-        "txn_a_15",
-        "txn_b_15"
+        "txn_a_read_15",
+        "txn_b_read_15"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_a_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[0..15]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[0..15]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
       ],
       "timeline_order_predecessor_id": "",
       "timing_model": {
@@ -3512,7 +3580,7 @@
       }
     },
     {
-      "transaction_id": "txn_c_1",
+      "transaction_id": "txn_c_write_1",
       "access_site": "access:2",
       "access_sites": [
         "access:2"
@@ -3608,8 +3676,44 @@
       "complete_order": 52,
       "timeline_lane": "c",
       "depends_on_transaction_ids": [
-        "txn_a_15",
-        "txn_b_15"
+        "txn_a_read_15",
+        "txn_b_read_15"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_a_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[16..31]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[16..31]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
       ],
       "timeline_order_predecessor_id": "",
       "timing_model": {
@@ -3625,7 +3729,7 @@
       }
     },
     {
-      "transaction_id": "txn_c_2",
+      "transaction_id": "txn_c_write_2",
       "access_site": "access:2",
       "access_sites": [
         "access:2"
@@ -3721,8 +3825,44 @@
       "complete_order": 68,
       "timeline_lane": "c",
       "depends_on_transaction_ids": [
-        "txn_a_15",
-        "txn_b_15"
+        "txn_a_read_15",
+        "txn_b_read_15"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_a_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[32..47]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[32..47]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
       ],
       "timeline_order_predecessor_id": "",
       "timing_model": {
@@ -3738,7 +3878,7 @@
       }
     },
     {
-      "transaction_id": "txn_c_3",
+      "transaction_id": "txn_c_write_3",
       "access_site": "access:2",
       "access_sites": [
         "access:2"
@@ -3834,8 +3974,44 @@
       "complete_order": 84,
       "timeline_lane": "c",
       "depends_on_transaction_ids": [
-        "txn_a_15",
-        "txn_b_15"
+        "txn_a_read_15",
+        "txn_b_read_15"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_a_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[48..63]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[48..63]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
       ],
       "timeline_order_predecessor_id": "",
       "timing_model": {
@@ -3851,7 +4027,7 @@
       }
     },
     {
-      "transaction_id": "txn_c_4",
+      "transaction_id": "txn_c_write_4",
       "access_site": "access:2",
       "access_sites": [
         "access:2"
@@ -3947,8 +4123,44 @@
       "complete_order": 100,
       "timeline_lane": "c",
       "depends_on_transaction_ids": [
-        "txn_a_15",
-        "txn_b_15"
+        "txn_a_read_15",
+        "txn_b_read_15"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_a_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[64..79]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[64..79]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
       ],
       "timeline_order_predecessor_id": "",
       "timing_model": {
@@ -3964,7 +4176,7 @@
       }
     },
     {
-      "transaction_id": "txn_c_5",
+      "transaction_id": "txn_c_write_5",
       "access_site": "access:2",
       "access_sites": [
         "access:2"
@@ -4060,8 +4272,44 @@
       "complete_order": 116,
       "timeline_lane": "c",
       "depends_on_transaction_ids": [
-        "txn_a_15",
-        "txn_b_15"
+        "txn_a_read_15",
+        "txn_b_read_15"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_a_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[80..95]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[80..95]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
       ],
       "timeline_order_predecessor_id": "",
       "timing_model": {
@@ -4077,7 +4325,7 @@
       }
     },
     {
-      "transaction_id": "txn_c_6",
+      "transaction_id": "txn_c_write_6",
       "access_site": "access:2",
       "access_sites": [
         "access:2"
@@ -4173,8 +4421,44 @@
       "complete_order": 132,
       "timeline_lane": "c",
       "depends_on_transaction_ids": [
-        "txn_a_15",
-        "txn_b_15"
+        "txn_a_read_15",
+        "txn_b_read_15"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_a_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[96..111]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[96..111]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
       ],
       "timeline_order_predecessor_id": "",
       "timing_model": {
@@ -4190,7 +4474,7 @@
       }
     },
     {
-      "transaction_id": "txn_c_7",
+      "transaction_id": "txn_c_write_7",
       "access_site": "access:2",
       "access_sites": [
         "access:2"
@@ -4286,8 +4570,44 @@
       "complete_order": 148,
       "timeline_lane": "c",
       "depends_on_transaction_ids": [
-        "txn_a_15",
-        "txn_b_15"
+        "txn_a_read_15",
+        "txn_b_read_15"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_a_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[112..127]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[112..127]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
       ],
       "timeline_order_predecessor_id": "",
       "timing_model": {
@@ -4303,7 +4623,7 @@
       }
     },
     {
-      "transaction_id": "txn_c_8",
+      "transaction_id": "txn_c_write_8",
       "access_site": "access:2",
       "access_sites": [
         "access:2"
@@ -4399,8 +4719,44 @@
       "complete_order": 164,
       "timeline_lane": "c",
       "depends_on_transaction_ids": [
-        "txn_a_15",
-        "txn_b_15"
+        "txn_a_read_15",
+        "txn_b_read_15"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_a_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[128..143]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[128..143]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
       ],
       "timeline_order_predecessor_id": "",
       "timing_model": {
@@ -4416,7 +4772,7 @@
       }
     },
     {
-      "transaction_id": "txn_c_9",
+      "transaction_id": "txn_c_write_9",
       "access_site": "access:2",
       "access_sites": [
         "access:2"
@@ -4512,8 +4868,44 @@
       "complete_order": 180,
       "timeline_lane": "c",
       "depends_on_transaction_ids": [
-        "txn_a_15",
-        "txn_b_15"
+        "txn_a_read_15",
+        "txn_b_read_15"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_a_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[144..159]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[144..159]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
       ],
       "timeline_order_predecessor_id": "",
       "timing_model": {
@@ -4529,7 +4921,7 @@
       }
     },
     {
-      "transaction_id": "txn_c_10",
+      "transaction_id": "txn_c_write_10",
       "access_site": "access:2",
       "access_sites": [
         "access:2"
@@ -4625,8 +5017,44 @@
       "complete_order": 196,
       "timeline_lane": "c",
       "depends_on_transaction_ids": [
-        "txn_a_15",
-        "txn_b_15"
+        "txn_a_read_15",
+        "txn_b_read_15"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_a_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[160..175]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[160..175]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
       ],
       "timeline_order_predecessor_id": "",
       "timing_model": {
@@ -4642,7 +5070,7 @@
       }
     },
     {
-      "transaction_id": "txn_c_11",
+      "transaction_id": "txn_c_write_11",
       "access_site": "access:2",
       "access_sites": [
         "access:2"
@@ -4738,8 +5166,44 @@
       "complete_order": 212,
       "timeline_lane": "c",
       "depends_on_transaction_ids": [
-        "txn_a_15",
-        "txn_b_15"
+        "txn_a_read_15",
+        "txn_b_read_15"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_a_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[176..191]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[176..191]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
       ],
       "timeline_order_predecessor_id": "",
       "timing_model": {
@@ -4755,7 +5219,7 @@
       }
     },
     {
-      "transaction_id": "txn_c_12",
+      "transaction_id": "txn_c_write_12",
       "access_site": "access:2",
       "access_sites": [
         "access:2"
@@ -4851,8 +5315,44 @@
       "complete_order": 228,
       "timeline_lane": "c",
       "depends_on_transaction_ids": [
-        "txn_a_15",
-        "txn_b_15"
+        "txn_a_read_15",
+        "txn_b_read_15"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_a_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[192..207]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[192..207]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
       ],
       "timeline_order_predecessor_id": "",
       "timing_model": {
@@ -4868,7 +5368,7 @@
       }
     },
     {
-      "transaction_id": "txn_c_13",
+      "transaction_id": "txn_c_write_13",
       "access_site": "access:2",
       "access_sites": [
         "access:2"
@@ -4964,8 +5464,44 @@
       "complete_order": 244,
       "timeline_lane": "c",
       "depends_on_transaction_ids": [
-        "txn_a_15",
-        "txn_b_15"
+        "txn_a_read_15",
+        "txn_b_read_15"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_a_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[208..223]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[208..223]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
       ],
       "timeline_order_predecessor_id": "",
       "timing_model": {
@@ -4981,7 +5517,7 @@
       }
     },
     {
-      "transaction_id": "txn_c_14",
+      "transaction_id": "txn_c_write_14",
       "access_site": "access:2",
       "access_sites": [
         "access:2"
@@ -5077,8 +5613,44 @@
       "complete_order": 260,
       "timeline_lane": "c",
       "depends_on_transaction_ids": [
-        "txn_a_15",
-        "txn_b_15"
+        "txn_a_read_15",
+        "txn_b_read_15"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_a_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[224..239]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[224..239]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
       ],
       "timeline_order_predecessor_id": "",
       "timing_model": {
@@ -5094,7 +5666,7 @@
       }
     },
     {
-      "transaction_id": "txn_c_15",
+      "transaction_id": "txn_c_write_15",
       "access_site": "access:2",
       "access_sites": [
         "access:2"
@@ -5190,8 +5762,44 @@
       "complete_order": 276,
       "timeline_lane": "c",
       "depends_on_transaction_ids": [
-        "txn_a_15",
-        "txn_b_15"
+        "txn_a_read_15",
+        "txn_b_read_15"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_a_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[240..255]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[240..255]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
       ],
       "timeline_order_predecessor_id": "",
       "timing_model": {

@@ -1,0 +1,35 @@
+/data/hls-dev/toy-test-cases/read_write/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp:318:3: warning: Added loop label VITIS_LOOP_9_1:   [xilinx-label-all-loops]
+  for(int i = 0; i < 8; i++){
+  ^~~
+  VITIS_LOOP_9_1: 
+/data/hls-dev/toy-test-cases/read_write/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp:318:3: note: FIX-IT applied suggested code changes
+/data/hls-dev/toy-test-cases/read_write/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp:320:5: warning: Added loop label VITIS_LOOP_11_2:   [xilinx-label-all-loops]
+    for(int j = 0; j < 128; j++){
+    ^~~
+    VITIS_LOOP_11_2: 
+/data/hls-dev/toy-test-cases/read_write/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp:320:5: note: FIX-IT applied suggested code changes
+/data/hls-dev/toy-test-cases/read_write/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp:333:3: warning: Added loop label VITIS_LOOP_24_1:   [xilinx-label-all-loops]
+  for(int i = 0; i < 8; i++){
+  ^~~
+  VITIS_LOOP_24_1: 
+/data/hls-dev/toy-test-cases/read_write/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp:333:3: note: FIX-IT applied suggested code changes
+/data/hls-dev/toy-test-cases/read_write/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp:335:5: warning: Added loop label VITIS_LOOP_26_2:   [xilinx-label-all-loops]
+    for(int j = 0; j < 128; j++){
+    ^~~
+    VITIS_LOOP_26_2: 
+/data/hls-dev/toy-test-cases/read_write/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp:335:5: note: FIX-IT applied suggested code changes
+/data/hls-dev/toy-test-cases/read_write/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp:347:3: warning: Added loop label VITIS_LOOP_38_1:   [xilinx-label-all-loops]
+  for(int i = 0; i < 128*8; i++){
+  ^~~
+  VITIS_LOOP_38_1: 
+/data/hls-dev/toy-test-cases/read_write/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp:347:3: note: FIX-IT applied suggested code changes
+/data/hls-dev/toy-test-cases/read_write/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp:385:3: warning: Added loop label VITIS_LOOP_72_1:   [xilinx-label-all-loops]
+  for(int i = 0; i < 128*8; i++){
+  ^~~
+  VITIS_LOOP_72_1: 
+/data/hls-dev/toy-test-cases/read_write/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp:385:3: note: FIX-IT applied suggested code changes
+/data/hls-dev/toy-test-cases/read_write/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp:389:3: warning: Added loop label VITIS_LOOP_76_2:   [xilinx-label-all-loops]
+  for(int i = 0; i < 128*8; i++){
+  ^~~
+  VITIS_LOOP_76_2: 
+/data/hls-dev/toy-test-cases/read_write/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp:389:3: note: FIX-IT applied suggested code changes

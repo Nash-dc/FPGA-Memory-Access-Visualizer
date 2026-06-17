@@ -49,7 +49,30 @@
         "trip_count": 256
       }
     ],
-    "interpretation": "II=1 permits consecutive read-request issue when addresses are sequential and the AXI master supports outstanding requests. It does not imply consecutive write transactions because write data production and burst formation can delay AW/W activity. Write spacing is estimated as max(AXI beats, useful elements times achieved II), with pipeline depth included before the first dependent write."
+    "dataflow": {
+      "enabled": false,
+      "pipeline_type": "",
+      "processes": [
+        {
+          "instance": "grp_matmul_partition_Pipeline_read_A_fu_257",
+          "module": "matmul_partition_Pipeline_read_A"
+        },
+        {
+          "instance": "grp_matmul_partition_Pipeline_read_B_fu_267",
+          "module": "matmul_partition_Pipeline_read_B"
+        },
+        {
+          "instance": "grp_matmul_partition_Pipeline_loop_count_arraypart1_arraypart2_fu_292",
+          "module": "matmul_partition_Pipeline_loop_count_arraypart1_arraypart2"
+        },
+        {
+          "instance": "grp_matmul_partition_Pipeline_writeC_fu_333",
+          "module": "matmul_partition_Pipeline_writeC"
+        }
+      ],
+      "fifos": []
+    },
+    "interpretation": "II=1 permits consecutive read-request issue when addresses are sequential and the AXI master supports outstanding requests. For DATAFLOW regions, independent process lanes may overlap. Stream-channel dependencies delay each consumer transaction only until the matching producer token block is available; they do not create a full read-process to write-process barrier."
   },
   "data_width_bits": 32,
   "element_width_bits": 32,

@@ -1,6 +1,6 @@
 {
-  "schema": "hls.transaction_dependency_graph.v8",
-  "dependency_source": "Physical transaction dependencies aggregated from the dynamic logical access graph. Logical graph edges combine LLVM static value/control metadata with actual IR trace execution and dynamic same port[element] RAW tracking.",
+  "schema": "hls.transaction_dependency_graph.v10",
+  "dependency_source": "Physical transaction dependencies aggregated from the dynamic logical access graph. Logical graph edges combine LLVM static value/control metadata with actual IR trace execution and dynamic same port[element] RAW tracking. DATAFLOW stream-channel edges model local producer-consumer token availability without a full-process barrier. Non-DATAFLOW local-buffer barrier edges model widened producer-read groups that must complete before consumer write bursts are issued through the same local buffer.",
   "detail_files": {
     "physical_transactions": "inferred_physical_axi_transactions.json",
     "logical_access_graph": "logical_access_graph.json"
@@ -10,335 +10,337 @@
     "static_dependency_edges": 11,
     "logical_dependency_edges": 512,
     "dynamic_memory_raw_edges": 0,
+    "stream_channel_edges": 0,
+    "local_buffer_barrier_edges": 0,
     "value_flow_edges": 512,
     "control_dependency_edges": 0
   },
   "blocks": [
     {
-      "transaction_id": "txn_a_0",
+      "transaction_id": "txn_a_read_0",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_1",
+      "transaction_id": "txn_a_read_1",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_2",
+      "transaction_id": "txn_a_read_2",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_3",
+      "transaction_id": "txn_a_read_3",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_4",
+      "transaction_id": "txn_a_read_4",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_5",
+      "transaction_id": "txn_a_read_5",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_6",
+      "transaction_id": "txn_a_read_6",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_7",
+      "transaction_id": "txn_a_read_7",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_8",
+      "transaction_id": "txn_a_read_8",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_9",
+      "transaction_id": "txn_a_read_9",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_10",
+      "transaction_id": "txn_a_read_10",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_11",
+      "transaction_id": "txn_a_read_11",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_12",
+      "transaction_id": "txn_a_read_12",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_13",
+      "transaction_id": "txn_a_read_13",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_14",
+      "transaction_id": "txn_a_read_14",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_15",
+      "transaction_id": "txn_a_read_15",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_b_0",
+      "transaction_id": "txn_b_read_0",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_b_1",
+      "transaction_id": "txn_b_read_1",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_b_2",
+      "transaction_id": "txn_b_read_2",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_b_3",
+      "transaction_id": "txn_b_read_3",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_16",
+      "transaction_id": "txn_a_read_16",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_17",
+      "transaction_id": "txn_a_read_17",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_18",
+      "transaction_id": "txn_a_read_18",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_19",
+      "transaction_id": "txn_a_read_19",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_20",
+      "transaction_id": "txn_a_read_20",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_21",
+      "transaction_id": "txn_a_read_21",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_22",
+      "transaction_id": "txn_a_read_22",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_23",
+      "transaction_id": "txn_a_read_23",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_24",
+      "transaction_id": "txn_a_read_24",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_25",
+      "transaction_id": "txn_a_read_25",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_26",
+      "transaction_id": "txn_a_read_26",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_27",
+      "transaction_id": "txn_a_read_27",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_28",
+      "transaction_id": "txn_a_read_28",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_29",
+      "transaction_id": "txn_a_read_29",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_30",
+      "transaction_id": "txn_a_read_30",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_31",
+      "transaction_id": "txn_a_read_31",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_b_4",
+      "transaction_id": "txn_b_read_4",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_b_5",
+      "transaction_id": "txn_b_read_5",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_b_6",
+      "transaction_id": "txn_b_read_6",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_b_7",
+      "transaction_id": "txn_b_read_7",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_32",
+      "transaction_id": "txn_a_read_32",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_33",
+      "transaction_id": "txn_a_read_33",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_34",
+      "transaction_id": "txn_a_read_34",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_35",
+      "transaction_id": "txn_a_read_35",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_36",
+      "transaction_id": "txn_a_read_36",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_37",
+      "transaction_id": "txn_a_read_37",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_38",
+      "transaction_id": "txn_a_read_38",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_39",
+      "transaction_id": "txn_a_read_39",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_40",
+      "transaction_id": "txn_a_read_40",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_41",
+      "transaction_id": "txn_a_read_41",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_42",
+      "transaction_id": "txn_a_read_42",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_43",
+      "transaction_id": "txn_a_read_43",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_44",
+      "transaction_id": "txn_a_read_44",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_45",
+      "transaction_id": "txn_a_read_45",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_46",
+      "transaction_id": "txn_a_read_46",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_47",
+      "transaction_id": "txn_a_read_47",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_b_8",
+      "transaction_id": "txn_b_read_8",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_b_9",
+      "transaction_id": "txn_b_read_9",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_b_10",
+      "transaction_id": "txn_b_read_10",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_b_11",
+      "transaction_id": "txn_b_read_11",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_48",
+      "transaction_id": "txn_a_read_48",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_49",
+      "transaction_id": "txn_a_read_49",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_50",
+      "transaction_id": "txn_a_read_50",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_51",
+      "transaction_id": "txn_a_read_51",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_52",
+      "transaction_id": "txn_a_read_52",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_53",
+      "transaction_id": "txn_a_read_53",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_54",
+      "transaction_id": "txn_a_read_54",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_55",
+      "transaction_id": "txn_a_read_55",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_56",
+      "transaction_id": "txn_a_read_56",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_57",
+      "transaction_id": "txn_a_read_57",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_58",
+      "transaction_id": "txn_a_read_58",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_59",
+      "transaction_id": "txn_a_read_59",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_60",
+      "transaction_id": "txn_a_read_60",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_61",
+      "transaction_id": "txn_a_read_61",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_62",
+      "transaction_id": "txn_a_read_62",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_a_63",
+      "transaction_id": "txn_a_read_63",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_b_12",
+      "transaction_id": "txn_b_read_12",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_b_13",
+      "transaction_id": "txn_b_read_13",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_b_14",
+      "transaction_id": "txn_b_read_14",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_b_15",
+      "transaction_id": "txn_b_read_15",
       "dependencies": []
     },
     {
-      "transaction_id": "txn_c_0",
+      "transaction_id": "txn_c_write_0",
       "dependencies": [
         {
-          "source_transaction_id": "txn_a_63",
+          "source_transaction_id": "txn_a_read_63",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:0",
@@ -355,7 +357,7 @@
           "reason": "stored value operand is defined by, or computed from, the source access"
         },
         {
-          "source_transaction_id": "txn_b_15",
+          "source_transaction_id": "txn_b_read_15",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:1",
@@ -374,10 +376,10 @@
       ]
     },
     {
-      "transaction_id": "txn_c_1",
+      "transaction_id": "txn_c_write_1",
       "dependencies": [
         {
-          "source_transaction_id": "txn_a_63",
+          "source_transaction_id": "txn_a_read_63",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:0",
@@ -394,7 +396,7 @@
           "reason": "stored value operand is defined by, or computed from, the source access"
         },
         {
-          "source_transaction_id": "txn_b_15",
+          "source_transaction_id": "txn_b_read_15",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:1",
@@ -413,10 +415,10 @@
       ]
     },
     {
-      "transaction_id": "txn_c_2",
+      "transaction_id": "txn_c_write_2",
       "dependencies": [
         {
-          "source_transaction_id": "txn_a_63",
+          "source_transaction_id": "txn_a_read_63",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:0",
@@ -433,7 +435,7 @@
           "reason": "stored value operand is defined by, or computed from, the source access"
         },
         {
-          "source_transaction_id": "txn_b_15",
+          "source_transaction_id": "txn_b_read_15",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:1",
@@ -452,10 +454,10 @@
       ]
     },
     {
-      "transaction_id": "txn_c_3",
+      "transaction_id": "txn_c_write_3",
       "dependencies": [
         {
-          "source_transaction_id": "txn_a_63",
+          "source_transaction_id": "txn_a_read_63",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:0",
@@ -472,7 +474,7 @@
           "reason": "stored value operand is defined by, or computed from, the source access"
         },
         {
-          "source_transaction_id": "txn_b_15",
+          "source_transaction_id": "txn_b_read_15",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:1",
@@ -491,10 +493,10 @@
       ]
     },
     {
-      "transaction_id": "txn_c_4",
+      "transaction_id": "txn_c_write_4",
       "dependencies": [
         {
-          "source_transaction_id": "txn_a_63",
+          "source_transaction_id": "txn_a_read_63",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:0",
@@ -511,7 +513,7 @@
           "reason": "stored value operand is defined by, or computed from, the source access"
         },
         {
-          "source_transaction_id": "txn_b_15",
+          "source_transaction_id": "txn_b_read_15",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:1",
@@ -530,10 +532,10 @@
       ]
     },
     {
-      "transaction_id": "txn_c_5",
+      "transaction_id": "txn_c_write_5",
       "dependencies": [
         {
-          "source_transaction_id": "txn_a_63",
+          "source_transaction_id": "txn_a_read_63",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:0",
@@ -550,7 +552,7 @@
           "reason": "stored value operand is defined by, or computed from, the source access"
         },
         {
-          "source_transaction_id": "txn_b_15",
+          "source_transaction_id": "txn_b_read_15",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:1",
@@ -569,10 +571,10 @@
       ]
     },
     {
-      "transaction_id": "txn_c_6",
+      "transaction_id": "txn_c_write_6",
       "dependencies": [
         {
-          "source_transaction_id": "txn_a_63",
+          "source_transaction_id": "txn_a_read_63",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:0",
@@ -589,7 +591,7 @@
           "reason": "stored value operand is defined by, or computed from, the source access"
         },
         {
-          "source_transaction_id": "txn_b_15",
+          "source_transaction_id": "txn_b_read_15",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:1",
@@ -608,10 +610,10 @@
       ]
     },
     {
-      "transaction_id": "txn_c_7",
+      "transaction_id": "txn_c_write_7",
       "dependencies": [
         {
-          "source_transaction_id": "txn_a_63",
+          "source_transaction_id": "txn_a_read_63",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:0",
@@ -628,7 +630,7 @@
           "reason": "stored value operand is defined by, or computed from, the source access"
         },
         {
-          "source_transaction_id": "txn_b_15",
+          "source_transaction_id": "txn_b_read_15",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:1",
@@ -647,10 +649,10 @@
       ]
     },
     {
-      "transaction_id": "txn_c_8",
+      "transaction_id": "txn_c_write_8",
       "dependencies": [
         {
-          "source_transaction_id": "txn_a_63",
+          "source_transaction_id": "txn_a_read_63",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:0",
@@ -667,7 +669,7 @@
           "reason": "stored value operand is defined by, or computed from, the source access"
         },
         {
-          "source_transaction_id": "txn_b_15",
+          "source_transaction_id": "txn_b_read_15",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:1",
@@ -686,10 +688,10 @@
       ]
     },
     {
-      "transaction_id": "txn_c_9",
+      "transaction_id": "txn_c_write_9",
       "dependencies": [
         {
-          "source_transaction_id": "txn_a_63",
+          "source_transaction_id": "txn_a_read_63",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:0",
@@ -706,7 +708,7 @@
           "reason": "stored value operand is defined by, or computed from, the source access"
         },
         {
-          "source_transaction_id": "txn_b_15",
+          "source_transaction_id": "txn_b_read_15",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:1",
@@ -725,10 +727,10 @@
       ]
     },
     {
-      "transaction_id": "txn_c_10",
+      "transaction_id": "txn_c_write_10",
       "dependencies": [
         {
-          "source_transaction_id": "txn_a_63",
+          "source_transaction_id": "txn_a_read_63",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:0",
@@ -745,7 +747,7 @@
           "reason": "stored value operand is defined by, or computed from, the source access"
         },
         {
-          "source_transaction_id": "txn_b_15",
+          "source_transaction_id": "txn_b_read_15",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:1",
@@ -764,10 +766,10 @@
       ]
     },
     {
-      "transaction_id": "txn_c_11",
+      "transaction_id": "txn_c_write_11",
       "dependencies": [
         {
-          "source_transaction_id": "txn_a_63",
+          "source_transaction_id": "txn_a_read_63",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:0",
@@ -784,7 +786,7 @@
           "reason": "stored value operand is defined by, or computed from, the source access"
         },
         {
-          "source_transaction_id": "txn_b_15",
+          "source_transaction_id": "txn_b_read_15",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:1",
@@ -803,10 +805,10 @@
       ]
     },
     {
-      "transaction_id": "txn_c_12",
+      "transaction_id": "txn_c_write_12",
       "dependencies": [
         {
-          "source_transaction_id": "txn_a_63",
+          "source_transaction_id": "txn_a_read_63",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:0",
@@ -823,7 +825,7 @@
           "reason": "stored value operand is defined by, or computed from, the source access"
         },
         {
-          "source_transaction_id": "txn_b_15",
+          "source_transaction_id": "txn_b_read_15",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:1",
@@ -842,10 +844,10 @@
       ]
     },
     {
-      "transaction_id": "txn_c_13",
+      "transaction_id": "txn_c_write_13",
       "dependencies": [
         {
-          "source_transaction_id": "txn_a_63",
+          "source_transaction_id": "txn_a_read_63",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:0",
@@ -862,7 +864,7 @@
           "reason": "stored value operand is defined by, or computed from, the source access"
         },
         {
-          "source_transaction_id": "txn_b_15",
+          "source_transaction_id": "txn_b_read_15",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:1",
@@ -881,10 +883,10 @@
       ]
     },
     {
-      "transaction_id": "txn_c_14",
+      "transaction_id": "txn_c_write_14",
       "dependencies": [
         {
-          "source_transaction_id": "txn_a_63",
+          "source_transaction_id": "txn_a_read_63",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:0",
@@ -901,7 +903,7 @@
           "reason": "stored value operand is defined by, or computed from, the source access"
         },
         {
-          "source_transaction_id": "txn_b_15",
+          "source_transaction_id": "txn_b_read_15",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:1",
@@ -920,10 +922,10 @@
       ]
     },
     {
-      "transaction_id": "txn_c_15",
+      "transaction_id": "txn_c_write_15",
       "dependencies": [
         {
-          "source_transaction_id": "txn_a_63",
+          "source_transaction_id": "txn_a_read_63",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:0",
@@ -940,7 +942,7 @@
           "reason": "stored value operand is defined by, or computed from, the source access"
         },
         {
-          "source_transaction_id": "txn_b_15",
+          "source_transaction_id": "txn_b_read_15",
           "kind": "llvm_def_use",
           "via": "ssa_value",
           "source_access_id": "access:1",

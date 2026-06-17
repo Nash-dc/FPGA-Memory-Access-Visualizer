@@ -1,0 +1,5 @@
+,read_U0,,status1.csv
+,read_1_U0,,status2.csv
+,write_U0,,status3.csv
+,write_2_U0,,status4.csv
+,AESL_inst_read_write,,module_status1.csv

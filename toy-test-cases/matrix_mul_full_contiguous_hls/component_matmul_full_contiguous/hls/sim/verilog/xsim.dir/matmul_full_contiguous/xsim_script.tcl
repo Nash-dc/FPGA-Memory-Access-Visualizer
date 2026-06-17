@@ -1,1 +1,1 @@
-xsim {matmul_full_contiguous} -testplusarg UVM_VERBOSITY=UVM_NONE -testplusarg UVM_TESTNAME=matmul_full_contiguous_test_lib -testplusarg UVM_TIMEOUT=20000000000000 -autoloadwcfg -tclbatch {matmul_full_contiguous.tcl} -protoinst {matmul_full_contiguous.protoinst}
+xsim {matmul_full_contiguous} -testplusarg UVM_VERBOSITY=UVM_NONE -testplusarg UVM_TESTNAME=matmul_full_contiguous_test_lib -testplusarg UVM_TIMEOUT=20000000000000 -view {{matmul_full_contiguous_dataflow_ana.wcfg}} -tclbatch {matmul_full_contiguous.tcl} -protoinst {matmul_full_contiguous.protoinst}

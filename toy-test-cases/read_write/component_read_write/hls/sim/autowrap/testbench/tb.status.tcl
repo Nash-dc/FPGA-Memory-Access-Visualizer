@@ -1,0 +1,1 @@
+set ::AESL_AUTOSIM::gTopFileName /data/hls-dev/toy-test-cases/read_write/component_read_write/hls/./sim/autowrap/testbench/read_write.cpp_pre.cpp.tb.cpp

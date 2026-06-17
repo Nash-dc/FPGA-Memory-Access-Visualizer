@@ -1,97 +1,97 @@
-txn_id	direction	argument	bundle	start_index	end_index	byte_addr	beats	axlen	elements_per_beat	issue_order	complete_order	depends_on	timeline_lane
-txn_a_0	read	a	gmem_a	0	3	0	1	0	4	0	1		a
-txn_b_0	read	b	gmem_b	0	15	0	1	0	16	0	1		b
-txn_a_1	read	a	gmem_a	16	19	64	1	0	4	1	2		a
-txn_b_1	read	b	gmem_b	16	31	64	1	0	16	1	2		b
-txn_a_2	read	a	gmem_a	32	35	128	1	0	4	2	3		a
-txn_b_2	read	b	gmem_b	32	47	128	1	0	16	2	3		b
-txn_a_3	read	a	gmem_a	48	51	192	1	0	4	3	4		a
-txn_b_3	read	b	gmem_b	48	63	192	1	0	16	3	4		b
-txn_a_4	read	a	gmem_a	64	67	256	1	0	4	4	5		a
-txn_b_4	read	b	gmem_b	64	79	256	1	0	16	4	5		b
-txn_a_5	read	a	gmem_a	80	83	320	1	0	4	5	6		a
-txn_b_5	read	b	gmem_b	80	95	320	1	0	16	5	6		b
-txn_a_6	read	a	gmem_a	96	99	384	1	0	4	6	7		a
-txn_b_6	read	b	gmem_b	96	111	384	1	0	16	6	7		b
-txn_a_7	read	a	gmem_a	112	115	448	1	0	4	7	8		a
-txn_b_7	read	b	gmem_b	112	127	448	1	0	16	7	8		b
-txn_a_8	read	a	gmem_a	128	131	512	1	0	4	8	9		a
-txn_b_8	read	b	gmem_b	128	143	512	1	0	16	8	9		b
-txn_a_9	read	a	gmem_a	144	147	576	1	0	4	9	10		a
-txn_b_9	read	b	gmem_b	144	159	576	1	0	16	9	10		b
-txn_a_10	read	a	gmem_a	160	163	640	1	0	4	10	11		a
-txn_b_10	read	b	gmem_b	160	175	640	1	0	16	10	11		b
-txn_a_11	read	a	gmem_a	176	179	704	1	0	4	11	12		a
-txn_b_11	read	b	gmem_b	176	191	704	1	0	16	11	12		b
-txn_a_12	read	a	gmem_a	192	195	768	1	0	4	12	13		a
-txn_b_12	read	b	gmem_b	192	207	768	1	0	16	12	13		b
-txn_a_13	read	a	gmem_a	208	211	832	1	0	4	13	14		a
-txn_b_13	read	b	gmem_b	208	223	832	1	0	16	13	14		b
-txn_a_14	read	a	gmem_a	224	227	896	1	0	4	14	15		a
-txn_b_14	read	b	gmem_b	224	239	896	1	0	16	14	15		b
-txn_a_15	read	a	gmem_a	240	243	960	1	0	4	15	16		a
-txn_b_15	read	b	gmem_b	240	255	960	1	0	16	15	16		b
-txn_a_16	read	a	gmem_a	4	7	16	1	0	4	16	17		a
-txn_a_17	read	a	gmem_a	20	23	80	1	0	4	17	18		a
-txn_a_18	read	a	gmem_a	36	39	144	1	0	4	18	19		a
-txn_a_19	read	a	gmem_a	52	55	208	1	0	4	19	20		a
-txn_a_20	read	a	gmem_a	68	71	272	1	0	4	20	21		a
-txn_a_21	read	a	gmem_a	84	87	336	1	0	4	21	22		a
-txn_a_22	read	a	gmem_a	100	103	400	1	0	4	22	23		a
-txn_a_23	read	a	gmem_a	116	119	464	1	0	4	23	24		a
-txn_a_24	read	a	gmem_a	132	135	528	1	0	4	24	25		a
-txn_a_25	read	a	gmem_a	148	151	592	1	0	4	25	26		a
-txn_a_26	read	a	gmem_a	164	167	656	1	0	4	26	27		a
-txn_a_27	read	a	gmem_a	180	183	720	1	0	4	27	28		a
-txn_a_28	read	a	gmem_a	196	199	784	1	0	4	28	29		a
-txn_a_29	read	a	gmem_a	212	215	848	1	0	4	29	30		a
-txn_a_30	read	a	gmem_a	228	231	912	1	0	4	30	31		a
-txn_a_31	read	a	gmem_a	244	247	976	1	0	4	31	32		a
-txn_a_32	read	a	gmem_a	8	11	32	1	0	4	32	33		a
-txn_a_33	read	a	gmem_a	24	27	96	1	0	4	33	34		a
-txn_a_34	read	a	gmem_a	40	43	160	1	0	4	34	35		a
-txn_a_35	read	a	gmem_a	56	59	224	1	0	4	35	36		a
-txn_a_36	read	a	gmem_a	72	75	288	1	0	4	36	37		a
-txn_a_37	read	a	gmem_a	88	91	352	1	0	4	37	38		a
-txn_a_38	read	a	gmem_a	104	107	416	1	0	4	38	39		a
-txn_a_39	read	a	gmem_a	120	123	480	1	0	4	39	40		a
-txn_a_40	read	a	gmem_a	136	139	544	1	0	4	40	41		a
-txn_a_41	read	a	gmem_a	152	155	608	1	0	4	41	42		a
-txn_a_42	read	a	gmem_a	168	171	672	1	0	4	42	43		a
-txn_a_43	read	a	gmem_a	184	187	736	1	0	4	43	44		a
-txn_a_44	read	a	gmem_a	200	203	800	1	0	4	44	45		a
-txn_a_45	read	a	gmem_a	216	219	864	1	0	4	45	46		a
-txn_a_46	read	a	gmem_a	232	235	928	1	0	4	46	47		a
-txn_a_47	read	a	gmem_a	248	251	992	1	0	4	47	48		a
-txn_a_48	read	a	gmem_a	12	15	48	1	0	4	48	49		a
-txn_a_49	read	a	gmem_a	28	31	112	1	0	4	49	50		a
-txn_a_50	read	a	gmem_a	44	47	176	1	0	4	50	51		a
-txn_a_51	read	a	gmem_a	60	63	240	1	0	4	51	52		a
-txn_a_52	read	a	gmem_a	76	79	304	1	0	4	52	53		a
-txn_a_53	read	a	gmem_a	92	95	368	1	0	4	53	54		a
-txn_a_54	read	a	gmem_a	108	111	432	1	0	4	54	55		a
-txn_a_55	read	a	gmem_a	124	127	496	1	0	4	55	56		a
-txn_a_56	read	a	gmem_a	140	143	560	1	0	4	56	57		a
-txn_a_57	read	a	gmem_a	156	159	624	1	0	4	57	58		a
-txn_a_58	read	a	gmem_a	172	175	688	1	0	4	58	59		a
-txn_a_59	read	a	gmem_a	188	191	752	1	0	4	59	60		a
-txn_a_60	read	a	gmem_a	204	207	816	1	0	4	60	61		a
-txn_a_61	read	a	gmem_a	220	223	880	1	0	4	61	62		a
-txn_a_62	read	a	gmem_a	236	239	944	1	0	4	62	63		a
-txn_a_63	read	a	gmem_a	252	255	1008	1	0	4	63	64		a
-txn_c_0	write	c	gmem_c	0	15	0	1	0	16	83	84	txn_a_63,txn_b_15	c
-txn_c_1	write	c	gmem_c	16	31	64	1	0	16	99	100	txn_a_63,txn_b_15	c
-txn_c_2	write	c	gmem_c	32	47	128	1	0	16	115	116	txn_a_63,txn_b_15	c
-txn_c_3	write	c	gmem_c	48	63	192	1	0	16	131	132	txn_a_63,txn_b_15	c
-txn_c_4	write	c	gmem_c	64	79	256	1	0	16	147	148	txn_a_63,txn_b_15	c
-txn_c_5	write	c	gmem_c	80	95	320	1	0	16	163	164	txn_a_63,txn_b_15	c
-txn_c_6	write	c	gmem_c	96	111	384	1	0	16	179	180	txn_a_63,txn_b_15	c
-txn_c_7	write	c	gmem_c	112	127	448	1	0	16	195	196	txn_a_63,txn_b_15	c
-txn_c_8	write	c	gmem_c	128	143	512	1	0	16	211	212	txn_a_63,txn_b_15	c
-txn_c_9	write	c	gmem_c	144	159	576	1	0	16	227	228	txn_a_63,txn_b_15	c
-txn_c_10	write	c	gmem_c	160	175	640	1	0	16	243	244	txn_a_63,txn_b_15	c
-txn_c_11	write	c	gmem_c	176	191	704	1	0	16	259	260	txn_a_63,txn_b_15	c
-txn_c_12	write	c	gmem_c	192	207	768	1	0	16	275	276	txn_a_63,txn_b_15	c
-txn_c_13	write	c	gmem_c	208	223	832	1	0	16	291	292	txn_a_63,txn_b_15	c
-txn_c_14	write	c	gmem_c	224	239	896	1	0	16	307	308	txn_a_63,txn_b_15	c
-txn_c_15	write	c	gmem_c	240	255	960	1	0	16	323	324	txn_a_63,txn_b_15	c
+txn_id	direction	argument	bundle	start_index	end_index	byte_addr	beats	axlen	elements_per_beat	issue_order	complete_order	depends_on	dependency_details	timeline_lane
+txn_a_read_0	read	a	gmem_a	0	3	0	1	0	4	0	1			a
+txn_b_read_0	read	b	gmem_b	0	15	0	1	0	16	0	1			b
+txn_a_read_1	read	a	gmem_a	16	19	64	1	0	4	1	2			a
+txn_b_read_1	read	b	gmem_b	16	31	64	1	0	16	1	2			b
+txn_a_read_2	read	a	gmem_a	32	35	128	1	0	4	2	3			a
+txn_b_read_2	read	b	gmem_b	32	47	128	1	0	16	2	3			b
+txn_a_read_3	read	a	gmem_a	48	51	192	1	0	4	3	4			a
+txn_b_read_3	read	b	gmem_b	48	63	192	1	0	16	3	4			b
+txn_a_read_4	read	a	gmem_a	64	67	256	1	0	4	4	5			a
+txn_b_read_4	read	b	gmem_b	64	79	256	1	0	16	4	5			b
+txn_a_read_5	read	a	gmem_a	80	83	320	1	0	4	5	6			a
+txn_b_read_5	read	b	gmem_b	80	95	320	1	0	16	5	6			b
+txn_a_read_6	read	a	gmem_a	96	99	384	1	0	4	6	7			a
+txn_b_read_6	read	b	gmem_b	96	111	384	1	0	16	6	7			b
+txn_a_read_7	read	a	gmem_a	112	115	448	1	0	4	7	8			a
+txn_b_read_7	read	b	gmem_b	112	127	448	1	0	16	7	8			b
+txn_a_read_8	read	a	gmem_a	128	131	512	1	0	4	8	9			a
+txn_b_read_8	read	b	gmem_b	128	143	512	1	0	16	8	9			b
+txn_a_read_9	read	a	gmem_a	144	147	576	1	0	4	9	10			a
+txn_b_read_9	read	b	gmem_b	144	159	576	1	0	16	9	10			b
+txn_a_read_10	read	a	gmem_a	160	163	640	1	0	4	10	11			a
+txn_b_read_10	read	b	gmem_b	160	175	640	1	0	16	10	11			b
+txn_a_read_11	read	a	gmem_a	176	179	704	1	0	4	11	12			a
+txn_b_read_11	read	b	gmem_b	176	191	704	1	0	16	11	12			b
+txn_a_read_12	read	a	gmem_a	192	195	768	1	0	4	12	13			a
+txn_b_read_12	read	b	gmem_b	192	207	768	1	0	16	12	13			b
+txn_a_read_13	read	a	gmem_a	208	211	832	1	0	4	13	14			a
+txn_b_read_13	read	b	gmem_b	208	223	832	1	0	16	13	14			b
+txn_a_read_14	read	a	gmem_a	224	227	896	1	0	4	14	15			a
+txn_b_read_14	read	b	gmem_b	224	239	896	1	0	16	14	15			b
+txn_a_read_15	read	a	gmem_a	240	243	960	1	0	4	15	16			a
+txn_b_read_15	read	b	gmem_b	240	255	960	1	0	16	15	16			b
+txn_a_read_16	read	a	gmem_a	4	7	16	1	0	4	16	17			a
+txn_a_read_17	read	a	gmem_a	20	23	80	1	0	4	17	18			a
+txn_a_read_18	read	a	gmem_a	36	39	144	1	0	4	18	19			a
+txn_a_read_19	read	a	gmem_a	52	55	208	1	0	4	19	20			a
+txn_a_read_20	read	a	gmem_a	68	71	272	1	0	4	20	21			a
+txn_a_read_21	read	a	gmem_a	84	87	336	1	0	4	21	22			a
+txn_a_read_22	read	a	gmem_a	100	103	400	1	0	4	22	23			a
+txn_a_read_23	read	a	gmem_a	116	119	464	1	0	4	23	24			a
+txn_a_read_24	read	a	gmem_a	132	135	528	1	0	4	24	25			a
+txn_a_read_25	read	a	gmem_a	148	151	592	1	0	4	25	26			a
+txn_a_read_26	read	a	gmem_a	164	167	656	1	0	4	26	27			a
+txn_a_read_27	read	a	gmem_a	180	183	720	1	0	4	27	28			a
+txn_a_read_28	read	a	gmem_a	196	199	784	1	0	4	28	29			a
+txn_a_read_29	read	a	gmem_a	212	215	848	1	0	4	29	30			a
+txn_a_read_30	read	a	gmem_a	228	231	912	1	0	4	30	31			a
+txn_a_read_31	read	a	gmem_a	244	247	976	1	0	4	31	32			a
+txn_a_read_32	read	a	gmem_a	8	11	32	1	0	4	32	33			a
+txn_a_read_33	read	a	gmem_a	24	27	96	1	0	4	33	34			a
+txn_a_read_34	read	a	gmem_a	40	43	160	1	0	4	34	35			a
+txn_a_read_35	read	a	gmem_a	56	59	224	1	0	4	35	36			a
+txn_a_read_36	read	a	gmem_a	72	75	288	1	0	4	36	37			a
+txn_a_read_37	read	a	gmem_a	88	91	352	1	0	4	37	38			a
+txn_a_read_38	read	a	gmem_a	104	107	416	1	0	4	38	39			a
+txn_a_read_39	read	a	gmem_a	120	123	480	1	0	4	39	40			a
+txn_a_read_40	read	a	gmem_a	136	139	544	1	0	4	40	41			a
+txn_a_read_41	read	a	gmem_a	152	155	608	1	0	4	41	42			a
+txn_a_read_42	read	a	gmem_a	168	171	672	1	0	4	42	43			a
+txn_a_read_43	read	a	gmem_a	184	187	736	1	0	4	43	44			a
+txn_a_read_44	read	a	gmem_a	200	203	800	1	0	4	44	45			a
+txn_a_read_45	read	a	gmem_a	216	219	864	1	0	4	45	46			a
+txn_a_read_46	read	a	gmem_a	232	235	928	1	0	4	46	47			a
+txn_a_read_47	read	a	gmem_a	248	251	992	1	0	4	47	48			a
+txn_a_read_48	read	a	gmem_a	12	15	48	1	0	4	48	49			a
+txn_a_read_49	read	a	gmem_a	28	31	112	1	0	4	49	50			a
+txn_a_read_50	read	a	gmem_a	44	47	176	1	0	4	50	51			a
+txn_a_read_51	read	a	gmem_a	60	63	240	1	0	4	51	52			a
+txn_a_read_52	read	a	gmem_a	76	79	304	1	0	4	52	53			a
+txn_a_read_53	read	a	gmem_a	92	95	368	1	0	4	53	54			a
+txn_a_read_54	read	a	gmem_a	108	111	432	1	0	4	54	55			a
+txn_a_read_55	read	a	gmem_a	124	127	496	1	0	4	55	56			a
+txn_a_read_56	read	a	gmem_a	140	143	560	1	0	4	56	57			a
+txn_a_read_57	read	a	gmem_a	156	159	624	1	0	4	57	58			a
+txn_a_read_58	read	a	gmem_a	172	175	688	1	0	4	58	59			a
+txn_a_read_59	read	a	gmem_a	188	191	752	1	0	4	59	60			a
+txn_a_read_60	read	a	gmem_a	204	207	816	1	0	4	60	61			a
+txn_a_read_61	read	a	gmem_a	220	223	880	1	0	4	61	62			a
+txn_a_read_62	read	a	gmem_a	236	239	944	1	0	4	62	63			a
+txn_a_read_63	read	a	gmem_a	252	255	1008	1	0	4	63	64			a
+txn_c_write_0	write	c	gmem_c	0	15	0	1	0	16	83	84	txn_a_read_63,txn_b_read_15	txn_a_read_63:llvm_def_use:ssa_value,txn_b_read_15:llvm_def_use:ssa_value	c
+txn_c_write_1	write	c	gmem_c	16	31	64	1	0	16	99	100	txn_a_read_63,txn_b_read_15	txn_a_read_63:llvm_def_use:ssa_value,txn_b_read_15:llvm_def_use:ssa_value	c
+txn_c_write_2	write	c	gmem_c	32	47	128	1	0	16	115	116	txn_a_read_63,txn_b_read_15	txn_a_read_63:llvm_def_use:ssa_value,txn_b_read_15:llvm_def_use:ssa_value	c
+txn_c_write_3	write	c	gmem_c	48	63	192	1	0	16	131	132	txn_a_read_63,txn_b_read_15	txn_a_read_63:llvm_def_use:ssa_value,txn_b_read_15:llvm_def_use:ssa_value	c
+txn_c_write_4	write	c	gmem_c	64	79	256	1	0	16	147	148	txn_a_read_63,txn_b_read_15	txn_a_read_63:llvm_def_use:ssa_value,txn_b_read_15:llvm_def_use:ssa_value	c
+txn_c_write_5	write	c	gmem_c	80	95	320	1	0	16	163	164	txn_a_read_63,txn_b_read_15	txn_a_read_63:llvm_def_use:ssa_value,txn_b_read_15:llvm_def_use:ssa_value	c
+txn_c_write_6	write	c	gmem_c	96	111	384	1	0	16	179	180	txn_a_read_63,txn_b_read_15	txn_a_read_63:llvm_def_use:ssa_value,txn_b_read_15:llvm_def_use:ssa_value	c
+txn_c_write_7	write	c	gmem_c	112	127	448	1	0	16	195	196	txn_a_read_63,txn_b_read_15	txn_a_read_63:llvm_def_use:ssa_value,txn_b_read_15:llvm_def_use:ssa_value	c
+txn_c_write_8	write	c	gmem_c	128	143	512	1	0	16	211	212	txn_a_read_63,txn_b_read_15	txn_a_read_63:llvm_def_use:ssa_value,txn_b_read_15:llvm_def_use:ssa_value	c
+txn_c_write_9	write	c	gmem_c	144	159	576	1	0	16	227	228	txn_a_read_63,txn_b_read_15	txn_a_read_63:llvm_def_use:ssa_value,txn_b_read_15:llvm_def_use:ssa_value	c
+txn_c_write_10	write	c	gmem_c	160	175	640	1	0	16	243	244	txn_a_read_63,txn_b_read_15	txn_a_read_63:llvm_def_use:ssa_value,txn_b_read_15:llvm_def_use:ssa_value	c
+txn_c_write_11	write	c	gmem_c	176	191	704	1	0	16	259	260	txn_a_read_63,txn_b_read_15	txn_a_read_63:llvm_def_use:ssa_value,txn_b_read_15:llvm_def_use:ssa_value	c
+txn_c_write_12	write	c	gmem_c	192	207	768	1	0	16	275	276	txn_a_read_63,txn_b_read_15	txn_a_read_63:llvm_def_use:ssa_value,txn_b_read_15:llvm_def_use:ssa_value	c
+txn_c_write_13	write	c	gmem_c	208	223	832	1	0	16	291	292	txn_a_read_63,txn_b_read_15	txn_a_read_63:llvm_def_use:ssa_value,txn_b_read_15:llvm_def_use:ssa_value	c
+txn_c_write_14	write	c	gmem_c	224	239	896	1	0	16	307	308	txn_a_read_63,txn_b_read_15	txn_a_read_63:llvm_def_use:ssa_value,txn_b_read_15:llvm_def_use:ssa_value	c
+txn_c_write_15	write	c	gmem_c	240	255	960	1	0	16	323	324	txn_a_read_63,txn_b_read_15	txn_a_read_63:llvm_def_use:ssa_value,txn_b_read_15:llvm_def_use:ssa_value	c

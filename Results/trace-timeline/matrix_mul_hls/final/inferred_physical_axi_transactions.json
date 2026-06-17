@@ -7,7 +7,7 @@
   },
   "axi_transactions": [
     {
-      "transaction_id": "txn_a_0",
+      "transaction_id": "txn_a_read_0",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -79,6 +79,7 @@
       "complete_order": 1,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -89,7 +90,7 @@
       }
     },
     {
-      "transaction_id": "txn_b_0",
+      "transaction_id": "txn_b_read_0",
       "access_site": "access:1",
       "access_sites": [
         "access:1"
@@ -185,6 +186,7 @@
       "complete_order": 1,
       "timeline_lane": "b",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -195,7 +197,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_1",
+      "transaction_id": "txn_a_read_1",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -267,6 +269,7 @@
       "complete_order": 2,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -277,7 +280,7 @@
       }
     },
     {
-      "transaction_id": "txn_b_1",
+      "transaction_id": "txn_b_read_1",
       "access_site": "access:1",
       "access_sites": [
         "access:1"
@@ -373,6 +376,7 @@
       "complete_order": 2,
       "timeline_lane": "b",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -383,7 +387,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_2",
+      "transaction_id": "txn_a_read_2",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -455,6 +459,7 @@
       "complete_order": 3,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -465,7 +470,7 @@
       }
     },
     {
-      "transaction_id": "txn_b_2",
+      "transaction_id": "txn_b_read_2",
       "access_site": "access:1",
       "access_sites": [
         "access:1"
@@ -561,6 +566,7 @@
       "complete_order": 3,
       "timeline_lane": "b",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -571,7 +577,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_3",
+      "transaction_id": "txn_a_read_3",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -643,6 +649,7 @@
       "complete_order": 4,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -653,7 +660,7 @@
       }
     },
     {
-      "transaction_id": "txn_b_3",
+      "transaction_id": "txn_b_read_3",
       "access_site": "access:1",
       "access_sites": [
         "access:1"
@@ -749,6 +756,7 @@
       "complete_order": 4,
       "timeline_lane": "b",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -759,7 +767,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_4",
+      "transaction_id": "txn_a_read_4",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -831,6 +839,7 @@
       "complete_order": 5,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -841,7 +850,7 @@
       }
     },
     {
-      "transaction_id": "txn_b_4",
+      "transaction_id": "txn_b_read_4",
       "access_site": "access:1",
       "access_sites": [
         "access:1"
@@ -937,6 +946,7 @@
       "complete_order": 5,
       "timeline_lane": "b",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -947,7 +957,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_5",
+      "transaction_id": "txn_a_read_5",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -1019,6 +1029,7 @@
       "complete_order": 6,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -1029,7 +1040,7 @@
       }
     },
     {
-      "transaction_id": "txn_b_5",
+      "transaction_id": "txn_b_read_5",
       "access_site": "access:1",
       "access_sites": [
         "access:1"
@@ -1125,6 +1136,7 @@
       "complete_order": 6,
       "timeline_lane": "b",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -1135,7 +1147,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_6",
+      "transaction_id": "txn_a_read_6",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -1207,6 +1219,7 @@
       "complete_order": 7,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -1217,7 +1230,7 @@
       }
     },
     {
-      "transaction_id": "txn_b_6",
+      "transaction_id": "txn_b_read_6",
       "access_site": "access:1",
       "access_sites": [
         "access:1"
@@ -1313,6 +1326,7 @@
       "complete_order": 7,
       "timeline_lane": "b",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -1323,7 +1337,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_7",
+      "transaction_id": "txn_a_read_7",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -1395,6 +1409,7 @@
       "complete_order": 8,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -1405,7 +1420,7 @@
       }
     },
     {
-      "transaction_id": "txn_b_7",
+      "transaction_id": "txn_b_read_7",
       "access_site": "access:1",
       "access_sites": [
         "access:1"
@@ -1501,6 +1516,7 @@
       "complete_order": 8,
       "timeline_lane": "b",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -1511,7 +1527,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_8",
+      "transaction_id": "txn_a_read_8",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -1583,6 +1599,7 @@
       "complete_order": 9,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -1593,7 +1610,7 @@
       }
     },
     {
-      "transaction_id": "txn_b_8",
+      "transaction_id": "txn_b_read_8",
       "access_site": "access:1",
       "access_sites": [
         "access:1"
@@ -1689,6 +1706,7 @@
       "complete_order": 9,
       "timeline_lane": "b",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -1699,7 +1717,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_9",
+      "transaction_id": "txn_a_read_9",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -1771,6 +1789,7 @@
       "complete_order": 10,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -1781,7 +1800,7 @@
       }
     },
     {
-      "transaction_id": "txn_b_9",
+      "transaction_id": "txn_b_read_9",
       "access_site": "access:1",
       "access_sites": [
         "access:1"
@@ -1877,6 +1896,7 @@
       "complete_order": 10,
       "timeline_lane": "b",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -1887,7 +1907,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_10",
+      "transaction_id": "txn_a_read_10",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -1959,6 +1979,7 @@
       "complete_order": 11,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -1969,7 +1990,7 @@
       }
     },
     {
-      "transaction_id": "txn_b_10",
+      "transaction_id": "txn_b_read_10",
       "access_site": "access:1",
       "access_sites": [
         "access:1"
@@ -2065,6 +2086,7 @@
       "complete_order": 11,
       "timeline_lane": "b",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -2075,7 +2097,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_11",
+      "transaction_id": "txn_a_read_11",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -2147,6 +2169,7 @@
       "complete_order": 12,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -2157,7 +2180,7 @@
       }
     },
     {
-      "transaction_id": "txn_b_11",
+      "transaction_id": "txn_b_read_11",
       "access_site": "access:1",
       "access_sites": [
         "access:1"
@@ -2253,6 +2276,7 @@
       "complete_order": 12,
       "timeline_lane": "b",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -2263,7 +2287,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_12",
+      "transaction_id": "txn_a_read_12",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -2335,6 +2359,7 @@
       "complete_order": 13,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -2345,7 +2370,7 @@
       }
     },
     {
-      "transaction_id": "txn_b_12",
+      "transaction_id": "txn_b_read_12",
       "access_site": "access:1",
       "access_sites": [
         "access:1"
@@ -2441,6 +2466,7 @@
       "complete_order": 13,
       "timeline_lane": "b",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -2451,7 +2477,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_13",
+      "transaction_id": "txn_a_read_13",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -2523,6 +2549,7 @@
       "complete_order": 14,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -2533,7 +2560,7 @@
       }
     },
     {
-      "transaction_id": "txn_b_13",
+      "transaction_id": "txn_b_read_13",
       "access_site": "access:1",
       "access_sites": [
         "access:1"
@@ -2629,6 +2656,7 @@
       "complete_order": 14,
       "timeline_lane": "b",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -2639,7 +2667,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_14",
+      "transaction_id": "txn_a_read_14",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -2711,6 +2739,7 @@
       "complete_order": 15,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -2721,7 +2750,7 @@
       }
     },
     {
-      "transaction_id": "txn_b_14",
+      "transaction_id": "txn_b_read_14",
       "access_site": "access:1",
       "access_sites": [
         "access:1"
@@ -2817,6 +2846,7 @@
       "complete_order": 15,
       "timeline_lane": "b",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -2827,7 +2857,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_15",
+      "transaction_id": "txn_a_read_15",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -2899,6 +2929,7 @@
       "complete_order": 16,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -2909,7 +2940,7 @@
       }
     },
     {
-      "transaction_id": "txn_b_15",
+      "transaction_id": "txn_b_read_15",
       "access_site": "access:1",
       "access_sites": [
         "access:1"
@@ -3005,6 +3036,7 @@
       "complete_order": 16,
       "timeline_lane": "b",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -3015,7 +3047,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_16",
+      "transaction_id": "txn_a_read_16",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -3087,6 +3119,7 @@
       "complete_order": 17,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -3097,7 +3130,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_17",
+      "transaction_id": "txn_a_read_17",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -3169,6 +3202,7 @@
       "complete_order": 18,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -3179,7 +3213,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_18",
+      "transaction_id": "txn_a_read_18",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -3251,6 +3285,7 @@
       "complete_order": 19,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -3261,7 +3296,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_19",
+      "transaction_id": "txn_a_read_19",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -3333,6 +3368,7 @@
       "complete_order": 20,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -3343,7 +3379,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_20",
+      "transaction_id": "txn_a_read_20",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -3415,6 +3451,7 @@
       "complete_order": 21,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -3425,7 +3462,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_21",
+      "transaction_id": "txn_a_read_21",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -3497,6 +3534,7 @@
       "complete_order": 22,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -3507,7 +3545,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_22",
+      "transaction_id": "txn_a_read_22",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -3579,6 +3617,7 @@
       "complete_order": 23,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -3589,7 +3628,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_23",
+      "transaction_id": "txn_a_read_23",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -3661,6 +3700,7 @@
       "complete_order": 24,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -3671,7 +3711,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_24",
+      "transaction_id": "txn_a_read_24",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -3743,6 +3783,7 @@
       "complete_order": 25,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -3753,7 +3794,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_25",
+      "transaction_id": "txn_a_read_25",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -3825,6 +3866,7 @@
       "complete_order": 26,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -3835,7 +3877,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_26",
+      "transaction_id": "txn_a_read_26",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -3907,6 +3949,7 @@
       "complete_order": 27,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -3917,7 +3960,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_27",
+      "transaction_id": "txn_a_read_27",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -3989,6 +4032,7 @@
       "complete_order": 28,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -3999,7 +4043,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_28",
+      "transaction_id": "txn_a_read_28",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -4071,6 +4115,7 @@
       "complete_order": 29,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -4081,7 +4126,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_29",
+      "transaction_id": "txn_a_read_29",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -4153,6 +4198,7 @@
       "complete_order": 30,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -4163,7 +4209,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_30",
+      "transaction_id": "txn_a_read_30",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -4235,6 +4281,7 @@
       "complete_order": 31,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -4245,7 +4292,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_31",
+      "transaction_id": "txn_a_read_31",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -4317,6 +4364,7 @@
       "complete_order": 32,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -4327,7 +4375,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_32",
+      "transaction_id": "txn_a_read_32",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -4399,6 +4447,7 @@
       "complete_order": 33,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -4409,7 +4458,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_33",
+      "transaction_id": "txn_a_read_33",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -4481,6 +4530,7 @@
       "complete_order": 34,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -4491,7 +4541,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_34",
+      "transaction_id": "txn_a_read_34",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -4563,6 +4613,7 @@
       "complete_order": 35,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -4573,7 +4624,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_35",
+      "transaction_id": "txn_a_read_35",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -4645,6 +4696,7 @@
       "complete_order": 36,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -4655,7 +4707,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_36",
+      "transaction_id": "txn_a_read_36",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -4727,6 +4779,7 @@
       "complete_order": 37,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -4737,7 +4790,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_37",
+      "transaction_id": "txn_a_read_37",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -4809,6 +4862,7 @@
       "complete_order": 38,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -4819,7 +4873,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_38",
+      "transaction_id": "txn_a_read_38",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -4891,6 +4945,7 @@
       "complete_order": 39,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -4901,7 +4956,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_39",
+      "transaction_id": "txn_a_read_39",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -4973,6 +5028,7 @@
       "complete_order": 40,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -4983,7 +5039,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_40",
+      "transaction_id": "txn_a_read_40",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -5055,6 +5111,7 @@
       "complete_order": 41,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -5065,7 +5122,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_41",
+      "transaction_id": "txn_a_read_41",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -5137,6 +5194,7 @@
       "complete_order": 42,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -5147,7 +5205,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_42",
+      "transaction_id": "txn_a_read_42",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -5219,6 +5277,7 @@
       "complete_order": 43,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -5229,7 +5288,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_43",
+      "transaction_id": "txn_a_read_43",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -5301,6 +5360,7 @@
       "complete_order": 44,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -5311,7 +5371,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_44",
+      "transaction_id": "txn_a_read_44",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -5383,6 +5443,7 @@
       "complete_order": 45,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -5393,7 +5454,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_45",
+      "transaction_id": "txn_a_read_45",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -5465,6 +5526,7 @@
       "complete_order": 46,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -5475,7 +5537,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_46",
+      "transaction_id": "txn_a_read_46",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -5547,6 +5609,7 @@
       "complete_order": 47,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -5557,7 +5620,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_47",
+      "transaction_id": "txn_a_read_47",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -5629,6 +5692,7 @@
       "complete_order": 48,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -5639,7 +5703,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_48",
+      "transaction_id": "txn_a_read_48",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -5711,6 +5775,7 @@
       "complete_order": 49,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -5721,7 +5786,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_49",
+      "transaction_id": "txn_a_read_49",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -5793,6 +5858,7 @@
       "complete_order": 50,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -5803,7 +5869,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_50",
+      "transaction_id": "txn_a_read_50",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -5875,6 +5941,7 @@
       "complete_order": 51,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -5885,7 +5952,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_51",
+      "transaction_id": "txn_a_read_51",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -5957,6 +6024,7 @@
       "complete_order": 52,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -5967,7 +6035,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_52",
+      "transaction_id": "txn_a_read_52",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -6039,6 +6107,7 @@
       "complete_order": 53,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -6049,7 +6118,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_53",
+      "transaction_id": "txn_a_read_53",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -6121,6 +6190,7 @@
       "complete_order": 54,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -6131,7 +6201,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_54",
+      "transaction_id": "txn_a_read_54",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -6203,6 +6273,7 @@
       "complete_order": 55,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -6213,7 +6284,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_55",
+      "transaction_id": "txn_a_read_55",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -6285,6 +6356,7 @@
       "complete_order": 56,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -6295,7 +6367,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_56",
+      "transaction_id": "txn_a_read_56",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -6367,6 +6439,7 @@
       "complete_order": 57,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -6377,7 +6450,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_57",
+      "transaction_id": "txn_a_read_57",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -6449,6 +6522,7 @@
       "complete_order": 58,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -6459,7 +6533,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_58",
+      "transaction_id": "txn_a_read_58",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -6531,6 +6605,7 @@
       "complete_order": 59,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -6541,7 +6616,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_59",
+      "transaction_id": "txn_a_read_59",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -6613,6 +6688,7 @@
       "complete_order": 60,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -6623,7 +6699,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_60",
+      "transaction_id": "txn_a_read_60",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -6695,6 +6771,7 @@
       "complete_order": 61,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -6705,7 +6782,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_61",
+      "transaction_id": "txn_a_read_61",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -6777,6 +6854,7 @@
       "complete_order": 62,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -6787,7 +6865,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_62",
+      "transaction_id": "txn_a_read_62",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -6859,6 +6937,7 @@
       "complete_order": 63,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -6869,7 +6948,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_63",
+      "transaction_id": "txn_a_read_63",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -6941,6 +7020,7 @@
       "complete_order": 64,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -6951,7 +7031,7 @@
       }
     },
     {
-      "transaction_id": "txn_c_0",
+      "transaction_id": "txn_c_write_0",
       "access_site": "access:2",
       "access_sites": [
         "access:2"
@@ -7047,8 +7127,44 @@
       "complete_order": 84,
       "timeline_lane": "c",
       "depends_on_transaction_ids": [
-        "txn_a_63",
-        "txn_b_15"
+        "txn_a_read_63",
+        "txn_b_read_15"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_a_read_63",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[0..15]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[0..15]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
       ],
       "timeline_order_predecessor_id": "",
       "timing_model": {
@@ -7064,7 +7180,7 @@
       }
     },
     {
-      "transaction_id": "txn_c_1",
+      "transaction_id": "txn_c_write_1",
       "access_site": "access:2",
       "access_sites": [
         "access:2"
@@ -7160,8 +7276,44 @@
       "complete_order": 100,
       "timeline_lane": "c",
       "depends_on_transaction_ids": [
-        "txn_a_63",
-        "txn_b_15"
+        "txn_a_read_63",
+        "txn_b_read_15"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_a_read_63",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[16..31]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[16..31]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
       ],
       "timeline_order_predecessor_id": "",
       "timing_model": {
@@ -7177,7 +7329,7 @@
       }
     },
     {
-      "transaction_id": "txn_c_2",
+      "transaction_id": "txn_c_write_2",
       "access_site": "access:2",
       "access_sites": [
         "access:2"
@@ -7273,8 +7425,44 @@
       "complete_order": 116,
       "timeline_lane": "c",
       "depends_on_transaction_ids": [
-        "txn_a_63",
-        "txn_b_15"
+        "txn_a_read_63",
+        "txn_b_read_15"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_a_read_63",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[32..47]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[32..47]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
       ],
       "timeline_order_predecessor_id": "",
       "timing_model": {
@@ -7290,7 +7478,7 @@
       }
     },
     {
-      "transaction_id": "txn_c_3",
+      "transaction_id": "txn_c_write_3",
       "access_site": "access:2",
       "access_sites": [
         "access:2"
@@ -7386,8 +7574,44 @@
       "complete_order": 132,
       "timeline_lane": "c",
       "depends_on_transaction_ids": [
-        "txn_a_63",
-        "txn_b_15"
+        "txn_a_read_63",
+        "txn_b_read_15"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_a_read_63",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[48..63]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[48..63]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
       ],
       "timeline_order_predecessor_id": "",
       "timing_model": {
@@ -7403,7 +7627,7 @@
       }
     },
     {
-      "transaction_id": "txn_c_4",
+      "transaction_id": "txn_c_write_4",
       "access_site": "access:2",
       "access_sites": [
         "access:2"
@@ -7499,8 +7723,44 @@
       "complete_order": 148,
       "timeline_lane": "c",
       "depends_on_transaction_ids": [
-        "txn_a_63",
-        "txn_b_15"
+        "txn_a_read_63",
+        "txn_b_read_15"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_a_read_63",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[64..79]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[64..79]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
       ],
       "timeline_order_predecessor_id": "",
       "timing_model": {
@@ -7516,7 +7776,7 @@
       }
     },
     {
-      "transaction_id": "txn_c_5",
+      "transaction_id": "txn_c_write_5",
       "access_site": "access:2",
       "access_sites": [
         "access:2"
@@ -7612,8 +7872,44 @@
       "complete_order": 164,
       "timeline_lane": "c",
       "depends_on_transaction_ids": [
-        "txn_a_63",
-        "txn_b_15"
+        "txn_a_read_63",
+        "txn_b_read_15"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_a_read_63",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[80..95]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[80..95]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
       ],
       "timeline_order_predecessor_id": "",
       "timing_model": {
@@ -7629,7 +7925,7 @@
       }
     },
     {
-      "transaction_id": "txn_c_6",
+      "transaction_id": "txn_c_write_6",
       "access_site": "access:2",
       "access_sites": [
         "access:2"
@@ -7725,8 +8021,44 @@
       "complete_order": 180,
       "timeline_lane": "c",
       "depends_on_transaction_ids": [
-        "txn_a_63",
-        "txn_b_15"
+        "txn_a_read_63",
+        "txn_b_read_15"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_a_read_63",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[96..111]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[96..111]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
       ],
       "timeline_order_predecessor_id": "",
       "timing_model": {
@@ -7742,7 +8074,7 @@
       }
     },
     {
-      "transaction_id": "txn_c_7",
+      "transaction_id": "txn_c_write_7",
       "access_site": "access:2",
       "access_sites": [
         "access:2"
@@ -7838,8 +8170,44 @@
       "complete_order": 196,
       "timeline_lane": "c",
       "depends_on_transaction_ids": [
-        "txn_a_63",
-        "txn_b_15"
+        "txn_a_read_63",
+        "txn_b_read_15"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_a_read_63",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[112..127]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[112..127]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
       ],
       "timeline_order_predecessor_id": "",
       "timing_model": {
@@ -7855,7 +8223,7 @@
       }
     },
     {
-      "transaction_id": "txn_c_8",
+      "transaction_id": "txn_c_write_8",
       "access_site": "access:2",
       "access_sites": [
         "access:2"
@@ -7951,8 +8319,44 @@
       "complete_order": 212,
       "timeline_lane": "c",
       "depends_on_transaction_ids": [
-        "txn_a_63",
-        "txn_b_15"
+        "txn_a_read_63",
+        "txn_b_read_15"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_a_read_63",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[128..143]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[128..143]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
       ],
       "timeline_order_predecessor_id": "",
       "timing_model": {
@@ -7968,7 +8372,7 @@
       }
     },
     {
-      "transaction_id": "txn_c_9",
+      "transaction_id": "txn_c_write_9",
       "access_site": "access:2",
       "access_sites": [
         "access:2"
@@ -8064,8 +8468,44 @@
       "complete_order": 228,
       "timeline_lane": "c",
       "depends_on_transaction_ids": [
-        "txn_a_63",
-        "txn_b_15"
+        "txn_a_read_63",
+        "txn_b_read_15"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_a_read_63",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[144..159]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[144..159]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
       ],
       "timeline_order_predecessor_id": "",
       "timing_model": {
@@ -8081,7 +8521,7 @@
       }
     },
     {
-      "transaction_id": "txn_c_10",
+      "transaction_id": "txn_c_write_10",
       "access_site": "access:2",
       "access_sites": [
         "access:2"
@@ -8177,8 +8617,44 @@
       "complete_order": 244,
       "timeline_lane": "c",
       "depends_on_transaction_ids": [
-        "txn_a_63",
-        "txn_b_15"
+        "txn_a_read_63",
+        "txn_b_read_15"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_a_read_63",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[160..175]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[160..175]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
       ],
       "timeline_order_predecessor_id": "",
       "timing_model": {
@@ -8194,7 +8670,7 @@
       }
     },
     {
-      "transaction_id": "txn_c_11",
+      "transaction_id": "txn_c_write_11",
       "access_site": "access:2",
       "access_sites": [
         "access:2"
@@ -8290,8 +8766,44 @@
       "complete_order": 260,
       "timeline_lane": "c",
       "depends_on_transaction_ids": [
-        "txn_a_63",
-        "txn_b_15"
+        "txn_a_read_63",
+        "txn_b_read_15"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_a_read_63",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[176..191]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[176..191]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
       ],
       "timeline_order_predecessor_id": "",
       "timing_model": {
@@ -8307,7 +8819,7 @@
       }
     },
     {
-      "transaction_id": "txn_c_12",
+      "transaction_id": "txn_c_write_12",
       "access_site": "access:2",
       "access_sites": [
         "access:2"
@@ -8403,8 +8915,44 @@
       "complete_order": 276,
       "timeline_lane": "c",
       "depends_on_transaction_ids": [
-        "txn_a_63",
-        "txn_b_15"
+        "txn_a_read_63",
+        "txn_b_read_15"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_a_read_63",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[192..207]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[192..207]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
       ],
       "timeline_order_predecessor_id": "",
       "timing_model": {
@@ -8420,7 +8968,7 @@
       }
     },
     {
-      "transaction_id": "txn_c_13",
+      "transaction_id": "txn_c_write_13",
       "access_site": "access:2",
       "access_sites": [
         "access:2"
@@ -8516,8 +9064,44 @@
       "complete_order": 292,
       "timeline_lane": "c",
       "depends_on_transaction_ids": [
-        "txn_a_63",
-        "txn_b_15"
+        "txn_a_read_63",
+        "txn_b_read_15"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_a_read_63",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[208..223]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[208..223]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
       ],
       "timeline_order_predecessor_id": "",
       "timing_model": {
@@ -8533,7 +9117,7 @@
       }
     },
     {
-      "transaction_id": "txn_c_14",
+      "transaction_id": "txn_c_write_14",
       "access_site": "access:2",
       "access_sites": [
         "access:2"
@@ -8629,8 +9213,44 @@
       "complete_order": 308,
       "timeline_lane": "c",
       "depends_on_transaction_ids": [
-        "txn_a_63",
-        "txn_b_15"
+        "txn_a_read_63",
+        "txn_b_read_15"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_a_read_63",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[224..239]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[224..239]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
       ],
       "timeline_order_predecessor_id": "",
       "timing_model": {
@@ -8646,7 +9266,7 @@
       }
     },
     {
-      "transaction_id": "txn_c_15",
+      "transaction_id": "txn_c_write_15",
       "access_site": "access:2",
       "access_sites": [
         "access:2"
@@ -8742,8 +9362,44 @@
       "complete_order": 324,
       "timeline_lane": "c",
       "depends_on_transaction_ids": [
-        "txn_a_63",
-        "txn_b_15"
+        "txn_a_read_63",
+        "txn_b_read_15"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_a_read_63",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "a[255]"
+          ],
+          "target_element_ranges": [
+            "c[240..255]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_b_read_15",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "b[255]"
+          ],
+          "target_element_ranges": [
+            "c[240..255]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 1,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
       ],
       "timeline_order_predecessor_id": "",
       "timing_model": {

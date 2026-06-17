@@ -1,0 +1,5 @@
+  CREATE_STREAM @0 {NAME:matmul_full_contiguous_subsys_test_sequence_lib T:Transactions SCOPE:uvm_test_top.top_env.matmul_full_contiguous_virtual_sqr STREAM:5950}
+  CREATE_STREAM @113000 {NAME:matmul_full_contiguous_subsys_test_sequence_lib T:Transactions SCOPE:uvm_test_top.top_env.axi_master_gmem_a.vsqr STREAM:6286}
+  CREATE_STREAM @113000 {NAME:matmul_full_contiguous_subsys_test_sequence_lib T:Transactions SCOPE:uvm_test_top.top_env.axi_master_gmem_b.vsqr STREAM:6295}
+  CREATE_STREAM @113000 {NAME:matmul_full_contiguous_subsys_test_sequence_lib T:Transactions SCOPE:uvm_test_top.top_env.axi_master_gmem_c.vsqr STREAM:6304}
+  CREATE_STREAM @113000 {NAME:matmul_full_contiguous_subsys_test_sequence_lib T:Transactions SCOPE:uvm_test_top.top_env.axi_lite_control.vsqr STREAM:6313}

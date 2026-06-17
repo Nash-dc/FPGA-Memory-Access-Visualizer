@@ -1,0 +1,62 @@
+{
+  "0": {
+    "basicblocks": 1,
+    "calls": "4 1 2 3",
+    "control_depth": 0,
+    "def_use_depth": 1,
+    "file": "read_write.cpp",
+    "fileloc": 44,
+    "instructions": 23,
+    "memory_accesses": 0,
+    "name": "read_write",
+    "total_instructions": 146
+  },
+  "1": {
+    "basicblocks": 7,
+    "calls": "",
+    "control_depth": 2,
+    "def_use_depth": 6,
+    "file": "read_write.cpp",
+    "fileloc": 3,
+    "instructions": 30,
+    "memory_accesses": 2,
+    "name": "read",
+    "total_instructions": 30
+  },
+  "2": {
+    "basicblocks": 7,
+    "calls": "",
+    "control_depth": 2,
+    "def_use_depth": 6,
+    "file": "read_write.cpp",
+    "fileloc": 18,
+    "instructions": 32,
+    "memory_accesses": 2,
+    "name": "write",
+    "total_instructions": 32
+  },
+  "3": {
+    "basicblocks": 7,
+    "calls": "",
+    "control_depth": 2,
+    "def_use_depth": 6,
+    "file": "read_write.cpp",
+    "fileloc": 18,
+    "instructions": 32,
+    "memory_accesses": 2,
+    "name": "write",
+    "total_instructions": 32
+  },
+  "4": {
+    "basicblocks": 7,
+    "calls": "",
+    "control_depth": 2,
+    "def_use_depth": 5,
+    "file": "read_write.cpp",
+    "fileloc": 3,
+    "instructions": 29,
+    "memory_accesses": 2,
+    "name": "read",
+    "total_instructions": 29
+  }
+}

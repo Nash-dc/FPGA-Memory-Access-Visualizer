@@ -7,7 +7,7 @@
   },
   "axi_transactions": [
     {
-      "transaction_id": "txn_a_0",
+      "transaction_id": "txn_a_read_0",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -103,6 +103,7 @@
       "complete_order": 4,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -113,7 +114,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_1",
+      "transaction_id": "txn_a_read_1",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -209,6 +210,7 @@
       "complete_order": 5,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -219,7 +221,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_2",
+      "transaction_id": "txn_a_read_2",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -315,6 +317,7 @@
       "complete_order": 6,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -325,7 +328,7 @@
       }
     },
     {
-      "transaction_id": "txn_a_3",
+      "transaction_id": "txn_a_read_3",
       "access_site": "access:0",
       "access_sites": [
         "access:0"
@@ -421,6 +424,7 @@
       "complete_order": 7,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [],
+      "dependency_details": [],
       "timeline_order_predecessor_id": "",
       "timing_model": {
         "minimum_issue_spacing": 1,
@@ -431,7 +435,7 @@
       }
     },
     {
-      "transaction_id": "txn_b_0",
+      "transaction_id": "txn_b_write_0",
       "access_site": "access:1",
       "access_sites": [
         "access:1"
@@ -523,11 +527,56 @@
       "coalescing_reason": "inferred from HLS M_AXI width/burst metadata and IR trace offsets",
       "confidence": "hls_metadata_plus_ir_trace",
       "element_range_label": "b[0..15]",
-      "issue_order": 37,
-      "complete_order": 41,
+      "issue_order": 40,
+      "complete_order": 44,
       "timeline_lane": "b",
       "depends_on_transaction_ids": [
-        "txn_a_0"
+        "txn_a_read_0",
+        "txn_a_read_3"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_a_read_0",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:1",
+          "source_element_ranges": [
+            "a[0..15]"
+          ],
+          "target_element_ranges": [
+            "b[0..15]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 16,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_a_read_3",
+          "kind": "local_buffer_barrier",
+          "via": "buff",
+          "source_access_id": "access:0",
+          "target_access_id": "access:1",
+          "source_element_ranges": [
+            "a[0..15]",
+            "a[16..31]",
+            "a[32..47]",
+            "a[48..63]"
+          ],
+          "target_element_ranges": [
+            "b[0..15]"
+          ],
+          "logical_edge_count": 0,
+          "logical_source_count": 4,
+          "logical_target_count": 1,
+          "reason": "non-DATAFLOW local-buffer phase barrier: widened write transactions wait for the producer read transaction group that feeds the local buffer",
+          "path_edge_ids": [
+            "dep:0",
+            "dep:4",
+            "dep:2"
+          ]
+        }
       ],
       "timeline_order_predecessor_id": "",
       "timing_model": {
@@ -543,7 +592,7 @@
       }
     },
     {
-      "transaction_id": "txn_b_1",
+      "transaction_id": "txn_b_write_1",
       "access_site": "access:1",
       "access_sites": [
         "access:1"
@@ -635,11 +684,56 @@
       "coalescing_reason": "inferred from HLS M_AXI width/burst metadata and IR trace offsets",
       "confidence": "hls_metadata_plus_ir_trace",
       "element_range_label": "b[16..31]",
-      "issue_order": 53,
-      "complete_order": 57,
+      "issue_order": 56,
+      "complete_order": 60,
       "timeline_lane": "b",
       "depends_on_transaction_ids": [
-        "txn_a_1"
+        "txn_a_read_1",
+        "txn_a_read_3"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_a_read_1",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:1",
+          "source_element_ranges": [
+            "a[16..31]"
+          ],
+          "target_element_ranges": [
+            "b[16..31]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 16,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_a_read_3",
+          "kind": "local_buffer_barrier",
+          "via": "buff",
+          "source_access_id": "access:0",
+          "target_access_id": "access:1",
+          "source_element_ranges": [
+            "a[0..15]",
+            "a[16..31]",
+            "a[32..47]",
+            "a[48..63]"
+          ],
+          "target_element_ranges": [
+            "b[16..31]"
+          ],
+          "logical_edge_count": 0,
+          "logical_source_count": 4,
+          "logical_target_count": 1,
+          "reason": "non-DATAFLOW local-buffer phase barrier: widened write transactions wait for the producer read transaction group that feeds the local buffer",
+          "path_edge_ids": [
+            "dep:0",
+            "dep:4",
+            "dep:2"
+          ]
+        }
       ],
       "timeline_order_predecessor_id": "",
       "timing_model": {
@@ -655,7 +749,7 @@
       }
     },
     {
-      "transaction_id": "txn_b_2",
+      "transaction_id": "txn_b_write_2",
       "access_site": "access:1",
       "access_sites": [
         "access:1"
@@ -747,11 +841,56 @@
       "coalescing_reason": "inferred from HLS M_AXI width/burst metadata and IR trace offsets",
       "confidence": "hls_metadata_plus_ir_trace",
       "element_range_label": "b[32..47]",
-      "issue_order": 69,
-      "complete_order": 73,
+      "issue_order": 72,
+      "complete_order": 76,
       "timeline_lane": "b",
       "depends_on_transaction_ids": [
-        "txn_a_2"
+        "txn_a_read_2",
+        "txn_a_read_3"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_a_read_2",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:1",
+          "source_element_ranges": [
+            "a[32..47]"
+          ],
+          "target_element_ranges": [
+            "b[32..47]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 16,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_a_read_3",
+          "kind": "local_buffer_barrier",
+          "via": "buff",
+          "source_access_id": "access:0",
+          "target_access_id": "access:1",
+          "source_element_ranges": [
+            "a[0..15]",
+            "a[16..31]",
+            "a[32..47]",
+            "a[48..63]"
+          ],
+          "target_element_ranges": [
+            "b[32..47]"
+          ],
+          "logical_edge_count": 0,
+          "logical_source_count": 4,
+          "logical_target_count": 1,
+          "reason": "non-DATAFLOW local-buffer phase barrier: widened write transactions wait for the producer read transaction group that feeds the local buffer",
+          "path_edge_ids": [
+            "dep:0",
+            "dep:4",
+            "dep:2"
+          ]
+        }
       ],
       "timeline_order_predecessor_id": "",
       "timing_model": {
@@ -767,7 +906,7 @@
       }
     },
     {
-      "transaction_id": "txn_b_3",
+      "transaction_id": "txn_b_write_3",
       "access_site": "access:1",
       "access_sites": [
         "access:1"
@@ -859,11 +998,55 @@
       "coalescing_reason": "inferred from HLS M_AXI width/burst metadata and IR trace offsets",
       "confidence": "hls_metadata_plus_ir_trace",
       "element_range_label": "b[48..63]",
-      "issue_order": 85,
-      "complete_order": 89,
+      "issue_order": 88,
+      "complete_order": 92,
       "timeline_lane": "b",
       "depends_on_transaction_ids": [
-        "txn_a_3"
+        "txn_a_read_3"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_a_read_3",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:1",
+          "source_element_ranges": [
+            "a[48..63]"
+          ],
+          "target_element_ranges": [
+            "b[48..63]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 16,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_a_read_3",
+          "kind": "local_buffer_barrier",
+          "via": "buff",
+          "source_access_id": "access:0",
+          "target_access_id": "access:1",
+          "source_element_ranges": [
+            "a[0..15]",
+            "a[16..31]",
+            "a[32..47]",
+            "a[48..63]"
+          ],
+          "target_element_ranges": [
+            "b[48..63]"
+          ],
+          "logical_edge_count": 0,
+          "logical_source_count": 4,
+          "logical_target_count": 1,
+          "reason": "non-DATAFLOW local-buffer phase barrier: widened write transactions wait for the producer read transaction group that feeds the local buffer",
+          "path_edge_ids": [
+            "dep:0",
+            "dep:4",
+            "dep:2"
+          ]
+        }
       ],
       "timeline_order_predecessor_id": "",
       "timing_model": {

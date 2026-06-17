@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'matmul_full_contiguous_Pipeline_load_ab_full_loop'
 ================================================================
-* Date:           Thu Jun  4 20:03:32 2026
+* Date:           Wed Jun 17 10:03:49 2026
 
 * Version:        2025.1 (Build 6135595 on May 21 2025)
 * Project:        component_matmul_full_contiguous
@@ -247,14 +247,14 @@ The critical path consists of the following:
 
  <State 2>: 3.650ns
 The critical path consists of the following:
-	'getelementptr' operation 512 bit ('gmem_b_addr', matmul_full_contiguous.cpp:20) [57]  (0.000 ns)
-	bus read operation ('gmem_b_addr_read', matmul_full_contiguous.cpp:23) on port 'gmem_b' (matmul_full_contiguous.cpp:23) [118]  (3.650 ns)
+	'getelementptr' operation 512 bit ('gmem_a_addr', matmul_full_contiguous.cpp:20) [56]  (0.000 ns)
+	bus read operation ('gmem_a_addr_read', matmul_full_contiguous.cpp:22) on port 'gmem_a' (matmul_full_contiguous.cpp:22) [76]  (3.650 ns)
 
  <State 3>: 2.399ns
 The critical path consists of the following:
 	'mul' operation 17 bit ('mul_ln20', matmul_full_contiguous.cpp:20) [67]  (1.700 ns)
-	'getelementptr' operation 4 bit ('B_local_15_addr', matmul_full_contiguous.cpp:23) [139]  (0.000 ns)
-	'store' operation 0 bit ('store_ln23', matmul_full_contiguous.cpp:23) of variable 'trunc_ln23', matmul_full_contiguous.cpp:23 on array 'B_local_15' [143]  (0.699 ns)
+	'getelementptr' operation 4 bit ('B_local_9_addr', matmul_full_contiguous.cpp:23) [133]  (0.000 ns)
+	'store' operation 0 bit ('store_ln23', matmul_full_contiguous.cpp:23) of variable 'trunc_ln23', matmul_full_contiguous.cpp:23 on array 'B_local_9' [161]  (0.699 ns)
 
 
 ============================================================
