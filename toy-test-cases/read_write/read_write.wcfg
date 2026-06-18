@@ -18,15 +18,19 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="264,991 ps"></ZoomStartTime>
-      <ZoomEndTime time="265,050 ps"></ZoomEndTime>
-      <Cursor1Time time="265,000 ps"></Cursor1Time>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,842.001 ns"></ZoomEndTime>
+      <Cursor1Time time="617.500 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="266"></NameColumnWidth>
-      <ValueColumnWidth column_width="170"></ValueColumnWidth>
+      <ValueColumnWidth column_width="166"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="11" />
+   <WVObjectSize size="10" />
+   <wvobject type="logic" fp_name="/apatb_read_write_top/ap_clk">
+      <obj_property name="ElementShortName">ap_clk</obj_property>
+      <obj_property name="ObjectShortName">ap_clk</obj_property>
+   </wvobject>
    <wvobject type="logic" fp_name="/apatb_read_write_top/mem_0_ARVALID">
       <obj_property name="ElementShortName">mem_0_ARVALID</obj_property>
       <obj_property name="ObjectShortName">mem_0_ARVALID</obj_property>
@@ -39,36 +43,28 @@
       <obj_property name="ElementShortName">mem_0_ARADDR[63:0]</obj_property>
       <obj_property name="ObjectShortName">mem_0_ARADDR[63:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/apatb_read_write_top/mem_0_ARLEN">
-      <obj_property name="ElementShortName">mem_0_ARLEN[7:0]</obj_property>
-      <obj_property name="ObjectShortName">mem_0_ARLEN[7:0]</obj_property>
+   <wvobject type="logic" fp_name="/apatb_read_write_top/mem_0_RVALID">
+      <obj_property name="ElementShortName">mem_0_RVALID</obj_property>
+      <obj_property name="ObjectShortName">mem_0_RVALID</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/apatb_read_write_top/mem_0_ARSIZE">
-      <obj_property name="ElementShortName">mem_0_ARSIZE[2:0]</obj_property>
-      <obj_property name="ObjectShortName">mem_0_ARSIZE[2:0]</obj_property>
+   <wvobject type="logic" fp_name="/apatb_read_write_top/mem_0_RREADY">
+      <obj_property name="ElementShortName">mem_0_RREADY</obj_property>
+      <obj_property name="ObjectShortName">mem_0_RREADY</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/apatb_read_write_top/mem_1_ARVALID">
-      <obj_property name="ElementShortName">mem_1_ARVALID</obj_property>
-      <obj_property name="ObjectShortName">mem_1_ARVALID</obj_property>
+   <wvobject type="logic" fp_name="/apatb_read_write_top/mem_0_RLAST">
+      <obj_property name="ElementShortName">mem_0_RLAST</obj_property>
+      <obj_property name="ObjectShortName">mem_0_RLAST</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/apatb_read_write_top/mem_1_ARREADY">
-      <obj_property name="ElementShortName">mem_1_ARREADY</obj_property>
-      <obj_property name="ObjectShortName">mem_1_ARREADY</obj_property>
+   <wvobject type="logic" fp_name="/apatb_read_write_top/mem_0_AWVALID">
+      <obj_property name="ElementShortName">mem_0_AWVALID</obj_property>
+      <obj_property name="ObjectShortName">mem_0_AWVALID</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/apatb_read_write_top/mem_1_ARADDR">
-      <obj_property name="ElementShortName">mem_1_ARADDR[63:0]</obj_property>
-      <obj_property name="ObjectShortName">mem_1_ARADDR[63:0]</obj_property>
+   <wvobject type="logic" fp_name="/apatb_read_write_top/mem_0_AWREADY">
+      <obj_property name="ElementShortName">mem_0_AWREADY</obj_property>
+      <obj_property name="ObjectShortName">mem_0_AWREADY</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/apatb_read_write_top/mem_1_ARLEN">
-      <obj_property name="ElementShortName">mem_1_ARLEN[7:0]</obj_property>
-      <obj_property name="ObjectShortName">mem_1_ARLEN[7:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/apatb_read_write_top/mem_1_ARSIZE">
-      <obj_property name="ElementShortName">mem_1_ARSIZE[2:0]</obj_property>
-      <obj_property name="ObjectShortName">mem_1_ARSIZE[2:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/apatb_read_write_top/ap_clk">
-      <obj_property name="ElementShortName">ap_clk</obj_property>
-      <obj_property name="ObjectShortName">ap_clk</obj_property>
+   <wvobject type="array" fp_name="/apatb_read_write_top/mem_0_AWADDR">
+      <obj_property name="ElementShortName">mem_0_AWADDR[63:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_0_AWADDR[63:0]</obj_property>
    </wvobject>
 </wave_config>

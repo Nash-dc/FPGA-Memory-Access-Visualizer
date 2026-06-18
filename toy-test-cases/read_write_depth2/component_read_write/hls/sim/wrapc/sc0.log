@@ -1,0 +1,6 @@
+   Build using "/data/2025.1/Vitis/lnx64/tools/vcxx/libexec//clang++"
+   Compiling apatb_read_write.cpp
+   Compiling read_write.cpp_pre.cpp.tb.cpp
+   Compiling tb_read_write.cpp_pre.cpp.tb.cpp
+   Compiling apatb_read_write_ir.ll
+   Generating cosim.tv.exe

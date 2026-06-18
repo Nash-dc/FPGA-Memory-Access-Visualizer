@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'read_write'
 ================================================================
 + General Information: 
-    * Date:           Tue Jun 16 16:38:23 2026
+    * Date:           Thu Jun 18 10:05:30 2026
     * Version:        2025.1 (Build 6135595 on May 21 2025)
     * Project:        component_read_write
     * Solution:       hls (Vitis Kernel Flow Target)

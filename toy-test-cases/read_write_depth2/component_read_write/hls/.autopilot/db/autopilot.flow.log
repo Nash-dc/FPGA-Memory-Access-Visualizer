@@ -1,0 +1,911 @@
+Execute         source -notrace -encoding utf-8 /data/2025.1/Vitis/tps/tcl/tcl8.6/clock.tcl 
+Execute           source -encoding utf-8 /data/2025.1/tps/tcl/tcl8/8.5/msgcat-1.6.1.tm 
+INFO-FLOW: Workspace /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls opened at Wed Jun 17 18:27:30 CEST 2026
+Execute         send_msg_by_id INFO @200-1505@%s%s  vitis 
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+Execute         send_msg_by_id INFO @200-435@%s%s 'open_solution -flow_target vitis' config_interface -m_axi_latency=64 
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_latency=64
+Execute         config_interface -m_axi_latency=64 
+Execute         send_msg_by_id INFO @200-435@%s%s 'open_solution -flow_target vitis' config_interface -m_axi_alignment_byte_size=64 
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_alignment_byte_size=64
+Execute         config_interface -m_axi_alignment_byte_size=64 
+Execute         send_msg_by_id INFO @200-435@%s%s 'open_solution -flow_target vitis' config_interface -m_axi_max_widen_bitwidth=512 
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_max_widen_bitwidth=512
+Execute         config_interface -m_axi_max_widen_bitwidth=512 
+INFO-FLOW: Setting macro_cmd open_solution -flow_target vitis configuration: config_interface -default_interface=kernel
+Execute         config_interface -default_interface=kernel 
+Execute         send_msg_by_id INFO @200-435@%s%s 'open_solution -flow_target vitis' config_rtl -register_reset_num=3 
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_rtl -register_reset_num=3
+Execute         config_rtl -register_reset_num=3 
+Execute         write_component 
+Execute           source /data/2025.1/Vitis/tps/tcl/tcllib2.0/yaml/huddle.tcl 
+Execute             source /data/2025.1/tps/tcl/tcllib2.0/yaml/huddle_types.tcl 
+Execute           source /data/2025.1/Vitis/tps/tcl/tcllib2.0/yaml/json2huddle.tcl 
+Execute             source /data/2025.1/Vitis/tps/tcl/tcllib2.0/try/try.tcl 
+Execute           send_msg_by_id INFO @200-2176@%s /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/vitis-comp.json 
+INFO: [HLS 200-2176] Writing Vitis IDE component file /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/vitis-comp.json
+Execute         write_ini /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls_config.cfg -apsfile /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/hls.aps -filepaths relative 
+Execute           send_msg_by_id INFO @200-1915@%s /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls_config.cfg 
+INFO: [HLS 200-1915] Writing HLS config ini file /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls_config.cfg
+Execute     add_files read_write.cpp 
+INFO: [HLS 200-1510] Running: add_files read_write.cpp 
+INFO: [HLS 200-10] Adding design file 'read_write.cpp' to the project
+Execute     add_files read_write.h 
+INFO: [HLS 200-1510] Running: add_files read_write.h 
+INFO: [HLS 200-10] Adding design file 'read_write.h' to the project
+Execute     add_files -tb tb_read_write.cpp 
+INFO: [HLS 200-1510] Running: add_files -tb tb_read_write.cpp 
+INFO: [HLS 200-10] Adding test bench file 'tb_read_write.cpp' to the project
+Execute     set_top read_write 
+INFO: [HLS 200-1510] Running: set_top read_write 
+Execute     set_part xc7z020clg400-1 
+INFO: [HLS 200-1510] Running: set_part xc7z020clg400-1 
+Execute       create_platform xc7z020clg400-1 -board  
+DBG:HLSDevice: Trying to load device library: /data/2025.1/Vitis/lib/lnx64.o/libxv_hlsvwrap.so
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: /data/2025.1/Vivado/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+Command       create_platform done; 0.99 sec.
+Execute       source /data/2025.1/Vitis/common/technology/xilinx/common/xilinx.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/interface/plb46.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/interface/axi4.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /data/2025.1/Vitis/common/technology/xilinx/interface/saxilite.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/ip/xfir.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/ip/util.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/ip/xfft.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/DSP48/dsp48.gen 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 1.07 sec.
+Execute     create_clock -period 5 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 5 -name default 
+Execute       ap_set_clock -name default -period 5 -unit ns -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+Execute     csynth_design 
+INFO: [HLS 200-1510] Running: csynth_design 
+Execute       ::AP::init_summary_file csynth 
+Execute         AP::app_get_file_relativeroot [AP::app_get_root] {}
+Command       AP::init_summary_file done; 2.52 sec.
+Execute       write_ini /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls_config.cfg -apsfile /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/hls.aps -filepaths relative 
+Execute         send_msg_by_id INFO @200-1915@%s /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls_config.cfg 
+INFO: [HLS 200-1915] Writing HLS config ini file /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls_config.cfg
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+INFO-FLOW: run_clang exec: /data/2025.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/xilinx-performance-pragma-detector read_write.cpp -- -fhls -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /data/2025.1/Vitis/common/technology/autopilot -I /data/2025.1/Vitis/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -I /usr/include/x86_64-linux-gnu > /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.cpp.xilinx-performance-pragma-detector.out.log 2> /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.cpp.xilinx-performance-pragma-detector.err.log
+INFO-FLOW: Running SLX 'csynth' proc: ::SLX::run_csynth
+Execute       elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -from_csynth_design=1 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.08 seconds. CPU system time: 0.05 seconds. Elapsed time: 2.65 seconds; current allocated memory: 462.504 MB.
+Execute         set_directive_top read_write -name=read_write 
+INFO: [HLS 200-10] Analyzing design file 'read_write.cpp' ... 
+INFO-FLOW: Compiling one TU...
+INFO-FLOW: Handling read_write.cpp as C++
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+INFO-FLOW: Running: GCC PP 39
+INFO-FLOW: Source preprocessing
+INFO-FLOW: run_clang exec: /data/2025.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/clang read_write.cpp -foptimization-record-file=/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll|inline -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info --gcc-toolchain=/data/2025.1/Vitis/tps/lnx64/gcc-8.3.0 -fhls -fno-exceptions -insert-hls-directive=/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/all.directive.json -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -hls-clock-period=5 -fno-threadsafe-statics -fno-use-cxa-atexit -target fpga64-xilinx-linux-gnu -fno-threadsafe-statics -fno-use-cxa-atexit -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /data/2025.1/Vitis/common/technology/autopilot -I /data/2025.1/Vitis/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -I /usr/include/x86_64-linux-gnu -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp -hls-platform-db-name=/data/2025.1/Vitis/common/technology/xilinx/common/platform.db -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 -device-name-info=xc7z020clg400-1 > /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.cpp.clang.out.log 2> /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.cpp.clang.err.log
+INFO-FLOW: Done: GCC PP 39 time: 0.1 seconds per iteration
+INFO-FLOW: Source syntax check for synthesis
+INFO-FLOW: run_clang exec: /data/2025.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll|inline -mllvm -pass-remarks=reflow|pasta|unroll|inline -fsyntax-only -fhls -target fpga64-xilinx-linux-gnu /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp -hls-platform-db-name=/data/2025.1/Vitis/common/technology/xilinx/common/platform.db -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 -device-name-info=xc7z020clg400-1 > /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/clang.out.log 2> /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/clang.err.log
+Execute         clang_tidy xilinx-systemc-detector -desc systemc-detector /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp  -target fpga  -directive=/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec /data/2025.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/.systemc_flag -fix-errors /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp -- - -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Running: clang-tidy CDT preprocess 39
+Execute         clang_tidy xilinx-directive2pragma -desc directive2pragma /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp  -target fpga  -directive=/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/all.directive.json 
+INFO-FLOW: exec /data/2025.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/all.directive.json -fix-errors /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp -- - -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0 seconds per iteration
+INFO-FLOW: Calling xilinx-label-all-loops ... 
+INFO-FLOW: Calling xilinx-aggregate-on-hls-vector ... 
+Execute         clang_tidy -errorcheck -desc loop-label xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp  -target fpga  
+INFO-FLOW: run_clang exec: /data/2025.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp.clang-tidy.loop-label.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute -fix-errors /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp -- - -target fpga -fhls -ferror-limit=0 > /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp.clang-tidy.loop-label.out.log 2> /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp.clang-tidy.loop-label.err.log
+Execute           source /data/2025.1/Vitis/tps/tcl/tcllib2.0/yaml/yaml.tcl 
+INFO-FLOW: run_clang exec: /data/2025.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp.xilinx-dataflow-lawyer.diag.yml /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp -- - -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp.xilinx-dataflow-lawyer.out.log 2> /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp.xilinx-dataflow-lawyer.err.log
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region (read_write.cpp:70:9)
+Execute         send_msg_by_id WARNING @200-471@%s%s 1 read_write.cpp 
+WARNING: [HLS 200-471] Dataflow form checks found 1 issue(s) in file read_write.cpp
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+INFO-FLOW: compiling source code to llvm bc
+INFO-FLOW: run_clang exec: /data/2025.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll|inline -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing -hls-emit-hint-scope /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -hls-clock-period=5 -fno-threadsafe-statics -fno-use-cxa-atexit -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /data/2025.1/Vitis/common/technology/autopilot -I /data/2025.1/Vitis/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.bc -hls-platform-db-name=/data/2025.1/Vitis/common/technology/xilinx/common/platform.db -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 -device-name-info=xc7z020clg400-1 > /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp.clang.out.log 2> /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp.clang.err.log
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.21 seconds. CPU system time: 0.33 seconds. Elapsed time: 0.53 seconds; current allocated memory: 464.457 MB.
+INFO-FLOW: Linking Debug ...
+INFO-FLOW: Linking dut bc code.
+Execute         run_link_or_opt -out /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.0.bc -args  "/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.g.bc"  
+INFO-FLOW: run_clang exec: /data/2025.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/llvm-link /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.g.bc -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.0.bc > /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.0.bc.llvm-link.out.log 2> /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.0.bc.llvm-link.err.log
+Execute         run_link_or_opt -opt -out /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.1.lower.bc -args /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics 
+INFO-FLOW: run_clang exec: /data/2025.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll|inline -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.1.lower.bc.opt.diag.yml /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.1.lower.bc > /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.1.lower.bc.opt.out.log 2> /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.1.lower.bc.opt.err.log
+INFO-FLOW: Running: gen_design_size_report post-opt
+INFO-FLOW: Done: gen_design_size_report post-opt time: 0 seconds per iteration
+INFO-FLOW: Linking math bc lib
+Execute         run_link_or_opt -out /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.2.m1.bc -args /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.1.lower.bc -only-needed /data/2025.1/Vitis/lnx64/lib/libhlsm_39.bc /data/2025.1/Vitis/lnx64/lib/libhlsmc++_39.bc 
+INFO-FLOW: run_clang exec: /data/2025.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/llvm-link /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.1.lower.bc -only-needed /data/2025.1/Vitis/lnx64/lib/libhlsm_39.bc /data/2025.1/Vitis/lnx64/lib/libhlsmc++_39.bc -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.2.m1.bc > /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.out.log 2> /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.err.log
+Command         run_link_or_opt done; 1.25 sec.
+Execute         run_link_or_opt -opt -out /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.3.fpc.bc -args /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=read_write -reflow-float-conversion 
+INFO-FLOW: run_clang exec: /data/2025.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll|inline -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.3.fpc.bc.opt.diag.yml /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=read_write -reflow-float-conversion -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.3.fpc.bc > /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.3.fpc.bc.opt.out.log 2> /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.3.fpc.bc.opt.err.log
+INFO-FLOW: Running: gen_design_size_report post-opt
+INFO-FLOW: Done: gen_design_size_report post-opt time: 0 seconds per iteration
+Command         run_link_or_opt done; 0.5 sec.
+Execute         run_link_or_opt -out /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.4.m2.bc -args /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /data/2025.1/Vitis/lnx64/lib/libfloatconversion_39.bc 
+INFO-FLOW: run_clang exec: /data/2025.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/llvm-link /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /data/2025.1/Vitis/lnx64/lib/libfloatconversion_39.bc -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.4.m2.bc > /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.out.log 2> /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.err.log
+Execute         run_link_or_opt -opt -out /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.5.gdce.bc -args /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=read_write 
+INFO-FLOW: run_clang exec: /data/2025.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll|inline -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.5.gdce.bc.opt.diag.yml /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=read_write -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.5.gdce.bc > /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.5.gdce.bc.opt.out.log 2> /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.5.gdce.bc.opt.err.log
+INFO-FLOW: Running: gen_design_size_report post-opt
+INFO-FLOW: Done: gen_design_size_report post-opt time: 0 seconds per iteration
+Execute         send_msg_by_id INFO @200-777@%s Vitis 
+INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
+Execute         is_m_axi_addr64 
+INFO-FLOW: Doing LTO.
+INFO-FLOW: run_clang (background poll_ms 5000) exec: /data/2025.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.0.bc.clang.reflow.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll|inline -mllvm -pass-remarks=reflow|pasta|unroll|inline -fhls -mllvm -hls-top-function-name=read_write -mllvm -hls-db-dir -mllvm /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db -emit-llvm -c -target fpga64-xilinx-none -mllvm -xcl-xmlinfo=/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/../../../kernel.xml -mllvm -top-io-mapping-info=/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/top-io-fe.xml -mllvm -hls-bitcode-version=3.1 -mllvm -reflow-enable-slave-interface-default-setting=true -mllvm -gen-kernel-xml=true -mllvm -default-maxi-offset=slave -mllvm -reflow-unroll-size-threshold=10000 -mllvm -reflow-unroll-cost-threshold=1000000 -mllvm -maxi-latency=64 -mllvm -hls-maxi-data-size-in-bits=8 -mllvm -hls-maxi-max-data-size-in-bits=1024 -mllvm -hls-max-widen-size-in-bits=512 -mllvm -xcl-kernel-max-mem-ports=0 -mllvm -maxi-read-trans=16 -mllvm -maxi-write-trans=16 -mllvm -maxi-read-burst-len=16 -mllvm -maxi-write-burst-len=16 -mllvm -reflow-enable-saxi-64bits=0 -mllvm -reflow-basic-block-instr-threshold=200000 -mllvm -reflow-auto-pipeline-threshold=64 -mllvm -reflow-enable-maxi-auto-id-channel=0 -mllvm -reflow-bdd-simplify-threshold=1048576 -mllvm -reflow-fanout-threshold=16 -mllvm -reflow-force-aggressive-unroll=0 -mllvm -reflow-aggressive-unroll-adjust-factor=1.000000 -mllvm -reflow-complete-threshold=4 -mllvm -reflow-array-promotion-threshold=64 -mllvm -reflow-enable-critical-path-for-performance=1 -mllvm -assume-maxi-align=64 -mllvm -reflow-enable-dataflow-strict-mode-checking=1 -ftime-report -mllvm -time-passes -mllvm -reflow-auto-array-partition-mode=default -mllvm -reflow-enable-auto-small-array-partition=true -mllvm -reflow-enable-auto-array-promotion=true -mllvm -reflow-enable-auto-array-partition-for-flatten=true -mllvm -reflow-enable-auto-parallel-performance-driven=true -mllvm -reflow-enable-partition-for-automation=true -mllvm -reflow-aggregate-bitwidth-threshold=4096 -mllvm -reflow-reserved-saxilite-registers=0 -mllvm -enable-reflow-auto-loop-pipeline -mllvm -reflow-max-unroll-threshold=409600 -mllvm -auto-unroll-tripcount-threshold=0 -mllvm -reflow-assume-no-address-wrap=true -mllvm -reflow-enable-occurrence-inference=true -mllvm -reflow-emit-hint-scope=true -mllvm -reflow-enable-codegen-with-if=true -mllvm -reflow-enable-dataflow-canon=true -mllvm -reflow-enable-dataflow-canon2=true -mllvm -reflow-dump-extra-complexity-metric=true -mllvm -hls -mllvm -disable-inlined-alloca-merging=true -mllvm -enable-reflow-vitis-flow-setting=true -mllvm -default-clock-period=5 -mllvm -use_read_first_ram_in_loop=1 -mllvm -default-clock-uncertainty=1.35 -x ir /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.5.gdce.bc -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.lto.bc -hls-platform-db-name=/data/2025.1/Vitis/common/technology/xilinx/common/platform.db -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 -device-name-info=xc7z020clg400-1 2> /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.ld.0.bc.clang.reflow.err.log bg_poll_cmd: ::AP::poll_clang_39_closed_source
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 172 Compile/Link (/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/csynth_design_size.rpt:2) 
+INFO: [HLS 200-1995] There were 172 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/csynth_design_size.rpt:2)
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 102 Unroll/Inline (step 1) (/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/csynth_design_size.rpt:2) 
+INFO: [HLS 200-1995] There were 102 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/csynth_design_size.rpt:2)
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 90 Unroll/Inline (step 2) (/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/csynth_design_size.rpt:2) 
+INFO: [HLS 200-1995] There were 90 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/csynth_design_size.rpt:2)
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 94 Unroll/Inline (step 3) (/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/csynth_design_size.rpt:2) 
+INFO: [HLS 200-1995] There were 94 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/csynth_design_size.rpt:2)
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 94 Unroll/Inline (step 4) (/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/csynth_design_size.rpt:2) 
+INFO: [HLS 200-1995] There were 94 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/csynth_design_size.rpt:2)
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 91 Array/Struct (step 1) (/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/csynth_design_size.rpt:2) 
+INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/csynth_design_size.rpt:2)
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 90 Array/Struct (step 2) (/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/csynth_design_size.rpt:2) 
+INFO: [HLS 200-1995] There were 90 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/csynth_design_size.rpt:2)
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 90 Array/Struct (step 3) (/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/csynth_design_size.rpt:2) 
+INFO: [HLS 200-1995] There were 90 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/csynth_design_size.rpt:2)
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 90 Array/Struct (step 4) (/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/csynth_design_size.rpt:2) 
+INFO: [HLS 200-1995] There were 90 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/csynth_design_size.rpt:2)
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 126 Array/Struct (step 5) (/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/csynth_design_size.rpt:2) 
+INFO: [HLS 200-1995] There were 126 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/csynth_design_size.rpt:2)
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 134 Performance (step 1) (/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/csynth_design_size.rpt:2) 
+INFO: [HLS 200-1995] There were 134 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/csynth_design_size.rpt:2)
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 134 Performance (step 2) (/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/csynth_design_size.rpt:2) 
+INFO: [HLS 200-1995] There were 134 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/csynth_design_size.rpt:2)
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 134 Performance (step 3) (/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/csynth_design_size.rpt:2) 
+INFO: [HLS 200-1995] There were 134 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/csynth_design_size.rpt:2)
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 134 Performance (step 4) (/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/csynth_design_size.rpt:2) 
+INFO: [HLS 200-1995] There were 134 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/csynth_design_size.rpt:2)
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 146 HW Transforms (step 1) (/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/csynth_design_size.rpt:2) 
+INFO: [HLS 200-1995] There were 146 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/csynth_design_size.rpt:2)
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 177 HW Transforms (step 2) (/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/csynth_design_size.rpt:2) 
+INFO: [HLS 200-1995] There were 177 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details (/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-248] Applying array_partition to 'stream': Complete partitioning on dimension 1. (read_write.cpp:53:21)
+INFO: [HLS 214-115] Multiple burst reads of length 8 and bit width 512 has been inferred on bundle 'mem_0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (read_write.cpp:11:22)
+INFO: [HLS 214-115] Multiple burst reads of length 8 and bit width 512 has been inferred on bundle 'mem_1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (read_write.cpp:11:22)
+INFO: [HLS 214-115] Multiple burst writes of length 8 and bit width 512 has been inferred on bundle 'mem_0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (read_write.cpp:26:22)
+INFO: [HLS 214-115] Multiple burst writes of length 8 and bit width 512 has been inferred on bundle 'mem_1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (read_write.cpp:26:22)
+INFO-FLOW: DBG:PUTS: copy_raw_kernel_xml ap_link_39: copying raw kernel.xml: /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/../../../kernel.xml -> /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/kernel.internal.xml
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1.97 seconds. CPU system time: 0.57 seconds. Elapsed time: 7.09 seconds; current allocated memory: 474.707 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 474.707 MB.
+Execute         opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute           cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+INFO-FLOW: Running Standard Transforms...
+Execute           transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top read_write -deadargelim -mem2reg -instcombine -dce -presyn-prepare -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -promote-dbg-pointer -norm-name /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.0.bc -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.1.bc -f -phase std-opt 
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 474.828 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute           transform -hls -syn-check -check-rec-only -scalarrepl -norm-name -dce -mem2reg -instcombine -directive-preproc -mem2reg -dse -dce -dce -pag -array-normalize -instcombine -dce -array-seg-normalize -instcombine -dce -data-pack -instcombine -dce -inst-simplify -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -directive-preproc -mem2reg -dse -dce -globaldce /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.1.bc -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.2.prechk.bc -f 
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute           transform -syn-check /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.2.prechk.bc -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.2.bc -f -phase syn-check 
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 474.910 MB.
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.g.1.bc to /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute           transform -hls -tmp /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db -interface-port-rename -directive-preproc -mem2reg -dse -dce -scalarrepl -norm-name -deadargelim -dce -hls-dead-arg-elim -deadargelim -mem2reg -instcombine -dce -simplifycfg -dce -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -directive-preproc -mem2reg -dse -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -loop-simplify -loop-bound -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -prepare-dynamic-array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -lcssa -loop-simplify -phi-select-elim -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -accesses-merge -function-inline -complex-op-raise -inst-simplify -globaldce -func-legal -dce -loop-bound -arraycheck -bitwidthmin2 -bitwidthmin2 -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -duplicate-dataflow-processes -check-dataflow-syntax -legalize-stream-variable -globaldce -extract-subproc -global-constprop -deadargelim -globaldce -legalize-global -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -hls-dead-arg-elim -deadargelim -canonicalize-dataflow -directive-preproc -dce -globaldce -scalar-preprocessing -scalar-propagation2 -scalar-stream -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -clean-array-spec -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -hls-display -norm-name /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.o.1.bc -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.o.1.tmp.bc -f 
+INFO: [XFORM 203-712] Applying dataflow to function 'read_write' (read_write.cpp:44:1), detected/extracted 4 process function(s): 
+	 'read'
+	 'read.1'
+	 'write'
+	 'write.2'.
+INFO-FLOW: Presyn 2...
+Execute           transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin2 -bitwidthmin2 -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -barrier -norm-name /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.o.1.tmp.bc -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.05 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.06 seconds; current allocated memory: 496.723 MB.
+Execute           transform -hls -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -aggr-aa -licm -loop-dep -loop-bound -licm -loop-simplify -loop-sink-hoist -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg-lite -loop-simplify -array-burst -promote-global-argument -dce -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -inst-simplify -cfgopt -simplifycfg-lite -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -deadargelim -dce -canonicalize-dataflow -dce -deadargelim -globaldce -mem2reg -bram-byte-enable -inst-simplify -inst-rectify -instcombine -adce -deadargelim -load-elim -read-loop-dep -loop-simplify -loop-rewind-sink-hoist -loop-outline -hls-dead-arg-elim -directive-preproc -bitwidthmin2 -bitwidthmin2 -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable-spec-prop -mul2addshift -deadargelim -inst-simplify -dce -mem2reg -instcombine -gvn -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg-lite -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -gvn -adce -deadargelim -float-op-raise -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg-lite -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg-lite -loop-simplify -mergereturn -inst-simplify -inst-rectify -globaldce -dce -load-elim -bitop-lower -float-op-raise -fma-raise -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -dyn-mem-reuse -dce -recurrence-min -dce -share-scalar-alloca -deadargelim -dce -check-stream -norm-name -legalize -inst-clarity -bitwidth -dce -validate-dataflow -dump-loop-dep-to-ir -check-all-ssdm -drop-inferred-ii -dump-complexity-metric /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.o.2.bc -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+INFO: [HLS 200-2061] Successfully converted nested loops 'VITIS_LOOP_24_1'(read_write.cpp:24:20) and 'VITIS_LOOP_26_2'(read_write.cpp:26:22) in function 'write.2' into perfectly nested loops.
+INFO: [HLS 200-2061] Successfully converted nested loops 'VITIS_LOOP_24_1'(read_write.cpp:24:20) and 'VITIS_LOOP_26_2'(read_write.cpp:26:22) in function 'write' into perfectly nested loops.
+INFO: [HLS 200-2061] Successfully converted nested loops 'VITIS_LOOP_9_1'(read_write.cpp:9:19) and 'VITIS_LOOP_11_2'(read_write.cpp:11:22) in function 'read.1' into perfectly nested loops.
+INFO: [HLS 200-2061] Successfully converted nested loops 'VITIS_LOOP_9_1'(read_write.cpp:9:19) and 'VITIS_LOOP_11_2'(read_write.cpp:11:22) in function 'read' into perfectly nested loops.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_24_1' (read_write.cpp:24:20) in function 'write.2'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_24_1' (read_write.cpp:24:20) in function 'write'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_9_1' (read_write.cpp:9:19) in function 'read.1'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_9_1' (read_write.cpp:9:19) in function 'read'.
+Execute             auto_get_db
+INFO-FLOW: Building ssdm...
+Execute           transform -hls -cdfg-build /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.o.3.bc -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.08 seconds; current allocated memory: 525.812 MB.
+INFO-FLOW: Finish building internal data model.
+Command         opt_and_import_c done; 0.17 sec.
+Command       elaborate done; 7.79 sec.
+Execute       ap_eval exec zip -j /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/dut.hcp $dbDir/a.o.3.bc $dbDir/${topname}.rtl_wrap.cfg.tcl $dbDir/apatb_${topname}.cpp $dbDir/apatb_${topname}_util.cpp $dbDir/apatb_${topname}_ir.ll $dbDir/mapper_${topname}.cpp $dbDir/top-io-fe.xml $dbDir/kernel.internal.xml $workdir/../hls.app 
+Execute       autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'read_write' ...
+Execute         ap_set_top_model read_write 
+WARNING: [SYN 201-103] Legalizing function name 'read' to 'read_r'.
+WARNING: [SYN 201-103] Legalizing function name 'read.1' to 'read_1'.
+WARNING: [SYN 201-103] Legalizing function name 'write' to 'write_r'.
+WARNING: [SYN 201-103] Legalizing function name 'write.2' to 'write_2'.
+Execute         get_model_list read_write -filter all-wo-channel -topdown 
+Execute         preproc_iomode -model read_write 
+Execute         preproc_iomode -model write.2 
+Execute         preproc_iomode -model write 
+Execute         preproc_iomode -model read.1 
+Execute         preproc_iomode -model read 
+Execute         get_model_list read_write -filter all-wo-channel 
+INFO-FLOW: Model list for configure: read read.1 write write.2 read_write
+INFO-FLOW: Configuring Module : read ...
+Execute         set_default_model read 
+Execute         apply_spec_resource_limit read 
+INFO-FLOW: Configuring Module : read.1 ...
+Execute         set_default_model read.1 
+Execute         apply_spec_resource_limit read.1 
+INFO-FLOW: Configuring Module : write ...
+Execute         set_default_model write 
+Execute         apply_spec_resource_limit write 
+INFO-FLOW: Configuring Module : write.2 ...
+Execute         set_default_model write.2 
+Execute         apply_spec_resource_limit write.2 
+INFO-FLOW: Configuring Module : read_write ...
+Execute         set_default_model read_write 
+Execute         apply_spec_resource_limit read_write 
+INFO-FLOW: Model list for preprocess: read read.1 write write.2 read_write
+INFO-FLOW: Preprocessing Module: read ...
+Execute         set_default_model read 
+Execute         cdfg_preprocess -model read 
+Execute         rtl_gen_preprocess read 
+INFO-FLOW: Preprocessing Module: read.1 ...
+Execute         set_default_model read.1 
+Execute         cdfg_preprocess -model read.1 
+Execute         rtl_gen_preprocess read.1 
+INFO-FLOW: Preprocessing Module: write ...
+Execute         set_default_model write 
+Execute         cdfg_preprocess -model write 
+Execute         rtl_gen_preprocess write 
+INFO-FLOW: Preprocessing Module: write.2 ...
+Execute         set_default_model write.2 
+Execute         cdfg_preprocess -model write.2 
+Execute         rtl_gen_preprocess write.2 
+INFO-FLOW: Preprocessing Module: read_write ...
+Execute         set_default_model read_write 
+Execute         cdfg_preprocess -model read_write 
+Execute         rtl_gen_preprocess read_write 
+INFO-FLOW: Model list for synthesis: read read.1 write write.2 read_write
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'read_r' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model read 
+Execute         schedule -model read 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_9_1_VITIS_LOOP_11_2'.
+WARNING: [HLS 200-887] Cannot meet target clock period from 'select' operation 8 bit ('select_ln9', read_write.cpp:9) to 'icmp' operation 1 bit ('icmp_ln11', read_write.cpp:11) (combination delay: 5.078 ns) to honor II or Latency constraint in region 'VITIS_LOOP_9_1_VITIS_LOOP_11_2'.
+INFO: [HLS 200-876] Unable to schedule the whole 71 cycles bus request operation ('empty', read_write.cpp:11) on port 'mem_0' (read_write.cpp:11) within the first cycle (II = 1). Simulation mismatch may occur if the input data is modified before this operation completes.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 76, loop 'VITIS_LOOP_9_1_VITIS_LOOP_11_2'
+WARNING: [HLS 200-871] Estimated clock period (5.078 ns) exceeds the target (target clock period: 5.000 ns, clock uncertainty: 1.350 ns, effective delay budget: 3.650 ns).
+WARNING: [HLS 200-1016] The critical path in module 'read_r' consists of the following:
+	'phi' operation 1 bit ('icmp_ln116', read_write.cpp:11) with incoming values : ('icmp_ln11', read_write.cpp:11) [22]  (0.000 ns)
+	'select' operation 8 bit ('select_ln9', read_write.cpp:9) [34]  (1.248 ns)
+	'add' operation 8 bit ('j', read_write.cpp:11) [66]  (1.915 ns)
+	'icmp' operation 1 bit ('icmp_ln11', read_write.cpp:11) [67]  (1.915 ns)
+
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.06 seconds; current allocated memory: 526.926 MB.
+Execute         syn_report -verbosereport -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_r.verbose.sched.rpt 
+Execute           list_part -family xc7z020-clg400-1 
+Execute             ap_family_info -name xc7z020-clg400-1 -data names 
+Execute             ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+INFO: [#UNDEF] Rewind delay = 73 for the pipelined loop 'VITIS_LOOP_9_1_VITIS_LOOP_11_2' due to a write-after-read dependence on variable 'shiftreg5'.
+Execute         db_write -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_r.sched.adb -f 
+INFO-FLOW: Finish scheduling read.
+Execute         set_default_model read 
+Execute         bind -model read 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 526.926 MB.
+Execute         syn_report -verbosereport -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_r.verbose.bind.rpt 
+Execute           list_part -family xc7z020-clg400-1 
+Execute             ap_family_info -name xc7z020-clg400-1 -data names 
+Execute             ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute         db_write -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_r.bind.adb -f 
+INFO-FLOW: Finish binding read.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'read_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model read.1 
+Execute         schedule -model read.1 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_9_1_VITIS_LOOP_11_2'.
+WARNING: [HLS 200-887] Cannot meet target clock period from 'select' operation 8 bit ('select_ln9', read_write.cpp:9) to 'icmp' operation 1 bit ('icmp_ln11', read_write.cpp:11) (combination delay: 5.078 ns) to honor II or Latency constraint in region 'VITIS_LOOP_9_1_VITIS_LOOP_11_2'.
+INFO: [HLS 200-876] Unable to schedule the whole 71 cycles bus request operation ('empty', read_write.cpp:11) on port 'mem_1' (read_write.cpp:11) within the first cycle (II = 1). Simulation mismatch may occur if the input data is modified before this operation completes.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 76, loop 'VITIS_LOOP_9_1_VITIS_LOOP_11_2'
+WARNING: [HLS 200-871] Estimated clock period (5.078 ns) exceeds the target (target clock period: 5.000 ns, clock uncertainty: 1.350 ns, effective delay budget: 3.650 ns).
+WARNING: [HLS 200-1016] The critical path in module 'read_1' consists of the following:
+	'phi' operation 1 bit ('icmp_ln116', read_write.cpp:11) with incoming values : ('icmp_ln11', read_write.cpp:11) [22]  (0.000 ns)
+	'select' operation 8 bit ('select_ln9', read_write.cpp:9) [34]  (1.248 ns)
+	'add' operation 8 bit ('j', read_write.cpp:11) [66]  (1.915 ns)
+	'icmp' operation 1 bit ('icmp_ln11', read_write.cpp:11) [67]  (1.915 ns)
+
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 526.926 MB.
+Execute         syn_report -verbosereport -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_1.verbose.sched.rpt 
+Execute           list_part -family xc7z020-clg400-1 
+Execute             ap_family_info -name xc7z020-clg400-1 -data names 
+Execute             ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+INFO: [#UNDEF] Rewind delay = 73 for the pipelined loop 'VITIS_LOOP_9_1_VITIS_LOOP_11_2' due to a write-after-read dependence on variable 'shiftreg5'.
+Execute         db_write -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_1.sched.adb -f 
+INFO-FLOW: Finish scheduling read.1.
+Execute         set_default_model read.1 
+Execute         bind -model read.1 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 526.926 MB.
+Execute         syn_report -verbosereport -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_1.verbose.bind.rpt 
+Execute           list_part -family xc7z020-clg400-1 
+Execute             ap_family_info -name xc7z020-clg400-1 -data names 
+Execute             ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute         db_write -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_1.bind.adb -f 
+INFO-FLOW: Finish binding read.1.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'write_r' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model write 
+Execute         schedule -model write 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_24_1_VITIS_LOOP_26_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 4, Final II = 4, Depth = 73, loop 'VITIS_LOOP_24_1_VITIS_LOOP_26_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.04 seconds; current allocated memory: 527.734 MB.
+Execute         syn_report -verbosereport -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/write_r.verbose.sched.rpt 
+Execute           list_part -family xc7z020-clg400-1 
+Execute             ap_family_info -name xc7z020-clg400-1 -data names 
+Execute             ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+INFO: [#UNDEF] Rewind delay = 3 for the pipelined loop 'VITIS_LOOP_24_1_VITIS_LOOP_26_2' due to a write-after-write dependence on variable 'phi_ln285'.
+Execute         db_write -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/write_r.sched.adb -f 
+INFO-FLOW: Finish scheduling write.
+Execute         set_default_model write 
+Execute         bind -model write 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 527.734 MB.
+Execute         syn_report -verbosereport -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/write_r.verbose.bind.rpt 
+Execute           list_part -family xc7z020-clg400-1 
+Execute             ap_family_info -name xc7z020-clg400-1 -data names 
+Execute             ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute         db_write -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/write_r.bind.adb -f 
+INFO-FLOW: Finish binding write.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'write_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model write.2 
+Execute         schedule -model write.2 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_24_1_VITIS_LOOP_26_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 4, Final II = 4, Depth = 73, loop 'VITIS_LOOP_24_1_VITIS_LOOP_26_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 528.672 MB.
+Execute         syn_report -verbosereport -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/write_2.verbose.sched.rpt 
+Execute           list_part -family xc7z020-clg400-1 
+Execute             ap_family_info -name xc7z020-clg400-1 -data names 
+Execute             ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+INFO: [#UNDEF] Rewind delay = 3 for the pipelined loop 'VITIS_LOOP_24_1_VITIS_LOOP_26_2' due to a write-after-write dependence on variable 'phi_ln285'.
+Execute         db_write -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/write_2.sched.adb -f 
+INFO-FLOW: Finish scheduling write.2.
+Execute         set_default_model write.2 
+Execute         bind -model write.2 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 528.672 MB.
+Execute         syn_report -verbosereport -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/write_2.verbose.bind.rpt 
+Execute           list_part -family xc7z020-clg400-1 
+Execute             ap_family_info -name xc7z020-clg400-1 -data names 
+Execute             ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute         db_write -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/write_2.bind.adb -f 
+INFO-FLOW: Finish binding write.2.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'read_write' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model read_write 
+Execute         schedule -model read_write 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 528.672 MB.
+Execute         syn_report -verbosereport -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.verbose.sched.rpt 
+Execute           list_part -family xc7z020-clg400-1 
+Execute             ap_family_info -name xc7z020-clg400-1 -data names 
+Execute             ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute         db_write -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.sched.adb -f 
+INFO-FLOW: Finish scheduling read_write.
+Execute         set_default_model read_write 
+Execute         bind -model read_write 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 528.672 MB.
+Execute         syn_report -verbosereport -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.verbose.bind.rpt 
+Execute           list_part -family xc7z020-clg400-1 
+Execute             ap_family_info -name xc7z020-clg400-1 -data names 
+Execute             ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute         db_write -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.bind.adb -f 
+INFO-FLOW: Finish binding read_write.
+Execute         get_model_list read_write -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute         rtl_gen_preprocess read 
+Execute         rtl_gen_preprocess read.1 
+Execute         rtl_gen_preprocess write 
+Execute         rtl_gen_preprocess write.2 
+Execute         rtl_gen_preprocess read_write 
+INFO-FLOW: Model list for RTL generation: read read.1 write write.2 read_write
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'read_r' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         create_rtl_model read -top_prefix read_write_ -sub_prefix read_write_ -mg_file /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_r.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'read_r' pipeline 'VITIS_LOOP_9_1_VITIS_LOOP_11_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'read_r'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.06 seconds; current allocated memory: 530.785 MB.
+Execute         source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.rtl_wrap.cfg.tcl 
+Execute         gen_rtl read -style xilinx -f -lang vhdl -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/vhdl/read_write_read_r 
+Execute         gen_rtl read -style xilinx -f -lang vlog -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/verilog/read_write_read_r 
+Execute         syn_report -csynth -model read -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/read_r_csynth.rpt 
+Execute           list_part -family xc7z020-clg400-1 
+Execute             ap_family_info -name xc7z020-clg400-1 -data names 
+Execute             ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute         syn_report -rtlxml -model read -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/read_r_csynth.xml 
+Execute           list_part -family xc7z020-clg400-1 
+Execute             ap_family_info -name xc7z020-clg400-1 -data names 
+Execute             ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute         syn_report -verbosereport -model read -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_r.verbose.rpt 
+Execute           list_part -family xc7z020-clg400-1 
+Execute             ap_family_info -name xc7z020-clg400-1 -data names 
+Execute             ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute         db_write -model read -f -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_r.adb 
+Execute         db_write -model read -bindview -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info read -p /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_r 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'read_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         create_rtl_model read.1 -top_prefix read_write_ -sub_prefix read_write_ -mg_file /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_1.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'read_1' pipeline 'VITIS_LOOP_9_1_VITIS_LOOP_11_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'read_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.12 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.13 seconds; current allocated memory: 534.840 MB.
+Execute         source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.rtl_wrap.cfg.tcl 
+Execute         gen_rtl read.1 -style xilinx -f -lang vhdl -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/vhdl/read_write_read_1 
+Execute         gen_rtl read.1 -style xilinx -f -lang vlog -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/verilog/read_write_read_1 
+Execute         syn_report -csynth -model read.1 -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/read_1_csynth.rpt 
+Execute           list_part -family xc7z020-clg400-1 
+Execute             ap_family_info -name xc7z020-clg400-1 -data names 
+Execute             ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute         syn_report -rtlxml -model read.1 -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/read_1_csynth.xml 
+Execute           list_part -family xc7z020-clg400-1 
+Execute             ap_family_info -name xc7z020-clg400-1 -data names 
+Execute             ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute         syn_report -verbosereport -model read.1 -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_1.verbose.rpt 
+Execute           list_part -family xc7z020-clg400-1 
+Execute             ap_family_info -name xc7z020-clg400-1 -data names 
+Execute             ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute         db_write -model read.1 -f -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_1.adb 
+Execute         db_write -model read.1 -bindview -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info read.1 -p /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_1 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'write_r' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         create_rtl_model write -top_prefix read_write_ -sub_prefix read_write_ -mg_file /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/write_r.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'write_r' pipeline 'VITIS_LOOP_24_1_VITIS_LOOP_26_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'write_r'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 537.508 MB.
+Execute         source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.rtl_wrap.cfg.tcl 
+Execute         gen_rtl write -style xilinx -f -lang vhdl -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/vhdl/read_write_write_r 
+Execute         gen_rtl write -style xilinx -f -lang vlog -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/verilog/read_write_write_r 
+Execute         syn_report -csynth -model write -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/write_r_csynth.rpt 
+Execute           list_part -family xc7z020-clg400-1 
+Execute             ap_family_info -name xc7z020-clg400-1 -data names 
+Execute             ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute         syn_report -rtlxml -model write -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/write_r_csynth.xml 
+Execute           list_part -family xc7z020-clg400-1 
+Execute             ap_family_info -name xc7z020-clg400-1 -data names 
+Execute             ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute         syn_report -verbosereport -model write -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/write_r.verbose.rpt 
+Execute           list_part -family xc7z020-clg400-1 
+Execute             ap_family_info -name xc7z020-clg400-1 -data names 
+Execute             ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute         db_write -model write -f -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/write_r.adb 
+Execute         db_write -model write -bindview -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info write -p /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/write_r 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'write_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         create_rtl_model write.2 -top_prefix read_write_ -sub_prefix read_write_ -mg_file /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/write_2.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'write_2' pipeline 'VITIS_LOOP_24_1_VITIS_LOOP_26_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'write_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.08 seconds; current allocated memory: 540.258 MB.
+Execute         source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.rtl_wrap.cfg.tcl 
+Execute         gen_rtl write.2 -style xilinx -f -lang vhdl -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/vhdl/read_write_write_2 
+Execute         gen_rtl write.2 -style xilinx -f -lang vlog -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/verilog/read_write_write_2 
+Execute         syn_report -csynth -model write.2 -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/write_2_csynth.rpt 
+Execute           list_part -family xc7z020-clg400-1 
+Execute             ap_family_info -name xc7z020-clg400-1 -data names 
+Execute             ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute         syn_report -rtlxml -model write.2 -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/write_2_csynth.xml 
+Execute           list_part -family xc7z020-clg400-1 
+Execute             ap_family_info -name xc7z020-clg400-1 -data names 
+Execute             ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute         syn_report -verbosereport -model write.2 -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/write_2.verbose.rpt 
+Execute           list_part -family xc7z020-clg400-1 
+Execute             ap_family_info -name xc7z020-clg400-1 -data names 
+Execute             ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute         db_write -model write.2 -f -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/write_2.adb 
+Execute         db_write -model write.2 -bindview -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info write.2 -p /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/write_2 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'read_write' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         create_rtl_model read_write -top_prefix  -sub_prefix read_write_ -mg_file /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.compgen.tcl 
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'read_write/mem_0' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'read_write/mem_1' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'read_write/mem_0_r' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'read_write/mem_1_r' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'read_write' to 's_axilite & ap_ctrl_chain'.
+INFO: [RTGEN 206-100] Bundling port 'mem_0_r', 'mem_1_r' and 'return' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'read_write'.
+INFO: [RTMG 210-285] Implementing FIFO 'stream_U(read_write_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'mem_0_r_c_U(read_write_fifo_w64_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'stream_1_U(read_write_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'mem_1_r_c_U(read_write_fifo_w64_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_write_U0_U(read_write_start_for_write_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_write_2_U0_U(read_write_start_for_write_2_U0)' using Shift Registers.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.08 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.09 seconds; current allocated memory: 544.336 MB.
+Execute         source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.rtl_wrap.cfg.tcl 
+Execute         gen_rtl read_write -istop -style xilinx -f -lang vhdl -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/vhdl/read_write 
+Execute         gen_rtl read_write -istop -style xilinx -f -lang vlog -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/verilog/read_write 
+Execute         syn_report -csynth -model read_write -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/read_write_csynth.rpt 
+Execute           list_part -family xc7z020-clg400-1 
+Execute             ap_family_info -name xc7z020-clg400-1 -data names 
+Execute             ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute         syn_report -rtlxml -model read_write -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/read_write_csynth.xml 
+Execute           list_part -family xc7z020-clg400-1 
+Execute             ap_family_info -name xc7z020-clg400-1 -data names 
+Execute             ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute         syn_report -verbosereport -model read_write -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.verbose.rpt 
+Execute           list_part -family xc7z020-clg400-1 
+Execute             ap_family_info -name xc7z020-clg400-1 -data names 
+Execute             ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute         db_write -model read_write -f -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.adb 
+Execute         db_write -model read_write -bindview -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info read_write -p /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write 
+Execute         export_constraint_db -f -tool general -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.constraint.tcl 
+Execute         syn_report -designview -model read_write -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.design.xml 
+Execute         syn_report -csynthDesign -model read_write -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/csynth.rpt -MHOut /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/kernel_module_hierarchy.tcl 
+Execute           list_part -family xc7z020-clg400-1 
+Execute             ap_family_info -name xc7z020-clg400-1 -data names 
+Execute             ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute         syn_report -wcfg -model read_write -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write_dataflow_ana.wcfg 
+Execute         syn_report -protoinst -model read_write -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.protoinst 
+Execute         sc_get_clocks read_write 
+Execute         sc_get_portdomain read_write 
+INFO-FLOW: Model list for RTL component generation: read read.1 write write.2 read_write
+INFO-FLOW: Handling components in module [read_r] ... 
+Execute         source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_r.compgen.tcl 
+INFO-FLOW: Found component read_write_flow_control_loop_delay_pipe.
+INFO-FLOW: Append model read_write_flow_control_loop_delay_pipe
+INFO-FLOW: Handling components in module [read_1] ... 
+Execute         source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_1.compgen.tcl 
+INFO-FLOW: Found component read_write_flow_control_loop_delay_pipe.
+INFO-FLOW: Append model read_write_flow_control_loop_delay_pipe
+INFO-FLOW: Handling components in module [write_r] ... 
+Execute         source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/write_r.compgen.tcl 
+INFO-FLOW: Found component read_write_flow_control_loop_pipe.
+INFO-FLOW: Append model read_write_flow_control_loop_pipe
+INFO-FLOW: Handling components in module [write_2] ... 
+Execute         source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/write_2.compgen.tcl 
+INFO-FLOW: Found component read_write_flow_control_loop_pipe.
+INFO-FLOW: Append model read_write_flow_control_loop_pipe
+INFO-FLOW: Handling components in module [read_write] ... 
+Execute         source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.compgen.tcl 
+INFO-FLOW: Found component read_write_fifo_w32_d2_S.
+INFO-FLOW: Append model read_write_fifo_w32_d2_S
+INFO-FLOW: Found component read_write_fifo_w64_d2_S.
+INFO-FLOW: Append model read_write_fifo_w64_d2_S
+INFO-FLOW: Found component read_write_fifo_w32_d2_S.
+INFO-FLOW: Append model read_write_fifo_w32_d2_S
+INFO-FLOW: Found component read_write_fifo_w64_d2_S.
+INFO-FLOW: Append model read_write_fifo_w64_d2_S
+INFO-FLOW: Found component read_write_start_for_write_U0.
+INFO-FLOW: Append model read_write_start_for_write_U0
+INFO-FLOW: Found component read_write_start_for_write_2_U0.
+INFO-FLOW: Append model read_write_start_for_write_2_U0
+INFO-FLOW: Found component read_write_mem_0_m_axi.
+INFO-FLOW: Append model read_write_mem_0_m_axi
+INFO-FLOW: Found component read_write_mem_1_m_axi.
+INFO-FLOW: Append model read_write_mem_1_m_axi
+INFO-FLOW: Found component read_write_control_s_axi.
+INFO-FLOW: Append model read_write_control_s_axi
+INFO-FLOW: Append model read_r
+INFO-FLOW: Append model read_1
+INFO-FLOW: Append model write_r
+INFO-FLOW: Append model write_2
+INFO-FLOW: Append model read_write
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: read_write_flow_control_loop_delay_pipe read_write_flow_control_loop_delay_pipe read_write_flow_control_loop_pipe read_write_flow_control_loop_pipe read_write_fifo_w32_d2_S read_write_fifo_w64_d2_S read_write_fifo_w32_d2_S read_write_fifo_w64_d2_S read_write_start_for_write_U0 read_write_start_for_write_2_U0 read_write_mem_0_m_axi read_write_mem_1_m_axi read_write_control_s_axi read_r read_1 write_r write_2 read_write
+INFO-FLOW: Generating /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/autopilot.rtl.models.txt file...
+INFO-FLOW: To file: write model read_write_flow_control_loop_delay_pipe
+INFO-FLOW: To file: write model read_write_flow_control_loop_delay_pipe
+INFO-FLOW: To file: write model read_write_flow_control_loop_pipe
+INFO-FLOW: To file: write model read_write_flow_control_loop_pipe
+INFO-FLOW: To file: write model read_write_fifo_w32_d2_S
+INFO-FLOW: To file: write model read_write_fifo_w64_d2_S
+INFO-FLOW: To file: write model read_write_fifo_w32_d2_S
+INFO-FLOW: To file: write model read_write_fifo_w64_d2_S
+INFO-FLOW: To file: write model read_write_start_for_write_U0
+INFO-FLOW: To file: write model read_write_start_for_write_2_U0
+INFO-FLOW: To file: write model read_write_mem_0_m_axi
+INFO-FLOW: To file: write model read_write_mem_1_m_axi
+INFO-FLOW: To file: write model read_write_control_s_axi
+INFO-FLOW: To file: write model read_r
+INFO-FLOW: To file: write model read_1
+INFO-FLOW: To file: write model write_r
+INFO-FLOW: To file: write model write_2
+INFO-FLOW: To file: write model read_write
+INFO-FLOW: Generating /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/autopilot.rtl.models.tcl file...
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::auto_generate_csynth_design
+INFO-FLOW: DBG:PUTS: read_platform_lib /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/global.setting.tcl
+Execute         source /data/2025.1/Vitis/common/technology/generic/autopilot/common.gen 
+Execute           source /data/2025.1/Vitis/common/technology/generic/autopilot/APCoreGen.gen 
+Execute         source /data/2025.1/Vitis/common/technology/generic/autopilot/op.gen 
+Execute         source /data/2025.1/Vitis/common/technology/generic/autopilot/op_simcore.gen 
+Execute         source /data/2025.1/Vitis/common/technology/generic/autopilot/interface.gen 
+Execute         source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/global.setting.tcl 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/common/xilinx.gen 
+Execute           source /data/2025.1/Vitis/common/technology/xilinx/interface/plb46.gen 
+Execute           source /data/2025.1/Vitis/common/technology/xilinx/interface/axi4.gen 
+Execute           source /data/2025.1/Vitis/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /data/2025.1/Vitis/common/technology/xilinx/interface/saxilite.gen 
+Execute           source /data/2025.1/Vitis/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /data/2025.1/Vitis/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /data/2025.1/Vitis/common/technology/xilinx/ip/xfir.gen 
+Execute           source /data/2025.1/Vitis/common/technology/xilinx/ip/util.gen 
+Execute           source /data/2025.1/Vitis/common/technology/xilinx/ip/xfft.gen 
+Execute           source /data/2025.1/Vitis/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /data/2025.1/Vitis/common/technology/xilinx/DSP48/dsp48.gen 
+INFO-FLOW: DBG:PUTS:   using AESL_AUTOCG::g_clock_period=5.000 (was NA)
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::generate_ip_cores gen_sim_model='1' gen_fp_models='0' gen_for_export='0' dstSCDir='' dstVhdlDir='/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/vhdl' dstVlogDir='/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/vlog' tclDir='/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db' modelList='read_write_flow_control_loop_delay_pipe
+read_write_flow_control_loop_delay_pipe
+read_write_flow_control_loop_pipe
+read_write_flow_control_loop_pipe
+read_write_fifo_w32_d2_S
+read_write_fifo_w64_d2_S
+read_write_fifo_w32_d2_S
+read_write_fifo_w64_d2_S
+read_write_start_for_write_U0
+read_write_start_for_write_2_U0
+read_write_mem_0_m_axi
+read_write_mem_1_m_axi
+read_write_control_s_axi
+read_r
+read_1
+write_r
+write_2
+read_write
+' expOnly='0'
+Execute         source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/global.setting.tcl 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/global.setting.tcl 
+Execute         source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/global.setting.tcl 
+Execute         source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_r.compgen.tcl 
+Execute         source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_1.compgen.tcl 
+Execute         source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/write_r.compgen.tcl 
+Execute         source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/write_2.compgen.tcl 
+Execute         source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.compgen.tcl 
+Execute           source ./control.slave.tcl 
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.16 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.18 seconds; current allocated memory: 546.965 MB.
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::create_csynth_xml bind_info_var='bind_info' RtlSubPrefix='read_write_' outfile=''
+INFO-FLOW: Running: create_csynth_xml read xml data
+INFO-FLOW: Done: create_csynth_xml read xml data time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml bind info
+INFO-FLOW: Done: create_csynth_xml bind info time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml config info
+INFO-FLOW: Done: create_csynth_xml config info time: 0.1 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml write xml
+INFO-FLOW: Done: create_csynth_xml write xml time: 0 seconds per iteration
+INFO-FLOW: DBG:PUTS:      create_csynth_xml wrote csynth_xml=/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/csynth.xml
+INFO-FLOW: DBG:PROC: ::AP::DESIGN_DATA::generate_json generate_bd_files='0' generate_xo_files='0' modelList='read_write_flow_control_loop_delay_pipe
+read_write_flow_control_loop_delay_pipe
+read_write_flow_control_loop_pipe
+read_write_flow_control_loop_pipe
+read_write_fifo_w32_d2_S
+read_write_fifo_w64_d2_S
+read_write_fifo_w32_d2_S
+read_write_fifo_w64_d2_S
+read_write_start_for_write_U0
+read_write_start_for_write_2_U0
+read_write_mem_0_m_axi
+read_write_mem_1_m_axi
+read_write_control_s_axi
+read_r
+read_1
+write_r
+write_2
+read_write
+' rtl_lang='both' bootstrap_tcl='false' outdir='' outfilename=''
+Execute         source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/global.setting.tcl 
+Execute         source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/global.setting.tcl 
+Execute         source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/top-io-be.tcl 
+Execute         source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute         source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.compgen.dataonly.tcl 
+Execute         source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.compgen.dataonly.tcl 
+Execute         source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.rtl_wrap.cfg.tcl 
+Execute         source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.compgen.dataonly.tcl 
+Execute         source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_r.tbgen.tcl 
+Execute         source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_1.tbgen.tcl 
+Execute         source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/write_r.tbgen.tcl 
+Execute         source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/write_2.tbgen.tcl 
+Execute         source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute         source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/global.setting.tcl 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.constraint.tcl 
+Execute         sc_get_clocks read_write 
+Execute         source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::add_csynth_report_sections bind_info_dict='adapter_nodes {{BINDTYPE adapter ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA {} RTLNAME control_s_axi_U SOURCE {} VARIABLE {} LOOP {} BUNDLEDNAME control DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE s_axilite STORAGESIZE {} STORAGEUSAGE interface DISPNAME {bind_adapter }} {BINDTYPE adapter ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA {} RTLNAME mem_0_m_axi_U SOURCE {} VARIABLE {} LOOP {} BUNDLEDNAME mem_0 DSP 0 BRAM 29 URAM 0 STORAGESUBTYPE m_axi STORAGESIZE {} STORAGEUSAGE interface DISPNAME {bind_adapter }} {BINDTYPE adapter ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA {} RTLNAME mem_1_m_axi_U SOURCE {} VARIABLE {} LOOP {} BUNDLEDNAME mem_1 DSP 0 BRAM 29 URAM 0 STORAGESUBTYPE m_axi STORAGESIZE {} STORAGEUSAGE interface DISPNAME {bind_adapter }}} cache_nodes {} report_dict {TOPINST read_write MODULE2INSTS {read_write read_write read_r read_U0 read_1 read_1_U0 write_r write_U0 write_2 write_2_U0} INST2MODULE {read_write read_write read_U0 read_r read_1_U0 read_1 write_U0 write_r write_2_U0 write_2} INSTDATA {read_write {DEPTH 1 CHILDREN {read_U0 read_1_U0 write_U0 write_2_U0}} read_U0 {DEPTH 2 CHILDREN {}} read_1_U0 {DEPTH 2 CHILDREN {}} write_U0 {DEPTH 2 CHILDREN {}} write_2_U0 {DEPTH 2 CHILDREN {}}} MODULEDATA {read_r {BINDINFO {{BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln9_fu_240_p3 SOURCE read_write.cpp:9 VARIABLE select_ln9 LOOP VITIS_LOOP_9_1_VITIS_LOOP_11_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME i_fu_248_p3 SOURCE read_write.cpp:9 VARIABLE i LOOP VITIS_LOOP_9_1_VITIS_LOOP_11_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME first_iter_0_fu_256_p2 SOURCE read_write.cpp:9 VARIABLE first_iter_0 LOOP VITIS_LOOP_9_1_VITIS_LOOP_11_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln10_fu_278_p2 SOURCE read_write.cpp:10 VARIABLE add_ln10 LOOP VITIS_LOOP_9_1_VITIS_LOOP_11_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln9_2_fu_211_p2 SOURCE read_write.cpp:9 VARIABLE add_ln9_2 LOOP VITIS_LOOP_9_1_VITIS_LOOP_11_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln9_4_fu_349_p3 SOURCE read_write.cpp:9 VARIABLE select_ln9_4 LOOP VITIS_LOOP_9_1_VITIS_LOOP_11_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln13_fu_297_p2 SOURCE read_write.cpp:13 VARIABLE icmp_ln13 LOOP VITIS_LOOP_9_1_VITIS_LOOP_11_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME j_fu_303_p2 SOURCE read_write.cpp:11 VARIABLE j LOOP VITIS_LOOP_9_1_VITIS_LOOP_11_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln11_fu_309_p2 SOURCE read_write.cpp:11 VARIABLE icmp_ln11 LOOP VITIS_LOOP_9_1_VITIS_LOOP_11_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln9_fu_315_p2 SOURCE read_write.cpp:9 VARIABLE add_ln9 LOOP VITIS_LOOP_9_1_VITIS_LOOP_11_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln9_fu_220_p2 SOURCE read_write.cpp:9 VARIABLE icmp_ln9 LOOP VITIS_LOOP_9_1_VITIS_LOOP_11_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false}} AREA {DSP 0 BRAM 0 URAM 0}} read_1 {BINDINFO {{BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln9_fu_242_p3 SOURCE read_write.cpp:9 VARIABLE select_ln9 LOOP VITIS_LOOP_9_1_VITIS_LOOP_11_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME i_fu_250_p3 SOURCE read_write.cpp:9 VARIABLE i LOOP VITIS_LOOP_9_1_VITIS_LOOP_11_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME first_iter_0_fu_258_p2 SOURCE read_write.cpp:9 VARIABLE first_iter_0 LOOP VITIS_LOOP_9_1_VITIS_LOOP_11_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln10_fu_280_p2 SOURCE read_write.cpp:10 VARIABLE add_ln10 LOOP VITIS_LOOP_9_1_VITIS_LOOP_11_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln9_1_fu_213_p2 SOURCE read_write.cpp:9 VARIABLE add_ln9_1 LOOP VITIS_LOOP_9_1_VITIS_LOOP_11_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln9_2_fu_351_p3 SOURCE read_write.cpp:9 VARIABLE select_ln9_2 LOOP VITIS_LOOP_9_1_VITIS_LOOP_11_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln13_fu_299_p2 SOURCE read_write.cpp:13 VARIABLE icmp_ln13 LOOP VITIS_LOOP_9_1_VITIS_LOOP_11_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME j_fu_305_p2 SOURCE read_write.cpp:11 VARIABLE j LOOP VITIS_LOOP_9_1_VITIS_LOOP_11_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln11_fu_311_p2 SOURCE read_write.cpp:11 VARIABLE icmp_ln11 LOOP VITIS_LOOP_9_1_VITIS_LOOP_11_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln9_fu_317_p2 SOURCE read_write.cpp:9 VARIABLE add_ln9 LOOP VITIS_LOOP_9_1_VITIS_LOOP_11_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln9_fu_222_p2 SOURCE read_write.cpp:9 VARIABLE icmp_ln9 LOOP VITIS_LOOP_9_1_VITIS_LOOP_11_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false}} AREA {DSP 0 BRAM 0 URAM 0}} write_r {BINDINFO {{BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln24_fu_240_p3 SOURCE read_write.cpp:24 VARIABLE select_ln24 LOOP VITIS_LOOP_24_1_VITIS_LOOP_26_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME i_fu_222_p3 SOURCE read_write.cpp:24 VARIABLE i LOOP VITIS_LOOP_24_1_VITIS_LOOP_26_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME first_iter_0_fu_248_p2 SOURCE read_write.cpp:24 VARIABLE first_iter_0 LOOP VITIS_LOOP_24_1_VITIS_LOOP_26_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln25_fu_267_p2 SOURCE read_write.cpp:25 VARIABLE add_ln25 LOOP VITIS_LOOP_24_1_VITIS_LOOP_26_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln24_2_fu_326_p2 SOURCE read_write.cpp:24 VARIABLE add_ln24_2 LOOP VITIS_LOOP_24_1_VITIS_LOOP_26_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln28_fu_287_p2 SOURCE read_write.cpp:28 VARIABLE icmp_ln28 LOOP VITIS_LOOP_24_1_VITIS_LOOP_26_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln24_4_fu_335_p3 SOURCE read_write.cpp:24 VARIABLE select_ln24_4 LOOP VITIS_LOOP_24_1_VITIS_LOOP_26_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME j_fu_293_p2 SOURCE read_write.cpp:26 VARIABLE j LOOP VITIS_LOOP_24_1_VITIS_LOOP_26_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln28_fu_389_p3 SOURCE read_write.cpp:28 VARIABLE select_ln28 LOOP VITIS_LOOP_24_1_VITIS_LOOP_26_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln26_fu_343_p2 SOURCE read_write.cpp:26 VARIABLE icmp_ln26 LOOP VITIS_LOOP_24_1_VITIS_LOOP_26_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln24_fu_299_p2 SOURCE read_write.cpp:24 VARIABLE add_ln24 LOOP VITIS_LOOP_24_1_VITIS_LOOP_26_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln24_fu_351_p2 SOURCE read_write.cpp:24 VARIABLE icmp_ln24 LOOP VITIS_LOOP_24_1_VITIS_LOOP_26_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false}} AREA {DSP 0 BRAM 0 URAM 0}} write_2 {BINDINFO {{BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln24_fu_242_p3 SOURCE read_write.cpp:24 VARIABLE select_ln24 LOOP VITIS_LOOP_24_1_VITIS_LOOP_26_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME i_fu_224_p3 SOURCE read_write.cpp:24 VARIABLE i LOOP VITIS_LOOP_24_1_VITIS_LOOP_26_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME first_iter_0_fu_250_p2 SOURCE read_write.cpp:24 VARIABLE first_iter_0 LOOP VITIS_LOOP_24_1_VITIS_LOOP_26_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln25_fu_269_p2 SOURCE read_write.cpp:25 VARIABLE add_ln25 LOOP VITIS_LOOP_24_1_VITIS_LOOP_26_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln24_1_fu_328_p2 SOURCE read_write.cpp:24 VARIABLE add_ln24_1 LOOP VITIS_LOOP_24_1_VITIS_LOOP_26_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln28_fu_289_p2 SOURCE read_write.cpp:28 VARIABLE icmp_ln28 LOOP VITIS_LOOP_24_1_VITIS_LOOP_26_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln24_2_fu_337_p3 SOURCE read_write.cpp:24 VARIABLE select_ln24_2 LOOP VITIS_LOOP_24_1_VITIS_LOOP_26_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME j_fu_295_p2 SOURCE read_write.cpp:26 VARIABLE j LOOP VITIS_LOOP_24_1_VITIS_LOOP_26_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln28_fu_391_p3 SOURCE read_write.cpp:28 VARIABLE select_ln28 LOOP VITIS_LOOP_24_1_VITIS_LOOP_26_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln26_fu_345_p2 SOURCE read_write.cpp:26 VARIABLE icmp_ln26 LOOP VITIS_LOOP_24_1_VITIS_LOOP_26_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln24_fu_301_p2 SOURCE read_write.cpp:24 VARIABLE add_ln24 LOOP VITIS_LOOP_24_1_VITIS_LOOP_26_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln24_fu_353_p2 SOURCE read_write.cpp:24 VARIABLE icmp_ln24 LOOP VITIS_LOOP_24_1_VITIS_LOOP_26_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false}} AREA {DSP 0 BRAM 0 URAM 0}} read_write {BINDINFO {{BINDTYPE storage ID {} IMPL srl LATENCY 0 OPTYPE fifo PRAGMA {} RTLNAME stream_U SOURCE read_write.cpp:53 VARIABLE stream LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE stream STORAGESIZE {32 2 1} STORAGEUSAGE {fifo channel} DISPNAME {bind_storage fifo} VISIBLE true} {BINDTYPE storage ID {} IMPL srl LATENCY 0 OPTYPE fifo PRAGMA {} RTLNAME mem_0_r_c_U SOURCE read_write.cpp:52 VARIABLE mem_0_r_c LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {scalar prop} STORAGESIZE {64 2 1} STORAGEUSAGE {fifo channel} DISPNAME {bind_storage fifo} VISIBLE true} {BINDTYPE storage ID {} IMPL srl LATENCY 0 OPTYPE fifo PRAGMA {} RTLNAME stream_1_U SOURCE read_write.cpp:53 VARIABLE stream_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE stream STORAGESIZE {32 2 1} STORAGEUSAGE {fifo channel} DISPNAME {bind_storage fifo} VISIBLE true} {BINDTYPE storage ID {} IMPL srl LATENCY 0 OPTYPE fifo PRAGMA {} RTLNAME mem_1_r_c_U SOURCE read_write.cpp:52 VARIABLE mem_1_r_c LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {scalar prop} STORAGESIZE {64 2 1} STORAGEUSAGE {fifo channel} DISPNAME {bind_storage fifo} VISIBLE true}} AREA {DSP 0 BRAM 58 URAM 0}}}}'
+INFO-FLOW: DBG:PUTS:      update_csynth_reports json2rpt_hw_sw_interfaces
+Execute         send_msg_by_id INFO @200-1603@%s  and missed bursts 
+INFO: [HLS 200-1603] Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
+INFO-FLOW: Running: gen_csynth_sec_pragma
+INFO-FLOW: Done: gen_csynth_sec_pragma time: 0 seconds per iteration
+INFO-FLOW: DBG:PUTS:      update_csynth_reports wrote xml
+INFO-FLOW: DBG:PUTS:      update_csynth_reports appended to csynth rpt file
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.33 seconds. CPU system time: 0.07 seconds. Elapsed time: 0.41 seconds; current allocated memory: 553.438 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for read_write.
+INFO: [VLOG 209-307] Generating Verilog RTL for read_write.
+Execute         syn_report -model read_write -printsummary 
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 196.93 MHz
+Command       autosyn done; 1.33 sec.
+Command     csynth_design done; 11.79 sec.
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:11; Allocated memory: 106.934 MB.
+Execute     cosim_design -trace_level all 
+INFO: [HLS 200-1510] Running: cosim_design -trace_level all 
+Execute       ::AP::init_summary_file cosim 
+Execute         AP::app_get_file_relativeroot [AP::app_get_root] {}
+Command       AP::init_summary_file done; 2.54 sec.
+Execute       write_ini /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls_config.cfg -apsfile /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/hls.aps -filepaths relative 
+Execute         send_msg_by_id INFO @200-1915@%s /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls_config.cfg 
+INFO: [HLS 200-1915] Writing HLS config ini file /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls_config.cfg
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/global.setting.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/global.setting.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/global.setting.tcl 
+Execute       send_msg_by_id WARNING @200-626@ 
+WARNING: [HLS 200-626] This design is unable to schedule all read ports in the first II cycle. The RTL testbench may treat the design as non-pipelined
+INFO-FLOW: DBG:PUTS: read_platform_lib /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/global.setting.tcl
+Execute       source /data/2025.1/Vitis/common/technology/generic/autopilot/common.gen 
+Execute         source /data/2025.1/Vitis/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source /data/2025.1/Vitis/common/technology/generic/autopilot/op.gen 
+Execute       source /data/2025.1/Vitis/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source /data/2025.1/Vitis/common/technology/generic/autopilot/interface.gen 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/global.setting.tcl 
+Execute       source /data/2025.1/Vitis/common/technology/xilinx/common/xilinx.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/interface/plb46.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/interface/axi4.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /data/2025.1/Vitis/common/technology/xilinx/interface/saxilite.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/ip/xfir.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/ip/util.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/ip/xfft.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /data/2025.1/Vitis/common/technology/xilinx/DSP48/dsp48.gen 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/global.setting.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.rtl_wrap.cfg.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/cosimDB.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+INFO-FLOW: run_clang exec: /data/2025.1/Vitis/lnx64/tools/vcxx/libexec/clang -fno-builtin-isinf -fno-builtin-isnan -E -Wno-unknown-pragmas -Wno-unknown-pragmas -DGCC_COMPATIBLE_APINT -DAESL_TB -D__HLS_COSIM__ -D__VITIS_HLS__ -I /usr/include/x86_64-linux-gnu -I /data/2025.1/Vitis/include -I include /data/hls-dev/toy-test-cases/read_write_depth2/tb_read_write.cpp -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/./sim/autowrap/testbench/tb_read_write.cpp_pre.cpp -std=gnu++14 -D__DSP48E1__ --gcc-toolchain=/data/2025.1/Vitis/tps/lnx64/gcc-8.3.0 > /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/tb_read_write.cpp.clang.autosim-tb.out.log 2> /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/tb_read_write.cpp.clang.autosim-tb.err.log
+INFO-FLOW: TB processing: /data/hls-dev/toy-test-cases/read_write_depth2/tb_read_write.cpp /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/./sim/autowrap/testbench/tb_read_write.cpp_pre.cpp
+Execute       clang_tidy xilinx-tb-process -desc tb-process /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/./sim/autowrap/testbench/tb_read_write.cpp_pre.cpp.tb.cpp std=gnu++14 
+INFO-FLOW: exec /data/2025.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-tb-process -fix-errors /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/./sim/autowrap/testbench/tb_read_write.cpp_pre.cpp.tb.cpp -- -std=gnu++14 -fhls -ferror-limit=0
+Command       clang_tidy done; 0.53 sec.
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+INFO-FLOW: run_clang exec: /data/2025.1/Vitis/lnx64/tools/vcxx/libexec/clang -fno-builtin-isinf -fno-builtin-isnan -E -DGCC_COMPATIBLE_APINT -DAESL_TB -D__HLS_COSIM__ -D__VITIS_HLS__ -I /usr/include/x86_64-linux-gnu -I /data/2025.1/Vitis/include -I include /data/hls-dev/toy-test-cases/read_write_depth2/read_write.cpp -o /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/./sim/autowrap/testbench/read_write.cpp_pre.cpp -std=gnu++14 -D__DSP48E1__ --gcc-toolchain=/data/2025.1/Vitis/tps/lnx64/gcc-8.3.0 > /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.cpp.clang.autosim-tb.out.log 2> /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.cpp.clang.autosim-tb.err.log
+INFO-FLOW: TB processing: /data/hls-dev/toy-test-cases/read_write_depth2/read_write.cpp /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/./sim/autowrap/testbench/read_write.cpp_pre.cpp
+Execute       clang_tidy xilinx-tb-process -desc tb-process /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/./sim/autowrap/testbench/read_write.cpp_pre.cpp.tb.cpp std=gnu++14 
+INFO-FLOW: exec /data/2025.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-tb-process -fix-errors /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/./sim/autowrap/testbench/read_write.cpp_pre.cpp.tb.cpp -- -std=gnu++14 -fhls -ferror-limit=0
+Command       clang_tidy done; 0.56 sec.
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/./sim/autowrap/testbench/tb.status.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/global.setting.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.rtl_wrap.cfg.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.rtl_wrap.cfg.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.rtl_wrap.cfg.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       source .run_sim.tcl 
+INFO: [COSIM 212-302] Starting C TB testing ... 
+INFO: [COSIM 212-333] Generating C post check test bench ...
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+INFO: [COSIM 212-12] Generating RTL test bench ...
+Execute       source ../tv/cdatafile/ref.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source ../tv/cdatafile/ref.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.DependenceCheck.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.tbgen.tcl 
+Execute       source /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/cosimDB.tcl 
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+Execute       source .run_sim.tcl 
+Execute         source check_sim.tcl 
+Execute         source dataflow_monitor_API.tcl 
+Execute         source .sim.status.tcl 
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+INFO: [COSIM 212-316] Starting C post checking ...
+Command       ap_source done; 32.62 sec.
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+Command     cosim_design done; 43.6 sec.
+INFO: [HLS 200-2161] Finished Command cosim_design Elapsed time: 00:00:43; Allocated memory: 23.027 MB.
+Execute     cleanup_all 

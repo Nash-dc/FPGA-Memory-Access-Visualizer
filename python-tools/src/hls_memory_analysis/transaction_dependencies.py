@@ -58,14 +58,109 @@ def _transaction_ordinal(transaction):
     return parse_int(transaction.get("first_trace_event_index"), 0)
 
 
-def _append_stream_channel_dependencies(blocks_by_id, ordered):
+def _natural_key(value):
+    stream_match = re.match(r"^(.*?)(?:_(\d+))?_U$", str(value))
+    if stream_match:
+        return [stream_match.group(1), parse_int(stream_match.group(2), 0)]
+    return [
+        parse_int(part, part)
+        for part in re.split(r"(\d+)", str(value))
+        if part != ""
+    ]
+
+
+def _loop_ii_for_transaction(transaction, csynth):
+    loop_name = str(transaction.get("loop", ""))
+    loops = [
+        loop
+        for loop in csynth.get("loops", [])
+        if loop.get("pipeline_ii") is not None
+    ]
+    matching = [
+        loop
+        for loop in loops
+        if loop_name
+        and loop_name != "unknown"
+        and (
+            loop.get("name") == loop_name
+            or loop_name in str(loop.get("name", ""))
+            or str(loop.get("name", "")) in loop_name
+        )
+    ]
+    candidates = matching or loops
+    iis = [
+        parse_int(loop.get("pipeline_ii"), 1)
+        for loop in candidates
+        if parse_int(loop.get("pipeline_ii"), 0) > 0
+    ]
+    return min(iis) if iis else 1
+
+
+def _fifo_metadata_by_port(reads_by_port, writes_by_port, csynth):
+    ports = sorted(set(reads_by_port) & set(writes_by_port))
+    fifos = sorted(
+        csynth.get("dataflow", {}).get("fifos", []),
+        key=lambda fifo: _natural_key(fifo.get("name", "")),
+    )
+    if not ports or not fifos:
+        return {}
+    if len(fifos) == len(ports):
+        return dict(zip(ports, fifos))
+    depths = {
+        fifo.get("static_depth")
+        for fifo in fifos
+        if fifo.get("static_depth") is not None
+    }
+    if len(depths) == 1:
+        return {port: fifos[0] for port in ports}
+    return {}
+
+
+def _stream_capacity_constraint(port, read, write, fifo_by_port, csynth):
+    fifo = fifo_by_port.get(port, {})
+    depth = parse_int(fifo.get("static_depth"), 0)
+    if depth <= 0:
+        return {}
+    producer_ii = max(1, _loop_ii_for_transaction(read, csynth))
+    consumer_ii = max(1, _loop_ii_for_transaction(write, csynth))
+    tokens = max(
+        1,
+        min(
+            parse_int(read.get("element_count"), 1),
+            parse_int(write.get("element_count"), 1),
+        ),
+    )
+    producer_faster = producer_ii < consumer_ii
+    backpressure_expected = producer_faster and tokens > depth
+    return {
+        "channel": fifo.get("name", f"{port}_stream"),
+        "fifo_static_depth": depth,
+        "producer_loop_ii": producer_ii,
+        "consumer_loop_ii": consumer_ii,
+        "tokens_in_transaction": tokens,
+        "producer_faster_than_consumer": producer_faster,
+        "backpressure_expected": backpressure_expected,
+        "first_full_after_tokens": depth + 1 if backpressure_expected else "",
+        "reason": (
+            "bounded FIFO backpressure expected: producer can generate tokens "
+            "faster than the consumer drains them and the transaction token "
+            "count exceeds the FIFO depth"
+            if backpressure_expected
+            else "bounded FIFO capacity is not expected to throttle this transaction block"
+        ),
+    }
+
+
+def _append_stream_channel_dependencies(blocks_by_id, ordered, csynth):
     """Infer local producer-consumer edges for DATAFLOW-style stream pipelines.
 
     HLS reports expose dataflow and FIFO processes, but they do not always map
     FIFO instances back to LLVM memory transactions. The conservative fallback
     here pairs read/write bursts on the same top-level port by their local burst
-    ordinal. That models a process-local stream token dependency without adding
-    a false full-process barrier.
+    ordinal. RTL cosimulation for these inferred transaction blocks shows that
+    the matched consumer write request is issued after the producer read
+    transaction completes, so the edge uses source-transaction-complete
+    readiness.
     """
     reads_by_port = defaultdict(list)
     writes_by_port = defaultdict(list)
@@ -79,7 +174,9 @@ def _append_stream_channel_dependencies(blocks_by_id, ordered):
         elif direction == "write":
             writes_by_port[port].append(transaction)
 
+    fifo_by_port = _fifo_metadata_by_port(reads_by_port, writes_by_port, csynth)
     added = 0
+    backpressure_edges = 0
     for port, writes in writes_by_port.items():
         reads = sorted(reads_by_port.get(port, []), key=_transaction_ordinal)
         if not reads:
@@ -113,17 +210,25 @@ def _append_stream_channel_dependencies(blocks_by_id, ordered):
                 "logical_source_count": 0,
                 "logical_target_count": 0,
                 "reason": (
-                    "DATAFLOW producer-consumer FIFO token block; matched "
-                    "by port and local transaction ordinal"
+                    "DATAFLOW producer-consumer FIFO transaction block; "
+                    "matched by port and local transaction ordinal"
                 ),
+                "readiness": "source_transaction_complete",
                 "port": port,
                 "channel": f"{port}_stream",
             }
+            capacity = _stream_capacity_constraint(
+                port, read, write, fifo_by_port, csynth
+            )
+            if capacity:
+                dependency["capacity_constraint"] = capacity
+                if capacity.get("backpressure_expected"):
+                    backpressure_edges += 1
             if _append_unique(
                 blocks_by_id[target_txn]["dependencies"], dependency
             ):
                 added += 1
-    return added
+    return added, backpressure_edges
 
 
 def _access_by_id(report):
@@ -414,9 +519,13 @@ def build_transaction_dependency_graph_from_logical(
         _append_unique(blocks_by_id[target_txn]["dependencies"], dependency)
 
     stream_channel_edges = 0
+    stream_capacity_backpressure_edges = 0
     if csynth.get("dataflow", {}).get("enabled"):
-        stream_channel_edges = _append_stream_channel_dependencies(
-            blocks_by_id, ordered
+        (
+            stream_channel_edges,
+            stream_capacity_backpressure_edges,
+        ) = _append_stream_channel_dependencies(
+            blocks_by_id, ordered, csynth
         )
     local_buffer_barrier_edges = _append_local_buffer_barrier_dependencies(
         blocks_by_id, ordered, report, csynth
@@ -424,14 +533,16 @@ def build_transaction_dependency_graph_from_logical(
 
     blocks = [blocks_by_id[item["transaction_id"]] for item in ordered]
     return {
-        "schema": "hls.transaction_dependency_graph.v10",
+        "schema": "hls.transaction_dependency_graph.v11",
         "dependency_source": (
             "Physical transaction dependencies aggregated from the dynamic "
             "logical access graph. Logical graph edges combine LLVM static "
             "value/control metadata with actual IR trace execution and dynamic "
             "same port[element] RAW tracking. DATAFLOW stream-channel edges "
             "model local producer-consumer token availability without a "
-            "full-process barrier. Non-DATAFLOW local-buffer barrier edges "
+            "full-process barrier. Stream-channel capacity annotations use "
+            "csynth FIFO depth and loop II metadata to flag bounded-FIFO "
+            "backpressure risks without RTL waveform input. Non-DATAFLOW local-buffer barrier edges "
             "model widened producer-read groups that must complete before "
             "consumer write bursts are issued through the same local buffer."
         ),
@@ -445,6 +556,7 @@ def build_transaction_dependency_graph_from_logical(
             "logical_dependency_edges": len(logical_graph.get("dependencies", [])),
             "dynamic_memory_raw_edges": edge_counts.get("dynamic_memory_raw", 0),
             "stream_channel_edges": stream_channel_edges,
+            "stream_capacity_backpressure_edges": stream_capacity_backpressure_edges,
             "local_buffer_barrier_edges": local_buffer_barrier_edges,
             "value_flow_edges": sum(
                 count

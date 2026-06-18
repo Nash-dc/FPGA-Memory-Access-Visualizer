@@ -33,8 +33,8 @@
             <header size="7" col0="Function" col1="Location" col2="Compile/Link" col3="Unroll/Inline" col4="Array/Struct" col5="Performance" col6="HW Transforms"/>
             <rows>
                 <row id="0" col0="read_write" col1="read_write.cpp:44" col2="172" col3="94" col4="126" col5="134" col6="177">
-                    <row id="1" col0="read" col1="read_write.cpp:3" col2="60" col2_disp=" 60 (2 calls)" col3="38" col3_disp="38 (2 calls)" col4="51" col4_disp=" 51 (2 calls)" col5="55" col5_disp=" 55 (2 calls)" col6="73" col6_disp=" 73 (2 calls)"/>
-                    <row id="2" col0="write" col1="read_write.cpp:18" col2="78" col2_disp=" 78 (2 calls)" col3="38" col3_disp="38 (2 calls)" col4="56" col4_disp=" 56 (2 calls)" col5="60" col5_disp=" 60 (2 calls)" col6="80" col6_disp=" 80 (2 calls)"/>
+                    <row id="2" col0="read" col1="read_write.cpp:3" col2="60" col2_disp=" 60 (2 calls)" col3="38" col3_disp="38 (2 calls)" col4="51" col4_disp=" 51 (2 calls)" col5="55" col5_disp=" 55 (2 calls)" col6="73" col6_disp=" 73 (2 calls)"/>
+                    <row id="1" col0="write" col1="read_write.cpp:18" col2="78" col2_disp=" 78 (2 calls)" col3="38" col3_disp="38 (2 calls)" col4="56" col4_disp=" 56 (2 calls)" col5="60" col5_disp=" 60 (2 calls)" col6="80" col6_disp=" 80 (2 calls)"/>
                 </row>
             </rows>
             <notes/>

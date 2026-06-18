@@ -1,0 +1,236 @@
+
+
+================================================================
+== Synthesis Summary Report of 'read_write'
+================================================================
++ General Information: 
+    * Date:           Wed Jun 17 18:27:42 2026
+    * Version:        2025.1 (Build 6135595 on May 21 2025)
+    * Project:        component_read_write
+    * Solution:       hls (Vitis Kernel Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg400-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +-------------------------------------+---------+-------+---------+-----------+----------+---------+------+----------+----------+----+-----------+------------+-----+
+    |               Modules               |  Issue  |       |       Latency       | Iteration|         | Trip |          |          |    |           |            |     |
+    |               & Loops               |   Type  | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|   BRAM   | DSP|     FF    |     LUT    | URAM|
+    +-------------------------------------+---------+-------+---------+-----------+----------+---------+------+----------+----------+----+-----------+------------+-----+
+    |+ read_write*                        |   Timing|  -1.43|     4239|  2.153e+04|         -|     4096|     -|  dataflow|  58 (20%)|   -|  9795 (9%)|  9084 (17%)|    -|
+    | + read_r                            |   Timing|  -1.43|     1100|  5.586e+03|         -|     1024|     -|    rewind|         -|   -|  1597 (1%)|    933 (1%)|    -|
+    |  o VITIS_LOOP_9_1_VITIS_LOOP_11_2   |        -|   3.65|     1098|  5.576e+03|        76|        1|  1024|       yes|         -|   -|          -|           -|    -|
+    | + read_1                            |   Timing|  -1.43|     1100|  5.586e+03|         -|     1024|     -|    rewind|         -|   -|  1597 (1%)|    933 (1%)|    -|
+    |  o VITIS_LOOP_9_1_VITIS_LOOP_11_2   |        -|   3.65|     1098|  5.576e+03|        76|        1|  1024|       yes|         -|   -|          -|           -|    -|
+    | + write_r                           |        -|   0.00|     4166|  2.083e+04|         -|     4096|     -|    rewind|         -|   -|  1339 (1%)|   1561 (2%)|    -|
+    |  o VITIS_LOOP_24_1_VITIS_LOOP_26_2  |        -|   3.65|     4164|  2.082e+04|        73|        4|  1024|       yes|         -|   -|          -|           -|    -|
+    | + write_2                           |        -|   0.00|     4166|  2.083e+04|         -|     4096|     -|    rewind|         -|   -|  1339 (1%)|   1561 (2%)|    -|
+    |  o VITIS_LOOP_24_1_VITIS_LOOP_26_2  |        -|   3.65|     4164|  2.082e+04|        73|        4|  1024|       yes|         -|   -|          -|           -|    -|
+    +-------------------------------------+---------+-------+---------+-----------+----------+---------+------+----------+----------+----+-----------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++-------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| Interface   | Read/Write | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   | Resource Estimate |
+|             |            | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |                   |
++-------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| m_axi_mem_0 | READ_WRITE | 32 -> 512  | 64            | 64      | slave  | 0        | 512       | 16           | 16           | 16          | 16          | BRAM=29           |
+| m_axi_mem_1 | READ_WRITE | 32 -> 512  | 64            | 64      | slave  | 0        | 512       | 16           | 16           | 16          | 16          | BRAM=29           |
++-------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 6             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+-----------+--------+-------+--------+----------------------------------+------------------------------------------------------------------------------------+
+| Interface     | Register  | Offset | Width | Access | Description                      | Bit Fields                                                                         |
++---------------+-----------+--------+-------+--------+----------------------------------+------------------------------------------------------------------------------------+
+| s_axi_control | CTRL      | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 4=AP_CONTINUE 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER      | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                                           |
+| s_axi_control | IP_IER    | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                                      |
+| s_axi_control | IP_ISR    | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                                      |
+| s_axi_control | mem_0_r_1 | 0x10   | 32    | W      | Data signal of mem_0_r           |                                                                                    |
+| s_axi_control | mem_0_r_2 | 0x14   | 32    | W      | Data signal of mem_0_r           |                                                                                    |
+| s_axi_control | mem_1_r_1 | 0x1c   | 32    | W      | Data signal of mem_1_r           |                                                                                    |
+| s_axi_control | mem_1_r_2 | 0x20   | 32    | W      | Data signal of mem_1_r           |                                                                                    |
++---------------+-----------+--------+-------+--------+----------------------------------+------------------------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+---------------+-----------+
+| Interface | Type          | Ports     |
++-----------+---------------+-----------+
+| ap_clk    | clock         | ap_clk    |
+| ap_rst_n  | reset         | ap_rst_n  |
+| interrupt | interrupt     | interrupt |
+| ap_ctrl   | ap_ctrl_chain |           |
++-----------+---------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| mem_0    | inout     | int*     |
+| mem_1    | inout     | int*     |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+---------------+-----------+----------+-------------------------------------+
+| Argument | HW Interface  | HW Type   | HW Usage | HW Info                             |
++----------+---------------+-----------+----------+-------------------------------------+
+| mem_0    | m_axi_mem_0   | interface |          | channel=0                           |
+| mem_0    | s_axi_control | register  | offset   | name=mem_0_r_1 offset=0x10 range=32 |
+| mem_0    | s_axi_control | register  | offset   | name=mem_0_r_2 offset=0x14 range=32 |
+| mem_1    | m_axi_mem_1   | interface |          | channel=0                           |
+| mem_1    | s_axi_control | register  | offset   | name=mem_1_r_1 offset=0x1c range=32 |
+| mem_1    | s_axi_control | register  | offset   | name=mem_1_r_2 offset=0x20 range=32 |
++----------+---------------+-----------+----------+-------------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Burst Summary
++--------------+-----------+--------+-------+
+| HW Interface | Direction | Length | Width |
++--------------+-----------+--------+-------+
+| m_axi_mem_0  | read      | 8      | 512   |
+| m_axi_mem_0  | write     | 8      | 512   |
+| m_axi_mem_1  | read      | 8      | 512   |
+| m_axi_mem_1  | write     | 8      | 512   |
++--------------+-----------+--------+-------+
+
+* All M_AXI Variable Accesses
++-------------------+----------+----------------------+-----------+--------------+--------+-----------------+----------------------+------------+------------------------+
+| HW Interface      | Variable | Access Location      | Direction | Burst Status | Length | Loop            | Loop Location        | Resolution | Problem                |
++-------------------+----------+----------------------+-----------+--------------+--------+-----------------+----------------------+------------+------------------------+
+| m_axi_mem_0,mem_1 | mem      | read_write.cpp:13:13 | write     | Widened      | 8      | VITIS_LOOP_26_2 | read_write.cpp:26:22 |            |                        |
+| m_axi_mem_0,mem_1 | mem      | read_write.cpp:13:13 | read      | Widened      | 8      | VITIS_LOOP_11_2 | read_write.cpp:11:22 |            |                        |
+| m_axi_mem_0,mem_1 | mem      | read_write.cpp:13:13 | write     | Fail         |        | VITIS_LOOP_24_1 | read_write.cpp:24:20 | 214-230    | Stride is incompatible |
+| m_axi_mem_0,mem_1 | mem      | read_write.cpp:13:13 | read      | Fail         |        | VITIS_LOOP_9_1  | read_write.cpp:9:19  | 214-230    | Stride is incompatible |
+| m_axi_mem_0,mem_1 | mem      | read_write.cpp:13:13 | read      | Inferred     | 128    | VITIS_LOOP_11_2 | read_write.cpp:11:22 |            |                        |
+| m_axi_mem_0,mem_1 | mem      | read_write.cpp:28:13 | write     | Inferred     | 128    | VITIS_LOOP_26_2 | read_write.cpp:26:22 |            |                        |
++-------------------+----------+----------------------+-----------+--------------+--------+-----------------+----------------------+------------+------------------------+
+
+    * Resolution URL: docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=XXX-YYY.html (replace XXX-YYY with column value)
+
+================================================================
+== Bind Op Report
+================================================================
++----------------------------+-----+--------+---------------+--------+----------+---------+
+| Name                       | DSP | Pragma | Variable      | Op     | Impl     | Latency |
++----------------------------+-----+--------+---------------+--------+----------+---------+
+| + read_write               | 0   |        |               |        |          |         |
+|  + read_r                  | 0   |        |               |        |          |         |
+|    select_ln9_fu_240_p3    |     |        | select_ln9    | select | auto_sel | 0       |
+|    i_fu_248_p3             |     |        | i             | select | auto_sel | 0       |
+|    first_iter_0_fu_256_p2  |     |        | first_iter_0  | seteq  | auto     | 0       |
+|    add_ln10_fu_278_p2      |     |        | add_ln10      | add    | fabric   | 0       |
+|    add_ln9_2_fu_211_p2     |     |        | add_ln9_2     | add    | fabric   | 0       |
+|    select_ln9_4_fu_349_p3  |     |        | select_ln9_4  | select | auto_sel | 0       |
+|    icmp_ln13_fu_297_p2     |     |        | icmp_ln13     | seteq  | auto     | 0       |
+|    j_fu_303_p2             |     |        | j             | add    | fabric   | 0       |
+|    icmp_ln11_fu_309_p2     |     |        | icmp_ln11     | seteq  | auto     | 0       |
+|    add_ln9_fu_315_p2       |     |        | add_ln9       | add    | fabric   | 0       |
+|    icmp_ln9_fu_220_p2      |     |        | icmp_ln9      | seteq  | auto     | 0       |
+|  + read_1                  | 0   |        |               |        |          |         |
+|    select_ln9_fu_242_p3    |     |        | select_ln9    | select | auto_sel | 0       |
+|    i_fu_250_p3             |     |        | i             | select | auto_sel | 0       |
+|    first_iter_0_fu_258_p2  |     |        | first_iter_0  | seteq  | auto     | 0       |
+|    add_ln10_fu_280_p2      |     |        | add_ln10      | add    | fabric   | 0       |
+|    add_ln9_1_fu_213_p2     |     |        | add_ln9_1     | add    | fabric   | 0       |
+|    select_ln9_2_fu_351_p3  |     |        | select_ln9_2  | select | auto_sel | 0       |
+|    icmp_ln13_fu_299_p2     |     |        | icmp_ln13     | seteq  | auto     | 0       |
+|    j_fu_305_p2             |     |        | j             | add    | fabric   | 0       |
+|    icmp_ln11_fu_311_p2     |     |        | icmp_ln11     | seteq  | auto     | 0       |
+|    add_ln9_fu_317_p2       |     |        | add_ln9       | add    | fabric   | 0       |
+|    icmp_ln9_fu_222_p2      |     |        | icmp_ln9      | seteq  | auto     | 0       |
+|  + write_r                 | 0   |        |               |        |          |         |
+|    select_ln24_fu_240_p3   |     |        | select_ln24   | select | auto_sel | 0       |
+|    i_fu_222_p3             |     |        | i             | select | auto_sel | 0       |
+|    first_iter_0_fu_248_p2  |     |        | first_iter_0  | seteq  | auto     | 0       |
+|    add_ln25_fu_267_p2      |     |        | add_ln25      | add    | fabric   | 0       |
+|    add_ln24_2_fu_326_p2    |     |        | add_ln24_2    | add    | fabric   | 0       |
+|    icmp_ln28_fu_287_p2     |     |        | icmp_ln28     | seteq  | auto     | 0       |
+|    select_ln24_4_fu_335_p3 |     |        | select_ln24_4 | select | auto_sel | 0       |
+|    j_fu_293_p2             |     |        | j             | add    | fabric   | 0       |
+|    select_ln28_fu_389_p3   |     |        | select_ln28   | select | auto_sel | 0       |
+|    icmp_ln26_fu_343_p2     |     |        | icmp_ln26     | seteq  | auto     | 0       |
+|    add_ln24_fu_299_p2      |     |        | add_ln24      | add    | fabric   | 0       |
+|    icmp_ln24_fu_351_p2     |     |        | icmp_ln24     | seteq  | auto     | 0       |
+|  + write_2                 | 0   |        |               |        |          |         |
+|    select_ln24_fu_242_p3   |     |        | select_ln24   | select | auto_sel | 0       |
+|    i_fu_224_p3             |     |        | i             | select | auto_sel | 0       |
+|    first_iter_0_fu_250_p2  |     |        | first_iter_0  | seteq  | auto     | 0       |
+|    add_ln25_fu_269_p2      |     |        | add_ln25      | add    | fabric   | 0       |
+|    add_ln24_1_fu_328_p2    |     |        | add_ln24_1    | add    | fabric   | 0       |
+|    icmp_ln28_fu_289_p2     |     |        | icmp_ln28     | seteq  | auto     | 0       |
+|    select_ln24_2_fu_337_p3 |     |        | select_ln24_2 | select | auto_sel | 0       |
+|    j_fu_295_p2             |     |        | j             | add    | fabric   | 0       |
+|    select_ln28_fu_391_p3   |     |        | select_ln28   | select | auto_sel | 0       |
+|    icmp_ln26_fu_345_p2     |     |        | icmp_ln26     | seteq  | auto     | 0       |
+|    add_ln24_fu_301_p2      |     |        | add_ln24      | add    | fabric   | 0       |
+|    icmp_ln24_fu_353_p2     |     |        | icmp_ln24     | seteq  | auto     | 0       |
++----------------------------+-----+--------+---------------+--------+----------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++-------------------+--------------+-------------+------+------+--------+-----------+------+---------+------------------+
+| Name              | Usage        | Type        | BRAM | URAM | Pragma | Variable  | Impl | Latency | Bitwidth, Depth, |
+|                   |              |             |      |      |        |           |      |         | Banks            |
++-------------------+--------------+-------------+------+------+--------+-----------+------+---------+------------------+
+| + read_write      |              |             | 58   | 0    |        |           |      |         |                  |
+|   control_s_axi_U | interface    | s_axilite   |      |      |        |           |      |         |                  |
+|   mem_0_m_axi_U   | interface    | m_axi       | 29   |      |        |           |      |         |                  |
+|   mem_1_m_axi_U   | interface    | m_axi       | 29   |      |        |           |      |         |                  |
+|   stream_U        | fifo channel | stream      |      |      |        | stream    | srl  | 0       | 32, 2, 1         |
+|   mem_0_r_c_U     | fifo channel | scalar prop |      |      |        | mem_0_r_c | srl  | 0       | 64, 2, 1         |
+|   stream_1_U      | fifo channel | stream      |      |      |        | stream_1  | srl  | 0       | 32, 2, 1         |
+|   mem_1_r_c_U     | fifo channel | scalar prop |      |      |        | mem_1_r_c | srl  | 0       | 64, 2, 1         |
++-------------------+--------------+-------------+------+------+--------+-----------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Pragmas with Warnings
++----------+---------+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Type     | Options | Location                       | Messages                                                                                                                                                                           |
++----------+---------+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| DATAFLOW |         | read_write.cpp:70 in read_only | Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region |
++----------+---------+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+* Valid Pragma Syntax
++-----------+------------------------------------------+----------------------------------------+
+| Type      | Options                                  | Location                               |
++-----------+------------------------------------------+----------------------------------------+
+| PIPELINE  | ii=1                                     | read_write.cpp:12 in read              |
+| PIPELINE  | ii=4                                     | read_write.cpp:27 in write             |
+| PIPELINE  | ii=1                                     | read_write.cpp:39 in sum               |
+| INTERFACE | m_axi port=mem_0 bundle=mem_0 depth=4096 | read_write.cpp:49 in read_write, mem_0 |
+| INTERFACE | m_axi port=mem_1 bundle=mem_1 depth=4096 | read_write.cpp:50 in read_write, mem_1 |
+| DATAFLOW  |                                          | read_write.cpp:52 in read_write        |
+| INTERFACE | m_axi port=mem_0 bundle=mem_0 depth=4096 | read_write.cpp:66 in read_only, mem_0  |
+| INTERFACE | m_axi port=mem_1 bundle=mem_1 depth=4096 | read_write.cpp:67 in read_only, mem_1  |
+| INTERFACE | s_axilite port=res                       | read_write.cpp:68 in read_only, res    |
+| PIPELINE  | ii=1                                     | read_write.cpp:73 in read_only         |
+| PIPELINE  | ii=1                                     | read_write.cpp:77 in read_only         |
++-----------+------------------------------------------+----------------------------------------+
+
+

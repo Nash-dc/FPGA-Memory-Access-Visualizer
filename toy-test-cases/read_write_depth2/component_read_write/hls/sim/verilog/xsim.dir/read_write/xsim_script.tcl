@@ -1,0 +1,1 @@
+xsim {read_write} -testplusarg UVM_VERBOSITY=UVM_NONE -testplusarg UVM_TESTNAME=read_write_test_lib -testplusarg UVM_TIMEOUT=20000000000000 -view {{read_write_dataflow_ana.wcfg}} -tclbatch {read_write.tcl} -protoinst {read_write.protoinst}

@@ -1,0 +1,665 @@
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: read_write.cpp, Line: 57, Column: 3 }
+Function:        read_write
+Args:            
+  - Callee:          'write(int*, int, hls::stream<int, 0>&)'
+    DebugLoc:        { File: read_write.cpp, Line: 23, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          read_write
+    DebugLoc:        { File: read_write.cpp, Line: 48, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: read_write.cpp, Line: 54, Column: 3 }
+Function:        read_write
+Args:            
+  - Callee:          'read(int*, int, hls::stream<int, 0>&)'
+    DebugLoc:        { File: read_write.cpp, Line: 8, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          read_write
+    DebugLoc:        { File: read_write.cpp, Line: 48, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: read_write.cpp, Line: 54, Column: 3 }
+Function:        read_write
+Args:            
+  - Callee:          'read(int*, int, hls::stream<int, 0>&)'
+    DebugLoc:        { File: read_write.cpp, Line: 8, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          read_write
+    DebugLoc:        { File: read_write.cpp, Line: 48, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: read_write.cpp, Line: 56, Column: 3 }
+Function:        read_write
+Args:            
+  - Callee:          'write(int*, int, hls::stream<int, 0>&)'
+    DebugLoc:        { File: read_write.cpp, Line: 23, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          read_write
+    DebugLoc:        { File: read_write.cpp, Line: 48, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+Function:        apatb_read_write_ir
+Args:            
+  - Callee:          read_write
+    DebugLoc:        { File: read_write.cpp, Line: 48, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          apatb_read_write_ir
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: read_write.cpp, Line: 53, Column: 21 }
+Function:        read_write
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          stream
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: read_write.cpp, Line: 11, Column: 22 }
+Function:        _Z4readPiiRN3hls6streamIiLi0EEE.9
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '128'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgepseq
+  - ArrayName:       mem
+  - String:          ' '
+  - BundleName:      mem_0,mem_1
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_11_2
+  - String:          ' '
+  - LoopLoc:         'read_write.cpp:11:22'
+  - String:          ' '
+  - Function:        'read(int*, int, hls::stream<int, 0>&) (.9)'
+    DebugLoc:        { File: read_write.cpp, Line: 8, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: read_write.cpp, Line: 13, Column: 13 }
+  - OrigDirection:   read
+  - OrigID:          for.inc.load.5
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+DebugLoc:        { File: read_write.cpp, Line: 11, Column: 22 }
+Function:        _Z4readPiiRN3hls6streamIiLi0EEE.9
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: read_write.cpp, Line: 11, Column: 22 }
+  - OrigDirection:   read
+  - OrigID:          scevgepseq
+  - ArrayName:       mem
+  - String:          ' '
+  - BundleName:      mem_0,mem_1
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_9_1
+  - String:          ' '
+  - LoopLoc:         'read_write.cpp:9:19'
+  - String:          ' '
+  - Function:        'read(int*, int, hls::stream<int, 0>&) (.9)'
+    DebugLoc:        { File: read_write.cpp, Line: 8, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: read_write.cpp, Line: 11, Column: 22 }
+Function:        _Z4readPiiRN3hls6streamIiLi0EEE
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '128'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgepseq
+  - ArrayName:       mem
+  - String:          ' '
+  - BundleName:      mem_0,mem_1
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_11_2
+  - String:          ' '
+  - LoopLoc:         'read_write.cpp:11:22'
+  - String:          ' '
+  - Function:        'read(int*, int, hls::stream<int, 0>&)'
+    DebugLoc:        { File: read_write.cpp, Line: 8, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: read_write.cpp, Line: 13, Column: 13 }
+  - OrigDirection:   read
+  - OrigID:          for.inc.load.5
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+DebugLoc:        { File: read_write.cpp, Line: 11, Column: 22 }
+Function:        _Z4readPiiRN3hls6streamIiLi0EEE
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: read_write.cpp, Line: 11, Column: 22 }
+  - OrigDirection:   read
+  - OrigID:          scevgepseq
+  - ArrayName:       mem
+  - String:          ' '
+  - BundleName:      mem_0,mem_1
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_9_1
+  - String:          ' '
+  - LoopLoc:         'read_write.cpp:9:19'
+  - String:          ' '
+  - Function:        'read(int*, int, hls::stream<int, 0>&)'
+    DebugLoc:        { File: read_write.cpp, Line: 8, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: read_write.cpp, Line: 26, Column: 22 }
+Function:        _Z5writePiiRN3hls6streamIiLi0EEE.10
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of length '
+  - Length:          '128'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgepseq
+  - ArrayName:       mem
+  - String:          ' '
+  - BundleName:      mem_0,mem_1
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_26_2
+  - String:          ' '
+  - LoopLoc:         'read_write.cpp:26:22'
+  - String:          ' '
+  - Function:        'write(int*, int, hls::stream<int, 0>&) (.10)'
+    DebugLoc:        { File: read_write.cpp, Line: 23, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: read_write.cpp, Line: 28, Column: 13 }
+  - OrigDirection:   write
+  - OrigID:          for.inc.store.6
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+DebugLoc:        { File: read_write.cpp, Line: 26, Column: 22 }
+Function:        _Z5writePiiRN3hls6streamIiLi0EEE.10
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: read_write.cpp, Line: 26, Column: 22 }
+  - OrigDirection:   write
+  - OrigID:          scevgepseq
+  - ArrayName:       mem
+  - String:          ' '
+  - BundleName:      mem_0,mem_1
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_24_1
+  - String:          ' '
+  - LoopLoc:         'read_write.cpp:24:20'
+  - String:          ' '
+  - Function:        'write(int*, int, hls::stream<int, 0>&) (.10)'
+    DebugLoc:        { File: read_write.cpp, Line: 23, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: read_write.cpp, Line: 26, Column: 22 }
+Function:        _Z5writePiiRN3hls6streamIiLi0EEE
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of length '
+  - Length:          '128'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgepseq
+  - ArrayName:       mem
+  - String:          ' '
+  - BundleName:      mem_0,mem_1
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_26_2
+  - String:          ' '
+  - LoopLoc:         'read_write.cpp:26:22'
+  - String:          ' '
+  - Function:        'write(int*, int, hls::stream<int, 0>&)'
+    DebugLoc:        { File: read_write.cpp, Line: 23, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: read_write.cpp, Line: 28, Column: 13 }
+  - OrigDirection:   write
+  - OrigID:          for.inc.store.6
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+DebugLoc:        { File: read_write.cpp, Line: 26, Column: 22 }
+Function:        _Z5writePiiRN3hls6streamIiLi0EEE
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: read_write.cpp, Line: 26, Column: 22 }
+  - OrigDirection:   write
+  - OrigID:          scevgepseq
+  - ArrayName:       mem
+  - String:          ' '
+  - BundleName:      mem_0,mem_1
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_24_1
+  - String:          ' '
+  - LoopLoc:         'read_write.cpp:24:20'
+  - String:          ' '
+  - Function:        'write(int*, int, hls::stream<int, 0>&)'
+    DebugLoc:        { File: read_write.cpp, Line: 23, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-widen
+Name:            BurstWidened
+DebugLoc:        { File: read_write.cpp, Line: 11, Column: 22 }
+Function:        _Z4readPiiRN3hls6streamIiLi0EEE.9
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of '
+  - OrigLength:      '128'
+  - String:          ' x '
+  - OrigWords:       '32'
+  - String:          'bit words has been widened by '
+  - Factor:          '16'
+  - String:          ': '
+  - Length:          '8'
+  - String:          ' x '
+  - Words:           '512'
+  - String:          bit words
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: read_write.cpp, Line: 11, Column: 22 }
+  - OrigDirection:   read
+  - OrigID:          scevgepseq
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        wseq
+  - ArrayName:       mem
+  - String:          ' '
+  - BundleName:      mem_0,mem_1
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_11_2
+  - String:          ' '
+  - LoopLoc:         'read_write.cpp:11:22'
+  - String:          ' '
+  - Function:        'read(int*, int, hls::stream<int, 0>&) (.9)'
+    DebugLoc:        { File: read_write.cpp, Line: 8, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-widen
+Name:            BurstWidened
+DebugLoc:        { File: read_write.cpp, Line: 11, Column: 22 }
+Function:        _Z4readPiiRN3hls6streamIiLi0EEE
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of '
+  - OrigLength:      '128'
+  - String:          ' x '
+  - OrigWords:       '32'
+  - String:          'bit words has been widened by '
+  - Factor:          '16'
+  - String:          ': '
+  - Length:          '8'
+  - String:          ' x '
+  - Words:           '512'
+  - String:          bit words
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: read_write.cpp, Line: 11, Column: 22 }
+  - OrigDirection:   read
+  - OrigID:          scevgepseq
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        wseq
+  - ArrayName:       mem
+  - String:          ' '
+  - BundleName:      mem_0,mem_1
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_11_2
+  - String:          ' '
+  - LoopLoc:         'read_write.cpp:11:22'
+  - String:          ' '
+  - Function:        'read(int*, int, hls::stream<int, 0>&)'
+    DebugLoc:        { File: read_write.cpp, Line: 8, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-widen
+Name:            BurstWidened
+DebugLoc:        { File: read_write.cpp, Line: 26, Column: 22 }
+Function:        _Z5writePiiRN3hls6streamIiLi0EEE.10
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of '
+  - OrigLength:      '128'
+  - String:          ' x '
+  - OrigWords:       '32'
+  - String:          'bit words has been widened by '
+  - Factor:          '16'
+  - String:          ': '
+  - Length:          '8'
+  - String:          ' x '
+  - Words:           '512'
+  - String:          bit words
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: read_write.cpp, Line: 26, Column: 22 }
+  - OrigDirection:   write
+  - OrigID:          scevgepseq
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        wseq
+  - ArrayName:       mem
+  - String:          ' '
+  - BundleName:      mem_0,mem_1
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_26_2
+  - String:          ' '
+  - LoopLoc:         'read_write.cpp:26:22'
+  - String:          ' '
+  - Function:        'write(int*, int, hls::stream<int, 0>&) (.10)'
+    DebugLoc:        { File: read_write.cpp, Line: 23, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-widen
+Name:            BurstWidened
+DebugLoc:        { File: read_write.cpp, Line: 26, Column: 22 }
+Function:        _Z5writePiiRN3hls6streamIiLi0EEE
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of '
+  - OrigLength:      '128'
+  - String:          ' x '
+  - OrigWords:       '32'
+  - String:          'bit words has been widened by '
+  - Factor:          '16'
+  - String:          ': '
+  - Length:          '8'
+  - String:          ' x '
+  - Words:           '512'
+  - String:          bit words
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: read_write.cpp, Line: 26, Column: 22 }
+  - OrigDirection:   write
+  - OrigID:          scevgepseq
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        wseq
+  - ArrayName:       mem
+  - String:          ' '
+  - BundleName:      mem_0,mem_1
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_26_2
+  - String:          ' '
+  - LoopLoc:         'read_write.cpp:26:22'
+  - String:          ' '
+  - Function:        'write(int*, int, hls::stream<int, 0>&)'
+    DebugLoc:        { File: read_write.cpp, Line: 23, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: read_write.cpp, Line: 11, Column: 22 }
+Function:        _Z4readPiiRN3hls6streamIiLi0EEE.9.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '8'
+  - String:          ' and bit width '
+  - Width:           '512'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      mem_0
+  - String:          ' '
+  - Function:        'read(int*, int, hls::stream<int, 0>&) (.9.1)'
+    DebugLoc:        { File: read_write.cpp, Line: 8, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: read_write.cpp, Line: 11, Column: 22 }
+Function:        _Z4readPiiRN3hls6streamIiLi0EEE.9.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '8'
+  - String:          ' and bit width '
+  - Width:           '512'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      mem_0
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: read_write.cpp, Line: 11, Column: 22 }
+Function:        _Z4readPiiRN3hls6streamIiLi0EEE.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '8'
+  - String:          ' and bit width '
+  - Width:           '512'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      mem_1
+  - String:          ' '
+  - Function:        'read(int*, int, hls::stream<int, 0>&) (.1)'
+    DebugLoc:        { File: read_write.cpp, Line: 8, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: read_write.cpp, Line: 11, Column: 22 }
+Function:        _Z4readPiiRN3hls6streamIiLi0EEE.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '8'
+  - String:          ' and bit width '
+  - Width:           '512'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      mem_1
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: read_write.cpp, Line: 26, Column: 22 }
+Function:        _Z5writePiiRN3hls6streamIiLi0EEE.10.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '8'
+  - String:          ' and bit width '
+  - Width:           '512'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      mem_0
+  - String:          ' '
+  - Function:        'write(int*, int, hls::stream<int, 0>&) (.10.1)'
+    DebugLoc:        { File: read_write.cpp, Line: 23, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: read_write.cpp, Line: 26, Column: 22 }
+Function:        _Z5writePiiRN3hls6streamIiLi0EEE.10.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '8'
+  - String:          ' and bit width '
+  - Width:           '512'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      mem_0
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: read_write.cpp, Line: 26, Column: 22 }
+Function:        _Z5writePiiRN3hls6streamIiLi0EEE.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '8'
+  - String:          ' and bit width '
+  - Width:           '512'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      mem_1
+  - String:          ' '
+  - Function:        'write(int*, int, hls::stream<int, 0>&) (.1)'
+    DebugLoc:        { File: read_write.cpp, Line: 23, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: read_write.cpp, Line: 26, Column: 22 }
+Function:        _Z5writePiiRN3hls6streamIiLi0EEE.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '8'
+  - String:          ' and bit width '
+  - Width:           '512'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      mem_1
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: read_write.cpp, Line: 54, Column: 3 }
+Function:        read_write
+Args:            
+  - Callee:          'read(int*, int, hls::stream<int, 0>&) (.9.1)'
+    DebugLoc:        { File: read_write.cpp, Line: 8, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          read_write
+    DebugLoc:        { File: read_write.cpp, Line: 48, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: read_write.cpp, Line: 55, Column: 3 }
+Function:        read_write
+Args:            
+  - Callee:          'read(int*, int, hls::stream<int, 0>&) (.1)'
+    DebugLoc:        { File: read_write.cpp, Line: 8, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          read_write
+    DebugLoc:        { File: read_write.cpp, Line: 48, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: read_write.cpp, Line: 56, Column: 3 }
+Function:        read_write
+Args:            
+  - Callee:          'write(int*, int, hls::stream<int, 0>&) (.10.1)'
+    DebugLoc:        { File: read_write.cpp, Line: 23, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          read_write
+    DebugLoc:        { File: read_write.cpp, Line: 48, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: read_write.cpp, Line: 57, Column: 3 }
+Function:        read_write
+Args:            
+  - Callee:          'write(int*, int, hls::stream<int, 0>&) (.1)'
+    DebugLoc:        { File: read_write.cpp, Line: 23, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          read_write
+    DebugLoc:        { File: read_write.cpp, Line: 48, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...

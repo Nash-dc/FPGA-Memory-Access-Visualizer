@@ -1,0 +1,67 @@
+---
+MainSourceFile:  /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_9_1:  '
+    FileOffset:      9
+    FilePath:        read_write.cpp
+    Replacements:    
+      - FilePath:        /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp
+        Offset:          13581
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_9_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_11_2:  '
+    FileOffset:      11
+    FilePath:        read_write.cpp
+    Replacements:    
+      - FilePath:        /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp
+        Offset:          13657
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_11_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_24_1:  '
+    FileOffset:      24
+    FilePath:        read_write.cpp
+    Replacements:    
+      - FilePath:        /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp
+        Offset:          13854
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_24_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_26_2:  '
+    FileOffset:      26
+    FilePath:        read_write.cpp
+    Replacements:    
+      - FilePath:        /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp
+        Offset:          13930
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_26_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_38_1:  '
+    FileOffset:      38
+    FilePath:        read_write.cpp
+    Replacements:    
+      - FilePath:        /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp
+        Offset:          14097
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_38_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_72_1:  '
+    FileOffset:      72
+    FilePath:        read_write.cpp
+    Replacements:    
+      - FilePath:        /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp
+        Offset:          15052
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_72_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_76_2:  '
+    FileOffset:      76
+    FilePath:        read_write.cpp
+    Replacements:    
+      - FilePath:        /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp
+        Offset:          15144
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_76_2: '
+...

@@ -1,0 +1,13 @@
+<pragmas>
+<pragma file="read_write.cpp" line="12" pragmaType="pipeline" parentfunction="read" off="0" ii="1" rewind="0" style=""/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="hls::stream<int, 0>::stream()" off="0" region="0" recursive="0"/>
+<pragma file="read_write.cpp" line="52" pragmaType="dataflow" parentfunction="read_write" disable_start_propagation="0"/>
+<pragma file="read_write.cpp" line="49" pragmaType="interface" parentfunction="read_write" mode="m_axi" port="mem_0" bundle="mem_0" offset="" name="" depth="4096" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="read_write.cpp" line="50" pragmaType="interface" parentfunction="read_write" mode="m_axi" port="mem_1" bundle="mem_1" offset="" name="" depth="4096" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="write" off="0" region="0" recursive="0"/>
+<pragma file="read_write.cpp" line="27" pragmaType="pipeline" parentfunction="write" off="0" ii="4" rewind="0" style=""/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="hls::stream<int, 2>::stream()" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="stream" parentfunction="hls::stream<int, 2>::stream()" depth="2" type="fifo" variable="this"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="read" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="read" off="0" region="0" recursive="0"/>
+</pragmas>

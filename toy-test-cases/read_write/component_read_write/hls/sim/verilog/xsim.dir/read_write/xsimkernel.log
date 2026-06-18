@@ -1,7 +1,7 @@
-Running: xsim.dir/read_write/xsimk -simmode gui -testplusarg UVM_VERBOSITY=UVM_NONE -testplusarg UVM_TESTNAME=read_write_test_lib -testplusarg UVM_TIMEOUT=20000000000000 -wdb read_write.wdb -simrunnum 0 -socket 48257
+Running: xsim.dir/read_write/xsimk -simmode gui -testplusarg UVM_VERBOSITY=UVM_NONE -testplusarg UVM_TESTNAME=read_write_test_lib -testplusarg UVM_TIMEOUT=20000000000000 -wdb read_write.wdb -simrunnum 0 -socket 46915
 Design successfully loaded
 Design Loading Memory Usage: 205544 KB (Peak: 205544 KB)
-Design Loading CPU Usage: 850 ms
+Design Loading CPU Usage: 810 ms
 Simulation completed
 Simulation Memory Usage: 304456 KB (Peak: 344812 KB)
-Simulation CPU Usage: 1380 ms
+Simulation CPU Usage: 1310 ms

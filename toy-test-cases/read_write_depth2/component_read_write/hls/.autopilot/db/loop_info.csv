@@ -1,0 +1,4 @@
+read_U0,VITIS_LOOP_9_1_VITIS_LOOP_11_2,upc_loop_status1.csv
+read_1_U0,VITIS_LOOP_9_1_VITIS_LOOP_11_2,upc_loop_status2.csv
+write_U0,VITIS_LOOP_24_1_VITIS_LOOP_26_2,upc_loop_status3.csv
+write_2_U0,VITIS_LOOP_24_1_VITIS_LOOP_26_2,upc_loop_status4.csv

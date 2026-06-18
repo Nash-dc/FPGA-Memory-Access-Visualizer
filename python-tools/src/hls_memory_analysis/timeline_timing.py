@@ -330,6 +330,34 @@ def write_timing_estimate(transaction, csynth, pipeline, has_dependencies):
     }
 
 
+def stream_capacity_backpressure_by_producer(detailed_dependencies):
+    result = defaultdict(list)
+    for dependencies in detailed_dependencies.values():
+        for dependency in dependencies:
+            if dependency.get("kind") != "stream_channel":
+                continue
+            capacity = dependency.get("capacity_constraint", {})
+            if not capacity.get("backpressure_expected"):
+                continue
+            source = dependency.get("source_transaction_id", "")
+            if source:
+                result[source].append(capacity)
+    return result
+
+
+def backpressure_limited_order_slots(transaction, constraints):
+    tokens = max(1, _integer(transaction.get("element_count"), 1))
+    slots = []
+    for constraint in constraints:
+        depth = max(0, _integer(constraint.get("fifo_static_depth"), 0))
+        producer_ii = max(1, _integer(constraint.get("producer_loop_ii"), 1))
+        consumer_ii = max(1, _integer(constraint.get("consumer_loop_ii"), 1))
+        prefix = min(tokens, depth) * producer_ii
+        throttled = max(0, tokens - depth) * consumer_ii
+        slots.append(prefix + throttled)
+    return max(slots) if slots else 0
+
+
 def annotate_transaction_timing(transactions, dependency_graph, csynth=None):
     """Estimate request and completion order without inventing data edges.
 
@@ -340,6 +368,9 @@ def annotate_transaction_timing(transactions, dependency_graph, csynth=None):
     """
     dependencies = dependency_sources(dependency_graph)
     detailed_dependencies = dependency_details(dependency_graph)
+    producer_backpressure = stream_capacity_backpressure_by_producer(
+        detailed_dependencies
+    )
     timeline_predecessors = timeline_order_predecessors(transactions)
     csynth = csynth or {}
     dataflow_enabled = bool(csynth.get("dataflow", {}).get("enabled"))
@@ -388,13 +419,10 @@ def annotate_transaction_timing(transactions, dependency_graph, csynth=None):
                 for dependency in detailed_dependencies.get(txn_id, [])
                 if dependency.get("kind") == "stream_channel"
             }
-            non_stream_sources = [
-                source for source in sources if source not in stream_sources
-            ]
             dependency_ready = max(
                 (
                     completed[source]["complete_order"] + 1
-                    for source in non_stream_sources
+                    for source in sources
                 ),
                 default=0,
             )
@@ -409,37 +437,23 @@ def annotate_transaction_timing(transactions, dependency_graph, csynth=None):
                     transaction, csynth, pipeline, bool(sources)
                 )
                 if stream_sources:
-                    loop_ii = max(1, timing_model.get("loop_ii") or 1)
-                    first_beat_tokens = max(
-                        1,
-                        _integer(
-                            transaction.get("axi", {}).get(
-                                "source_elements_per_beat"
-                            ),
-                            1,
-                        ),
-                    )
-                    first_consumer_ready_cycles = first_beat_tokens * loop_ii
-                    stream_ready = max(
-                        (
-                            completed[source]["issue_order"]
-                            + first_consumer_ready_cycles
-                            for source in stream_sources
-                            if source in completed
-                        ),
-                        default=0,
-                    )
-                    dependency_ready = max(dependency_ready, stream_ready)
                     ready_delay = 0
+                    timing_model["stream_consumer_cycles"] = timing_model[
+                        "burst_formation_cycles"
+                    ]
+                    timing_model["minimum_issue_spacing"] = timing_model[
+                        "axi_transfer_cycles"
+                    ]
+                    timing_model["formula"] = (
+                        "DATAFLOW stream write request issue spacing: "
+                        "axi_beat_count; consumer loop II is recorded as "
+                        "stream_consumer_cycles"
+                    )
                     timing_model["stream_dependency_model"] = (
-                        "producer-consumer FIFO: write burst waits only for "
-                        "the first AXI-beat-sized token group from the matching "
-                        "producer transaction, not for the full producer "
+                        "producer-consumer FIFO transaction block: write "
+                        "request waits for the matching producer read "
                         "transaction to complete"
                     )
-                    timing_model[
-                        "first_consumer_ready_cycles"
-                    ] = first_consumer_ready_cycles
                 else:
                     ready_delay = (
                         timing_model["pipeline_fill_cycles"]
@@ -473,6 +487,30 @@ def annotate_transaction_timing(transactions, dependency_graph, csynth=None):
                         "confidence": "estimated_from_csynth_dataflow_and_ir_trace",
                         "is_cycle_accurate": False,
                     }
+                    capacity_constraints = producer_backpressure.get(txn_id, [])
+                    if capacity_constraints:
+                        limited_slots = backpressure_limited_order_slots(
+                            transaction, capacity_constraints
+                        )
+                        if limited_slots > token_block_cycles:
+                            timing_model["minimum_issue_spacing"] = limited_slots
+                            timing_model[
+                                "transaction_complete_cycles"
+                            ] = limited_slots
+                            timing_model[
+                                "backpressure_limited_order_slots"
+                            ] = limited_slots
+                            timing_model[
+                                "stream_backpressure_model"
+                            ] = (
+                                "bounded FIFO backpressure: producer read "
+                                "transaction ordering is throttled by downstream "
+                                "consumer loop rate; this is a relative estimate, "
+                                "not an RTL cycle count"
+                            )
+                            timing_model[
+                                "stream_capacity_constraints"
+                            ] = capacity_constraints
                     ready_delay = 0
                 else:
                     timing_model = {

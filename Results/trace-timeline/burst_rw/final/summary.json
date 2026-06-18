@@ -53,7 +53,7 @@
       ],
       "fifos": []
     },
-    "interpretation": "II=1 permits consecutive read-request issue when addresses are sequential and the AXI master supports outstanding requests. For DATAFLOW regions, independent process lanes may overlap. Stream-channel dependencies delay each consumer transaction only until the matching producer token block is available; they do not create a full read-process to write-process barrier."
+    "interpretation": "II=1 permits consecutive read-request issue when addresses are sequential and the AXI master supports outstanding requests. For DATAFLOW regions, independent process lanes may overlap. Stream-channel dependencies delay each consumer transaction until the matching producer transaction block is available. When csynth reports a bounded FIFO and the producer loop II is smaller than the consumer loop II, capacity annotations flag producer backpressure risk."
   },
   "data_width_bits": 32,
   "element_width_bits": 32,
