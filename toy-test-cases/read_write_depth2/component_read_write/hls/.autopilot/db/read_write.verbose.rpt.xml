@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'read_write'" level="0">
-<item name = "Date">Wed Jun 17 18:27:42 2026
+<item name = "Date">Thu Jun 18 23:21:20 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">component_read_write</item>
@@ -53,12 +53,12 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, 0, 16, -</column>
 <column name="FIFO">-, -, 396, 272, -</column>
-<column name="Instance">58, -, 9394, 8774, -</column>
+<column name="Instance">0, -, 9274, 8756, -</column>
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, 0, 18, -</column>
 <column name="Register">-, -, 5, -, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
-<specialColumn name="Utilization (%)">20, 0, 9, 17, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, 9, 17, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
@@ -66,8 +66,8 @@
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="control_s_axi_U">control_s_axi, 0, 0, 176, 296, 0</column>
-<column name="mem_0_m_axi_U">mem_0_m_axi, 29, 0, 1673, 1747, 0</column>
-<column name="mem_1_m_axi_U">mem_1_m_axi, 29, 0, 1673, 1747, 0</column>
+<column name="mem_0_m_axi_U">mem_0_m_axi, 0, 0, 1613, 1738, 0</column>
+<column name="mem_1_m_axi_U">mem_1_m_axi, 0, 0, 1613, 1738, 0</column>
 <column name="read_1_U0">read_1, 0, 0, 1597, 933, 0</column>
 <column name="read_U0">read_r, 0, 0, 1597, 933, 0</column>
 <column name="write_2_U0">write_2, 0, 0, 1339, 1559, 0</column>

@@ -156,11 +156,8 @@ def _append_stream_channel_dependencies(blocks_by_id, ordered, csynth):
 
     HLS reports expose dataflow and FIFO processes, but they do not always map
     FIFO instances back to LLVM memory transactions. The conservative fallback
-    here pairs read/write bursts on the same top-level port by their local burst
-    ordinal. RTL cosimulation for these inferred transaction blocks shows that
-    the matched consumer write request is issued after the producer read
-    transaction completes, so the edge uses source-transaction-complete
-    readiness.
+    pairs read/write bursts on the same top-level port by local burst ordinal
+    and marks the consumer ready after the producer transaction completes.
     """
     reads_by_port = defaultdict(list)
     writes_by_port = defaultdict(list)
@@ -266,7 +263,7 @@ def _same_loop_index(source, target):
     )
 
 
-def _dedupe_shortest_barrier_paths(pairs):
+def _shortest_access_pairs(pairs):
     shortest = {}
     for pair in pairs:
         key = (pair["source_access_id"], pair["target_access_id"])
@@ -278,16 +275,7 @@ def _dedupe_shortest_barrier_paths(pairs):
     return list(shortest.values())
 
 
-def _find_local_buffer_barrier_pairs(report, csynth):
-    """Find non-DATAFLOW read->local-buffer->write phase barriers.
-
-    DATAFLOW stream channels can overlap at token granularity, so this rule is
-    deliberately disabled there. For a single pipelined loop that reads from an
-    off-chip port, updates a local array, then writes another off-chip port
-    through that same local array, Vitis may materialize the widened AXI bursts
-    as a read phase followed by a write phase. The static report exposes this
-    as a path through local_access nodes with local_buffer_raw edges.
-    """
+def _find_local_buffer_phase_pairs(report, csynth):
     if csynth.get("dataflow", {}).get("enabled"):
         return []
 
@@ -304,6 +292,7 @@ def _find_local_buffer_barrier_pairs(report, csynth):
         for access_id, access in access_nodes.items()
         if str(access.get("type", "")).upper() == "WRITE"
     }
+
     pairs = []
     for read_id in read_ids:
         read_access = access_nodes[read_id]
@@ -328,9 +317,9 @@ def _find_local_buffer_barrier_pairs(report, csynth):
                 if next_node in write_ids:
                     write_access = access_nodes[next_node]
                     if (
-                        _same_loop_index(read_access, write_access)
-                        and next_buffers
+                        next_buffers
                         and next_saw_local_raw
+                        and _same_loop_index(read_access, write_access)
                     ):
                         pairs.append(
                             {
@@ -343,7 +332,7 @@ def _find_local_buffer_barrier_pairs(report, csynth):
                             }
                         )
                     continue
-                if next_node.startswith("local_access:"):
+                if next_node in local_nodes:
                     queue.append(
                         (
                             next_node,
@@ -352,13 +341,13 @@ def _find_local_buffer_barrier_pairs(report, csynth):
                             next_saw_local_raw,
                         )
                     )
-    return _dedupe_shortest_barrier_paths(pairs)
+    return _shortest_access_pairs(pairs)
 
 
-def _append_local_buffer_barrier_dependencies(
+def _append_local_buffer_phase_order_dependencies(
     blocks_by_id, ordered, report, csynth
 ):
-    pairs = _find_local_buffer_barrier_pairs(report, csynth)
+    pairs = _find_local_buffer_phase_pairs(report, csynth)
     if not pairs:
         return 0
 
@@ -380,8 +369,7 @@ def _append_local_buffer_barrier_dependencies(
         )
         if not producer_txns or not consumer_txns:
             continue
-        group_tail = producer_txns[-1]
-        source_txn = group_tail.get("transaction_id", "")
+        source_txn = producer_txns[-1].get("transaction_id", "")
         if not source_txn:
             continue
         for consumer in consumer_txns:
@@ -394,7 +382,7 @@ def _append_local_buffer_barrier_dependencies(
                 continue
             dependency = {
                 "source_transaction_id": source_txn,
-                "kind": "local_buffer_barrier",
+                "kind": "local_buffer_phase_order",
                 "via": ",".join(pair["buffers"]),
                 "source_access_id": pair["source_access_id"],
                 "target_access_id": pair["target_access_id"],
@@ -410,9 +398,9 @@ def _append_local_buffer_barrier_dependencies(
                 "logical_source_count": len(producer_txns),
                 "logical_target_count": 1,
                 "reason": (
-                    "non-DATAFLOW local-buffer phase barrier: widened write "
-                    "transactions wait for the producer read transaction group "
-                    "that feeds the local buffer"
+                    "non-DATAFLOW local buffer phase order: HLS may issue the "
+                    "widened producer read group before consumer write bursts "
+                    "through the same local buffer"
                 ),
                 "path_edge_ids": pair["path_edge_ids"],
             }
@@ -527,10 +515,9 @@ def build_transaction_dependency_graph_from_logical(
         ) = _append_stream_channel_dependencies(
             blocks_by_id, ordered, csynth
         )
-    local_buffer_barrier_edges = _append_local_buffer_barrier_dependencies(
+    local_buffer_phase_order_edges = _append_local_buffer_phase_order_dependencies(
         blocks_by_id, ordered, report, csynth
     )
-
     blocks = [blocks_by_id[item["transaction_id"]] for item in ordered]
     return {
         "schema": "hls.transaction_dependency_graph.v11",
@@ -542,9 +529,10 @@ def build_transaction_dependency_graph_from_logical(
             "model local producer-consumer token availability without a "
             "full-process barrier. Stream-channel capacity annotations use "
             "csynth FIFO depth and loop II metadata to flag bounded-FIFO "
-            "backpressure risks without RTL waveform input. Non-DATAFLOW local-buffer barrier edges "
-            "model widened producer-read groups that must complete before "
-            "consumer write bursts are issued through the same local buffer."
+            "backpressure risks without RTL waveform input. Non-DATAFLOW "
+            "local-buffer phase-order edges model HLS schedules where widened "
+            "read bursts complete before write bursts through the same local "
+            "buffer."
         ),
         "detail_files": {
             "physical_transactions": "inferred_physical_axi_transactions.json",
@@ -557,7 +545,7 @@ def build_transaction_dependency_graph_from_logical(
             "dynamic_memory_raw_edges": edge_counts.get("dynamic_memory_raw", 0),
             "stream_channel_edges": stream_channel_edges,
             "stream_capacity_backpressure_edges": stream_capacity_backpressure_edges,
-            "local_buffer_barrier_edges": local_buffer_barrier_edges,
+            "local_buffer_phase_order_edges": local_buffer_phase_order_edges,
             "value_flow_edges": sum(
                 count
                 for kind, count in edge_counts.items()

@@ -1,0 +1,35 @@
+{
+  "0": {
+    "basicblocks": 5,
+    "calls": "1",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "read_write.cpp",
+    "fileloc": 60,
+    "instructions": 34,
+    "loads": {
+      "T": 2
+    },
+    "memory_accesses": 4,
+    "name": "read_only",
+    "total_instructions": 48
+  },
+  "1": {
+    "basicblocks": 3,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "read_write.cpp",
+    "fileloc": 33,
+    "instructions": 14,
+    "loads": {
+      "L": 1
+    },
+    "memory_accesses": 2,
+    "name": "sum",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 14
+  }
+}

@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'read_write'
 ================================================================
-* Date:           Wed Jun 17 18:27:42 2026
+* Date:           Thu Jun 18 23:21:20 2026
 
 * Version:        2025.1 (Build 6135595 on May 21 2025)
 * Project:        component_read_write
@@ -59,16 +59,16 @@
 |DSP              |        -|    -|       -|      -|    -|
 |Expression       |        -|    -|       0|     16|    -|
 |FIFO             |        -|    -|     396|    272|    -|
-|Instance         |       58|    -|    9394|   8774|    -|
+|Instance         |        0|    -|    9274|   8756|    -|
 |Memory           |        -|    -|       -|      -|    -|
 |Multiplexer      |        -|    -|       0|     18|    -|
 |Register         |        -|    -|       5|      -|    -|
 +-----------------+---------+-----+--------+-------+-----+
-|Total            |       58|    0|    9795|   9080|    0|
+|Total            |        0|    0|    9675|   9062|    0|
 +-----------------+---------+-----+--------+-------+-----+
 |Available        |      280|  220|  106400|  53200|    0|
 +-----------------+---------+-----+--------+-------+-----+
-|Utilization (%)  |       20|    0|       9|     17|    0|
+|Utilization (%)  |        0|    0|       9|     17|    0|
 +-----------------+---------+-----+--------+-------+-----+
 
 + Detail: 
@@ -77,14 +77,14 @@
     |     Instance    |     Module    | BRAM_18K| DSP|  FF  |  LUT | URAM|
     +-----------------+---------------+---------+----+------+------+-----+
     |control_s_axi_U  |control_s_axi  |        0|   0|   176|   296|    0|
-    |mem_0_m_axi_U    |mem_0_m_axi    |       29|   0|  1673|  1747|    0|
-    |mem_1_m_axi_U    |mem_1_m_axi    |       29|   0|  1673|  1747|    0|
+    |mem_0_m_axi_U    |mem_0_m_axi    |        0|   0|  1613|  1738|    0|
+    |mem_1_m_axi_U    |mem_1_m_axi    |        0|   0|  1613|  1738|    0|
     |read_1_U0        |read_1         |        0|   0|  1597|   933|    0|
     |read_U0          |read_r         |        0|   0|  1597|   933|    0|
     |write_2_U0       |write_2        |        0|   0|  1339|  1559|    0|
     |write_U0         |write_r        |        0|   0|  1339|  1559|    0|
     +-----------------+---------------+---------+----+------+------+-----+
-    |Total            |               |       58|   0|  9394|  8774|    0|
+    |Total            |               |        0|   0|  9274|  8756|    0|
     +-----------------+---------------+---------+----+------+------+-----+
 
     * DSP: 
@@ -330,9 +330,9 @@ ST_4 : Operation 20 [1/1] (0.00ns)   --->   "%specinterface_ln52 = specinterface
 ST_4 : Operation 21 [1/1] (0.00ns)   --->   "%specdataflowpipeline_ln52 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32 4294967295, i32 0, void @empty_10" [read_write.cpp:52]   --->   Operation 21 'specdataflowpipeline' 'specdataflowpipeline_ln52' <Predicate = true> <Delay = 0.00>
 ST_4 : Operation 22 [1/1] (0.00ns)   --->   "%spectopmodule_ln44 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_6" [read_write.cpp:44]   --->   Operation 22 'spectopmodule' 'spectopmodule_ln44' <Predicate = true> <Delay = 0.00>
 ST_4 : Operation 23 [1/1] (0.00ns)   --->   "%specinterface_ln44 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty_7, i32 0, i32 0, void @empty_10, i32 0, i32 0, void @empty_10, void @empty_10, void @empty_10, i32 0, i32 0, i32 0, i32 0, void @empty_10, void @empty_10, i32 4294967295, i32 0, i32 0" [read_write.cpp:44]   --->   Operation 23 'specinterface' 'specinterface_ln44' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 24 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i512 %mem_0, void @empty_9, i32 0, i32 0, void @empty_10, i32 64, i32 256, void @empty_1, void @empty_0, void @empty_10, i32 16, i32 16, i32 16, i32 16, void @empty_10, void @empty_10, i32 4294967295, i32 0, i32 0"   --->   Operation 24 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 24 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i512 %mem_0, void @empty_9, i32 0, i32 0, void @empty_10, i32 64, i32 256, void @empty_1, void @empty_0, void @empty_10, i32 1, i32 16, i32 16, i32 16, void @empty_10, void @empty_10, i32 4294967295, i32 0, i32 0"   --->   Operation 24 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_4 : Operation 25 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i512 %mem_0"   --->   Operation 25 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 26 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i512 %mem_1, void @empty_9, i32 0, i32 0, void @empty_10, i32 64, i32 256, void @empty, void @empty_0, void @empty_10, i32 16, i32 16, i32 16, i32 16, void @empty_10, void @empty_10, i32 4294967295, i32 0, i32 0"   --->   Operation 26 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 26 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i512 %mem_1, void @empty_9, i32 0, i32 0, void @empty_10, i32 64, i32 256, void @empty, void @empty_0, void @empty_10, i32 1, i32 16, i32 16, i32 16, void @empty_10, void @empty_10, i32 4294967295, i32 0, i32 0"   --->   Operation 26 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_4 : Operation 27 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i512 %mem_1"   --->   Operation 27 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
 ST_4 : Operation 28 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %mem_0_r, void @empty_2, i32 0, i32 0, void @empty_10, i32 0, i32 0, void @empty_11, void @empty_8, void @empty_10, i32 0, i32 0, i32 0, i32 0, void @empty_10, void @empty_12, i32 4294967295, i32 0, i32 0"   --->   Operation 28 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_4 : Operation 29 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %mem_0_r, void @empty_3, i32 0, i32 0, void @empty_10, i32 0, i32 0, void @empty_10, void @empty_10, void @empty_10, i32 0, i32 0, i32 0, i32 0, void @empty_10, void @empty_12, i32 4294967295, i32 0, i32 0"   --->   Operation 29 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>

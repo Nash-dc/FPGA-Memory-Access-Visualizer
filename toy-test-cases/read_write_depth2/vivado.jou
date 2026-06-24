@@ -3,46 +3,43 @@
 # SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Wed Jun 17 20:34:15 2026
-# Process ID         : 37184
+# Start of session at: Thu Jun 18 23:22:33 2026
+# Process ID         : 24445
 # Current directory  : /data/hls-dev/toy-test-cases/read_write_depth2
-# Command line       : vivado /data/hls-dev/toy-test-cases/read_write/component_read_write/hls/sim/verilog/read_write.wdb
+# Command line       : vivado /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/sim/verilog/read_write.wdb
 # Log file           : /data/hls-dev/toy-test-cases/read_write_depth2/vivado.log
 # Journal file       : /data/hls-dev/toy-test-cases/read_write_depth2/vivado.jou
 # Running On         : Tesla20
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 22.04.5 LTS
 # Processor Detail   : AMD Ryzen 5 5600H with Radeon Graphics
-# CPU Frequency      : 400.000 MHz
+# CPU Frequency      : 4116.597 MHz
 # CPU Physical cores : 6
 # CPU Logical cores  : 12
 # Host memory        : 16611 MB
 # Swap memory        : 17179 MB
 # Total Virtual      : 33791 MB
-# Available Virtual  : 28029 MB
+# Available Virtual  : 27478 MB
 #-----------------------------------------------------------
 start_gui
-open_wave_database /data/hls-dev/toy-test-cases/read_write/component_read_write/hls/sim/verilog/read_write.wdb
+open_wave_database /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/sim/verilog/read_write.wdb
 add_wave {{/apatb_read_write_top/mem_0_ARVALID}} 
 current_wave_config {Untitled 1}
 add_wave {{/apatb_read_write_top/mem_0_ARREADY}} 
-current_wave_config {Untitled 1}
-add_wave {{/apatb_read_write_top/mem_0_ARADDR}} 
-current_wave_config {Untitled 1}
-add_wave {{/apatb_read_write_top/mem_0_AWVALID}} 
-current_wave_config {Untitled 1}
-add_wave {{/apatb_read_write_top/mem_0_AWREADY}} 
-current_wave_config {Untitled 1}
-add_wave {{/apatb_read_write_top/mem_0_AWADDR}} 
 current_wave_config {Untitled 1}
 add_wave {{/apatb_read_write_top/mem_0_RVALID}} 
 current_wave_config {Untitled 1}
 add_wave {{/apatb_read_write_top/mem_0_RREADY}} 
 current_wave_config {Untitled 1}
-add_wave {{/apatb_read_write_top/mem_0_RDATA}} 
-current_wave_config {Untitled 1}
 add_wave {{/apatb_read_write_top/mem_0_RLAST}} 
-save_wave_config {/data/hls-dev/toy-test-cases/read_write/read_write_new.wcfg}
-add_files -fileset sim_1 -norecurse /data/hls-dev/toy-test-cases/read_write/read_write_new.wcfg
-set_property xsim.view /data/hls-dev/toy-test-cases/read_write/read_write_new.wcfg [get_filesets sim_1]
+current_wave_config {Untitled 1}
+add_wave {{/apatb_read_write_top/mem_0_AWVALID}} 
+current_wave_config {Untitled 1}
+add_wave {{/apatb_read_write_top/mem_0_AWREADY}} 
+current_wave_config {Untitled 1}
+add_wave {{/apatb_read_write_top/mem_0_WLAST}} 
+current_wave_config {Untitled 1}
+add_wave {{/apatb_read_write_top/mem_0_WVALID}} 
+current_wave_config {Untitled 1}
+add_wave {{/apatb_read_write_top/mem_0_WREADY}} 
 close_sim

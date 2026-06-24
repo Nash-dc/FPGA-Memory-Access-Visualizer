@@ -352,8 +352,8 @@ __attribute__((sdx_kernel("read_write", 0))) void read_write(
 #pragma HLSDIRECTIVE TOP name=read_write
 # 48 "read_write.cpp"
 
-#pragma HLS interface m_axi port=mem_0 bundle=mem_0 depth=4096
-#pragma HLS interface m_axi port=mem_1 bundle=mem_1 depth=4096
+#pragma HLS interface m_axi port=mem_0 bundle=mem_0 depth=4096 num_read_outstanding=1
+#pragma HLS interface m_axi port=mem_1 bundle=mem_1 depth=4096 num_read_outstanding=1
 
 #pragma HLS dataflow
  hls::stream<int,2> stream[2];

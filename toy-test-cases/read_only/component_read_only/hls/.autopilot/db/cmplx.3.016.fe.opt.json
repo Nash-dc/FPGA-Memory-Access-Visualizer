@@ -1,0 +1,80 @@
+{
+  "0": {
+    "basicblocks": 1,
+    "calls": "1 2 4 3",
+    "control_depth": 0,
+    "def_use_depth": 1,
+    "file": "read_write.cpp",
+    "fileloc": 60,
+    "instructions": 28,
+    "memory_accesses": 0,
+    "name": "read_only",
+    "total_instructions": 106
+  },
+  "1": {
+    "basicblocks": 6,
+    "calls": "",
+    "control_depth": 2,
+    "def_use_depth": 3,
+    "file": "read_write.cpp",
+    "fileloc": 0,
+    "instructions": 26,
+    "memory_accesses": 3,
+    "name": "read_only_",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 26
+  },
+  "2": {
+    "basicblocks": 1,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 1,
+    "file": "read_write.cpp",
+    "fileloc": 0,
+    "instructions": 4,
+    "memory_accesses": 0,
+    "name": "read_only_",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 4
+  },
+  "3": {
+    "basicblocks": 4,
+    "calls": "",
+    "control_depth": 1,
+    "def_use_depth": 2,
+    "file": "read_write.cpp",
+    "fileloc": 33,
+    "instructions": 21,
+    "loads": {
+      "L": 3
+    },
+    "memory_accesses": 4,
+    "name": "sum",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 21
+  },
+  "4": {
+    "basicblocks": 6,
+    "calls": "",
+    "control_depth": 2,
+    "def_use_depth": 3,
+    "file": "read_write.cpp",
+    "fileloc": 0,
+    "instructions": 27,
+    "loads": {
+      "L": 1
+    },
+    "memory_accesses": 3,
+    "name": "read_only_entry.aft",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 27
+  }
+}

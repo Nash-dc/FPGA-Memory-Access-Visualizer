@@ -1,6 +1,6 @@
 {
   "schema": "hls.transaction_dependency_graph.v11",
-  "dependency_source": "Physical transaction dependencies aggregated from the dynamic logical access graph. Logical graph edges combine LLVM static value/control metadata with actual IR trace execution and dynamic same port[element] RAW tracking. DATAFLOW stream-channel edges model local producer-consumer token availability without a full-process barrier. Stream-channel capacity annotations use csynth FIFO depth and loop II metadata to flag bounded-FIFO backpressure risks without RTL waveform input. Non-DATAFLOW local-buffer barrier edges model widened producer-read groups that must complete before consumer write bursts are issued through the same local buffer.",
+  "dependency_source": "Physical transaction dependencies aggregated from the dynamic logical access graph. Logical graph edges combine LLVM static value/control metadata with actual IR trace execution and dynamic same port[element] RAW tracking. DATAFLOW stream-channel edges model local producer-consumer token availability without a full-process barrier. Stream-channel capacity annotations use csynth FIFO depth and loop II metadata to flag bounded-FIFO backpressure risks without RTL waveform input. Non-DATAFLOW local-buffer phase-order edges model HLS schedules where widened read bursts complete before write bursts through the same local buffer.",
   "detail_files": {
     "physical_transactions": "inferred_physical_axi_transactions.json",
     "logical_access_graph": "logical_access_graph.json"
@@ -12,7 +12,7 @@
     "dynamic_memory_raw_edges": 0,
     "stream_channel_edges": 0,
     "stream_capacity_backpressure_edges": 0,
-    "local_buffer_barrier_edges": 4,
+    "local_buffer_phase_order_edges": 4,
     "value_flow_edges": 64,
     "control_dependency_edges": 0
   },
@@ -43,7 +43,7 @@
         },
         {
           "source_transaction_id": "txn_a_read_3",
-          "kind": "local_buffer_barrier",
+          "kind": "local_buffer_phase_order",
           "via": "buff",
           "source_access_id": "access:0",
           "target_access_id": "access:1",
@@ -59,7 +59,7 @@
           "logical_edge_count": 0,
           "logical_source_count": 4,
           "logical_target_count": 1,
-          "reason": "non-DATAFLOW local-buffer phase barrier: widened write transactions wait for the producer read transaction group that feeds the local buffer",
+          "reason": "non-DATAFLOW local buffer phase order: HLS may issue the widened producer read group before consumer write bursts through the same local buffer",
           "path_edge_ids": [
             "dep:0",
             "dep:4",
@@ -94,7 +94,7 @@
         },
         {
           "source_transaction_id": "txn_a_read_3",
-          "kind": "local_buffer_barrier",
+          "kind": "local_buffer_phase_order",
           "via": "buff",
           "source_access_id": "access:0",
           "target_access_id": "access:1",
@@ -110,7 +110,7 @@
           "logical_edge_count": 0,
           "logical_source_count": 4,
           "logical_target_count": 1,
-          "reason": "non-DATAFLOW local-buffer phase barrier: widened write transactions wait for the producer read transaction group that feeds the local buffer",
+          "reason": "non-DATAFLOW local buffer phase order: HLS may issue the widened producer read group before consumer write bursts through the same local buffer",
           "path_edge_ids": [
             "dep:0",
             "dep:4",
@@ -145,7 +145,7 @@
         },
         {
           "source_transaction_id": "txn_a_read_3",
-          "kind": "local_buffer_barrier",
+          "kind": "local_buffer_phase_order",
           "via": "buff",
           "source_access_id": "access:0",
           "target_access_id": "access:1",
@@ -161,7 +161,7 @@
           "logical_edge_count": 0,
           "logical_source_count": 4,
           "logical_target_count": 1,
-          "reason": "non-DATAFLOW local-buffer phase barrier: widened write transactions wait for the producer read transaction group that feeds the local buffer",
+          "reason": "non-DATAFLOW local buffer phase order: HLS may issue the widened producer read group before consumer write bursts through the same local buffer",
           "path_edge_ids": [
             "dep:0",
             "dep:4",
@@ -196,7 +196,7 @@
         },
         {
           "source_transaction_id": "txn_a_read_3",
-          "kind": "local_buffer_barrier",
+          "kind": "local_buffer_phase_order",
           "via": "buff",
           "source_access_id": "access:0",
           "target_access_id": "access:1",
@@ -212,7 +212,7 @@
           "logical_edge_count": 0,
           "logical_source_count": 4,
           "logical_target_count": 1,
-          "reason": "non-DATAFLOW local-buffer phase barrier: widened write transactions wait for the producer read transaction group that feeds the local buffer",
+          "reason": "non-DATAFLOW local buffer phase order: HLS may issue the widened producer read group before consumer write bursts through the same local buffer",
           "path_edge_ids": [
             "dep:0",
             "dep:4",

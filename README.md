@@ -12,11 +12,11 @@ The project combines three sources of information:
 3. Vitis HLS metadata such as AXI interface width, burst limits, loop II,
    DATAFLOW process information, and FIFO depths.
 
-The analysis is transaction-dependenc   y oriented.  It is not intended to be an
+The analysis is transaction-dependency oriented.  It is not intended to be an
 RTL cycle-accurate simulator.  When the timeline shows `issue_order`,
-`complete_order`, or a backpressure estimate, those values are relative ordering
-slots used to visualize scheduling and dependencies.  RTL co-simulation remains
-the ground truth for exact waveform timing.
+`complete_order`, or capacity annotations, those values are relative ordering
+slots used to visualize scheduling and dependencies.  RTL co-simulation is used
+only to validate the inferred graph and timing relationships.
 
 ## High-level Flow
 
@@ -361,6 +361,15 @@ Results/pass-reports/
 Results/trace-timeline/
 ```
 
+Project-local RTL evidence directories are preserved across `--clean`:
+
+```text
+Results/trace-timeline/<project>/RTL/
+```
+
+Use this directory for waveform screenshots or notes that should stay next to
+the generated transaction timeline.
+
 ### build_trace_memory_timeline.py
 
 This is the final analysis builder.  It consumes:
@@ -549,7 +558,9 @@ The graph includes several dependency types:
   location
 - `control_dependency`: branch/control relationship exposed by the static pass
 - value-flow dependencies from LLVM def-use relationships
-- `local_buffer_barrier`: non-DATAFLOW local-buffer read/write phase barrier
+- `local_buffer_phase_order`: non-DATAFLOW local-buffer phase order where HLS
+  may issue widened read bursts before write bursts through the same local
+  buffer
 - `stream_channel`: inferred DATAFLOW producer-consumer stream relationship
 
 For DATAFLOW stream cases, the graph also records capacity annotations when
@@ -596,11 +607,29 @@ The timing model considers:
 - transaction dependencies
 - per-lane ordering
 - AXI beat count
+- `num_read_outstanding` and `num_write_outstanding` interface limits
 - DATAFLOW process overlap
 - loop II when available
 - FIFO capacity backpressure when available
+- non-DATAFLOW local-buffer phase order when widened reads feed widened writes
 
 For normal non-stream projects, no FIFO capacity constraints are invented.
+
+For a non-DATAFLOW pipelined loop with widened reads feeding widened writes
+through a local buffer, the graph can contain `local_buffer_phase_order` edges.
+These edges are not element data dependencies.  They model an HLS scheduling
+choice where the read burst group is issued first and the write burst group is
+issued later.  In that case:
+
+```text
+read transaction spacing  ~= 1 issue slot when PipelineII=1 and reads are not backpressured
+write transaction spacing ~= useful elements per write transaction * PipelineII
+```
+
+In `max_widen_port_width`, this inference places the four read requests close
+together and spaces the four write requests by the widened write burst
+formation window.  RTL co-simulation is used only to validate this inference;
+waveforms are not consumed by the builder.
 
 For DATAFLOW stream projects:
 
@@ -611,32 +640,33 @@ For DATAFLOW stream projects:
 - If the producer is faster than the consumer and the transaction token count
   exceeds FIFO depth, producer reads are annotated as backpressure-limited.
 
-The backpressure estimate is intentionally named:
-
-```text
-backpressure_limited_order_slots
-```
-
-It is a relative ordering estimate.  It is not an RTL cycle count.
-
-For example:
+The FIFO backpressure model is used only for relative transaction ordering.  It
+uses the FIFO depth and producer/consumer II to decide whether producer read
+transactions should be spaced out because the FIFO will become full:
 
 ```text
 tokens = 128
 fifo_depth = 2
 producer_ii = 1
 consumer_ii = 4
-
-relative estimate = min(tokens, depth) * producer_ii
-                  + max(0, tokens - depth) * consumer_ii
-                  = 2 * 1 + 126 * 4
-                  = 506 order slots
 ```
 
-The important conclusion is not "506 cycles".  The important conclusion is:
+The important conclusion is:
 
 ```text
 producer read transaction is capacity-throttled by a slower consumer
+```
+
+For AXI read request spacing, the model uses `num_read_outstanding`:
+
+```text
+num_read_outstanding = 1
+  same-port read transactions are spaced apart because only one read request
+  can be in flight.
+
+num_read_outstanding > 1
+  same-port read transactions may issue close together unless another
+  dependency or backpressure constraint applies.
 ```
 
 #### Stage 7: Export HTML and TSV/JSON Reports
@@ -663,7 +693,7 @@ It shows:
 - transaction details on click
 - incoming capacity constraints
 - producer backpressure model
-- producer backpressure estimate
+- AXI outstanding request limits
 
 The HTML is intentionally self-contained so it can be opened directly in a
 browser.
@@ -689,7 +719,9 @@ pipeline metadata, and assumptions.
 element_timeline.tsv
 ```
 
-One row per dynamic logical memory event.
+One row per dynamic off-chip memory event.  Raw instrumentation may see
+`s_axilite` scalar references such as `res` in `read_only`, but final timeline
+events are filtered to ports listed as `m_axi` in the pass report.
 
 ```text
 logical_access_graph.json
@@ -834,11 +866,50 @@ Evaluation after the latest run:
 read_write_depth2:
   stream_edges = 16
   backpressure_edges = 16
-  backpressure_txns = 16
 ```
 
-This matches the RTL observation that `DEPTH=2` can delay the first write
-transaction substantially because the read process is blocked by a full FIFO.
+This is the non-RTL inference expected for `DEPTH=2`: the read process can be
+blocked by a full FIFO before the first write transaction becomes ready.
+
+## Example: read_only
+
+Project:
+
+```text
+toy-test-cases/read_only/
+```
+
+This case reads two `m_axi` arrays into DATAFLOW streams and computes a dot
+product into scalar `res`:
+
+```cpp
+#pragma HLS interface m_axi port=mem_0 bundle=mem_0 depth=4096
+#pragma HLS interface m_axi port=mem_1 bundle=mem_1 depth=4096
+#pragma HLS interface s_axilite port=res
+```
+
+Only `mem_0` and `mem_1` are off-chip `m_axi` ports.  The scalar `res` may
+appear in the raw IR trace because it is an `int&`, but it is filtered out of
+the final off-chip timeline because it is `s_axilite`.
+
+This project is the clean validation case for read outstanding behavior:
+
+```text
+num_read_outstanding = 16
+  read transactions on the same port are placed close together.
+
+num_read_outstanding = 1
+  read transactions on the same port are spaced apart.
+```
+
+For the latest generated metadata, `read_only` has:
+
+```text
+txns = 8
+ports = mem_0, mem_1
+stream_edges = 0
+backpressure_edges = 0
+```
 
 ## What the Tool Does Not Do
 
@@ -909,17 +980,12 @@ for final in sorted(root.glob("*/final")):
     graph = json.loads(graph_path.read_text())
     txns = json.loads(tx_path.read_text())["axi_transactions"]
     counts = graph.get("counts", {})
-    backpressure_txns = [
-        txn for txn in txns
-        if "backpressure_limited_order_slots" in txn.get("timing_model", {})
-    ]
     print(
         final.parent.name,
         "txns=", len(txns),
         "stream_edges=", counts.get("stream_channel_edges", 0),
         "backpressure_edges=",
         counts.get("stream_capacity_backpressure_edges", 0),
-        "backpressure_txns=", len(backpressure_txns),
     )
 PY
 ```
@@ -936,6 +1002,7 @@ matrix_mul_full_contiguous:   txns=48,  stream_edges=0,  backpressure_edges=0
 matrix_mul_hls:               txns=96,  stream_edges=0,  backpressure_edges=0
 matrix_mul_row_col_hls:       txns=768, stream_edges=0,  backpressure_edges=0
 max_widen_port_width:         txns=8,   stream_edges=0,  backpressure_edges=0
+read_only:                    txns=8,   stream_edges=0,  backpressure_edges=0
 vector_mul_shared_bundle_hls: txns=12,  stream_edges=0,  backpressure_edges=0
 read_write:                   txns=32,  stream_edges=16, backpressure_edges=0
 read_write_depth2:            txns=32,  stream_edges=16, backpressure_edges=16
@@ -944,6 +1011,8 @@ read_write_depth2:            txns=32,  stream_edges=16, backpressure_edges=16
 This is the expected behavior:
 
 - ordinary non-stream projects do not get stream capacity constraints
+- `read_only` has only `mem_0` and `mem_1` off-chip transactions; `res` is
+  excluded because it is `s_axilite`
 - `read_write` gets stream transaction dependencies but no FIFO backpressure
 - `read_write_depth2` gets both stream dependencies and bounded FIFO
   backpressure annotations
@@ -956,8 +1025,9 @@ The project is conservative:
 - If there is no FIFO depth metadata, it does not invent capacity backpressure.
 - If loop II is unavailable, the backpressure inference falls back to a
   conservative no-backpressure assumption.
-- If RTL disagrees with a relative timing heuristic, RTL wins and the heuristic
-  should be adjusted.
+- RTL or co-simulation waveforms are validation inputs only.  If validation
+  disagrees with the inferred graph, inspect the LLVM/HLS metadata for a
+  missing non-RTL signal; otherwise document the case as a limitation.
 
 The dependency graph should be valid with co-simulation results in the following
 sense: no transaction should be shown as issued before the transactions required

@@ -6,7 +6,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="read_write_read_write,hls_ip_2025_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=5.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=5.078000,HLS_SYN_LAT=4239,HLS_SYN_TPT=4096,HLS_SYN_MEM=58,HLS_SYN_DSP=0,HLS_SYN_FF=9795,HLS_SYN_LUT=9080,HLS_VERSION=2025_1}" *)
+(* CORE_GENERATION_INFO="read_write_read_write,hls_ip_2025_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=5.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=5.078000,HLS_SYN_LAT=4239,HLS_SYN_TPT=4096,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=9675,HLS_SYN_LUT=9062,HLS_VERSION=2025_1}" *)
 
 module read_write (
         s_axi_control_AWVALID,
@@ -282,7 +282,7 @@ wire    mem_0_0_RVALID;
 wire   [511:0] mem_0_0_RDATA;
 wire    mem_0_0_RLAST;
 wire   [0:0] mem_0_0_RID;
-wire   [8:0] mem_0_0_RFIFONUM;
+wire   [4:0] mem_0_0_RFIFONUM;
 wire   [0:0] mem_0_0_RUSER;
 wire   [1:0] mem_0_0_RRESP;
 wire    mem_0_0_BVALID;
@@ -296,7 +296,7 @@ wire    mem_1_0_RVALID;
 wire   [511:0] mem_1_0_RDATA;
 wire    mem_1_0_RLAST;
 wire   [0:0] mem_1_0_RID;
-wire   [8:0] mem_1_0_RFIFONUM;
+wire   [4:0] mem_1_0_RFIFONUM;
 wire   [0:0] mem_1_0_RUSER;
 wire   [1:0] mem_1_0_RRESP;
 wire    mem_1_0_BVALID;
@@ -563,12 +563,12 @@ read_write_mem_0_m_axi #(
     .C_USER_VALUE( C_M_AXI_MEM_0_USER_VALUE ),
     .C_PROT_VALUE( C_M_AXI_MEM_0_PROT_VALUE ),
     .C_CACHE_VALUE( C_M_AXI_MEM_0_CACHE_VALUE ),
-    .CH0_NUM_READ_OUTSTANDING( 16 ),
+    .CH0_NUM_READ_OUTSTANDING( 1 ),
     .CH0_NUM_WRITE_OUTSTANDING( 16 ),
-    .CH0_USER_RFIFONUM_WIDTH( 9 ),
+    .CH0_USER_RFIFONUM_WIDTH( 5 ),
     .CH0_USER_DW( 512 ),
     .CH0_USER_AW( 64 ),
-    .NUM_READ_OUTSTANDING( 16 ),
+    .NUM_READ_OUTSTANDING( 1 ),
     .NUM_WRITE_OUTSTANDING( 16 ))
 mem_0_m_axi_U(
     .AWVALID(m_axi_mem_0_AWVALID),
@@ -655,12 +655,12 @@ read_write_mem_1_m_axi #(
     .C_USER_VALUE( C_M_AXI_MEM_1_USER_VALUE ),
     .C_PROT_VALUE( C_M_AXI_MEM_1_PROT_VALUE ),
     .C_CACHE_VALUE( C_M_AXI_MEM_1_CACHE_VALUE ),
-    .CH0_NUM_READ_OUTSTANDING( 16 ),
+    .CH0_NUM_READ_OUTSTANDING( 1 ),
     .CH0_NUM_WRITE_OUTSTANDING( 16 ),
-    .CH0_USER_RFIFONUM_WIDTH( 9 ),
+    .CH0_USER_RFIFONUM_WIDTH( 5 ),
     .CH0_USER_DW( 512 ),
     .CH0_USER_AW( 64 ),
-    .NUM_READ_OUTSTANDING( 16 ),
+    .NUM_READ_OUTSTANDING( 1 ),
     .NUM_WRITE_OUTSTANDING( 16 ))
 mem_1_m_axi_U(
     .AWVALID(m_axi_mem_1_AWVALID),
@@ -917,7 +917,7 @@ read_write_write_r write_U0(
     .m_axi_mem_0_0_RDATA(512'd0),
     .m_axi_mem_0_0_RLAST(1'b0),
     .m_axi_mem_0_0_RID(1'd0),
-    .m_axi_mem_0_0_RFIFONUM(9'd0),
+    .m_axi_mem_0_0_RFIFONUM(5'd0),
     .m_axi_mem_0_0_RUSER(1'd0),
     .m_axi_mem_0_0_RRESP(2'd0),
     .m_axi_mem_0_0_BVALID(mem_0_0_BVALID),
@@ -983,7 +983,7 @@ read_write_write_2 write_2_U0(
     .m_axi_mem_1_0_RDATA(512'd0),
     .m_axi_mem_1_0_RLAST(1'b0),
     .m_axi_mem_1_0_RID(1'd0),
-    .m_axi_mem_1_0_RFIFONUM(9'd0),
+    .m_axi_mem_1_0_RFIFONUM(5'd0),
     .m_axi_mem_1_0_RUSER(1'd0),
     .m_axi_mem_1_0_RRESP(2'd0),
     .m_axi_mem_1_0_BVALID(mem_1_0_BVALID),

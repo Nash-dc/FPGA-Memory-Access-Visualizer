@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'read_r'
 ================================================================
-* Date:           Wed Jun 17 18:27:41 2026
+* Date:           Thu Jun 18 23:21:19 2026
 
 * Version:        2025.1 (Build 6135595 on May 21 2025)
 * Project:        component_read_write
@@ -166,7 +166,7 @@ ST_1 : Operation 82 [1/1] (0.00ns)   --->   "%shiftreg5 = alloca i32 1"   --->  
 ST_1 : Operation 83 [1/1] (0.00ns)   --->   "%add_ln97 = alloca i32 1"   --->   Operation 83 'alloca' 'add_ln97' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 84 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %mem_0_r_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str, i32 4294967295, i32 0, i32 0"   --->   Operation 84 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 85 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %stream_0, void @empty_5, i32 0, i32 0, void @empty_10, i32 0, i32 0, void @empty_10, void @empty_10, void @empty_10, i32 0, i32 0, i32 0, i32 0, void @empty_10, void @empty_10, i32 4294967295, i32 0, i32 0"   --->   Operation 85 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 86 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i512 %mem_0, void @empty_9, i32 0, i32 0, void @empty_10, i32 64, i32 256, void @empty_1, void @empty_0, void @empty_10, i32 16, i32 16, i32 16, i32 16, void @empty_10, void @empty_10, i32 4294967295, i32 0, i32 0"   --->   Operation 86 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 86 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i512 %mem_0, void @empty_9, i32 0, i32 0, void @empty_10, i32 64, i32 256, void @empty_1, void @empty_0, void @empty_10, i32 1, i32 16, i32 16, i32 16, void @empty_10, void @empty_10, i32 4294967295, i32 0, i32 0"   --->   Operation 86 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 87 [1/1] (0.00ns)   --->   "%mem_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %mem" [read_write.cpp:4]   --->   Operation 87 'read' 'mem_read' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 88 [1/1] (1.58ns)   --->   "%store_ln0 = store i4 1, i4 %add_ln97"   --->   Operation 88 'store' 'store_ln0' <Predicate = true> <Delay = 1.58>
 ST_1 : Operation 89 [1/1] (1.58ns)   --->   "%store_ln0 = store i480 0, i480 %shiftreg5"   --->   Operation 89 'store' 'store_ln0' <Predicate = true> <Delay = 1.58>

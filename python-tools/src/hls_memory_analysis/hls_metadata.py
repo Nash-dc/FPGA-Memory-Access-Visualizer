@@ -194,6 +194,8 @@ def build_trace_events(trace_rows, manifest_rows, report, interfaces, schedules)
     for event_index, row in enumerate(trace_rows):
         direction = "read" if row["event"].endswith("read") else "write"
         port = row["argument"]
+        if port not in ports:
+            continue
         element_bytes = parse_int(row["bytes"], 1)
         byte_offset = parse_int(row["byte_offset"], 0)
         element_index = byte_offset // element_bytes if element_bytes else 0

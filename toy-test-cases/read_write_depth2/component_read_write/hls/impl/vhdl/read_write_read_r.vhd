@@ -61,7 +61,7 @@ port (
     m_axi_mem_0_0_RDATA : IN STD_LOGIC_VECTOR (511 downto 0);
     m_axi_mem_0_0_RLAST : IN STD_LOGIC;
     m_axi_mem_0_0_RID : IN STD_LOGIC_VECTOR (0 downto 0);
-    m_axi_mem_0_0_RFIFONUM : IN STD_LOGIC_VECTOR (8 downto 0);
+    m_axi_mem_0_0_RFIFONUM : IN STD_LOGIC_VECTOR (4 downto 0);
     m_axi_mem_0_0_RUSER : IN STD_LOGIC_VECTOR (0 downto 0);
     m_axi_mem_0_0_RRESP : IN STD_LOGIC_VECTOR (1 downto 0);
     m_axi_mem_0_0_BVALID : IN STD_LOGIC;

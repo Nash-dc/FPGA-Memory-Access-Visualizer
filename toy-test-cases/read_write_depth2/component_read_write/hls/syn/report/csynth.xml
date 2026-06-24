@@ -38,9 +38,9 @@
     </PerformanceEstimates>
     <AreaEstimates>
         <Resources>
-            <BRAM_18K>58</BRAM_18K>
-            <FF>9795</FF>
-            <LUT>9080</LUT>
+            <BRAM_18K>0</BRAM_18K>
+            <FF>9675</FF>
+            <LUT>9062</LUT>
             <DSP>0</DSP>
             <URAM>0</URAM>
         </Resources>
@@ -1757,13 +1757,13 @@
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <BRAM_18K>58</BRAM_18K>
+                    <BRAM_18K>0</BRAM_18K>
                     <AVAIL_BRAM>280</AVAIL_BRAM>
-                    <UTIL_BRAM>20</UTIL_BRAM>
-                    <FF>9795</FF>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <FF>9675</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
                     <UTIL_FF>9</UTIL_FF>
-                    <LUT>9084</LUT>
+                    <LUT>9066</LUT>
                     <AVAIL_LUT>53200</AVAIL_LUT>
                     <UTIL_LUT>17</UTIL_LUT>
                     <DSP>0</DSP>
@@ -1780,8 +1780,8 @@
                 <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="stream_1_U" SOURCE="read_write.cpp:53" STORAGESIZE="32 2 1" STORAGESUBTYPE="stream" STORAGEUSAGE="fifo channel" URAM="0" VARIABLE="stream_1" VISIBLE="true"/>
                 <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="mem_1_r_c_U" SOURCE="read_write.cpp:52" STORAGESIZE="64 2 1" STORAGESUBTYPE="scalar prop" STORAGEUSAGE="fifo channel" URAM="0" VARIABLE="mem_1_r_c" VISIBLE="true"/>
                 <BindNode BINDTYPE="adapter" BRAM="0" BUNDLEDNAME="control" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="control_s_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="s_axilite" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
-                <BindNode BINDTYPE="adapter" BRAM="29" BUNDLEDNAME="mem_0" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="mem_0_m_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="m_axi" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
-                <BindNode BINDTYPE="adapter" BRAM="29" BUNDLEDNAME="mem_1" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="mem_1_m_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="m_axi" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
+                <BindNode BINDTYPE="adapter" BRAM="0" BUNDLEDNAME="mem_0" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="mem_0_m_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="m_axi" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
+                <BindNode BINDTYPE="adapter" BRAM="0" BUNDLEDNAME="mem_1" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="mem_1_m_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="m_axi" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
             </BindNodes>
         </Module>
     </ModuleInformation>
@@ -1952,7 +1952,7 @@
         </Interface>
         <Interface InterfaceName="m_axi_mem_0" type="axi4full" busTypeName="aximm" mode="master" dataWidth="512" addrWidth="64" portPrefix="m_axi_mem_0_" paramPrefix="C_M_AXI_MEM_0_" preferredUsageValue="MEMORY">
             <busParams>
-                <busParam busParamName="NUM_READ_OUTSTANDING">16</busParam>
+                <busParam busParamName="NUM_READ_OUTSTANDING">1</busParam>
                 <busParam busParamName="NUM_WRITE_OUTSTANDING">16</busParam>
                 <busParam busParamName="MAX_READ_BURST_LENGTH">16</busParam>
                 <busParam busParamName="MAX_WRITE_BURST_LENGTH">16</busParam>
@@ -2010,13 +2010,13 @@
                 <port>m_axi_mem_0_WVALID</port>
             </ports>
             <constraints>
-                <constraint constraint_type="pragma interface" mode="m_axi" register_option="0" offset="slave" latency="64" num_read_outstanding="16" num_write_outstanding="16" max_read_burst_length="16" max_write_burst_length="16" max_widen_bitwidth="512" channel_id="0" argName="mem_0"/>
+                <constraint constraint_type="pragma interface" mode="m_axi" register_option="0" offset="slave" latency="64" num_read_outstanding="1" num_write_outstanding="16" max_read_burst_length="16" max_write_burst_length="16" max_widen_bitwidth="512" channel_id="0" argName="mem_0"/>
                 <constraint constraint_type="bitwidth" orig_bitwidth="32" final_bitwidth="512" argName="mem_0"/>
             </constraints>
         </Interface>
         <Interface InterfaceName="m_axi_mem_1" type="axi4full" busTypeName="aximm" mode="master" dataWidth="512" addrWidth="64" portPrefix="m_axi_mem_1_" paramPrefix="C_M_AXI_MEM_1_" preferredUsageValue="MEMORY">
             <busParams>
-                <busParam busParamName="NUM_READ_OUTSTANDING">16</busParam>
+                <busParam busParamName="NUM_READ_OUTSTANDING">1</busParam>
                 <busParam busParamName="NUM_WRITE_OUTSTANDING">16</busParam>
                 <busParam busParamName="MAX_READ_BURST_LENGTH">16</busParam>
                 <busParam busParamName="MAX_WRITE_BURST_LENGTH">16</busParam>
@@ -2074,7 +2074,7 @@
                 <port>m_axi_mem_1_WVALID</port>
             </ports>
             <constraints>
-                <constraint constraint_type="pragma interface" mode="m_axi" register_option="0" offset="slave" latency="64" num_read_outstanding="16" num_write_outstanding="16" max_read_burst_length="16" max_write_burst_length="16" max_widen_bitwidth="512" channel_id="0" argName="mem_1"/>
+                <constraint constraint_type="pragma interface" mode="m_axi" register_option="0" offset="slave" latency="64" num_read_outstanding="1" num_write_outstanding="16" max_read_burst_length="16" max_write_burst_length="16" max_widen_bitwidth="512" channel_id="0" argName="mem_1"/>
                 <constraint constraint_type="bitwidth" orig_bitwidth="32" final_bitwidth="512" argName="mem_1"/>
             </constraints>
         </Interface>
@@ -2083,9 +2083,9 @@
         <section name="HW Interfaces" level="0">
             <item name="M_AXI">
                 <table>
-                    <keys size="13">Interface, Read/Write, Data Width (SW-&gt;HW), Address Width, Latency, Offset, Register, Max Widen Bitwidth, Max Read Burst Length, Max Write Burst Length, Num Read Outstanding, Num Write Outstanding, Resource Estimate</keys>
-                    <column name="m_axi_mem_0">READ_WRITE, 32 -&gt; 512, 64, 64, slave, 0, 512, 16, 16, 16, 16, BRAM=29</column>
-                    <column name="m_axi_mem_1">READ_WRITE, 32 -&gt; 512, 64, 64, slave, 0, 512, 16, 16, 16, 16, BRAM=29</column>
+                    <keys size="12">Interface, Read/Write, Data Width (SW-&gt;HW), Address Width, Latency, Offset, Register, Max Widen Bitwidth, Max Read Burst Length, Max Write Burst Length, Num Read Outstanding, Num Write Outstanding</keys>
+                    <column name="m_axi_mem_0">READ_WRITE, 32 -&gt; 512, 64, 64, slave, 0, 512, 16, 16, 1, 16</column>
+                    <column name="m_axi_mem_1">READ_WRITE, 32 -&gt; 512, 64, 64, slave, 0, 512, 16, 16, 1, 16</column>
                 </table>
             </item>
             <item name="S_AXILITE Interfaces">
@@ -2169,8 +2169,8 @@
         <Pragma type="pipeline" location="read_write.cpp:12" status="valid" parentFunction="read" variable="" isDirective="0" options="ii=1"/>
         <Pragma type="pipeline" location="read_write.cpp:27" status="valid" parentFunction="write" variable="" isDirective="0" options="ii=4"/>
         <Pragma type="pipeline" location="read_write.cpp:39" status="valid" parentFunction="sum" variable="" isDirective="0" options="ii=1"/>
-        <Pragma type="interface" location="read_write.cpp:49" status="valid" parentFunction="read_write" variable="mem_0" isDirective="0" options="m_axi port=mem_0 bundle=mem_0 depth=4096"/>
-        <Pragma type="interface" location="read_write.cpp:50" status="valid" parentFunction="read_write" variable="mem_1" isDirective="0" options="m_axi port=mem_1 bundle=mem_1 depth=4096"/>
+        <Pragma type="interface" location="read_write.cpp:49" status="valid" parentFunction="read_write" variable="mem_0" isDirective="0" options="m_axi port=mem_0 bundle=mem_0 depth=4096 num_read_outstanding=1"/>
+        <Pragma type="interface" location="read_write.cpp:50" status="valid" parentFunction="read_write" variable="mem_1" isDirective="0" options="m_axi port=mem_1 bundle=mem_1 depth=4096 num_read_outstanding=1"/>
         <Pragma type="dataflow" location="read_write.cpp:52" status="valid" parentFunction="read_write" variable="" isDirective="0" options=""/>
         <Pragma type="interface" location="read_write.cpp:66" status="valid" parentFunction="read_only" variable="mem_0" isDirective="0" options="m_axi port=mem_0 bundle=mem_0 depth=4096"/>
         <Pragma type="interface" location="read_write.cpp:67" status="valid" parentFunction="read_only" variable="mem_1" isDirective="0" options="m_axi port=mem_1 bundle=mem_1 depth=4096"/>

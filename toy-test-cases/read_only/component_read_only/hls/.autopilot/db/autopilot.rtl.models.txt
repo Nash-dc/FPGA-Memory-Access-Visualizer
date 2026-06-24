@@ -1,0 +1,14 @@
+read_only_flow_control_loop_delay_pipe
+read_only_flow_control_loop_delay_pipe
+read_only_mul_32s_32s_32_5_1
+read_only_fifo_w32_d2_S
+read_only_fifo_w64_d2_S
+read_only_fifo_w32_d2_S
+read_only_mem_0_m_axi
+read_only_mem_1_m_axi
+read_only_control_s_axi
+Loop_VITIS_LOOP_72_1_proc
+Block_entry_proc
+Loop_VITIS_LOOP_76_2_proc
+sum
+read_only

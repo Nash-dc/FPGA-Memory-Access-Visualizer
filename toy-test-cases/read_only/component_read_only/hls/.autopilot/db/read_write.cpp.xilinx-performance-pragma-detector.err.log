@@ -1,0 +1,21 @@
+In file included from /data/hls-dev/toy-test-cases/read_only/read_write.cpp:1:
+In file included from /data/hls-dev/toy-test-cases/read_only/read_write.h:2:
+In file included from /data/2025.1/Vitis/common/technology/autopilot/hls_stream.h:12:
+/data/2025.1/Vitis/common/technology/autopilot/hls_stream_39.h:127:9: error: use of undeclared identifier '__fpga_fifo_push'
+        __fpga_fifo_push(&V, &din);
+        ^
+/data/hls-dev/toy-test-cases/read_only/read_write.cpp:13:18: note: in instantiation of member function 'hls::stream<int, 0>::write' requested here
+      out_stream.write(mem[off+j]);
+                 ^
+In file included from /data/hls-dev/toy-test-cases/read_only/read_write.cpp:1:
+In file included from /data/hls-dev/toy-test-cases/read_only/read_write.h:2:
+In file included from /data/2025.1/Vitis/common/technology/autopilot/hls_stream.h:12:
+/data/2025.1/Vitis/common/technology/autopilot/hls_stream_39.h:98:9: error: use of undeclared identifier '__fpga_fifo_pop'
+        __fpga_fifo_pop(&V, &dout);
+        ^
+/data/2025.1/Vitis/common/technology/autopilot/hls_stream_39.h:109:9: note: in instantiation of member function 'hls::stream<int, 0>::read' requested here
+        read(tmp);
+        ^
+/data/hls-dev/toy-test-cases/read_only/read_write.cpp:28:30: note: in instantiation of member function 'hls::stream<int, 0>::read' requested here
+      mem[off+j] = in_stream.read();
+                             ^

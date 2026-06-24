@@ -571,7 +571,7 @@ entry:7 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %st
 
 <Node id="12" bw="0" op_0_bw="0" op_1_bw="512" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32" op_19_bw="32">
 <![CDATA[
-entry:8 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i512 %mem_0, void @empty_9, i32 0, i32 0, void @empty_10, i32 64, i32 256, void @empty_1, void @empty_0, void @empty_10, i32 16, i32 16, i32 16, i32 16, void @empty_10, void @empty_10, i32 4294967295, i32 0, i32 0
+entry:8 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i512 %mem_0, void @empty_9, i32 0, i32 0, void @empty_10, i32 64, i32 256, void @empty_1, void @empty_0, void @empty_10, i32 1, i32 16, i32 16, i32 16, void @empty_10, void @empty_10, i32 4294967295, i32 0, i32 0
 
 ]]></Node>
 <StgValue><ssdm name="specinterface_ln0"/></StgValue>
@@ -2924,7 +2924,7 @@ for.end9:0 %ret_ln31 = ret
 </dataflow>
 <dataflow id="446" from="empty_10" to="specinterface_ln0" fromId="415" toId="84">
 </dataflow>
-<dataflow id="447" from="StgValue_399" to="specinterface_ln0" fromId="399" toId="84">
+<dataflow id="447" from="StgValue_374" to="specinterface_ln0" fromId="374" toId="84">
 </dataflow>
 <dataflow id="448" from="StgValue_399" to="specinterface_ln0" fromId="399" toId="84">
 </dataflow>

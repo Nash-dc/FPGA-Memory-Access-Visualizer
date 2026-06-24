@@ -183,6 +183,7 @@ def render_html(path, transactions, dependency_graph, title):
                 "issue_order": transaction.get("issue_order", 0),
                 "complete_order": transaction.get("complete_order", 0),
                 "timing_model": transaction.get("timing_model", {}),
+                "interface": transaction.get("interface", {}),
                 "timeline_order_predecessor_id": transaction.get(
                     "timeline_order_predecessor_id", ""
                 ),
@@ -201,6 +202,7 @@ h1{margin:0;font-size:18px;letter-spacing:0}.layout{display:grid;grid-template-c
 .lane-line{position:absolute;left:110px;height:1px;background:#ccd4df}
 .node{position:absolute;height:64px;padding:8px;box-sizing:border-box;background:#fff;border:2px solid #2463eb;border-radius:6px;cursor:pointer;overflow:hidden}
 .node.write{border-color:#dc2626}.node.selected{box-shadow:0 0 0 3px #fbbf24}.node b{display:block}.node small{display:block;color:#526071;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.node b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .node.compact{height:34px;padding:0;border-radius:3px}.node.compact b,.node.compact small{display:none}
 svg{position:absolute;left:0;top:0;pointer-events:none;overflow:visible}.edge{stroke:#707b8c;stroke-width:1.5;fill:none}.order-edge{stroke:#9aa4b2;stroke-width:1;stroke-dasharray:4 4;fill:none}
 aside{background:#fff;border-left:1px solid #d9dfe8;padding:18px;overflow:auto}dt{font-weight:700;margin-top:12px}dd{margin:3px 0;word-break:break-word}.hint{color:#667085}
@@ -214,12 +216,12 @@ const laneStep=compact?70:110, nodeHeight=compact?34:64;
 const laneY=new Map(lanes.map((v,i)=>[v,30+i*laneStep]));
 const maxComplete=Math.max(1,...txns.map(t=>Number(t.complete_order)||0));
 const targetWidth=compact?9000:12000;
-const timeScale=Math.max(1,Math.min(compact?3:4,Math.floor(targetWidth/maxComplete)));
-const widthScale=Math.max(1,Math.min(compact?1.4:1.8,timeScale*0.55));
-const minNodeWidth=compact?12:72;
+const timeScale=Math.max(1,Math.min(compact?3:8,Math.floor(targetWidth/maxComplete)));
+const widthScale=Math.max(1,Math.min(compact?1.4:2.6,timeScale*0.55));
+const minNodeWidth=compact?12:84;
 const maxNodeWidth=compact?96:260;
-const laneGap=compact?8:28,left=130;
-txns.forEach(t=>{const issue=Number(t.issue_order)||0,elementCount=Number(t.element_count)||((t.elements||[]).length)||1;t._width=Math.min(maxNodeWidth,Math.max(minNodeWidth,Math.round(elementCount*widthScale)));t._timeLeft=left+issue*timeScale});
+const laneGap=0,left=130;
+txns.forEach(t=>{const issue=Number(t.issue_order)||0,beats=Number(t.beats)||1;t._width=Math.min(maxNodeWidth,Math.max(minNodeWidth,Math.round(beats*widthScale)));t._timeLeft=left+issue*timeScale});
 const txnById=new Map(txns.map(t=>[t.id,t]));
 function laneTxns(lane){return txns.filter(t=>t.lane===lane).sort((a,b)=>(Number(a.issue_order)||0)-(Number(b.issue_order)||0)||String(a.id).localeCompare(String(b.id)))}
 function placeLaneTxns(){lanes.forEach(l=>{let cursor=left;laneTxns(l).forEach(t=>{const required=Math.max(t._left??t._timeLeft,cursor);if(t._left===undefined||required>t._left)t._left=required;cursor=t._left+t._width+laneGap})})}
@@ -240,7 +242,7 @@ function capacityText(c){if(!c)return '';return 'FIFO '+(c.channel||'')+' depth=
 function depText(t){const deps=t.dependency_details||[];if(!deps.length)return 'none';return deps.map(d=>{let s=d.source_transaction_id||'';let k=d.kind||'';let via=d.via||'';let r=d.readiness||'';let cap=capacityText(d.capacity_constraint);let why=d.reason||'';return [s,k,via,r,cap,why].filter(Boolean).join(' | ')}).join('\\n')}
 function backpressureText(m){const cs=m.stream_capacity_constraints||[];if(!cs.length)return 'n/a';return cs.map(capacityText).join('\\n')}
 function incomingCapacityText(t){const cs=(t.dependency_details||[]).map(d=>d.capacity_constraint).filter(Boolean);if(!cs.length)return 'n/a';return cs.map(capacityText).join('\\n')}
-function select(t,n){document.querySelectorAll('.node').forEach(x=>x.classList.remove('selected'));n.classList.add('selected');const m=t.timing_model||{};const rows=[['transaction id',t.id],['direction',t.direction],['argument',t.argument],['bundle',t.bundle],['byte address',t.byte_addr],['AXI length',t.axlen],['beats',t.beats],['elements per beat',t.elements_per_beat],['element count',t.element_count||((t.elements||[]).length)],['index range',t.range],['elements',t.elements.join(', ')],['data dependencies',t.dependencies.join(', ')||'none'],['dependency source',depText(t)],['timeline predecessor',t.timeline_order_predecessor_id||'none'],['achieved loop II',m.loop_ii??'n/a'],['stream dependency model',m.stream_dependency_model||'n/a'],['incoming capacity constraints',incomingCapacityText(t)],['producer backpressure model',m.stream_backpressure_model||'n/a'],['producer backpressure estimate',m.backpressure_limited_order_slots??'n/a'],['producer capacity constraints',backpressureText(m)]];document.getElementById('details').innerHTML='<dl>'+rows.map(r=>'<dt>'+esc(r[0])+'</dt><dd>'+esc(r[1])+'</dd>').join('')+'</dl>'}
+function select(t,n){document.querySelectorAll('.node').forEach(x=>x.classList.remove('selected'));n.classList.add('selected');const m=t.timing_model||{},iface=t.interface||{};const rows=[['transaction id',t.id],['direction',t.direction],['argument',t.argument],['bundle',t.bundle],['byte address',t.byte_addr],['AXI length',t.axlen],['beats',t.beats],['elements per beat',t.elements_per_beat],['element count',t.element_count||((t.elements||[]).length)],['index range',t.range],['elements',t.elements.join(', ')],['data dependencies',t.dependencies.join(', ')||'none'],['dependency source',depText(t)],['timeline predecessor',t.timeline_order_predecessor_id||'none'],['achieved loop II',m.loop_ii??'n/a'],['minimum issue spacing',m.minimum_issue_spacing??'n/a'],['num read outstanding',iface.num_read_outstanding??m.num_read_outstanding??'n/a'],['num write outstanding',iface.num_write_outstanding??m.num_write_outstanding??'n/a'],['read outstanding limit model',m.read_outstanding_limit_model||'n/a'],['write phase order model',m.write_phase_order_model||'n/a'],['stream dependency model',m.stream_dependency_model||'n/a'],['incoming capacity constraints',incomingCapacityText(t)],['producer backpressure model',m.stream_backpressure_model||'n/a'],['producer capacity constraints',backpressureText(m)]];document.getElementById('details').innerHTML='<dl>'+rows.map(r=>'<dt>'+esc(r[0])+'</dt><dd>'+esc(r[1])+'</dd>').join('')+'</dl>'}
 </script></body></html>"""
     path.write_text(
         document.replace("__TITLE__", html.escape(title)).replace("__DATA__", data)

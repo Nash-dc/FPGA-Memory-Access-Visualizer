@@ -1,0 +1,64 @@
+{
+  "function": "read_only",
+  "m_axi_ports": [
+    {"name": "mem_0", "bundle": "mem_0", "channel": "unknown", "offset": "unknown", "signal_name": "unknown", "depth": 4096},
+    {"name": "mem_1", "bundle": "mem_1", "channel": "unknown", "offset": "unknown", "signal_name": "unknown", "depth": 4096}
+  ],
+  "local_buffers": [
+
+  ],
+  "off_chip_accesses": [
+    {
+      "id": "access:0",
+      "sequence": 0,
+      "type": "READ",
+      "port": "mem_0",
+      "bundle": "mem_0",
+      "channel": "unknown",
+      "base": "mem_0",
+      "index": "0",
+      "operation": "load",
+      "pattern": "unknown",
+      "source_function": "_ZN3hls6streamIiLi0EE5writeERKi",
+      "loop": "unknown",
+      "tripcount": "unknown", "avg_tripcount": "unknown", "min_tripcount": "unknown", "max_tripcount": "unknown", "tripcount_kind": "unknown",
+      "loop_nest": [],
+      "total_tripcount": "unknown",
+      "element_type": "i32",
+      "stride_elements": "unknown",
+      "stride_bytes": 4,
+      "burst_candidate": false,
+      "burst_confirmed_by_report": "unknown",
+      "burst_length": "unknown"
+    },
+    {
+      "id": "access:1",
+      "sequence": 1,
+      "type": "READ",
+      "port": "mem_1",
+      "bundle": "mem_1",
+      "channel": "unknown",
+      "base": "mem_1",
+      "index": "0",
+      "operation": "load",
+      "pattern": "unknown",
+      "source_function": "_ZN3hls6streamIiLi0EE5writeERKi",
+      "loop": "unknown",
+      "tripcount": "unknown", "avg_tripcount": "unknown", "min_tripcount": "unknown", "max_tripcount": "unknown", "tripcount_kind": "unknown",
+      "loop_nest": [],
+      "total_tripcount": "unknown",
+      "element_type": "i32",
+      "stride_elements": "unknown",
+      "stride_bytes": 4,
+      "burst_candidate": false,
+      "burst_confirmed_by_report": "unknown",
+      "burst_length": "unknown"
+    }
+  ],
+  "local_accesses": [
+
+  ],
+  "dependency_edges": [
+
+  ]
+}

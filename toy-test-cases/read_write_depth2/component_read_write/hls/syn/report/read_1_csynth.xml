@@ -670,7 +670,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>9</Bits>
+<Bits>5</Bits>
 <Attribute>unknown</Attribute>
 </RtlPorts>
 <RtlPorts>

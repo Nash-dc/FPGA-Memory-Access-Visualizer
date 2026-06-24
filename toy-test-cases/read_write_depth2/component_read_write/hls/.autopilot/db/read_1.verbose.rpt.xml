@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'read_1'" level="0">
-<item name = "Date">Wed Jun 17 18:27:42 2026
+<item name = "Date">Thu Jun 18 23:21:20 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">component_read_write</item>
@@ -431,7 +431,7 @@
 <column name="m_axi_mem_1_0_RDATA">in, 512, m_axi, mem_1, pointer</column>
 <column name="m_axi_mem_1_0_RLAST">in, 1, m_axi, mem_1, pointer</column>
 <column name="m_axi_mem_1_0_RID">in, 1, m_axi, mem_1, pointer</column>
-<column name="m_axi_mem_1_0_RFIFONUM">in, 9, m_axi, mem_1, pointer</column>
+<column name="m_axi_mem_1_0_RFIFONUM">in, 5, m_axi, mem_1, pointer</column>
 <column name="m_axi_mem_1_0_RUSER">in, 1, m_axi, mem_1, pointer</column>
 <column name="m_axi_mem_1_0_RRESP">in, 2, m_axi, mem_1, pointer</column>
 <column name="m_axi_mem_1_0_BVALID">in, 1, m_axi, mem_1, pointer</column>

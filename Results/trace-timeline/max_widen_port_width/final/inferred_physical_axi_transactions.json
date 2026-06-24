@@ -90,6 +90,12 @@
         "address_size_log2_bytes": 4,
         "arlen_or_awlen": 3
       },
+      "interface": {
+        "num_read_outstanding": 16,
+        "num_write_outstanding": 16,
+        "max_read_burst_length": 4,
+        "max_write_burst_length": 4
+      },
       "burst": {
         "kind": "axi_burst",
         "length_beats": 4,
@@ -110,7 +116,10 @@
         "axi_transfer_cycles": 4,
         "formula": "one logical issue slot for pipelined outstanding reads",
         "confidence": "estimated_from_csynth_and_ir_trace",
-        "is_cycle_accurate": false
+        "is_cycle_accurate": false,
+        "num_read_outstanding": 16,
+        "read_outstanding_limit_model": "num_read_outstanding=16: this AXI master can keep multiple read requests in flight, so consecutive read transactions may be issued close together",
+        "read_outstanding_limit_expected": false
       }
     },
     {
@@ -197,6 +206,12 @@
         "address_size_log2_bytes": 4,
         "arlen_or_awlen": 3
       },
+      "interface": {
+        "num_read_outstanding": 16,
+        "num_write_outstanding": 16,
+        "max_read_burst_length": 4,
+        "max_write_burst_length": 4
+      },
       "burst": {
         "kind": "axi_burst",
         "length_beats": 4,
@@ -217,7 +232,10 @@
         "axi_transfer_cycles": 4,
         "formula": "one logical issue slot for pipelined outstanding reads",
         "confidence": "estimated_from_csynth_and_ir_trace",
-        "is_cycle_accurate": false
+        "is_cycle_accurate": false,
+        "num_read_outstanding": 16,
+        "read_outstanding_limit_model": "num_read_outstanding=16: this AXI master can keep multiple read requests in flight, so consecutive read transactions may be issued close together",
+        "read_outstanding_limit_expected": false
       }
     },
     {
@@ -304,6 +322,12 @@
         "address_size_log2_bytes": 4,
         "arlen_or_awlen": 3
       },
+      "interface": {
+        "num_read_outstanding": 16,
+        "num_write_outstanding": 16,
+        "max_read_burst_length": 4,
+        "max_write_burst_length": 4
+      },
       "burst": {
         "kind": "axi_burst",
         "length_beats": 4,
@@ -324,7 +348,10 @@
         "axi_transfer_cycles": 4,
         "formula": "one logical issue slot for pipelined outstanding reads",
         "confidence": "estimated_from_csynth_and_ir_trace",
-        "is_cycle_accurate": false
+        "is_cycle_accurate": false,
+        "num_read_outstanding": 16,
+        "read_outstanding_limit_model": "num_read_outstanding=16: this AXI master can keep multiple read requests in flight, so consecutive read transactions may be issued close together",
+        "read_outstanding_limit_expected": false
       }
     },
     {
@@ -411,6 +438,12 @@
         "address_size_log2_bytes": 4,
         "arlen_or_awlen": 3
       },
+      "interface": {
+        "num_read_outstanding": 16,
+        "num_write_outstanding": 16,
+        "max_read_burst_length": 4,
+        "max_write_burst_length": 4
+      },
       "burst": {
         "kind": "axi_burst",
         "length_beats": 4,
@@ -431,7 +464,10 @@
         "axi_transfer_cycles": 4,
         "formula": "one logical issue slot for pipelined outstanding reads",
         "confidence": "estimated_from_csynth_and_ir_trace",
-        "is_cycle_accurate": false
+        "is_cycle_accurate": false,
+        "num_read_outstanding": 16,
+        "read_outstanding_limit_model": "num_read_outstanding=16: this AXI master can keep multiple read requests in flight, so consecutive read transactions may be issued close together",
+        "read_outstanding_limit_expected": false
       }
     },
     {
@@ -518,6 +554,12 @@
         "address_size_log2_bytes": 4,
         "arlen_or_awlen": 3
       },
+      "interface": {
+        "num_read_outstanding": 16,
+        "num_write_outstanding": 16,
+        "max_read_burst_length": 4,
+        "max_write_burst_length": 4
+      },
       "burst": {
         "kind": "axi_burst",
         "length_beats": 4,
@@ -554,7 +596,7 @@
         },
         {
           "source_transaction_id": "txn_a_read_3",
-          "kind": "local_buffer_barrier",
+          "kind": "local_buffer_phase_order",
           "via": "buff",
           "source_access_id": "access:0",
           "target_access_id": "access:1",
@@ -570,7 +612,7 @@
           "logical_edge_count": 0,
           "logical_source_count": 4,
           "logical_target_count": 1,
-          "reason": "non-DATAFLOW local-buffer phase barrier: widened write transactions wait for the producer read transaction group that feeds the local buffer",
+          "reason": "non-DATAFLOW local buffer phase order: HLS may issue the widened producer read group before consumer write bursts through the same local buffer",
           "path_edge_ids": [
             "dep:0",
             "dep:4",
@@ -588,7 +630,10 @@
         "minimum_issue_spacing": 16,
         "formula": "max(axi_beat_count, useful_element_count * achieved_loop_ii)",
         "confidence": "estimated_from_csynth_and_ir_trace",
-        "is_cycle_accurate": false
+        "is_cycle_accurate": false,
+        "write_phase_order_model": "non-DATAFLOW local-buffer phase order: write request issue is delayed until the widened producer read phase is available, then same-lane write requests are spaced by burst formation through the pipelined loop",
+        "write_phase_order_expected": true,
+        "num_write_outstanding": 16
       }
     },
     {
@@ -675,6 +720,12 @@
         "address_size_log2_bytes": 4,
         "arlen_or_awlen": 3
       },
+      "interface": {
+        "num_read_outstanding": 16,
+        "num_write_outstanding": 16,
+        "max_read_burst_length": 4,
+        "max_write_burst_length": 4
+      },
       "burst": {
         "kind": "axi_burst",
         "length_beats": 4,
@@ -711,7 +762,7 @@
         },
         {
           "source_transaction_id": "txn_a_read_3",
-          "kind": "local_buffer_barrier",
+          "kind": "local_buffer_phase_order",
           "via": "buff",
           "source_access_id": "access:0",
           "target_access_id": "access:1",
@@ -727,7 +778,7 @@
           "logical_edge_count": 0,
           "logical_source_count": 4,
           "logical_target_count": 1,
-          "reason": "non-DATAFLOW local-buffer phase barrier: widened write transactions wait for the producer read transaction group that feeds the local buffer",
+          "reason": "non-DATAFLOW local buffer phase order: HLS may issue the widened producer read group before consumer write bursts through the same local buffer",
           "path_edge_ids": [
             "dep:0",
             "dep:4",
@@ -745,7 +796,10 @@
         "minimum_issue_spacing": 16,
         "formula": "max(axi_beat_count, useful_element_count * achieved_loop_ii)",
         "confidence": "estimated_from_csynth_and_ir_trace",
-        "is_cycle_accurate": false
+        "is_cycle_accurate": false,
+        "write_phase_order_model": "non-DATAFLOW local-buffer phase order: write request issue is delayed until the widened producer read phase is available, then same-lane write requests are spaced by burst formation through the pipelined loop",
+        "write_phase_order_expected": true,
+        "num_write_outstanding": 16
       }
     },
     {
@@ -832,6 +886,12 @@
         "address_size_log2_bytes": 4,
         "arlen_or_awlen": 3
       },
+      "interface": {
+        "num_read_outstanding": 16,
+        "num_write_outstanding": 16,
+        "max_read_burst_length": 4,
+        "max_write_burst_length": 4
+      },
       "burst": {
         "kind": "axi_burst",
         "length_beats": 4,
@@ -868,7 +928,7 @@
         },
         {
           "source_transaction_id": "txn_a_read_3",
-          "kind": "local_buffer_barrier",
+          "kind": "local_buffer_phase_order",
           "via": "buff",
           "source_access_id": "access:0",
           "target_access_id": "access:1",
@@ -884,7 +944,7 @@
           "logical_edge_count": 0,
           "logical_source_count": 4,
           "logical_target_count": 1,
-          "reason": "non-DATAFLOW local-buffer phase barrier: widened write transactions wait for the producer read transaction group that feeds the local buffer",
+          "reason": "non-DATAFLOW local buffer phase order: HLS may issue the widened producer read group before consumer write bursts through the same local buffer",
           "path_edge_ids": [
             "dep:0",
             "dep:4",
@@ -902,7 +962,10 @@
         "minimum_issue_spacing": 16,
         "formula": "max(axi_beat_count, useful_element_count * achieved_loop_ii)",
         "confidence": "estimated_from_csynth_and_ir_trace",
-        "is_cycle_accurate": false
+        "is_cycle_accurate": false,
+        "write_phase_order_model": "non-DATAFLOW local-buffer phase order: write request issue is delayed until the widened producer read phase is available, then same-lane write requests are spaced by burst formation through the pipelined loop",
+        "write_phase_order_expected": true,
+        "num_write_outstanding": 16
       }
     },
     {
@@ -989,6 +1052,12 @@
         "address_size_log2_bytes": 4,
         "arlen_or_awlen": 3
       },
+      "interface": {
+        "num_read_outstanding": 16,
+        "num_write_outstanding": 16,
+        "max_read_burst_length": 4,
+        "max_write_burst_length": 4
+      },
       "burst": {
         "kind": "axi_burst",
         "length_beats": 4,
@@ -1024,7 +1093,7 @@
         },
         {
           "source_transaction_id": "txn_a_read_3",
-          "kind": "local_buffer_barrier",
+          "kind": "local_buffer_phase_order",
           "via": "buff",
           "source_access_id": "access:0",
           "target_access_id": "access:1",
@@ -1040,7 +1109,7 @@
           "logical_edge_count": 0,
           "logical_source_count": 4,
           "logical_target_count": 1,
-          "reason": "non-DATAFLOW local-buffer phase barrier: widened write transactions wait for the producer read transaction group that feeds the local buffer",
+          "reason": "non-DATAFLOW local buffer phase order: HLS may issue the widened producer read group before consumer write bursts through the same local buffer",
           "path_edge_ids": [
             "dep:0",
             "dep:4",
@@ -1058,7 +1127,10 @@
         "minimum_issue_spacing": 16,
         "formula": "max(axi_beat_count, useful_element_count * achieved_loop_ii)",
         "confidence": "estimated_from_csynth_and_ir_trace",
-        "is_cycle_accurate": false
+        "is_cycle_accurate": false,
+        "write_phase_order_model": "non-DATAFLOW local-buffer phase order: write request issue is delayed until the widened producer read phase is available, then same-lane write requests are spaced by burst formation through the pipelined loop",
+        "write_phase_order_expected": true,
+        "num_write_outstanding": 16
       }
     }
   ],

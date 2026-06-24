@@ -1,0 +1,19 @@
+{
+  "projects": [
+    {
+      "name": "read_only",
+      "source": "/data/hls-dev/toy-test-cases/read_only/read_write.cpp",
+      "testbench": "/data/hls-dev/toy-test-cases/read_only/tb_read_write.cpp",
+      "report_bc": "/data/hls-dev/toy-test-cases/read_only/component_read_only/hls/.autopilot/db/read_write.bc",
+      "interface_xml": "/data/hls-dev/toy-test-cases/read_only/component_read_only/hls/.autopilot/db/top-io-fe.xml",
+      "include_dirs": [
+        "/data/hls-dev/toy-test-cases/read_only",
+        "/data/2025.1/Vitis/include"
+      ],
+      "cxx_standard": "c++14",
+      "host_cxx_standard": "-std=c++14",
+      "defines": [],
+      "link_flags": []
+    }
+  ]
+}

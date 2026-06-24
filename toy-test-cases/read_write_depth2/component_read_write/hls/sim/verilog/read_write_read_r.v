@@ -129,7 +129,7 @@ output   m_axi_mem_0_0_RREADY;
 input  [511:0] m_axi_mem_0_0_RDATA;
 input   m_axi_mem_0_0_RLAST;
 input  [0:0] m_axi_mem_0_0_RID;
-input  [8:0] m_axi_mem_0_0_RFIFONUM;
+input  [4:0] m_axi_mem_0_0_RFIFONUM;
 input  [0:0] m_axi_mem_0_0_RUSER;
 input  [1:0] m_axi_mem_0_0_RRESP;
 input   m_axi_mem_0_0_BVALID;

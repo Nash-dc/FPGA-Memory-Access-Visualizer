@@ -1,0 +1,9 @@
+{
+  "name": "component_read_only",
+  "type": "HLS",
+  "configuration": {
+    "componentType": "HLS",
+    "configFiles": ["hls_config.cfg"],
+    "work_dir": "."
+  }
+}

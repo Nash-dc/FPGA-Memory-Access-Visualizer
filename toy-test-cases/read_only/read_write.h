@@ -6,7 +6,7 @@
 #define N             BLOCK_LENGTH*NUM_BLOCK
 #define STRIDE        BLOCK_LENGTH*2
 
-#define DEPTH (BLOCK_LENGTH*1)
+#define DEPTH 2
 
 extern "C" {
 void read_write(

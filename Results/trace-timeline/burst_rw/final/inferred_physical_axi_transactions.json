@@ -570,6 +570,12 @@
         "address_size_log2_bytes": 2,
         "arlen_or_awlen": 255
       },
+      "interface": {
+        "num_read_outstanding": 16,
+        "num_write_outstanding": 16,
+        "max_read_burst_length": 256,
+        "max_write_burst_length": 256
+      },
       "burst": {
         "kind": "axi_burst",
         "length_beats": 256,
@@ -590,7 +596,10 @@
         "axi_transfer_cycles": 256,
         "formula": "one logical issue slot for pipelined outstanding reads",
         "confidence": "estimated_from_csynth_and_ir_trace",
-        "is_cycle_accurate": false
+        "is_cycle_accurate": false,
+        "num_read_outstanding": 16,
+        "read_outstanding_limit_model": "num_read_outstanding=16: this AXI master can keep multiple read requests in flight, so consecutive read transactions may be issued close together",
+        "read_outstanding_limit_expected": false
       }
     },
     {
@@ -1157,6 +1166,12 @@
         "address_size_log2_bytes": 2,
         "arlen_or_awlen": 255
       },
+      "interface": {
+        "num_read_outstanding": 16,
+        "num_write_outstanding": 16,
+        "max_read_burst_length": 256,
+        "max_write_burst_length": 256
+      },
       "burst": {
         "kind": "axi_burst",
         "length_beats": 256,
@@ -1177,7 +1192,10 @@
         "axi_transfer_cycles": 256,
         "formula": "one logical issue slot for pipelined outstanding reads",
         "confidence": "estimated_from_csynth_and_ir_trace",
-        "is_cycle_accurate": false
+        "is_cycle_accurate": false,
+        "num_read_outstanding": 16,
+        "read_outstanding_limit_model": "num_read_outstanding=16: this AXI master can keep multiple read requests in flight, so consecutive read transactions may be issued close together",
+        "read_outstanding_limit_expected": false
       }
     },
     {
@@ -1744,6 +1762,12 @@
         "address_size_log2_bytes": 2,
         "arlen_or_awlen": 255
       },
+      "interface": {
+        "num_read_outstanding": 16,
+        "num_write_outstanding": 16,
+        "max_read_burst_length": 256,
+        "max_write_burst_length": 256
+      },
       "burst": {
         "kind": "axi_burst",
         "length_beats": 256,
@@ -1764,7 +1788,10 @@
         "axi_transfer_cycles": 256,
         "formula": "one logical issue slot for pipelined outstanding reads",
         "confidence": "estimated_from_csynth_and_ir_trace",
-        "is_cycle_accurate": false
+        "is_cycle_accurate": false,
+        "num_read_outstanding": 16,
+        "read_outstanding_limit_model": "num_read_outstanding=16: this AXI master can keep multiple read requests in flight, so consecutive read transactions may be issued close together",
+        "read_outstanding_limit_expected": false
       }
     },
     {
@@ -2331,6 +2358,12 @@
         "address_size_log2_bytes": 2,
         "arlen_or_awlen": 255
       },
+      "interface": {
+        "num_read_outstanding": 16,
+        "num_write_outstanding": 16,
+        "max_read_burst_length": 256,
+        "max_write_burst_length": 256
+      },
       "burst": {
         "kind": "axi_burst",
         "length_beats": 256,
@@ -2351,7 +2384,10 @@
         "axi_transfer_cycles": 256,
         "formula": "one logical issue slot for pipelined outstanding reads",
         "confidence": "estimated_from_csynth_and_ir_trace",
-        "is_cycle_accurate": false
+        "is_cycle_accurate": false,
+        "num_read_outstanding": 16,
+        "read_outstanding_limit_model": "num_read_outstanding=16: this AXI master can keep multiple read requests in flight, so consecutive read transactions may be issued close together",
+        "read_outstanding_limit_expected": false
       }
     },
     {
@@ -2918,6 +2954,12 @@
         "address_size_log2_bytes": 2,
         "arlen_or_awlen": 255
       },
+      "interface": {
+        "num_read_outstanding": 16,
+        "num_write_outstanding": 16,
+        "max_read_burst_length": 256,
+        "max_write_burst_length": 256
+      },
       "burst": {
         "kind": "axi_burst",
         "length_beats": 256,
@@ -2938,7 +2980,10 @@
         "axi_transfer_cycles": 256,
         "formula": "one logical issue slot for pipelined outstanding reads",
         "confidence": "estimated_from_csynth_and_ir_trace",
-        "is_cycle_accurate": false
+        "is_cycle_accurate": false,
+        "num_read_outstanding": 16,
+        "read_outstanding_limit_model": "num_read_outstanding=16: this AXI master can keep multiple read requests in flight, so consecutive read transactions may be issued close together",
+        "read_outstanding_limit_expected": false
       }
     },
     {
@@ -3505,6 +3550,12 @@
         "address_size_log2_bytes": 2,
         "arlen_or_awlen": 255
       },
+      "interface": {
+        "num_read_outstanding": 16,
+        "num_write_outstanding": 16,
+        "max_read_burst_length": 256,
+        "max_write_burst_length": 256
+      },
       "burst": {
         "kind": "axi_burst",
         "length_beats": 256,
@@ -3525,7 +3576,10 @@
         "axi_transfer_cycles": 256,
         "formula": "one logical issue slot for pipelined outstanding reads",
         "confidence": "estimated_from_csynth_and_ir_trace",
-        "is_cycle_accurate": false
+        "is_cycle_accurate": false,
+        "num_read_outstanding": 16,
+        "read_outstanding_limit_model": "num_read_outstanding=16: this AXI master can keep multiple read requests in flight, so consecutive read transactions may be issued close together",
+        "read_outstanding_limit_expected": false
       }
     },
     {
@@ -4092,6 +4146,12 @@
         "address_size_log2_bytes": 2,
         "arlen_or_awlen": 255
       },
+      "interface": {
+        "num_read_outstanding": 16,
+        "num_write_outstanding": 16,
+        "max_read_burst_length": 256,
+        "max_write_burst_length": 256
+      },
       "burst": {
         "kind": "axi_burst",
         "length_beats": 256,
@@ -4112,7 +4172,10 @@
         "axi_transfer_cycles": 256,
         "formula": "one logical issue slot for pipelined outstanding reads",
         "confidence": "estimated_from_csynth_and_ir_trace",
-        "is_cycle_accurate": false
+        "is_cycle_accurate": false,
+        "num_read_outstanding": 16,
+        "read_outstanding_limit_model": "num_read_outstanding=16: this AXI master can keep multiple read requests in flight, so consecutive read transactions may be issued close together",
+        "read_outstanding_limit_expected": false
       }
     },
     {
@@ -4679,6 +4742,12 @@
         "address_size_log2_bytes": 2,
         "arlen_or_awlen": 255
       },
+      "interface": {
+        "num_read_outstanding": 16,
+        "num_write_outstanding": 16,
+        "max_read_burst_length": 256,
+        "max_write_burst_length": 256
+      },
       "burst": {
         "kind": "axi_burst",
         "length_beats": 256,
@@ -4699,7 +4768,10 @@
         "axi_transfer_cycles": 256,
         "formula": "one logical issue slot for pipelined outstanding reads",
         "confidence": "estimated_from_csynth_and_ir_trace",
-        "is_cycle_accurate": false
+        "is_cycle_accurate": false,
+        "num_read_outstanding": 16,
+        "read_outstanding_limit_model": "num_read_outstanding=16: this AXI master can keep multiple read requests in flight, so consecutive read transactions may be issued close together",
+        "read_outstanding_limit_expected": false
       }
     },
     {
@@ -5266,6 +5338,12 @@
         "address_size_log2_bytes": 2,
         "arlen_or_awlen": 255
       },
+      "interface": {
+        "num_read_outstanding": 16,
+        "num_write_outstanding": 16,
+        "max_read_burst_length": 256,
+        "max_write_burst_length": 256
+      },
       "burst": {
         "kind": "axi_burst",
         "length_beats": 256,
@@ -5310,7 +5388,8 @@
         "minimum_issue_spacing": 256,
         "formula": "max(axi_beat_count, useful_element_count * achieved_loop_ii)",
         "confidence": "estimated_from_csynth_and_ir_trace",
-        "is_cycle_accurate": false
+        "is_cycle_accurate": false,
+        "num_write_outstanding": 16
       }
     },
     {
@@ -5877,6 +5956,12 @@
         "address_size_log2_bytes": 2,
         "arlen_or_awlen": 255
       },
+      "interface": {
+        "num_read_outstanding": 16,
+        "num_write_outstanding": 16,
+        "max_read_burst_length": 256,
+        "max_write_burst_length": 256
+      },
       "burst": {
         "kind": "axi_burst",
         "length_beats": 256,
@@ -5921,7 +6006,8 @@
         "minimum_issue_spacing": 256,
         "formula": "max(axi_beat_count, useful_element_count * achieved_loop_ii)",
         "confidence": "estimated_from_csynth_and_ir_trace",
-        "is_cycle_accurate": false
+        "is_cycle_accurate": false,
+        "num_write_outstanding": 16
       }
     },
     {
@@ -6488,6 +6574,12 @@
         "address_size_log2_bytes": 2,
         "arlen_or_awlen": 255
       },
+      "interface": {
+        "num_read_outstanding": 16,
+        "num_write_outstanding": 16,
+        "max_read_burst_length": 256,
+        "max_write_burst_length": 256
+      },
       "burst": {
         "kind": "axi_burst",
         "length_beats": 256,
@@ -6532,7 +6624,8 @@
         "minimum_issue_spacing": 256,
         "formula": "max(axi_beat_count, useful_element_count * achieved_loop_ii)",
         "confidence": "estimated_from_csynth_and_ir_trace",
-        "is_cycle_accurate": false
+        "is_cycle_accurate": false,
+        "num_write_outstanding": 16
       }
     },
     {
@@ -7099,6 +7192,12 @@
         "address_size_log2_bytes": 2,
         "arlen_or_awlen": 255
       },
+      "interface": {
+        "num_read_outstanding": 16,
+        "num_write_outstanding": 16,
+        "max_read_burst_length": 256,
+        "max_write_burst_length": 256
+      },
       "burst": {
         "kind": "axi_burst",
         "length_beats": 256,
@@ -7143,7 +7242,8 @@
         "minimum_issue_spacing": 256,
         "formula": "max(axi_beat_count, useful_element_count * achieved_loop_ii)",
         "confidence": "estimated_from_csynth_and_ir_trace",
-        "is_cycle_accurate": false
+        "is_cycle_accurate": false,
+        "num_write_outstanding": 16
       }
     },
     {
@@ -7710,6 +7810,12 @@
         "address_size_log2_bytes": 2,
         "arlen_or_awlen": 255
       },
+      "interface": {
+        "num_read_outstanding": 16,
+        "num_write_outstanding": 16,
+        "max_read_burst_length": 256,
+        "max_write_burst_length": 256
+      },
       "burst": {
         "kind": "axi_burst",
         "length_beats": 256,
@@ -7754,7 +7860,8 @@
         "minimum_issue_spacing": 256,
         "formula": "max(axi_beat_count, useful_element_count * achieved_loop_ii)",
         "confidence": "estimated_from_csynth_and_ir_trace",
-        "is_cycle_accurate": false
+        "is_cycle_accurate": false,
+        "num_write_outstanding": 16
       }
     },
     {
@@ -8321,6 +8428,12 @@
         "address_size_log2_bytes": 2,
         "arlen_or_awlen": 255
       },
+      "interface": {
+        "num_read_outstanding": 16,
+        "num_write_outstanding": 16,
+        "max_read_burst_length": 256,
+        "max_write_burst_length": 256
+      },
       "burst": {
         "kind": "axi_burst",
         "length_beats": 256,
@@ -8365,7 +8478,8 @@
         "minimum_issue_spacing": 256,
         "formula": "max(axi_beat_count, useful_element_count * achieved_loop_ii)",
         "confidence": "estimated_from_csynth_and_ir_trace",
-        "is_cycle_accurate": false
+        "is_cycle_accurate": false,
+        "num_write_outstanding": 16
       }
     },
     {
@@ -8932,6 +9046,12 @@
         "address_size_log2_bytes": 2,
         "arlen_or_awlen": 255
       },
+      "interface": {
+        "num_read_outstanding": 16,
+        "num_write_outstanding": 16,
+        "max_read_burst_length": 256,
+        "max_write_burst_length": 256
+      },
       "burst": {
         "kind": "axi_burst",
         "length_beats": 256,
@@ -8976,7 +9096,8 @@
         "minimum_issue_spacing": 256,
         "formula": "max(axi_beat_count, useful_element_count * achieved_loop_ii)",
         "confidence": "estimated_from_csynth_and_ir_trace",
-        "is_cycle_accurate": false
+        "is_cycle_accurate": false,
+        "num_write_outstanding": 16
       }
     },
     {
@@ -9543,6 +9664,12 @@
         "address_size_log2_bytes": 2,
         "arlen_or_awlen": 255
       },
+      "interface": {
+        "num_read_outstanding": 16,
+        "num_write_outstanding": 16,
+        "max_read_burst_length": 256,
+        "max_write_burst_length": 256
+      },
       "burst": {
         "kind": "axi_burst",
         "length_beats": 256,
@@ -9587,7 +9714,8 @@
         "minimum_issue_spacing": 256,
         "formula": "max(axi_beat_count, useful_element_count * achieved_loop_ii)",
         "confidence": "estimated_from_csynth_and_ir_trace",
-        "is_cycle_accurate": false
+        "is_cycle_accurate": false,
+        "num_write_outstanding": 16
       }
     }
   ],

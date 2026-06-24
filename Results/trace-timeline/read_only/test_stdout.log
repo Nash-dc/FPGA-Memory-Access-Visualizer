@@ -1,0 +1,2 @@
+Test passed
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 1024

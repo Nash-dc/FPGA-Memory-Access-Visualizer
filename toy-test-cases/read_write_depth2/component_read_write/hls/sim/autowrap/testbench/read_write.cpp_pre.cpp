@@ -56334,8 +56334,8 @@ void read_write(
     int * mem_1
     )
 {
-#pragma HLS interface m_axi port=mem_0 bundle=mem_0 depth=4096
-#pragma HLS interface m_axi port=mem_1 bundle=mem_1 depth=4096
+#pragma HLS interface m_axi port=mem_0 bundle=mem_0 depth=4096 num_read_outstanding=1
+#pragma HLS interface m_axi port=mem_1 bundle=mem_1 depth=4096 num_read_outstanding=1
 
 #pragma HLS dataflow
   hls::stream<int,2> stream[2];

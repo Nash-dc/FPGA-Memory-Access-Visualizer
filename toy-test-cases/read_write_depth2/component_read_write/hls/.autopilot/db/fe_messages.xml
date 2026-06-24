@@ -13,10 +13,10 @@
         <args ARG_PragmaContext="directive" ARG_PragmaFunction="read_write" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=read_write" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="read_write.cpp:49:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="read_write" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=mem_0 bundle=mem_0 depth=4096" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="read_write" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=mem_0 bundle=mem_0 depth=4096 num_read_outstanding=1" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="read_write.cpp:50:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="read_write" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=mem_1 bundle=mem_1 depth=4096" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="read_write" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=mem_1 bundle=mem_1 depth=4096 num_read_outstanding=1" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="read_write.cpp:52:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="read_write" ARG_PragmaIsValid="1" ARG_PragmaType="dataflow" ClangWarningOption="dump-hls-pragmas"/>

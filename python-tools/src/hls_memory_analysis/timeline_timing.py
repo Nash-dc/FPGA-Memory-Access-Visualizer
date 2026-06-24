@@ -345,17 +345,37 @@ def stream_capacity_backpressure_by_producer(detailed_dependencies):
     return result
 
 
-def backpressure_limited_order_slots(transaction, constraints):
-    tokens = max(1, _integer(transaction.get("element_count"), 1))
-    slots = []
-    for constraint in constraints:
-        depth = max(0, _integer(constraint.get("fifo_static_depth"), 0))
-        producer_ii = max(1, _integer(constraint.get("producer_loop_ii"), 1))
-        consumer_ii = max(1, _integer(constraint.get("consumer_loop_ii"), 1))
-        prefix = min(tokens, depth) * producer_ii
-        throttled = max(0, tokens - depth) * consumer_ii
-        slots.append(prefix + throttled)
-    return max(slots) if slots else 0
+def annotate_interface_outstanding_limit(transaction, timing_model):
+    interface = transaction.get("interface", {})
+    direction = transaction.get("direction", "")
+    if direction == "read":
+        limit = _integer(interface.get("num_read_outstanding"))
+        if limit is None:
+            return
+        timing_model["num_read_outstanding"] = limit
+        if limit == 1:
+            beats = max(1, _integer(transaction.get("axi", {}).get("beat_count"), 1))
+            timing_model["minimum_issue_spacing"] = max(
+                timing_model.get("minimum_issue_spacing", 1), beats
+            )
+            timing_model["read_outstanding_limit_model"] = (
+                "num_read_outstanding=1: this AXI master can have only one "
+                "read request in flight, so following read requests may be "
+                "delayed by the master's internal read FIFO/R-channel progress"
+            )
+            timing_model["read_outstanding_limit_expected"] = True
+        elif "backpressure_limited_order_slots" not in timing_model:
+            timing_model["minimum_issue_spacing"] = 1
+            timing_model["read_outstanding_limit_model"] = (
+                f"num_read_outstanding={limit}: this AXI master can keep "
+                "multiple read requests in flight, so consecutive read "
+                "transactions may be issued close together"
+            )
+            timing_model["read_outstanding_limit_expected"] = False
+    elif direction == "write":
+        limit = _integer(interface.get("num_write_outstanding"))
+        if limit is not None:
+            timing_model["num_write_outstanding"] = limit
 
 
 def annotate_transaction_timing(transactions, dependency_graph, csynth=None):
@@ -433,9 +453,22 @@ def annotate_transaction_timing(transactions, dependency_graph, csynth=None):
             )
             beats = max(1, _integer(transaction.get("axi", {}).get("beat_count"), 1))
             if direction == "write":
+                transaction_dependencies = detailed_dependencies.get(txn_id, [])
+                has_phase_order = any(
+                    dependency.get("kind") == "local_buffer_phase_order"
+                    for dependency in transaction_dependencies
+                )
                 timing_model = write_timing_estimate(
                     transaction, csynth, pipeline, bool(sources)
                 )
+                if has_phase_order:
+                    timing_model["write_phase_order_model"] = (
+                        "non-DATAFLOW local-buffer phase order: write request "
+                        "issue is delayed until the widened producer read "
+                        "phase is available, then same-lane write requests are "
+                        "spaced by burst formation through the pipelined loop"
+                    )
+                    timing_model["write_phase_order_expected"] = True
                 if stream_sources:
                     ready_delay = 0
                     timing_model["stream_consumer_cycles"] = timing_model[
@@ -459,6 +492,7 @@ def annotate_transaction_timing(transactions, dependency_graph, csynth=None):
                         timing_model["pipeline_fill_cycles"]
                         + timing_model["burst_formation_cycles"]
                     )
+                annotate_interface_outstanding_limit(transaction, timing_model)
             else:
                 if dataflow_enabled:
                     loop_ii, pipeline_depth = transaction_pipeline_parameters(
@@ -489,9 +523,34 @@ def annotate_transaction_timing(transactions, dependency_graph, csynth=None):
                     }
                     capacity_constraints = producer_backpressure.get(txn_id, [])
                     if capacity_constraints:
-                        limited_slots = backpressure_limited_order_slots(
-                            transaction, capacity_constraints
+                        tokens = max(
+                            1, _integer(transaction.get("element_count"), 1)
                         )
+                        limited_slots = 0
+                        for constraint in capacity_constraints:
+                            depth = max(
+                                0,
+                                _integer(
+                                    constraint.get("fifo_static_depth"), 0
+                                ),
+                            )
+                            producer_ii = max(
+                                1,
+                                _integer(
+                                    constraint.get("producer_loop_ii"), 1
+                                ),
+                            )
+                            consumer_ii = max(
+                                1,
+                                _integer(
+                                    constraint.get("consumer_loop_ii"), 1
+                                ),
+                            )
+                            prefix = min(tokens, depth) * producer_ii
+                            throttled = max(0, tokens - depth) * consumer_ii
+                            limited_slots = max(
+                                limited_slots, prefix + throttled
+                            )
                         if limited_slots > token_block_cycles:
                             timing_model["minimum_issue_spacing"] = limited_slots
                             timing_model[
@@ -505,12 +564,14 @@ def annotate_transaction_timing(transactions, dependency_graph, csynth=None):
                             ] = (
                                 "bounded FIFO backpressure: producer read "
                                 "transaction ordering is throttled by downstream "
-                                "consumer loop rate; this is a relative estimate, "
-                                "not an RTL cycle count"
+                                "consumer loop rate"
                             )
                             timing_model[
                                 "stream_capacity_constraints"
                             ] = capacity_constraints
+                    annotate_interface_outstanding_limit(
+                        transaction, timing_model
+                    )
                     ready_delay = 0
                 else:
                     timing_model = {
@@ -526,6 +587,9 @@ def annotate_transaction_timing(transactions, dependency_graph, csynth=None):
                         "confidence": "estimated_from_csynth_and_ir_trace",
                         "is_cycle_accurate": False,
                     }
+                    annotate_interface_outstanding_limit(
+                        transaction, timing_model
+                    )
                     ready_delay = 0
             issue = max(
                 next_issue[lane_key],

@@ -1,0 +1,27 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Thu Jun 18 23:02:51 2026
+# Process ID         : 20347
+# Current directory  : /data/hls-dev/toy-test-cases/read_only
+# Command line       : vivado /data/hls-dev/toy-test-cases/read_only/component_read_only/hls/sim/verilog/read_only.wdb
+# Log file           : /data/hls-dev/toy-test-cases/read_only/vivado.log
+# Journal file       : /data/hls-dev/toy-test-cases/read_only/vivado.jou
+# Running On         : Tesla20
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 22.04.5 LTS
+# Processor Detail   : AMD Ryzen 5 5600H with Radeon Graphics
+# CPU Frequency      : 3952.207 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 16611 MB
+# Swap memory        : 17179 MB
+# Total Virtual      : 33791 MB
+# Available Virtual  : 27254 MB
+#-----------------------------------------------------------
+start_gui
+open_wave_database /data/hls-dev/toy-test-cases/read_only/component_read_only/hls/sim/verilog/read_only.wdb
+add_wave {{/apatb_read_only_top/mem_0_RLAST}} 
+close_sim

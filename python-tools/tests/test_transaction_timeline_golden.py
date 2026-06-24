@@ -18,9 +18,136 @@ from hls_memory_analysis.transaction_timeline import (
     annotate_transaction_timing,
     dependency_sources,
 )
+from hls_memory_analysis.hls_metadata import build_trace_events
 
 
 class TransactionTimelineGoldenTest(unittest.TestCase):
+    def test_trace_events_ignore_non_m_axi_ports(self):
+        report = {
+            "function": "read_only",
+            "m_axi_ports": [{"name": "mem_0", "bundle": "mem_0"}],
+            "off_chip_accesses": [
+                {
+                    "id": "access:0",
+                    "type": "READ",
+                    "port": "mem_0",
+                    "bundle": "mem_0",
+                    "pattern": "sequential",
+                }
+            ],
+        }
+        trace_rows = [
+            {
+                "event": "memory_read",
+                "argument": "mem_0",
+                "bytes": "4",
+                "byte_offset": "0",
+                "function": "read_only",
+                "site_id": "0",
+            },
+            {
+                "event": "memory_write",
+                "argument": "res",
+                "bytes": "4",
+                "byte_offset": "0",
+                "function": "read_only",
+                "site_id": "1",
+            },
+        ]
+
+        events = build_trace_events(trace_rows, [], report, {}, {})
+
+        self.assertEqual(len(events), 1)
+        self.assertEqual(events[0]["port"], "mem_0")
+
+    def test_dataflow_reads_with_multiple_outstanding_issue_close_together(self):
+        report = {
+            "function": "read_only",
+            "m_axi_ports": [{"name": "a", "bundle": "gmem"}],
+            "off_chip_accesses": [
+                {
+                    "id": "access:0",
+                    "type": "READ",
+                    "port": "a",
+                    "bundle": "gmem",
+                    "pattern": "sequential",
+                    "burst_candidate": True,
+                }
+            ],
+            "local_accesses": [],
+            "dependency_edges": [],
+        }
+        interfaces = {
+            "a": {
+                "bundle": "gmem",
+                "final_bitwidth": "128",
+                "max_read_burst_length": "4",
+                "num_read_outstanding": "16",
+            }
+        }
+        events = []
+        for index in range(32):
+            events.append(
+                {
+                    "trace_event_index": index,
+                    "access_site": "access:0",
+                    "port": "a",
+                    "bundle": "gmem",
+                    "direction": "read",
+                    "loop": "read_loop",
+                    "element_index": index,
+                    "offset_bytes": index * 4,
+                    "bytes": 4,
+                }
+            )
+
+        physical = BUILDER.build_inferred_physical_axi_transactions(
+            report, events, interfaces
+        )
+        transactions = physical["axi_transactions"]
+        logical = BUILDER.build_logical_access_graph(report, events)
+        graph = BUILDER.build_transaction_dependency_graph_from_logical(
+            report,
+            transactions,
+            logical,
+            {
+                "loops": [
+                    {
+                        "name": "read_loop",
+                        "pipeline_ii": 1,
+                        "pipeline_depth": 4,
+                        "pipeline_type": "yes",
+                        "trip_count": 32,
+                    }
+                ],
+                "dataflow": {"enabled": True},
+            },
+        )
+        annotate_transaction_timing(
+            transactions,
+            graph,
+            {
+                "loops": [
+                    {
+                        "name": "read_loop",
+                        "pipeline_ii": 1,
+                        "pipeline_depth": 4,
+                        "pipeline_type": "yes",
+                        "trip_count": 32,
+                    }
+                ],
+                "dataflow": {"enabled": True},
+            },
+        )
+
+        reads = [item for item in transactions if item["direction"] == "read"]
+        self.assertEqual([item["issue_order"] for item in reads], [0, 1])
+        self.assertEqual(reads[0]["timing_model"]["minimum_issue_spacing"], 1)
+        self.assertIn(
+            "multiple read requests in flight",
+            reads[0]["timing_model"]["read_outstanding_limit_model"],
+        )
+
     def test_sequential_128_bit_axi_four_beat_bursts(self):
         report = {
             "function": "example",
@@ -36,6 +163,8 @@ class TransactionTimelineGoldenTest(unittest.TestCase):
                     "bundle": "gmem",
                     "pattern": "sequential",
                     "burst_candidate": True,
+                    "loop": "example_loop",
+                    "index": "i",
                 },
                 {
                     "id": "access:1",
@@ -44,9 +173,26 @@ class TransactionTimelineGoldenTest(unittest.TestCase):
                     "bundle": "gmem",
                     "pattern": "sequential",
                     "burst_candidate": True,
+                    "loop": "example_loop",
+                    "index": "i",
                 },
             ],
-            "local_accesses": [],
+            "local_accesses": [
+                {
+                    "id": "local_access:0",
+                    "type": "WRITE",
+                    "buffer": "buff",
+                    "index": "i",
+                    "loop": "example_loop",
+                },
+                {
+                    "id": "local_access:1",
+                    "type": "READ",
+                    "buffer": "buff",
+                    "index": "i",
+                    "loop": "example_loop",
+                },
+            ],
             "dependency_edges": [
                 {
                     "source_id": "access:0",
@@ -54,6 +200,27 @@ class TransactionTimelineGoldenTest(unittest.TestCase):
                     "kind": "llvm_def_use",
                     "via": "ssa_value",
                     "reason": "stored value depends on the source read",
+                },
+                {
+                    "source_id": "access:0",
+                    "target_id": "local_access:0",
+                    "kind": "llvm_def_use",
+                    "via": "ssa_value",
+                    "reason": "stored value depends on the source read",
+                },
+                {
+                    "source_id": "local_access:0",
+                    "target_id": "local_access:1",
+                    "kind": "local_buffer_raw",
+                    "via": "buff",
+                    "reason": "local buffer read may consume the earlier write",
+                },
+                {
+                    "source_id": "local_access:1",
+                    "target_id": "access:1",
+                    "kind": "llvm_def_use",
+                    "via": "ssa_value",
+                    "reason": "stored value depends on the local buffer read",
                 }
             ],
         }
@@ -131,7 +298,15 @@ class TransactionTimelineGoldenTest(unittest.TestCase):
         sources = dependency_sources(graph)
         self.assertEqual(
             [sources[item["transaction_id"]] for item in writes],
-            [[item["transaction_id"]] for item in reads],
+            [
+                [reads[0]["transaction_id"], reads[-1]["transaction_id"]],
+                [reads[1]["transaction_id"], reads[-1]["transaction_id"]],
+                [reads[2]["transaction_id"], reads[-1]["transaction_id"]],
+                [reads[-1]["transaction_id"]],
+            ],
+        )
+        self.assertEqual(
+            graph["counts"]["local_buffer_phase_order_edges"], 4
         )
         self.assertEqual([item["issue_order"] for item in reads], [0, 1, 2, 3])
         self.assertTrue(
@@ -148,6 +323,9 @@ class TransactionTimelineGoldenTest(unittest.TestCase):
         )
         self.assertEqual(
             writes[0]["timing_model"]["burst_formation_cycles"], 16
+        )
+        self.assertTrue(
+            writes[0]["timing_model"]["write_phase_order_expected"]
         )
 
     def test_dataflow_stream_write_requests_wait_for_matching_read_transactions(self):
@@ -181,6 +359,7 @@ class TransactionTimelineGoldenTest(unittest.TestCase):
                 "final_bitwidth": "128",
                 "max_read_burst_length": "4",
                 "max_write_burst_length": "4",
+                "num_read_outstanding": "1",
             }
         }
         events = []
@@ -280,6 +459,12 @@ class TransactionTimelineGoldenTest(unittest.TestCase):
         self.assertGreater(
             reads[0]["timing_model"]["backpressure_limited_order_slots"],
             reads[0]["timing_model"]["token_block_cycles"],
+        )
+        self.assertEqual(reads[0]["interface"]["num_read_outstanding"], 1)
+        self.assertEqual(reads[0]["timing_model"]["num_read_outstanding"], 1)
+        self.assertIn(
+            "num_read_outstanding=1",
+            reads[0]["timing_model"]["read_outstanding_limit_model"],
         )
         self.assertGreater(writes[0]["issue_order"], reads[0]["complete_order"])
         self.assertEqual(writes[1]["issue_order"], reads[1]["complete_order"] + 1)

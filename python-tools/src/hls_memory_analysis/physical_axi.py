@@ -75,6 +75,7 @@ def _can_coalesce(current, event):
 
 def _new_transaction(seed, burst_id, interfaces, access_site):
     element_bytes = parse_int(seed.get("bytes"), 1)
+    attrs = interfaces.get(seed["port"], {})
     width_bits = _axi_data_width_bits(seed["port"], interfaces)
     beat_bytes = width_bits // 8 if width_bits else element_bytes
     elements_per_beat = max(1, beat_bytes // element_bytes)
@@ -134,6 +135,12 @@ def _new_transaction(seed, burst_id, interfaces, access_site):
             "source_elements_per_beat": elements_per_beat,
             "address_size_log2_bytes": _axi_size_log2(beat_bytes),
             "arlen_or_awlen": 0,
+        },
+        "interface": {
+            "num_read_outstanding": parse_int(attrs.get("num_read_outstanding")),
+            "num_write_outstanding": parse_int(attrs.get("num_write_outstanding")),
+            "max_read_burst_length": parse_int(attrs.get("max_read_burst_length")),
+            "max_write_burst_length": parse_int(attrs.get("max_write_burst_length")),
         },
         "burst": {
             "kind": "single",

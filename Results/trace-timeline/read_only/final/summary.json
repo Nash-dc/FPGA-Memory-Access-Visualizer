@@ -1,0 +1,120 @@
+{
+  "function_name": "read_only",
+  "loop_name": [
+    "VITIS_LOOP_72_1",
+    "VITIS_LOOP_76_2",
+    "VITIS_LOOP_38_1"
+  ],
+  "loop_ii": {
+    "VITIS_LOOP_72_1": 1,
+    "VITIS_LOOP_76_2": 1,
+    "VITIS_LOOP_38_1": 4
+  },
+  "pipeline_analysis": {
+    "is_pipelined": true,
+    "has_ii_one_loop": true,
+    "continuous_read_issue_candidate": true,
+    "minimum_achieved_ii": 1,
+    "maximum_pipeline_depth": 74,
+    "basis": "csynth achieved PipelineII=1",
+    "loops": [
+      {
+        "name": "VITIS_LOOP_72_1",
+        "pipeline_ii": 1,
+        "pipeline_type": "yes",
+        "pipeline_depth": 74,
+        "trip_count": 1024
+      },
+      {
+        "name": "VITIS_LOOP_76_2",
+        "pipeline_ii": 1,
+        "pipeline_type": "yes",
+        "pipeline_depth": 74,
+        "trip_count": 1024
+      },
+      {
+        "name": "VITIS_LOOP_38_1",
+        "pipeline_ii": 4,
+        "pipeline_type": "yes",
+        "pipeline_depth": 8,
+        "trip_count": 1024
+      }
+    ],
+    "dataflow": {
+      "enabled": true,
+      "pipeline_type": "dataflow",
+      "processes": [
+        {
+          "instance": "Block_entry_proc_U0",
+          "module": "Block_entry_proc"
+        },
+        {
+          "instance": "Loop_VITIS_LOOP_72_1_proc_U0",
+          "module": "Loop_VITIS_LOOP_72_1_proc"
+        },
+        {
+          "instance": "Loop_VITIS_LOOP_76_2_proc_U0",
+          "module": "Loop_VITIS_LOOP_76_2_proc"
+        },
+        {
+          "instance": "sum_U0",
+          "module": "sum"
+        }
+      ],
+      "fifos": [
+        {
+          "name": "stream_U",
+          "static_depth": 2,
+          "runtime_depth": "mOutPtr"
+        },
+        {
+          "name": "stream_1_U",
+          "static_depth": 2,
+          "runtime_depth": "mOutPtr"
+        }
+      ]
+    },
+    "interpretation": "II=1 permits consecutive read-request issue when addresses are sequential and the AXI master supports outstanding requests. For DATAFLOW regions, independent process lanes may overlap. Stream-channel dependencies delay each consumer transaction until the matching producer transaction block is available. When csynth reports a bounded FIFO and the producer loop II is smaller than the consumer loop II, capacity annotations flag producer backpressure risk."
+  },
+  "data_width_bits": 512,
+  "element_width_bits": 32,
+  "elements_per_beat": 16,
+  "max_read_burst_length": 16,
+  "max_write_burst_length": 16,
+  "total_read_elements": 2048,
+  "total_write_elements": 0,
+  "total_read_transactions": 8,
+  "total_write_transactions": 0,
+  "transaction_dependency_edges": 0,
+  "notes_about_assumptions": [
+    "LLVM IR trace is the source of executed logical accesses and dynamic order.",
+    "HLS interface/csynth metadata supplies AXI width, burst limits, outstanding settings, and loop II when available.",
+    "Physical transactions are inferred from aligned addresses, continuity, width, and burst limits; no RTL waveform is used.",
+    "Issue/completion values are logical estimates, not RTL cycle-accurate timestamps.",
+    "Timeline lane order is not a data dependency. Only explicit graph edges are dependencies."
+  ],
+  "inputs": {
+    "csynth_xml": [
+      "/data/hls-dev/toy-test-cases/read_only/component_read_only/hls/syn/report/csynth.xml"
+    ],
+    "trace": "/data/hls-dev/Results/trace-timeline/read_only/top_level_memory_trace.tsv",
+    "manifest": "/data/hls-dev/Results/trace-timeline/read_only/top_level_memory_sites.tsv",
+    "memory_access_report": "/data/hls-dev/Results/pass-reports/read_only/memory_access_report.json",
+    "interface_xml": "/data/hls-dev/toy-test-cases/read_only/component_read_only/hls/.autopilot/db/top-io-fe.xml",
+    "schedule_xml": [
+      "/data/hls-dev/toy-test-cases/read_only/component_read_only/hls/.autopilot/db/Block_entry_proc.sched.adb.xml",
+      "/data/hls-dev/toy-test-cases/read_only/component_read_only/hls/.autopilot/db/Loop_VITIS_LOOP_72_1_proc.sched.adb.xml",
+      "/data/hls-dev/toy-test-cases/read_only/component_read_only/hls/.autopilot/db/Loop_VITIS_LOOP_76_2_proc.sched.adb.xml",
+      "/data/hls-dev/toy-test-cases/read_only/component_read_only/hls/.autopilot/db/read_only.sched.adb.xml",
+      "/data/hls-dev/toy-test-cases/read_only/component_read_only/hls/.autopilot/db/sum.sched.adb.xml"
+    ]
+  },
+  "counts": {
+    "trace_events": 2048,
+    "element_events": 2048,
+    "axi_transactions": 8,
+    "access_sites_from_pass_report": 2,
+    "logical_dependency_edges": 0,
+    "ports_with_hls_schedule": 2
+  }
+}

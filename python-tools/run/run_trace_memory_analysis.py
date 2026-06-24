@@ -5,6 +5,7 @@ import os
 import shutil
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 SOURCE_ROOT = Path(__file__).resolve().parents[1] / "src"
@@ -94,10 +95,28 @@ def validate_project(project):
 
 
 def clean_outputs(out_root):
+    preserved = []
+    temp_root = Path(tempfile.mkdtemp(prefix="hls-trace-preserve-rtl-"))
+    trace_root = out_root / "trace-timeline"
+    if trace_root.exists():
+        for rtl_dir in trace_root.glob("*/RTL"):
+            if not rtl_dir.is_dir():
+                continue
+            relative = rtl_dir.relative_to(trace_root)
+            backup = temp_root / relative
+            backup.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copytree(rtl_dir, backup)
+            preserved.append((backup, trace_root / relative))
+
     for child in ["pass-reports", "trace-timeline"]:
         path = out_root / child
         if path.exists():
             shutil.rmtree(path)
+
+    for backup, target in preserved:
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copytree(backup, target)
+    shutil.rmtree(temp_root)
 
 
 def build_passes(llvm_pass_dir):

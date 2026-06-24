@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'read_write'
 ================================================================
 + General Information: 
-    * Date:           Wed Jun 17 18:27:42 2026
+    * Date:           Thu Jun 18 23:21:20 2026
     * Version:        2025.1 (Build 6135595 on May 21 2025)
     * Project:        component_read_write
     * Solution:       hls (Vitis Kernel Flow Target)
@@ -15,33 +15,33 @@
 + Performance & Resource Estimates: 
     
     PS: '+' for module; 'o' for loop; '*' for dataflow
-    +-------------------------------------+---------+-------+---------+-----------+----------+---------+------+----------+----------+----+-----------+------------+-----+
-    |               Modules               |  Issue  |       |       Latency       | Iteration|         | Trip |          |          |    |           |            |     |
-    |               & Loops               |   Type  | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|   BRAM   | DSP|     FF    |     LUT    | URAM|
-    +-------------------------------------+---------+-------+---------+-----------+----------+---------+------+----------+----------+----+-----------+------------+-----+
-    |+ read_write*                        |   Timing|  -1.43|     4239|  2.153e+04|         -|     4096|     -|  dataflow|  58 (20%)|   -|  9795 (9%)|  9084 (17%)|    -|
-    | + read_r                            |   Timing|  -1.43|     1100|  5.586e+03|         -|     1024|     -|    rewind|         -|   -|  1597 (1%)|    933 (1%)|    -|
-    |  o VITIS_LOOP_9_1_VITIS_LOOP_11_2   |        -|   3.65|     1098|  5.576e+03|        76|        1|  1024|       yes|         -|   -|          -|           -|    -|
-    | + read_1                            |   Timing|  -1.43|     1100|  5.586e+03|         -|     1024|     -|    rewind|         -|   -|  1597 (1%)|    933 (1%)|    -|
-    |  o VITIS_LOOP_9_1_VITIS_LOOP_11_2   |        -|   3.65|     1098|  5.576e+03|        76|        1|  1024|       yes|         -|   -|          -|           -|    -|
-    | + write_r                           |        -|   0.00|     4166|  2.083e+04|         -|     4096|     -|    rewind|         -|   -|  1339 (1%)|   1561 (2%)|    -|
-    |  o VITIS_LOOP_24_1_VITIS_LOOP_26_2  |        -|   3.65|     4164|  2.082e+04|        73|        4|  1024|       yes|         -|   -|          -|           -|    -|
-    | + write_2                           |        -|   0.00|     4166|  2.083e+04|         -|     4096|     -|    rewind|         -|   -|  1339 (1%)|   1561 (2%)|    -|
-    |  o VITIS_LOOP_24_1_VITIS_LOOP_26_2  |        -|   3.65|     4164|  2.082e+04|        73|        4|  1024|       yes|         -|   -|          -|           -|    -|
-    +-------------------------------------+---------+-------+---------+-----------+----------+---------+------+----------+----------+----+-----------+------------+-----+
+    +-------------------------------------+---------+-------+---------+-----------+----------+---------+------+----------+------+----+-----------+------------+-----+
+    |               Modules               |  Issue  |       |       Latency       | Iteration|         | Trip |          |      |    |           |            |     |
+    |               & Loops               |   Type  | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM | DSP|     FF    |     LUT    | URAM|
+    +-------------------------------------+---------+-------+---------+-----------+----------+---------+------+----------+------+----+-----------+------------+-----+
+    |+ read_write*                        |   Timing|  -1.43|     4239|  2.153e+04|         -|     4096|     -|  dataflow|     -|   -|  9675 (9%)|  9066 (17%)|    -|
+    | + read_r                            |   Timing|  -1.43|     1100|  5.586e+03|         -|     1024|     -|    rewind|     -|   -|  1597 (1%)|    933 (1%)|    -|
+    |  o VITIS_LOOP_9_1_VITIS_LOOP_11_2   |        -|   3.65|     1098|  5.576e+03|        76|        1|  1024|       yes|     -|   -|          -|           -|    -|
+    | + read_1                            |   Timing|  -1.43|     1100|  5.586e+03|         -|     1024|     -|    rewind|     -|   -|  1597 (1%)|    933 (1%)|    -|
+    |  o VITIS_LOOP_9_1_VITIS_LOOP_11_2   |        -|   3.65|     1098|  5.576e+03|        76|        1|  1024|       yes|     -|   -|          -|           -|    -|
+    | + write_r                           |        -|   0.00|     4166|  2.083e+04|         -|     4096|     -|    rewind|     -|   -|  1339 (1%)|   1561 (2%)|    -|
+    |  o VITIS_LOOP_24_1_VITIS_LOOP_26_2  |        -|   3.65|     4164|  2.082e+04|        73|        4|  1024|       yes|     -|   -|          -|           -|    -|
+    | + write_2                           |        -|   0.00|     4166|  2.083e+04|         -|     4096|     -|    rewind|     -|   -|  1339 (1%)|   1561 (2%)|    -|
+    |  o VITIS_LOOP_24_1_VITIS_LOOP_26_2  |        -|   3.65|     4164|  2.082e+04|        73|        4|  1024|       yes|     -|   -|          -|           -|    -|
+    +-------------------------------------+---------+-------+---------+-----------+----------+---------+------+----------+------+----+-----------+------------+-----+
 
 
 ================================================================
 == HW Interfaces
 ================================================================
 * M_AXI
-+-------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
-| Interface   | Read/Write | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   | Resource Estimate |
-|             |            | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |                   |
-+-------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
-| m_axi_mem_0 | READ_WRITE | 32 -> 512  | 64            | 64      | slave  | 0        | 512       | 16           | 16           | 16          | 16          | BRAM=29           |
-| m_axi_mem_1 | READ_WRITE | 32 -> 512  | 64            | 64      | slave  | 0        | 512       | 16           | 16           | 16          | 16          | BRAM=29           |
-+-------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
++-------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+| Interface   | Read/Write | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   |
+|             |            | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |
++-------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+| m_axi_mem_0 | READ_WRITE | 32 -> 512  | 64            | 64      | slave  | 0        | 512       | 16           | 16           | 1           | 16          |
+| m_axi_mem_1 | READ_WRITE | 32 -> 512  | 64            | 64      | slave  | 0        | 512       | 16           | 16           | 1           | 16          |
++-------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
 
 * S_AXILITE Interfaces
 +---------------+------------+---------------+--------+----------+
@@ -195,10 +195,10 @@
 | Name              | Usage        | Type        | BRAM | URAM | Pragma | Variable  | Impl | Latency | Bitwidth, Depth, |
 |                   |              |             |      |      |        |           |      |         | Banks            |
 +-------------------+--------------+-------------+------+------+--------+-----------+------+---------+------------------+
-| + read_write      |              |             | 58   | 0    |        |           |      |         |                  |
+| + read_write      |              |             | 0    | 0    |        |           |      |         |                  |
 |   control_s_axi_U | interface    | s_axilite   |      |      |        |           |      |         |                  |
-|   mem_0_m_axi_U   | interface    | m_axi       | 29   |      |        |           |      |         |                  |
-|   mem_1_m_axi_U   | interface    | m_axi       | 29   |      |        |           |      |         |                  |
+|   mem_0_m_axi_U   | interface    | m_axi       |      |      |        |           |      |         |                  |
+|   mem_1_m_axi_U   | interface    | m_axi       |      |      |        |           |      |         |                  |
 |   stream_U        | fifo channel | stream      |      |      |        | stream    | srl  | 0       | 32, 2, 1         |
 |   mem_0_r_c_U     | fifo channel | scalar prop |      |      |        | mem_0_r_c | srl  | 0       | 64, 2, 1         |
 |   stream_1_U      | fifo channel | stream      |      |      |        | stream_1  | srl  | 0       | 32, 2, 1         |
@@ -217,20 +217,20 @@
 +----------+---------+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 * Valid Pragma Syntax
-+-----------+------------------------------------------+----------------------------------------+
-| Type      | Options                                  | Location                               |
-+-----------+------------------------------------------+----------------------------------------+
-| PIPELINE  | ii=1                                     | read_write.cpp:12 in read              |
-| PIPELINE  | ii=4                                     | read_write.cpp:27 in write             |
-| PIPELINE  | ii=1                                     | read_write.cpp:39 in sum               |
-| INTERFACE | m_axi port=mem_0 bundle=mem_0 depth=4096 | read_write.cpp:49 in read_write, mem_0 |
-| INTERFACE | m_axi port=mem_1 bundle=mem_1 depth=4096 | read_write.cpp:50 in read_write, mem_1 |
-| DATAFLOW  |                                          | read_write.cpp:52 in read_write        |
-| INTERFACE | m_axi port=mem_0 bundle=mem_0 depth=4096 | read_write.cpp:66 in read_only, mem_0  |
-| INTERFACE | m_axi port=mem_1 bundle=mem_1 depth=4096 | read_write.cpp:67 in read_only, mem_1  |
-| INTERFACE | s_axilite port=res                       | read_write.cpp:68 in read_only, res    |
-| PIPELINE  | ii=1                                     | read_write.cpp:73 in read_only         |
-| PIPELINE  | ii=1                                     | read_write.cpp:77 in read_only         |
-+-----------+------------------------------------------+----------------------------------------+
++-----------+-----------------------------------------------------------------+----------------------------------------+
+| Type      | Options                                                         | Location                               |
++-----------+-----------------------------------------------------------------+----------------------------------------+
+| PIPELINE  | ii=1                                                            | read_write.cpp:12 in read              |
+| PIPELINE  | ii=4                                                            | read_write.cpp:27 in write             |
+| PIPELINE  | ii=1                                                            | read_write.cpp:39 in sum               |
+| INTERFACE | m_axi port=mem_0 bundle=mem_0 depth=4096 num_read_outstanding=1 | read_write.cpp:49 in read_write, mem_0 |
+| INTERFACE | m_axi port=mem_1 bundle=mem_1 depth=4096 num_read_outstanding=1 | read_write.cpp:50 in read_write, mem_1 |
+| DATAFLOW  |                                                                 | read_write.cpp:52 in read_write        |
+| INTERFACE | m_axi port=mem_0 bundle=mem_0 depth=4096                        | read_write.cpp:66 in read_only, mem_0  |
+| INTERFACE | m_axi port=mem_1 bundle=mem_1 depth=4096                        | read_write.cpp:67 in read_only, mem_1  |
+| INTERFACE | s_axilite port=res                                              | read_write.cpp:68 in read_only, res    |
+| PIPELINE  | ii=1                                                            | read_write.cpp:73 in read_only         |
+| PIPELINE  | ii=1                                                            | read_write.cpp:77 in read_only         |
++-----------+-----------------------------------------------------------------+----------------------------------------+
 
 

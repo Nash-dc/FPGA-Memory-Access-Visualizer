@@ -151,7 +151,7 @@ end;
 architecture behav of read_write is 
     attribute CORE_GENERATION_INFO : STRING;
     attribute CORE_GENERATION_INFO of behav : architecture is
-    "read_write_read_write,hls_ip_2025_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=5.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=5.078000,HLS_SYN_LAT=4239,HLS_SYN_TPT=4096,HLS_SYN_MEM=58,HLS_SYN_DSP=0,HLS_SYN_FF=9795,HLS_SYN_LUT=9080,HLS_VERSION=2025_1}";
+    "read_write_read_write,hls_ip_2025_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=5.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=5.078000,HLS_SYN_LAT=4239,HLS_SYN_TPT=4096,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=9675,HLS_SYN_LUT=9062,HLS_VERSION=2025_1}";
     constant C_S_AXI_DATA_WIDTH : INTEGER := 32;
     constant ap_const_logic_1 : STD_LOGIC := '1';
     constant C_M_AXI_DATA_WIDTH : INTEGER := 32;
@@ -159,7 +159,7 @@ architecture behav of read_write is
     constant ap_const_lv1_0 : STD_LOGIC_VECTOR (0 downto 0) := "0";
     constant ap_const_lv2_0 : STD_LOGIC_VECTOR (1 downto 0) := "00";
     constant ap_const_lv512_lc_1 : STD_LOGIC_VECTOR (511 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
-    constant ap_const_lv9_0 : STD_LOGIC_VECTOR (8 downto 0) := "000000000";
+    constant ap_const_lv5_0 : STD_LOGIC_VECTOR (4 downto 0) := "00000";
     constant ap_const_boolean_1 : BOOLEAN := true;
 
 attribute shreg_extract : string;
@@ -183,7 +183,7 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
     signal mem_0_0_RDATA : STD_LOGIC_VECTOR (511 downto 0);
     signal mem_0_0_RLAST : STD_LOGIC;
     signal mem_0_0_RID : STD_LOGIC_VECTOR (0 downto 0);
-    signal mem_0_0_RFIFONUM : STD_LOGIC_VECTOR (8 downto 0);
+    signal mem_0_0_RFIFONUM : STD_LOGIC_VECTOR (4 downto 0);
     signal mem_0_0_RUSER : STD_LOGIC_VECTOR (0 downto 0);
     signal mem_0_0_RRESP : STD_LOGIC_VECTOR (1 downto 0);
     signal mem_0_0_BVALID : STD_LOGIC;
@@ -197,7 +197,7 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
     signal mem_1_0_RDATA : STD_LOGIC_VECTOR (511 downto 0);
     signal mem_1_0_RLAST : STD_LOGIC;
     signal mem_1_0_RID : STD_LOGIC_VECTOR (0 downto 0);
-    signal mem_1_0_RFIFONUM : STD_LOGIC_VECTOR (8 downto 0);
+    signal mem_1_0_RFIFONUM : STD_LOGIC_VECTOR (4 downto 0);
     signal mem_1_0_RUSER : STD_LOGIC_VECTOR (0 downto 0);
     signal mem_1_0_RRESP : STD_LOGIC_VECTOR (1 downto 0);
     signal mem_1_0_BVALID : STD_LOGIC;
@@ -458,7 +458,7 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         m_axi_mem_0_0_RDATA : IN STD_LOGIC_VECTOR (511 downto 0);
         m_axi_mem_0_0_RLAST : IN STD_LOGIC;
         m_axi_mem_0_0_RID : IN STD_LOGIC_VECTOR (0 downto 0);
-        m_axi_mem_0_0_RFIFONUM : IN STD_LOGIC_VECTOR (8 downto 0);
+        m_axi_mem_0_0_RFIFONUM : IN STD_LOGIC_VECTOR (4 downto 0);
         m_axi_mem_0_0_RUSER : IN STD_LOGIC_VECTOR (0 downto 0);
         m_axi_mem_0_0_RRESP : IN STD_LOGIC_VECTOR (1 downto 0);
         m_axi_mem_0_0_BVALID : IN STD_LOGIC;
@@ -530,7 +530,7 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         m_axi_mem_1_0_RDATA : IN STD_LOGIC_VECTOR (511 downto 0);
         m_axi_mem_1_0_RLAST : IN STD_LOGIC;
         m_axi_mem_1_0_RID : IN STD_LOGIC_VECTOR (0 downto 0);
-        m_axi_mem_1_0_RFIFONUM : IN STD_LOGIC_VECTOR (8 downto 0);
+        m_axi_mem_1_0_RFIFONUM : IN STD_LOGIC_VECTOR (4 downto 0);
         m_axi_mem_1_0_RUSER : IN STD_LOGIC_VECTOR (0 downto 0);
         m_axi_mem_1_0_RRESP : IN STD_LOGIC_VECTOR (1 downto 0);
         m_axi_mem_1_0_BVALID : IN STD_LOGIC;
@@ -596,7 +596,7 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         m_axi_mem_0_0_RDATA : IN STD_LOGIC_VECTOR (511 downto 0);
         m_axi_mem_0_0_RLAST : IN STD_LOGIC;
         m_axi_mem_0_0_RID : IN STD_LOGIC_VECTOR (0 downto 0);
-        m_axi_mem_0_0_RFIFONUM : IN STD_LOGIC_VECTOR (8 downto 0);
+        m_axi_mem_0_0_RFIFONUM : IN STD_LOGIC_VECTOR (4 downto 0);
         m_axi_mem_0_0_RUSER : IN STD_LOGIC_VECTOR (0 downto 0);
         m_axi_mem_0_0_RRESP : IN STD_LOGIC_VECTOR (1 downto 0);
         m_axi_mem_0_0_BVALID : IN STD_LOGIC;
@@ -664,7 +664,7 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         m_axi_mem_1_0_RDATA : IN STD_LOGIC_VECTOR (511 downto 0);
         m_axi_mem_1_0_RLAST : IN STD_LOGIC;
         m_axi_mem_1_0_RID : IN STD_LOGIC_VECTOR (0 downto 0);
-        m_axi_mem_1_0_RFIFONUM : IN STD_LOGIC_VECTOR (8 downto 0);
+        m_axi_mem_1_0_RFIFONUM : IN STD_LOGIC_VECTOR (4 downto 0);
         m_axi_mem_1_0_RUSER : IN STD_LOGIC_VECTOR (0 downto 0);
         m_axi_mem_1_0_RRESP : IN STD_LOGIC_VECTOR (1 downto 0);
         m_axi_mem_1_0_BVALID : IN STD_LOGIC;
@@ -865,7 +865,7 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         I_CH0_RVALID : OUT STD_LOGIC;
         I_CH0_RREADY : IN STD_LOGIC;
         I_CH0_RDATA : OUT STD_LOGIC_VECTOR (511 downto 0);
-        I_CH0_RFIFONUM : OUT STD_LOGIC_VECTOR (8 downto 0);
+        I_CH0_RFIFONUM : OUT STD_LOGIC_VECTOR (4 downto 0);
         I_CH0_AWVALID : IN STD_LOGIC;
         I_CH0_AWREADY : OUT STD_LOGIC;
         I_CH0_AWADDR : IN STD_LOGIC_VECTOR (63 downto 0);
@@ -959,7 +959,7 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         I_CH0_RVALID : OUT STD_LOGIC;
         I_CH0_RREADY : IN STD_LOGIC;
         I_CH0_RDATA : OUT STD_LOGIC_VECTOR (511 downto 0);
-        I_CH0_RFIFONUM : OUT STD_LOGIC_VECTOR (8 downto 0);
+        I_CH0_RFIFONUM : OUT STD_LOGIC_VECTOR (4 downto 0);
         I_CH0_AWVALID : IN STD_LOGIC;
         I_CH0_AWREADY : OUT STD_LOGIC;
         I_CH0_AWADDR : IN STD_LOGIC_VECTOR (63 downto 0);
@@ -1026,12 +1026,12 @@ begin
         C_USER_VALUE => C_M_AXI_MEM_0_USER_VALUE,
         C_PROT_VALUE => C_M_AXI_MEM_0_PROT_VALUE,
         C_CACHE_VALUE => C_M_AXI_MEM_0_CACHE_VALUE,
-        CH0_NUM_READ_OUTSTANDING => 16,
+        CH0_NUM_READ_OUTSTANDING => 1,
         CH0_NUM_WRITE_OUTSTANDING => 16,
-        CH0_USER_RFIFONUM_WIDTH => 9,
+        CH0_USER_RFIFONUM_WIDTH => 5,
         CH0_USER_DW => 512,
         CH0_USER_AW => 64,
-        NUM_READ_OUTSTANDING => 16,
+        NUM_READ_OUTSTANDING => 1,
         NUM_WRITE_OUTSTANDING => 16)
     port map (
         AWVALID => m_axi_mem_0_AWVALID,
@@ -1118,12 +1118,12 @@ begin
         C_USER_VALUE => C_M_AXI_MEM_1_USER_VALUE,
         C_PROT_VALUE => C_M_AXI_MEM_1_PROT_VALUE,
         C_CACHE_VALUE => C_M_AXI_MEM_1_CACHE_VALUE,
-        CH0_NUM_READ_OUTSTANDING => 16,
+        CH0_NUM_READ_OUTSTANDING => 1,
         CH0_NUM_WRITE_OUTSTANDING => 16,
-        CH0_USER_RFIFONUM_WIDTH => 9,
+        CH0_USER_RFIFONUM_WIDTH => 5,
         CH0_USER_DW => 512,
         CH0_USER_AW => 64,
-        NUM_READ_OUTSTANDING => 16,
+        NUM_READ_OUTSTANDING => 1,
         NUM_WRITE_OUTSTANDING => 16)
     port map (
         AWVALID => m_axi_mem_1_AWVALID,
@@ -1380,7 +1380,7 @@ begin
         m_axi_mem_0_0_RDATA => ap_const_lv512_lc_1,
         m_axi_mem_0_0_RLAST => ap_const_logic_0,
         m_axi_mem_0_0_RID => ap_const_lv1_0,
-        m_axi_mem_0_0_RFIFONUM => ap_const_lv9_0,
+        m_axi_mem_0_0_RFIFONUM => ap_const_lv5_0,
         m_axi_mem_0_0_RUSER => ap_const_lv1_0,
         m_axi_mem_0_0_RRESP => ap_const_lv2_0,
         m_axi_mem_0_0_BVALID => mem_0_0_BVALID,
@@ -1446,7 +1446,7 @@ begin
         m_axi_mem_1_0_RDATA => ap_const_lv512_lc_1,
         m_axi_mem_1_0_RLAST => ap_const_logic_0,
         m_axi_mem_1_0_RID => ap_const_lv1_0,
-        m_axi_mem_1_0_RFIFONUM => ap_const_lv9_0,
+        m_axi_mem_1_0_RFIFONUM => ap_const_lv5_0,
         m_axi_mem_1_0_RUSER => ap_const_lv1_0,
         m_axi_mem_1_0_RRESP => ap_const_lv2_0,
         m_axi_mem_1_0_BVALID => mem_1_0_BVALID,

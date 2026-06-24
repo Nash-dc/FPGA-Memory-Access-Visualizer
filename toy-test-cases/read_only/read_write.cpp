@@ -36,7 +36,7 @@ void sum(
     )
 {
   for(int i = 0; i < N; i++){
-    #pragma HLS pipeline II=1
+    #pragma HLS pipeline II=4
     res += stream[0].read() * stream[1].read();
   }
 }
@@ -63,7 +63,7 @@ void read_only (
     int & res
     )
 {
-#pragma HLS interface m_axi port=mem_0  bundle=mem_0 depth=4096
+#pragma HLS interface m_axi port=mem_0  bundle=mem_0 depth=4096 
 #pragma HLS interface m_axi port=mem_1  bundle=mem_1 depth=4096
 #pragma HLS interface s_axilite port=res
 

@@ -1858,15 +1858,15 @@
             <item_version>0</item_version>
             <item>
               <first>BRAM</first>
-              <second>29</second>
+              <second>0</second>
             </item>
             <item>
               <first>FF</first>
-              <second>1673</second>
+              <second>1613</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>1747</second>
+              <second>1738</second>
             </item>
           </second>
         </item>
@@ -1877,15 +1877,15 @@
             <item_version>0</item_version>
             <item>
               <first>BRAM</first>
-              <second>29</second>
+              <second>0</second>
             </item>
             <item>
               <first>FF</first>
-              <second>1673</second>
+              <second>1613</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>1747</second>
+              <second>1738</second>
             </item>
           </second>
         </item>

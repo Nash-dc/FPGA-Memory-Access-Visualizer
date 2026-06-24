@@ -1,33 +1,33 @@
 txn_id	direction	argument	bundle	start_index	end_index	byte_addr	beats	axlen	elements_per_beat	issue_order	complete_order	depends_on	dependency_details	timeline_lane
 txn_mem_0_read_0	read	mem_0	mem_0	0	127	0	8	7	16	0	128			mem_0_read
 txn_mem_1_read_0	read	mem_1	mem_1	128	255	512	8	7	16	0	128			mem_1_read
-txn_mem_0_read_1	read	mem_0	mem_0	256	383	1024	8	7	16	128	256			mem_0_read
-txn_mem_1_read_1	read	mem_1	mem_1	384	511	1536	8	7	16	128	256			mem_1_read
+txn_mem_0_read_1	read	mem_0	mem_0	256	383	1024	8	7	16	1	129			mem_0_read
+txn_mem_1_read_1	read	mem_1	mem_1	384	511	1536	8	7	16	1	129			mem_1_read
+txn_mem_0_read_2	read	mem_0	mem_0	512	639	2048	8	7	16	2	130			mem_0_read
+txn_mem_1_read_2	read	mem_1	mem_1	640	767	2560	8	7	16	2	130			mem_1_read
+txn_mem_0_read_3	read	mem_0	mem_0	768	895	3072	8	7	16	3	131			mem_0_read
+txn_mem_1_read_3	read	mem_1	mem_1	896	1023	3584	8	7	16	3	131			mem_1_read
+txn_mem_0_read_4	read	mem_0	mem_0	1024	1151	4096	8	7	16	4	132			mem_0_read
+txn_mem_1_read_4	read	mem_1	mem_1	1152	1279	4608	8	7	16	4	132			mem_1_read
+txn_mem_0_read_5	read	mem_0	mem_0	1280	1407	5120	8	7	16	5	133			mem_0_read
+txn_mem_1_read_5	read	mem_1	mem_1	1408	1535	5632	8	7	16	5	133			mem_1_read
+txn_mem_0_read_6	read	mem_0	mem_0	1536	1663	6144	8	7	16	6	134			mem_0_read
+txn_mem_1_read_6	read	mem_1	mem_1	1664	1791	6656	8	7	16	6	134			mem_1_read
+txn_mem_0_read_7	read	mem_0	mem_0	1792	1919	7168	8	7	16	7	135			mem_0_read
+txn_mem_1_read_7	read	mem_1	mem_1	1920	2047	7680	8	7	16	7	135			mem_1_read
 txn_mem_0_write_0	write	mem_0	mem_0	2048	2175	8192	8	7	16	129	137	txn_mem_0_read_0	txn_mem_0_read_0:stream_channel:mem_0_stream	mem_0_write
 txn_mem_1_write_0	write	mem_1	mem_1	2176	2303	8704	8	7	16	129	137	txn_mem_1_read_0	txn_mem_1_read_0:stream_channel:mem_1_stream	mem_1_write
-txn_mem_0_read_2	read	mem_0	mem_0	512	639	2048	8	7	16	256	384			mem_0_read
-txn_mem_1_read_2	read	mem_1	mem_1	640	767	2560	8	7	16	256	384			mem_1_read
-txn_mem_0_write_1	write	mem_0	mem_0	2304	2431	9216	8	7	16	257	265	txn_mem_0_read_1	txn_mem_0_read_1:stream_channel:mem_0_stream	mem_0_write
-txn_mem_1_write_1	write	mem_1	mem_1	2432	2559	9728	8	7	16	257	265	txn_mem_1_read_1	txn_mem_1_read_1:stream_channel:mem_1_stream	mem_1_write
-txn_mem_0_read_3	read	mem_0	mem_0	768	895	3072	8	7	16	384	512			mem_0_read
-txn_mem_1_read_3	read	mem_1	mem_1	896	1023	3584	8	7	16	384	512			mem_1_read
-txn_mem_0_write_2	write	mem_0	mem_0	2560	2687	10240	8	7	16	385	393	txn_mem_0_read_2	txn_mem_0_read_2:stream_channel:mem_0_stream	mem_0_write
-txn_mem_1_write_2	write	mem_1	mem_1	2688	2815	10752	8	7	16	385	393	txn_mem_1_read_2	txn_mem_1_read_2:stream_channel:mem_1_stream	mem_1_write
-txn_mem_0_read_4	read	mem_0	mem_0	1024	1151	4096	8	7	16	512	640			mem_0_read
-txn_mem_1_read_4	read	mem_1	mem_1	1152	1279	4608	8	7	16	512	640			mem_1_read
-txn_mem_0_write_3	write	mem_0	mem_0	2816	2943	11264	8	7	16	513	521	txn_mem_0_read_3	txn_mem_0_read_3:stream_channel:mem_0_stream	mem_0_write
-txn_mem_1_write_3	write	mem_1	mem_1	2944	3071	11776	8	7	16	513	521	txn_mem_1_read_3	txn_mem_1_read_3:stream_channel:mem_1_stream	mem_1_write
-txn_mem_0_read_5	read	mem_0	mem_0	1280	1407	5120	8	7	16	640	768			mem_0_read
-txn_mem_1_read_5	read	mem_1	mem_1	1408	1535	5632	8	7	16	640	768			mem_1_read
-txn_mem_0_write_4	write	mem_0	mem_0	3072	3199	12288	8	7	16	641	649	txn_mem_0_read_4	txn_mem_0_read_4:stream_channel:mem_0_stream	mem_0_write
-txn_mem_1_write_4	write	mem_1	mem_1	3200	3327	12800	8	7	16	641	649	txn_mem_1_read_4	txn_mem_1_read_4:stream_channel:mem_1_stream	mem_1_write
-txn_mem_0_read_6	read	mem_0	mem_0	1536	1663	6144	8	7	16	768	896			mem_0_read
-txn_mem_1_read_6	read	mem_1	mem_1	1664	1791	6656	8	7	16	768	896			mem_1_read
-txn_mem_0_write_5	write	mem_0	mem_0	3328	3455	13312	8	7	16	769	777	txn_mem_0_read_5	txn_mem_0_read_5:stream_channel:mem_0_stream	mem_0_write
-txn_mem_1_write_5	write	mem_1	mem_1	3456	3583	13824	8	7	16	769	777	txn_mem_1_read_5	txn_mem_1_read_5:stream_channel:mem_1_stream	mem_1_write
-txn_mem_0_read_7	read	mem_0	mem_0	1792	1919	7168	8	7	16	896	1024			mem_0_read
-txn_mem_1_read_7	read	mem_1	mem_1	1920	2047	7680	8	7	16	896	1024			mem_1_read
-txn_mem_0_write_6	write	mem_0	mem_0	3584	3711	14336	8	7	16	897	905	txn_mem_0_read_6	txn_mem_0_read_6:stream_channel:mem_0_stream	mem_0_write
-txn_mem_1_write_6	write	mem_1	mem_1	3712	3839	14848	8	7	16	897	905	txn_mem_1_read_6	txn_mem_1_read_6:stream_channel:mem_1_stream	mem_1_write
-txn_mem_0_write_7	write	mem_0	mem_0	3840	3967	15360	8	7	16	1025	1033	txn_mem_0_read_7	txn_mem_0_read_7:stream_channel:mem_0_stream	mem_0_write
-txn_mem_1_write_7	write	mem_1	mem_1	3968	4095	15872	8	7	16	1025	1033	txn_mem_1_read_7	txn_mem_1_read_7:stream_channel:mem_1_stream	mem_1_write
+txn_mem_0_write_1	write	mem_0	mem_0	2304	2431	9216	8	7	16	137	145	txn_mem_0_read_1	txn_mem_0_read_1:stream_channel:mem_0_stream	mem_0_write
+txn_mem_1_write_1	write	mem_1	mem_1	2432	2559	9728	8	7	16	137	145	txn_mem_1_read_1	txn_mem_1_read_1:stream_channel:mem_1_stream	mem_1_write
+txn_mem_0_write_2	write	mem_0	mem_0	2560	2687	10240	8	7	16	145	153	txn_mem_0_read_2	txn_mem_0_read_2:stream_channel:mem_0_stream	mem_0_write
+txn_mem_1_write_2	write	mem_1	mem_1	2688	2815	10752	8	7	16	145	153	txn_mem_1_read_2	txn_mem_1_read_2:stream_channel:mem_1_stream	mem_1_write
+txn_mem_0_write_3	write	mem_0	mem_0	2816	2943	11264	8	7	16	153	161	txn_mem_0_read_3	txn_mem_0_read_3:stream_channel:mem_0_stream	mem_0_write
+txn_mem_1_write_3	write	mem_1	mem_1	2944	3071	11776	8	7	16	153	161	txn_mem_1_read_3	txn_mem_1_read_3:stream_channel:mem_1_stream	mem_1_write
+txn_mem_0_write_4	write	mem_0	mem_0	3072	3199	12288	8	7	16	161	169	txn_mem_0_read_4	txn_mem_0_read_4:stream_channel:mem_0_stream	mem_0_write
+txn_mem_1_write_4	write	mem_1	mem_1	3200	3327	12800	8	7	16	161	169	txn_mem_1_read_4	txn_mem_1_read_4:stream_channel:mem_1_stream	mem_1_write
+txn_mem_0_write_5	write	mem_0	mem_0	3328	3455	13312	8	7	16	169	177	txn_mem_0_read_5	txn_mem_0_read_5:stream_channel:mem_0_stream	mem_0_write
+txn_mem_1_write_5	write	mem_1	mem_1	3456	3583	13824	8	7	16	169	177	txn_mem_1_read_5	txn_mem_1_read_5:stream_channel:mem_1_stream	mem_1_write
+txn_mem_0_write_6	write	mem_0	mem_0	3584	3711	14336	8	7	16	177	185	txn_mem_0_read_6	txn_mem_0_read_6:stream_channel:mem_0_stream	mem_0_write
+txn_mem_1_write_6	write	mem_1	mem_1	3712	3839	14848	8	7	16	177	185	txn_mem_1_read_6	txn_mem_1_read_6:stream_channel:mem_1_stream	mem_1_write
+txn_mem_0_write_7	write	mem_0	mem_0	3840	3967	15360	8	7	16	185	193	txn_mem_0_read_7	txn_mem_0_read_7:stream_channel:mem_0_stream	mem_0_write
+txn_mem_1_write_7	write	mem_1	mem_1	3968	4095	15872	8	7	16	185	193	txn_mem_1_read_7	txn_mem_1_read_7:stream_channel:mem_1_stream	mem_1_write
