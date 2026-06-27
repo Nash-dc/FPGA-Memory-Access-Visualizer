@@ -199,7 +199,7 @@ Compiling module xil_defaultlib.df_fifo_intf_default
 Compiling module xil_defaultlib.df_process_intf_default
 Compiling module xil_defaultlib.nodf_module_intf_default
 Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=1)
-Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=4)
+Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=32)
 Compiling module xil_defaultlib.dataflow_monitor_1
 Compiling module xil_defaultlib.apatb_read_write_top
 Compiling module xil_defaultlib.glbl
@@ -209,7 +209,7 @@ Built simulation snapshot read_write
   **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
   **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
   **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-  **** Start of session at: Thu Jun 18 23:22:02 2026
+  **** Start of session at: Fri Jun 26 20:04:46 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 
@@ -895,11 +895,13 @@ UVM_INFO /data/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(208
 // RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
 ////////////////////////////////////////////////////////////////////////////////////
 // RTL Simulation : 0 / 1 [0.00%] @ "113000"
-// RTL Simulation : 1 / 1 [100.00%] @ "21598000"
+// RTL Simulation : 1 / 1 [100.00%] @ "164818000"
 ////////////////////////////////////////////////////////////////////////////////////
-$finish called at time : 21632500 ps : File "/data/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+$finish called at time : 164852500 ps : File "/data/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+run: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2373.340 ; gain = 0.000 ; free physical = 624 ; free virtual = 26266
 ## quit
-INFO: [Common 17-206] Exiting xsim at Thu Jun 18 23:22:06 2026...
+INFO: xsimkernel Simulation Memory Usage: 435292 KB (Peak: 500828 KB), Simulation CPU Usage: 2590 ms
+INFO: [Common 17-206] Exiting xsim at Fri Jun 26 20:04:54 2026...
 Read Write test passed
 INFO: [COSIM-1000] *** C/RTL co-simulation finished: PASS ***
 INFO: [COSIM-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'read_write'" level="0">
-<item name = "Date">Thu Jun 18 23:21:20 2026
+<item name = "Date">Fri Jun 26 20:04:04 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">component_read_write</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">4239, 4239, 21.526 us, 21.526 us, 4096, 4096, dataflow</column>
+<column name="">32883, 32883, 0.167 ms, 0.167 ms, 32768, 32768, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
@@ -33,8 +33,8 @@
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
 <column name="read_U0">read_r, 1100, 1100, 5.586 us, 5.586 us, 1097, 1097, loop auto-rewind stp (delay=73 clock cycles(s))</column>
 <column name="read_1_U0">read_1, 1100, 1100, 5.586 us, 5.586 us, 1097, 1097, loop auto-rewind stp (delay=73 clock cycles(s))</column>
-<column name="write_U0">write_r, 4166, 4166, 20.830 us, 20.830 us, 4096, 4096, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="write_2_U0">write_2, 4166, 4166, 20.830 us, 20.830 us, 4096, 4096, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="write_U0">write_r, 32810, 32810, 0.164 ms, 0.164 ms, 32768, 32768, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="write_2_U0">write_2, 32810, 32810, 0.164 ms, 0.164 ms, 32768, 32768, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
@@ -53,12 +53,12 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, 0, 16, -</column>
 <column name="FIFO">-, -, 396, 272, -</column>
-<column name="Instance">0, -, 9274, 8756, -</column>
+<column name="Instance">0, -, 9134, 8640, -</column>
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, 0, 18, -</column>
 <column name="Register">-, -, 5, -, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
-<specialColumn name="Utilization (%)">0, 0, 9, 17, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, 8, 16, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
@@ -70,8 +70,8 @@
 <column name="mem_1_m_axi_U">mem_1_m_axi, 0, 0, 1613, 1738, 0</column>
 <column name="read_1_U0">read_1, 0, 0, 1597, 933, 0</column>
 <column name="read_U0">read_r, 0, 0, 1597, 933, 0</column>
-<column name="write_2_U0">write_2, 0, 0, 1339, 1559, 0</column>
-<column name="write_U0">write_r, 0, 0, 1339, 1559, 0</column>
+<column name="write_2_U0">write_2, 0, 0, 1269, 1501, 0</column>
+<column name="write_U0">write_r, 0, 0, 1269, 1501, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">

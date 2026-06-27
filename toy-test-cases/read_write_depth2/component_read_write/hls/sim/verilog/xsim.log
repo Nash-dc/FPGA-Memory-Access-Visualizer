@@ -3,8 +3,8 @@
 # SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Thu Jun 18 23:22:02 2026
-# Process ID         : 24148
+# Start of session at: Fri Jun 26 20:04:46 2026
+# Process ID         : 16330
 # Current directory  : /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/sim/verilog
 # Command line       : xsim -mode tcl -source {xsim.dir/read_write/xsim_script.tcl}
 # Log file           : /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/sim/verilog/xsim.log
@@ -13,13 +13,13 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 22.04.5 LTS
 # Processor Detail   : AMD Ryzen 5 5600H with Radeon Graphics
-# CPU Frequency      : 4017.162 MHz
+# CPU Frequency      : 4017.399 MHz
 # CPU Physical cores : 6
 # CPU Logical cores  : 12
 # Host memory        : 16611 MB
 # Swap memory        : 17179 MB
 # Total Virtual      : 33791 MB
-# Available Virtual  : 26640 MB
+# Available Virtual  : 27976 MB
 #-----------------------------------------------------------
 source xsim.dir/read_write/xsim_script.tcl
 # xsim {read_write} -testplusarg UVM_VERBOSITY=UVM_NONE -testplusarg UVM_TESTNAME=read_write_test_lib -testplusarg UVM_TIMEOUT=20000000000000 -view {{read_write_dataflow_ana.wcfg}} -tclbatch {read_write.tcl} -protoinst {read_write.protoinst}
@@ -703,8 +703,10 @@ UVM_INFO /data/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(208
 // RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
 ////////////////////////////////////////////////////////////////////////////////////
 // RTL Simulation : 0 / 1 [0.00%] @ "113000"
-// RTL Simulation : 1 / 1 [100.00%] @ "21598000"
+// RTL Simulation : 1 / 1 [100.00%] @ "164818000"
 ////////////////////////////////////////////////////////////////////////////////////
-$finish called at time : 21632500 ps : File "/data/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+$finish called at time : 164852500 ps : File "/data/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+run: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2373.340 ; gain = 0.000 ; free physical = 624 ; free virtual = 26266
 ## quit
-INFO: [Common 17-206] Exiting xsim at Thu Jun 18 23:22:06 2026...
+INFO: xsimkernel Simulation Memory Usage: 435292 KB (Peak: 500828 KB), Simulation CPU Usage: 2590 ms
+INFO: [Common 17-206] Exiting xsim at Fri Jun 26 20:04:54 2026...

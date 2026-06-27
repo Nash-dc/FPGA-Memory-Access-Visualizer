@@ -43,7 +43,7 @@ Diagnostics:
     FilePath:        read_write.cpp
     Replacements:    
       - FilePath:        /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp
-        Offset:          14097
+        Offset:          14098
         Length:          0
         ReplacementText: 'VITIS_LOOP_38_1: '
   - DiagnosticName:  xilinx-label-all-loops
@@ -52,7 +52,7 @@ Diagnostics:
     FilePath:        read_write.cpp
     Replacements:    
       - FilePath:        /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp
-        Offset:          15098
+        Offset:          15099
         Length:          0
         ReplacementText: 'VITIS_LOOP_72_1: '
   - DiagnosticName:  xilinx-label-all-loops
@@ -61,7 +61,7 @@ Diagnostics:
     FilePath:        read_write.cpp
     Replacements:    
       - FilePath:        /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/.autopilot/db/read_write.pp.0.cpp
-        Offset:          15190
+        Offset:          15191
         Length:          0
         ReplacementText: 'VITIS_LOOP_76_2: '
 ...

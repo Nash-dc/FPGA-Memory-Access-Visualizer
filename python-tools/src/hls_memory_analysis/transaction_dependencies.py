@@ -380,6 +380,13 @@ def _append_local_buffer_phase_order_dependencies(
                 or target_txn not in blocks_by_id
             ):
                 continue
+            existing_pair_dependency = any(
+                dependency.get("source_access_id") == pair["source_access_id"]
+                and dependency.get("target_access_id") == pair["target_access_id"]
+                for dependency in blocks_by_id[target_txn]["dependencies"]
+            )
+            if existing_pair_dependency:
+                continue
             dependency = {
                 "source_transaction_id": source_txn,
                 "kind": "local_buffer_phase_order",

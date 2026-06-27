@@ -298,15 +298,10 @@ class TransactionTimelineGoldenTest(unittest.TestCase):
         sources = dependency_sources(graph)
         self.assertEqual(
             [sources[item["transaction_id"]] for item in writes],
-            [
-                [reads[0]["transaction_id"], reads[-1]["transaction_id"]],
-                [reads[1]["transaction_id"], reads[-1]["transaction_id"]],
-                [reads[2]["transaction_id"], reads[-1]["transaction_id"]],
-                [reads[-1]["transaction_id"]],
-            ],
+            [[item["transaction_id"]] for item in reads],
         )
         self.assertEqual(
-            graph["counts"]["local_buffer_phase_order_edges"], 4
+            graph["counts"]["local_buffer_phase_order_edges"], 0
         )
         self.assertEqual([item["issue_order"] for item in reads], [0, 1, 2, 3])
         self.assertTrue(
@@ -317,15 +312,19 @@ class TransactionTimelineGoldenTest(unittest.TestCase):
         )
         self.assertTrue(
             all(
-                right["issue_order"] - left["issue_order"] >= 16
+                right["issue_order"] - left["issue_order"] >= 17
                 for left, right in zip(writes, writes[1:])
             )
         )
         self.assertEqual(
             writes[0]["timing_model"]["burst_formation_cycles"], 16
         )
-        self.assertTrue(
-            writes[0]["timing_model"]["write_phase_order_expected"]
+        self.assertEqual(
+            writes[0]["timing_model"]["request_gap_cycles"], 1
+        )
+        self.assertNotIn(
+            "write_phase_order_expected",
+            writes[0]["timing_model"],
         )
 
     def test_dataflow_stream_write_requests_wait_for_matching_read_transactions(self):
@@ -466,6 +465,7 @@ class TransactionTimelineGoldenTest(unittest.TestCase):
             "num_read_outstanding=1",
             reads[0]["timing_model"]["read_outstanding_limit_model"],
         )
+        self.assertEqual(reads[0]["timing_model"]["request_gap_cycles"], 1)
         self.assertGreater(writes[0]["issue_order"], reads[0]["complete_order"])
         self.assertEqual(writes[1]["issue_order"], reads[1]["complete_order"] + 1)
         self.assertLess(

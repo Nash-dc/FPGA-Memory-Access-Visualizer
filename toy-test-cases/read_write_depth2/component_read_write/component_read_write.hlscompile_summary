@@ -9,10 +9,10 @@
 <ENTRY>
 {
  "type": "ET_CmdStep",
- "dateTimestamp": "Thu Jun 18 23:21:11 2026",
- "timestampMillis": "1781817671873",
+ "dateTimestamp": "Fri Jun 26 20:03:55 2026",
+ "timestampMillis": "1782497035517",
  "buildStep": {
-  "cmdId": "346d80b8-d7b9-4490-b51a-f4c6f06cb76f",
+  "cmdId": "63de3ce2-03b9-4d8c-b104-1a0583dda518",
   "name": "vitis-run",
   "logFile": "/data/hls-dev/toy-test-cases/read_write_depth2/logs/hls_compile.log",
   "commandLine": "vitis-run --mode hls --tcl /data/hls-dev/toy-test-cases/read_write_depth2/run_hls.tcl",
@@ -25,10 +25,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Thu Jun 18 23:21:11 2026",
- "timestampMillis": "1781817671873",
+ "dateTimestamp": "Fri Jun 26 20:03:55 2026",
+ "timestampMillis": "1782497035517",
  "status": {
-  "cmdId": "346d80b8-d7b9-4490-b51a-f4c6f06cb76f",
+  "cmdId": "63de3ce2-03b9-4d8c-b104-1a0583dda518",
   "state": "CS_RUNNING"
  }
 }
@@ -36,8 +36,8 @@
 <ENTRY>
 {
  "type": "ET_FlowMetaData",
- "dateTimestamp": "Thu Jun 18 23:21:11 2026",
- "timestampMillis": "1781817671873",
+ "dateTimestamp": "Fri Jun 26 20:03:55 2026",
+ "timestampMillis": "1782497035517",
  "buildSummary": {
   "hardwarePlatform": "",
   "hardwareDsa": "",
@@ -73,10 +73,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Thu Jun 18 23:21:11 2026",
- "timestampMillis": "1781817671874",
+ "dateTimestamp": "Fri Jun 26 20:03:55 2026",
+ "timestampMillis": "1782497035517",
  "buildStep": {
-  "cmdId": "738b6501-becc-4170-bd2a-0ce9f31bac49",
+  "cmdId": "d494ab87-27dd-4612-a82c-ff6230825a7a",
   "name": "csynth_design",
   "logFile": "/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/hls.log",
   "commandLine": "csynth_design",
@@ -89,10 +89,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Thu Jun 18 23:21:11 2026",
- "timestampMillis": "1781817671874",
+ "dateTimestamp": "Fri Jun 26 20:03:55 2026",
+ "timestampMillis": "1782497035517",
  "status": {
-  "cmdId": "738b6501-becc-4170-bd2a-0ce9f31bac49",
+  "cmdId": "d494ab87-27dd-4612-a82c-ff6230825a7a",
   "state": "CS_RUNNING"
  }
 }
@@ -100,8 +100,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Jun 18 23:21:11 2026",
- "timestampMillis": "1781817671874",
+ "dateTimestamp": "Fri Jun 26 20:03:55 2026",
+ "timestampMillis": "1782497035518",
  "report": {
   "path": "/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/hls_data.json",
   "name": "",
@@ -114,8 +114,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Jun 18 23:21:11 2026",
- "timestampMillis": "1781817671874",
+ "dateTimestamp": "Fri Jun 26 20:03:55 2026",
+ "timestampMillis": "1782497035518",
  "report": {
   "path": "/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/csynth.rpt",
   "name": "",
@@ -128,8 +128,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Jun 18 23:21:11 2026",
- "timestampMillis": "1781817671875",
+ "dateTimestamp": "Fri Jun 26 20:03:55 2026",
+ "timestampMillis": "1782497035518",
  "report": {
   "path": "/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/syn/report/csynth.xml",
   "name": "",
@@ -142,8 +142,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Jun 18 23:21:21 2026",
- "timestampMillis": "1781817681172",
+ "dateTimestamp": "Fri Jun 26 20:04:04 2026",
+ "timestampMillis": "1782497044904",
  "report": {
   "path": "/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls",
   "name": "",
@@ -156,8 +156,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Jun 18 23:21:21 2026",
- "timestampMillis": "1781817681172",
+ "dateTimestamp": "Fri Jun 26 20:04:04 2026",
+ "timestampMillis": "1782497044904",
  "report": {
   "path": "/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls",
   "name": "",
@@ -170,8 +170,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Jun 18 23:21:21 2026",
- "timestampMillis": "1781817681172",
+ "dateTimestamp": "Fri Jun 26 20:04:04 2026",
+ "timestampMillis": "1782497044904",
  "report": {
   "path": "/data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls",
   "name": "",
@@ -184,10 +184,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Thu Jun 18 23:21:21 2026",
- "timestampMillis": "1781817681172",
+ "dateTimestamp": "Fri Jun 26 20:04:04 2026",
+ "timestampMillis": "1782497044904",
  "status": {
-  "cmdId": "738b6501-becc-4170-bd2a-0ce9f31bac49",
+  "cmdId": "d494ab87-27dd-4612-a82c-ff6230825a7a",
   "state": "CS_PASSED"
  }
 }
@@ -195,10 +195,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Thu Jun 18 23:21:21 2026",
- "timestampMillis": "1781817681211",
+ "dateTimestamp": "Fri Jun 26 20:04:04 2026",
+ "timestampMillis": "1782497044940",
  "status": {
-  "cmdId": "346d80b8-d7b9-4490-b51a-f4c6f06cb76f",
+  "cmdId": "63de3ce2-03b9-4d8c-b104-1a0583dda518",
   "state": "CS_PASSED"
  }
 }

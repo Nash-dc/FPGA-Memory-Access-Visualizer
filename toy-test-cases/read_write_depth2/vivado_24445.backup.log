@@ -3,8 +3,8 @@
 # SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Wed Jun 17 18:18:04 2026
-# Process ID         : 19593
+# Start of session at: Thu Jun 18 23:22:33 2026
+# Process ID         : 24445
 # Current directory  : /data/hls-dev/toy-test-cases/read_write_depth2
 # Command line       : vivado /data/hls-dev/toy-test-cases/read_write_depth2/component_read_write/hls/sim/verilog/read_write.wdb
 # Log file           : /data/hls-dev/toy-test-cases/read_write_depth2/vivado.log
@@ -13,13 +13,13 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 22.04.5 LTS
 # Processor Detail   : AMD Ryzen 5 5600H with Radeon Graphics
-# CPU Frequency      : 400.000 MHz
+# CPU Frequency      : 4116.597 MHz
 # CPU Physical cores : 6
 # CPU Logical cores  : 12
 # Host memory        : 16611 MB
 # Swap memory        : 17179 MB
 # Total Virtual      : 33791 MB
-# Available Virtual  : 28538 MB
+# Available Virtual  : 27478 MB
 #-----------------------------------------------------------
 start_gui
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:ac701:part0:1.4 available at /data/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/ac701/1.4/board.xml as part xc7a200tfbg676-2 specified in board_part file is either invalid or not available
@@ -85,16 +85,10 @@ INFO: [Wavedata 42-564]   Found protocol instance at /apatb_read_write_top/AESL_
 INFO: [Wavedata 42-564]   Found protocol instance at /apatb_read_write_top/AESL_inst_read_write/read_U0/read_U0_activity
 INFO: [Wavedata 42-564]   Found protocol instance at /apatb_read_write_top/AESL_inst_read_write/write_2_U0/write_2_U0_activity
 INFO: [Wavedata 42-564]   Found protocol instance at /apatb_read_write_top/AESL_inst_read_write/write_U0/write_U0_activity
-add_wave {{/apatb_read_write_top/ap_clk}} 
-current_wave_config {Untitled 1}
-Untitled 1
 add_wave {{/apatb_read_write_top/mem_0_ARVALID}} 
 current_wave_config {Untitled 1}
 Untitled 1
 add_wave {{/apatb_read_write_top/mem_0_ARREADY}} 
-current_wave_config {Untitled 1}
-Untitled 1
-add_wave {{/apatb_read_write_top/mem_0_ARADDR}} 
 current_wave_config {Untitled 1}
 Untitled 1
 add_wave {{/apatb_read_write_top/mem_0_RVALID}} 
@@ -112,8 +106,14 @@ Untitled 1
 add_wave {{/apatb_read_write_top/mem_0_AWREADY}} 
 current_wave_config {Untitled 1}
 Untitled 1
-add_wave {{/apatb_read_write_top/mem_0_AWADDR}} 
+add_wave {{/apatb_read_write_top/mem_0_WLAST}} 
+current_wave_config {Untitled 1}
+Untitled 1
+add_wave {{/apatb_read_write_top/mem_0_WVALID}} 
+current_wave_config {Untitled 1}
+Untitled 1
+add_wave {{/apatb_read_write_top/mem_0_WREADY}} 
 close_sim
 INFO: [Simtcl 6-16] Simulation closed
 exit
-INFO: [Common 17-206] Exiting Vivado at Wed Jun 17 18:26:47 2026...
+INFO: [Common 17-206] Exiting Vivado at Thu Jun 18 23:40:52 2026...

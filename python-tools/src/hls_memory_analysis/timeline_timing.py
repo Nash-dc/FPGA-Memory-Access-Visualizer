@@ -313,17 +313,20 @@ def write_timing_estimate(transaction, csynth, pipeline, has_dependencies):
     # iteration. Filling a burst therefore takes useful_elements * II cycles.
     # The W channel additionally needs at least one cycle per AXI beat.
     burst_formation_cycles = useful_elements * max(1, loop_ii)
-    issue_spacing = max(beats, burst_formation_cycles)
-    pipeline_fill_cycles = max(0, pipeline_depth - 1) if has_dependencies else 0
+    issue_spacing = max(beats, burst_formation_cycles) + 1
+    pipeline_fill_cycles = 0
     return {
         "loop_ii": loop_ii,
         "pipeline_depth": pipeline_depth,
         "burst_formation_cycles": burst_formation_cycles,
         "axi_transfer_cycles": beats,
         "pipeline_fill_cycles": pipeline_fill_cycles,
+        "request_gap_cycles": 1,
         "minimum_issue_spacing": issue_spacing,
         "formula": (
-            "max(axi_beat_count, useful_element_count * achieved_loop_ii)"
+            "dependency readiness plus "
+            "max(axi_beat_count, useful_element_count * achieved_loop_ii) "
+            "plus one visual request-gap slot"
         ),
         "confidence": "estimated_from_csynth_and_ir_trace",
         "is_cycle_accurate": False,
@@ -356,12 +359,14 @@ def annotate_interface_outstanding_limit(transaction, timing_model):
         if limit == 1:
             beats = max(1, _integer(transaction.get("axi", {}).get("beat_count"), 1))
             timing_model["minimum_issue_spacing"] = max(
-                timing_model.get("minimum_issue_spacing", 1), beats
+                timing_model.get("minimum_issue_spacing", 1), beats + 1
             )
+            timing_model["request_gap_cycles"] = 1
             timing_model["read_outstanding_limit_model"] = (
                 "num_read_outstanding=1: this AXI master can have only one "
-                "read request in flight, so following read requests may be "
-                "delayed by the master's internal read FIFO/R-channel progress"
+                "read request in flight; the timeline leaves a one-slot gap "
+                "after each read burst to visualize internal FIFO/R-channel "
+                "stall risk"
             )
             timing_model["read_outstanding_limit_expected"] = True
         elif "backpressure_limited_order_slots" not in timing_model:

@@ -56312,7 +56312,7 @@ void write(
   for(int i = 0; i < 8; i++){
     const int off = offset_start + i*128*2;
     for(int j = 0; j < 128; j++){
-#pragma HLS pipeline II=4
+#pragma HLS pipeline II=32
       mem[off+j] = in_stream.read();
     }
   }

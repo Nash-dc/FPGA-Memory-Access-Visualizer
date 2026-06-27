@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'read_write'" level="0">
-<item name = "Date">Thu Jun 18 23:21:20 2026
+<item name = "Date">Fri Jun 26 20:04:03 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">component_read_write</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">4239, 4239, 21.526 us, 21.526 us, 4096, 4096, dataflow</column>
+<column name="">32883, 32883, 0.167 ms, 0.167 ms, 32768, 32768, dataflow</column>
 </table>
 </item>
 <item name = "Detail">

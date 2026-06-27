@@ -24,7 +24,7 @@ void write(
   for(int i = 0; i < NUM_BLOCK; i++){
     const int off = offset_start + i*STRIDE;
     for(int j = 0; j < BLOCK_LENGTH; j++){
-      #pragma HLS pipeline II=4
+      #pragma HLS pipeline II=32
       mem[off+j] = in_stream.read();
     }
   }
@@ -46,7 +46,7 @@ void read_write(
     int * mem_1
     )
 {
-#pragma HLS interface m_axi port=mem_0  bundle=mem_0 depth=4096 num_read_outstanding=1
+#pragma HLS interface m_axi port=mem_0  bundle=mem_0 depth=4096 num_read_outstanding=1 
 #pragma HLS interface m_axi port=mem_1  bundle=mem_1 depth=4096 num_read_outstanding=1
 
 #pragma HLS dataflow

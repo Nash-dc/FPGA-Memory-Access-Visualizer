@@ -6,13 +6,13 @@
     "logical_access_graph": "logical_access_graph.json"
   },
   "counts": {
-    "blocks": 8,
+    "blocks": 4,
     "static_dependency_edges": 6,
     "logical_dependency_edges": 64,
     "dynamic_memory_raw_edges": 0,
     "stream_channel_edges": 0,
     "stream_capacity_backpressure_edges": 0,
-    "local_buffer_phase_order_edges": 4,
+    "local_buffer_phase_order_edges": 0,
     "value_flow_edges": 64,
     "control_dependency_edges": 0
   },
@@ -31,40 +31,15 @@
           "source_access_id": "access:0",
           "target_access_id": "access:1",
           "source_element_ranges": [
-            "a[0..15]"
+            "a[0..31]"
           ],
           "target_element_ranges": [
-            "b[0..15]"
+            "b[0..31]"
           ],
-          "logical_edge_count": 16,
-          "logical_source_count": 16,
-          "logical_target_count": 16,
+          "logical_edge_count": 32,
+          "logical_source_count": 32,
+          "logical_target_count": 32,
           "reason": "stored value operand is defined by, or computed from, the source access"
-        },
-        {
-          "source_transaction_id": "txn_a_read_3",
-          "kind": "local_buffer_phase_order",
-          "via": "buff",
-          "source_access_id": "access:0",
-          "target_access_id": "access:1",
-          "source_element_ranges": [
-            "a[0..15]",
-            "a[16..31]",
-            "a[32..47]",
-            "a[48..63]"
-          ],
-          "target_element_ranges": [
-            "b[0..15]"
-          ],
-          "logical_edge_count": 0,
-          "logical_source_count": 4,
-          "logical_target_count": 1,
-          "reason": "non-DATAFLOW local buffer phase order: HLS may issue the widened producer read group before consumer write bursts through the same local buffer",
-          "path_edge_ids": [
-            "dep:0",
-            "dep:4",
-            "dep:2"
-          ]
         }
       ]
     },
@@ -82,142 +57,15 @@
           "source_access_id": "access:0",
           "target_access_id": "access:1",
           "source_element_ranges": [
-            "a[16..31]"
+            "a[32..63]"
           ],
           "target_element_ranges": [
-            "b[16..31]"
+            "b[32..63]"
           ],
-          "logical_edge_count": 16,
-          "logical_source_count": 16,
-          "logical_target_count": 16,
+          "logical_edge_count": 32,
+          "logical_source_count": 32,
+          "logical_target_count": 32,
           "reason": "stored value operand is defined by, or computed from, the source access"
-        },
-        {
-          "source_transaction_id": "txn_a_read_3",
-          "kind": "local_buffer_phase_order",
-          "via": "buff",
-          "source_access_id": "access:0",
-          "target_access_id": "access:1",
-          "source_element_ranges": [
-            "a[0..15]",
-            "a[16..31]",
-            "a[32..47]",
-            "a[48..63]"
-          ],
-          "target_element_ranges": [
-            "b[16..31]"
-          ],
-          "logical_edge_count": 0,
-          "logical_source_count": 4,
-          "logical_target_count": 1,
-          "reason": "non-DATAFLOW local buffer phase order: HLS may issue the widened producer read group before consumer write bursts through the same local buffer",
-          "path_edge_ids": [
-            "dep:0",
-            "dep:4",
-            "dep:2"
-          ]
-        }
-      ]
-    },
-    {
-      "transaction_id": "txn_a_read_2",
-      "dependencies": []
-    },
-    {
-      "transaction_id": "txn_b_write_2",
-      "dependencies": [
-        {
-          "source_transaction_id": "txn_a_read_2",
-          "kind": "llvm_def_use",
-          "via": "ssa_value",
-          "source_access_id": "access:0",
-          "target_access_id": "access:1",
-          "source_element_ranges": [
-            "a[32..47]"
-          ],
-          "target_element_ranges": [
-            "b[32..47]"
-          ],
-          "logical_edge_count": 16,
-          "logical_source_count": 16,
-          "logical_target_count": 16,
-          "reason": "stored value operand is defined by, or computed from, the source access"
-        },
-        {
-          "source_transaction_id": "txn_a_read_3",
-          "kind": "local_buffer_phase_order",
-          "via": "buff",
-          "source_access_id": "access:0",
-          "target_access_id": "access:1",
-          "source_element_ranges": [
-            "a[0..15]",
-            "a[16..31]",
-            "a[32..47]",
-            "a[48..63]"
-          ],
-          "target_element_ranges": [
-            "b[32..47]"
-          ],
-          "logical_edge_count": 0,
-          "logical_source_count": 4,
-          "logical_target_count": 1,
-          "reason": "non-DATAFLOW local buffer phase order: HLS may issue the widened producer read group before consumer write bursts through the same local buffer",
-          "path_edge_ids": [
-            "dep:0",
-            "dep:4",
-            "dep:2"
-          ]
-        }
-      ]
-    },
-    {
-      "transaction_id": "txn_a_read_3",
-      "dependencies": []
-    },
-    {
-      "transaction_id": "txn_b_write_3",
-      "dependencies": [
-        {
-          "source_transaction_id": "txn_a_read_3",
-          "kind": "llvm_def_use",
-          "via": "ssa_value",
-          "source_access_id": "access:0",
-          "target_access_id": "access:1",
-          "source_element_ranges": [
-            "a[48..63]"
-          ],
-          "target_element_ranges": [
-            "b[48..63]"
-          ],
-          "logical_edge_count": 16,
-          "logical_source_count": 16,
-          "logical_target_count": 16,
-          "reason": "stored value operand is defined by, or computed from, the source access"
-        },
-        {
-          "source_transaction_id": "txn_a_read_3",
-          "kind": "local_buffer_phase_order",
-          "via": "buff",
-          "source_access_id": "access:0",
-          "target_access_id": "access:1",
-          "source_element_ranges": [
-            "a[0..15]",
-            "a[16..31]",
-            "a[32..47]",
-            "a[48..63]"
-          ],
-          "target_element_ranges": [
-            "b[48..63]"
-          ],
-          "logical_edge_count": 0,
-          "logical_source_count": 4,
-          "logical_target_count": 1,
-          "reason": "non-DATAFLOW local buffer phase order: HLS may issue the widened producer read group before consumer write bursts through the same local buffer",
-          "path_edge_ids": [
-            "dep:0",
-            "dep:4",
-            "dep:2"
-          ]
         }
       ]
     }

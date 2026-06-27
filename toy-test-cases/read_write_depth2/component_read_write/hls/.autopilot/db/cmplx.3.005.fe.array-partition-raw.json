@@ -1,7 +1,7 @@
 {
   "0": {
     "basicblocks": 1,
-    "calls": "2 1 4 3",
+    "calls": "1 2 3 4",
     "control_depth": 0,
     "def_use_depth": 1,
     "file": "read_write.cpp",
@@ -18,13 +18,13 @@
     "def_use_depth": 3,
     "file": "read_write.cpp",
     "fileloc": 3,
-    "instructions": 18,
+    "instructions": 17,
     "loads": {
       "L": 1
     },
     "memory_accesses": 2,
     "name": "read",
-    "total_instructions": 18
+    "total_instructions": 17
   },
   "2": {
     "basicblocks": 5,
@@ -33,13 +33,13 @@
     "def_use_depth": 3,
     "file": "read_write.cpp",
     "fileloc": 3,
-    "instructions": 17,
+    "instructions": 18,
     "loads": {
       "L": 1
     },
     "memory_accesses": 2,
     "name": "read",
-    "total_instructions": 17
+    "total_instructions": 18
   },
   "3": {
     "basicblocks": 5,

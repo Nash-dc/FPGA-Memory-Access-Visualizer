@@ -221,12 +221,13 @@ const widthScale=Math.max(1,Math.min(compact?1.4:2.6,timeScale*0.55));
 const minNodeWidth=compact?12:84;
 const maxNodeWidth=compact?96:260;
 const laneGap=0,left=130;
+function requestGapPx(t){const gap=Number((t.timing_model||{}).request_gap_cycles)||0;return gap>0?(compact?6:18)*gap:laneGap}
 txns.forEach(t=>{const issue=Number(t.issue_order)||0,beats=Number(t.beats)||1;t._width=Math.min(maxNodeWidth,Math.max(minNodeWidth,Math.round(beats*widthScale)));t._timeLeft=left+issue*timeScale});
 const txnById=new Map(txns.map(t=>[t.id,t]));
 function laneTxns(lane){return txns.filter(t=>t.lane===lane).sort((a,b)=>(Number(a.issue_order)||0)-(Number(b.issue_order)||0)||String(a.id).localeCompare(String(b.id)))}
-function placeLaneTxns(){lanes.forEach(l=>{let cursor=left;laneTxns(l).forEach(t=>{const required=Math.max(t._left??t._timeLeft,cursor);if(t._left===undefined||required>t._left)t._left=required;cursor=t._left+t._width+laneGap})})}
+function placeLaneTxns(){lanes.forEach(l=>{let cursor=left;laneTxns(l).forEach(t=>{const required=Math.max(t._left??t._timeLeft,cursor);if(t._left===undefined||required>t._left)t._left=required;cursor=t._left+t._width+requestGapPx(t)})})}
 function isHardDependency(d){return d.readiness==='source_transaction_complete'||d.kind!=='stream_channel'}
-function applyDependencyConstraints(){let changed=false;txns.forEach(t=>{(t.dependency_details||[]).filter(isHardDependency).forEach(d=>{const s=txnById.get(d.source_transaction_id);if(!s)return;const required=s._left+s._width+laneGap;if(required>t._left){t._left=required;changed=true}})});return changed}
+function applyDependencyConstraints(){let changed=false;txns.forEach(t=>{(t.dependency_details||[]).filter(isHardDependency).forEach(d=>{const s=txnById.get(d.source_transaction_id);if(!s)return;const required=s._left+s._width+requestGapPx(s);if(required>t._left){t._left=required;changed=true}})});return changed}
 placeLaneTxns();
 for(let pass=0;pass<txns.length;pass++){const shifted=applyDependencyConstraints();placeLaneTxns();if(!shifted)break}
 const width=Math.max(900,...txns.map(t=>t._left+t._width+40)), height=Math.max(300,lanes.length*laneStep+60);

@@ -2,7 +2,7 @@
 
 void matmul_row_col(const int a[MATRIX_SIZE], const int b[MATRIX_SIZE],
                     int c[OUTPUT_SIZE]) {
-#pragma HLS INTERFACE m_axi port=a offset=slave bundle=gmem_a depth=MATRIX_SIZE max_read_burst_length=1 max_widen_bitwidth=512
+#pragma HLS INTERFACE m_axi port=a offset=slave bundle=gmem_a depth=MATRIX_SIZE max_read_burst_length=16 max_widen_bitwidth=512
 #pragma HLS INTERFACE m_axi port=b offset=slave bundle=gmem_b depth=MATRIX_SIZE max_read_burst_length=16 max_widen_bitwidth=512
 #pragma HLS INTERFACE m_axi port=c offset=slave bundle=gmem_c depth=OUTPUT_SIZE max_write_burst_length=1 max_widen_bitwidth=32
 

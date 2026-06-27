@@ -1,0 +1,13 @@
+txn_id	direction	argument	bundle	start_index	end_index	byte_addr	beats	axlen	elements_per_beat	issue_order	complete_order	depends_on	dependency_details	timeline_lane
+txn_in1_read_0	read	in1	gmem	0	15	0	16	15	1	0	16			in1
+txn_in2_read_0	read	in2	gmem	0	15	0	16	15	1	1	17			in2
+txn_in1_read_1	read	in1	gmem	16	31	64	16	15	1	2	18			in1
+txn_in2_read_1	read	in2	gmem	16	31	64	16	15	1	3	19			in2
+txn_in1_read_2	read	in1	gmem	32	47	128	16	15	1	4	20			in1
+txn_in2_read_2	read	in2	gmem	32	47	128	16	15	1	5	21			in2
+txn_in1_read_3	read	in1	gmem	48	63	192	16	15	1	6	22			in1
+txn_in2_read_3	read	in2	gmem	48	63	192	16	15	1	7	23			in2
+txn_out_write_0	write	out	gmem	0	15	0	16	15	1	50	66	txn_in1_read_0,txn_in2_read_0	txn_in1_read_0:llvm_def_use:ssa_value,txn_in2_read_0:llvm_def_use:ssa_value	out
+txn_out_write_1	write	out	gmem	16	31	64	16	15	1	83	99	txn_in1_read_1,txn_in2_read_1	txn_in1_read_1:llvm_def_use:ssa_value,txn_in2_read_1:llvm_def_use:ssa_value	out
+txn_out_write_2	write	out	gmem	32	47	128	16	15	1	116	132	txn_in1_read_2,txn_in2_read_2	txn_in1_read_2:llvm_def_use:ssa_value,txn_in2_read_2:llvm_def_use:ssa_value	out
+txn_out_write_3	write	out	gmem	48	63	192	16	15	1	149	165	txn_in1_read_3,txn_in2_read_3	txn_in1_read_3:llvm_def_use:ssa_value,txn_in2_read_3:llvm_def_use:ssa_value	out

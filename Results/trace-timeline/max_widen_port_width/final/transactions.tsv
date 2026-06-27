@@ -1,9 +1,5 @@
 txn_id	direction	argument	bundle	start_index	end_index	byte_addr	beats	axlen	elements_per_beat	issue_order	complete_order	depends_on	dependency_details	timeline_lane
-txn_a_read_0	read	a	gmem	0	15	0	4	3	4	0	4			a
-txn_a_read_1	read	a	gmem	16	31	64	4	3	4	1	5			a
-txn_a_read_2	read	a	gmem	32	47	128	4	3	4	2	6			a
-txn_a_read_3	read	a	gmem	48	63	192	4	3	4	3	7			a
-txn_b_write_0	write	b	gmem	0	15	0	4	3	4	40	44	txn_a_read_0,txn_a_read_3	txn_a_read_0:llvm_def_use:ssa_value,txn_a_read_3:local_buffer_phase_order:buff	b
-txn_b_write_1	write	b	gmem	16	31	64	4	3	4	56	60	txn_a_read_1,txn_a_read_3	txn_a_read_1:llvm_def_use:ssa_value,txn_a_read_3:local_buffer_phase_order:buff	b
-txn_b_write_2	write	b	gmem	32	47	128	4	3	4	72	76	txn_a_read_2,txn_a_read_3	txn_a_read_2:llvm_def_use:ssa_value,txn_a_read_3:local_buffer_phase_order:buff	b
-txn_b_write_3	write	b	gmem	48	63	192	4	3	4	88	92	txn_a_read_3	txn_a_read_3:llvm_def_use:ssa_value,txn_a_read_3:local_buffer_phase_order:buff	b
+txn_a_read_0	read	a	gmem	0	31	0	8	7	4	0	8			a
+txn_a_read_1	read	a	gmem	32	63	128	8	7	4	1	9			a
+txn_b_write_0	write	b	gmem	0	31	0	8	7	4	41	49	txn_a_read_0	txn_a_read_0:llvm_def_use:ssa_value	b
+txn_b_write_1	write	b	gmem	32	63	128	8	7	4	74	82	txn_a_read_1	txn_a_read_1:llvm_def_use:ssa_value	b

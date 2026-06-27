@@ -5353,8 +5353,8 @@
       "coalescing_reason": "inferred from HLS M_AXI width/burst metadata and IR trace offsets",
       "confidence": "hls_metadata_plus_ir_trace",
       "element_range_label": "a[0..255]",
-      "issue_order": 515,
-      "complete_order": 771,
+      "issue_order": 513,
+      "complete_order": 769,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [
         "txn_a_read_0"
@@ -5384,9 +5384,10 @@
         "pipeline_depth": 3,
         "burst_formation_cycles": 256,
         "axi_transfer_cycles": 256,
-        "pipeline_fill_cycles": 2,
-        "minimum_issue_spacing": 256,
-        "formula": "max(axi_beat_count, useful_element_count * achieved_loop_ii)",
+        "pipeline_fill_cycles": 0,
+        "request_gap_cycles": 1,
+        "minimum_issue_spacing": 257,
+        "formula": "dependency readiness plus max(axi_beat_count, useful_element_count * achieved_loop_ii) plus one visual request-gap slot",
         "confidence": "estimated_from_csynth_and_ir_trace",
         "is_cycle_accurate": false,
         "num_write_outstanding": 16
@@ -5971,8 +5972,8 @@
       "coalescing_reason": "inferred from HLS M_AXI width/burst metadata and IR trace offsets",
       "confidence": "hls_metadata_plus_ir_trace",
       "element_range_label": "a[256..511]",
-      "issue_order": 771,
-      "complete_order": 1027,
+      "issue_order": 770,
+      "complete_order": 1026,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [
         "txn_a_read_1"
@@ -6002,9 +6003,10 @@
         "pipeline_depth": 3,
         "burst_formation_cycles": 256,
         "axi_transfer_cycles": 256,
-        "pipeline_fill_cycles": 2,
-        "minimum_issue_spacing": 256,
-        "formula": "max(axi_beat_count, useful_element_count * achieved_loop_ii)",
+        "pipeline_fill_cycles": 0,
+        "request_gap_cycles": 1,
+        "minimum_issue_spacing": 257,
+        "formula": "dependency readiness plus max(axi_beat_count, useful_element_count * achieved_loop_ii) plus one visual request-gap slot",
         "confidence": "estimated_from_csynth_and_ir_trace",
         "is_cycle_accurate": false,
         "num_write_outstanding": 16
@@ -6620,9 +6622,10 @@
         "pipeline_depth": 3,
         "burst_formation_cycles": 256,
         "axi_transfer_cycles": 256,
-        "pipeline_fill_cycles": 2,
-        "minimum_issue_spacing": 256,
-        "formula": "max(axi_beat_count, useful_element_count * achieved_loop_ii)",
+        "pipeline_fill_cycles": 0,
+        "request_gap_cycles": 1,
+        "minimum_issue_spacing": 257,
+        "formula": "dependency readiness plus max(axi_beat_count, useful_element_count * achieved_loop_ii) plus one visual request-gap slot",
         "confidence": "estimated_from_csynth_and_ir_trace",
         "is_cycle_accurate": false,
         "num_write_outstanding": 16
@@ -7207,8 +7210,8 @@
       "coalescing_reason": "inferred from HLS M_AXI width/burst metadata and IR trace offsets",
       "confidence": "hls_metadata_plus_ir_trace",
       "element_range_label": "a[768..1023]",
-      "issue_order": 1283,
-      "complete_order": 1539,
+      "issue_order": 1284,
+      "complete_order": 1540,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [
         "txn_a_read_3"
@@ -7238,9 +7241,10 @@
         "pipeline_depth": 3,
         "burst_formation_cycles": 256,
         "axi_transfer_cycles": 256,
-        "pipeline_fill_cycles": 2,
-        "minimum_issue_spacing": 256,
-        "formula": "max(axi_beat_count, useful_element_count * achieved_loop_ii)",
+        "pipeline_fill_cycles": 0,
+        "request_gap_cycles": 1,
+        "minimum_issue_spacing": 257,
+        "formula": "dependency readiness plus max(axi_beat_count, useful_element_count * achieved_loop_ii) plus one visual request-gap slot",
         "confidence": "estimated_from_csynth_and_ir_trace",
         "is_cycle_accurate": false,
         "num_write_outstanding": 16
@@ -7825,8 +7829,8 @@
       "coalescing_reason": "inferred from HLS M_AXI width/burst metadata and IR trace offsets",
       "confidence": "hls_metadata_plus_ir_trace",
       "element_range_label": "a[1024..1279]",
-      "issue_order": 1539,
-      "complete_order": 1795,
+      "issue_order": 1541,
+      "complete_order": 1797,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [
         "txn_a_read_4"
@@ -7856,9 +7860,10 @@
         "pipeline_depth": 3,
         "burst_formation_cycles": 256,
         "axi_transfer_cycles": 256,
-        "pipeline_fill_cycles": 2,
-        "minimum_issue_spacing": 256,
-        "formula": "max(axi_beat_count, useful_element_count * achieved_loop_ii)",
+        "pipeline_fill_cycles": 0,
+        "request_gap_cycles": 1,
+        "minimum_issue_spacing": 257,
+        "formula": "dependency readiness plus max(axi_beat_count, useful_element_count * achieved_loop_ii) plus one visual request-gap slot",
         "confidence": "estimated_from_csynth_and_ir_trace",
         "is_cycle_accurate": false,
         "num_write_outstanding": 16
@@ -8443,8 +8448,8 @@
       "coalescing_reason": "inferred from HLS M_AXI width/burst metadata and IR trace offsets",
       "confidence": "hls_metadata_plus_ir_trace",
       "element_range_label": "a[1280..1535]",
-      "issue_order": 1795,
-      "complete_order": 2051,
+      "issue_order": 1798,
+      "complete_order": 2054,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [
         "txn_a_read_5"
@@ -8474,9 +8479,10 @@
         "pipeline_depth": 3,
         "burst_formation_cycles": 256,
         "axi_transfer_cycles": 256,
-        "pipeline_fill_cycles": 2,
-        "minimum_issue_spacing": 256,
-        "formula": "max(axi_beat_count, useful_element_count * achieved_loop_ii)",
+        "pipeline_fill_cycles": 0,
+        "request_gap_cycles": 1,
+        "minimum_issue_spacing": 257,
+        "formula": "dependency readiness plus max(axi_beat_count, useful_element_count * achieved_loop_ii) plus one visual request-gap slot",
         "confidence": "estimated_from_csynth_and_ir_trace",
         "is_cycle_accurate": false,
         "num_write_outstanding": 16
@@ -9061,8 +9067,8 @@
       "coalescing_reason": "inferred from HLS M_AXI width/burst metadata and IR trace offsets",
       "confidence": "hls_metadata_plus_ir_trace",
       "element_range_label": "a[1536..1791]",
-      "issue_order": 2051,
-      "complete_order": 2307,
+      "issue_order": 2055,
+      "complete_order": 2311,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [
         "txn_a_read_6"
@@ -9092,9 +9098,10 @@
         "pipeline_depth": 3,
         "burst_formation_cycles": 256,
         "axi_transfer_cycles": 256,
-        "pipeline_fill_cycles": 2,
-        "minimum_issue_spacing": 256,
-        "formula": "max(axi_beat_count, useful_element_count * achieved_loop_ii)",
+        "pipeline_fill_cycles": 0,
+        "request_gap_cycles": 1,
+        "minimum_issue_spacing": 257,
+        "formula": "dependency readiness plus max(axi_beat_count, useful_element_count * achieved_loop_ii) plus one visual request-gap slot",
         "confidence": "estimated_from_csynth_and_ir_trace",
         "is_cycle_accurate": false,
         "num_write_outstanding": 16
@@ -9679,8 +9686,8 @@
       "coalescing_reason": "inferred from HLS M_AXI width/burst metadata and IR trace offsets",
       "confidence": "hls_metadata_plus_ir_trace",
       "element_range_label": "a[1792..2047]",
-      "issue_order": 2307,
-      "complete_order": 2563,
+      "issue_order": 2312,
+      "complete_order": 2568,
       "timeline_lane": "a",
       "depends_on_transaction_ids": [
         "txn_a_read_7"
@@ -9710,9 +9717,10 @@
         "pipeline_depth": 3,
         "burst_formation_cycles": 256,
         "axi_transfer_cycles": 256,
-        "pipeline_fill_cycles": 2,
-        "minimum_issue_spacing": 256,
-        "formula": "max(axi_beat_count, useful_element_count * achieved_loop_ii)",
+        "pipeline_fill_cycles": 0,
+        "request_gap_cycles": 1,
+        "minimum_issue_spacing": 257,
+        "formula": "dependency readiness plus max(axi_beat_count, useful_element_count * achieved_loop_ii) plus one visual request-gap slot",
         "confidence": "estimated_from_csynth_and_ir_trace",
         "is_cycle_accurate": false,
         "num_write_outstanding": 16

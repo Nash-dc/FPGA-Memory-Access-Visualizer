@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'read_write'" level="0">
-<item name = "Date">Thu Jun 18 23:21:20 2026
+<item name = "Date">Fri Jun 26 20:04:03 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">component_read_write</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">4239, 4239, 21.526 us, 21.526 us, 4096, 4096, dataflow</column>
+<column name="">32883, 32883, 0.167 ms, 0.167 ms, 32768, 32768, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
@@ -33,8 +33,8 @@
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
 <column name="grp_read_r_fu_112">read_r, 1100, 1100, 5.586 us, 5.586 us, 1097, 1097, loop auto-rewind stp (delay=73 clock cycles(s))</column>
 <column name="grp_read_1_fu_122">read_1, 1100, 1100, 5.586 us, 5.586 us, 1097, 1097, loop auto-rewind stp (delay=73 clock cycles(s))</column>
-<column name="grp_write_r_fu_132">write_r, 4166, 4166, 20.830 us, 20.830 us, 4096, 4096, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_write_2_fu_140">write_2, 4166, 4166, 20.830 us, 20.830 us, 4096, 4096, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_write_r_fu_132">write_r, 32810, 32810, 0.164 ms, 0.164 ms, 32768, 32768, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_write_2_fu_140">write_2, 32810, 32810, 0.164 ms, 0.164 ms, 32768, 32768, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

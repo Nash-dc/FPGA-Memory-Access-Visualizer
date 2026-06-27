@@ -1,0 +1,1567 @@
+{
+  "schema": "hls.inferred_physical_axi_transactions.v1",
+  "source": "Inferred physical AXI transactions from static HLS metadata and dynamic LLVM IR logical accesses; RTL simulation/waveforms are not used as input",
+  "counts": {
+    "axi_transactions": 12,
+    "skipped_access_sites": 0
+  },
+  "axi_transactions": [
+    {
+      "transaction_id": "txn_in1_read_0",
+      "access_site": "access:0",
+      "access_sites": [
+        "access:0"
+      ],
+      "port": "in1",
+      "bundle": "gmem",
+      "direction": "read",
+      "loop": "vector_mul_loop",
+      "static_pattern": "sequential",
+      "first_trace_event_index": 0,
+      "last_trace_event_index": 45,
+      "first_element": 0,
+      "last_element": 15,
+      "element_count": 16,
+      "elements": [
+        "in1[0]",
+        "in1[1]",
+        "in1[2]",
+        "in1[3]",
+        "in1[4]",
+        "in1[5]",
+        "in1[6]",
+        "in1[7]",
+        "in1[8]",
+        "in1[9]",
+        "in1[10]",
+        "in1[11]",
+        "in1[12]",
+        "in1[13]",
+        "in1[14]",
+        "in1[15]"
+      ],
+      "covered_trace_event_indices": [
+        0,
+        3,
+        6,
+        9,
+        12,
+        15,
+        18,
+        21,
+        24,
+        27,
+        30,
+        33,
+        36,
+        39,
+        42,
+        45
+      ],
+      "first_offset_bytes": 0,
+      "last_offset_bytes": 60,
+      "bytes_per_element": 4,
+      "physical_start_offset_bytes": 0,
+      "physical_end_offset_bytes": 64,
+      "physical_length_bytes": 64,
+      "useful_bytes": 64,
+      "unused_bytes": 0,
+      "bandwidth_utilization": 1.0,
+      "inference_model": {
+        "source": "HLS interface metadata, static access pattern, and dynamic LLVM IR logical memory trace; no RTL simulation or waveform input",
+        "beat_alignment": "floor(offset / beat_bytes) * beat_bytes",
+        "coalescing_rule": "compatible access sites, same port/direction, increasing logical offsets, same physical beat or next consecutive AXI beat, bounded by max_read/write_burst_length"
+      },
+      "lightningsim_model": {
+        "request_increment_bytes": 4,
+        "request_count": 16,
+        "request_range": {
+          "offset": 0,
+          "length": 64
+        },
+        "rctl_burst_count": 1,
+        "max_rctl_depth": 16
+      },
+      "axi": {
+        "data_width_bits": 32,
+        "beat_bytes": 4,
+        "beat_count": 16,
+        "source_elements_per_beat": 1,
+        "address_size_log2_bytes": 2,
+        "arlen_or_awlen": 15
+      },
+      "interface": {
+        "num_read_outstanding": 16,
+        "num_write_outstanding": 16,
+        "max_read_burst_length": 16,
+        "max_write_burst_length": 16
+      },
+      "burst": {
+        "kind": "axi_burst",
+        "length_beats": 16,
+        "max_length_beats": 16,
+        "max_source_elements": 16
+      },
+      "coalescing_reason": "inferred from HLS M_AXI width/burst metadata and IR trace offsets",
+      "confidence": "hls_metadata_plus_ir_trace",
+      "element_range_label": "in1[0..15]",
+      "issue_order": 0,
+      "complete_order": 16,
+      "timeline_lane": "in1",
+      "depends_on_transaction_ids": [],
+      "dependency_details": [],
+      "timeline_order_predecessor_id": "",
+      "timing_model": {
+        "minimum_issue_spacing": 1,
+        "axi_transfer_cycles": 16,
+        "formula": "axi_beat_count",
+        "confidence": "estimated_from_csynth_and_ir_trace",
+        "is_cycle_accurate": false,
+        "num_read_outstanding": 16,
+        "read_outstanding_limit_model": "num_read_outstanding=16: this AXI master can keep multiple read requests in flight, so consecutive read transactions may be issued close together",
+        "read_outstanding_limit_expected": false
+      }
+    },
+    {
+      "transaction_id": "txn_in2_read_0",
+      "access_site": "access:1",
+      "access_sites": [
+        "access:1"
+      ],
+      "port": "in2",
+      "bundle": "gmem",
+      "direction": "read",
+      "loop": "vector_mul_loop",
+      "static_pattern": "sequential",
+      "first_trace_event_index": 1,
+      "last_trace_event_index": 46,
+      "first_element": 0,
+      "last_element": 15,
+      "element_count": 16,
+      "elements": [
+        "in2[0]",
+        "in2[1]",
+        "in2[2]",
+        "in2[3]",
+        "in2[4]",
+        "in2[5]",
+        "in2[6]",
+        "in2[7]",
+        "in2[8]",
+        "in2[9]",
+        "in2[10]",
+        "in2[11]",
+        "in2[12]",
+        "in2[13]",
+        "in2[14]",
+        "in2[15]"
+      ],
+      "covered_trace_event_indices": [
+        1,
+        4,
+        7,
+        10,
+        13,
+        16,
+        19,
+        22,
+        25,
+        28,
+        31,
+        34,
+        37,
+        40,
+        43,
+        46
+      ],
+      "first_offset_bytes": 0,
+      "last_offset_bytes": 60,
+      "bytes_per_element": 4,
+      "physical_start_offset_bytes": 0,
+      "physical_end_offset_bytes": 64,
+      "physical_length_bytes": 64,
+      "useful_bytes": 64,
+      "unused_bytes": 0,
+      "bandwidth_utilization": 1.0,
+      "inference_model": {
+        "source": "HLS interface metadata, static access pattern, and dynamic LLVM IR logical memory trace; no RTL simulation or waveform input",
+        "beat_alignment": "floor(offset / beat_bytes) * beat_bytes",
+        "coalescing_rule": "compatible access sites, same port/direction, increasing logical offsets, same physical beat or next consecutive AXI beat, bounded by max_read/write_burst_length"
+      },
+      "lightningsim_model": {
+        "request_increment_bytes": 4,
+        "request_count": 16,
+        "request_range": {
+          "offset": 0,
+          "length": 64
+        },
+        "rctl_burst_count": 1,
+        "max_rctl_depth": 16
+      },
+      "axi": {
+        "data_width_bits": 32,
+        "beat_bytes": 4,
+        "beat_count": 16,
+        "source_elements_per_beat": 1,
+        "address_size_log2_bytes": 2,
+        "arlen_or_awlen": 15
+      },
+      "interface": {
+        "num_read_outstanding": 16,
+        "num_write_outstanding": 16,
+        "max_read_burst_length": 16,
+        "max_write_burst_length": 16
+      },
+      "burst": {
+        "kind": "axi_burst",
+        "length_beats": 16,
+        "max_length_beats": 16,
+        "max_source_elements": 16
+      },
+      "coalescing_reason": "inferred from HLS M_AXI width/burst metadata and IR trace offsets",
+      "confidence": "hls_metadata_plus_ir_trace",
+      "element_range_label": "in2[0..15]",
+      "issue_order": 1,
+      "complete_order": 17,
+      "timeline_lane": "in2",
+      "depends_on_transaction_ids": [],
+      "dependency_details": [],
+      "timeline_order_predecessor_id": "",
+      "timing_model": {
+        "minimum_issue_spacing": 1,
+        "axi_transfer_cycles": 16,
+        "formula": "axi_beat_count",
+        "confidence": "estimated_from_csynth_and_ir_trace",
+        "is_cycle_accurate": false,
+        "num_read_outstanding": 16,
+        "read_outstanding_limit_model": "num_read_outstanding=16: this AXI master can keep multiple read requests in flight, so consecutive read transactions may be issued close together",
+        "read_outstanding_limit_expected": false
+      }
+    },
+    {
+      "transaction_id": "txn_in1_read_1",
+      "access_site": "access:0",
+      "access_sites": [
+        "access:0"
+      ],
+      "port": "in1",
+      "bundle": "gmem",
+      "direction": "read",
+      "loop": "vector_mul_loop",
+      "static_pattern": "sequential",
+      "first_trace_event_index": 48,
+      "last_trace_event_index": 93,
+      "first_element": 16,
+      "last_element": 31,
+      "element_count": 16,
+      "elements": [
+        "in1[16]",
+        "in1[17]",
+        "in1[18]",
+        "in1[19]",
+        "in1[20]",
+        "in1[21]",
+        "in1[22]",
+        "in1[23]",
+        "in1[24]",
+        "in1[25]",
+        "in1[26]",
+        "in1[27]",
+        "in1[28]",
+        "in1[29]",
+        "in1[30]",
+        "in1[31]"
+      ],
+      "covered_trace_event_indices": [
+        48,
+        51,
+        54,
+        57,
+        60,
+        63,
+        66,
+        69,
+        72,
+        75,
+        78,
+        81,
+        84,
+        87,
+        90,
+        93
+      ],
+      "first_offset_bytes": 64,
+      "last_offset_bytes": 124,
+      "bytes_per_element": 4,
+      "physical_start_offset_bytes": 64,
+      "physical_end_offset_bytes": 128,
+      "physical_length_bytes": 64,
+      "useful_bytes": 64,
+      "unused_bytes": 0,
+      "bandwidth_utilization": 1.0,
+      "inference_model": {
+        "source": "HLS interface metadata, static access pattern, and dynamic LLVM IR logical memory trace; no RTL simulation or waveform input",
+        "beat_alignment": "floor(offset / beat_bytes) * beat_bytes",
+        "coalescing_rule": "compatible access sites, same port/direction, increasing logical offsets, same physical beat or next consecutive AXI beat, bounded by max_read/write_burst_length"
+      },
+      "lightningsim_model": {
+        "request_increment_bytes": 4,
+        "request_count": 16,
+        "request_range": {
+          "offset": 64,
+          "length": 64
+        },
+        "rctl_burst_count": 1,
+        "max_rctl_depth": 16
+      },
+      "axi": {
+        "data_width_bits": 32,
+        "beat_bytes": 4,
+        "beat_count": 16,
+        "source_elements_per_beat": 1,
+        "address_size_log2_bytes": 2,
+        "arlen_or_awlen": 15
+      },
+      "interface": {
+        "num_read_outstanding": 16,
+        "num_write_outstanding": 16,
+        "max_read_burst_length": 16,
+        "max_write_burst_length": 16
+      },
+      "burst": {
+        "kind": "axi_burst",
+        "length_beats": 16,
+        "max_length_beats": 16,
+        "max_source_elements": 16
+      },
+      "coalescing_reason": "inferred from HLS M_AXI width/burst metadata and IR trace offsets",
+      "confidence": "hls_metadata_plus_ir_trace",
+      "element_range_label": "in1[16..31]",
+      "issue_order": 2,
+      "complete_order": 18,
+      "timeline_lane": "in1",
+      "depends_on_transaction_ids": [],
+      "dependency_details": [],
+      "timeline_order_predecessor_id": "",
+      "timing_model": {
+        "minimum_issue_spacing": 1,
+        "axi_transfer_cycles": 16,
+        "formula": "axi_beat_count",
+        "confidence": "estimated_from_csynth_and_ir_trace",
+        "is_cycle_accurate": false,
+        "num_read_outstanding": 16,
+        "read_outstanding_limit_model": "num_read_outstanding=16: this AXI master can keep multiple read requests in flight, so consecutive read transactions may be issued close together",
+        "read_outstanding_limit_expected": false
+      }
+    },
+    {
+      "transaction_id": "txn_in2_read_1",
+      "access_site": "access:1",
+      "access_sites": [
+        "access:1"
+      ],
+      "port": "in2",
+      "bundle": "gmem",
+      "direction": "read",
+      "loop": "vector_mul_loop",
+      "static_pattern": "sequential",
+      "first_trace_event_index": 49,
+      "last_trace_event_index": 94,
+      "first_element": 16,
+      "last_element": 31,
+      "element_count": 16,
+      "elements": [
+        "in2[16]",
+        "in2[17]",
+        "in2[18]",
+        "in2[19]",
+        "in2[20]",
+        "in2[21]",
+        "in2[22]",
+        "in2[23]",
+        "in2[24]",
+        "in2[25]",
+        "in2[26]",
+        "in2[27]",
+        "in2[28]",
+        "in2[29]",
+        "in2[30]",
+        "in2[31]"
+      ],
+      "covered_trace_event_indices": [
+        49,
+        52,
+        55,
+        58,
+        61,
+        64,
+        67,
+        70,
+        73,
+        76,
+        79,
+        82,
+        85,
+        88,
+        91,
+        94
+      ],
+      "first_offset_bytes": 64,
+      "last_offset_bytes": 124,
+      "bytes_per_element": 4,
+      "physical_start_offset_bytes": 64,
+      "physical_end_offset_bytes": 128,
+      "physical_length_bytes": 64,
+      "useful_bytes": 64,
+      "unused_bytes": 0,
+      "bandwidth_utilization": 1.0,
+      "inference_model": {
+        "source": "HLS interface metadata, static access pattern, and dynamic LLVM IR logical memory trace; no RTL simulation or waveform input",
+        "beat_alignment": "floor(offset / beat_bytes) * beat_bytes",
+        "coalescing_rule": "compatible access sites, same port/direction, increasing logical offsets, same physical beat or next consecutive AXI beat, bounded by max_read/write_burst_length"
+      },
+      "lightningsim_model": {
+        "request_increment_bytes": 4,
+        "request_count": 16,
+        "request_range": {
+          "offset": 64,
+          "length": 64
+        },
+        "rctl_burst_count": 1,
+        "max_rctl_depth": 16
+      },
+      "axi": {
+        "data_width_bits": 32,
+        "beat_bytes": 4,
+        "beat_count": 16,
+        "source_elements_per_beat": 1,
+        "address_size_log2_bytes": 2,
+        "arlen_or_awlen": 15
+      },
+      "interface": {
+        "num_read_outstanding": 16,
+        "num_write_outstanding": 16,
+        "max_read_burst_length": 16,
+        "max_write_burst_length": 16
+      },
+      "burst": {
+        "kind": "axi_burst",
+        "length_beats": 16,
+        "max_length_beats": 16,
+        "max_source_elements": 16
+      },
+      "coalescing_reason": "inferred from HLS M_AXI width/burst metadata and IR trace offsets",
+      "confidence": "hls_metadata_plus_ir_trace",
+      "element_range_label": "in2[16..31]",
+      "issue_order": 3,
+      "complete_order": 19,
+      "timeline_lane": "in2",
+      "depends_on_transaction_ids": [],
+      "dependency_details": [],
+      "timeline_order_predecessor_id": "",
+      "timing_model": {
+        "minimum_issue_spacing": 1,
+        "axi_transfer_cycles": 16,
+        "formula": "axi_beat_count",
+        "confidence": "estimated_from_csynth_and_ir_trace",
+        "is_cycle_accurate": false,
+        "num_read_outstanding": 16,
+        "read_outstanding_limit_model": "num_read_outstanding=16: this AXI master can keep multiple read requests in flight, so consecutive read transactions may be issued close together",
+        "read_outstanding_limit_expected": false
+      }
+    },
+    {
+      "transaction_id": "txn_in1_read_2",
+      "access_site": "access:0",
+      "access_sites": [
+        "access:0"
+      ],
+      "port": "in1",
+      "bundle": "gmem",
+      "direction": "read",
+      "loop": "vector_mul_loop",
+      "static_pattern": "sequential",
+      "first_trace_event_index": 96,
+      "last_trace_event_index": 141,
+      "first_element": 32,
+      "last_element": 47,
+      "element_count": 16,
+      "elements": [
+        "in1[32]",
+        "in1[33]",
+        "in1[34]",
+        "in1[35]",
+        "in1[36]",
+        "in1[37]",
+        "in1[38]",
+        "in1[39]",
+        "in1[40]",
+        "in1[41]",
+        "in1[42]",
+        "in1[43]",
+        "in1[44]",
+        "in1[45]",
+        "in1[46]",
+        "in1[47]"
+      ],
+      "covered_trace_event_indices": [
+        96,
+        99,
+        102,
+        105,
+        108,
+        111,
+        114,
+        117,
+        120,
+        123,
+        126,
+        129,
+        132,
+        135,
+        138,
+        141
+      ],
+      "first_offset_bytes": 128,
+      "last_offset_bytes": 188,
+      "bytes_per_element": 4,
+      "physical_start_offset_bytes": 128,
+      "physical_end_offset_bytes": 192,
+      "physical_length_bytes": 64,
+      "useful_bytes": 64,
+      "unused_bytes": 0,
+      "bandwidth_utilization": 1.0,
+      "inference_model": {
+        "source": "HLS interface metadata, static access pattern, and dynamic LLVM IR logical memory trace; no RTL simulation or waveform input",
+        "beat_alignment": "floor(offset / beat_bytes) * beat_bytes",
+        "coalescing_rule": "compatible access sites, same port/direction, increasing logical offsets, same physical beat or next consecutive AXI beat, bounded by max_read/write_burst_length"
+      },
+      "lightningsim_model": {
+        "request_increment_bytes": 4,
+        "request_count": 16,
+        "request_range": {
+          "offset": 128,
+          "length": 64
+        },
+        "rctl_burst_count": 1,
+        "max_rctl_depth": 16
+      },
+      "axi": {
+        "data_width_bits": 32,
+        "beat_bytes": 4,
+        "beat_count": 16,
+        "source_elements_per_beat": 1,
+        "address_size_log2_bytes": 2,
+        "arlen_or_awlen": 15
+      },
+      "interface": {
+        "num_read_outstanding": 16,
+        "num_write_outstanding": 16,
+        "max_read_burst_length": 16,
+        "max_write_burst_length": 16
+      },
+      "burst": {
+        "kind": "axi_burst",
+        "length_beats": 16,
+        "max_length_beats": 16,
+        "max_source_elements": 16
+      },
+      "coalescing_reason": "inferred from HLS M_AXI width/burst metadata and IR trace offsets",
+      "confidence": "hls_metadata_plus_ir_trace",
+      "element_range_label": "in1[32..47]",
+      "issue_order": 4,
+      "complete_order": 20,
+      "timeline_lane": "in1",
+      "depends_on_transaction_ids": [],
+      "dependency_details": [],
+      "timeline_order_predecessor_id": "",
+      "timing_model": {
+        "minimum_issue_spacing": 1,
+        "axi_transfer_cycles": 16,
+        "formula": "axi_beat_count",
+        "confidence": "estimated_from_csynth_and_ir_trace",
+        "is_cycle_accurate": false,
+        "num_read_outstanding": 16,
+        "read_outstanding_limit_model": "num_read_outstanding=16: this AXI master can keep multiple read requests in flight, so consecutive read transactions may be issued close together",
+        "read_outstanding_limit_expected": false
+      }
+    },
+    {
+      "transaction_id": "txn_in2_read_2",
+      "access_site": "access:1",
+      "access_sites": [
+        "access:1"
+      ],
+      "port": "in2",
+      "bundle": "gmem",
+      "direction": "read",
+      "loop": "vector_mul_loop",
+      "static_pattern": "sequential",
+      "first_trace_event_index": 97,
+      "last_trace_event_index": 142,
+      "first_element": 32,
+      "last_element": 47,
+      "element_count": 16,
+      "elements": [
+        "in2[32]",
+        "in2[33]",
+        "in2[34]",
+        "in2[35]",
+        "in2[36]",
+        "in2[37]",
+        "in2[38]",
+        "in2[39]",
+        "in2[40]",
+        "in2[41]",
+        "in2[42]",
+        "in2[43]",
+        "in2[44]",
+        "in2[45]",
+        "in2[46]",
+        "in2[47]"
+      ],
+      "covered_trace_event_indices": [
+        97,
+        100,
+        103,
+        106,
+        109,
+        112,
+        115,
+        118,
+        121,
+        124,
+        127,
+        130,
+        133,
+        136,
+        139,
+        142
+      ],
+      "first_offset_bytes": 128,
+      "last_offset_bytes": 188,
+      "bytes_per_element": 4,
+      "physical_start_offset_bytes": 128,
+      "physical_end_offset_bytes": 192,
+      "physical_length_bytes": 64,
+      "useful_bytes": 64,
+      "unused_bytes": 0,
+      "bandwidth_utilization": 1.0,
+      "inference_model": {
+        "source": "HLS interface metadata, static access pattern, and dynamic LLVM IR logical memory trace; no RTL simulation or waveform input",
+        "beat_alignment": "floor(offset / beat_bytes) * beat_bytes",
+        "coalescing_rule": "compatible access sites, same port/direction, increasing logical offsets, same physical beat or next consecutive AXI beat, bounded by max_read/write_burst_length"
+      },
+      "lightningsim_model": {
+        "request_increment_bytes": 4,
+        "request_count": 16,
+        "request_range": {
+          "offset": 128,
+          "length": 64
+        },
+        "rctl_burst_count": 1,
+        "max_rctl_depth": 16
+      },
+      "axi": {
+        "data_width_bits": 32,
+        "beat_bytes": 4,
+        "beat_count": 16,
+        "source_elements_per_beat": 1,
+        "address_size_log2_bytes": 2,
+        "arlen_or_awlen": 15
+      },
+      "interface": {
+        "num_read_outstanding": 16,
+        "num_write_outstanding": 16,
+        "max_read_burst_length": 16,
+        "max_write_burst_length": 16
+      },
+      "burst": {
+        "kind": "axi_burst",
+        "length_beats": 16,
+        "max_length_beats": 16,
+        "max_source_elements": 16
+      },
+      "coalescing_reason": "inferred from HLS M_AXI width/burst metadata and IR trace offsets",
+      "confidence": "hls_metadata_plus_ir_trace",
+      "element_range_label": "in2[32..47]",
+      "issue_order": 5,
+      "complete_order": 21,
+      "timeline_lane": "in2",
+      "depends_on_transaction_ids": [],
+      "dependency_details": [],
+      "timeline_order_predecessor_id": "",
+      "timing_model": {
+        "minimum_issue_spacing": 1,
+        "axi_transfer_cycles": 16,
+        "formula": "axi_beat_count",
+        "confidence": "estimated_from_csynth_and_ir_trace",
+        "is_cycle_accurate": false,
+        "num_read_outstanding": 16,
+        "read_outstanding_limit_model": "num_read_outstanding=16: this AXI master can keep multiple read requests in flight, so consecutive read transactions may be issued close together",
+        "read_outstanding_limit_expected": false
+      }
+    },
+    {
+      "transaction_id": "txn_in1_read_3",
+      "access_site": "access:0",
+      "access_sites": [
+        "access:0"
+      ],
+      "port": "in1",
+      "bundle": "gmem",
+      "direction": "read",
+      "loop": "vector_mul_loop",
+      "static_pattern": "sequential",
+      "first_trace_event_index": 144,
+      "last_trace_event_index": 189,
+      "first_element": 48,
+      "last_element": 63,
+      "element_count": 16,
+      "elements": [
+        "in1[48]",
+        "in1[49]",
+        "in1[50]",
+        "in1[51]",
+        "in1[52]",
+        "in1[53]",
+        "in1[54]",
+        "in1[55]",
+        "in1[56]",
+        "in1[57]",
+        "in1[58]",
+        "in1[59]",
+        "in1[60]",
+        "in1[61]",
+        "in1[62]",
+        "in1[63]"
+      ],
+      "covered_trace_event_indices": [
+        144,
+        147,
+        150,
+        153,
+        156,
+        159,
+        162,
+        165,
+        168,
+        171,
+        174,
+        177,
+        180,
+        183,
+        186,
+        189
+      ],
+      "first_offset_bytes": 192,
+      "last_offset_bytes": 252,
+      "bytes_per_element": 4,
+      "physical_start_offset_bytes": 192,
+      "physical_end_offset_bytes": 256,
+      "physical_length_bytes": 64,
+      "useful_bytes": 64,
+      "unused_bytes": 0,
+      "bandwidth_utilization": 1.0,
+      "inference_model": {
+        "source": "HLS interface metadata, static access pattern, and dynamic LLVM IR logical memory trace; no RTL simulation or waveform input",
+        "beat_alignment": "floor(offset / beat_bytes) * beat_bytes",
+        "coalescing_rule": "compatible access sites, same port/direction, increasing logical offsets, same physical beat or next consecutive AXI beat, bounded by max_read/write_burst_length"
+      },
+      "lightningsim_model": {
+        "request_increment_bytes": 4,
+        "request_count": 16,
+        "request_range": {
+          "offset": 192,
+          "length": 64
+        },
+        "rctl_burst_count": 1,
+        "max_rctl_depth": 16
+      },
+      "axi": {
+        "data_width_bits": 32,
+        "beat_bytes": 4,
+        "beat_count": 16,
+        "source_elements_per_beat": 1,
+        "address_size_log2_bytes": 2,
+        "arlen_or_awlen": 15
+      },
+      "interface": {
+        "num_read_outstanding": 16,
+        "num_write_outstanding": 16,
+        "max_read_burst_length": 16,
+        "max_write_burst_length": 16
+      },
+      "burst": {
+        "kind": "axi_burst",
+        "length_beats": 16,
+        "max_length_beats": 16,
+        "max_source_elements": 16
+      },
+      "coalescing_reason": "inferred from HLS M_AXI width/burst metadata and IR trace offsets",
+      "confidence": "hls_metadata_plus_ir_trace",
+      "element_range_label": "in1[48..63]",
+      "issue_order": 6,
+      "complete_order": 22,
+      "timeline_lane": "in1",
+      "depends_on_transaction_ids": [],
+      "dependency_details": [],
+      "timeline_order_predecessor_id": "",
+      "timing_model": {
+        "minimum_issue_spacing": 1,
+        "axi_transfer_cycles": 16,
+        "formula": "axi_beat_count",
+        "confidence": "estimated_from_csynth_and_ir_trace",
+        "is_cycle_accurate": false,
+        "num_read_outstanding": 16,
+        "read_outstanding_limit_model": "num_read_outstanding=16: this AXI master can keep multiple read requests in flight, so consecutive read transactions may be issued close together",
+        "read_outstanding_limit_expected": false
+      }
+    },
+    {
+      "transaction_id": "txn_in2_read_3",
+      "access_site": "access:1",
+      "access_sites": [
+        "access:1"
+      ],
+      "port": "in2",
+      "bundle": "gmem",
+      "direction": "read",
+      "loop": "vector_mul_loop",
+      "static_pattern": "sequential",
+      "first_trace_event_index": 145,
+      "last_trace_event_index": 190,
+      "first_element": 48,
+      "last_element": 63,
+      "element_count": 16,
+      "elements": [
+        "in2[48]",
+        "in2[49]",
+        "in2[50]",
+        "in2[51]",
+        "in2[52]",
+        "in2[53]",
+        "in2[54]",
+        "in2[55]",
+        "in2[56]",
+        "in2[57]",
+        "in2[58]",
+        "in2[59]",
+        "in2[60]",
+        "in2[61]",
+        "in2[62]",
+        "in2[63]"
+      ],
+      "covered_trace_event_indices": [
+        145,
+        148,
+        151,
+        154,
+        157,
+        160,
+        163,
+        166,
+        169,
+        172,
+        175,
+        178,
+        181,
+        184,
+        187,
+        190
+      ],
+      "first_offset_bytes": 192,
+      "last_offset_bytes": 252,
+      "bytes_per_element": 4,
+      "physical_start_offset_bytes": 192,
+      "physical_end_offset_bytes": 256,
+      "physical_length_bytes": 64,
+      "useful_bytes": 64,
+      "unused_bytes": 0,
+      "bandwidth_utilization": 1.0,
+      "inference_model": {
+        "source": "HLS interface metadata, static access pattern, and dynamic LLVM IR logical memory trace; no RTL simulation or waveform input",
+        "beat_alignment": "floor(offset / beat_bytes) * beat_bytes",
+        "coalescing_rule": "compatible access sites, same port/direction, increasing logical offsets, same physical beat or next consecutive AXI beat, bounded by max_read/write_burst_length"
+      },
+      "lightningsim_model": {
+        "request_increment_bytes": 4,
+        "request_count": 16,
+        "request_range": {
+          "offset": 192,
+          "length": 64
+        },
+        "rctl_burst_count": 1,
+        "max_rctl_depth": 16
+      },
+      "axi": {
+        "data_width_bits": 32,
+        "beat_bytes": 4,
+        "beat_count": 16,
+        "source_elements_per_beat": 1,
+        "address_size_log2_bytes": 2,
+        "arlen_or_awlen": 15
+      },
+      "interface": {
+        "num_read_outstanding": 16,
+        "num_write_outstanding": 16,
+        "max_read_burst_length": 16,
+        "max_write_burst_length": 16
+      },
+      "burst": {
+        "kind": "axi_burst",
+        "length_beats": 16,
+        "max_length_beats": 16,
+        "max_source_elements": 16
+      },
+      "coalescing_reason": "inferred from HLS M_AXI width/burst metadata and IR trace offsets",
+      "confidence": "hls_metadata_plus_ir_trace",
+      "element_range_label": "in2[48..63]",
+      "issue_order": 7,
+      "complete_order": 23,
+      "timeline_lane": "in2",
+      "depends_on_transaction_ids": [],
+      "dependency_details": [],
+      "timeline_order_predecessor_id": "",
+      "timing_model": {
+        "minimum_issue_spacing": 1,
+        "axi_transfer_cycles": 16,
+        "formula": "axi_beat_count",
+        "confidence": "estimated_from_csynth_and_ir_trace",
+        "is_cycle_accurate": false,
+        "num_read_outstanding": 16,
+        "read_outstanding_limit_model": "num_read_outstanding=16: this AXI master can keep multiple read requests in flight, so consecutive read transactions may be issued close together",
+        "read_outstanding_limit_expected": false
+      }
+    },
+    {
+      "transaction_id": "txn_out_write_0",
+      "access_site": "access:2",
+      "access_sites": [
+        "access:2"
+      ],
+      "port": "out",
+      "bundle": "gmem",
+      "direction": "write",
+      "loop": "vector_mul_loop",
+      "static_pattern": "sequential",
+      "first_trace_event_index": 2,
+      "last_trace_event_index": 47,
+      "first_element": 0,
+      "last_element": 15,
+      "element_count": 16,
+      "elements": [
+        "out[0]",
+        "out[1]",
+        "out[2]",
+        "out[3]",
+        "out[4]",
+        "out[5]",
+        "out[6]",
+        "out[7]",
+        "out[8]",
+        "out[9]",
+        "out[10]",
+        "out[11]",
+        "out[12]",
+        "out[13]",
+        "out[14]",
+        "out[15]"
+      ],
+      "covered_trace_event_indices": [
+        2,
+        5,
+        8,
+        11,
+        14,
+        17,
+        20,
+        23,
+        26,
+        29,
+        32,
+        35,
+        38,
+        41,
+        44,
+        47
+      ],
+      "first_offset_bytes": 0,
+      "last_offset_bytes": 60,
+      "bytes_per_element": 4,
+      "physical_start_offset_bytes": 0,
+      "physical_end_offset_bytes": 64,
+      "physical_length_bytes": 64,
+      "useful_bytes": 64,
+      "unused_bytes": 0,
+      "bandwidth_utilization": 1.0,
+      "inference_model": {
+        "source": "HLS interface metadata, static access pattern, and dynamic LLVM IR logical memory trace; no RTL simulation or waveform input",
+        "beat_alignment": "floor(offset / beat_bytes) * beat_bytes",
+        "coalescing_rule": "compatible access sites, same port/direction, increasing logical offsets, same physical beat or next consecutive AXI beat, bounded by max_read/write_burst_length"
+      },
+      "lightningsim_model": {
+        "request_increment_bytes": 4,
+        "request_count": 16,
+        "request_range": {
+          "offset": 0,
+          "length": 64
+        },
+        "rctl_burst_count": 1,
+        "max_rctl_depth": 16
+      },
+      "axi": {
+        "data_width_bits": 32,
+        "beat_bytes": 4,
+        "beat_count": 16,
+        "source_elements_per_beat": 1,
+        "address_size_log2_bytes": 2,
+        "arlen_or_awlen": 15
+      },
+      "interface": {
+        "num_read_outstanding": 16,
+        "num_write_outstanding": 16,
+        "max_read_burst_length": 16,
+        "max_write_burst_length": 16
+      },
+      "burst": {
+        "kind": "axi_burst",
+        "length_beats": 16,
+        "max_length_beats": 16,
+        "max_source_elements": 16
+      },
+      "coalescing_reason": "inferred from HLS M_AXI width/burst metadata and IR trace offsets",
+      "confidence": "hls_metadata_plus_ir_trace",
+      "element_range_label": "out[0..15]",
+      "issue_order": 50,
+      "complete_order": 66,
+      "timeline_lane": "out",
+      "depends_on_transaction_ids": [
+        "txn_in1_read_0",
+        "txn_in2_read_0"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_in1_read_0",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "in1[0..15]"
+          ],
+          "target_element_ranges": [
+            "out[0..15]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 16,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_in2_read_0",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "in2[0..15]"
+          ],
+          "target_element_ranges": [
+            "out[0..15]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 16,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
+      ],
+      "timeline_order_predecessor_id": "",
+      "timing_model": {
+        "loop_ii": 2,
+        "pipeline_depth": 18,
+        "burst_formation_cycles": 32,
+        "axi_transfer_cycles": 16,
+        "pipeline_fill_cycles": 0,
+        "request_gap_cycles": 1,
+        "minimum_issue_spacing": 33,
+        "formula": "dependency readiness plus max(axi_beat_count, useful_element_count * achieved_loop_ii) plus one visual request-gap slot",
+        "confidence": "estimated_from_csynth_and_ir_trace",
+        "is_cycle_accurate": false,
+        "num_write_outstanding": 16
+      }
+    },
+    {
+      "transaction_id": "txn_out_write_1",
+      "access_site": "access:2",
+      "access_sites": [
+        "access:2"
+      ],
+      "port": "out",
+      "bundle": "gmem",
+      "direction": "write",
+      "loop": "vector_mul_loop",
+      "static_pattern": "sequential",
+      "first_trace_event_index": 50,
+      "last_trace_event_index": 95,
+      "first_element": 16,
+      "last_element": 31,
+      "element_count": 16,
+      "elements": [
+        "out[16]",
+        "out[17]",
+        "out[18]",
+        "out[19]",
+        "out[20]",
+        "out[21]",
+        "out[22]",
+        "out[23]",
+        "out[24]",
+        "out[25]",
+        "out[26]",
+        "out[27]",
+        "out[28]",
+        "out[29]",
+        "out[30]",
+        "out[31]"
+      ],
+      "covered_trace_event_indices": [
+        50,
+        53,
+        56,
+        59,
+        62,
+        65,
+        68,
+        71,
+        74,
+        77,
+        80,
+        83,
+        86,
+        89,
+        92,
+        95
+      ],
+      "first_offset_bytes": 64,
+      "last_offset_bytes": 124,
+      "bytes_per_element": 4,
+      "physical_start_offset_bytes": 64,
+      "physical_end_offset_bytes": 128,
+      "physical_length_bytes": 64,
+      "useful_bytes": 64,
+      "unused_bytes": 0,
+      "bandwidth_utilization": 1.0,
+      "inference_model": {
+        "source": "HLS interface metadata, static access pattern, and dynamic LLVM IR logical memory trace; no RTL simulation or waveform input",
+        "beat_alignment": "floor(offset / beat_bytes) * beat_bytes",
+        "coalescing_rule": "compatible access sites, same port/direction, increasing logical offsets, same physical beat or next consecutive AXI beat, bounded by max_read/write_burst_length"
+      },
+      "lightningsim_model": {
+        "request_increment_bytes": 4,
+        "request_count": 16,
+        "request_range": {
+          "offset": 64,
+          "length": 64
+        },
+        "rctl_burst_count": 1,
+        "max_rctl_depth": 16
+      },
+      "axi": {
+        "data_width_bits": 32,
+        "beat_bytes": 4,
+        "beat_count": 16,
+        "source_elements_per_beat": 1,
+        "address_size_log2_bytes": 2,
+        "arlen_or_awlen": 15
+      },
+      "interface": {
+        "num_read_outstanding": 16,
+        "num_write_outstanding": 16,
+        "max_read_burst_length": 16,
+        "max_write_burst_length": 16
+      },
+      "burst": {
+        "kind": "axi_burst",
+        "length_beats": 16,
+        "max_length_beats": 16,
+        "max_source_elements": 16
+      },
+      "coalescing_reason": "inferred from HLS M_AXI width/burst metadata and IR trace offsets",
+      "confidence": "hls_metadata_plus_ir_trace",
+      "element_range_label": "out[16..31]",
+      "issue_order": 83,
+      "complete_order": 99,
+      "timeline_lane": "out",
+      "depends_on_transaction_ids": [
+        "txn_in1_read_1",
+        "txn_in2_read_1"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_in1_read_1",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "in1[16..31]"
+          ],
+          "target_element_ranges": [
+            "out[16..31]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 16,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_in2_read_1",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "in2[16..31]"
+          ],
+          "target_element_ranges": [
+            "out[16..31]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 16,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
+      ],
+      "timeline_order_predecessor_id": "",
+      "timing_model": {
+        "loop_ii": 2,
+        "pipeline_depth": 18,
+        "burst_formation_cycles": 32,
+        "axi_transfer_cycles": 16,
+        "pipeline_fill_cycles": 0,
+        "request_gap_cycles": 1,
+        "minimum_issue_spacing": 33,
+        "formula": "dependency readiness plus max(axi_beat_count, useful_element_count * achieved_loop_ii) plus one visual request-gap slot",
+        "confidence": "estimated_from_csynth_and_ir_trace",
+        "is_cycle_accurate": false,
+        "num_write_outstanding": 16
+      }
+    },
+    {
+      "transaction_id": "txn_out_write_2",
+      "access_site": "access:2",
+      "access_sites": [
+        "access:2"
+      ],
+      "port": "out",
+      "bundle": "gmem",
+      "direction": "write",
+      "loop": "vector_mul_loop",
+      "static_pattern": "sequential",
+      "first_trace_event_index": 98,
+      "last_trace_event_index": 143,
+      "first_element": 32,
+      "last_element": 47,
+      "element_count": 16,
+      "elements": [
+        "out[32]",
+        "out[33]",
+        "out[34]",
+        "out[35]",
+        "out[36]",
+        "out[37]",
+        "out[38]",
+        "out[39]",
+        "out[40]",
+        "out[41]",
+        "out[42]",
+        "out[43]",
+        "out[44]",
+        "out[45]",
+        "out[46]",
+        "out[47]"
+      ],
+      "covered_trace_event_indices": [
+        98,
+        101,
+        104,
+        107,
+        110,
+        113,
+        116,
+        119,
+        122,
+        125,
+        128,
+        131,
+        134,
+        137,
+        140,
+        143
+      ],
+      "first_offset_bytes": 128,
+      "last_offset_bytes": 188,
+      "bytes_per_element": 4,
+      "physical_start_offset_bytes": 128,
+      "physical_end_offset_bytes": 192,
+      "physical_length_bytes": 64,
+      "useful_bytes": 64,
+      "unused_bytes": 0,
+      "bandwidth_utilization": 1.0,
+      "inference_model": {
+        "source": "HLS interface metadata, static access pattern, and dynamic LLVM IR logical memory trace; no RTL simulation or waveform input",
+        "beat_alignment": "floor(offset / beat_bytes) * beat_bytes",
+        "coalescing_rule": "compatible access sites, same port/direction, increasing logical offsets, same physical beat or next consecutive AXI beat, bounded by max_read/write_burst_length"
+      },
+      "lightningsim_model": {
+        "request_increment_bytes": 4,
+        "request_count": 16,
+        "request_range": {
+          "offset": 128,
+          "length": 64
+        },
+        "rctl_burst_count": 1,
+        "max_rctl_depth": 16
+      },
+      "axi": {
+        "data_width_bits": 32,
+        "beat_bytes": 4,
+        "beat_count": 16,
+        "source_elements_per_beat": 1,
+        "address_size_log2_bytes": 2,
+        "arlen_or_awlen": 15
+      },
+      "interface": {
+        "num_read_outstanding": 16,
+        "num_write_outstanding": 16,
+        "max_read_burst_length": 16,
+        "max_write_burst_length": 16
+      },
+      "burst": {
+        "kind": "axi_burst",
+        "length_beats": 16,
+        "max_length_beats": 16,
+        "max_source_elements": 16
+      },
+      "coalescing_reason": "inferred from HLS M_AXI width/burst metadata and IR trace offsets",
+      "confidence": "hls_metadata_plus_ir_trace",
+      "element_range_label": "out[32..47]",
+      "issue_order": 116,
+      "complete_order": 132,
+      "timeline_lane": "out",
+      "depends_on_transaction_ids": [
+        "txn_in1_read_2",
+        "txn_in2_read_2"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_in1_read_2",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "in1[32..47]"
+          ],
+          "target_element_ranges": [
+            "out[32..47]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 16,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_in2_read_2",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "in2[32..47]"
+          ],
+          "target_element_ranges": [
+            "out[32..47]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 16,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
+      ],
+      "timeline_order_predecessor_id": "",
+      "timing_model": {
+        "loop_ii": 2,
+        "pipeline_depth": 18,
+        "burst_formation_cycles": 32,
+        "axi_transfer_cycles": 16,
+        "pipeline_fill_cycles": 0,
+        "request_gap_cycles": 1,
+        "minimum_issue_spacing": 33,
+        "formula": "dependency readiness plus max(axi_beat_count, useful_element_count * achieved_loop_ii) plus one visual request-gap slot",
+        "confidence": "estimated_from_csynth_and_ir_trace",
+        "is_cycle_accurate": false,
+        "num_write_outstanding": 16
+      }
+    },
+    {
+      "transaction_id": "txn_out_write_3",
+      "access_site": "access:2",
+      "access_sites": [
+        "access:2"
+      ],
+      "port": "out",
+      "bundle": "gmem",
+      "direction": "write",
+      "loop": "vector_mul_loop",
+      "static_pattern": "sequential",
+      "first_trace_event_index": 146,
+      "last_trace_event_index": 191,
+      "first_element": 48,
+      "last_element": 63,
+      "element_count": 16,
+      "elements": [
+        "out[48]",
+        "out[49]",
+        "out[50]",
+        "out[51]",
+        "out[52]",
+        "out[53]",
+        "out[54]",
+        "out[55]",
+        "out[56]",
+        "out[57]",
+        "out[58]",
+        "out[59]",
+        "out[60]",
+        "out[61]",
+        "out[62]",
+        "out[63]"
+      ],
+      "covered_trace_event_indices": [
+        146,
+        149,
+        152,
+        155,
+        158,
+        161,
+        164,
+        167,
+        170,
+        173,
+        176,
+        179,
+        182,
+        185,
+        188,
+        191
+      ],
+      "first_offset_bytes": 192,
+      "last_offset_bytes": 252,
+      "bytes_per_element": 4,
+      "physical_start_offset_bytes": 192,
+      "physical_end_offset_bytes": 256,
+      "physical_length_bytes": 64,
+      "useful_bytes": 64,
+      "unused_bytes": 0,
+      "bandwidth_utilization": 1.0,
+      "inference_model": {
+        "source": "HLS interface metadata, static access pattern, and dynamic LLVM IR logical memory trace; no RTL simulation or waveform input",
+        "beat_alignment": "floor(offset / beat_bytes) * beat_bytes",
+        "coalescing_rule": "compatible access sites, same port/direction, increasing logical offsets, same physical beat or next consecutive AXI beat, bounded by max_read/write_burst_length"
+      },
+      "lightningsim_model": {
+        "request_increment_bytes": 4,
+        "request_count": 16,
+        "request_range": {
+          "offset": 192,
+          "length": 64
+        },
+        "rctl_burst_count": 1,
+        "max_rctl_depth": 16
+      },
+      "axi": {
+        "data_width_bits": 32,
+        "beat_bytes": 4,
+        "beat_count": 16,
+        "source_elements_per_beat": 1,
+        "address_size_log2_bytes": 2,
+        "arlen_or_awlen": 15
+      },
+      "interface": {
+        "num_read_outstanding": 16,
+        "num_write_outstanding": 16,
+        "max_read_burst_length": 16,
+        "max_write_burst_length": 16
+      },
+      "burst": {
+        "kind": "axi_burst",
+        "length_beats": 16,
+        "max_length_beats": 16,
+        "max_source_elements": 16
+      },
+      "coalescing_reason": "inferred from HLS M_AXI width/burst metadata and IR trace offsets",
+      "confidence": "hls_metadata_plus_ir_trace",
+      "element_range_label": "out[48..63]",
+      "issue_order": 149,
+      "complete_order": 165,
+      "timeline_lane": "out",
+      "depends_on_transaction_ids": [
+        "txn_in1_read_3",
+        "txn_in2_read_3"
+      ],
+      "dependency_details": [
+        {
+          "source_transaction_id": "txn_in1_read_3",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:0",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "in1[48..63]"
+          ],
+          "target_element_ranges": [
+            "out[48..63]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 16,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        },
+        {
+          "source_transaction_id": "txn_in2_read_3",
+          "kind": "llvm_def_use",
+          "via": "ssa_value",
+          "source_access_id": "access:1",
+          "target_access_id": "access:2",
+          "source_element_ranges": [
+            "in2[48..63]"
+          ],
+          "target_element_ranges": [
+            "out[48..63]"
+          ],
+          "logical_edge_count": 16,
+          "logical_source_count": 16,
+          "logical_target_count": 16,
+          "reason": "stored value operand is defined by, or computed from, the source access"
+        }
+      ],
+      "timeline_order_predecessor_id": "",
+      "timing_model": {
+        "loop_ii": 2,
+        "pipeline_depth": 18,
+        "burst_formation_cycles": 32,
+        "axi_transfer_cycles": 16,
+        "pipeline_fill_cycles": 0,
+        "request_gap_cycles": 1,
+        "minimum_issue_spacing": 33,
+        "formula": "dependency readiness plus max(axi_beat_count, useful_element_count * achieved_loop_ii) plus one visual request-gap slot",
+        "confidence": "estimated_from_csynth_and_ir_trace",
+        "is_cycle_accurate": false,
+        "num_write_outstanding": 16
+      }
+    }
+  ],
+  "skipped_access_sites": []
+}

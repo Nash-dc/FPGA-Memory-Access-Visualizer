@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'read_write'
 ================================================================
 + General Information: 
-    * Date:           Thu Jun 18 23:21:20 2026
+    * Date:           Fri Jun 26 20:04:04 2026
     * Version:        2025.1 (Build 6135595 on May 21 2025)
     * Project:        component_read_write
     * Solution:       hls (Vitis Kernel Flow Target)
@@ -19,15 +19,15 @@
     |               Modules               |  Issue  |       |       Latency       | Iteration|         | Trip |          |      |    |           |            |     |
     |               & Loops               |   Type  | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM | DSP|     FF    |     LUT    | URAM|
     +-------------------------------------+---------+-------+---------+-----------+----------+---------+------+----------+------+----+-----------+------------+-----+
-    |+ read_write*                        |   Timing|  -1.43|     4239|  2.153e+04|         -|     4096|     -|  dataflow|     -|   -|  9675 (9%)|  9066 (17%)|    -|
+    |+ read_write*                        |   Timing|  -1.43|    32883|  1.670e+05|         -|    32768|     -|  dataflow|     -|   -|  9535 (8%)|  8946 (16%)|    -|
     | + read_r                            |   Timing|  -1.43|     1100|  5.586e+03|         -|     1024|     -|    rewind|     -|   -|  1597 (1%)|    933 (1%)|    -|
     |  o VITIS_LOOP_9_1_VITIS_LOOP_11_2   |        -|   3.65|     1098|  5.576e+03|        76|        1|  1024|       yes|     -|   -|          -|           -|    -|
     | + read_1                            |   Timing|  -1.43|     1100|  5.586e+03|         -|     1024|     -|    rewind|     -|   -|  1597 (1%)|    933 (1%)|    -|
     |  o VITIS_LOOP_9_1_VITIS_LOOP_11_2   |        -|   3.65|     1098|  5.576e+03|        76|        1|  1024|       yes|     -|   -|          -|           -|    -|
-    | + write_r                           |        -|   0.00|     4166|  2.083e+04|         -|     4096|     -|    rewind|     -|   -|  1339 (1%)|   1561 (2%)|    -|
-    |  o VITIS_LOOP_24_1_VITIS_LOOP_26_2  |        -|   3.65|     4164|  2.082e+04|        73|        4|  1024|       yes|     -|   -|          -|           -|    -|
-    | + write_2                           |        -|   0.00|     4166|  2.083e+04|         -|     4096|     -|    rewind|     -|   -|  1339 (1%)|   1561 (2%)|    -|
-    |  o VITIS_LOOP_24_1_VITIS_LOOP_26_2  |        -|   3.65|     4164|  2.082e+04|        73|        4|  1024|       yes|     -|   -|          -|           -|    -|
+    | + write_r                           |        -|   0.00|    32810|  1.640e+05|         -|    32768|     -|    rewind|     -|   -|  1269 (1%)|   1501 (2%)|    -|
+    |  o VITIS_LOOP_24_1_VITIS_LOOP_26_2  |        -|   3.65|    32808|  1.640e+05|        73|       32|  1024|       yes|     -|   -|          -|           -|    -|
+    | + write_2                           |        -|   0.00|    32810|  1.640e+05|         -|    32768|     -|    rewind|     -|   -|  1269 (1%)|   1501 (2%)|    -|
+    |  o VITIS_LOOP_24_1_VITIS_LOOP_26_2  |        -|   3.65|    32808|  1.640e+05|        73|       32|  1024|       yes|     -|   -|          -|           -|    -|
     +-------------------------------------+---------+-------+---------+-----------+----------+---------+------+----------+------+----+-----------+------------+-----+
 
 
@@ -160,31 +160,31 @@
 |    add_ln9_fu_317_p2       |     |        | add_ln9       | add    | fabric   | 0       |
 |    icmp_ln9_fu_222_p2      |     |        | icmp_ln9      | seteq  | auto     | 0       |
 |  + write_r                 | 0   |        |               |        |          |         |
+|    select_ln24_fu_238_p3   |     |        | select_ln24   | select | auto_sel | 0       |
+|    i_fu_220_p3             |     |        | i             | select | auto_sel | 0       |
+|    first_iter_0_fu_246_p2  |     |        | first_iter_0  | seteq  | auto     | 0       |
+|    add_ln25_fu_265_p2      |     |        | add_ln25      | add    | fabric   | 0       |
+|    add_ln24_2_fu_379_p2    |     |        | add_ln24_2    | add    | fabric   | 0       |
+|    icmp_ln28_fu_285_p2     |     |        | icmp_ln28     | seteq  | auto     | 0       |
+|    select_ln24_4_fu_324_p3 |     |        | select_ln24_4 | select | auto_sel | 0       |
+|    j_fu_291_p2             |     |        | j             | add    | fabric   | 0       |
+|    select_ln28_fu_364_p3   |     |        | select_ln28   | select | auto_sel | 0       |
+|    icmp_ln26_fu_332_p2     |     |        | icmp_ln26     | seteq  | auto     | 0       |
+|    add_ln24_fu_297_p2      |     |        | add_ln24      | add    | fabric   | 0       |
+|    icmp_ln24_fu_388_p2     |     |        | icmp_ln24     | seteq  | auto     | 0       |
+|  + write_2                 | 0   |        |               |        |          |         |
 |    select_ln24_fu_240_p3   |     |        | select_ln24   | select | auto_sel | 0       |
 |    i_fu_222_p3             |     |        | i             | select | auto_sel | 0       |
 |    first_iter_0_fu_248_p2  |     |        | first_iter_0  | seteq  | auto     | 0       |
 |    add_ln25_fu_267_p2      |     |        | add_ln25      | add    | fabric   | 0       |
-|    add_ln24_2_fu_326_p2    |     |        | add_ln24_2    | add    | fabric   | 0       |
+|    add_ln24_1_fu_381_p2    |     |        | add_ln24_1    | add    | fabric   | 0       |
 |    icmp_ln28_fu_287_p2     |     |        | icmp_ln28     | seteq  | auto     | 0       |
-|    select_ln24_4_fu_335_p3 |     |        | select_ln24_4 | select | auto_sel | 0       |
+|    select_ln24_2_fu_326_p3 |     |        | select_ln24_2 | select | auto_sel | 0       |
 |    j_fu_293_p2             |     |        | j             | add    | fabric   | 0       |
-|    select_ln28_fu_389_p3   |     |        | select_ln28   | select | auto_sel | 0       |
-|    icmp_ln26_fu_343_p2     |     |        | icmp_ln26     | seteq  | auto     | 0       |
+|    select_ln28_fu_366_p3   |     |        | select_ln28   | select | auto_sel | 0       |
+|    icmp_ln26_fu_334_p2     |     |        | icmp_ln26     | seteq  | auto     | 0       |
 |    add_ln24_fu_299_p2      |     |        | add_ln24      | add    | fabric   | 0       |
-|    icmp_ln24_fu_351_p2     |     |        | icmp_ln24     | seteq  | auto     | 0       |
-|  + write_2                 | 0   |        |               |        |          |         |
-|    select_ln24_fu_242_p3   |     |        | select_ln24   | select | auto_sel | 0       |
-|    i_fu_224_p3             |     |        | i             | select | auto_sel | 0       |
-|    first_iter_0_fu_250_p2  |     |        | first_iter_0  | seteq  | auto     | 0       |
-|    add_ln25_fu_269_p2      |     |        | add_ln25      | add    | fabric   | 0       |
-|    add_ln24_1_fu_328_p2    |     |        | add_ln24_1    | add    | fabric   | 0       |
-|    icmp_ln28_fu_289_p2     |     |        | icmp_ln28     | seteq  | auto     | 0       |
-|    select_ln24_2_fu_337_p3 |     |        | select_ln24_2 | select | auto_sel | 0       |
-|    j_fu_295_p2             |     |        | j             | add    | fabric   | 0       |
-|    select_ln28_fu_391_p3   |     |        | select_ln28   | select | auto_sel | 0       |
-|    icmp_ln26_fu_345_p2     |     |        | icmp_ln26     | seteq  | auto     | 0       |
-|    add_ln24_fu_301_p2      |     |        | add_ln24      | add    | fabric   | 0       |
-|    icmp_ln24_fu_353_p2     |     |        | icmp_ln24     | seteq  | auto     | 0       |
+|    icmp_ln24_fu_390_p2     |     |        | icmp_ln24     | seteq  | auto     | 0       |
 +----------------------------+-----+--------+---------------+--------+----------+---------+
 
 
@@ -221,7 +221,7 @@
 | Type      | Options                                                         | Location                               |
 +-----------+-----------------------------------------------------------------+----------------------------------------+
 | PIPELINE  | ii=1                                                            | read_write.cpp:12 in read              |
-| PIPELINE  | ii=4                                                            | read_write.cpp:27 in write             |
+| PIPELINE  | ii=32                                                           | read_write.cpp:27 in write             |
 | PIPELINE  | ii=1                                                            | read_write.cpp:39 in sum               |
 | INTERFACE | m_axi port=mem_0 bundle=mem_0 depth=4096 num_read_outstanding=1 | read_write.cpp:49 in read_write, mem_0 |
 | INTERFACE | m_axi port=mem_1 bundle=mem_1 depth=4096 num_read_outstanding=1 | read_write.cpp:50 in read_write, mem_1 |
