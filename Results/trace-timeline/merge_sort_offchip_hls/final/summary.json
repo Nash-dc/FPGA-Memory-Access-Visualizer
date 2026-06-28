@@ -1,0 +1,128 @@
+{
+  "function_name": "merge_sort_offchip_hls",
+  "loop_name": [
+    "copy_input_to_scratch_a",
+    "merge_element_loop",
+    "copy_result_to_out"
+  ],
+  "loop_ii": {
+    "copy_input_to_scratch_a": 1,
+    "merge_element_loop": 13,
+    "copy_result_to_out": 1
+  },
+  "pipeline_analysis": {
+    "is_pipelined": true,
+    "has_ii_one_loop": true,
+    "continuous_read_issue_candidate": true,
+    "minimum_achieved_ii": 1,
+    "maximum_pipeline_depth": 21,
+    "basis": "csynth achieved PipelineII=1",
+    "loops": [
+      {
+        "name": "merge_width_loop",
+        "pipeline_ii": null,
+        "pipeline_type": "no",
+        "pipeline_depth": null,
+        "trip_count": 6
+      },
+      {
+        "name": "merge_block_loop",
+        "pipeline_ii": null,
+        "pipeline_type": "no",
+        "pipeline_depth": null,
+        "trip_count": null
+      },
+      {
+        "name": "copy_input_to_scratch_a",
+        "pipeline_ii": 1,
+        "pipeline_type": "yes",
+        "pipeline_depth": 4,
+        "trip_count": 64
+      },
+      {
+        "name": "merge_element_loop",
+        "pipeline_ii": 13,
+        "pipeline_type": "yes",
+        "pipeline_depth": 21,
+        "trip_count": null
+      },
+      {
+        "name": "copy_result_to_out",
+        "pipeline_ii": 1,
+        "pipeline_type": "yes",
+        "pipeline_depth": 3,
+        "trip_count": 64
+      }
+    ],
+    "dataflow": {
+      "enabled": false,
+      "pipeline_type": "",
+      "processes": [
+        {
+          "instance": "grp_merge_sort_offchip_hls_Pipeline_copy_input_to_scratch_a_fu_232",
+          "module": "merge_sort_offchip_hls_Pipeline_copy_input_to_scratch_a"
+        },
+        {
+          "instance": "grp_merge_sort_offchip_hls_Pipeline_merge_element_loop_fu_242",
+          "module": "merge_sort_offchip_hls_Pipeline_merge_element_loop"
+        },
+        {
+          "instance": "grp_merge_sort_offchip_hls_Pipeline_copy_result_to_out_fu_260",
+          "module": "merge_sort_offchip_hls_Pipeline_copy_result_to_out"
+        }
+      ],
+      "fifos": []
+    },
+    "interpretation": "II=1 permits consecutive read-request issue when addresses are sequential and the AXI master supports outstanding requests. For DATAFLOW regions, independent process lanes may overlap. Stream-channel dependencies delay each consumer transaction until the matching producer transaction block is available. When csynth reports a bounded FIFO and the producer loop II is smaller than the consumer loop II, capacity annotations flag producer backpressure risk."
+  },
+  "data_width_bits": {
+    "in": 64,
+    "scratch_a": 32,
+    "scratch_b": 32,
+    "out": 512
+  },
+  "element_width_bits": 32,
+  "elements_per_beat": {
+    "in": 2,
+    "scratch_a": 1,
+    "scratch_b": 1,
+    "out": 16
+  },
+  "max_read_burst_length": 16,
+  "max_write_burst_length": 16,
+  "total_read_elements": 819,
+  "total_write_elements": 512,
+  "total_read_transactions": 619,
+  "total_write_transactions": 29,
+  "transaction_dependency_edges": 1727,
+  "notes_about_assumptions": [
+    "LLVM IR trace is the source of executed logical accesses and dynamic order.",
+    "HLS interface/csynth metadata supplies AXI width, burst limits, outstanding settings, and loop II when available.",
+    "Physical transactions are inferred from aligned addresses, continuity, width, and burst limits; no RTL waveform is used.",
+    "Issue/completion values are logical estimates, not RTL cycle-accurate timestamps.",
+    "Timeline lane order is not a data dependency. Only explicit graph edges are dependencies."
+  ],
+  "inputs": {
+    "csynth_xml": [
+      "/data/hls-dev/toy-test-cases/merge_sort_offchip_hls/component_merge_sort_offchip/hls/syn/report/csynth.xml"
+    ],
+    "trace": "/data/hls-dev/Results/trace-timeline/merge_sort_offchip_hls/top_level_memory_trace.tsv",
+    "manifest": "/data/hls-dev/Results/trace-timeline/merge_sort_offchip_hls/top_level_memory_sites.tsv",
+    "memory_access_report": "/data/hls-dev/Results/pass-reports/merge_sort_offchip_hls/memory_access_report.json",
+    "interface_xml": "/data/hls-dev/toy-test-cases/merge_sort_offchip_hls/component_merge_sort_offchip/hls/.autopilot/db/top-io-fe.xml",
+    "schedule_xml": [
+      "/data/hls-dev/toy-test-cases/merge_sort_offchip_hls/component_merge_sort_offchip/hls/.autopilot/db/merge_sort_offchip_hls.sched.adb.xml",
+      "/data/hls-dev/toy-test-cases/merge_sort_offchip_hls/component_merge_sort_offchip/hls/.autopilot/db/merge_sort_offchip_hls_Pipeline_copy_input_to_scratch_a.sched.adb.xml",
+      "/data/hls-dev/toy-test-cases/merge_sort_offchip_hls/component_merge_sort_offchip/hls/.autopilot/db/merge_sort_offchip_hls_Pipeline_copy_result_to_out.sched.adb.xml",
+      "/data/hls-dev/toy-test-cases/merge_sort_offchip_hls/component_merge_sort_offchip/hls/.autopilot/db/merge_sort_offchip_hls_Pipeline_merge_element_loop.sched.adb.xml"
+    ]
+  },
+  "counts": {
+    "trace_events": 1331,
+    "element_events": 1331,
+    "axi_transactions": 648,
+    "access_sites_from_pass_report": 13,
+    "logical_dependency_edges": 2035,
+    "ports_with_hls_schedule": 7
+  }
+}

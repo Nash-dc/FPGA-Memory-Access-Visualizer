@@ -1,0 +1,14 @@
+site_id	function	basic_block	event	argument	argument_index	bytes	pointer	instruction
+0	_Z22merge_sort_offchip_hlsPKiPiS1_S1_	for.body	arg_read	in	0	4	  %arrayidx = getelementptr inbounds i32, i32* %1, i64 %idxprom	  %6 = load i32, i32* %arrayidx, align 4
+1	_Z22merge_sort_offchip_hlsPKiPiS1_S1_	for.body	arg_write	scratch_a	1	4	  %arrayidx2 = getelementptr inbounds i32, i32* %7, i64 %idxprom1	  store i32 %6, i32* %arrayidx2, align 4
+2	_Z22merge_sort_offchip_hlsPKiPiS1_S1_	cond.true	arg_read	scratch_a	1	4	  %arrayidx17 = getelementptr inbounds i32, i32* %27, i64 %idxprom16	  %32 = load i32, i32* %arrayidx17, align 4
+3	_Z22merge_sort_offchip_hlsPKiPiS1_S1_	cond.true19	arg_read	scratch_a	1	4	  %arrayidx21 = getelementptr inbounds i32, i32* %35, i64 %idxprom20	  %40 = load i32, i32* %arrayidx21, align 4
+4	_Z22merge_sort_offchip_hlsPKiPiS1_S1_	if.then29	arg_write	scratch_b	2	4	  %arrayidx31 = getelementptr inbounds i32, i32* %51, i64 %idxprom30	  store i32 %50, i32* %arrayidx31, align 4
+5	_Z22merge_sort_offchip_hlsPKiPiS1_S1_	if.else	arg_write	scratch_b	2	4	  %arrayidx34 = getelementptr inbounds i32, i32* %58, i64 %idxprom33	  store i32 %57, i32* %arrayidx34, align 4
+6	_Z22merge_sort_offchip_hlsPKiPiS1_S1_	cond.true39	arg_read	scratch_b	2	4	  %arrayidx41 = getelementptr inbounds i32, i32* %66, i64 %idxprom40	  %71 = load i32, i32* %arrayidx41, align 4
+7	_Z22merge_sort_offchip_hlsPKiPiS1_S1_	cond.true47	arg_read	scratch_b	2	4	  %arrayidx49 = getelementptr inbounds i32, i32* %74, i64 %idxprom48	  %79 = load i32, i32* %arrayidx49, align 4
+8	_Z22merge_sort_offchip_hlsPKiPiS1_S1_	if.then63	arg_write	scratch_a	1	4	  %arrayidx65 = getelementptr inbounds i32, i32* %90, i64 %idxprom64	  store i32 %89, i32* %arrayidx65, align 4
+9	_Z22merge_sort_offchip_hlsPKiPiS1_S1_	if.else67	arg_write	scratch_a	1	4	  %arrayidx69 = getelementptr inbounds i32, i32* %97, i64 %idxprom68	  store i32 %96, i32* %arrayidx69, align 4
+10	_Z22merge_sort_offchip_hlsPKiPiS1_S1_	cond.true90	arg_read	scratch_a	1	4	  %arrayidx92 = getelementptr inbounds i32, i32* %110, i64 %idxprom91	  %115 = load i32, i32* %arrayidx92, align 4
+11	_Z22merge_sort_offchip_hlsPKiPiS1_S1_	cond.false93	arg_read	scratch_b	2	4	  %arrayidx95 = getelementptr inbounds i32, i32* %116, i64 %idxprom94	  %121 = load i32, i32* %arrayidx95, align 4
+12	_Z22merge_sort_offchip_hlsPKiPiS1_S1_	cond.end96	arg_write	out	3	4	  %arrayidx99 = getelementptr inbounds i32, i32* %122, i64 %idxprom98	  store i32 %cond97, i32* %arrayidx99, align 4
